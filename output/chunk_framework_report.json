@@ -1,0 +1,702 @@
+{
+  "framework": {
+    "normal_mode": {
+      "root_chunk": "Điều",
+      "split_if_long": [
+        "Khoản",
+        "Điểm"
+      ],
+      "metadata": [
+        "Phần",
+        "Chương",
+        "Mục",
+        "Tiểu mục",
+        "document_title"
+      ],
+      "notes": "Phù hợp cho luật/bộ luật có cấu trúc tuyến tính, trong đó Điều ở cấp cao nhất."
+    },
+    "amendment_mode": {
+      "root_chunk": "Điều cấp cao nhất của luật sửa đổi",
+      "split_if_long": [
+        "Khoản của Điều sửa đổi",
+        "điểm mục tiêu được sửa đổi"
+      ],
+      "metadata": [
+        "target_law",
+        "target_article",
+        "quoted_inner_articles"
+      ],
+      "notes": "Không được coi các 'Điều X' nằm trong dấu ngoặc kép hoặc sau cụm 'như sau:' là chunk top-level mới."
+    }
+  },
+  "summary": {
+    "compatible": 25,
+    "compatible_with_special_handling": 8
+  },
+  "results": [
+    {
+      "path": "001_Bo-luat-dan-su-2015-296215.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 666,
+      "clause_count": 1435,
+      "point_count": 309,
+      "chapter_count": 27,
+      "part_count": 6,
+      "section_count": 63,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 368409,
+      "cleaned_length": 368409,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "002_Bo-luat-hinh-su-2015-296661.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 424,
+      "clause_count": 1390,
+      "point_count": 2892,
+      "chapter_count": 27,
+      "part_count": 0,
+      "section_count": 17,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 555144,
+      "cleaned_length": 555144,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "003_Luat-sua-doi-Bo-luat-Hinh-su-2017-354053.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 70,
+      "clause_count": 273,
+      "point_count": 917,
+      "chapter_count": 0,
+      "part_count": 0,
+      "section_count": 0,
+      "split_article_lines": 0,
+      "amendment_title_hint": true,
+      "amendment_body_hits": 1,
+      "has_noise_markers": false,
+      "raw_length": 265629,
+      "cleaned_length": 265629,
+      "reasons": [
+        "tiêu đề cho thấy đây là văn bản sửa đổi/bổ sung"
+      ]
+    },
+    {
+      "path": "004_Luat-Tu-phap-nguoi-chua-thanh-nien-2024-so-59-2024-QH15-606865.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 180,
+      "clause_count": 635,
+      "point_count": 525,
+      "chapter_count": 10,
+      "part_count": 5,
+      "section_count": 12,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 234702,
+      "cleaned_length": 234702,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "005_Luat-Bo-luat-Hinh-su-sua-doi-2025-so-86-2025-QH15-662377.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 19,
+      "clause_count": 160,
+      "point_count": 462,
+      "chapter_count": 6,
+      "part_count": 0,
+      "section_count": 0,
+      "split_article_lines": 0,
+      "amendment_title_hint": true,
+      "amendment_body_hits": 3,
+      "has_noise_markers": false,
+      "raw_length": 108151,
+      "cleaned_length": 107980,
+      "reasons": [
+        "tiêu đề cho thấy đây là văn bản sửa đổi/bổ sung",
+        "phần thân có các 'Điều X' lồng bên trong luật sửa đổi"
+      ]
+    },
+    {
+      "path": "006_Bo-luat-to-tung-dan-su-2015-296861.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 517,
+      "clause_count": 1308,
+      "point_count": 685,
+      "chapter_count": 45,
+      "part_count": 10,
+      "section_count": 16,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 494247,
+      "cleaned_length": 494247,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "007_Bo-Luat-lao-dong-2019-333670.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 222,
+      "clause_count": 636,
+      "point_count": 279,
+      "chapter_count": 18,
+      "part_count": 0,
+      "section_count": 24,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 1,
+      "has_noise_markers": false,
+      "raw_length": 189370,
+      "cleaned_length": 189370,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "008_Luat-Doanh-nghiep-so-59-2020-QH14-427301.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 218,
+      "clause_count": 859,
+      "point_count": 819,
+      "chapter_count": 10,
+      "part_count": 0,
+      "section_count": 2,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 320770,
+      "cleaned_length": 320770,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "009_Luat-Phong-chong-bao-luc-gia-dinh-2022-490095.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 56,
+      "clause_count": 189,
+      "point_count": 132,
+      "chapter_count": 6,
+      "part_count": 0,
+      "section_count": 4,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 55501,
+      "cleaned_length": 55501,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "010_Luat-Bao-ve-quyen-loi-nguoi-tieu-dung-2023-19-2023-QH15-500102.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 80,
+      "clause_count": 280,
+      "point_count": 273,
+      "chapter_count": 7,
+      "part_count": 0,
+      "section_count": 8,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 104366,
+      "cleaned_length": 104366,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "011_Luat-To-chuc-Toa-an-nhan-dan-2024-580434.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 152,
+      "clause_count": 477,
+      "point_count": 253,
+      "chapter_count": 9,
+      "part_count": 0,
+      "section_count": 12,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 130531,
+      "cleaned_length": 130531,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "012_Luat-cong-chung-2024-so-46-2024-QH15-524982.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 76,
+      "clause_count": 267,
+      "point_count": 134,
+      "chapter_count": 8,
+      "part_count": 0,
+      "section_count": 3,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 107507,
+      "cleaned_length": 107507,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "013_Luat-sua-doi-Bo-luat-To-tung-dan-su-Luat-To-tung-hanh-chinh-Luat-Tu-phap-nguoi-chua-thanh-nien-2025-651570.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 12,
+      "clause_count": 144,
+      "point_count": 42,
+      "chapter_count": 0,
+      "part_count": 0,
+      "section_count": 0,
+      "split_article_lines": 0,
+      "amendment_title_hint": true,
+      "amendment_body_hits": 19,
+      "has_noise_markers": false,
+      "raw_length": 45568,
+      "cleaned_length": 45568,
+      "reasons": [
+        "tiêu đề cho thấy đây là văn bản sửa đổi/bổ sung",
+        "phần thân có các 'Điều X' lồng bên trong luật sửa đổi"
+      ]
+    },
+    {
+      "path": "014_Luat-Phuc-hoi-pha-san-2025-so-142-2025-QH15-675210.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 88,
+      "clause_count": 364,
+      "point_count": 323,
+      "chapter_count": 8,
+      "part_count": 0,
+      "section_count": 10,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 137255,
+      "cleaned_length": 137255,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "015_Bo-luat-to-tung-hinh-su-2015-296884.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 497,
+      "clause_count": 1218,
+      "point_count": 920,
+      "chapter_count": 38,
+      "part_count": 0,
+      "section_count": 1,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 520630,
+      "cleaned_length": 520457,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "016_Luat-sua-doi-Bo-Luat-To-tung-hinh-su-2021-489113.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 2,
+      "clause_count": 7,
+      "point_count": 1,
+      "chapter_count": 0,
+      "part_count": 0,
+      "section_count": 0,
+      "split_article_lines": 0,
+      "amendment_title_hint": true,
+      "amendment_body_hits": 1,
+      "has_noise_markers": false,
+      "raw_length": 3441,
+      "cleaned_length": 3441,
+      "reasons": [
+        "tiêu đề cho thấy đây là văn bản sửa đổi/bổ sung"
+      ]
+    },
+    {
+      "path": "017_Luat-To-chuc-Toa-an-nhan-dan-2024-580434.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 152,
+      "clause_count": 477,
+      "point_count": 253,
+      "chapter_count": 9,
+      "part_count": 0,
+      "section_count": 12,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 130531,
+      "cleaned_length": 130531,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "018_Luat-To-chuc-Toa-an-nhan-dan-2024-580434.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 152,
+      "clause_count": 477,
+      "point_count": 253,
+      "chapter_count": 9,
+      "part_count": 0,
+      "section_count": 12,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 130531,
+      "cleaned_length": 130531,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "019_Luat-sua-doi-Bo-luat-To-tung-hinh-su-2025-so-99-2025-QH15-662829.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 2,
+      "clause_count": 98,
+      "point_count": 31,
+      "chapter_count": 0,
+      "part_count": 0,
+      "section_count": 0,
+      "split_article_lines": 0,
+      "amendment_title_hint": true,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 57833,
+      "cleaned_length": 57833,
+      "reasons": [
+        "tiêu đề cho thấy đây là văn bản sửa đổi/bổ sung"
+      ]
+    },
+    {
+      "path": "020_Luat-Tuong-tro-tu-phap-ve-hinh-su-2025-so-103-2025-QH15-686538.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 42,
+      "clause_count": 119,
+      "point_count": 66,
+      "chapter_count": 4,
+      "part_count": 0,
+      "section_count": 0,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 43067,
+      "cleaned_length": 43067,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "021_Luat-Giam-dinh-tu-phap-2025-so-105-2025-QH15-667661.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 40,
+      "clause_count": 28,
+      "point_count": 6,
+      "chapter_count": 6,
+      "part_count": 0,
+      "section_count": 5,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 68675,
+      "cleaned_length": 68675,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "022_Luat-Thi-hanh-an-dan-su-2025-so-106-2025-QH15-628717.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 116,
+      "clause_count": 466,
+      "point_count": 451,
+      "chapter_count": 5,
+      "part_count": 0,
+      "section_count": 8,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 219862,
+      "cleaned_length": 219862,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "023_Luat-Thi-hanh-tam-giu-tam-giam-va-cam-di-khoi-noi-cu-tru-2025-so-128-2025-QH15-679014.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 74,
+      "clause_count": 227,
+      "point_count": 192,
+      "chapter_count": 12,
+      "part_count": 0,
+      "section_count": 2,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 97304,
+      "cleaned_length": 97304,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "024_Bo-Luat-lao-dong-2019-333670.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 222,
+      "clause_count": 636,
+      "point_count": 279,
+      "chapter_count": 18,
+      "part_count": 0,
+      "section_count": 24,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 1,
+      "has_noise_markers": false,
+      "raw_length": 189370,
+      "cleaned_length": 189370,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "025_Luat-Bao-hiem-xa-hoi-2024-557190.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 141,
+      "clause_count": 523,
+      "point_count": 356,
+      "chapter_count": 11,
+      "part_count": 0,
+      "section_count": 13,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 183304,
+      "cleaned_length": 183304,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "026_Luat-Cong-nghiep-cong-nghe-so-2025-so-71-2025-QH15-621341.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 42,
+      "clause_count": 149,
+      "point_count": 151,
+      "chapter_count": 6,
+      "part_count": 0,
+      "section_count": 10,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 61935,
+      "cleaned_length": 61935,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "027_Luat-dan-so-2025-so-113-2025-QH15-443680.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 30,
+      "clause_count": 108,
+      "point_count": 61,
+      "chapter_count": 8,
+      "part_count": 0,
+      "section_count": 0,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 29365,
+      "cleaned_length": 29365,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "028_Luat-Giao-duc-nghe-nghiep-2025-so-124-2025-QH15-687560.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 45,
+      "clause_count": 176,
+      "point_count": 116,
+      "chapter_count": 9,
+      "part_count": 0,
+      "section_count": 0,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 57647,
+      "cleaned_length": 57647,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "029_Bo-luat-hang-hai-Viet-Nam-2015-298374.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 341,
+      "clause_count": 930,
+      "point_count": 332,
+      "chapter_count": 20,
+      "part_count": 0,
+      "section_count": 33,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 267899,
+      "cleaned_length": 267899,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    },
+    {
+      "path": "030_Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 53,
+      "clause_count": 474,
+      "point_count": 337,
+      "chapter_count": 1,
+      "part_count": 0,
+      "section_count": 4,
+      "split_article_lines": 0,
+      "amendment_title_hint": true,
+      "amendment_body_hits": 58,
+      "has_noise_markers": false,
+      "raw_length": 151723,
+      "cleaned_length": 151723,
+      "reasons": [
+        "tiêu đề cho thấy đây là văn bản sửa đổi/bổ sung",
+        "phần thân có các 'Điều X' lồng bên trong luật sửa đổi"
+      ]
+    },
+    {
+      "path": "031_Luat-Gia-2023-16-2023-QH15-519324.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 76,
+      "clause_count": 241,
+      "point_count": 245,
+      "chapter_count": 10,
+      "part_count": 0,
+      "section_count": 8,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 2,
+      "has_noise_markers": false,
+      "raw_length": 123300,
+      "cleaned_length": 123300,
+      "reasons": [
+        "phần thân có các 'Điều X' lồng bên trong luật sửa đổi"
+      ]
+    },
+    {
+      "path": "032_Luat-To-chuc-Toa-an-nhan-dan-sua-doi-2025-so-81-2025-QH15-660533.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 13,
+      "clause_count": 126,
+      "point_count": 152,
+      "chapter_count": 0,
+      "part_count": 0,
+      "section_count": 5,
+      "split_article_lines": 0,
+      "amendment_title_hint": true,
+      "amendment_body_hits": 18,
+      "has_noise_markers": false,
+      "raw_length": 53445,
+      "cleaned_length": 53445,
+      "reasons": [
+        "tiêu đề cho thấy đây là văn bản sửa đổi/bổ sung",
+        "phần thân có các 'Điều X' lồng bên trong luật sửa đổi"
+      ]
+    },
+    {
+      "path": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814.txt",
+      "status": "compatible",
+      "suggested_mode": "normal_mode",
+      "article_count": 58,
+      "clause_count": 254,
+      "point_count": 348,
+      "chapter_count": 6,
+      "part_count": 0,
+      "section_count": 8,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 0,
+      "has_noise_markers": false,
+      "raw_length": 112219,
+      "cleaned_length": 112219,
+      "reasons": [
+        "có thể chunk theo Điều, rồi hạ xuống Khoản/Điểm nếu quá dài"
+      ]
+    }
+  ]
+}

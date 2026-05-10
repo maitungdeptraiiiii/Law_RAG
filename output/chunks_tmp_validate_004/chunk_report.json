@@ -1,0 +1,26 @@
+[
+  {
+    "file": "004_Luat-Tu-phap-nguoi-chua-thanh-nien-2024-so-59-2024-QH15-606865.txt",
+    "classification": {
+      "path": "004_Luat-Tu-phap-nguoi-chua-thanh-nien-2024-so-59-2024-QH15-606865.txt",
+      "status": "compatible_with_special_handling",
+      "suggested_mode": "amendment_mode",
+      "article_count": 180,
+      "clause_count": 631,
+      "point_count": 523,
+      "chapter_count": 10,
+      "part_count": 5,
+      "section_count": 12,
+      "split_article_lines": 0,
+      "amendment_title_hint": false,
+      "amendment_body_hits": 9,
+      "has_noise_markers": false,
+      "raw_length": 234495,
+      "cleaned_length": 234495,
+      "reasons": [
+        "phần thân có các 'Điều X' lồng bên trong luật sửa đổi"
+      ]
+    },
+    "chunk_count": 361
+  }
+]

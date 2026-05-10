@@ -1,0 +1,815 @@
+Luật số: 142/2025/QH15 Hà Nội, ngày 11 tháng 12 năm 2025 LUẬT PHỤC HỒI, PHÁ SẢN Căn cứ Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam đã được sửa đổi, bổ sung một số điều theo Nghị quyết số 203/2025/QH15; Quốc hội ban hành Luật Phục hồi, phá sản.
+Chương I
+QUY ĐỊNH CHUNG
+Điều 1. Phạm vi điều chỉnh Luật này quy định về nguyên tắc, trình tự, thủ tục giải quyết vụ việc phục hồi, phá sản doanh nghiệp và hợp tác xã, liên hiệp hợp
+tác xã (sau đây gọi là hợp tác xã); nhiệm vụ, quyền hạn của người tiến hành thủ tục phục hồi, phá sản; quyền, nghĩa vụ của người tham gia thủ tục phục hồi, phá sản.
+Điều 2.Áp dụng pháp luật Luật Phục hồi, phá sản được áp dụng khi giải quyết vụ việc phục hồi, phá sản doanh nghiệp, hợp tác xã; trường hợp Luật này không
+có quy định thì áp dụng quy định của pháp luật có liên quan. Quy định về thủ tục phục hồi, thủ tục phục hồi rút gọn của Luật này không áp dụng đối với tổ chức tín dụng, doanh nghiệp bảo hiểm, doanh nghiệp tái bảo hiểm.
+Điều 3. Những nguyên tắc cơ bản
+1.Ưu tiên áp dụng thủ tục phục hồi đối với doanh nghiệp, hợp tác xã.
+2. Bảo đảm thủ tục phục hồi, phá sản kịp thời, hiệu quả; hài hòa lợi ích, tối ưu giá trị tài sản của doanh nghiệp, hợp tác xã.
+3. Bảo đảm công khai, minh bạch, trừ trường hợp pháp luật có quy định khác.
+Điều 4. Chính sách của Nhà nước trong phục hồi, phá sản doanh nghiệp, hợp tác xã
+1. Nhà nước có chính sách hỗ trợ về thuế, phí, tín dụng, lãi suất, đất đai, công nghệ, chuyển đổi số và các biện pháp hỗ trợ khác cho doanh nghiệp, hợp tác xã gặp khó khăn trong kinh doanh thực hiện thủ tục phục hồi, phá sản nhằm tái cơ cấu, khôi phục hoặc chấm dứt hoạt động kinh doanh một cách có trật tự, góp phần cải thiện môi trường đầu tư kinh doanh, lành mạnh hóa nền kinh tế.
+2. Căn cứ vào khả năng cân đối nguồn lực của Nhà nướcở từng thời kỳ, Chính phủ trình cơ quan có thẩm quyền ban hành hoặc ban hành theo thẩm quyền cơ chế, chính sách cụ thể để hỗ trợ hoặc để kịp thời tháo gỡ khó khăn, vướng mắc cho doanh nghiệp, hợp tác xã trong phục hồi, phá sản.
+Điều 5. Giải thích từ ngữ Trong Luật này, các từ ngữ dưới đây được hiểu như sau:
+1. Doanh nghiệp, hợp tác xã có nguy cơ mất khả năng thanh toán là doanh nghiệp, hợp tác xã không thanh toán được khoản nợ sẽ đến hạn trong 06 tháng hoặc khoản nợ đã đến hạn nhưng chưa quá 06 tháng. 2. Doanh nghiệp, hợp tác xã mất khả năng thanh toán là doanh nghiệp, hợp tác xã không thực hiện nghĩa vụ thanh toán khoản nợ sau thời hạn 06 tháng kể từ ngày đến hạn thanh toán. 3. Phục hồi là tình trạng của doanh nghiệp, hợp tác xã không còn nguy cơ mất khả năng thanh toán và đã có quyết định đình chỉ thủ tục phục hồi của Tòa án hoặc không mất khả năng thanh toán và đã có quyết định đình chỉ thủ tục phục hồi của Tòa án. 4. Phá sản là tình trạng của doanh nghiệp, hợp tác xã mất khả năng thanh toán và đã có quyết định tuyên bố phá sản của Tòa án. 5. Chủ nợ là cá nhân, cơ quan, tổ chức có quyền yêu cầu doanh nghiệp, hợp tác xã thực hiện nghĩa vụ thanh toán khoản nợ, bao gồm chủ nợ không có bảo đảm, chủ nợ có bảo đảm một phần và chủ nợ có bảo đảm. 6. Chủ nợ không có bảo đảm là cá nhân, cơ quan, tổ chức có quyền yêu cầu doanh nghiệp, hợp tác xã phải thực hiện nghĩa vụ thanh toán khoản nợ không được bảo đảm bằng tài sản của doanh nghiệp, hợp tác xã đó hoặc của người thứ ba. 7. Chủ nợ có bảo đảm là cá nhân, cơ quan, tổ chức có quyền yêu cầu doanh nghiệp, hợp tác xã phải thực hiện nghĩa vụ thanh toán khoản nợ được bảo đảm bằng tài sản của doanh nghiệp, hợp tác xã đó hoặc của người thứ ba. 8. Chủ nợ có bảo đảm một phần là cá nhân, cơ quan, tổ chức có quyền yêu cầu doanh nghiệp, hợp tác xã phải thực hiện nghĩa vụ thanh toán khoản nợ được bảo đảm bằng tài sản của doanh nghiệp, hợp tác xã đó hoặc của người thứ ba mà giá trị tài sản bảo đảm thấp hơn khoản nợ mà doanh nghiệp, hợp tác xã phải thực hiện nghĩa vụ thanh toán. 9. Quản tài viên là cá nhân hành nghề quản lý, thanh lý tài sản của doanh nghiệp, hợp tác xã trong quá trình giải quyết vụ việc phục hồi, phá sản. 10. Doanh nghiệp quản lý, thanh lý tài sản là doanh nghiệp hành nghề quản lý, thanh lý tài sản của doanh nghiệp, hợp tác xã trong quá trình giải quyết vụ việc phục hồi, phá sản. 11. Người tiến hành thủ tục phục hồi, phá sản là Chánh án Tòa án, Thẩm phán, Thư ký Tòa án; Viện trưởng Viện kiểm sát, Kiểm sát viên; Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản; Thủ trưởng cơ quan thi hành án dân sự, Chấp hành viên và người có thẩm quyền khác theo quy định của pháp luật trong quá trình giải quyết vụ việc phục hồi, phá sản. 12. Người tham gia thủ tục phục hồi, phá sản là chủ nợ; người lao động; doanh nghiệp, hợp tác xã; cổ đông, nhóm cổ đông của công ty cổ phần; thành viên, nhóm thành viên của công ty trách nhiệm hữu hạn; thành viên công ty hợp danh; chủ doanh nghiệp tư nhân; thành viên hợp tác xã hoặc hợp tác xã thành viên của liên hiệp hợp tác xã; người mắc nợ của doanh nghiệp, hợp tác xã và những người khác có quyền lợi, nghĩa vụ liên quan trong quá trình giải quyết vụ việc phục hồi, phá sản. 13. Lệ phí phục hồi, phá sản là khoản tiền mà người yêu cầu áp dụng thủ tục phục hồi, phá sản phải nộp để Tòa án thụ lý đơn yêu cầu. 14. Chi phí phục hồi, phá sản là khoản tiền phải chi trả cho việc giải quyết vụ việc phục hồi, phá sản, bao gồm chi phí Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, chi phí kiểm toán, chi phí thi hành quyết định của Tòa án và các chi phí cần thiết, hợp lý khác phải chi trả cho việc thực hiện thủ tục phục hồi, phá sản. 15. Chi phí Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản là khoản tiền phải chi trả cho việc giải quyết vụ việc phục hồi, phá sản của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản. 16. Tiền tạm ứng chi phí phục hồi, phá sản là khoản tiền mà Thẩm phán tạm tính để chi trả chi phí trong quá trình tiến hành thủ tục phục hồi, phá sản. 17. Vụ việc phục hồi, phá sản gồm yêu cầu áp dụng thủ tục phục hồi, phá sản; yêu cầu hỗ trợ vụ việc phục hồi, phá sản của nước ngoài và yêu cầu công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài theo quy định của Luật này. 18. Khoản nợ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế, bảo hiểm tai nạn lao động, bệnh nghề nghiệp là khoản chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế, bảo hiểm tai nạn lao động, bệnh nghề nghiệp theo quy định của pháp luật.
+Điều 6. Thẩm quyền giải quyết vụ việc phục hồi, phá sản
+1. Tòa án nhân dân khu vực có thẩm quyền giải quyết vụ việc phục hồi, phá sản trong phạm vi thẩm quyền theo lãnh thổ. Phạm vi thẩm quyền theo lãnh thổ của Tòa án nhân dân khu vực đối với vụ việc phục hồi, phá sản do Ủy ban Thường vụ Quốc hội quy định.
+2. Tòa án nhân dân khu vực có thẩm quyền được xác định như sau:
+a) Tòa án nhân dân khu vực nơi doanh nghiệp, hợp tác xã có trụ sở chính có thẩm quyền giải quyết yêu cầu áp dụng thủ tục phục hồi, phá sản đối với doanh nghiệp, hợp tác xã đó;
+b) Tòa án nhân dân khu vực nơi người phải thi hành cư trú, làm việc, có trụ sở chính, nơi có tài sản liên quan đến việc thi hành bảnán, quyết định về phục hồi, phá sản có thẩm quyền giải quyết yêu cầu công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài;
+c) Tòa án nhân dân khu vực nơi người liên quan đếnyêu cầu hỗ trợ vụ việc phục hồi, phá sản của nước ngoài cư trú, làm việc, có trụ sở; nơi có tài sản liên quan đến yêu cầu hỗ trợ vụ việc phục hồi, phá sản có thẩm quyền giải quyết yêu cầu hỗ trợ vụ việc phục hồi, phá sản của nước ngoài.
+3. Tòa án nhân dân cấp tỉnh có thẩm quyền giải quyết đề nghị xem xét lại, kháng nghị đối với quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản; quyết định công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài của Tòa án nhân dân khu vực trong phạm vi thẩm quyền theo lãnh thổ.
+4. Tòa án nhân dân tối cao có thẩm quyền:
+a) Xem xét lại quyết định giải quyết đơn đề nghị xem xét lại, quyết định giải quyết kháng nghị quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản của Tòa án nhân dân cấp tỉnh theo quy định tại khoản 4 Điều 67 của Luật này;
+b) Giải quyết tranh chấp về thẩm quyền giữa các Tòa án nhân dân khu vực.
+Điều 7. Nhiệm vụ, quyền hạn của Thẩm phán trong giải quyết vụ việc phục hồi, phá sản
+1. Hướng dẫn, yêu cầu người tham gia thủ tục phục hồi, phá sản thu thập, giao nộp tài liệu, chứng cứ để chứng minh cho yêu cầu, đề nghị của họ là có căn cứ và hợp pháp; kiểm tra, thẩm định tính xác thực của tài liệu, chứng cứ theo quy định của pháp luật.
+2.Yêu cầu cơ quan, tổ chức, cá nhân cung cấp tài liệu, chứng cứ liên quan đến vụ việc phục hồi, phá sản.
+3. Quyết định áp dụng thủ tục phục hồi rút gọn, quyết định áp dụng thủ tục phá sản rút gọn.
+4. Quyết định chỉ định hoặc thay đổi Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản.
+5. Giám sát hoạt động của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản khi giải quyết vụ việc phục hồi, phá sản.
+6. Quyết định việc thực hiện kiểm toán doanh nghiệp, hợp tác xã trong trường hợp cần thiết.
+7. Quyết định việc bán tài sản của doanh nghiệp, hợp tác xã để bảo đảm chi phí phục hồi, phá sản, bảo toàn tài sản của doanh nghiệp, hợp tác xã.
+8. Quyết định áp dụng biện pháp khẩn cấp tạm thời theo quy định của Luật này.
+9.Áp dụng biện pháp cấm đi khỏi nơi cư trú, yêu cầu cơ quan có thẩm quyền dẫn giải đại diện của doanh nghiệp, hợp tác xã theo quy định của pháp luật.
+10. Quyết định tổ chức Hội nghị chủ nợ.
+11. Quyết định công nhận hoặc không công nhận nghị quyết của Hội nghị chủ nợ về phương án phục hồi hoạt động kinh doanh.
+12. Quyết định đình chỉ thủ tục phục hồi, đình chỉ thủ tục phá sản.
+13. Quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản.
+14. Áp dụng biện pháp xử phạt vi phạm hành chính, kiến nghị cơ quan có thẩm quyền xử lý về hình sự theo quy định của pháp luật.
+15. Áp dụng án lệ trong quá trình giải quyết vụ việc phục hồi, phá sản.
+16. Tiến hành hòa giải tranh chấp liên quan đến tài sản của doanh nghiệp, hợp tác xã theo đề nghị của người tham gia thủ tục phục hồi, phá sản và quyết định công nhận sự thỏa thuận của các bên.
+17. Xem xét, hỗ trợ vụ việc phục hồi, phá sản của nước ngoài.
+18. Xem xét, giải quyết yêu cầu công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài.
+19. Thực hiện nhiệm vụ, quyền hạn khác theo quy định của pháp luật. Trường hợp thành lập tổ Thẩm phán thì tổ Thẩm phán thực hiện nhiệm vụ, quyền hạn của Thẩm phán theo quy định tại Điều này. Chánh án Tòa án nhân dân tối cao quy định về quy chế làm việc của tổ Thẩm phán trong quá trình giải quyết vụ việc phục hồi, phá sản.
+Điều 8. Từ chối hoặc thay đổi Thẩm phán trong quá trình giải quyết vụ việc phục hồi, phá sản
+1. Thẩm phán phải từ chối tham gia giải quyết vụ việc phục hồi, phá sản hoặc bị thay đổi trong những trường hợp sau đây:
+a) Đồng thời là người tham gia thủ tục phục hồi, phá sản; người đại diện, người thân thích của người tham gia thủ tục phục hồi, phá sản trong vụ việc phục hồi, phá sản đó;
+b) Đã tham gia với tư cách Kiểm sát viên, Quản tài viên, người bảo vệ quyền và lợi ích hợp pháp của người tham gia thủ tục phục hồi, phá sản, người giám định, thẩm định viên về giá, người phiên dịch trong vụ việc phục hồi, phá sản đó;
+c) Cùng trong một tổ Thẩm phán giải quyết vụ việc phục hồi, phá sản đó và là người thân thích với nhau;
+d) Đã ra quyết định tuyên bố phá sản trong vụ việc phá sản đó;
+đ) Có căn cứ rõ ràng cho rằng Thẩm phán có thể không vô tư, khách quan trong khi làm nhiệm vụ.
+2. Việc thay đổi Thẩm phán do Chánh án Tòa án quyết định. Trường hợp Thẩm phán phụ trách vụ việc phục hồi, phá sản là Chánh án thì việc thay đổi Thẩm phán do Tòa án nhân dân cấp trên trực tiếp quyết định. Quyết định thay đổi Thẩm phán là quyết định cuối cùng.
+Điều 9. Cá nhân, doanh nghiệp hành nghề quản lý, thanh lý tài sản
+1. Cá nhân, doanh nghiệp được hành nghề quản lý, thanh lý tài sản trong quá trình giải quyết vụ việc phục hồi, phá sản gồm:
+a) Quản tài viên;
+b) Doanh nghiệp quản lý, thanh lý tài sản.
+2. Chính phủ quy định chi tiết về tiêu chuẩn, điều kiện hành nghề, việc cấp, thu hồi chứng chỉ hành nghề Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản; quản lý nhà nước đối với Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, hoạt động hành nghề quản lý, thanh lý tài sản.
+3. Việc thành lập và hoạt động tổ chức xã hội - nghề nghiệp của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản thực hiện theo quy định của pháp luật.
+Điều 10. Nhiệm vụ, quyền hạn của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản
+1. Nhiệm vụ, quyền hạn của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản trong thủ tục phục hồi:
+a) Xác minh, thu thập, quản lý tài liệu, chứng cứ liên quan đến hoạt động của doanh nghiệp, hợp tác xã; đề nghị Thẩm phán thực hiện các biện pháp thẩm tra, xác minh tài liệu, chứng cứ;
+b) Xác minh, cập nhật danh sách chủ nợ, người mắc nợ;
+c) Tiến hành hòa giải theo quy định của Luật này;
+d) Giám sát hoạt động kinh doanh của doanh nghiệp, hợp tác xã; giám sát quá trình hoàn thiện, thực hiện phương án phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã; điều hành Hội nghị chủ nợ theo quyết định của Thẩm phán; thực hiện chuyển nhượng doanh nghiệp, hợp tác xã theo nghị quyết của Hội nghị chủ nợ;
+đ) Tốiưu giá trị tài sản của doanh nghiệp, hợp tác xã khi bán tài sản; ngăn chặn việc bán, chuyển giao tài sản mà không được phép của Thẩm phán; ngăn chặn việc tẩu tán tài sản;
+e) Đề nghị Tòa án tuyên bố giao dịch vô hiệu và quyết định thu hồi tài sản của doanh nghiệp, hợp tác xã bị bán hoặc chuyển giao bất hợp pháp; đề nghị Tòa án áp dụng biện pháp xử lý vi phạm hành chính; đề nghị Tòa án kiến nghị cơ quan có thẩm quyền xử lý về hình sự theo quy định của pháp luật;
+g) Được thuê cá nhân, tổ chức thực hiện công việc theo quy định của pháp luật;
+h) Được hưởng thù lao và thực hiện trách nhiệm bảo hiểm nghề nghiệp theo quy định của pháp luật;
+i) Báo cáo việc thực hiện nhiệm vụ, quyền hạn của mình theo yêu cầu của Thẩm phán; chịu trách nhiệm trước Thẩm phán và pháp luật về việc thực hiện nhiệm vụ, quyền hạn của mình.
+2. Nhiệm vụ, quyền hạn của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản trong thủ tục phá sản:
+a) Thực hiện nhiệm vụ, quyền hạn quy định tại các điểm a, c, d,e, g và h khoản 1 Điều này;
+b) Lập danh sách chủ nợ, người mắc nợ;
+c) Tốiưu giá trị tài sản của doanh nghiệp, hợp tác xã khi bán, thanh lý tài sản; quản lý tài sản, thực hiện việc thanh lý tài sản của doanh nghiệp, hợp tác xã; ngăn chặn việc bán, chuyển giao tài sản mà không được phép của Thẩm phán; ngăn chặn việc tẩu tán tài sản. Các khoản tiền thu được phải nộp vào tài khoản do Tòa án, cơ quan thi hành án dân sự chỉ định;
+d) Đề nghị Thẩm phán áp dụng biện pháp khẩn cấp tạm thời;
+đ) Đề xuất với Thẩm phán về việc bán tài sản của doanh nghiệp, hợp tác xã để bảo đảm chi phí phá sản, bảo toàn tài sản của doanh nghiệp, hợp tác xã; bán tài sản theo quyết định của Thẩm phán;
+e) Xác minh điều kiện thi hành quyết định tuyên bố phá sản; tổ chức việc thi hành quyết định tuyên bố phá sản theo quy định của Luật này, trừ trường hợp pháp luật có quy định khác; báo cáo cơ quan thi hành án dân sự, thông báo đến người tham gia thủ tục phá sản có liên quan việc thi hành quyết định tuyên bố phá sản;
+g) Đề nghị cơ quan thi hành án dân sự thực hiện các biện pháp cưỡng chế để thu hồi, giao tài sản theo quy định của pháp luật;
+h) Đại diện cho doanh nghiệp, hợp tác xã trong việc giải quyết tranh chấp liên quan doanh nghiệp, hợp tác xã; trong việc thu hồi tài sản người mắc nợ và trong trường hợp doanh nghiệp, hợp tác xã không có người đại diện theo pháp luật;
+i) Báo cáo việc thực hiện nhiệm vụ, quyền hạn của mình theo yêu cầu của Thẩm phán, cơ quan thi hành án dân sự; chịu trách nhiệm trước Thẩm phán, cơ quan thi hành án dân sự và pháp luật về việc thực hiện nhiệm vụ, quyền hạn của mình.
+3. Thực hiện nhiệm vụ, quyền hạn khác theo quy định của pháp luật hoặc theo quyết định của Thẩm phán.
+Điều 11. Chỉ định, thay đổi Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản
+1. Trong thời hạn 03 ngày làm việc kể từ ngày thụ lý đơn yêu cầu áp dụng thủ tục phục hồi, phá sản, Thẩm phán được tự mình hoặc trên cơ sở đề xuất của doanh nghiệp, hợp tác xã, người nộp đơn yêu cầu chỉ định Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản khi có các căn cứ sau đây:
+a) Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản không có lợi ích liên quan đến vụ việc phục hồi, phá sản;
+b) Tính chất của vụ việc phục hồi, phá sản; chuyên môn, năng lực, kinh nghiệm của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản;
+c) Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản không phải là người thân thích của người tham gia thủ tục phục hồi, phá sản.
+2. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản phải từ chối tham gia vụ việc phục hồi, phá sản hoặc bị thay đổi trong những trường hợp sau đây:
+a) Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản có lợi ích liên quan đến vụ việc phục hồi, phá sản;
+b) Quản tài viên là người thân thích của người đại diện theo pháp luật của doanh nghiệp, hợp tác xã;
+c) Quản tài viên đồng thời là người tham gia thủ tục phục hồi, phá sản, người đại diện, người bảo vệ quyền, lợi ích hợp pháp của người tham gia thủ tục phục hồi, phá sản;
+d) Có căn cứ Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản không thực hiện hoặc không thực hiện được nhiệm vụ, quyền hạn hoặc có thể không vô tư, khách quan trong khi thực hiện nhiệm vụ;
+đ) Trường hợp bất khả kháng mà Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản không thực hiện được nhiệm vụ.
+Điều 12. Nhiệm vụ, quyền hạn của cơ quan thi hành án dân sự
+1. Thi hành quyết định áp dụng biện pháp khẩn cấp tạm thời, quyết định tuyên bố giao dịch vô hiệu và các quyết định khác theo quy định của Luật này.
+2. Ra quyết định thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản và yêu cầu Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản tổ chức thi hành.
+3.Áp dụng biện pháp cưỡng chế để thu hồi, giao tài sản theo đề nghị của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản trong trường hợp quy định tại khoản 4 Điều 76 của Luật này.
+4. Giám sát hoạt động của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản khi thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản; yêu cầu Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản báo cáo việc thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản.
+5. Đề xuất Tòa án thay đổi Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản trong quá trình thực hiện việc thanh lý tài sản của doanh nghiệp, hợp tác xã phá sản theo quy định tại khoản 2 Điều 11 của Luật này.
+6. Phân chia tài sản của doanh nghiệp, hợp tác xã theo quyết định của Tòa án.
+7. Quyết định kết thúc việc thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản.
+8. Thực hiện nhiệm vụ, quyền hạn khác theo quy định của pháp luật.
+Điều 13. Quyền, nghĩa vụ của người tham gia thủ tục phục hồi, phá sản
+1. Thực hiện yêu cầu của Thẩm phán, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản và cơ quan thi hành án dân sự theo quy định của pháp luật về phục hồi, phá sản.
+2. Cung cấp, giao nộp tài liệu, chứng cứ có liên quan đến việc giải quyết vụ việc phục hồi, phá sản.
+3.Yêu cầu cơ quan, tổ chức, cá nhân đang lưu giữ, quản lý tài liệu, chứng cứ cung cấp tài liệu, chứng cứ liên quan đến quyền và lợiích hợp pháp của mình để giao nộp cho Tòa án.
+4. Đề nghị Tòa án hỗ trợ thu thập tài liệu, chứng cứ trong trường hợp đã thực hiện các biện pháp cần thiết nhưng không thu thập được.
+5. Đề nghị Thẩm phán, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản trưng cầu giám định, định giá, tổ chức việc định giá; đề nghị Thẩm phán quyết định kiểm toán doanh nghiệp, hợp tác xã; đề nghị Thẩm phán triệu tập người làm chứng.
+6. Được biết và ghi chép, sao chụp tài liệu, chứng cứ do người tham gia thủ tục phục hồi, phá sản xuất trình hoặc do Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản thu thập, trừ tài liệu, chứng cứ có liên quan đến bí mật nhà nước, bí mật nghề nghiệp, bí mật kinh doanh, bí mật cá nhân, bí mật gia đình theo yêu cầu chính đáng của người tham gia thủ tục phá sản.
+7. Đề nghị áp dụng, thay đổi, hủy bỏ biện pháp khẩn cấp tạm thời.
+8. Nhận văn bản, thông báo hợp lệ để thực hiện quyền, nghĩa vụ của mình.
+9. Tự bảo vệ hoặc ủy quyền người khác bảo vệ quyền và lợi ích hợp pháp cho mình.
+10. Tham gia Hội nghị chủ nợ.
+11. Đề xuất chỉ định, thay đổi Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản theo quy định tại Điều 11 của Luật này.
+12. Đề nghị Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản bổ sung chủ nợ, người mắc nợ vào danh sách chủ nợ, người mắc nợ.
+13. Đề xuất với Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản về việc thu hồi các khoản tiền, tài sản của người mắc nợ.
+14. Phải có mặt theo yêu cầu của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, giấy triệu tập của Tòa án và chấp hành các quyết định của Tòa án trong quá trình giải quyết vụ việc phục hồi, phá sản.
+15. Tham gia vào việc quản lý, thanh lý tài sản theo yêu cầu của Thẩm phán, cơ quan thi hành án dân sự, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản trong quá trình giải quyết vụ việc phục hồi, phá sản.
+16. Đề nghị xem xét lại quyết định của Tòa án theo quy định của Luật này.
+17. Yêu cầu Tòa án áp dụng thủ tục phục hồi, phá sản rút gọn.
+18. Thiện chí, trung thực và tôn trọng cam kết, thỏa thuận.
+19. Không được thực hiện hành vi nhằm che giấu, tẩu tán tài sản của doanh nghiệp, hợp tác xã; không được lợi dụng thủ tục phục hồi, phá sản để xâm phạm đến quyền, lợi ích hợp pháp của Nhà nước, cơ quan, tổ chức, cá nhân.
+20. Trường hợp cá nhân tham gia thủ tục phục hồi, phá sản chết thì người thừa kế hợp pháp của họ thực hiện quyền, nghĩa vụ theo quy định tại Điều này.
+21. Các quyền, nghĩa vụ khác theo quy định của pháp luật.
+Điều 14. Ban đại diện chủ nợ
+1. Sau khi thụ lý đơn yêu cầu áp dụng thủ tục phục hồi, mở thủ tục phá sản, Tòa án có thể quyết định thành lập Ban đại diện chủ nợ, trừ trường hợp vụ việc được giải quyết theo thủ tục rút gọn. Ban đại diện chủ nợ có không quá 05 thành viên gồm chủ nợ có số nợ lớn, chủ nợ đại diện cho nhóm chủ nợ có số nợ lớn của doanh nghiệp, hợp tác xã.
+2. Quyền, nghĩa vụ của Ban đại diện chủ nợ:
+a) Trình bày ý kiến về phương án phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã;
+b)Yêu cầu Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản kiểm tra tình hình tài chính của doanh nghiệp, hợp tác xã sau khi được công nhận phương án phục hồi hoạt động kinh doanh;
+c) Đề nghị sao chụp tài liệu, chứng cứ liên quan đến vụ việc phục hồi, phá sản, trừ tài liệu, chứng cứ có liên quan đến bí mật nhà nước, bí mật nghề nghiệp, bí mật kinh doanh, bí mật cá nhân, bí mật gia đình theo yêu cầu chính đáng của người tham gia thủ tục phục hồi, phá sản;
+d) Chỉ định thành viên của Ban đại diện chủ nợ là người giám sát sau khi được sự đồng ý của Tòa án;
+đ) Thay mặt cho các chủ nợ thực hiện giám sát hoạt động của doanh nghiệp, hợp tác xã theo quy định của Luật này;
+e) Các quyền, nghĩa vụ khác theo quyết định của Thẩm phán, Hội nghị chủ nợ.
+3. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn khoản 1 Điều này.
+Điều 15. Trách nhiệm, nghĩa vụ của cơ quan, tổ chức, cá nhân có liên quan đến vụ việc phục hồi, phá sản
+1. Cơ quan, tổ chức, cá nhân đang quản lý, lưu giữ tài liệu, chứng cứ có liên quan đến vụ việc phục hồi, phá sản có trách nhiệm cung cấp đầy đủ, kịp thời tài liệu, chứng cứ liên quan đến vụ việc trong thời hạn 10 ngày kể từ ngày nhận được yêu cầu của chủ nợ, doanh nghiệp, hợp tác xã, Tòa án, Viện kiểm sát, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản. Trường hợp không cung cấp được tài liệu, chứng cứ thì phải trả lời bằng văn bản và nêu rõ lý do. Cơ quan quản lý thuế, cơ quan đăng ký kinh doanh, cơ quan bảo hiểm xã hội có trách nhiệm cung cấp thông tin về tình trạng nợ, tình trạng pháp lý và thông tin khác của doanh nghiệp, hợp tác xã trong quá trình giải quyết vụ việc phục hồi, phá sản trong thời hạn 03 ngày làm việc kể từ ngày nhận được yêu cầu của Tòa án.
+2. Kể từ ngày Tòa án thụ lý đơn yêu cầu áp dụng thủ tục phục hồi, quyết định mở thủ tục phá sản, người lao động, cơ quan, tổ chức, cá nhân có liên quan không được thực hiện hành vi nhằm che giấu, tẩu tán tài sản, tài liệu, chứng cứ của doanh nghiệp, hợp tác xã.
+3. Kể từ ngày nhận được quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản của Tòa án, nghiêm cấm tổ chức tín dụng mà doanh nghiệp, hợp tác xã bị tuyên bố phá sản có tài khoản thực hiện việc thanh toán các khoản nợ của doanh nghiệp, hợp tác xã bị tuyên bố phá sản, trừ trường hợp có sự đồng ý bằng văn bản của Tòa án hoặc cơ quan thi hành án dân sự.
+4. Cơ quan, tổ chức, cá nhân có liên quan có trách nhiệm thực hiện các yêu cầu, đề nghị của Tòa án và phối hợp chặt chẽ, kịp thời với Tòa án trong quá trình giải quyết vụ việc phục hồi, phá sản. Cơ quan, tổ chức, cá nhân không thực hiện yêu cầu của Tòa án mà không có lý do chính đáng thì tùy theo tính chất, mức độ vi phạm bị xử lý theo quy định của pháp luật.
+Điều 16. Kiểm sát việc tuân theo pháp luật trong quá trình giải quyết vụ việc phục hồi, phá sản
+1. Viện kiểm sát kiểm sát việc tuân theo pháp luật trong quá trình giải quyết vụ việc phục hồi, phá sản, thực hiện các quyền yêu cầu, kiến nghị, kháng nghị theo quy định của Luật này.
+2. Viện kiểm sát tham gia các phiên họp giải quyết tranh chấp, xem xét kháng nghị; kiểm sát các quyết định giải quyết vụ việc phục hồi, phá sản của Tòa án theo quy định của Luật này.
+Điều 17. Cấp, tống đạt, thông báo văn bản trong vụ việc phục hồi, phá sản
+1. Người tiến hành thủ tục phục hồi, phá sản, người có thẩm quyền thực hiện việc cấp, tống đạt, thông báo văn bản cho người tham gia thủ tục phục hồi, phá sản theo quy định của Luật này, pháp luật về tố tụng dân sự, pháp luật về giao dịch điện tử.
+2. Việc cấp, tống đạt, thông báo văn bản trong giải quyết vụ việc phục hồi, phá sản được thực hiện bằng phương thức sau đây:
+a) Trực tiếp;
+b) Qua dịch vụ bưu chính;
+c) Trên môi trường điện tử;
+d) Thông báo trên phương tiện thông tin đại chúng;
+đ) Qua người được ủy quyền thực hiện việc cấp, tống đạt, thông báo;
+e) Phương thức khác theo quy định của pháp luật.
+3. Người tham gia thủ tục phục hồi, phá sản có quyền lựa chọn và đề nghị người tiến hành thủ tục phục hồi, phá sản thực hiện việc cấp, tống đạt, thông báo, gửi văn bản cho mình theo phương thức quy định tại khoản 2 Điều này.
+4. Người tiến hành thủ tục phục hồi, phá sản, người có thẩm quyền đã hoàn thành việc cấp, tống đạt, thông báo theo phương thức quy định tại khoản 2 Điều này thì được coi là hợp lệ.
+Điều 18. Ủy thác trong quá trình giải quyết vụ việc phục hồi, phá sản
+1. Tòa án đang giải quyết vụ việc phục hồi, phá sản có thể quyết định ủy thác cho Tòa án khác thu hồi tài sản, lấy lời khai của những người tham gia thủ tục phục hồi, phá sản, thẩm định tại chỗ, định giá tài sản hoặc biện pháp khác để hỗ trợ thu thập, thẩm tra, xác minh tài liệu, chứng cứ liên quan đến vụ việc phục hồi, phá sản.
+2. Quyết định ủy thác phải có thông tin của người tham gia thủ tục phục hồi, phá sản liên quan đến việc ủy thác, nội dung ủy thác và thời hạn thực hiện ủy thác.
+3. Tòa án nhận được quyết định ủy thác có trách nhiệm thực hiện và phải thông báo bằng văn bản kết quả thực hiện cho Tòa án ra quyết định ủy thác.
+Điều 19. Lệ phí phục hồi, phá sản Người nộp đơn yêu cầu áp dụng thủ tục phục hồi, phá
+sản phải nộp lệ phí phục hồi, phá sản theo quy định của pháp luật về án phí, lệ phí Tòa án và thông báo của Tòa án. Trường hợp người nộp đơn quy định tại điểm b khoản 1, khoản 3 và khoản 4 Điều 38 và điểm c khoản 1 Điều 70 của Luật này thì không phải nộp lệ phí phá sản.
+Điều 20. Chi phí phục hồi, phá sản; tạm ứng chi phí phục hồi, phá sản
+1. Chi phí phục hồi, phá sản được thanh toán từ giá trị tài sản của doanh nghiệp, hợp tác xã. Trường hợp người nộp đơn yêu cầu áp dụng thủ tục phục hồi, phá sản không trung thực hoặc lợi dụng thủ tục phục hồi, phá sản để xâm phạm quyền, lợi ích hợp pháp của cơ quan, tổ chức, cá nhân thì phải chịu chi phí phục hồi, phá sản.
+2. Người nộp đơn yêu cầu áp dụng thủ tục phục hồi, phá sản phải nộp tạm ứng chi phí phục hồi, phá sản, trừ trường hợp người nộp đơn quy định tại điểm b khoản 1, khoản 3 và khoản 4 Điều 38 và điểm c khoản 1 Điều 70 của Luật này.
+3. Ngân sách nhà nước bảo đảm tạm ứng chi phí đối với các trường hợp quy định tại điểm b khoản 1, khoản 3 và khoản 4 Điều 38 và điểm c khoản 1 Điều 70 của Luật này.
+4. Thẩm phán quyết định mức tạm ứng chi phí phục hồi, phá sản; mức chi phí phục hồi, phá sản trong từng trường hợp cụ thể theo quy định của pháp luật và quyết định việc hoàn trả tạm ứng chi phí phục hồi, phá sản, trừ trường hợp người nộp đơn yêu cầu áp dụng thủ tục phục hồi, phá sản không trung thực, lợi dụng thủ tục phục hồi, phá sản để xâm phạm quyền, lợi ích hợp pháp của cơ quan, tổ chức, cá nhân thì phải chịu chi phí phục hồi, phá sản hoặc trường hợp doanh nghiệp, hợp tác xã không còn tiền, tài sản.
+5. Thẩm phán giao cho Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản bán một số tài sản của doanh nghiệp, hợp tác xã để bảo đảm chi phí phục hồi, phá sản. Tiền tạm ứng chi phí phá sản theo quy định tại khoản 3 Điều này được hoàn trả ngay vào ngân sách nhà nước. Trường hợp doanh nghiệp, hợp tác xã không còn tiền, tài sản thì chi phí phá sản do ngân sách nhà nước bảo đảm. Việc định giá, định giá lại và bán tài sản được thực hiện theo quy định tại Điều 77 của Luật này.
+6. Kinh phí chi trả tạm ứng chi phí phá sản, chi phí phá sản quy định tại khoản 3 và khoản 5 Điều này được bố trí trong dự toán ngân sách nhà nước hằng năm của Tòa án. Việc dự toán, quản lý, sử dụng, tạm ứng, thanh toán kinh phí được thực hiện theo quy định của pháp luật về ngân sách nhà nước, pháp luật về chi phí tố tụng.
+7. Tiền tạm ứng chi phí phục hồi, phá sản do người nộp đơn nộp hoặc tiền từ việc bán tài sản của doanh nghiệp, hợp tác xã được gửi vào tài khoản ngân hàng do Tòa án, cơ quan thi hành án dân sự chỉ định để chi trả chi phí phục hồi, phá sản.
+Điều 21. Chi phí Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản trong vụ việc phục hồi, phá sản
+1. Chi phí Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản được tính dựa trên thời gian, công sức và kết quả thực hiện nhiệm vụ của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản.
+2. Chính phủ quy định chi tiết Điều này.
+Điều 22. Thương lượng, hòa giải
+1. Khuyến khích doanh nghiệp, hợp tác xã, chủ nợ, người tham gia thủ tục phục hồi, phá sản khác thực hiện thương lượng, hòa giải trong quá trình giải quyết vụ việc phục hồi, phá sản.
+2. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản có trách nhiệm tiến hành hòa giải theo đề nghị của doanh nghiệp, hợp tác xã, chủ nợ, người tham gia thủ tục phục hồi, phá sản khác.
+3. Thẩm phán có trách nhiệm tiến hành hòa giải tranh chấp liên quan đến tài sản của doanh nghiệp, hợp tác xã trong thủ tục phá sản theo đề nghị của người tham gia thủ tục phá sản. Trường hợp các bên thỏa thuận được với nhau về việc giải quyết tranh chấp thì Thẩm phán lập biên bản hòa giải thành và ra quyết định công nhận sự thỏa thuận của các bên.
+4. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn khoản 2 và khoản 3 Điều này.
+Điều 23. Giải quyết vụ việc phục hồi, phá sản trên môi trường điện tử
+1. Trong quá trình giải quyết vụ việc phục hồi, phá sản, các thủ tục sau đây có thể được thực hiện trên môi trường điện tử:
+a) Cấp, tống đạt, thông báo văn bản;
+b) Nộp đơn yêu cầu áp dụng thủ tục phục hồi, phá sản;
+c) Nộp lệ phí, tạm ứng chi phí; nộp chi phí phục hồi, phá sản;
+d) Cung cấp, giao nộp tài liệu, chứng cứ;
+đ) Tiến hành phiên họp giải quyết vụ việc phục hồi, phá sản;
+e) Tổ chức bán tài sản, chuyển nhượng doanh nghiệp, hợp tác xã;
+g) Hoạt động khác theo quy định của pháp luật.
+2. Việc giải quyết vụ việc phục hồi, phá sản trên môi trường điện tử được thực hiện theo quy định của pháp luật và hướng dẫn của Tòa án nhân dân tối cao.
+3. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Chương II
+THỦ TỤC PHỤC HỒI
+Mục 1. THỤ LÝ ĐƠN YÊU CẦU
+Điều 24. Người có quyền nộp đơn yêu cầu áp dụng thủ tục phục hồi
+1. Người có quyền nộp đơn yêu cầu áp dụng thủ tục phục hồi khi doanh nghiệp, hợp tác xã có nguy cơ mất hoặc mất khả năng thanh toán bao gồm:
+a) Người đại diện theo pháp luật của doanh nghiệp, hợp tác xã;
+b) Hội đồng quản trị của công ty cổ phần, Hội đồng thành viên của công ty trách nhiệm hữu hạn hai thành viên trở lên, Hội đồng thành viên của công ty hợp danh;
+c) Đại hội thành viên của hợp tác xã;
+d) Chủ doanh nghiệp tư nhân, chủ sở hữu công ty trách nhiệm hữu hạn một thành viên.
+2. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Điều 25. Xử lý, thụ lý đơn yêu cầu áp dụng thủ tục phục hồi
+1. Người nộp đơn yêu cầu áp dụng thủ tục phục hồi phải nộp kèm theo phương án phục hồi hoạt động kinh doanh, danh sách chủ nợ, người mắc nợ và tài liệu, chứng cứ kèm theo để chứng minh cho yêu cầu của mình có căn cứ và hợp pháp đến Tòa án có thẩm quyền quy định tại Điều 6 của Luật này. Người nộp đơn phải chịu trách nhiệm về tính chính xác của thông tin về danh sách chủ nợ, người mắc nợ.
+2. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được đơn yêu cầu áp dụng thủ tục phục hồi, Chánh án Tòa án phân công một Thẩm phán hoặc tổ Thẩm phán giải quyết đơn yêu cầu áp dụng thủ tục phục hồi. Trong thời hạn 12 ngày kể từ ngày được phân công, Thẩm phán phải xem xét đơn và xử lý như sau:
+a) Thông báo nộp lệ phí phục hồi, tạm ứng chi phí phục hồi;
+b) Thông báo sửa đổi, bổ sung đơn;
+c) Thông báo về việc chuyển đơn cho Tòa án có thẩm quyền;
+d) Thông báo trả lại đơn nếu thuộc trường hợp quy định tại khoản 3 Điều này.
+3. Tòa án trả lại đơn yêu cầu áp dụng thủ tục phục hồi trong các trường hợp sau đây:
+a) Người nộp đơn không thuộc trường hợp có quyền nộp đơn theo quy định tại Điều 24 của Luật này;
+b) Người nộp đơn không thực hiện việc sửa đổi, bổ sung đơn theo quy định tại điểm b khoản 2 Điều này trong thời hạn yêu cầu;
+c) Người nộp đơn rút đơn;
+d) Người nộp đơn không nộp lệ phí phục hồi, tạm ứng chi phí phục hồi;
+đ) Không trung thực khi yêu cầu áp dụng thủ tục phục hồi;
+e) Tòa án khác đã thụ lý đơn yêu cầu áp dụng thủ tục phục hồi, áp dụng thủ tục phá sản. Thông báo trả lại đơn yêu cầu áp dụng thủ tục phục hồi tại khoản này phải nêu rõ lý do trả lại đơn. Tòa án có trách nhiệm gửi thông báo này cho người nộp đơn yêu cầu, Viện kiểm sát trong thời hạn 03 ngày làm việc kể từ ngày ra thông báo.
+4. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được thông báo trả lại đơn yêu cầu, người nộp đơn có quyền đề nghị xem xét lại, Viện kiểm sát có quyền kiến nghị với Chánh án Tòa án đã ra thông báo trả lại đơn yêu cầu. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được đơn đề nghị xem xét lại, kiến nghị đối với thông báo trả lại đơn yêu cầu áp dụng thủ tục phục hồi, Chánh án Tòa án đã ra thông báo trả lại đơn yêu cầu phải ra một trong các quyết định sau đây:
+a) Giữ nguyên thông báo trả lại đơn yêu cầu;
+b) Hủy thông báo trả lại đơn yêu cầu và thụ lý đơn theo quy định của Luật này. Quyết định giải quyết của Chánh án Tòa án đã ra thông báo trả lại đơn yêu cầu là quyết định cuối cùng. Quyết định này phải được gửi cho người nộp đơn, Viện kiểm sát đã kiến nghị trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định.
+5. Tòa án thụ lý đơn yêu cầu khi doanh nghiệp, hợp tác xã đã nộp lệ phí phục hồi, tạm ứng chi phí phục hồi. Trường hợp cần thiết, trước khi thụ lý đơn yêu cầu, Thẩm phán có thể triệu tập phiên họp với sự tham gia của người nộp đơn, cơ quan, tổ chức, cá nhân có liên quan để xem xét, kiểm tra căn cứ yêu cầu áp dụng thủ tục phục hồi.
+6. Thông báo thụ lý đơn yêu cầu phải bằng văn bản và phải được gửi cho người nộp đơn, Viện kiểm sát, cơ quan thi hành án dân sự, cơ quan, tổ chức, cá nhân có liên quan và đăng trên Cổng thông tin điện tử quốc gia về phục hồi, phá sản doanh nghiệp, hợp tác xã trong thời hạn 03 ngày làm việc kể từ ngày Tòa án thụ lý đơn.
+7. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Điều 26. Xác minh danh sách chủ nợ, người mắc nợ
+1. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản thực hiện kiểm tra, tổng hợp, rà soát, đối chiếu danh sách chủ nợ, người mắc nợ và báo cáo Thẩm phán.
+2. Trường hợp cần thiết, Tòa án triệu tập người tham gia thủ tục phục hồi để xác minh danh sách chủ nợ, người mắc nợ hoặc yêu cầu doanh nghiệp, hợp tác xã sửa đổi, bổ sung danh sách chủ nợ, người mắc nợ.
+Điều 27. Tạm đình chỉ, tạm dừng giải quyết yêu cầu doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản của doanh nghiệp, hợp tác xã
+Trong thời hạn 05 ngày làm việc kể từ ngày nhận được thông báo của Tòa án về việc thụ lý đơn yêu cầu áp dụng thủ tục phục hồi, việc tạm đình chỉ, tạm dừng thực hiện nghĩa vụ về tài sản của doanh nghiệp, hợp tác xã được thực hiện như sau:
+1. Cơ quan thi hành án dân sự phải tạm đình chỉ thi hành án dân sự về tài sản mà doanh nghiệp, hợp tác xã là người phải thi hành án, trừ bản án, quyết định sau đây:
+a) Bản án, quyết định buộc doanh nghiệp, hợp tác xã bồi thường về tính mạng, sức khỏe, danh dự hoặc trợ cấp thôi việc, trả lương cho người lao động;
+b) Quyết định kê biên tài sản của doanh nghiệp, hợp tác xã để sung quỹ nhà nước;
+c) Bản án, quyết định buộc doanh nghiệp, hợp tác xã thực hiện nghĩa vụ được bảo đảm bằng tài sản của bên thứ ba;
+d) Trường hợp khác theo quy định của pháp luật. Việc tạm đình chỉ được thực hiện theo quy định của pháp luật về thi hành án dân sự. Cơ quan thi hành án dân sự phải thông báo ngay kết quả thi hành bản án, quyết định quy định tại khoản này cho Tòa án đang tiến hành thủ tục phục hồi để Tòa án xác định nghĩa vụ tài sản của doanh nghiệp, hợp tác xã và cập nhật danh sách chủ nợ, người mắc nợ;
+2. Cơ quan, tổ chức có thẩm quyền khác theo quy định của pháp luật tạm dừng việc xử lý tài sản bảo đảm của doanh nghiệp, hợp tác xã đối với chủ nợ có bảo đảm, trừ trường hợp pháp luật có quy định khác. Chính phủ quy định chi tiết khoản này;
+3. Trường hợp tài sản bảo đảm được sử dụng để thực hiện phương án phục hồi hoạt động kinh doanh thì thời hạn xử lý tài sản bảo đảm theo nghị quyết của Hội nghị chủ nợ. Trường hợp tài sản bảo đảm không được sử dụng để thực hiện phương án phục hồi hoạt động kinh doanh thì xử lý theo thời hạn quy định trong hợp đồng. Việc xử lý tài sản bảo đảm được thực hiện theo quy định tại khoản 2 và khoản 3 Điều 44 của Luật này;
+4. Cơ quan, tổ chức có thẩm quyền theo quy định của pháp luật phải tạm dừng việc cưỡng chế, thu hồi nợ và các biện pháp khác nhằm buộc doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản của doanh nghiệp, hợp tác xã.
+Mục 2. HOẠT ĐỘNG CỦA DOANH
+NGHIỆP, HỢP TÁC XÃ SAU KHI TÒA ÁN THỤ LÝ ĐƠN YÊU CẦU
+Điều 28. Phương án phục hồi hoạt động kinh doanh
+1. Phương án phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã phải nêu rõ biện pháp để phục hồi hoạt động kinh doanh không trái quy định của pháp luật; điều kiện, thời hạn và kế hoạch thanh toán khoản nợ.
+2. Kế hoạch thanh toán các khoản nợ phải bảo đảm thứ tự ưu tiên thanh toán sau đây:
+a) Chi phí phục hồi;
+b) Khoản nợ tiền lương, khoản nợ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế, bảo hiểm tai nạn lao động, bệnh nghề nghiệp; trợ cấp thôi việc và quyền lợi khác của người lao động theo thỏa ước lao động tập thể, hợp đồng lao động đã ký kết;
+c) Khoản nợ phát sinh nhằm mục đích phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã;
+d) Khoản nợ có bảo đảm;
+đ) Các khoản nợ khác.
+3. Trong thời hạn 30 ngày kể từ ngày thụ lý đơn yêu cầu áp dụng thủ tục phục hồi, doanh nghiệp, hợp tác xã hoàn thiện phương án phục hồi hoạt động kinh doanh để Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản báo cáo Thẩm phán.
+Điều 29. Thời hạn thực hiện phương án phục hồi hoạt động kinh doanh
+1. Thời hạn thực hiện phương án phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã theo nghị quyết của Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh.
+2. Trường hợp Hội nghị chủ nợ không xác định được thời hạn thực hiện phương án phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã thì thời hạn thực hiện phương án phục hồi hoạt động kinh doanh là không quá 03 năm kể từ ngày Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh.
+3. Chính sách hỗ trợ của Nhà nước đối với doanh nghiệp, hợp tác xã khi thực hiện phục hồi theo thời hạn thực hiện phương án phục hồi hoạt động kinh doanh nhưng không quá 03 năm kể từ ngày Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh, trừ trường hợp quy định tại khoản 3 Điều 30 của Luật này và trường hợp pháp luật có quy định khác.
+Điều 30. Hoạt động kinh doanh của doanh nghiệp, hợp tác xã sau khi Tòa án thụ lý đơn yêu cầu
+1. Sau khi Tòa án thụ lý đơn yêu cầu, doanh nghiệp, hợp tác xã vẫn tiếp tục hoạt động kinh doanh, nhưng phải chịu sự giám sát của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản và Ban đại diện chủ nợ.
+2. Trường hợp xét thấy người đại diện theo pháp luật của doanh nghiệp, hợp tác xã không có khả năng điều hành hoặc doanh nghiệp, hợp tác xã có dấu hiệu vi phạm quy định tại Điều 31 của Luật này thì theo đề nghị của Ban đại diện chủ nợ, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, người quy định tại các điểm b, c và d khoản 1 Điều 24 của Luật này, Hội nghị chủ nợ hoặc khi xét thấy cần thiết, Thẩm phán có thể xem xét, quyết định lựa chọn người khác là người đại diện theo pháp luật của doanh nghiệp, hợp tác xã. Chính phủ quy định về việc thay đổi người đại diện theo pháp luật của doanh nghiệp có vốn nhà nước.
+3. Kể từ ngày thụ lý đơn yêu cầu áp dụng thủ tục phục hồi thì doanh nghiệp, hợp tác xã được khoanh tiền thuế nợ theo đề nghị của Tòa án, tạm dừng đóng vào quỹ hưu trí và tử tuất. Thời hạn khoanh tiền thuế nợ, tạm dừng đóng vào quỹ hưu trí và tử tuất thực hiện theo quy định pháp luật về quản lý thuế, pháp luật về bảo hiểm xã hội.
+4. Các khoản nợ phát sinh trước khi thụ lý đơn yêu cầu áp dụng thủ tục phục hồi bị tạm dừng thanh toán kể từ thời điểm thụ lý đơnyêu cầu áp dụng thủ tục phục hồi cho đến thời điểm Tòa án công nhận phương án phục hồi hoạt động kinh doanh hoặc đình chỉ thủ tục phục hồi hoạt động kinh doanh, trừ trường hợp thanh toán chi phí cần thiết để duy trì hoạt động của doanh nghiệp, hợp tác xã theo quyết định của Thẩm phán.
+5. Kể từ ngày thụ lý đơn yêu cầu, các khoản nợ được tiếp tục tính lãi nhưng được tạm dừng việc trả lãi cho đến thời điểm Tòa án công nhận phương án phục hồi hoạt động kinh doanh hoặc đình chỉ thủ tục phục hồi hoạt động kinh doanh, trừ trường hợp quy định tại khoản 6 Điều này hoặc trường hợp pháp luật có quy định khác.
+6. Đối với khoản nợ mới phát sinh sau ngày Tòa án thụ lý đơn yêu cầu nhằm mục đích phục hồi doanh nghiệp, hợp tác xã thì tiền lãi của khoản nợ đó được xác định theo thỏa thuận nhưng không trái với quy định của pháp luật.
+7. Việc chuyển nhượng đồng bộ tài sản, chuyển nhượng một phần hoặc toàn bộ mảng kinh doanh, hoạt động kinh doanh; chuyển nhượng một phần hoặc toàn bộ doanh nghiệp, hợp tác xã do Hội nghị chủ nợ xem xét, quyết định. Trình tự, thủ tục, điều kiện chuyển nhượng tài sản được thực hiện theo quy định của pháp luật.
+Điều 31. Hoạt động của doanh nghiệp, hợp tác xã bị cấm sau khi Tòa án thụ lý đơn yêu cầu
+1. Sau khi Tòa án thụ lý đơn yêu cầu, doanh nghiệp, hợp tác xã không được thực hiện các hoạt động sau đây:
+a) Cất giấu, tẩu tán, tặng cho tài sản;
+b) Từ bỏ quyền đòi nợ;
+c) Thanh toán khoản nợ phát sinh trước khi Tòa án thụ lý đơn yêu cầu;
+d) Chuyển khoản nợ không có bảo đảm thành nợ có bảo đảm hoặc có bảo đảm một phần bằng tài sản của doanh nghiệp, hợp tác xã;
+đ) Phân chia lợi nhuận, phân phối thu nhập.
+2. Các hoạt động quy định tại các điểm c, d và đ khoản 1 Điều này được thực hiện trong trường hợp Luật này, pháp luật có quy định khác hoặc được sự cho phép của Thẩm phán.
+Điều 32. Giám sát hoạt động của doanh nghiệp, hợp tác xã sau khi Tòa án thụ lý đơn yêu cầu
+1. Sau khi Tòa án thụ lý đơn yêu cầu, doanh nghiệp, hợp tác xã phải báo cáo Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản để giám sát trước khi thực hiện các hoạt động sau đây:
+a) Hoạt động liên quan đến việc vay; cầm cố, thế chấp, bảo lãnh và các biện pháp bảo đảm thực hiện nghĩa vụ khác; mua bán, chuyển nhượng, cho thuê tài sản; bán, chuyển nhượng cổ phần, phần vốn góp; chuyển quyền sở hữu tài sản;
+b) Chấm dứt thực hiện hợp đồng có hiệu lực;
+c) Thanh toán khoản nợ phát sinh sau khi Tòa án thụ lý đơn yêu cầu, khoản trả lương cho người lao động trong doanh nghiệp, hợp tác xã;
+d) Giao dịch khác không phù hợp với lợi ích của doanh nghiệp, hợp tác xã.
+2. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản phải báo cáo Thẩm phán về nội dung giám sát.
+Mục 3. HỘI NGHỊ CHỦ NỢ
+Điều 33. Hội nghị chủ nợ
+1. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được phương án phục hồi hoạt động kinh doanh, Thẩm phán xem xét, quyết định triệu tập Hội nghị chủ nợ để quyết định nội dung quy định tại các điểm a, b và c khoản 7 Điều này.
+2. Thẩm phán còn có thể triệu tập Hội nghị chủ nợ để xem xét, quyết định nội dung sau đây:
+a) Chuyển nhượng đồng bộ tài sản, chuyển nhượng một phần hoặc toàn bộ mảng kinh doanh, hoạt động kinh doanh; chuyển nhượng một phần hoặc toàn bộ doanh nghiệp, hợp tác xã;
+b) Đề xuất xử lý nghĩa vụ về tài sản của doanh nghiệp, hợp tác xã trong trường hợp bị tạm đình chỉ, tạm dừng theo quy định tại Điều 27 của Luật này;
+c) Các vấn đề khác có liên quan.
+3. Những người sau đây có quyền tham gia Hội nghị chủ nợ:
+a) Chủ nợ có tên trong danh sách chủ nợ. Chủ nợ có thể ủy quyền bằng văn bản cho người khác tham gia Hội nghị chủ nợ. Chủ nợ không tham gia Hội nghị chủ nợ nhưng có ý kiến bằng văn bản gửi cho Thẩm phán trước ngày tổ chức Hội nghị chủ nợ thì coi như tham gia và biểu quyết tại Hội nghị chủ nợ;
+b) Đại diện cho người lao động, công đoàn, tổ chức của người lao động tại doanh nghiệp được người lao động ủy quyền. Trường hợp này đại diện cho người lao động, công đoàn, tổ chức của người lao động tại doanh nghiệp có quyền, nghĩa vụ như chủ nợ.
+4. Những người sau đây có nghĩa vụ tham gia Hội nghị chủ nợ:
+a) Người nộp đơn yêu cầu áp dụng thủ tục phục hồi quy định tại Điều 24 của Luật này, người đại diện theo pháp luật của doanh nghiệp, hợp tác xã; trường hợp không tham gia được thì phải ủy quyền bằng văn bản cho người khác tham gia Hội nghị chủ nợ;
+b) Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản.
+5. Quản tài viên điều hành phiên họp Hội nghị chủ nợ.
+6. Nghị quyết của Hội nghị chủ nợ được thông qua khi có số chủ nợ đại diện cho từ 65% tổng số nợ của chủ nợ tham gia biểu quyết tán thành. Nghị quyết của Hội nghị chủ nợ có hiệu lực bắt buộc đối với tất cả chủ nợ. Chủ nợ tham gia Hội nghị chủ nợ chịu trách nhiệm về tính hợp pháp của nghị quyết của Hội nghị chủ nợ.
+7. Hội nghị chủ nợ có quyền ban hành nghị quyết trong đó có một trong các kết luận sau đây:
+a) Thông qua phương án phục hồi hoạt động kinh doanh đối với doanh nghiệp, hợp tác xã;
+b) Đề nghị đình chỉ thủ tục phục hồi;
+c) Đề nghị áp dụng thủ tục phá sản trong trường hợp doanh nghiệp, hợp tác xã mất khả năng thanh toán và phải có nội dung về nghĩa vụ tạm ứng chi phí phá sản;
+d) Các nội dung quy định tại khoản 2 Điều này.
+8. Trong thời hạn 03 ngày làm việc kể từ ngày tổ chức Hội nghị chủ nợ, Tòa án gửi nghị quyết của Hội nghị chủ nợ cho Viện kiểm sát, người có quyền, nghĩa vụ tham gia Hội nghị chủ nợ.
+Điều 34. Xem xét, công nhận nghị quyết của Hội nghị chủ nợ
+1. Trong thời hạn 07 ngày kể từ ngày nghị quyết của Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh thì Thẩm phán ra một trong các quyết định sau đây:
+a) Công nhận nghị quyết của Hội nghị chủ nợ. Nghị quyết của Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh có hiệu lực kể từ ngày Thẩm phán ra quyết định công nhận;
+b) Không công nhận nghị quyết của Hội nghị chủ nợ và đình chỉ thủ tục phục hồi trong trường hợp nghị quyết của Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh có nội dung vi phạm điều cấm của pháp luật.
+2. Kể từ ngày nghị quyết của Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh có hiệu lực thì những biện pháp cấm, giám sát đã áp dụng đối với doanh nghiệp, hợp tác xã theo quy định tại Điều 31 và Điều 32 của Luật này đương nhiên chấm dứt.
+3. Quyết định quy định tại khoản 1 Điều này được gửi cho Viện kiểm sát, người có quyền, nghĩa vụ tham gia Hội nghị chủ nợ trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định.
+4. Trong thời hạn 05 ngày làm việc kể từ ngày thông qua nghị quyết của Hội nghị chủ nợ đề nghị áp dụng thủ tục phá sản theo quy định tại điểm c khoản 7 Điều 33 của Luật này, Thẩm phán xem xét, yêu cầu người có nghĩa vụ nộp tạm ứng chi phí phá sản nộp tạm ứng và tùy từng trường hợp xử lý như sau:
+a) Trường hợp không nộp tạm ứng chi phí phá sản thì Thẩm phán ra quyết định đình chỉ thủ tục phục hồi và không áp dụng thủ tục phá sản, trừ trường hợp doanh nghiệp, hợp tác xã không còn tài sản để nộp tạm ứng chi phí phá sản thì Tòa án ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản theo thủ tục rút gọn;
+b) Trường hợp đã nộp tạm ứng chi phí phá sản thì Thẩm phán ra quyết định đình chỉ thủ tục phục hồi và thụ lý vụ việc phá sản.
+Mục 4. THỰC HIỆN PHƯƠNG ÁN PHỤC
+HỒI HOẠT ĐỘNG KINH DOANH
+Điều 35. Giám sát thực hiện phương án phục hồi hoạt động kinh doanh
+1. Sau khi Thẩm phán ra quyết định công nhận nghị quyết của Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, Ban đại diện chủ nợ, chủ nợ giám sát hoạt động kinh doanh của doanh nghiệp, hợp tác xã.
+2. Định kỳ 03 tháng một lần, doanh nghiệp, hợp tác xã phải lập báo cáo về tình hình thực hiện phương án phục hồi hoạt động kinh doanh cho Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, Ban đại diện chủ nợ hoặc chủ nợ. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản có trách nhiệm báo cáo Thẩm phán.
+Điều 36. Sửa đổi, bổ sung phương án phục hồi hoạt động kinh doanh
+1. Trong quá trình thực hiện phương án phục hồi hoạt động kinh doanh, các chủ nợ và doanh nghiệp, hợp tác xã có quyền thỏa thuận về việc sửa đổi, bổ sung phương án phục hồi hoạt động kinh doanh.
+2. Nghị quyết về việc sửa đổi, bổ sung phương án phục hồi hoạt động kinh doanh được thông qua khi có số chủ nợ đại diện cho từ 65% tổng số nợ của chủ nợ tham gia biểu quyết tán thành.
+3. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản gửi văn bản đề nghị Thẩm phán ra quyết định công nhận nghị quyết về việc sửa đổi, bổ sung phương án phục hồi hoạt động kinh doanh. Quyết định công nhận được gửi cho doanh nghiệp, hợp tác xã, chủ nợ và Quản tài viên trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định.
+Điều 37. Đình chỉ, hậu quả của việc đình chỉ thủ tục phục hồi
+1. Thẩm phán quyết định đình chỉ thủ tục phục hồi khi thuộc một trong các trường hợp sau đây:
+a) Người nộp đơn rút đơn sau ngày thụ lý đơn và trước ngày Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh;
+b) Hội nghị chủ nợ không thông qua được nghị quyết theo quy định tại các điểm a, b và c khoản 7 Điều 33 của Luật này;
+c) Nghị quyết của Hội nghị chủ nợ đề nghị đình chỉ thủ tục phục hồi;
+d) Thẩm phán không công nhận nghị quyết của Hội nghị chủ nợ;
+đ) Doanh nghiệp, hợp tác xã không hoàn thiện hoặc không thực hiện phương án phục hồi hoạt động kinh doanh;
+e) Hết thời hạn thực hiện phương án phục hồi hoạt động kinh doanh nhưng không hoàn thành phương án phục hồi hoạt động kinh doanh;
+g) Doanh nghiệp, hợp tác xã đã hoàn thành phương án phục hồi hoạt động kinh doanh;
+h) Doanh nghiệp, hợp tác xã không còn nguy cơ mất khả năng thanh toán hoặc mất khả năng thanh toán;
+i) Các trường hợp khác theo quy định của pháp luật.
+2. Tòa án gửi quyết định đình chỉ thủ tục phục hồi cho người tham gia thủ tục phục hồi, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, Viện kiểm sát, cơ quan thi hành án dân sự, cơ quan, tổ chức có liên quan trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định.
+3. Hậu quả của việc đình chỉ thủ tục phục hồi được quy định như sau:
+a) Khi có quyết định đình chỉ thủ tục phục hồi, nhiệm vụ, quyền hạn của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản chấm dứt; người đã nộp tạm ứng chi phí phục hồi được hoàn trả tạm ứng chi phí còn lại;
+b) Biện pháp cấm, giám sát đã áp dụng đối với doanh nghiệp, hợp tác xã theo quy định tại các điều 31, 32 và 35 của Luật này chấm dứt. Trường hợp đình chỉ thủ tục phục hồi theo quy định tại điểm b khoản 4 Điều 34 của Luật này thì các biện pháp cấm, giám sát đối với doanh nghiệp, hợp tác xã được thực hiện theo quy định tại Điều 42 của Luật này;
+c) Trường hợp nghĩa vụ về tài sản bị tạm đình chỉ, tạm dừng chưa được thanh toán thì Tòa án thông báo cho cơ quan thi hành án dân sự, cơ quan, tổ chức có thẩm quyền đã ra quyết định tạm đình chỉ, tạm dừng để ra quyết định tiếp tục thi hành án, thực hiện biện pháp buộc doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản;
+d) Trường hợp nghĩa vụ về tài sản bị tạm đình chỉ, tạm dừng đã được thanh toán thì Tòa án thông báo cho cơ quan thi hành án dân sự, cơ quan, tổ chức có thẩm quyền để ra quyết định đình chỉ thi hành án, dừng thực hiện biện pháp buộc doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản.
+4. Trường hợp đình chỉ thủ tục phục hồi theo quy định tại điểm d khoản 1 Điều này thì trong thời hạn 10 ngày kể từ ngày nhận được quyết định, người tham gia thủ tục phục hồi có quyền đề nghị xem xét lại, Viện kiểm sát có quyền kiến nghị quyết định đình chỉ thủ tục phục hồi với Chánh án Tòa án đang giải quyết thủ tục phục hồi.
+5. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được đề nghị xem xét lại, kiến nghị quy định tại khoản 4 Điều này, Chánh án Tòa án phải xem xét, ra một trong các quyết định sau đây:
+a) Giữ nguyên quyết định đình chỉ thủ tục phục hồi;
+b) Hủy quyết định đình chỉ thủ tục phục hồi và giao cho Thẩm phán tiếp tục tiến hành thủ tục phục hồi.
+6. Quyết định giải quyết đề nghị xem xét lại, kiến nghị quyết định đình chỉ thủ tục phục hồi phải gửi cho người đã đề nghị xem xét lại, kiến nghị, doanh nghiệp, hợp tác xã và những người khác có liên quan trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định.
+Chương III
+THỦ TỤC PHÁ SẢN
+Mục 1. THỤ LÝ ĐƠN YÊU CẦU
+Điều 38. Người có quyền, nghĩa vụ nộp đơn yêu cầu áp dụng thủ tục phá sản
+1. Người có quyền nộp đơn yêu cầu áp dụng thủ tục phá sản khi doanh nghiệp, hợp tác xã mất khả năng thanh toán bao gồm:
+a) Chủ nợ không có bảo đảm, chủ nợ có bảo đảm một phần;
+b) Người lao động, công đoàn có quyền nộp đơn yêu cầuáp dụng thủ tục phá sản khi hết thời hạn 06 tháng kể từ ngày phải thực hiện nghĩa vụ trả lương, các khoản nợ khác đến hạn đối với người lao động mà doanh nghiệp, hợp tác xã không thực hiện nghĩa vụ thanh toán;
+c) Cổ đông, nhóm cổ đông sở hữu từ 20% số cổ phần phổ thông trở lên hoặc tỷ lệ nhỏ hơn trong trường hợp Điều lệ công ty quy định;
+d) Thành viên, nhóm thành viên sở hữu từ 65% tổng số vốn điều lệ của công ty trách nhiệm hữu hạn hai thành viên trở lên hoặc tỷ lệ nhỏ hơn trong trường hợp Điều lệ công ty quy định;
+đ) Thành viên hợp tác xã hoặc người đại diện theo pháp luật của hợp tác xã thành viên của liên hiệp hợp tác xã.
+2. Những người sau đây có nghĩa vụ nộp đơn yêu cầuáp dụng thủ tục phá sản khi doanh nghiệp, hợp tác xã mất khả năng thanh toán, trừ trường hợp đã nộp đơn yêu cầu áp dụng thủ tục phục hồi:
+a) Người đại diện theo pháp luật của doanh nghiệp, hợp tác xã;
+b) Hội đồng quản trị của công ty cổ phần, Hội đồng thành viên của công ty trách nhiệm hữu hạn hai thành viên trở lên, Hội đồng thành viên của công ty hợp danh;
+c) Đại hội thành viên của hợp tác xã;
+d) Chủ doanh nghiệp tư nhân; chủ sở hữu công ty trách nhiệm hữu hạn một thành viên.
+3. Cơ quan quản lý thuế phải nộp đơn yêu cầu áp dụng thủ tục phá sản đối với doanh nghiệp, hợp tác xã theo quy định của Luật Quản lý thuế. Chính phủ quy định điều kiện nộp đơn yêu cầu áp dụng thủ tục phá sản.
+4. Cơ quan bảo hiểm xã hội có quyền nộp đơn yêu cầuáp dụng thủ tục phá sản đối với doanh nghiệp, hợp tác xã khi cơ quan bảo hiểm xã hội đã thông báo đôn đốc đối với khoản chậm, trốn đóng bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế nhưng không có phản hồi trong 03 năm liên tiếp gần nhất theo quy định của pháp luật về bảo hiểm xã hội, bảo hiểm thất nghiệp, bảo hiểm y tế.
+5. Cá nhân, cơ quan, tổ chức theo quy định tại khoản 2 và khoản 3 Điều này không nộp đơn yêu cầu áp dụng thủ tục phá sản thì phải chịu trách nhiệm trước pháp luật. Trường hợp người quy định tại khoản 2 Điều này không nộp đơn yêu cầu áp dụng thủ tục phá sản mà có thiệt hại phát sinh sau thời điểm doanh nghiệp, hợp tác xã mất khả năng thanh toán do việc không nộp đơn gây ra thì phải bồi thường.
+6. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn khoản 2 Điều này.
+Điều 39. Xử lý, thụ lý đơn yêu cầu áp dụng thủ tục phá sản
+1. Người có quyền, nghĩa vụ nộp đơn yêu cầu áp dụng thủ tục phá sản phải nộp đơn, danh sách chủ nợ, người mắc nợ (nếu có) và tài liệu, chứng cứ kèm theo để chứng minh cho yêu cầu của mình có căn cứ và hợp pháp đến Tòa án có thẩm quyền quy định tại Điều 6 của Luật này.
+2. Trong thời hạn 02 ngày làm việc kể từ ngày nhận được đơn của người yêu cầu quy định tại Điều 38 của Luật này, Chánh án Tòa án phân công một Thẩm phán hoặc tổ Thẩm phán giải quyết đơn yêu cầuáp dụng thủ tục phá sản. Trong thời hạn 02 ngày làm việc kể từ ngày được phân công, Thẩm phán phải thông báo cho doanh nghiệp, hợp tác xã bị yêu cầu áp dụng thủ tục phá sản. Trong thời hạn 05 ngày làm việc kể từ ngày gửi thông báo, doanh nghiệp, hợp tác xã phải có ý kiến bằng văn bản về yêu cầu áp dụng thủ tục phá sản và tài liệu, chứng cứ kèm theo. Trong thời hạn 07 ngày, kể từ ngày gửi thông báo, Thẩm phán xem xét, xử lý như sau:
+a) Yêu cầu nộp lệ phí phá sản, tạm ứng chi phí phá sản, trừ trường hợp không phải nộp lệ phí phá sản, tạm ứng chi phí phá sản;
+b)Yêu cầu sửa đổi, bổ sung đơn;
+c) Chuyển đơn cho Tòa án có thẩm quyền;
+d) Trả lại đơn nếu thuộc trường hợp quy định tại khoản 3 Điều này.
+3. Tòa án quyết định trả lại đơn yêu cầu áp dụng thủ tục phá sản trong các trường hợp sau đây:
+a) Người nộp đơn không có quyền, nghĩa vụ nộp đơn quy định tại Điều 38 của Luật này;
+b) Người nộp đơn không thực hiện việc sửa đổi, bổ sung đơn theo quy định tại điểm b khoản 2 Điều này trong thời hạn theo quy định của pháp luật;
+c) Tòa án khác đã thụ lý đơn yêu cầu áp dụng thủ tục phục hồi, áp dụng thủ tục phá sản;
+d) Người nộp đơn rút đơn;
+đ) Người nộp đơn không nộp lệ phí phá sản, tạm ứng chi phí phá sản, trừ trường hợp không phải nộp lệ phí phá sản, tạm ứng chi phí phá sản. Thông báo trả lại đơn yêu cầu áp dụng thủ tục phá sản tại khoản này phải nêu rõ lý do trả lại đơn. Tòa án có trách nhiệm gửi thông báo này cho người nộp đơn yêu cầu áp dụng thủ tục phá sản, Viện kiểm sát nhân dân cùng cấp trong thời hạn 03 ngày làm việc kể từ ngày thông báo.
+4. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được thông báo trả lại đơn yêu cầu, người nộp đơn có quyền đề nghị xem xét lại, Viện kiểm sát có quyền kiến nghị với Chánh án Tòa án đã ra thông báo trả lại đơn yêu cầu. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được đơn đề nghị xem xét lại, kiến nghị đối với thông báo trả lại đơn yêu cầu, Chánh án Tòa án đã ra thông báo trả lại đơn yêu cầu phải ra một trong các quyết định sau đây:
+a) Giữ nguyên thông báo trả lại đơn yêu cầu;
+b) Hủy thông báo trả lại đơn yêu cầu và thụ lý đơn theo quy định của Luật này. Quyết định giải quyết của Chánh án Tòa án có thẩm quyền tại khoản này là quyết định cuối cùng. Quyết định này phải được gửi cho người nộp đơn, Viện kiểm sát đã kiến nghị trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định.
+5. Tòa án thụ lý đơn yêu cầu khi có căn cứ xác định đã nộp lệ phí phá sản, tạm ứng chi phí phá sản, trừ trường hợp không phải nộp lệ phí phá sản, tạm ứng chi phí phá sản.
+6. Thông báo về việc xử lý, thụ lý đơn yêu cầu áp dụng thủ tục phá sản phải bằng văn bản và được gửi cho người nộp đơn, doanh nghiệp, hợp tác xã, các cơ quan, tổ chức đang giải quyết vụ việc liên quan đến doanh nghiệp, hợp tác xã, chủ nợ do các bên cung cấp và Viện kiểm sát.
+7. Trường hợp Tòa án thụ lý vụ việc phá sản theo quy định tại khoản 4 Điều 34 của Luật này thì tài liệu, chứng cứ thu thập được khi áp dụng thủ tục phục hồi được sử dụng khi giải quyết thủ tục phá sản.
+8. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Điều 40. Tạm đình chỉ, tạm dừng giải quyết yêu cầu doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản Trong thời hạn 05 ngày làm việc kể từ ngày nhận được
+thông báo của Tòa án về việc thụ lý đơn yêu cầu áp dụng thủ tục phá sản, việc tạm đình chỉ thực hiện nghĩa vụ về tài sản của doanh nghiệp, hợp tác xã được thực hiện như sau:
+1. Cơ quan thi hành án dân sự phải tạm đình chỉ thi hành án dân sự về tài sản mà doanh nghiệp, hợp tác xã là người phải thi hành án, trừ bản án, quyết định sau đây:
+a) Bản án, quyết định buộc doanh nghiệp, hợp tác xã bồi thường về tính mạng, sức khỏe, danh dự hoặc trợ cấp thôi việc, trả lương cho người lao động;
+b) Quyết định kê biên tài sản của doanh nghiệp, hợp tác xã để sung quỹ nhà nước;
+c) Bản án, quyết định liên quan đến tài sản của bên thứ ba được dùng để bảo đảm cho nghĩa vụ của doanh nghiệp, hợp tác xã;
+d) Trường hợp khác theo quy định của luật. Việc tạm đình chỉ được thực hiện theo quy định của pháp luật về thi hành án dân sự. Cơ quan thi hành án dân sự phải thông báo ngay việc thi hành các bản án, quyết định quy định tại khoản này cho Tòa án đã thụ lý vụ việc phá sản;
+2. Tòa án, Trọng tài phải tạm đình chỉ việc giải quyết vụ việc dân sự, kinh doanh, thương mại, lao động có liên quan đến nghĩa vụ tài sản mà doanh nghiệp, hợp tác xã là một bên đương sự. Thủ tục tạm đình chỉ được thực hiện theo quy định của pháp luật về tố tụng dân sự, pháp luật về trọng tài thương mại. Tòa án phải tách và tạm đình chỉ giải quyết phần dân sự trong vụ án hình sự, hành chính có liên quan đến nghĩa vụ tài sản mà doanh nghiệp, hợp tác xã là một bên đương sự. Thủ tục tách, tạm đình chỉ được thực hiện theo quy định của pháp luật về tố tụng hình sự, pháp luật về tố tụng hành chính;
+3. Cơ quan, tổ chức có thẩm quyền khác theo quy định của pháp luật tạm dừng việc xử lý tài sản bảo đảm của doanh nghiệp, hợp tác xã đối với các chủ nợ có bảo đảm, trừ trường hợp pháp luật có quy định khác. Chính phủ quy định chi tiết khoản này;
+4. Trường hợp tài sản bảo đảm có nguy cơ bị phá hủy hoặc bị giảm đáng kể về giá trị thì xử lý theo quy định tại khoản 2 và khoản 3 Điều 44 của Luật này;
+5. Cơ quan, tổ chức có thẩm quyền theo quy định của pháp luật phải tạm dừng việc cưỡng chế, thu hồi nợ và các biện pháp khác nhằm buộc doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản của doanh nghiệp, hợp tác xã.
+Mục 2. MỞ THỦ TỤC PHÁ SẢN
+Điều 41. Quyết định mở hoặc không mở thủ tục phá sản
+1. Trong thời hạn 30 ngày, kể từ ngày thụ lý đơnyêu cầu áp dụng thủ tục phá sản, Thẩm phán phải ra quyết định mở hoặc không mở thủ tục phá sản.
+2. Quyết định mở hoặc không mở thủ tục phá sản có hiệu lực thi hành kể từ ngày ra quyết định.
+3. Quyết định mở hoặc không mở thủ tục phá sản của Tòa án phải được gửi cho người nộp đơn, doanh nghiệp, hợp tác xã, chủ nợ, Viện kiểm sát nhân dân cùng cấp, cơ quan thi hành án dân sự, cơ quan quản lý thuế, cơ quan đăng ký kinh doanh, cơ quan, tổ chức, cá nhân có liên quan trong thời hạn 03 ngày làm việc kể từ ngày Tòa án nhân dân ra quyết định.
+4. Trong thời hạn 10 ngày kể từ ngày nhận được quyết định mở hoặc không mở thủ tục phá sản, người tham gia thủ tục phá sản có quyền đề nghị xem xét lại, Viện kiểm sát nhân dân cùng cấp có quyền kiến nghị quyết định mở hoặc không mở thủ tục phá sản.
+5. Trong thời hạn 10 ngày, kể từ ngày nhận được đơn đề nghị xem xét lại, kiến nghị, Chánh án Tòa án phải xem xét, giải quyết như sau:
+a) Giữ nguyên quyết định mở hoặc không mở thủ tục phá sản;
+b) Hủy quyết định mở thủ tục phá sản hoặc quyết định không mở thủ tục phá sản và ra quyết định không mở thủ tục phá sản hoặc quyết định mở thủ tục phá sản;
+c) Hủy quyết định mở thủ tục phá sản hoặc quyết định không mở thủ tục phá sản và đình chỉ việc tiến hành thủ tục phá sản;
+d) Đình chỉ giải quyết đề nghị xem xét lại, kiến nghị quyết định mở hoặc không mở thủ tục phá sản trong trường hợp người đề nghị rút đơn đề nghị, Viện kiểm sát rút kiến nghị.
+6. Quyết định của Chánh án Tòa án quy định tại khoản 5 Điều này là quyết định cuối cùng và có hiệu lực thi hành. Quyết định quy định tại khoản 3 và khoản 5 Điều này được đăng trên Cổng thông tin điện tử quốc gia về phục hồi, phá sản doanh nghiệp, hợp tác xã.
+Điều 42. Hoạt động và giám sát hoạt động của doanh nghiệp, hợp tác xã sau khi có quyết định mở thủ tục phá sản
+1. Sau khi có quyết định mở thủ tục phá sản, hoạt động kinh doanh của doanh nghiệp, hợp tác xã được thực hiện theo quy định tại khoản 1 Điều 30 của Luật này. Trường hợp xét thấy người đại diện theo pháp luật của doanh nghiệp, hợp tác xã không có khả năng điều hành, doanh nghiệp, hợp tác xã có dấu hiệu vi phạm quy định tại khoản 2 Điều này thì Thẩm phán ra quyết định thay đổi người đại diện theo pháp luật của doanh nghiệp, hợp tác xã đó theo đề nghị của Ban đại diện chủ nợ, Hội nghị chủ nợ hoặc Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản hoặc người quy định tại các điểm b, c và d khoản 2 Điều 38 của Luật này.
+2. Sau khi có quyết định mở thủ tục phá sản, doanh nghiệp, hợp tác xã bị cấm thực hiện hoạt động sau đây:
+a) Cất giấu, tẩu tán, tặng cho tài sản;
+b) Từ bỏ quyền đòi nợ;
+c) Thanh toán khoản nợ không có bảo đảm, trừ khoản nợ không có bảo đảm phát sinh sau khi mở thủ tục phá sản, khoản trả lương cho người lao động trong doanh nghiệp, hợp tác xã;
+d) Chuyển khoản nợ không có bảo đảm thành nợ có bảo đảm hoặc có bảo đảm một phần bằng tài sản của doanh nghiệp, hợp tác xã;
+đ) Phân chia lợi nhuận, phân phối thu nhập.
+3. Sau khi có quyết định mở thủ tục phá sản, doanh nghiệp, hợp tác xã phải báo cáo Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, Ban đại diện chủ nợ trước khi thực hiện hoạt động quy định tại khoản 1 Điều 32 của Luật này. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản phải báo cáo Thẩm phán về nội dung giám sát.
+4. Việc chuyển nhượng đồng bộ tài sản, chuyển nhượng một phần hoặc toàn bộ mảng kinh doanh, hoạt động kinh doanh; chuyển nhượng một phần hoặc toàn bộ doanh nghiệp, hợp tác xã do Hội nghị chủ nợ xem xét, quyết định. Trình tự, thủ tục, điều kiện chuyển nhượng tài sản được thực hiện theo quy định của pháp luật.
+5. Chính phủ quy định chi tiết Điều này.
+Điều 43. Xác định tiền lãi đối với khoản nợ của doanh nghiệp, hợp tác xã
+1. Kể từ ngày ra quyết định mở thủ tục phá sản, các khoản nợ được tiếp tục tính lãi theo thỏa thuận nhưng được tạm dừng việc trả lãi, trừ trường hợp pháp luật có quy định khác. Trường hợp Thẩm phán ra quyết định đình chỉ thủ tục phá sản theo quy định tại Điều 64 của Luật này thì việc tạm dừng trả lãi chấm dứt, các bên tiếp tục thực hiện việc trả lãi theo thỏa thuận.
+2. Đối với khoản nợ mới phát sinh sau khi mở thủ tục phá sản đến thời điểm tuyên bố doanh nghiệp, hợp tác xã phá sản thì tiền lãi của khoản nợ đó được xác định theo thỏa thuận nhưng không trái với quy định của pháp luật.
+3. Kể từ ngày ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản thì các khoản nợ không được tiếp tục tính lãi.
+Điều 44. Xử lý khoản nợ có bảo đảm
+1. Sau khi mở thủ tục phá sản, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản đề xuất Thẩm phán về việc xử lý khoản nợ có bảo đảm như sau:
+a) Trường hợp tài sản bảo đảm được sử dụng để thực hiện phương án phục hồi hoạt động kinh doanh thì việc xử lý đối với tài sản bảo đảm theo nghị quyết của Hội nghị chủ nợ chỉ được thực hiện sau khi có ý kiến đồngý của chủ nợ của tài sản bảo đảm đó;
+b) Trường hợp không thực hiện phương án phục hồi hoạt động kinh doanh hoặc tài sản bảo đảm không cần thiết cho việc thực hiện phương án phục hồi hoạt động kinh doanh thì xử lý theo thời hạn quy định trong hợp đồng đối với hợp đồng có bảo đảm đã đến hạn. Đối với hợp đồng có bảo đảm chưa đến hạn thì khi tuyên bố doanh nghiệp, hợp tác xã phá sản, Thẩm phán đình chỉ hợp đồng và xử lý các khoản nợ có bảo đảm. Việc xử lý khoản nợ có bảo đảm theo quy định tại khoản 2 Điều này. Không áp dụng quy định tại điểm này đối với trường hợp quy định tại khoản 4 Điều 42 của Luật này.
+2. Việc xử lý tài sản bảo đảm được thực hiện như sau:
+a) Đối với khoản nợ có bảo đảm được xác lập trước khi Tòa án thụ lý đơn yêu cầu áp dụng thủ tục phá sản được thanh toán bằng tài sản bảo đảm đó;
+b) Trường hợp giá trị tài sản bảo đảm không đủ thanh toán số nợ thì phần nợ còn lại trở thành khoản nợ không có bảo đảm của doanh nghiệp, hợp tác xã; nếu giá trị tài sản bảo đảm lớn hơn số nợ thì phần chênh lệch được nhập vào giá trị tài sản của doanh nghiệp, hợp tác xã.
+3. Trường hợp tài sản bảo đảm có nguy cơ bị phá hủy hoặc bị giảm đáng kể về giá trị thì Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản đề nghị Thẩm phán cho xử lý ngay tài sản bảo đảm đó theo quy định tại khoản 2 Điều này.
+4. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản đề xuất Thẩm phán thực hiện việc xử lý tài sản bảo đảm quy định tại Điều này theo quy định của pháp luật, hướng dẫn của Tòa án nhân dân tối cao.
+5. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Điều 45. Nghĩa vụ về tài sản trong trường hợp nghĩa vụ liên đới hoặc bảo lãnh
+1. Trường hợp nhiều doanh nghiệp, hợp tác xã có nghĩa vụ liên đới về một khoản nợ mà một hoặc tất cả các doanh nghiệp, hợp tác xã đó mất khả năng thanh toán thì chủ nợ có quyền đòi bất cứ doanh nghiệp, hợp tác xã nào trong số các doanh nghiệp, hợp tác xã đó thực hiện việc trả nợ cho mình theo quy định của pháp luật.
+2. Trường hợp bên bảo lãnh mất khả năng thanh toán thì việc bảo lãnh được giải quyết như sau:
+a) Nếu nghĩa vụ bảo lãnh phát sinh thì bên bảo lãnh phải thực hiện nghĩa vụ bảo lãnh. Trường hợp bên bảo lãnh không thanh toán đầy đủ trong phạm vi bảo lãnh thì bên nhận bảo lãnh có quyền yêu cầu bên được bảo lãnh thanh toán phần còn thiếu;
+b) Nếu nghĩa vụ bảo lãnh chưa phát sinh thì bên được bảo lãnh phải thay thế biện pháp bảo đảm khác, trừ trường hợp người được bảo lãnh và người nhận bảo lãnh có thỏa thuận khác.
+3. Trường hợp bên được bảo lãnh hoặc cả bên bảo lãnh và bên được bảo lãnh đều mất khả năng thanh toán thì bên bảo lãnh phải chịu trách nhiệm thay cho bên được bảo lãnh theo quy định của pháp luật.
+Điều 46. Thứ tự phân chia tài sản
+1. Trường hợp Thẩm phán ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản thì tài sản của doanh nghiệp, hợp tác xã được phân chia theo thứ tự sau đây:
+a) Chi phí phá sản;
+b) Khoản nợ lương;
+c) Khoản nợ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế, bảo hiểm tai nạn lao động, bệnh nghề nghiệp;
+d) Trợ cấp thôi việc và các quyền lợi khác của người lao động theo thỏa ước lao động tập thể, hợp đồng lao động;
+đ) Khoản nợ phát sinh nhằm mục đích phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã;
+e) Nghĩa vụ tài chính đối với Nhà nước;
+g) Khoản nợ không có bảo đảm phải trả cho chủ nợ trong danh sách chủ nợ; khoản nợ có bảo đảm chưa được thanh toán do giá trị tài sản bảo đảm không đủ thanh toán nợ.
+2. Trường hợp giá trị tài sản của doanh nghiệp, hợp tác xã sau khi đã thanh toán đủ các khoản quy định tại khoản 1 Điều này mà vẫn còn thì phần còn lại này thuộc về:
+a) Thành viên hợp tác xã, hợp tác xã thành viên;
+b) Chủ doanh nghiệp tư nhân;
+c) Chủ sở hữu công ty trách nhiệm hữu hạn một thành viên;
+d) Thành viên của công ty trách nhiệm hữu hạn hai thành viên trở lên, cổ đông của công ty cổ phần;
+đ) Thành viên của Công ty hợp danh.
+3. Trường hợp giá trị tài sản của doanh nghiệp, hợp tác xã không đủ để thanh toán theo quy định tại khoản 1 Điều này thì từng đối tượng cùng một thứ tự ưu tiên được thanh toán theo tỷ lệ phần trăm tương ứng với số nợ.
+Điều 47. Trả lại tài sản nhận bảo đảm Doanh nghiệp, hợp tác xã chỉ trả lại tài sản nhận bảo
+đảm cho cá nhân, tổ chức đã giao tài sản cho doanh nghiệp, hợp tác xã để bảo đảm thực hiện nghĩa vụ của mình đối với doanh nghiệp, hợp tác xã trước khi Tòa án mở thủ tục phá sản trong trường hợp cá nhân, tổ chức đó đã thực hiện nghĩa vụ đối với doanh nghiệp, hợp tác xã.
+Điều 48. Nhận lại hàng hóa đã bán Người bán đã gửi hàng hóa cho người mua là doanh
+nghiệp, hợp tác xã nhưng chưa được thanh toán và người mua cũng chưa nhận được hàng hóa thì người bán được nhận lại hàng hóa đó. Nếu doanh nghiệp, hợp tác xã đã nhận hàng hóa đó và không thể trả lại được thì người bán trở thành chủ nợ không có bảo đảm.
+Điều 49. Giao dịch bị coi là vô hiệu
+1. Trừ trường hợp Luật này có quy định khác, giao dịch của doanh nghiệp, hợp tác xã được thực hiện trong thời gian 06 tháng trước ngày Tòa án ra quyết định mở thủ tục phá sản bị coi là vô hiệu nếu thuộc một trong các trường hợp sau đây:
+a) Giao dịch liên quan đến chuyển nhượng tài sản không theo giá thị trường;
+b) Chuyển khoản nợ không có bảo đảm thành nợ có bảo đảm hoặc có bảo đảm một phần bằng tài sản của doanh nghiệp, hợp tác xã;
+c) Thanh toán hoặc bù trừ có lợi cho một chủ nợ đối với khoản nợ chưa đến hạn hoặc với số tiền lớn hơn khoản nợ đến hạn, trừ trường hợp pháp luật có quy định khác;
+d) Tặng cho tài sản;
+đ) Giao dịch không nhằm mục đích tìm kiếm lợi nhuận của doanh nghiệp, hợp tác xã;
+e) Giao dịch khác nhằm mục đích tẩu tán tài sản của doanh nghiệp, hợp tác xã.
+2. Giao dịch của doanh nghiệp, hợp tác xã quy định tại khoản 1 Điều này được thực hiện với những người liên quan trong thời gian 18 tháng trước ngày Tòa án ra quyết định mở thủ tục phá sản thì bị coi là vô hiệu.
+3. Những người liên quan quy định tại khoản 2 Điều này được xác định theo quy định của pháp luật và hướng dẫn của Tòa án nhân dân tối cao.
+4. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản có trách nhiệm xem xét giao dịch của doanh nghiệp, hợp tác xã, nếu phát hiện giao dịch quy định tại khoản 1 và khoản 2 Điều này thì đề nghị Tòa án xem xét tuyên bố giao dịch vô hiệu.
+5. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này, trừ trường hợp quy định tại điểm c khoản 1 Điều này.
+6. Chính phủ quy định chi tiết điểm c khoản 1 Điều này.
+Điều 50. Tuyên bố giao dịch vô hiệu
+1. Trong thời hạn 10 ngày kể từ ngày Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, người tham gia thủ tục phá sản yêu cầu tuyên bố giao dịch vô hiệu hoặc Thẩm phán đang giải quyết vụ việc phá sản phát hiện giao dịch quy định tại khoản 2 Điều 42, khoản 1 và khoản 2 Điều 49 của Luật này thì Thẩm phán phải mở phiên họp xem xét tuyên bố giao dịch vô hiệu. Trình tự, thủ tục, thành phần tham gia phiên họp được thực hiện theo quy định tại khoản 2 và khoản 3 Điều 60 của Luật này.
+2. Khi xem xét tuyên bố giao dịch vô hiệu, Thẩm phán ra một trong các quyết định sau đây:
+a) Không chấp nhận yêu cầu tuyên bố giao dịch vô hiệu;
+b) Tuyên bố giao dịch vô hiệu, hủy bỏ các biện pháp bảo đảm và giải quyết hậu quả của giao dịch vô hiệu theo quy định của pháp luật.
+3. Quyết định tuyên bố giao dịch vô hiệu có hiệu lực thi hành kể từ ngày ra quyết định.
+4. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được quyết định quy định tại khoản 2 Điều này, doanh nghiệp, hợp tác xã, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, người tham gia thủ tục phá sản có quyền làm đơn đề nghị Chánh án Tòa án xem xét lại quyết định.
+5. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được đơn đề nghị xem xét lại, Chánh án Tòa án đã ra quyết định phải ra một trong các quyết định sau đây:
+a) Không chấp nhận đề nghị xem xét lại;
+b) Hủy bỏ quyết định tuyên bố giao dịch vô hiệu. Trường hợp có tranh chấp thì được giải quyết theo quy định tại khoản 2 Điều 60 của Luật này;
+c) Hủy bỏ quyết định không chấp nhận yêu cầu tuyên bố giao dịch vô hiệu và ra quyết định tuyên bố giao dịch vô hiệu.
+6. Trong thời hạn 15 ngày kể từ ngày nhận được quyết định quy định tại điểm b khoản 2, điểm c khoản 5 Điều này, cơ quan thi hành án dân sự có trách nhiệm thi hành quyết định theo quy định của pháp luật.
+Điều 51. Tạm đình chỉ, đình chỉ thực hiện hợp đồng đang có hiệu lực
+1. Trong thời hạn 05 ngày làm việc kể từ ngày Tòa án thụ lý đơn yêu cầu áp dụng thủ tục phá sản, nếu xét thấy hợp đồng có khả năng gây bất lợi cho doanh nghiệp, hợp tác xã thì chủ nợ, doanh nghiệp, hợp tác xã có quyền yêu cầu Tòa án ra quyết định tạm đình chỉ thực hiện hợp đồng, trừ trường hợp xử lý các khoản nợ có bảo đảm theo quy định tại Điều 44 của Luật này và trường hợp pháp luật có quy định khác.
+2. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được văn bản yêu cầu, nếu chấp nhận thì Tòa án ra quyết định tạm đình chỉ thực hiện hợp đồng; nếu không chấp nhận thì thông báo bằng văn bản cho người yêu cầu biết.
+3. Trong thời hạn 05 ngày làm việc kể từ ngày Tòa án ra quyết định mở thủ tục phá sản, Tòa án phải xem xét các hợp đồng bị tạm đình chỉ quy định tại khoản 1 Điều này để ra một trong các quyết định sau đây:
+a) Tiếp tục thực hiện hợp đồng nếu việc thực hiện hợp đồng đang có hiệu lực và đang được thực hiện hoặc nếu được thực hiện sẽ không gây bất lợi cho doanh nghiệp, hợp tác xã;
+b) Đình chỉ thực hiện hợp đồng và giải quyết hậu quả theo quy định tại Điều 52 của Luật này.
+4. Trường hợp Tòa án quyết định không mở thủ tục phá sản thì Tòa án đã quyết định tạm đình chỉ thực hiện hợp đồng quyết định hủy bỏ quyết định tạm đình chỉ.
+5. Sau khi mở thủ tục phá sản, nếu phát hiện hợp đồng có khả năng gây bất lợi cho doanh nghiệp, hợp tác xã, theo đề nghị của Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, chủ nợ, doanh nghiệp, hợp tác xã thì Tòa án xem xét, quyết định đình chỉ thực hiện hợp đồng, trừ trường hợp xử lý các khoản nợ có bảo đảm theo quy định tại Điều 44 của Luật này và trường hợp pháp luật có quy định khác.
+6. Chính phủ quy định chi tiết khoản 1 và khoản 5 Điều này.
+Điều 52. Thanh toán, bồi thường thiệt hại khi hợp đồng bị đình chỉ thực hiện
+1. Khi hợp đồng bị đình chỉ thực hiện theo quy định tại Điều 51 của Luật này, nếu tài sản mà doanh nghiệp, hợp tác xã nhận được từ hợp đồng vẫn còn tồn tại trong khối tài sản của doanh nghiệp, hợp tác xã thì bên giao kết hợp đồng với doanh nghiệp, hợp tác xã có quyền đòi lại tài sản và thanh toán số tiền đã nhận của doanh nghiệp, hợp tác xã; nếu tài sản đó không còn thì bên giao kết có quyền như một chủ nợ không có bảo đảm đối với phần chưa được thanh toán.
+2. Trường hợp việc đình chỉ thực hiện hợp đồng gây thiệt hại cho bên giao kết hợp đồng với doanh nghiệp, hợp tác xã thì bên giao kết có quyền như một chủ nợ không có bảo đảm đối với khoản thiệt hại.
+Điều 53. Bù trừ nghĩa vụ
+1. Sau khi Tòa án có quyết định mở thủ tục phá sản, việc bù trừ nghĩa vụ đến hạn được xác lập trước khi có quyết định mở thủ tục phá sản chỉ được thực hiện giữa doanh nghiệp, hợp tác xã với từng chủ nợ. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản phải báo cáo Thẩm phán xem xét, cho ý kiến trước khi thực hiện bù trừ nghĩa vụ, trừ trường hợp pháp luật có quy định khác.
+2. Phương pháp bù trừ nghĩa vụ:
+a) Trường hợp các bên có nghĩa vụ về tài sản tương đương với nhau thì không phải thực hiện nghĩa vụ đối với nhau và nghĩa vụ được xem là chấm dứt;
+b) Trường hợp các bên có nghĩa vụ về tài sản không tương đương với nhau mà phần chênh lệch giá trị tài sản lớn hơn thuộc về doanh nghiệp, hợp tác xã thì bên giao kết hợp đồng với doanh nghiệp, hợp tác xã phải thanh toán phần giá trị tài sản chênh lệch để gộp vào khối tài sản của doanh nghiệp, hợp tác xã;
+c) Trường hợp các bên có nghĩa vụ về tài sản không tương đương với nhau mà phần chênh lệch giá trị tài sản lớn hơn thuộc về bên giao kết hợp đồng với doanh nghiệp, hợp tác xã thì bên giao kết hợp đồng với doanh nghiệp, hợp tác xã trở thành chủ nợ không có bảo đảm đối với phần giá trị tài sản chênh lệch.
+3. Chính phủ quy định chi tiết khoản 1 Điều này.
+Điều 54. Tài sản của doanh nghiệp, hợp tác xã
+1. Trừ trường hợp pháp luật có quy định khác, tài sản của doanh nghiệp, hợp tác xã bao gồm:
+a) Tài sản và quyền tài sản mà doanh nghiệp, hợp tác xã có tại thời điểm Tòa án ra quyết định mở thủ tục phá sản;
+b) Tài sản và quyền tài sản có được sau ngày Tòa án ra quyết định mở thủ tục phá sản;
+c) Giá trị quyền sử dụng đất của doanh nghiệp, hợp tác xã được xác định theo quy định của pháp luật;
+d) Tài sản thu hồi từ hành vi cất giấu, tẩu tán tài sản của doanh nghiệp, hợp tác xã;
+đ) Tài sản và quyền tài sản có được do thu hồi từ giao dịch vô hiệu;
+e) Tài sản khác theo quy định của pháp luật.
+2. Tài sản của doanh nghiệp tư nhân, công ty hợp danh bao gồm:
+a) Tài sản quy định tại khoản 1 Điều này;
+b) Tài sản của chủ doanh nghiệp tư nhân, thành viên hợp danh không trực tiếp dùng vào hoạt động kinh doanh; trường hợp chủ doanh nghiệp tư nhân, thành viên hợp danh có tài sản thuộc sở hữu chung thì phần tài sản của chủ doanh nghiệp tư nhân, thành viên hợp danh đó được chia theo quy định của pháp luật về dân sự và quy định của pháp luật có liên quan.
+3. Trường hợp hợp tác xã bị tuyên bố phá sản thì việc xử lý quỹ chung không chia, tài sản chung không chia được thực hiện theo quy định của pháp luật về hợp tác xã.
+Điều 55. Gửi giấy đòi nợ, lập danh sách chủ nợ, người mắc nợ
+1. Trong thời hạn 15 ngày kể từ ngày Tòa án ra quyết định mở thủ tục phá sản, chủ nợ phải gửi giấy đòi nợ kèm theo tài liệu, chứng cứ chứng minh về khoản nợ cho Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản. Hết thời hạn này mà chủ nợ không gửi giấy đòi nợ thì mất quyền tham gia thủ tục phá sản. Trường hợp sự kiện bất khả kháng hoặc trở ngại khách quan thì chủ nợ có quyền gửi giấy đòi nợ và Tòa án bổ sung vào danh sách chủ nợ trước khi ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản. Kể từ thời điểm được bổ sung vào danh sách chủ nợ của doanh nghiệp, hợp tác xã, chủ nợ có quyền, nghĩa vụ của chủ nợ theo quy định của Luật này.
+2. Khoản nợ phát sinh sau khi hết thời hạn kê khai quy định tại khoản 1 Điều này thì phải tiến hành kê khai trong thời hạn 03 ngày làm việc kể từ ngày phát sinh khoản nợ.
+3. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản phải lập danh sách chủ nợ, người mắc nợ, xác minh khoản nợ, thu thập tài liệu liên quan đến khoản nợ. Danh sách chủ nợ, người mắc nợ phải ghi rõ tên, địa chỉ, số nợ của mỗi chủ nợ, người mắc nợ, khoản nợ có bảo đảm, nợ không có bảo đảm, nợ đến hạn, nợ chưa đến hạn và thông tin cần thiết khác.
+4. Danh sách chủ nợ, người mắc nợ phải được đăng trên Cổng thông tin điện tử quốc gia về phục hồi, phá sản doanh nghiệp, hợp tác xã tối thiểu 07 ngày tính đến ngày triệu tập Hội nghị chủ nợ.
+5. Trong thời hạn 10 ngày kể từ ngày Tòa án công khai danh sách, người tham gia thủ tục phá sản, người có quyền lợi, nghĩa vụ liên quan có quyền đề nghị Thẩm phán xem xét lại danh sách chủ nợ, người mắc nợ. Thẩm phán có thể triệu tập các bên liên quan xem xét, giải quyết đề nghị; nếu có căn cứ thì sửa đổi, bổ sung danh sách chủ nợ, người mắc nợ.
+6. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Điều 56. Kiểm kê tài sản của doanh nghiệp, hợp tác xã
+1. Trong thời hạn 15 ngày kể từ ngày nhận được quyết định mở thủ tục phá sản, doanh nghiệp, hợp tác xã phải tiến hành kiểm kê, báo cáo kết quả kiểm kê và xác định giá trị tài sản; trong trường hợp cần thiết thì phải có văn bản đề nghị Thẩm phán gia hạn nhưng không quá hai lần, mỗi lần không quá 15 ngày. Việc xác định giá trị tài sản của doanh nghiệp, hợp tác xã phải được thực hiện theo quy định của pháp luật.
+2. Trường hợp đại diện hợp pháp của doanh nghiệp, hợp tác xã vắng mặt thì người được Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản chỉ định làm đại diện của doanh nghiệp, hợp tác xã thực hiện công việc kiểm kê và xác định giá trị tài sản của doanh nghiệp, hợp tác xã.
+3. Bảng kiểm kê tài sản đã được xác định giá trị phải gửi ngay cho Tòa án tiến hành thủ tục phá sản.
+4. Trường hợp xét thấy việc kiểm kê, xác định giá trị tài sản của doanh nghiệp, hợp tác xã quy định tại khoản 1 Điều này là không chính xác thì Thẩm phán yêu cầu Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản tổ chức kiểm kê, xác định lại giá trị một phần hoặc toàn bộ tài sản của doanh nghiệp, hợp tác xã. Thời hạn kiểm kê, xác định lại giá trị tài sản của doanh nghiệp, hợp tác xã là 15 ngày, kể từ ngày nhận được yêu cầu của Tòa án. Giá trị tài sản được xác định, định giá theo giá thị trường tại thời điểm kiểm kê.
+5. Trường hợp đại diện doanh nghiệp, hợp tác xã và người khác không hợp tác về việc kiểm kê tài sản, cố tình cất giấu tài sản hoặc cố tình làm sai lệch việc kiểm kê tài sản thì bị xử lý theo quy định của pháp luật.
+Điều 57. Đăng ký biện pháp bảo đảm của doanh nghiệp, hợp tác xã Doanh nghiệp, hợp tác xã cho người khác vay tài sản
+mà theo quy định của pháp luật phải đăng ký biện pháp bảo đảm nhưng chưa đăng ký thì Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản phải thực hiện việc đăng ký biện pháp bảo đảm.
+Điều 58. Áp dụng biện pháp khẩn cấp tạm thời
+1. Trong quá trình giải quyết yêu cầu áp dụng thủ tục phá sản, người có quyền, nghĩa vụ nộp đơn theo quy định tại Điều 38 của Luật này, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản có quyền yêu cầu Tòa án có thẩm quyền ra quyết định áp dụng một hoặc một số biện pháp khẩn cấp tạm thời sau đây để bảo toàn tài sản của doanh nghiệp, hợp tác xã, bảo đảm quyền, lợi ích hợp pháp của người lao động:
+a) Cho bán hàng hóa, tài sản dễ bị hư hỏng, sắp hết thời hạn sử dụng, không bán đúng thời điểm sẽ khó có khả năng tiêu thụ; cho thu hoạch, cho bán hoa màu hoặc sản phẩm, hàng hóa khác;
+b) Cho bán hàng hóa, tài sản khó bảo quản hoặc nếu chi phí bảo quản, lưu giữ, trông giữ lớn hơn giá trị của hàng hóa, tài sản đó;
+c) Kê biên, niêm phong tài sản của doanh nghiệp, hợp tác xã;
+d) Phong tỏa tài khoản của doanh nghiệp, hợp tác xã tại tổ chức tín dụng; phong tỏa tài sản ở nơi gửi giữ;
+đ) Niêm phong kho, quỹ, thu giữ và quản lý sổ kế toán, tài liệu liên quan của doanh nghiệp, hợp tác xã;
+e) Cấm chuyển dịch quyền về tài sản đối với tài sản của doanh nghiệp, hợp tác xã;
+g) Cấm thay đổi hiện trạng đối với tài sản của doanh nghiệp, hợp tác xã;
+h) Buộc giao, nhận tài sản;
+i) Cấm hoặc buộc doanh nghiệp, hợp tác xã, cá nhân, tổ chức khác có liên quan thực hiện một số hành vi nhất định;
+k) Buộc doanh nghiệp, hợp tác xã tạm ứng tiền lương, tiền công, tiền bồi thường, trợ cấp tai nạn lao động, bệnh nghề nghiệp cho người lao động;
+l) Biện pháp khẩn cấp tạm thời khác để bảo toàn tài sản của doanh nghiệp, hợp tác xã theo hướng dẫn của Tòa án nhân dân tối cao hoặc theo quy định của pháp luật.
+2. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Điều 59. Xử lý việc tạm đình chỉ thi hành án dân sự, giải quyết vụ việc, tạm dừng giải quyết yêu cầu doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản
+1. Trường hợp không mở thủ tục phá sản thì giải quyết như sau:
+a) Tòa án, Trọng tài, cơ quan thi hành án dân sự đã ra quyết định tạm đình chỉ theo quy định tại khoản 1 và khoản 2 Điều 40 của Luật này ban hành quyết định tiếp tục giải quyết vụ việc, tiếp tục thi hành án;
+b) Cơ quan, tổ chức có thẩm quyền khác đã tạm dừng giải quyết yêu cầu doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản theo quy định tại khoản 5 Điều 40 của Luật này tiếp tục giải quyết.
+2. Trường hợp mở thủ tục phá sản thì giải quyết như sau:
+a) Tòa án, Trọng tài, cơ quan thi hành án dân sự đã ra quyết định tạm đình chỉ theo quy định tại khoản 1 và khoản 2 Điều 40 của Luật này phải ra quyết định đình chỉ và chuyển hồ sơ vụ việc cho Tòa án đang tiến hành thủ tục phá sản để giải quyết;
+b) Cơ quan, tổ chức có thẩm quyền khác đã tạm dừng giải quyết yêu cầu doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản theo quy định tại khoản 5 Điều 40 của Luật này phải dừng giải quyết yêu cầu.
+Điều 60. Giải quyết việc đình chỉ thi hành án dân sự, giải quyết vụ việc
+1. Trường hợp đình chỉ thi hành án theo quy định tại khoản 2 Điều 59 của Luật này thì tùy từng trường hợp, Tòa án đang tiến hành phá sản xử lý như sau:
+a) Trường hợp bản án, quyết định của Tòa án, phán quyết của Trọng tài đã có hiệu lực pháp luật và không có quyết định kê biên tài sản của doanh nghiệp, hợp tác xã để bảo đảm thi hành án thì người được thi hành án được xác định như một chủ nợ không có bảo đảm;
+b) Trường hợp bản án, quyết định của Tòa án, phán quyết của Trọng tài đã có hiệu lực pháp luật và có quyết định kê biên tài sản của doanh nghiệp, hợp tác xã để bảo đảm thi hành án thì người được thi hành án được xác định như một chủ nợ có bảo đảm.
+2. Trường hợp đình chỉ giải quyết vụ việc theo quy định tại điểm a khoản 2 Điều 59 của Luật này thì sau khi nhận được hồ sơ vụ việc do Tòa án, Trọng tài ra quyết định đình chỉ việc giải quyết vụ việc chuyển đến, Tòa án đang tiến hành phá sản phải xem xét, giải quyết như sau:
+a) Tùy theo số lượng, tính chất phức tạp của tranh chấp, Chánh án Tòa án quyết định việc phân công một hoặc nhiều Thẩm phán để giải quyết;
+b) Thẩm phán phải thông báo cho doanh nghiệp, hợp tác xã, cơ quan, tổ chức, cá nhân có quyền lợi, nghĩa vụ liên quan, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, Kiểm sát viên để tham gia phiên họp;
+c) Thẩm phán phải mở phiên họp xem xét giải quyết tranh chấp. Quyết định giải quyết tranh chấp có hiệu lực thi hành ngay;
+d) Quyết định giải quyết tranh chấp phải được gửi cho Viện kiểm sát, doanh nghiệp, hợp tác xã, cơ quan, tổ chức, cá nhân có quyền lợi, nghĩa vụ liên quan, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản;
+đ) Trong thời hạn 05 ngày làm việc kể từ ngày nhận được quyết định giải quyết tranh chấp, doanh nghiệp, hợp tác xã, đương sự, cơ quan, tổ chức, cá nhân có liên quan đến tranh chấp có quyền đề nghị xem xét lại, Viện kiểm sát cùng cấp có quyền kiến nghị Chánh án Tòa án xem xét lại quyết định giải quyết tranh chấp;
+e) Trong thời hạn 15 ngày kể từ ngày nhận được đề nghị xem xét lại, kiến nghị, Chánh án Tòa án ra quyết định giữ nguyên quyết định giải quyết tranh chấp của Thẩm phán; sửa quyết định giải quyết tranh chấp của Thẩm phán hoặc đình chỉ giải quyết việc xem xét lại nếu người đề nghị rút đơn đề nghị, Viện kiểm sát rút kiến nghị. Quyết định của Chánh án Tòa án giải quyết đề nghị xem xét lại, kiến nghị tại khoản này là quyết định cuối cùng. Quyết định này phải được gửi cho doanh nghiệp, hợp tác xã, đương sự, Viện kiểm sát.
+3. Sau khi giải quyết tranh chấp, nghĩa vụ tài sản mà doanh nghiệp, hợp tác xã phải thực hiện hoặc nghĩa vụ tài sản mà đương sự khác phải thực hiện đối với doanh nghiệp, hợp tác xã được xác định như sau:
+a) Trường hợp doanh nghiệp, hợp tác xã phải thực hiện nghĩa vụ về tài sản thì người được doanh nghiệp, hợp tác xã thực hiện nghĩa vụ về tài sản có quyền yêu cầu được thanh toán trong khối tài sản của doanh nghiệp, hợp tác xã như một chủ nợ;
+b) Trường hợp bên đương sự phải thực hiện nghĩa vụ về tài sản đối với doanh nghiệp, hợp tác xã thì phải thanh toán cho doanh nghiệp, hợp tác xã giá trị tương ứng với nghĩa vụ tài sản đó.
+4. Sau khi Tòa án thụ lý đơn yêu cầu áp dụng thủ tục phá sản, các vụ việc khởi kiện, yêu cầu đối với doanh nghiệp, hợp tác xã chỉ được giải quyết tại Tòa án đã thụ lý đơn yêu cầu áp dụng thủ tục phá sản.
+5. Sau khi thụ lý đơn yêu cầu áp dụng thủ tục phá sản đến trước khi ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản mà phát sinh tranh chấp, yêu cầu thì Tòa án giải quyết theo quy định tại khoản 2 và khoản 3 Điều này.
+6. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Mục 3. HỘI NGHỊ CHỦ NỢ
+Điều 61. Hội nghị chủ nợ
+1. Trừ trường hợp không phải tổ chức Hội nghị chủ nợ theo quy định tại các điểm c, d và đ khoản 1 Điều 70 của Luật này, Tòa án phải triệu tập Hội nghị chủ nợ sau khi kiểm kê xong tài sản của doanh nghiệp, hợp tác xã hoặc khi cần phải quyết định những nội dung thuộc thẩm quyền của Hội nghị chủ nợ quy định tại khoản 6 Điều này.
+2. Người có quyền tham gia Hội nghị chủ nợ thực hiện theo quy định tại khoản 3 Điều 33 của Luật này.
+3. Những người sau đây có nghĩa vụ tham gia Hội nghị chủ nợ:
+a) Người nộp đơn yêu cầu áp dụng thủ tục phá sản quy định tại Điều 38 của Luật này, chủ doanh nghiệp hoặc người đại diện hợp pháp của doanh nghiệp, hợp tác xã; trường hợp không tham gia được thì phải ủy quyền bằng văn bản cho người khác tham gia Hội nghị chủ nợ và người được ủy quyền có quyền, nghĩa vụ như người ủy quyền;
+b) Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản.
+4. Quản tài viên điều hành phiên họp Hội nghị chủ nợ.
+5. Nghị quyết của Hội nghị chủ nợ thông qua khi có số chủ nợ đại diện cho từ 65% tổng số nợ không có bảo đảm trở lên biểu quyết tán thành. Nghị quyết của Hội nghị chủ nợ có hiệu lực bắt buộc đối với tất cả các chủ nợ.
+6. Hội nghị chủ nợ có quyền đưa ra nghị quyết trong đó kết luận về một trong các vấn đề sau đây:
+a) Đề nghị đình chỉ thủ tục phá sản nếu thuộc trường hợp quy định tại khoản 1 Điều 64 của Luật này;
+b) Thông qua phương án phục hồi hoạt động kinh doanh đối với doanh nghiệp, hợp tác xã và đề nghị Tòa án công nhận. Trường hợp này doanh nghiệp, hợp tác xã phải có phương án phục hồi hoạt động kinh doanh;
+c) Đề nghị tuyên bố doanh nghiệp, hợp tác xã phá sản;
+d) Chuyển nhượng đồng bộ tài sản, chuyển nhượng một phần hoặc toàn bộ mảng kinh doanh, hoạt động kinh doanh; chuyển nhượng một phần hoặc toàn bộ doanh nghiệp, hợp tác xã. Trường hợp chuyển nhượng tài sản bảo đảm thì phải có ý kiến đồng ý của chủ nợ của tài sản bảo đảm đó;
+đ) Các vấn đề khác.
+7. Hội nghị chủ nợ không thông qua được nghị quyết theo quy định tại các điểm a, b và c khoản 6 Điều này thì Tòa án quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản theo quy định tại điểma khoản 1 Điều 65 của Luật này.
+8. Trong thời hạn 03 ngày làm việc kể từ ngày tổ chức Hội nghị chủ nợ, Tòa án gửi nghị quyết của Hội nghị chủ nợ cho Viện kiểm sát và người có quyền, nghĩa vụ tham gia Hội nghị chủ nợ.
+Điều 62. Đề nghị, kiến nghị xem xét lại và giải quyết đề nghị, kiến nghị xem xét lại nghị quyết của Hội nghị chủ nợ
+1. Trường hợp không đồng ý với nghị quyết của Hội nghị chủ nợ, trong thời hạn 05 ngày làm việc kể từ ngày nhận được nghị quyết của Hội nghị chủ nợ, người có quyền, nghĩa vụ tham gia Hội nghị chủ nợ có quyền gửi đơn đề nghị, Viện kiểm sát có quyền kiến nghị với Chánh án Tòa án đang giải quyết thủ tục phá sản xem xét lại nghị quyết của Hội nghị chủ nợ.
+2. Trong thời hạn 10 ngày kể từ ngày nhận được văn bản đề nghị, kiến nghị, Chánh án Tòa án đang giải quyết thủ tục phá sản xem xét và ra một trong các quyết định sau đây:
+a) Không chấp nhận đề nghị, kiến nghị;
+b) Tổ chức lại Hội nghị chủ nợ.
+3. Trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định, quyết định giải quyết đề nghị, kiến nghị được gửi cho Viện kiểm sát và người có quyền, nghĩa vụ tham gia Hội nghị chủ nợ.
+4. Quyết định giải quyết của Chánh án Tòa án quy định tại khoản 2 Điều này là quyết định cuối cùng.
+Điều 63. Công nhận nghị quyết của Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh, thực hiện phương án phục hồi hoạt động kinh doanh
+1. Trong thời hạn 10 ngày kể từ ngày nghị quyết của Hội nghị chủ nợ thông qua phương án phục hồi hoạt động kinh doanh thì Thẩm phán xem xét, ra quyết định công nhận nghị quyết của Hội nghị chủ nợ. Nghị quyết của Hội nghị chủ nợ có hiệu lực kể từ ngày Tòa án ra quyết định công nhận. Kể từ ngày nghị quyết của Hội nghị chủ nợ có hiệu lực thì những biện pháp cấm, giám sát đã áp dụng đối với doanh nghiệp, hợp tác xã theo quy định tại Điều 32 và khoản 2 Điều 42 của Luật này đương nhiên chấm dứt. Quyết định công nhận nghị quyết của Hội nghị chủ nợ được gửi cho doanh nghiệp, hợp tác xã, chủ nợ, Viện kiểm sát trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định. Trường hợp Thẩm phán quyết định không công nhận nghị quyết của Hội nghị chủ nợ thì Thẩm phán ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản.
+2. Việc thực hiện phương án phục hồi hoạt động kinh doanh được thực hiện theo quy định tại các điều 29, 35 và 36 của Luật này.
+3. Thẩm phán ra quyết định đình chỉ thực hiện phương án phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã bị mở thủ tục phá sản trong các trường hợp sau đây:
+a) Doanh nghiệp, hợp tác xã đã hoàn thành phương án phục hồi hoạt động kinh doanh;
+b) Doanh nghiệp, hợp tác xã không thực hiện phương án phục hồi hoạt động kinh doanh;
+c) Hết thời hạn thực hiện phương án phục hồi hoạt động kinh doanh.
+4. Tòa án thông báo công khai quyết định đình chỉ thực hiện phương án phục hồi hoạt động kinh doanh của doanh nghiệp, hợp tác xã theo quy định Luật này.
+5. Hậu quả pháp lý của việc đình chỉ thực hiện phương án phục hồi hoạt động kinh doanh:
+a) Trường hợp quy định tại điểm a khoản 3 Điều này thì doanh nghiệp, hợp tác xã được coi là không còn mất khả năng thanh toán. Thẩm phán xem xét, quyết định đình chỉ thủ tục phá sản theo quy định tại khoản 1 Điều 64 của Luật này;
+b) Trường hợp quy định tại điểm b và điểm c khoản 3 Điều này nhưng doanh nghiệp, hợp tác xã vẫn mất khả năng thanh toán thì Thẩm phán ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản.
+Điều 64. Đình chỉ thủ tục phá sản
+1. Kể từ ngày Tòa án ra quyết định mở thủ tục phá sản đến trước ngày ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản, nếu doanh nghiệp, hợp tác xã không mất khả năng thanh toán thì Tòa án ra quyết định đình chỉ thủ tục phá sản. Các tranh chấp liên quan đến doanh nghiệp, hợp tác xã chưa được giải quyết xong thì các bên có quyền lựa chọn phương thức giải quyết tranh chấp theo quy định của pháp luật.
+2. Trường hợp các bên tranh chấp không thống nhất thì Tòa án xử lý như sau:
+a) Trường hợp vụ việc mà Tòa án, Trọng tài đình chỉ theo quy định tại điểm a khoản 2 Điều 59 của Luật này thì Tòa án chuyển hồ sơ vụ việc cho Tòa án, Trọng tài đã ra quyết định đình chỉ xem xét, giải quyết theo quy định của pháp luật;
+b) Trường hợp tranh chấp phát sinh trong quá trình giải quyết vụ việc phá sản thì Tòa án ra quyết định đình chỉ giải quyết tranh chấp và các bên có quyền yêu cầu Tòa án, Trọng tài có thẩm quyền giải quyết theo quy định của pháp luật.
+3. Trường hợp cơ quan thi hành án dân sự đã ra quyết định đình chỉ thi hành án theo quy định tại điểm a khoản 2 Điều 59 của Luật này thì cơ quan thi hành án dân sự ra quyết định thu hồi quyết định đình chỉ thi hành án và ra quyết định tiếp tục thi hành án.
+4. Quyết định đình chỉ thủ tục phá sản phải được gửi cho cơ quan, tổ chức, cá nhân theo quy định tại khoản 3 Điều 41 của Luật này trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định. Trong thời hạn 07 ngày kể từ ngày nhận được quyết định, người tham gia thủ tục phá sản có quyền đề nghị xem xét lại, Viện kiểm sát cùng cấp có quyền kiến nghị với Chánh án Tòa án đang giải quyết thủ tục phá sản về quyết định đình chỉ thủ tục phá sản.
+5. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được đề nghị xem xét lại, kiến nghị quy định tại khoản 2 Điều này, Chánh án Tòa án đang giải quyết thủ tục phá sản phải xem xét, giải quyết kiến nghị, đề nghị xem xét lại quyết định đình chỉ thủ tục phá sản và ra một trong các quyết định sau đây:
+a) Giữ nguyên quyết định đình chỉ thủ tục phá sản;
+b) Hủy quyết định đình chỉ thủ tục phá sản và giao cho Thẩm phán tiến hành giải quyết thủ tục phá sản.
+6. Quyết định giải quyết đề nghị xem xét lại, kiến nghị quyết định đình chỉ thủ tục phá sản phải gửi cho cơ quan, tổ chức, cá nhân theo quy định tại khoản 3 Điều 41 của Luật này trong thời hạn 03 ngày làm việc kể từ ngày ra quyết định.
+7. Tòa án ra quyết định đình chỉ thủ tục phá sản thì tiền tạm ứng chi phí phá sản còn lại được hoàn trả cho người đã nộp.
+Mục 4. TUYÊN BỐ DOANH NGHIỆP,
+HỢP TÁC XÃ PHÁ SẢN
+Điều 65. Quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản
+1. Tranh chấp liên quan đến doanh nghiệp, hợp tác xã đã được Tòa án giải quyết xong thì Tòa án ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản trong thời hạn 15 ngày khi thuộc một trong các trường hợp sau đây:
+a) Kể từ ngày nhận được báo cáo kết quả họp Hội nghị chủ nợ đối với trường hợp Hội nghị chủ nợ không thông qua được nghị quyết của Hội nghị chủ nợ quy định tại các điểm a, b và c khoản 6 Điều 61 của Luật này;
+b) Kể từ ngày nhận được nghị quyết của Hội nghị chủ nợ có nội dung kết luận đề nghị tuyên bố doanh nghiệp, hợp tác xã phá sản;
+c) Kể từ ngày nhận được báo cáo của Quản tài viên về việc doanh nghiệp, hợp tác xã không thực hiện được phương án phục hồi hoạt động kinh doanh hoặc hết thời hạn thực hiện phương án phục hồi hoạt động kinh doanh nhưng doanh nghiệp, hợp tác xã vẫn mất khả năng thanh toán;
+d) Kể từ ngày Thẩm phán ra quyết định không công nhận nghị quyết của Hội nghị chủ nợ theo quy định tại khoản 1 Điều 63 của Luật này.
+2. Quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản phải có các nội dung chủ yếu sau đây:
+a) Tên Tòa án ra quyết định, họ tên Thẩm phán tiến hành thủ tục phá sản;
+b) Thông tin về doanh nghiệp, hợp tác xã bị tuyên bố phá sản;
+c) Căn cứ của việc tuyên bố phá sản;
+d) Chấm dứt hoạt động của doanh nghiệp, hợp tác xã phá sản; đình chỉ giao dịch liên quan đến doanh nghiệp, hợp tác xã; chấm dứt thực hiện nghĩa vụ tính lãi đối với doanh nghiệp, hợp tác xã; giải quyết hậu quả của giao dịch bị đình chỉ; tuyên bố giao dịch vô hiệu và giải quyết hậu quả của giao dịch vô hiệu; chấm dứt hợp đồng lao động với người lao động, giải quyết quyền lợi của người lao động;
+đ) Chấm dứt quyền hạn của đại diện doanh nghiệp, hợp tác xã;
+e) Thu hồi nợ và xử lý tài sản bảo đảm trong trường hợp hợp đồng có bảo đảm chưa đến hạn;
+g) Chỉ định người thực hiện công việc kế toán theo quy định của pháp luật về kế toán;
+h) Việc bán tài sản còn lại của doanh nghiệp, hợp tác xã;
+i) Phương án phân chia giá trị tài sản trước và sau khi tuyên bố phá sản của doanh nghiệp, hợp tác xã theo thứ tự phân chia tài sản quy định tại Điều 46 của Luật này;
+k) Cấm đảm nhiệm chức vụ sau khi doanh nghiệp, hợp tác xã bị tuyên bố phá sản theo quy định tại Điều 84 của Luật này;
+l) Giải quyết vấn đề khác.
+3. Quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản có hiệu lực thi hành kể từ ngày ra quyết định.
+4. Sau khi ban hành, quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản không được sửa chữa, bổ sung, trừ trường hợp phát hiện lỗi rõ ràng về chính tả, về số liệu do nhầm lẫn hoặc tính toán sai và trường hợp quy định tại điểm b khoản 2 Điều 81 của Luật này.
+5. Trong thời hạn 15 ngày kể từ ngày nhận được văn bản đề nghị của cơ quan thi hành án dân sự, Chấp hành viên, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, Tòa án thực hiện việc giải thích quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản.
+6. Trong thời hạn 10 ngày kể từ ngày ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản, Tòa án phải gửi quyết định, trích lục quyết định cho người tham gia thủ tục phá sản, Viện kiểm sát, cơ quan, tổ chức, cá nhân có liên quan, cơ quan thi hành án dân sự, cơ quan đăng ký kinh doanh để chuyển tình trạng pháp lý của doanh nghiệp, hợp tác xã, chi nhánh, văn phòng đại diện, địa điểm kinh doanh của doanh nghiệp, hợp tác xã sang tình trạng đã phá sản, đăng trên Cổng thông tin điện tử quốc gia về phục hồi, phá sản doanh nghiệp, hợp tác xã.
+Điều 66. Nghĩa vụ về tài sản sau khi có quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản
+1. Quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản quy định tại Điều 65 và khoản 2 Điều 71 của Luật này không miễn trừ nghĩa vụ về tài sản của chủ doanh nghiệp tư nhân, thành viên hợp danh của công ty hợp danh đối với chủ nợ chưa được thanh toán nợ, trừ trường hợp người tham gia thủ tục phá sản có thoả thuận khác hoặc pháp luật có quy định khác.
+2. Nghĩa vụ về tài sản phát sinh sau khi có quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản được giải quyết theo quy định của pháp luật về thi hành án dân sự và quy định khác của pháp luật có liên quan.
+Điều 67. Đề nghị xem xét lại, kháng nghị quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản
+1. Những người được thông báo quy định tại khoản 6 Điều 65 của Luật này, người khác không phải là người tham gia thủ tục phá sản có quyền, lợi ích hợp pháp bị xâm phạm có quyền đề nghị xem xét lại quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản. Viện kiểm sát kháng nghị quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản trong trường hợp quyết định đó xâm phạm nghiêm trọng đến lợi ích công cộng, lợi ích của Nhà nước.
+2. Thời hạn đề nghị xem xét lại, kháng nghị là 10 ngày kể từ ngày nhận được quyết định hoặc được thông báo hợp lệ quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được đề nghị xem xét lại, kháng nghị, Tòa án đã ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản phải gửi hồ sơ vụ việc phá sản kèm theo đơn đề nghị, kháng nghị cho Tòa án nhân dân cấp tỉnh có thẩm quyền để xem xét, giải quyết.
+3. Trong thời hạn 10 ngày kể từ ngày nhận được hồ sơ, tổ Thẩm phán Tòa án nhân dân cấp tỉnh phải tổ chức phiên họp xem xét, giải quyết đơn đề nghị xem xét lại, kháng nghị quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản và ra một trong các quyết định sau đây:
+a) Không chấp nhận đơn đề nghị, kháng nghị và giữ nguyên quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản;
+b) Sửa quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản;
+c) Huỷ quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản và giao hồ sơ cho Tòa án nhân dân cấp dưới có thẩm quyền giải quyết lại.
+4. Tòa án nhân dân tối cao xem xét lại quyết định quy định tại khoản 3 Điều này nếu quyết định đó xâm phạm nghiêm trọng đến lợiích công cộng, lợi ích của Nhà nước; xâm phạm nghiêm trọng đến quyền, lợi ích hợp pháp của người tham gia thủ tục phá sản, người khác không phải là người tham gia thủ tục phá sản và có một trong các căn cứ sau đây:
+a) Có vi phạm nghiêm trọng pháp luật về phục hồi, phá sản;
+b) Phát hiện tình tiết mới có thể làm thay đổi cơ bản nội dung quyết định tuyên bố phá sản mà Tòa án, người tham gia thủ tục phá sản không thể biết được khi Tòa án ra quyết định.
+5. Quyết định của Tòa án nhân dân tối cao quy định tại khoản 4 Điều này là quyết định cuối cùng và có hiệu lực pháp luật kể từ ngày ra quyết định.
+Chương IV
+THỦ TỤC PHỤC HỒI, PHÁ SẢN RÚT GỌN
+Mục 1. THỦ TỤC PHỤC HỒI RÚT GỌN
+Điều 68. Áp dụng thủ tục phục hồi rút gọn
+1. Thủ tục phục hồi rút gọn được thực hiện theo quy định tại Mục này. Trường hợp Mục này không quy định thì áp dụng quy định tương ứng của Luật này.
+2. Trong thời hạn 10 ngày kể từ ngày thụ lý đơn yêu cầu áp dụng thủ tục phục hồi, Thẩm phán phải xem xét, quyết định áp dụng thủ tục phục hồi rút gọn khi doanh nghiệp, hợp tác xã thuộc một trong các trường hợp sau đây:
+a) Doanh nghiệp, hợp tác xã có từ 20 chủ nợ không có bảo đảm trở xuống và có tổng các khoản nợ gốc phải thanh toán từ 10 tỷ đồng trở xuống;
+b) Doanh nghiệp, hợp tác xã nhỏ, siêu nhỏ;
+c) Trường hợp khác theo quy định của pháp luật.
+3. Khi tiến hành thủ tục phục hồi rút gọn, nếu có căn cứ xác định vụ việc không còn đủ điều kiện để giải quyết theo thủ tục rút gọn thì Tòa án ra quyết định chuyển sang giải quyết theo thủ tục thông thường.
+4. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Điều 69. Trình tự, thủ tục phục hồi rút gọn
+1. Sau khi quyết định áp dụng thủ tục phục hồi rút gọn, thời hạn thực hiện thủ tục phục hồi rút gọn bằng một nửa thời hạn theo thủ tục phục hồi thông thường.
+2. Nghị quyết của Hội nghị chủ nợ thông qua khi có số chủ nợ đại diện cho từ 51% tổng số nợ của chủ nợ tham gia biểu quyết tán thành.
+Mục 2. THỦ TỤC PHÁ SẢN RÚT GỌN
+Điều 70. Áp dụng thủ tục phá sản rút gọn
+1. Thủ tục phá sản rút gọn được áp dụng khi thuộc một trong các trường hợp sau đây:
+a) Doanh nghiệp, hợp tác xã có từ 20 chủ nợ không có bảo đảm trở xuống và có tổng các khoản nợ gốc phải thanh toán từ 10 tỷ đồng trở xuống;
+b) Doanh nghiệp, hợp tác xã nhỏ, siêu nhỏ;
+c) Doanh nghiệp, hợp tác xã không còn tài sản hoặc còn tài sản nhưng không thanh lý, thu hồi được hoặc còn tài sản nhưng không đủ để nộp lệ phí phá sản, tạm ứng chi phí phá sản, thanh toán chi phí phá sản;
+d) Tổ chức tín dụng;
+đ) Doanh nghiệp bảo hiểm, doanh nghiệp tái bảo hiểm đã bị Bộ Tài chính ban hành văn bản chấm dứt áp dụng biện pháp kiểm soát nhưng không khắc phục được tình trạng bị áp dụng biện pháp kiểm soát theo quy định của Luật Kinh doanh bảo hiểm;
+e) Trường hợp khác theo quy định của pháp luật hoặc hướng dẫn của Tòa án nhân dân tối cao.
+2. Tổ chức tín dụng thực hiện thủ tục phá sản theo quy định tại Điều 72 của Luật này. Trường hợp Điều 72 của Luật này không quy định thì áp dụng quy định khác của Luật này, Luật Các tổ chức tín dụng, trừ quy định tại các điều 61, 62, 63 và 64 của Luật này.
+3. Doanh nghiệp bảo hiểm, doanh nghiệp tái bảo hiểm thuộc trường hợp quy định tại điểm đ khoản 1 Điều này thực hiện thủ tục phá sản theo quy định của Luật Kinh doanh bảo hiểm. Trường hợp Luật Kinh doanh bảo hiểm không quy định thì áp dụng theo quy định của Luật này, trừ quy định tại các điều 46, 61, 62, 63 và 64 của Luật này.
+4. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Điều 71. Trình tự, thủ tục phá sản rút gọn
+1. Trong thời hạn 10 ngày kể từ ngày thụ lý đơn yêu cầu áp dụng thủ tục phá sản, Thẩm phán phải xem xét, quyết định áp dụng thủ tục phá sản rút gọn khi doanh nghiệp, hợp tác xã thuộc một trong các trường hợp quy định tại điểm a và điểm b khoản 1 Điều 70 của Luật này. Sau khi quyết định áp dụng thủ tục phá sản rút gọn, thời hạn thực hiện thủ tục phá sản rút gọn bằng một nửa thời hạn theo thủ tục phá sản thông thường. Nghị quyết của Hội nghị chủ nợ thông qua khi có số chủ nợ không có bảo đảm đại diện cho từ 51% tổng số nợ không có bảo đảm trở lên tham gia biểu quyết tán thành.
+2. Trong thời hạn 30 ngày kể từ ngày thụ lý đơn yêu cầu áp dụng thủ tục phá sản thì Tòa án xem xét, tuyên bố doanh nghiệp, hợp tác xã phá sản nếu thuộc một trong các trường hợp quy định tại điểm c khoản 1 Điều 70 của Luật này. Trong thời hạn 30 ngày kể từ ngày thông qua nghị quyết của Hội nghị chủ nợ đề nghị áp dụng thủ tục phá sản mà doanh nghiệp, hợp tác xã không còn tài sản để nộp tạm ứng chi phí phá sản theo quy định tại điểm a khoản 4 Điều 34 của Luật này thì Tòa án xem xét, tuyên bố doanh nghiệp, hợp tác xã phá sản.
+3. Trường hợp Tòa án ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản theo quy định tại điểm c khoản 1 Điều 70 của Luật này thì người nộp đơn được hoàn trả tạm ứng chi phí phá sản còn lại.
+4. Thủ tục phá sản rút gọn được thực hiện theo quy định tại Mục này. Trường hợp Mục này không quy định thì áp dụng theo quy định khác của Luật này.
+Điều 72. Thủ tục phá sản tổ chức tín dụng
+1. Sau khi Ngân hàng Nhà nước Việt Nam có văn bản chấm dứt kiểm soát đặc biệt hoặc không áp dụng biện pháp phục hồi khả năng thanh toán hoặc chấm dứt áp dụng biện pháp phục hồi khả năng thanh toán mà tổ chức tín dụng vẫn mất khả năng thanh toán thì những người sau đây có quyền, nghĩa vụ nộp đơn yêu cầu áp dụng thủ tục phá sản:
+a) Cơ quan, tổ chức, cá nhân quy định tại các khoản 1, 3 và 4 Điều 38 của Luật này;
+b) Tổ chức tín dụng có nghĩa vụ nộp đơn yêu cầu áp dụng thủ tục phá sản. Trường hợp tổ chức tín dụng không nộp đơn yêu cầu áp dụng thủ tục phá sản thì Ngân hàng Nhà nước Việt Nam nộp đơn yêu cầu áp dụng thủ tục phá sản đối với tổ chức tín dụng đó.
+2. Tòa án thụ lý đơn yêu cầu áp dụng thủ tục phá sản tổ chức tín dụng khi Ngân hàng Nhà nước Việt Nam đã có văn bản chấm dứt kiểm soát đặc biệt hoặc không áp dụng biện pháp phục hồi khả năng thanh toán hoặc chấm dứt áp dụng biện pháp phục hồi khả năng thanh toán mà tổ chức tín dụng vẫn mất khả năng thanh toán.
+3. Trong thời hạn 10 ngày kể từ ngày thụ lý đơn yêu cầu áp dụng thủ tục phá sản, Thẩm phán phải ra quyết định mở thủ tục phá sản đối với tổ chức tín dụng.
+4. Giao dịch của tổ chức tín dụng thực hiện trong giai đoạn Ngân hàng Nhà nước Việt Nam áp dụng biện pháp kiểm soát đặc biệt hoặcáp dụng biện pháp phục hồi khả năng thanh toán dưới sự kiểm soát của Ngân hàng Nhà nước Việt Nam sẽ không áp dụng quy định về giao dịch vô hiệu quy định tại Điều 49 của Luật này.
+5. Tổ chức tín dụng phải hoàn trả khoản vay đặc biệt theo quy định của pháp luật về các tổ chức tín dụng trước khi thực hiện phân chia tài sản theo quy định tại khoản 6 Điều này.
+6. Việc phân chia giá trị tài sản của tổ chức tín dụng thực hiện theo thứ tự sau đây:
+a) Chi phí phá sản;
+b) Khoản nợ lương, khoản nợ bảo hiểm xã hội bắt buộc, bảo hiểm thất nghiệp, bảo hiểm y tế, bảo hiểm tai nạn lao động, bệnh nghề nghiệp, trợ cấp thôi việc và quyền lợi khác của người lao động theo thỏa ước lao động tập thể, hợp đồng lao động đã ký kết;
+c) Khoản tiền gửi sau khi trừ đi số tiền đã được tổ chức bảo hiểm tiền gửi chi trả cho người gửi tiền; khoản tiền tổ chức bảo hiểm tiền gửi trả cho người gửi tiền tại tổ chức tín dụng phá sản theo quy định của pháp luật về bảo hiểm tiền gửi và hướng dẫn của Ngân hàng Nhà nước Việt Nam; khoản tiền phí bảo hiểm tiền gửi chưa nộp; các khoản tiền chậm nộp phí bảo hiểm tiền gửi;
+d) Nghĩa vụ tài chính đối với Nhà nước; khoản nợ không có bảo đảm phải trả cho chủ nợ trong danh sách chủ nợ; khoản nợ có bảo đảm chưa được thanh toán do giá trị tài sản bảo đảm không đủ thanh toán nợ.
+7. Trường hợp giá trị tài sản của tổ chức tín dụng sau khi đã thanh toán đủ các khoản nợ quy định tại khoản 6 Điều này mà vẫn còn thì phần còn lại này thuộc về:
+a) Thành viên của tổ chức tín dụng là hợp tác xã;
+b) Chủ sở hữu của tổ chức tín dụng là công ty trách nhiệm hữu hạn một thành viên;
+c) Thành viên góp vốn của tổ chức tín dụng là công ty trách nhiệm hữu hạn hai thành viên trở lên; cổ đông của tổ chức tín dụng là công ty cổ phần.
+8. Trường hợp giá trị tài sản không đủ để thanh toán theo quy định tại khoản 6 Điều này thì các đối tượng thuộc cùng một thứ tựưu tiên được thanh toán theo tỷ lệ phần trăm tương ứng với số nợ.
+9. Trong thời hạn 30 ngày kể từ ngày Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản lập xong danh sách chủ nợ, người mắc nợ, bảng kê tài sản của tổ chức tín dụng, Tòa án ra quyết định tuyên bố tổ chức tín dụng phá sản.
+10. Trong thời hạn 10 ngày kể từ ngày nhận được quyết định tuyên bố tổ chức tín dụng phá sản, chủ sở hữu tài sản ủy thác cho tổ chức tín dụng, gửi tổ chức tín dụng giữ hộ, giao tổ chức tín dụng quản lý thông qua hợp đồng ủy thác, giữ hộ, quản lý tài sản phải xuất trình giấy tờ chứng minh quyền sở hữu và hồ sơ, giấy tờ liên quan với cơ quan thi hành án dân sự để nhận lại tài sản của mình.
+11. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn Điều này.
+Chương V
+YÊU CẦU NƯỚC NGOÀI HỖ TRỢ VỤ VIỆC PHỤC HỒI, PHÁ SẢN; HỖ TRỢ VỤ VIỆC PHỤC HỒI, PHÁ SẢN CỦA NƯỚC NGOÀI; CÔNG NHẬN VÀ CHO THI HÀNH BẢN ÁN, QUYẾT ĐỊNH VỀ PHỤC HỒI, PHÁ SẢN CỦA NƯỚC NGOÀI
+Điều 73. Yêu cầu Tòa án, cơ quan có thẩm quyền của nước ngoài hỗ trợ vụ việc phục hồi, phá sản
+1. Trong quá trình giải quyết vụ việc phục hồi, phá sản, Tòa án Việt Nam có thể yêu cầu Tòa án, cơ quan có thẩm quyền của nước ngoài hỗ trợ giải quyết trong các trường hợp sau đây:
+a) Xác minh, kiểm kê tài sản của doanh nghiệp, hợp tác xã;
+b) Xác định giá trị tài sản của doanh nghiệp, hợp tác xã;
+c) Thanh lý, thu hồi tài sản của doanh nghiệp, hợp tác xã;
+d)Yêu cầu người mắc nợ ở nước ngoài trả nợ cho doanh nghiệp, hợp tác xã;
+đ)Yêu cầu cần thiết khác trong giải quyết vụ việc phục hồi, phá sản.
+2. Thủ tục yêu cầu Tòa án, cơ quan có thẩm quyền của nước ngoài hỗ trợ giải quyết vụ việc phục hồi, phá sản được thực hiện theo quy định của pháp luật của nước được yêu cầu, điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên, pháp luật Việt Nam.
+3. Trong quá trình giải quyết vụ việc phục hồi, phá sản, Tòa án Việt Nam có thể ra quyết định chỉ định Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, đại diện hợp pháp của doanh nghiệp, hợp tác xã làm đại diện vụ việc phục hồi, phá sản của Việt Nam tại nước ngoài để thực hiện các thủ tục liên quan đến vụ việc phục hồi, phá sản đó.
+4. Đại diện vụ việc phục hồi, phá sản của Việt Nam tại nước ngoài có các nhiệm vụ, quyền hạn sau đây:
+a) Yêu cầu Tòa án, cơ quan có thẩm quyền của nước ngoài hỗ trợ để giải quyết vụ việc phục hồi, phá sản mà Tòa án Việt Nam đang giải quyết; tiếp nhận và thực hiện các hoạt động do Tòa án, cơ quan có thẩm quyền nước ngoài hỗ trợ;
+b)Yêu cầu Tòa án, cơ quan có thẩm quyền của nước ngoài công nhận và cho thi hành các quyết định về phục hồi, phá sản do Tòa án Việt Nam ban hành.
+5. Phạm vi nhiệm vụ, quyền hạn của đại diện vụ việc phục hồi, phá sản của Việt Nam tại nước ngoài trong từng vụ việc phục hồi, phá sản do Tòa án Việt Nam quyết định.
+Điều 74. Hỗ trợ vụ việc phục hồi, phá sản của nước ngoài
+1. Tòa án Việt Nam hỗ trợ vụ việc phục hồi, phá sản của nước ngoài trong các trường hợp sau đây:
+a) Tòa án, cơ quan có thẩm quyền của nước ngoài yêu cầu Tòa án Việt Nam hỗ trợ để giải quyết vụ việc phục hồi, phá sản của nước ngoài;
+b) Đại diện vụ việc phục hồi, phá sản của nước ngoài mà được Tòa án, cơ quan có thẩm quyền của nước ngoài chỉ định, yêu cầu Tòa án Việt Nam hỗ trợ công nhận quyền đại diện chủ nợ, người mắc nợ để yêu cầu, tham gia vụ việc phục hồi, phá sản do Tòa án Việt Nam giải quyết.
+2. Tòa án, cơ quan có thẩm quyền của nước ngoài, đại diện vụ việc phục hồi, phá sản của nước ngoài yêu cầu hỗ trợ theo quy định tại khoản 1 Điều này phải nộp cho Tòa án Việt Nam có thẩm quyền văn bản yêu cầu, tài liệu kèm theo và lệ phí yêu cầu hỗ trợ, chi phí theo quy định của pháp luật Việt Nam.
+3. Theo yêu cầu của Tòa án, cơ quan có thẩm quyền của nước ngoài, đại diện vụ việc phục hồi, phá sản của nước ngoài, sau khi xem xét quyền, lợi ích hợp pháp của chủ nợ, doanh nghiệp, hợp tác xã, người có quyền, nghĩa vụ liên quan, Tòa án Việt Nam xem xét, quyết định thực hiện một trong các hoạt động sau đây:
+a) Xác minh, kiểm kê tài sản của doanh nghiệp, hợp tác xã;
+b) Xác định giá trị tài sản của doanh nghiệp, hợp tác xã;
+c) Thanh lý, thu hồi tài sản của doanh nghiệp, hợp tác xã;
+d)Yêu cầu người mắc nợ ở Việt Nam trả nợ cho doanh nghiệp, hợp tác xã;
+đ)Yêu cầu cần thiết khác trong giải quyết vụ việc phục hồi, phá sản.
+4. Tòa án Việt Nam phải từ chối yêu cầu hỗ trợ theo quy định tại khoản 1 Điều này nếu việc yêu cầu hỗ trợ thuộc một trong các trường hợp sau đây:
+a) Yêu cầu hỗ trợ trái với các nguyên tắc cơ bản của pháp luật Việt Nam; không phù hợp với điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên; phương hại đến chủ quyền, an ninh quốc gia của Việt Nam, lợi ích công cộng, lợi ích của Nhà nước; ảnh hưởng đến quyền, lợi ích hợp pháp của chủ nợ trên lãnh thổ Việt Nam;
+b) Không nộp đủ tài liệu theo yêu cầu của Tòa án hoặc tài liệu không đủ để xác định yêu cầu hỗ trợ là hợp pháp;
+c) Người yêu cầu hỗ trợ không nộp lệ phí, tạm ứng chi phí cho Tòa án theo quy định của pháp luật;
+d) Các trường hợp khác theo quy định của pháp luật.
+5. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, Chấp hành viên, người có thẩm quyền khác có thể thực hiện hỗ trợ theo quy định của pháp luật Việt Nam.
+Điều 75. Công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài
+1. Bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài được công nhận và cho thi hành tại Việt Nam là bản án, quyết định đã có hiệu lực pháp luật liên quan đến tài sản của cá nhân, tổ chức trên lãnh thổ Việt Nam, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác.
+2. Đại diện vụ việc phục hồi, phá sản của nước ngoài có quyền yêu cầu Tòa án Việt Nam công nhận và cho thi hành tại Việt Nam bảnán, quyết định về phục hồi, phá sản nếu người phải thi hành cư trú, làm việc tại Việt Nam hoặc cơ quan, tổ chức phải thi hành có trụ sở chính tại Việt Nam hoặc có tài sản liên quan đến việc thi hành bản án, quyết định tại Việt Nam vào thời điểm yêu cầu. Người yêu cầu công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài phải nộp lệ phí yêu cầu công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài theo quy định của pháp luật.
+3. Tòa án Việt Nam từ chối yêu cầu công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài khi thuộc một trong các trường hợp sau đây:
+a) Việc công nhận và cho thi hành bản án, quyết định trái với các nguyên tắc cơ bản của pháp luật Việt Nam; không phù hợp với điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên; phương hại đến chủ quyền, an ninh quốc gia của Việt Nam, lợi ích công cộng, lợi ích của Nhà nước; làm ảnh hưởng đến quyền, lợi ích hợp pháp của chủ nợ trên lãnh thổ Việt Nam;
+b) Người phải thi hành bản án, quyết định không được thông báo đầy đủ và kịp thời về vụ việc phục hồi, phá sản, trừ trường hợp người phải thi hành biết mà không phản đối theo quy định của pháp luật nước nơi ban hành bản án, quyết định;
+c) Đã có bản án, quyết định có hiệu lực pháp luật của Tòa án Việt Nam hoặc trước khi cơ quan xét xử của nước ngoài thụ lý vụ việc phục hồi, phá sản, Tòa án Việt Nam đã thụ lý và đang giải quyết vụ việc hoặc đã có bảnán, quyết định của Tòa án, cơ quan có thẩm quyền của nước thứ ba đã được Tòa án Việt Nam công nhận và cho thi hành;
+d) Bản án, quyết định không đáp ứng được các điều kiện quy định tại khoản 1 và khoản 2 Điều này, quy định của điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên;
+đ) Bản án, quyết định xâm phạm nghiêm trọng tới quyền của các chủ nợ, người mắc nợ, người có quyền và lợi ích liên quan trong quá trình giải quyết vụ việc phục hồi, phá sản;
+e) Bản án, quyết định đang được xem xét lại tại nước ban hành hoặc thời hạn để yêu cầu xem xét theo thủ tục thông thường tại nước đó vẫn chưa hết hiệu lực;
+g) Bản án, quyết định chưa có hiệu lực pháp luật, đã bị hủy bỏ hoặc đình chỉ thi hành tại nước đã ra bản án, quyết định đó;
+h) Hết thời hiệu thi hành án theo quy định của pháp luật Việt Nam;
+i) Các trường hợp khác theo quy định của pháp luật.
+4. Người yêu cầu và người phải thi hành có quyền đề nghị, Viện kiểm sát có quyền kháng nghị quyết định của Tòa án công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài để yêu cầu Tòa án nhân dân cấp tỉnh có thẩm quyền xét lại theo quy định của Luật này. Quyết định của Tòa án nhân dân cấp tỉnh là quyết định cuối cùng.
+5. Việc công nhận và cho thi hành bản án, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài được thực hiện theo quy định của Chương này. Trường hợp Chương này không quy định thì thực hiện theo quy định của pháp luật về tố tụng dân sự, pháp luật về tương trợ tư pháp về dân sự.
+Chương VI
+THI HÀNH QUYẾT ĐỊNH TUYÊN BỐ DOANH NGHIỆP, HỢP TÁC XÃ PHÁ SẢN
+Điều 76. Thẩm quyền và thủ tục thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản
+1. Thẩm quyền, thủ tục thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản được thực hiện theo quy định của Chương này. Trường hợp Chương này không quy định thì thực hiện theo quy định của pháp luật về thi hành án dân sự.
+2. Trong thời hạn 03 ngày làm việc kể từ ngày nhận được quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản, cơ quan thi hành án dân sự có trách nhiệm chủ động ra quyết định thi hành và phân công Chấp hành viên phụ trách vụ việc.
+3. Sau khi được Thủ trưởng cơ quan thi hành án dân sự phân công, Chấp hành viên thực hiện các nhiệm vụ sau đây:
+a) Trong thời hạn 02 ngày làm việc kể từ ngày được phân công, Chấp hành viên có văn bản yêu cầu Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản tổ chức thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản. Văn bản yêu cầu Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản tổ chức thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản phải được gửi cho Tòa án, Viện kiểm sát, người tham gia thủ tục phá sản;
+b) Thực hiện thủ tục mở một tài khoản tại ngân hàng đứng tên cơ quan thi hành án dân sự có thẩm quyền thi hành quyết định tuyên bố phá sản để gửi các khoản tiền thu hồi được của doanh nghiệp, hợp tác xã phá sản;
+c) Giám sát Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản thực hiện thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản;
+d)Áp dụng biện pháp cưỡng chế để thu hồi, giao tài sản theo quy định tại khoản 4 Điều này. Trình tự, thủ tục cưỡng chế được thực hiện theo quy định của pháp luật về thi hành án dân sự.
+4. Trường hợp xét thấy cần thiết phải thực hiện các biện pháp cưỡng chế thì Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản đề nghị cơ quan thi hành án dân sự thực hiện các biện pháp cưỡng chế để thu hồi, giao tài sản theo quy định của pháp luật về thi hành án dân sự.
+5. Chính phủ quy định chi tiết Điều này.
+Điều 77. Định giá tài sản và bán tài sản
+1. Trong thời hạn 10 ngày kể từ ngày nhận được văn bản yêu cầu tổ chức thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản phải tổ chức việc định giá tài sản theo quy định của pháp luật.
+2. Tài sản được bán theo các hình thức sau đây:
+a) Bán đấu giá;
+b) Bán không qua thủ tục đấu giá.
+3. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản xác định giá trị tài sản và bán không qua thủ tục đấu giá theo quy định của pháp luật đối với các tài sản sau đây:
+a) Tài sản có nguy cơ bị phá hủy;
+b) Tài sản bị giảm đáng kể về giá trị hoặc có giá trị nhỏ;
+c) Tài sản mà chi phí bảo quản, lưu giữ, trông giữ lớn hơn giá trị của tài sản đó.
+4. Việc định giá lại tài sản được thực hiện khi có vi phạm quy định tại khoản 1 và khoản 3 Điều này dẫn đến sai lệch kết quả định giá tài sản.
+5. Thẩm phán quyết định định giá lại đối với trường hợp bán tài sản theo quy định tại khoản 5 Điều 20 của Luật này. Chấp hành viên quyết định định giá lại đối với trường hợp thi hành quyết định tuyên bố phá sản.
+6. Trường hợp tài sản được định giá không có giá trị, không bán được, theo quy định của Điều này thì Quản tài viên đề xuất Thẩm phán xác định tài sản đó không còn là tài sản của doanh nghiệp, hợp tác xã phá sản.
+7. Chính phủ quy định chi tiết Điều này.
+Điều 78. Thu hồi lại tài sản trong trường hợp có vi phạm Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản,
+Chấp hành viên đề nghị Tòa án ra quyết định thu hồi lại tài sản của doanh nghiệp, hợp tác xã do thực hiện giao dịch vô hiệu theo quy định tại Điều 49 của Luật này. Việc thu hồi tài sản được thực hiện theo quy định của pháp luật về thi hành án dân sự.
+Điều 79. Trả lại tài sản thuê hoặc mượn khi doanh nghiệp, hợp tác xã bị tuyên bố phá sản
+1. Trong thời hạn 10 ngày kể từ ngày nhận được quyết định tuyên bố phá sản, chủ sở hữu tài sản cho doanh nghiệp, hợp tác xã thuê hoặc mượn để dùng vào hoạt động kinh doanh phải xuất trình giấy tờ chứng minh quyền sở hữu, hợp đồng cho thuê hoặc cho mượn với cơ quan thi hành án dân sự để nhận lại tài sản của mình.
+2. Trường hợp doanh nghiệp, hợp tác xã bị tuyên bố phá sản đã trả trước tiền thuê nhưng chưa hết thời hạn thuê thì người cho thuê chỉ được nhận lại tài sản sau khi đã thanh toán số tiền thuê tương ứng với thời gian thuê còn lại để cơ quan thi hành án dân sự nhập vào khối tài sản của doanh nghiệp, hợp tác xã đó.
+3. Trường hợp doanh nghiệp, hợp tác xã bị tuyên bố phá sản đã chuyển nhượng tài sản thuê hoặc mượn cho người khác mà không đòi lại được thì người cho thuê hoặc cho mượn có quyền yêu cầu bồi thường đối với tài sản đó như khoản nợ không có bảo đảm.
+Điều 80. Xử lý tài sản của doanh nghiệp, hợp tác xã phát sinh sau khi quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản
+1. Sau khi quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản và trước khi kết thúc thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản mà phát hiện giao dịch vô hiệu thì Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản có quyền yêu cầu Tòa án tuyên bố giao dịch vô hiệu, xử lý hậu quả của giao dịch vô hiệu và phân chia tài sản của doanh nghiệp, hợp tác xã theo quy định tại Điều 46 của Luật này.
+2. Sau khi quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản và trước khi kết thúc thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản mà phát hiện tài sản của doanh nghiệp, hợp tác xã chưa chia thì Tòa án đã tuyên bố phá sản xem xét và quyết định phân chia tài sản theo quy định tại Điều 46 của Luật này.
+3. Cơ quan thi hành án dân sự tổ chức thực hiện quyết định phân chia tài sản của Tòa án theo quy định của pháp luật.
+Điều 81. Xử lý trường hợp phát sinh sau khi quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản
+1. Sau khi Tòa án ra quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản, chủ nợ gửi giấy đòi nợ cho Tòa án và chứng minh được có lý do chính đáng trong việc không gửi giấy đòi nợ trong thời hạn quy định thì Tòa án giải quyết như sau:
+a) Trường hợp đã thi hành xong phương án phân chia tài sản thì Tòa án ra thông báo về việc không chấp nhận yêu cầu đòi nợ của chủ nợ;
+b) Trường hợp chưa thi hành xong phương án phân chia tài sản thì Tòa án quyết định điều chỉnh lại phương án phân chia tài sản.
+2. Quá trình thực hiện việc thanh lý tài sản theo quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản mà có tranh chấp hoặc không thể thi hành được thì Chấp hành viên, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, người tham gia thủ tục phá sản đề nghị Tòa án xem xét, giải quyết. Trong thời hạn 15 ngày kể từ ngày nhận được đề nghị của Chấp hành viên, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, người tham gia thủ tục phá sản, Tòa án phải xem xét, giải quyết tranh chấp và ra một trong các quyết định sau đây:
+a) Không chấp nhận đề nghị của Chấp hành viên, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, người tham gia thủ tục phá sản;
+b) Chấp nhận đề nghị của Chấp hành viên, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, người tham gia thủ tục phá sản và quyết định sửa đổi, bổ sung quyết định đã ban hành.
+3. Trường hợp Chấp hành viên, Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản, người tham gia thủ tục phá sản không đồng ý với văn bản trả lời quy định tại điểm a khoản 2 Điều này thì có quyền đề nghị Viện kiểm sát xem xét kiến nghị.
+4. Quản tài viên, doanh nghiệp quản lý, thanh lý tài sản đại diện cho doanh nghiệp, hợp tác xã tham gia giải quyết tranh chấp.
+Điều 82. Kết thúc thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản
+1. Việc thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản kết thúc khi thuộc một trong các trường hợp sau đây:
+a) Doanh nghiệp, hợp tác xã bị tuyên bố phá sản không có tài sản để thanh lý, phân chia;
+b) Hoàn thành việc phân chia tài sản của doanh nghiệp, hợp tác xã bị tuyên bố phá sản.
+2. Người mắc nợ không có điều kiện thi hành trong thời hạn 02 năm kể từ ngày cơ quan thi hành án ra quyết định chưa có điều kiện thi hành thì cơ quan thi hành án ra quyết định kết thúc việc thi hành quyết định tuyên bố phá sản.
+3. Trong thời hạn 03 ngày làm việc kể từ ngày kết thúc việc thi hành, Thủ trưởng cơ quan thi hành án dân sự phải ra quyết định kết thúc việc thi hành. Quyết định này phải được gửi cho Tòa án đã giải quyết thủ tục phá sản và công khai theo quy định của pháp luật.
+Chương VII
+TRÁCH NHIỆM CỦA CÁC BÊN CÓ LIÊN QUAN, XỬ LÝ VI PHẠM VÀ GIẢI QUYẾT KHIẾU NẠI, TỐ CÁO
+Điều 83. Trách nhiệm do vi phạm pháp luật trong vụ việc phục hồi, phá sản
+1. Cơ quan, tổ chức, cá nhân có hành vi vi phạm pháp luật trong quá trình giải quyết vụ việc phục hồi, phá sản thì tùy theo tính chất, mức độ vi phạm mà bị xử lý kỷ luật, xử phạt hành chính hoặc bị truy cứu trách nhiệm hình sự; nếu gây thiệt hại thì phải bồi thường theo quy định của pháp luật.
+2. Chính phủ quy định chi tiết hành vi vi phạm hành chính, việc xử phạt hành vi vi phạm hành chính trong lĩnh vực phục hồi, phá sản.
+Điều 84. Cấm đảm nhiệm chức vụ sau khi doanh nghiệp, hợp tác xã bị tuyên bố phá sản
+1. Người giữ chức vụ Chủ tịch, Tổng giám đốc, Giám đốc, thành viên Hội đồng thành viên của doanh nghiệp do Nhà nước nắm giữ 100% vốn điều lệ bị tuyên bố phá sản không được đảm nhiệm các chức vụ đó ở bất kỳ doanh nghiệp nhà nước nào trong thời hạn 03 năm, kể từ ngày Tòa án có quyết định tuyên bố phá sản.
+2. Người đại diện phần vốn nhà nước ở doanh nghiệp có vốn nhà nước mà doanh nghiệp đó bị tuyên bố phá sản không được đảm nhiệm các chức vụ quản lý ở bất kỳ doanh nghiệp nào có vốn của nhà nước trong thời hạn 03 năm, kể từ ngày Tòa án có quyết định tuyên bố phá sản.
+3. Người giữ chức vụ quản lý của doanh nghiệp, hợp tác xã bị tuyên bố phá sản mà cố ý vi phạm quy định tại khoản 1 Điều 13, khoản 1 Điều 31, khoản 5 Điều 38, khoản 2 Điều 42 của Luật này thì Thẩm phán xem xét, quyết định về việc không được quyền thành lập doanh nghiệp, hợp tác xã, làm người quản lý doanh nghiệp, hợp tác xã trong thời hạn 03 năm kể từ ngày Tòa án có quyết định tuyên bố phá sản.
+4. Quy định tại các khoản 1, 2 và 3 Điều này không áp dụng trong các trường hợp sau đây:
+a) Doanh nghiệp, hợp tác xã bị tuyên bố phá sản vì trở ngại khách quan hoặc sự kiện bất khả kháng;
+b) Doanh nghiệp bị phá sản mà nguyên nhân dẫn đến phá sản không xuất phát từ hoạt động quản lý, điều hành, kiểm soát của người giữ chức vụ Chủ tịch, Tổng giám đốc, Giám đốc, thành viên Hội đồng thành viên của doanh nghiệp do Nhà nước nắm giữ 100% vốn điều lệ; người đại diện phần vốn nhà nước ở doanh nghiệp có vốn nhà nước được cử, chỉ định, bổ nhiệm.
+Điều 85. Giải quyết khiếu nại, tố cáo trong vụ việc phục hồi, phá sản
+1. Cơ quan, tổ chức, cá nhân có quyền khiếu nại, tố cáo quyết định, hành vi trong giải quyết vụ việc phục hồi, phá sản của người tiến hành thủ tục phục hồi, phá sản khi có căn cứ cho rằng quyết định, hành vi đó là trái pháp luật, xâm phạm quyền và lợi ích hợp pháp của mình.
+2. Khiếu nại, tố cáo về quyết định, hành vi của người tiến hành thủ tục phục hồi, phá sản trong thủ tục phục hồi, phá sản được giải quyết tương tự quy định của pháp luật tố tụng dân sự. Khiếu nại, tố cáo về quyết định, hành vi của chấp hành viên, Thủ trưởng cơ quan thi hành án dân sự được thực hiện theo quy định của pháp luật thi hành án dân sự.
+Chương VIII
+ĐIỀU KHOẢN THI HÀNH
+Điều 86. Sửa đổi, bổ sung một số điều, khoản, điểm của các luật, nghị quyết có liên quan
+1. Sửa đổi, bổ sung điểm g khoản 1 Điều 214 của Bộ luật Tố tụng dân sự số 92/2015/QH13 đã được sửa đổi, bổ sung một số điều theo Bộ luật số 45/2019/QH14, Luật số 59/2020/QH14, Luật số 13/2022/QH15, Luật số 19/2023/QH15, Luật số 34/2024/QH15, Luật số 46/2024/QH15 và Luật số 85/2025/QH15 như sau: “g) Theo quy định của pháp luật về phục hồi, phá sản;”.
+2. Sửa đổi, bổ sung điểm a khoản 1 Điều 37 của Luật Bảo hiểm xã hội số 41/2024/QH15 đã được sửa đổi, bổ sung một số điều theo Luật số 73/2025/QH15, Luật số 84/2025/QH15 và Luật số 113/2025/QH15 như sau: “a) Trong trường hợp người sử dụng lao động gặp khó khăn phải tạm dừng sản xuất, kinh doanh dẫn đến việc người lao động và người sử dụng lao động không có khả năng đóng bảo hiểm xã hội hoặc người sử dụng lao động được áp dụng thủ tục phục hồi theo quy định của pháp luật về phục hồi, phá sản thì được tạm dừng đóng vào quỹ hưu trí và tử tuất trong thời gian tối đa 12 tháng;”.
+3. Sửa đổi, bổ sung điểm c khoản 2 Điều 4 của Luật Tổ chức Tòa án nhân dân số 34/2024/QH15 đã được sửa đổi, bổ sung một số điều theo Luật số 81/2025/QH15 và Luật số 116/2025/QH15 như sau: “c) Ủy ban Thường vụ Quốc hội quy định về phạm vi thẩm quyền theo lãnh thổ của một số Tòa án nhân dân khu vực giải quyết vụ việc phục hồi, phá sản; vụ việc dân sự, kinh doanh, thương mại, vụ án hành chính về sở hữu trí tuệ, chuyển giao công nghệ theo đề nghị của Chánh án Tòa án nhân dân tối cao;”.
+4. Sửa đổi, bổ sung mục 6.4.I.B của Phụ lục số 01, Danh mục phí, lệ phí ban hành kèm theo Luật Phí và lệ phí số 97/2015/QH13 đã được sửa đổi, bổ sung một số điều theo Luật số 09/2017/QH14, Luật số 23/2018/QH14, Luật số 72/2020/QH14, Luật số 16/2023/QH15, Luật số 20/2023/QH15, Luật số 24/2023/QH15, Luật số 33/2024/QH15, Luật số 35/2024/QH15, Luật số 47/2024/QH15, Luật số 60/2024/QH15, Luật số 74/2025/QH15, Luật số 89/2025/QH15, Luật số 94/2025/QH15, Luật số 95/2025/QH15, Luật số 116/2025/QH15, Luật số 118/2025/QH15 và Luật số 130/2025/QH15 như sau: 6.4 Lệ phí nộp đơn yêu cầu áp dụng thủ tục phục hồi, phá sảnỦy ban Thường vụ Quốc hội
+5. Thay thế cụm từ “áp dụng Luật Phá sản” bằng cụm từ “áp dụng Luật Phục hồi, phá sản”; thay thế cụm từ “pháp luật về phá sản” bằng cụm từ “pháp luật về phục hồi, phá sản”; thay thế cụm từ “Tòa Phá sản” bằng cụm từ “Tòa Phục hồi, phá sản”; thay thế cụm từ “vụ việc phá sản” bằng cụm từ “vụ việc phục hồi, phá sản” tại các luật, nghị quyết của Quốc hội được ban hành trước ngày Luật này có hiệu lực thi hành.
+Điều 87. Hiệu lực thi hành
+1. Luật này có hiệu lực thi hành từ ngày 01 tháng 3 năm 2026, trừ trường hợp quy định tại khoản 3 Điều 38 của Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2026. 2. Luật Phá sản số 51/2014/QH13 đã được sửa đổi, bổ sung một số điều theo Luật số 85/2025/QH15 hết hiệu lực thi hành kể từ ngày Luật này có hiệu lực thi hành, trừ trường hợp quy định tại điểma và điểm b khoản 1 Điều 88 của Luật này.
+Điều 88. Điều khoản chuyển tiếp
+1. Đối với vụ việc phá sản đã được Tòa án thụ lý trước ngày Luật này có hiệu lực thi hành mà chưa giải quyết xong thì áp dụng quy định của Luật này để tiếp tục giải quyết, trừ các trường hợp sau đây:
+a) Cơ quan thi hành án dân sự đang tổ chức thi hành quyết định tuyên bố doanh nghiệp, hợp tác xã phá sản trước ngày Luật này có hiệu lực thi hành mà chưa thi hành xong thì tiếp tục thi hành theo quy định của Luật Phá sản số 51/2014/QH13;
+b) Đề nghị, kiến nghị đối với quyết định tuyên bố phá sản quy định tại Điều 113 của Luật Phá sản số 51/2014/QH13 mà đến ngày Luật này có hiệu lực thi hành chưa giải quyết xong thì giải quyết theo quy định của Luật Phá sản số 51/2014/QH13.
+2.Áp dụng mức lệ phí phục hồi, lệ phí yêu cầu hỗ trợ vụ việc phá sản của nước ngoài, lệ phí yêu cầu công nhận và cho thi hành bảnán, quyết định về phục hồi, phá sản của Tòa án, cơ quan có thẩm quyền của nước ngoài bằng mức lệ phí phá sản cho đến khi Ủy ban Thường vụ Quốc hội quy định.
+3. Tòa án nhân dân tối cao quy định chi tiết và hướng dẫn khoản 1 Điều này. Luật này được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XV, Kỳ họp thứ 10 thông qua ngày 11 tháng 12 năm 2025. CHỦ TỊCH QUỐC HỘI Trần Thanh Mẫn

@@ -1,0 +1,8 @@
+{
+  "embedding_model": "text-embedding-3-small",
+  "dimension": 1536,
+  "chunk_count": 9183,
+  "index_path": "output\\chunks\\retrieval\\vector\\faiss.index",
+  "metadata_path": "output\\chunks\\retrieval\\vector\\vector_metadata.json",
+  "chunks_path": "output\\chunks\\all_chunks.jsonl"
+}
