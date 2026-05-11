@@ -1,0 +1,6 @@
+env.txt
+
+# Python cache / local env
+__pycache__/
+*.py[cod]
+.venv/

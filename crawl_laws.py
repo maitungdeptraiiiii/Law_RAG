@@ -4,6 +4,7 @@ import argparse
 import json
 import re
 import time
+import unicodedata
 import zipfile
 from pathlib import Path
 from typing import Iterable
@@ -198,6 +199,14 @@ LEGAL_START_PATTERNS = [
         r"^(LUẬT|BỘ LUẬT|NGHỊ QUYẾT|NGHỊ ĐỊNH|PHÁP LỆNH|THÔNG TƯ|QUYẾT ĐỊNH)$",
     )
 ]
+DOCUMENT_TITLE_PATTERNS = [
+    re.compile(pattern)
+    for pattern in (
+        r"^(LUẬT|BỘ LUẬT|NGHỊ QUYẾT|NGHỊ ĐỊNH|PHÁP LỆNH|THÔNG TƯ|QUYẾT ĐỊNH)$",
+        r"^(PHẦN|CHƯƠNG)\s+.+$",
+        r"^Điều\s+1\."
+    )
+]
 FOOTER_MARKERS = {
     "Lưu trữ",
     "Ghi chú",
@@ -209,6 +218,11 @@ FOOTER_MARKERS = {
     "Hỏi đáp pháp luật",
     "PHÁP LUẬT DOANH NGHIỆP",
 }
+EXCLUDED_HTML_CONTAINER_CLASSES = {
+    "NoiDungChiaSe",
+    "box_bm_m",
+    "ttlq",
+}
 ROMAN_NUMERAL_RE = re.compile(r"^(?=[IVXLCDM]+$)[IVXLCDM]+$")
 ARTICLE_NUMBER_RE = re.compile(r"^\d+[A-Za-z]?\.")
 CLAUSE_LINE_RE = re.compile(r"^\d+[.)]\s")
@@ -217,6 +231,34 @@ VIETNAMESE_VOWEL_CHARS = set("aeiouyAEIOUYăâêôơưĂÂÊÔƠƯáàảãạ�
 COMMON_LEGAL_REPLACEMENTS = [
     (re.compile(pattern), replacement)
     for pattern, replacement in (
+        (r"\bS ửa\b", "Sửa"),
+        (r"\bs ửa\b", "sửa"),
+        (r"\bB ổ sung\b", "Bổ sung"),
+        (r"\bb ổ sung\b", "bổ sung"),
+        (r"\bĐ ối\b", "Đối"),
+        (r"\bđ ối\b", "đối"),
+        (r"\bPh ụ\b", "Phụ"),
+        (r"\bph ụ\b", "phụ"),
+        (r"\bNgư ời\b", "Người"),
+        (r"\bngư ời\b", "người"),
+        (r"\bđư ợc\b", "được"),
+        (r"\bĐư ợc\b", "Được"),
+        (r"\bTrư ờng\b", "Trường"),
+        (r"\btrư ờng\b", "trường"),
+        (r"\bTh ời\b", "Thời"),
+        (r"\bth ời\b", "thời"),
+        (r"\bC ủa\b", "Của"),
+        (r"\bc ủa\b", "của"),
+        (r"\bVi ph ạm\b", "Vi phạm"),
+        (r"\bvi ph ạm\b", "vi phạm"),
+        (r"\bPh ạm\b", "Phạm"),
+        (r"\bph ạm\b", "phạm"),
+        (r"\bHo ặc\b", "Hoặc"),
+        (r"\bho ặc\b", "hoặc"),
+        (r"\bThi ệt\b", "Thiệt"),
+        (r"\bthi ệt\b", "thiệt"),
+        (r"\bQuy đ ịnh\b", "Quy định"),
+        (r"\bquy đ ịnh\b", "quy định"),
         (r"\bTòaán\b", "Tòa án"),
         (r"\bTÒAÁN\b", "TÒA ÁN"),
         (r"\bBảnán\b", "Bản án"),
@@ -245,6 +287,10 @@ def trim_non_content_prefix(lines: list[str]) -> list[str]:
     for index, line in enumerate(lines):
         if line == "MỤC LỤC":
             return lines[index + 1 :]
+
+    for index, line in enumerate(lines):
+        if any(pattern.match(line) for pattern in DOCUMENT_TITLE_PATTERNS):
+            return lines[index:]
 
     start_index = 0
     for index, line in enumerate(lines):
@@ -327,6 +373,22 @@ def is_heading_line(line: str) -> bool:
     return line.startswith(("Phần ", "Chương ", "Mục ", "Tiểu mục "))
 
 
+def is_standalone_uppercase_title(line: str) -> bool:
+    stripped = line.strip()
+    if not stripped or len(stripped) > 120:
+        return False
+    if stripped.endswith((".", ";", ":", ",")):
+        return False
+    if any(character.islower() for character in stripped):
+        return False
+
+    letters = [character for character in stripped if character.isalpha()]
+    if not letters:
+        return False
+
+    return all(character.isupper() for character in letters)
+
+
 def is_list_item_start(line: str) -> bool:
     return bool(CLAUSE_LINE_RE.match(line) or POINT_LINE_RE.match(line))
 
@@ -353,7 +415,7 @@ def merge_wrapped_lines(lines: list[str]) -> list[str]:
     buffer = ""
 
     for line in lines:
-        if is_heading_line(line):
+        if is_heading_line(line) or is_standalone_uppercase_title(line):
             if buffer:
                 merged.append(buffer)
                 buffer = ""
@@ -428,7 +490,65 @@ def repair_common_legal_phrases(line: str) -> str:
     return repaired
 
 
+def split_runon_article_heading(line: str) -> list[str]:
+    match = re.match(r"^(Điều\s+\d+[A-Za-z]?\.\s+)(.+)$", line)
+    if not match:
+        return [line]
+
+    prefix, remainder = match.groups()
+    if remainder.startswith("Áp dụng"):
+        return [line]
+
+    body_markers = (
+        "Trong Luật này",
+        "Trong Bộ luật này",
+        "Luật này quy định",
+        "Bộ luật này quy định",
+        "Luật này áp dụng",
+        "Bộ luật này áp dụng",
+        "Việc ",
+        "Khi ",
+        "Tòa án có",
+        "Tòa án phải",
+        "Tòa án tiến hành",
+        "Tòa án quyết định",
+        "Tòa án xem xét",
+        "Người nào",
+        "Người bị",
+        "Người được",
+        "Người tham gia",
+        "Người có",
+        "Trường hợp ",
+    )
+
+    candidate_indexes = [
+        remainder.find(marker)
+        for marker in body_markers
+        if remainder.find(marker) > 12
+    ]
+    if not candidate_indexes:
+        return [line]
+
+    marker_index = min(candidate_indexes)
+    title = remainder[:marker_index].rstrip()
+    body = remainder[marker_index:].strip()
+    if not title or not body:
+        return [line]
+
+    return [f"{prefix}{title}", body]
+
+    return [line]
+
+
+def split_runon_heading_lines(lines: list[str]) -> list[str]:
+    normalized: list[str] = []
+    for line in lines:
+        normalized.extend(split_runon_article_heading(line))
+    return normalized
+
+
 def clean_legal_text(text: str) -> str:
+    text = unicodedata.normalize("NFC", text)
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     if not lines:
         return ""
@@ -439,7 +559,41 @@ def clean_legal_text(text: str) -> str:
     lines = merge_wrapped_lines(lines)
     lines = [repair_split_words(line) for line in lines]
     lines = [repair_common_legal_phrases(line) for line in lines]
+    lines = split_runon_heading_lines(lines)
     return "\n".join(lines).strip()
+
+
+def has_excluded_html_ancestor(node: BeautifulSoup) -> bool:
+    parent = node
+    while parent is not None:
+        classes = parent.get("class", []) if hasattr(parent, "get") else []
+        if any(class_name in EXCLUDED_HTML_CONTAINER_CLASSES for class_name in classes):
+            return True
+        parent = getattr(parent, "parent", None)
+    return False
+
+
+def extract_paragraph_like_lines(node: BeautifulSoup) -> list[str]:
+    def collect(selector: str) -> list[str]:
+        lines: list[str] = []
+        seen: set[str] = set()
+
+        for block in node.select(selector):
+            if has_excluded_html_ancestor(block):
+                continue
+            text = " ".join(block.get_text(" ", strip=True).split())
+            if not text or text in seen or text in FOOTER_MARKERS:
+                continue
+            seen.add(text)
+            lines.append(text)
+
+        return lines
+
+    paragraph_lines = collect("p, li")
+    if paragraph_lines:
+        return paragraph_lines
+
+    return collect("tr")
 
 
 def extract_tvpl_document_text(soup: BeautifulSoup) -> str:
@@ -452,7 +606,11 @@ def extract_tvpl_document_text(soup: BeautifulSoup) -> str:
         if not node:
             continue
 
-        text = collapse_text_lines(node.get_text("\n"))
+        paragraph_lines = extract_paragraph_like_lines(node)
+        if paragraph_lines:
+            text = "\n".join(trim_tvpl_footer(paragraph_lines))
+        else:
+            text = collapse_text_lines(node.get_text("\n"))
         if "Điều 1." in text or "Chương I" in text:
             return text
     return ""
@@ -479,7 +637,13 @@ def detect_document_type(content_type: str, final_url: str) -> str:
     return "unknown"
 
 
-def fetch_document(session: requests.Session, url: str, timeout: int, max_attempts: int = 3) -> dict:
+def fetch_document(
+    session: requests.Session,
+    url: str,
+    timeout: int,
+    max_attempts: int = 3,
+    apply_clean: bool = False,
+) -> dict:
     response: requests.Response | None = None
     last_error: Exception | None = None
 
@@ -514,7 +678,8 @@ def fetch_document(session: requests.Session, url: str, timeout: int, max_attemp
         response.encoding = response.encoding or response.apparent_encoding or "utf-8"
         content_text = extract_text_from_html(response.text)
 
-    content_text = clean_legal_text(content_text)
+    if apply_clean:
+        content_text = clean_legal_text(content_text)
 
     return {
         "source_url": url,
@@ -555,7 +720,13 @@ def save_document(output_dir: Path, payload: dict, index: int) -> dict:
     }
 
 
-def crawl_all(link_items: Iterable[dict], output_dir: Path, delay_seconds: float, timeout: int) -> dict:
+def crawl_all(
+    link_items: Iterable[dict],
+    output_dir: Path,
+    delay_seconds: float,
+    timeout: int,
+    apply_clean: bool,
+) -> dict:
     output_dir.mkdir(parents=True, exist_ok=True)
     session = create_session()
 
@@ -565,7 +736,7 @@ def crawl_all(link_items: Iterable[dict], output_dir: Path, delay_seconds: float
     for index, link_item in enumerate(link_items, start=1):
         url = link_item["url"]
         try:
-            payload = fetch_document(session, url, timeout=timeout)
+            payload = fetch_document(session, url, timeout=timeout, apply_clean=apply_clean)
             payload.update(
                 {
                     "source_index": link_item.get("source_index", index),
@@ -645,6 +816,11 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Chi crawl N URL dau tien de test nhanh",
     )
+    parser.add_argument(
+        "--clean",
+        action="store_true",
+        help="Ap dung clean_legal_text truoc khi luu. Mac dinh la tat de luu raw extracted text.",
+    )
     return parser.parse_args()
 
 
@@ -672,6 +848,7 @@ def main() -> int:
         output_dir=Path(args.output),
         delay_seconds=args.delay,
         timeout=args.timeout,
+        apply_clean=args.clean,
     )
     print(
         f"Hoan tat: {manifest['success']} thanh cong, {manifest['failed']} that bai. "

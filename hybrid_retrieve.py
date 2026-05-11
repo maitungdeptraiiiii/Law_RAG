@@ -11,6 +11,7 @@ from openai import OpenAI
 
 from atlas_vector_store import atlas_vector_search, get_atlas_collection
 from build_vector_index import DEFAULT_EMBEDDING_MODEL
+from env_loader import load_project_env
 from retrieve_chunks import (
     build_index_payload,
     load_index,
@@ -20,6 +21,9 @@ from retrieve_chunks import (
 
 
 DEFAULT_QUERY_REWRITE_MODEL = "gpt-5.4-mini"
+
+
+load_project_env()
 
 
 QUERY_REWRITE_SYSTEM_PROMPT = """Ban la bo chuyen doi query cho he thong retrieval luat Viet Nam.

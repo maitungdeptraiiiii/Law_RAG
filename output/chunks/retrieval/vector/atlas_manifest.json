@@ -1,9 +1,9 @@
 {
   "embedding_model": "text-embedding-3-small",
-  "chunk_count": 9183,
+  "chunk_count": 9840,
   "chunks_path": "output\\chunks\\all_chunks.jsonl",
   "database": "law_rag",
-  "collection": "law_chunks",
-  "vector_index": "law_chunks_vector_index",
+  "collection": "legal_chunks",
+  "vector_index": "legal_chunks_vector_index",
   "uri_configured": true
 }

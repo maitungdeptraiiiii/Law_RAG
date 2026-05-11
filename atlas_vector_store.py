@@ -5,10 +5,15 @@ import os
 from pymongo import MongoClient, ReplaceOne
 from pymongo.collection import Collection
 
+from env_loader import load_project_env
+
 
 DEFAULT_ATLAS_DB = "law_rag"
 DEFAULT_ATLAS_COLLECTION = "legal_chunks"
 DEFAULT_ATLAS_VECTOR_INDEX = "legal_chunks_vector_index"
+
+
+load_project_env()
 
 
 def get_atlas_config(

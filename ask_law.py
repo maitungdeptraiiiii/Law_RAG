@@ -4,13 +4,23 @@ import argparse
 import json
 import os
 from pathlib import Path
+from typing import Any
 
 from openai import OpenAI
 
+from conversation_state import (
+    append_history,
+    format_case_state,
+    format_recent_history,
+    load_session,
+    save_session,
+)
+from env_loader import load_project_env
 from hybrid_retrieve import build_retrieval_queries, hybrid_search
 
 
 DEFAULT_CHAT_MODEL = "gpt-5.4-mini"
+DEFAULT_MEMORY_MODEL = "gpt-5.4-mini"
 
 
 SYSTEM_PROMPT = """Ban la tro ly phap ly noi bo cho du an RAG luat Viet Nam.
@@ -21,6 +31,30 @@ Moi cau tra loi phai:
 2. Neu can cu dieu/khoan/van ban lien quan.
 3. Khong duoc khang dinh vuot qua context.
 """
+
+MEMORY_UPDATE_SYSTEM_PROMPT = """Ban dang quan ly bo nho hoi thoai cho tro ly phap ly Viet Nam.
+Nhiem vu:
+1. Doc tinh tiet vu viec da biet va cau hoi moi cua nguoi dung.
+2. Cap nhat tom tat vu viec va facts co cau truc.
+3. Neu chua du du kien de ket luan so bo, xac dinh thong tin con thieu va dat 1 cau hoi bo sung ngan gon nhat.
+4. Tao mot retrieval_query ngon ngu phap ly dua tren toan bo tinh tiet da biet, khong chi dua vao cau hoi moi nhat.
+
+Tra ve JSON hop le voi cac khoa:
+- case_summary: string
+- facts: object
+- need_clarification: boolean
+- missing_fields: array[string]
+- follow_up_question: string
+- retrieval_query: string
+
+Nguyen tac:
+- Khong bịa facts.
+- Neu nguoi dung vua cung cap them thong tin, phai hop nhat vao facts hien co.
+- follow_up_question phai cu the, toi da 1 cau.
+"""
+
+
+load_project_env()
 
 
 def get_openai_client() -> OpenAI:
@@ -54,6 +88,40 @@ def build_context(results: list[dict]) -> str:
     return "\n\n".join(blocks)
 
 
+def update_case_memory(
+    client: OpenAI,
+    *,
+    question: str,
+    session: dict[str, Any],
+    model: str,
+) -> dict[str, Any]:
+    response = client.chat.completions.create(
+        model=model,
+        temperature=0.1,
+        response_format={"type": "json_object"},
+        messages=[
+            {"role": "system", "content": MEMORY_UPDATE_SYSTEM_PROMPT},
+            {
+                "role": "user",
+                "content": (
+                    f"Hoi thoai gan day:\n{format_recent_history(session)}\n\n"
+                    f"Tinh tiet da biet:\n{format_case_state(session)}\n\n"
+                    f"Cau hoi moi nhat cua nguoi dung:\n{question}\n"
+                ),
+            },
+        ],
+    )
+    payload = json.loads(response.choices[0].message.content or "{}")
+    return {
+        "case_summary": str(payload.get("case_summary", "")).strip(),
+        "facts": payload.get("facts", {}) if isinstance(payload.get("facts", {}), dict) else {},
+        "need_clarification": bool(payload.get("need_clarification", False)),
+        "missing_fields": [str(item) for item in payload.get("missing_fields", []) if str(item).strip()],
+        "follow_up_question": str(payload.get("follow_up_question", "")).strip(),
+        "retrieval_query": str(payload.get("retrieval_query", "")).strip(),
+    }
+
+
 def answer_question(
     question: str,
     *,
@@ -71,16 +139,54 @@ def answer_question(
     atlas_collection: str | None,
     atlas_vector_index: str | None,
     model: str,
+    memory_model: str,
     top_k: int,
+    session_id: str | None = None,
+    session_dir: Path | None = None,
 ) -> dict:
+    client = get_openai_client()
+    session: dict[str, Any] | None = None
+    memory_update: dict[str, Any] | None = None
+
+    if session_id:
+        session = load_session(session_id, session_dir)
+        append_history(session, "user", question)
+        memory_update = update_case_memory(client, question=question, session=session, model=memory_model)
+        session["case_summary"] = memory_update["case_summary"]
+        session["facts"] = memory_update["facts"]
+        session["pending_follow_up"] = memory_update["follow_up_question"] if memory_update["need_clarification"] else None
+        session["last_retrieval_query"] = memory_update["retrieval_query"]
+
+        if memory_update["need_clarification"] and memory_update["follow_up_question"]:
+            answer = memory_update["follow_up_question"]
+            append_history(session, "assistant", answer)
+            session_path = save_session(session, session_dir)
+            return {
+                "question": question,
+                "legal_intent": "",
+                "retrieval_queries": [],
+                "answer": answer,
+                "answer_type": "clarification",
+                "session_id": session_id,
+                "session_path": str(session_path),
+                "case_summary": session.get("case_summary", ""),
+                "facts": session.get("facts", {}),
+                "missing_fields": memory_update["missing_fields"],
+                "retrieved": [],
+            }
+
+    retrieval_input = question
+    if memory_update and memory_update["retrieval_query"]:
+        retrieval_input = memory_update["retrieval_query"]
+
     retrieval_plan = build_retrieval_queries(
-        question,
+        retrieval_input,
         rewrite_mode=query_rewrite_mode,
         rewrite_model=query_rewrite_model,
         max_rewrites=query_rewrite_count,
     )
     retrieved = hybrid_search(
-        question,
+        retrieval_input,
         retrieval_queries=retrieval_plan["retrieval_queries"],
         chunks_path=chunks_path,
         bm25_index_path=bm25_index_path,
@@ -97,8 +203,9 @@ def answer_question(
         final_top_k=top_k,
     )
 
-    client = get_openai_client()
     context = build_context(retrieved)
+    case_state_text = format_case_state(session) if session else "Khong co bo nho hoi thoai."
+    history_text = format_recent_history(session) if session else "Khong co hoi thoai truoc do."
     response = client.chat.completions.create(
         model=model,
         temperature=0.1,
@@ -108,6 +215,8 @@ def answer_question(
                 "role": "user",
                 "content": (
                     f"Cau hoi cua nguoi dung:\n{question}\n\n"
+                    f"Hoi thoai gan day:\n{history_text}\n\n"
+                    f"Tinh tiet vu viec da biet:\n{case_state_text}\n\n"
                     f"Context luat da retrieve:\n{context}\n\n"
                     "Hay tra loi bang tieng Viet, ngan gon, co can cu, va neu thieu du kien thi noi ro can bo sung gi."
                 ),
@@ -116,11 +225,13 @@ def answer_question(
     )
 
     answer = response.choices[0].message.content or ""
-    return {
+    payload = {
         "question": question,
         "legal_intent": retrieval_plan["legal_intent"],
         "retrieval_queries": retrieval_plan["retrieval_queries"],
+        "retrieval_input": retrieval_input,
         "answer": answer,
+        "answer_type": "final",
         "retrieved": [
             {
                 "chunk_id": item["chunk_id"],
@@ -135,6 +246,17 @@ def answer_question(
             for item in retrieved
         ],
     }
+
+    if session is not None:
+        append_history(session, "assistant", answer)
+        session["pending_follow_up"] = None
+        session_path = save_session(session, session_dir)
+        payload["session_id"] = session_id
+        payload["session_path"] = str(session_path)
+        payload["case_summary"] = session.get("case_summary", "")
+        payload["facts"] = session.get("facts", {})
+
+    return payload
 
 
 def main() -> None:
@@ -154,7 +276,10 @@ def main() -> None:
     parser.add_argument("--atlas-collection", default=None, help="Ten collection tren Atlas")
     parser.add_argument("--atlas-vector-index", default=None, help="Ten Atlas Vector Search index")
     parser.add_argument("--model", default=DEFAULT_CHAT_MODEL, help="OpenAI chat model")
+    parser.add_argument("--memory-model", default=DEFAULT_MEMORY_MODEL, help="LLM model dung de cap nhat bo nho hoi thoai")
     parser.add_argument("--top-k", type=int, default=5, help="So chunk dua vao answer stage")
+    parser.add_argument("--session-id", default=None, help="ID de giu nho hoi thoai qua nhieu luot")
+    parser.add_argument("--session-dir", default="output/sessions", help="Noi luu session JSON")
     parser.add_argument("--json", action="store_true", help="In JSON day du")
     args = parser.parse_args()
 
@@ -174,7 +299,10 @@ def main() -> None:
         atlas_collection=args.atlas_collection,
         atlas_vector_index=args.atlas_vector_index,
         model=args.model,
+        memory_model=args.memory_model,
         top_k=args.top_k,
+        session_id=args.session_id,
+        session_dir=Path(args.session_dir),
     )
     if args.json:
         print(json.dumps(payload, ensure_ascii=False, indent=2))

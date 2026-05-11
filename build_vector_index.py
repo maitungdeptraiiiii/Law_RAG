@@ -10,10 +10,14 @@ import numpy as np
 from openai import OpenAI
 
 from atlas_vector_store import build_atlas_document, get_atlas_collection, upsert_atlas_documents
+from env_loader import load_project_env
 from retrieve_chunks import build_searchable_text, load_chunks
 
 
 DEFAULT_EMBEDDING_MODEL = "text-embedding-3-small"
+
+
+load_project_env()
 
 
 def get_openai_client() -> OpenAI:

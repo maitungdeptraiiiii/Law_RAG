@@ -97,10 +97,6 @@ def detect_amendment_title(path: Path, lines: list[str]) -> bool:
     for line in lines[:12]:
         if line.startswith("Điều ") or line.startswith("Chương "):
             break
-
-        # Chỉ giữ các dòng heading ở đầu văn bản, thường là các dòng in hoa.
-        if any(character.islower() for character in line):
-            continue
         title_lines.append(line)
 
     title_window = " ".join(title_lines).upper()
@@ -118,8 +114,9 @@ def detect_amendment_body_hits(lines: list[str]) -> int:
         if not INNER_AMENDMENT_ARTICLE_RE.match(line):
             continue
 
-        previous = lines[index - 1] if index > 0 else ""
-        if AMENDMENT_CONTEXT_RE.search(previous) or line.startswith("“Điều") or line.startswith('"Điều'):
+        lookback_window = " ".join(lines[max(0, index - 2):index])
+        has_quoted_article = line.startswith("“Điều") or line.startswith('"Điều')
+        if AMENDMENT_CONTEXT_RE.search(lookback_window) or has_quoted_article:
             hits += 1
     return hits
 
