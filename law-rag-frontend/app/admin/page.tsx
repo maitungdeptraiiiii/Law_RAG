@@ -1,0 +1,349 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { 
+  Database, 
+  FileText, 
+  Layers, 
+  Activity,
+  Play,
+  RefreshCw,
+  CheckCircle2,
+  Clock,
+  AlertCircle,
+  Loader2
+} from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Progress } from '@/components/ui/progress'
+import { 
+  getCorpusStatus, 
+  getJobs, 
+  triggerCrawl, 
+  triggerChunking, 
+  triggerBM25Index, 
+  triggerVectorIndex 
+} from '@/lib/api'
+import type { CorpusStatus, PipelineJob } from '@/lib/types'
+import { formatDistanceToNow } from 'date-fns'
+import { vi } from 'date-fns/locale'
+import { toast } from 'sonner'
+
+export default function AdminDashboardPage() {
+  const [corpusStatus, setCorpusStatus] = useState<CorpusStatus | null>(null)
+  const [jobs, setJobs] = useState<PipelineJob[]>([])
+  const [loading, setLoading] = useState(true)
+  const [actionLoading, setActionLoading] = useState<string | null>(null)
+
+  useEffect(() => {
+    loadData()
+  }, [])
+
+  async function loadData() {
+    try {
+      const [statusRes, jobsRes] = await Promise.all([
+        getCorpusStatus(),
+        getJobs(),
+      ])
+      
+      if (statusRes.success) setCorpusStatus(statusRes.data)
+      if (jobsRes.success) setJobs(jobsRes.data)
+    } catch (error) {
+      console.error('[v0] Error loading admin data:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  async function handleAction(action: 'crawl' | 'chunk' | 'bm25' | 'vector') {
+    setActionLoading(action)
+    try {
+      let response
+      switch (action) {
+        case 'crawl':
+          response = await triggerCrawl()
+          break
+        case 'chunk':
+          response = await triggerChunking()
+          break
+        case 'bm25':
+          response = await triggerBM25Index()
+          break
+        case 'vector':
+          response = await triggerVectorIndex()
+          break
+      }
+      
+      if (response.success) {
+        toast.success('Tác vụ đã được khởi động')
+        loadData()
+      }
+    } catch (error) {
+      toast.error('Có lỗi xảy ra')
+    } finally {
+      setActionLoading(null)
+    }
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-full">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+      </div>
+    )
+  }
+
+  return (
+    <div className="p-6 space-y-6">
+      {/* Page Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-semibold">Tổng quan hệ thống</h1>
+          <p className="text-muted-foreground mt-1">
+            Quản lý pipeline dữ liệu và theo dõi trạng thái hệ thống
+          </p>
+        </div>
+        <Button variant="outline" onClick={loadData}>
+          <RefreshCw className="h-4 w-4 mr-2" />
+          Làm mới
+        </Button>
+      </div>
+
+      {/* Stats Cards */}
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <StatsCard
+          icon={<Database className="h-5 w-5" />}
+          title="Văn bản đã thu thập"
+          value={corpusStatus?.crawledDocuments.toLocaleString() || '0'}
+          subtitle={`/ ${corpusStatus?.totalDocuments.toLocaleString() || '0'} tổng`}
+          trend={corpusStatus ? Math.round((corpusStatus.crawledDocuments / corpusStatus.totalDocuments) * 100) : 0}
+        />
+        <StatsCard
+          icon={<Layers className="h-5 w-5" />}
+          title="Chunks đã tạo"
+          value={corpusStatus?.totalChunks.toLocaleString() || '0'}
+          subtitle={`từ ${corpusStatus?.chunkedDocuments.toLocaleString() || '0'} văn bản`}
+        />
+        <StatsCard
+          icon={<FileText className="h-5 w-5" />}
+          title="BM25 Index"
+          value={corpusStatus?.bm25IndexStatus.built ? 'Hoạt động' : 'Chưa có'}
+          subtitle={corpusStatus?.bm25IndexStatus.lastUpdated 
+            ? `Cập nhật ${formatDistanceToNow(new Date(corpusStatus.bm25IndexStatus.lastUpdated), { addSuffix: true, locale: vi })}`
+            : 'Chưa cập nhật'
+          }
+          status={corpusStatus?.bm25IndexStatus.built ? 'success' : 'warning'}
+        />
+        <StatsCard
+          icon={<Activity className="h-5 w-5" />}
+          title="Vector Index"
+          value={corpusStatus?.vectorIndexStatus.built ? 'Hoạt động' : 'Chưa có'}
+          subtitle={corpusStatus?.vectorIndexStatus.lastUpdated 
+            ? `Cập nhật ${formatDistanceToNow(new Date(corpusStatus.vectorIndexStatus.lastUpdated), { addSuffix: true, locale: vi })}`
+            : 'Chưa cập nhật'
+          }
+          status={corpusStatus?.vectorIndexStatus.built ? 'success' : 'warning'}
+        />
+      </div>
+
+      {/* Pipeline Actions */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Điều khiển Pipeline</CardTitle>
+          <CardDescription>
+            Chạy các bước trong pipeline xử lý dữ liệu. Mỗi bước phụ thuộc vào bước trước đó.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <PipelineActionCard
+              step={1}
+              title="Thu thập văn bản"
+              description="Crawl văn bản từ danh sách URL"
+              icon={<Database className="h-5 w-5" />}
+              loading={actionLoading === 'crawl'}
+              onRun={() => handleAction('crawl')}
+            />
+            <PipelineActionCard
+              step={2}
+              title="Chia chunks"
+              description="Phân đoạn văn bản thành chunks"
+              icon={<Layers className="h-5 w-5" />}
+              loading={actionLoading === 'chunk'}
+              onRun={() => handleAction('chunk')}
+            />
+            <PipelineActionCard
+              step={3}
+              title="Xây dựng BM25"
+              description="Tạo index BM25 cho tìm kiếm"
+              icon={<FileText className="h-5 w-5" />}
+              loading={actionLoading === 'bm25'}
+              onRun={() => handleAction('bm25')}
+            />
+            <PipelineActionCard
+              step={4}
+              title="Xây dựng Vector"
+              description="Tạo embeddings và FAISS index"
+              icon={<Activity className="h-5 w-5" />}
+              loading={actionLoading === 'vector'}
+              onRun={() => handleAction('vector')}
+            />
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Recent Jobs */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Lịch sử tác vụ</CardTitle>
+          <CardDescription>
+            Các tác vụ pipeline gần đây và trạng thái của chúng
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-3">
+            {jobs.length === 0 ? (
+              <p className="text-sm text-muted-foreground text-center py-8">
+                Chưa có tác vụ nào được ghi nhận
+              </p>
+            ) : (
+              jobs.map((job) => (
+                <JobRow key={job.id} job={job} />
+              ))
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+
+function StatsCard({ 
+  icon, 
+  title, 
+  value, 
+  subtitle, 
+  trend,
+  status 
+}: { 
+  icon: React.ReactNode
+  title: string
+  value: string
+  subtitle: string
+  trend?: number
+  status?: 'success' | 'warning' | 'error'
+}) {
+  return (
+    <Card>
+      <CardContent className="p-6">
+        <div className="flex items-center justify-between">
+          <div className="p-2 rounded-lg bg-primary/10 text-primary">
+            {icon}
+          </div>
+          {status && (
+            <div className={`w-2 h-2 rounded-full ${
+              status === 'success' ? 'bg-success' : 
+              status === 'warning' ? 'bg-warning' : 'bg-destructive'
+            }`} />
+          )}
+        </div>
+        <div className="mt-4">
+          <p className="text-2xl font-semibold">{value}</p>
+          <p className="text-sm text-muted-foreground mt-1">{title}</p>
+          <p className="text-xs text-muted-foreground mt-0.5">{subtitle}</p>
+        </div>
+        {trend !== undefined && (
+          <div className="mt-3">
+            <Progress value={trend} className="h-1.5" />
+            <p className="text-xs text-muted-foreground mt-1">{trend}% hoàn thành</p>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
+
+function PipelineActionCard({
+  step,
+  title,
+  description,
+  icon,
+  loading,
+  onRun,
+}: {
+  step: number
+  title: string
+  description: string
+  icon: React.ReactNode
+  loading: boolean
+  onRun: () => void
+}) {
+  return (
+    <div className="p-4 rounded-lg border border-border bg-muted/30">
+      <div className="flex items-start justify-between mb-3">
+        <div className="p-2 rounded-lg bg-primary/10 text-primary">
+          {icon}
+        </div>
+        <span className="text-xs font-medium text-muted-foreground">Bước {step}</span>
+      </div>
+      <h4 className="font-medium text-sm">{title}</h4>
+      <p className="text-xs text-muted-foreground mt-1 mb-4">{description}</p>
+      <Button 
+        size="sm" 
+        variant="secondary" 
+        className="w-full"
+        onClick={onRun}
+        disabled={loading}
+      >
+        {loading ? (
+          <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+        ) : (
+          <Play className="h-4 w-4 mr-2" />
+        )}
+        Chạy
+      </Button>
+    </div>
+  )
+}
+
+function JobRow({ job }: { job: PipelineJob }) {
+  const typeLabels: Record<string, string> = {
+    crawl: 'Thu thập văn bản',
+    chunk: 'Chia chunks',
+    index_bm25: 'Xây dựng BM25',
+    index_vector: 'Xây dựng Vector',
+  }
+
+  const statusConfig = {
+    pending: { icon: Clock, color: 'text-muted-foreground', label: 'Đang chờ' },
+    running: { icon: Loader2, color: 'text-info', label: 'Đang chạy', animate: true },
+    completed: { icon: CheckCircle2, color: 'text-success', label: 'Hoàn thành' },
+    failed: { icon: AlertCircle, color: 'text-destructive', label: 'Lỗi' },
+  }
+
+  const config = statusConfig[job.status]
+  const StatusIcon = config.icon
+
+  return (
+    <div className="flex items-center gap-4 p-3 rounded-lg border border-border">
+      <StatusIcon 
+        className={`h-5 w-5 ${config.color} ${config.animate ? 'animate-spin' : ''}`} 
+      />
+      <div className="flex-1 min-w-0">
+        <p className="text-sm font-medium">{typeLabels[job.type] || job.type}</p>
+        <p className="text-xs text-muted-foreground">
+          {job.startedAt && formatDistanceToNow(new Date(job.startedAt), { addSuffix: true, locale: vi })}
+        </p>
+      </div>
+      {job.status === 'running' && (
+        <div className="w-24">
+          <Progress value={job.progress} className="h-1.5" />
+          <p className="text-xs text-muted-foreground text-right mt-1">{job.progress}%</p>
+        </div>
+      )}
+      <span className={`text-xs font-medium ${config.color}`}>
+        {config.label}
+      </span>
+    </div>
+  )
+}

@@ -1,0 +1,1 @@
+"""Retrieval and indexing utilities for Law RAG."""

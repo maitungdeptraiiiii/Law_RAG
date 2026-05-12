@@ -1,0 +1,1 @@
+"""HTTP API for the Law RAG project."""
