@@ -43,6 +43,35 @@ Law-RAG/
 	- debug truy vấn retrieve.
 - Upload tài liệu qua API để chuẩn bị cho luồng OCR/phân tích tài liệu.
 
+## 2.1. Demo giao diện
+
+Các ảnh dưới đây minh họa giao diện hiện tại của hệ thống. Đặt file ảnh tương ứng vào thư mục `docs/screenshots/` để README hiển thị đúng.
+
+### Landing page
+
+![Landing page](docs/screenshots/landing-page.png)
+
+Trang giới thiệu sản phẩm, mô tả giá trị của hệ thống Law RAG và điều hướng nhanh tới khu vực chat hoặc quản trị.
+
+### Chat hỏi đáp pháp luật
+
+![Màn hình chat hỏi đáp](docs/screenshots/chat-answer.png)
+
+Màn hình hội thoại chính hỗ trợ hỏi đáp pháp luật tiếng Việt, lưu lịch sử chat và trả lời có trích dẫn căn cứ pháp lý.
+
+
+### Khối tính năng nổi bật
+
+![Phần tính năng nổi bật](docs/screenshots/features-section.png)
+
+Phần giới thiệu các điểm mạnh của hệ thống như Hybrid Retrieval giúp tăng độ chính xác tìm kiếm, cơ chế trích dẫn minh bạch nguồn luật, hỗ trợ hội thoại liên tục theo ngữ cảnh và khả năng mở rộng tích hợp OCR trong tương lai.
+
+### Dashboard quản trị
+
+![Dashboard quản trị](docs/screenshots/admin-dashboard.png)
+
+Trang quản trị theo dõi tình trạng dữ liệu, số lượng văn bản và điều khiển pipeline crawl, chunk, BM25, vector index.
+
 ## 3. Yêu cầu môi trường
 
 ### Backend
