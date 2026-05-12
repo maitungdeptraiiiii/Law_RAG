@@ -18,7 +18,7 @@ def utc_now_iso() -> str:
 def sanitize_session_id(session_id: str) -> str:
     cleaned = re.sub(r"[^A-Za-z0-9._-]+", "_", session_id).strip("._")
     if not cleaned:
-        raise ValueError("session_id khong hop le.")
+        raise ValueError("session_id không hợp lệ.")
     return cleaned
 
 
@@ -31,11 +31,14 @@ def resolve_session_path(session_id: str, session_dir: Path | None = None) -> Pa
 def create_empty_session(session_id: str) -> dict[str, Any]:
     return {
         "session_id": sanitize_session_id(session_id),
+        "title": "",
         "history": [],
         "facts": {},
         "case_summary": "",
         "pending_follow_up": None,
         "last_retrieval_query": "",
+        "archived": False,
+        "pinned": False,
         "updated_at": utc_now_iso(),
     }
 
@@ -47,18 +50,22 @@ def load_session(session_id: str, session_dir: Path | None = None) -> dict[str, 
 
     payload = json.loads(path.read_text(encoding="utf-8"))
     payload.setdefault("session_id", sanitize_session_id(session_id))
+    payload.setdefault("title", "")
     payload.setdefault("history", [])
     payload.setdefault("facts", {})
     payload.setdefault("case_summary", "")
     payload.setdefault("pending_follow_up", None)
     payload.setdefault("last_retrieval_query", "")
+    payload.setdefault("archived", False)
+    payload.setdefault("pinned", False)
     payload.setdefault("updated_at", utc_now_iso())
     return payload
 
 
-def save_session(session: dict[str, Any], session_dir: Path | None = None) -> Path:
+def save_session(session: dict[str, Any], session_dir: Path | None = None, touch_updated_at: bool = True) -> Path:
     path = resolve_session_path(session["session_id"], session_dir)
-    session["updated_at"] = utc_now_iso()
+    if touch_updated_at:
+        session["updated_at"] = utc_now_iso()
     path.write_text(json.dumps(session, ensure_ascii=False, indent=2), encoding="utf-8")
     return path
 
@@ -82,11 +89,11 @@ def recent_history(session: dict[str, Any], max_messages: int = 6) -> list[dict[
 def format_recent_history(session: dict[str, Any], max_messages: int = 6) -> str:
     items = recent_history(session, max_messages=max_messages)
     if not items:
-        return "Chua co hoi thoai truoc do."
+        return "Chưa có hội thoại trước đó."
 
     blocks: list[str] = []
     for item in items:
-        label = "Nguoi dung" if item["role"] == "user" else "Tro ly"
+        label = "Người dùng" if item["role"] == "user" else "Trợ lý"
         blocks.append(f"- {label}: {item['content']}")
     return "\n".join(blocks)
 
@@ -95,11 +102,11 @@ def format_case_state(session: dict[str, Any]) -> str:
     facts = session.get("facts", {})
     summary = str(session.get("case_summary", "")).strip()
     if not facts and not summary:
-        return "Chua co tinh tiet vu viec da luu."
+        return "Chưa có tình tiết vụ việc đã lưu."
 
     lines: list[str] = []
     if summary:
-        lines.append(f"Tom tat: {summary}")
+        lines.append(f"Tóm tắt: {summary}")
     if facts:
         lines.append("Facts:")
         for key in sorted(facts):

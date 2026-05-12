@@ -12,6 +12,7 @@ import type {
   UploadedDocument,
   DebugQueryRequest,
   DebugQueryResponse,
+  UpdateSessionRequest,
   PaginatedResponse,
   ApiResponse,
 } from './types'
@@ -183,6 +184,15 @@ export async function deleteSession(sessionId: string): Promise<ApiResponse<void
 export async function archiveSession(sessionId: string): Promise<ApiResponse<Session>> {
   const response = await requestJson<Session>(`/api/sessions/${sessionId}/archive`, {
     method: 'POST',
+  })
+  if (!response.success) return response
+  return { success: true, data: reviveSession(response.data) }
+}
+
+export async function updateSession(sessionId: string, request: UpdateSessionRequest): Promise<ApiResponse<Session>> {
+  const response = await requestJson<Session>(`/api/sessions/${sessionId}`, {
+    method: 'PATCH',
+    body: JSON.stringify(request),
   })
   if (!response.success) return response
   return { success: true, data: reviveSession(response.data) }

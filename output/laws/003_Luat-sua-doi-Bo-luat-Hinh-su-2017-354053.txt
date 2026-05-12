@@ -1133,15 +1133,18 @@ c) Đối với người dưới 13 tuổi;
 d) Chứa chấp, rủ rê, lôi kéo, mua chuộc, kích động, xúi giục, đe dọa, uy hiếp, dùng vũ lực hoặc có hành vi khác ép buộc người dưới 18 tuổi thực hiện tội phạm rất nghiêm trọng hoặc tội phạm đặc biệt nghiêm trọng;
 3. Người phạm tội còn có thể bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng.”.
 124. Sửa đổi, bổ sung các khoản 1, 2 và 3 Điều 326 như sau: “1. Người nào làm ra, sao chép, lưu hành, vận chuyển, mua bán, tàng trữ nhằm phổ biến sách, báo, tranh, ảnh, phim, nhạc hoặc những vật phẩm khác có nội dung khiêu dâm, đồi trụy hoặc hành vi khác truyền bá vật phẩm đồi trụy thuộc một trong các trường hợp sau đây, thì bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng, phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm:
-a) Dữ liệu được số hóa có dung lượng từ 01 gigabyte (GB) đến dưới 05 gigabyte (GB); b)Ảnh có số lượng từ 100 ảnh đến dưới 200 ảnh;
+a) Dữ liệu được số hóa có dung lượng từ 01 gigabyte (GB) đến dưới 05 gigabyte (GB);
+b)Ảnh có số lượng từ 100 ảnh đến dưới 200 ảnh;
 c) Sách in, báo in hoặc vật phẩm khác có số lượng từ 50 đơn vị đến dưới 100 đơn vị;
 d) Phổ biến cho từ 10 người đến 20 người;
-b) Dữ liệu được số hóa có dung lượng từ 05 gigabyte (GB) đến dưới 10 gigabyte (GB); c)Ảnh có số lượng từ 200 ảnh đến dưới 500 ảnh;
+b) Dữ liệu được số hóa có dung lượng từ 05 gigabyte (GB) đến dưới 10 gigabyte (GB);
+c)Ảnh có số lượng từ 200 ảnh đến dưới 500 ảnh;
 d) Sách in, báo in hoặc vật phẩm khác có số lượng từ 100 đơn vị đến dưới 200 đơn vị;
 đ) Phổ biến cho từ 21 người đến 100 người;
 e) Phổ biến cho người dưới 18 tuổi;
 g) Sử dụng mạng internet, mạng máy tính, mạng viễn thông hoặc phương tiện điện tử để phạm tội;
-a) Dữ liệu được số hóa có dung lượng 10 gigabyte (GB) trở lên; b)Ảnh có số lượng 500 ảnh trở lên;
+a) Dữ liệu được số hóa có dung lượng 10 gigabyte (GB) trở lên;
+b)Ảnh có số lượng 500 ảnh trở lên;
 c) Sách in, báo in hoặc vật phẩm khác có số lượng 200 đơn vị trở lên;
 d) Phổ biến cho 101 người trở lên.”.
 125. Sửa đổi, bổ sung tên điều, các khoản 1, 2 và 3 Điều 337 như sau: “ Điều 337. Tội cố ý làm lộ bí mật nhà nước; tội chiếm đoạt, mua bán hoặc tiêu hủy vật hoặc tài liệu bí mật nhà nước
@@ -1312,4 +1315,5 @@ g) Bỏ từ “một” tại khoản 3 Điều 346;
 h) Bỏ từ “từ” trước cụm từ “1.000.000.000 đồng” tại khoản 3 Điều 223 và trước cụm từ “11 giấy tờ giả trở lên” tại điểm a khoản 4 Điều 359;
 i) Bỏ cụm từ “, thẩm định giá tài sản” tại khoản 1 Điều 383;
 k) Bỏ cụm từ “, kinh tế, lao động” sau cụm từ “các vụ án hình sự, hành chính, dân sự” tại khoản 1 Điều 384.
-Điều 3. Hiệu lực thi hành Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2018. Luật này được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XIV, kỳ họp thứ 3 thông qua ngày 20 tháng 6 năm 2017. CHỦ TỊCH QUỐC HỘI Nguyễn Thị Kim Ngân
+Điều 3. Hiệu lực thi hành Luật này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2018. Luật này được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XIV, kỳ họp thứ 3 thông qua ngày 20 tháng 6 năm 2017.
+CHỦ TỊCH QUỐC HỘI Nguyễn Thị Kim Ngân

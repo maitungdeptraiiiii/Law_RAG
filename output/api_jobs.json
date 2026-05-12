@@ -1,0 +1,12 @@
+[
+  {
+    "id": "job-4d53f815199d",
+    "type": "crawl",
+    "status": "completed",
+    "progress": 100,
+    "startedAt": "2026-05-12T05:20:27.924003+00:00",
+    "completedAt": "2026-05-12T05:21:21.136963+00:00",
+    "error": null,
+    "metadata": {}
+  }
+]

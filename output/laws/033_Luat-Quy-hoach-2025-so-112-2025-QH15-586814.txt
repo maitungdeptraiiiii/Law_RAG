@@ -118,7 +118,8 @@ c) Các cơ quan chuyên môn thu ộc Ủy ban nhân dân cấp tỉnh đề xu
 d) Cơ quan lập quy hoạch chủ trì, phối hợp với các cơ quan, tổ chức liên quan, Ủy ban nhân dân cấp xã xem xét, xử lý các vấn đề liên ngành, liên xã nhằm bảo đảm tính thống nhất, đồng bộ và hiệu quả của quy hoạch;
 đ) Cơ quan lập quy hoạch hoàn thiện nội dung quy hoạch, báo cáo cơ quan tổ chức lập quy hoạch gửi lấy ý kiến theo quy định tại Điều 23 của Luật này;
 e) Cơ quan lập quy hoạch chủ trì, phối hợp với các cơ quan, tổ chức liên quan, Ủy ban nhân dân cấp xã tiếp thu, giải trình ý kiến góp ý và hoàn thiện nội dung quy hoạch, trình Hội đồng thẩm định quy hoạch;
-g) Cơ quan lập quy hoạch hoàn thiện nội dung quy hoạch theo ý kiến thẩm định của Hội đồng thẩm định quy hoạch, trình Ủy ban nhân dân cấp tỉnh; h)Ủy ban nhân dân cấp tỉnh trình Hội đồng nhân dân cấp tỉnh xem xét, thông qua quy hoạch trước khi Chủ tịch Ủy ban nhân dân cấp tỉnh phê duyệt; tổ chức công bố, công khai quy hoạch theo quy định tại các điều 41, 42 và 43 của Luật này.
+g) Cơ quan lập quy hoạch hoàn thiện nội dung quy hoạch theo ý kiến thẩm định của Hội đồng thẩm định quy hoạch, trình Ủy ban nhân dân cấp tỉnh;
+h)Ủy ban nhân dân cấp tỉnh trình Hội đồng nhân dân cấp tỉnh xem xét, thông qua quy hoạch trước khi Chủ tịch Ủy ban nhân dân cấp tỉnh phê duyệt; tổ chức công bố, công khai quy hoạch theo quy định tại các điều 41, 42 và 43 của Luật này.
 4. Trình tự lập, thẩm định và phê duyệt quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn thực hiện theo quy định của pháp luật có liên quan.
 5. Việc công bố quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn tuân thủ quy định của Luật này và quy định khác của pháp luật có liên quan.
 6. Chính phủ quy định trình tự lập, thẩm định, phê duyệt và công bố quy hoạch ngành; quy định chi tiết các khoản 1, 2 và 3 Điều này.
@@ -160,7 +161,8 @@ LẬP QUY HOẠCH
 Mục 1. TỔ CHỨC LẬP QUY HOẠCH
 Điều 17. Thẩm quyền tổ chức lập quy hoạch
 1. Chính phủ tổ chức lập quy hoạch tổng thể quốc gia, quy hoạch không gian biển quốc gia, quy hoạch sử dụng đất quốc gia.
-2. Các Bộ tổ chức lập quy hoạch ngành, quy hoạch vùng thuộc phạm vi quản lý theo quy định của Chính phủ. 3.Ủy ban nhân dân cấp tỉnh tổ chức lập quy hoạch tỉnh.
+2. Các Bộ tổ chức lập quy hoạch ngành, quy hoạch vùng thuộc phạm vi quản lý theo quy định của Chính phủ.
+3.Ủy ban nhân dân cấp tỉnh tổ chức lập quy hoạch tỉnh.
 4. Thẩm quyền tổ chức lập quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn thực hiện theo quy định của pháp luật có liên quan.
 Điều 18. Lập đồng thời các quy hoạch
 1. Các quy ho ạch được phép lập đồng thời, trừ trường hợp pháp luật có liên quan không cho lập đồng thời.
@@ -173,7 +175,8 @@ Mục 1. TỔ CHỨC LẬP QUY HOẠCH
 Điều 20. Đề cương lập quy hoạch
 1. Đề cương lập quy hoạch bao gồm những nội dung chủ yếu sau đây:
 a) Sự cần thiết lập quy hoạch; căn cứ lập quy hoạch; định hướng, yêu cầu của quy hoạch có liên quan, quy hoạch được cụ thể hóa đối với quy hoạch cần lập (nếu có);
-b) Phạm vi, ranh giới lập quy hoạch; thời kỳ, tầm nhìn của quy hoạch; c)Yêu cầu về nội dung quy hoạch; hồ sơ quy hoạch;
+b) Phạm vi, ranh giới lập quy hoạch; thời kỳ, tầm nhìn của quy hoạch;
+c)Yêu cầu về nội dung quy hoạch; hồ sơ quy hoạch;
 d) Thời gian, tiến độ lập quy hoạch;
 đ) Trách nhi ệm của các cơ quan, tổ chức, cá nhân có liên quan trong việc lập quy hoạch.
 2. Thẩm quyền tổ chức lập, phê duyệt đề cương lập quy hoạch như sau:
@@ -427,7 +430,8 @@ b) Cơ sở dữ liệu khác có liên quan đến quy hoạch.
 1. Thông tin về quy hoạch đã được quyết định hoặc phê duyệt phải được công khai, cung cấp đầy đủ, kịp thời, chính xác cho cơ quan, tổ chức, cá nhân khi có yêu cầu theo quy định của Luật này, pháp luật về tiếp cận thông tin và pháp luật về thực hiện dân chủ ở cơ sở, trừ những nội dung bí mật nhà nước theo quy định của pháp luật về bảo vệ bí mật nhà nước.
 2. Trách nhi ệm cung cấp thông tin, dữ liệu về quy hoạch được quy định như sau:
 a) Cơ quan lập quy hoạch tổng thể quốc gia, quy hoạch không gian biển quốc gia, quy hoạch sử dụng đất quốc gia có trách nhiệm cung cấp thông tin, dữ liệu về quy hoạch tổng thể quốc gia, quy hoạch không gian biển quốc gia, quy hoạch sử dụng đất quốc gia;
-b) Cơ quan tổ chức lập quy hoạch có trách nhiệm cung cấp thông tin, dữ liệu về quy hoạch ngành, quy hoạch vùng thuộc phạm vi quản lý; c)Ủy ban nhân dân cấp tỉnh có trách nhiệm cung cấp thông tin, dữ liệu về quy hoạch tỉnh;
+b) Cơ quan tổ chức lập quy hoạch có trách nhiệm cung cấp thông tin, dữ liệu về quy hoạch ngành, quy hoạch vùng thuộc phạm vi quản lý;
+c)Ủy ban nhân dân cấp tỉnh có trách nhiệm cung cấp thông tin, dữ liệu về quy hoạch tỉnh;
 d) Trách nhi ệm cung cấp thông tin, dữ liệu về quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn thực hiện theo quy định của pháp luật có liên quan.
 3. Hình thức cung cấp thông tin, dữ liệu về quy hoạch bao gồm:
 a) Cung cấp bằng văn bản theo yêu cầu của cơ quan, tổ chức, cá nhân;
@@ -604,7 +608,8 @@ d) Cơ quan được giao lập điều chỉnh quy hoạch tiếp thu, giải t
 đ) Cơ quan được giao lập điều chỉnh quy hoạch hoàn thiện nội dung quy hoạch theo ý kiến thẩm định của Hội đồng thẩm định điều chỉnh quy hoạch, trình Ủy ban nhân dân cấp tỉnh;
 e) Ủy ban nhân dân cấp tỉnh trình Hội đồng nhân dân cấp tỉnh xem xét, thông qua điều chỉnh quy hoạch tỉnh trước khi Chủ tịch Ủy ban nhân dân cấp tỉnh phê duyệt; tổ chức công bố quy hoạch theo quy định của pháp luật về quy hoạch trước ngày Luật này có hiệu lực.
 5. Thẩm quyền tổ chức lập điều chỉnh quy hoạch được quy định như sau:
-a) Các Bộ tổ chức lập điều chỉnh quy hoạch không gian biển quốc gia, quy hoạch sử dụng đất quốc gia, quy hoạch ngành quốc gia, quy hoạch vùng thuộc phạm vi quản lý; b)Ủy ban nhân dân cấp tỉnh tổ chức lập điều chỉnh quy hoạch tỉnh.
+a) Các Bộ tổ chức lập điều chỉnh quy hoạch không gian biển quốc gia, quy hoạch sử dụng đất quốc gia, quy hoạch ngành quốc gia, quy hoạch vùng thuộc phạm vi quản lý;
+b)Ủy ban nhân dân cấp tỉnh tổ chức lập điều chỉnh quy hoạch tỉnh.
 6. Nội dung điều chỉnh quy hoạch được quy định như sau:
 a) Nội dung điều chỉnh quy hoạch không gian biển quốc gia, quy hoạch sử dụng đất quốc gia, quy hoạch ngành quốc gia, quy hoạch vùng thực hiện theo quy định của pháp luật về quy hoạch trước ngày Luật này có hiệu lực thi hành, trừ quy định tại điểm n khoản 2 Điều 22, điểm i khoản 2 Điều 23, điểm g khoản 3, điểm d khoản 5 và điểm d khoản 6 Điều 25 và điểm g khoản 2 Điều 26 của Luật Quy hoạch số 21/2017/QH15 đã được sửa đổi bổ sung một số điều theo Luật số 03/2022/QH15, Luật số 05/2022/QH15, Luật số 08/2022/QH15, Luật số 09/2022/QH15, Luật số 15/2023/QH15, Luật số 16/2023/QH15, Luật số 20/2023/QH15, Luật số 26/2023/QH15, Luật số 27/2023/QH15, Luật số 28/2023/QH15, Luật số 31/2024/QH15, Luật số 33/2024/QH15, Luật số 35/2024/QH15, Luật số 38/2024/QH15, Luật số 43/2024/QH15 và Luật số 57/2024/QH15 (sau đây gọi là Luật Quy hoạch số 21/2017/QH15) và quy định của pháp luật khác có liên quan;
 b) Nội dung điều chỉnh quy hoạch tỉnh thực hiện theo quy định của pháp luật về quy hoạch trước ngày Luật này có hiệu lực thi hành, trừ quy định tại điểm o khoản 2 Điều 27 của Luật Quy hoạch số 21/2017/QH15 và quy định khác của pháp luật có liên quan. Việc xác định chỉ tiêu sử dụng đất trong phương án phân bổ và khoanh vùng đất đai trong điều chỉnh quy hoạch tỉnh thời kỳ 2021 - 2030 thực hiện theo quy định của pháp luật về đất đai.
@@ -642,7 +647,10 @@ a) Xây dựng, trình Chủ tịch Hội đồng thẩm định thông qua kế
 b) Tổng hợp các ý kiến nhận xét, đánh giá của thành viên Hội đồng thẩm định; xây dựng dự thảo báo cáo thẩm định điều chỉnh quy hoạch, gửi xin ý kiến thành viên Hội đồng thẩm định; xin ý kiến thành viên Hội đồng thẩm định thông qua dự thảo báo cáo thẩm định quy hoạch; lập biên bản họp của Hội thẩm định; hoàn thiện báo cáo thẩm định quy hoạch trình Chủ tịch Hội đồng thẩm định xem xét, ban hành;
 c) Chuẩn bị các điều kiện cần thiết để Hội đồng thẩm định triển khai các hoạt động thẩm định theo quy định.
 15. Ủy viên phản biện trong Hội đồng thẩm định điều chỉnh quy hoạch được quy định như sau:
-a) Hội đồng thẩm định phải có ít nhất 03 thành viên là ủy viên phản biện quy hoạch; có ít nhất 01 thành viên là ủy viên phản biện sơ đồ, bản đồ và cơ sở dữ liệu về quy hoạch; b)Ủy viên phản biện quy hoạch phải đáp ứng điều kiện về năng lực, kinh nghiệm theo quy định của pháp luật về quy hoạch trước ngày Luật này có hiệu lực thi hành; c)Ủy viên phản biện sơ đồ, bản đồ và cơ sở dữ liệu về quy hoạch có trình độ từ đại học trở lên, có thời gian ít nhất là 05 năm liên tục tham gia hoạt động đo đạc và bản đồ hoặc tham gia lập sơ đồ, bản đồ, cơ sở dữ liệu về quy hoạch; d)Ủy viên phản biện trong Hội đồng thẩm định có trách nhiệm, quyền hạn quy định tại điểm a và điểm c khoản 13 Điều này.
+a) Hội đồng thẩm định phải có ít nhất 03 thành viên là ủy viên phản biện quy hoạch; có ít nhất 01 thành viên là ủy viên phản biện sơ đồ, bản đồ và cơ sở dữ liệu về quy hoạch;
+b)Ủy viên phản biện quy hoạch phải đáp ứng điều kiện về năng lực, kinh nghiệm theo quy định của pháp luật về quy hoạch trước ngày Luật này có hiệu lực thi hành;
+c)Ủy viên phản biện sơ đồ, bản đồ và cơ sở dữ liệu về quy hoạch có trình độ từ đại học trở lên, có thời gian ít nhất là 05 năm liên tục tham gia hoạt động đo đạc và bản đồ hoặc tham gia lập sơ đồ, bản đồ, cơ sở dữ liệu về quy hoạch;
+d)Ủy viên phản biện trong Hội đồng thẩm định có trách nhiệm, quyền hạn quy định tại điểm a và điểm c khoản 13 Điều này.
 16. Nội dung thẩm định điều chỉnh quy hoạch tập trung vào các vấn đề sau đây:
 a) Việc tuân thủ trình tự lập điều chỉnh quy hoạch theo quy định tại các khoản 1, 2, 3 và 4 Điều này;
 b) Việc tích hợp các nội dung quy hoạch do Bộ và địa phương liên quan được phân công thực hiện (nếu có); sự thống nhất, đồng bộ với quy hoạch có liên quan;

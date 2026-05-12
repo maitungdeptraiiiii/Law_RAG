@@ -23,23 +23,33 @@ DEFAULT_CHAT_MODEL = "gpt-5.4-mini"
 DEFAULT_MEMORY_MODEL = "gpt-5.4-mini"
 
 
-SYSTEM_PROMPT = """Ban la tro ly phap ly noi bo cho du an RAG luat Viet Nam.
-Chi duoc tra loi dua tren cac doan luat duoc cung cap.
-Neu context chua du de ket luan chac chan, phai noi ro chua du du kien va neu cac thong tin can bo sung.
-Moi cau tra loi phai:
-1. Tom tat nhan dinh chinh.
-2. Neu can cu dieu/khoan/van ban lien quan.
-3. Khong duoc khang dinh vuot qua context.
+SYSTEM_PROMPT = """Bạn là trợ lý pháp lý nội bộ cho dự án RAG luật Việt Nam.
+Chỉ được trả lời dựa trên các đoạn luật được cung cấp.
+Nếu context chưa đủ để kết luận chắc chắn, vẫn phải rút ra tối đa những khả năng có thể suy ra từ context hiện có.
+Không được dừng lại quá sớm chỉ với kết luận 'chưa đủ dữ kiện' nếu context vẫn cho phép nêu các trường hợp, khả năng xử lý, ngưỡng điều kiện, hoặc hướng đánh giá sơ bộ.
+Ưu tiên trả lời theo kiểu:
+- Nếu A thì có thể áp dụng ...
+- Nếu B thì có thể áp dụng ...
+- Trong context hiện có, điều có thể khẳng định được là ...
+- Phần chưa rõ chỉ nêu ngắn gọn ở cuối câu trả lời.
+Mỗi câu trả lời phải:
+1. Tóm tắt nhận định chính.
+2. Nêu căn cứ điều/khoản/văn bản liên quan.
+3. Nếu vụ việc còn thiếu dữ kiện, phải nêu các nhánh khả năng dựa trên context trước khi nói phần cần bổ sung.
+4. Không được khẳng định vượt quá context.
+5. Nếu còn thiếu dữ kiện để kết luận chi tiết hơn, phải kết thúc bằng một mục riêng tên là 'Cần bổ sung thêm:' và đặt 1 câu hỏi bổ sung cụ thể, ngắn gọn, hữu ích nhất.
+6. Nếu đã đủ dữ kiện từ context hiện có thì không cần thêm mục 'Cần bổ sung thêm:'.
 """
 
-MEMORY_UPDATE_SYSTEM_PROMPT = """Ban dang quan ly bo nho hoi thoai cho tro ly phap ly Viet Nam.
-Nhiem vu:
-1. Doc tinh tiet vu viec da biet va cau hoi moi cua nguoi dung.
-2. Cap nhat tom tat vu viec va facts co cau truc.
-3. Neu chua du du kien de ket luan so bo, xac dinh thong tin con thieu va dat 1 cau hoi bo sung ngan gon nhat.
-4. Tao mot retrieval_query ngon ngu phap ly dua tren toan bo tinh tiet da biet, khong chi dua vao cau hoi moi nhat.
+MEMORY_UPDATE_SYSTEM_PROMPT = """Bạn đang quản lý bộ nhớ hội thoại cho trợ lý pháp lý Việt Nam.
+Nhiệm vụ:
+1. Đọc tình tiết vụ việc đã biết và câu hỏi mới của người dùng.
+2. Cập nhật tóm tắt vụ việc và facts có cấu trúc.
+3. Chỉ đánh dấu need_clarification=true nếu thiếu dữ kiện đến mức không thể đưa ra bất kỳ hướng đánh giá pháp lý hữu ích nào dựa trên context hiện có.
+4. Nếu vẫn có thể đưa ra nhận định theo các trường hợp/ngưỡng điều kiện/khung pháp lý, thì đặt need_clarification=false và vẫn tạo retrieval_query tốt nhất.
+5. Tạo một retrieval_query ngôn ngữ pháp lý dựa trên toàn bộ tình tiết đã biết, không chỉ dựa vào câu hỏi mới nhất.
 
-Tra ve JSON hop le voi cac khoa:
+Trả về JSON hợp lệ với các khóa:
 - case_summary: string
 - facts: object
 - need_clarification: boolean
@@ -47,10 +57,11 @@ Tra ve JSON hop le voi cac khoa:
 - follow_up_question: string
 - retrieval_query: string
 
-Nguyen tac:
-- Khong bịa facts.
-- Neu nguoi dung vua cung cap them thong tin, phai hop nhat vao facts hien co.
-- follow_up_question phai cu the, toi da 1 cau.
+Nguyên tắc:
+- Không bịa facts.
+- Nếu người dùng vừa cung cấp thêm thông tin, phải hợp nhất vào facts hiện có.
+- Không đặt follow_up_question nếu vẫn có thể trả lời hữu ích dựa trên context hiện có.
+- follow_up_question phải cụ thể, tối đa 1 câu.
 """
 
 
@@ -60,7 +71,7 @@ load_project_env()
 def get_openai_client() -> OpenAI:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
-        raise RuntimeError("Thieu OPENAI_API_KEY trong environment.")
+        raise RuntimeError("Thiếu OPENAI_API_KEY trong environment.")
     return OpenAI(api_key=api_key)
 
 
@@ -81,9 +92,9 @@ def build_context(results: list[dict]) -> str:
             score_label = f"Score: {item.get('score', 0.0):.6f}"
 
         blocks.append(
-            f"[Nguon {index}] {' | '.join(reference)}\n"
+            f"[Nguồn {index}] {' | '.join(reference)}\n"
             f"{score_label}\n"
-            f"Noi dung: {item.get('text', item['preview'])}"
+            f"Nội dung: {item.get('text', item['preview'])}"
         )
     return "\n\n".join(blocks)
 
@@ -104,9 +115,9 @@ def update_case_memory(
             {
                 "role": "user",
                 "content": (
-                    f"Hoi thoai gan day:\n{format_recent_history(session)}\n\n"
-                    f"Tinh tiet da biet:\n{format_case_state(session)}\n\n"
-                    f"Cau hoi moi nhat cua nguoi dung:\n{question}\n"
+                    f"Hội thoại gần đây:\n{format_recent_history(session)}\n\n"
+                    f"Tình tiết đã biết:\n{format_case_state(session)}\n\n"
+                    f"Câu hỏi mới nhất của người dùng:\n{question}\n"
                 ),
             },
         ],
@@ -157,24 +168,6 @@ def answer_question(
         session["pending_follow_up"] = memory_update["follow_up_question"] if memory_update["need_clarification"] else None
         session["last_retrieval_query"] = memory_update["retrieval_query"]
 
-        if memory_update["need_clarification"] and memory_update["follow_up_question"]:
-            answer = memory_update["follow_up_question"]
-            append_history(session, "assistant", answer)
-            session_path = save_session(session, session_dir)
-            return {
-                "question": question,
-                "legal_intent": "",
-                "retrieval_queries": [],
-                "answer": answer,
-                "answer_type": "clarification",
-                "session_id": session_id,
-                "session_path": str(session_path),
-                "case_summary": session.get("case_summary", ""),
-                "facts": session.get("facts", {}),
-                "missing_fields": memory_update["missing_fields"],
-                "retrieved": [],
-            }
-
     retrieval_input = question
     if memory_update and memory_update["retrieval_query"]:
         retrieval_input = memory_update["retrieval_query"]
@@ -204,8 +197,14 @@ def answer_question(
     )
 
     context = build_context(retrieved)
-    case_state_text = format_case_state(session) if session else "Khong co bo nho hoi thoai."
-    history_text = format_recent_history(session) if session else "Khong co hoi thoai truoc do."
+    case_state_text = format_case_state(session) if session else "Không có bộ nhớ hội thoại."
+    history_text = format_recent_history(session) if session else "Không có hội thoại trước đó."
+    missing_fields_text = (
+        ", ".join(memory_update["missing_fields"]) if memory_update and memory_update.get("missing_fields") else "Không có."
+    )
+    pending_follow_up_text = (
+        memory_update["follow_up_question"] if memory_update and memory_update.get("follow_up_question") else "Không có."
+    )
     response = client.chat.completions.create(
         model=model,
         temperature=0.1,
@@ -214,11 +213,13 @@ def answer_question(
             {
                 "role": "user",
                 "content": (
-                    f"Cau hoi cua nguoi dung:\n{question}\n\n"
-                    f"Hoi thoai gan day:\n{history_text}\n\n"
-                    f"Tinh tiet vu viec da biet:\n{case_state_text}\n\n"
-                    f"Context luat da retrieve:\n{context}\n\n"
-                    "Hay tra loi bang tieng Viet, ngan gon, co can cu, va neu thieu du kien thi noi ro can bo sung gi."
+                    f"Câu hỏi của người dùng:\n{question}\n\n"
+                    f"Hội thoại gần đây:\n{history_text}\n\n"
+                    f"Tình tiết vụ việc đã biết:\n{case_state_text}\n\n"
+                    f"Context luật đã retrieve:\n{context}\n\n"
+                    f"Thông tin còn thiếu nếu có:\n{missing_fields_text}\n\n"
+                    f"Câu hỏi bổ sung nếu thật sự cần:\n{pending_follow_up_text}\n\n"
+                    "Hãy trả lời bằng tiếng Việt, ngắn gọn, có căn cứ. Nếu context chưa trọn vẹn thì vẫn phải nêu được các trường hợp, ngưỡng điều kiện, hướng đánh giá hoặc khả năng xử lý có thể rút ra từ context hiện có. Chỉ nêu ngắn gọn phần cần bổ sung ở cuối câu trả lời, không được biến toàn bộ câu trả lời thành một thông báo thiếu dữ kiện. Nếu vẫn cần thêm dữ liệu để kết luận chặt hơn, hãy thêm một mục cuối cùng theo đúng nhãn 'Cần bổ sung thêm:' và đặt một câu hỏi bổ sung cụ thể nhất."
                 ),
             },
         ],
@@ -249,38 +250,39 @@ def answer_question(
 
     if session is not None:
         append_history(session, "assistant", answer)
-        session["pending_follow_up"] = None
+        session["pending_follow_up"] = memory_update["follow_up_question"] if memory_update and memory_update["need_clarification"] else None
         session_path = save_session(session, session_dir)
         payload["session_id"] = session_id
         payload["session_path"] = str(session_path)
         payload["case_summary"] = session.get("case_summary", "")
         payload["facts"] = session.get("facts", {})
+        payload["missing_fields"] = memory_update["missing_fields"] if memory_update else []
 
     return payload
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="One-shot legal QA: hybrid retrieval + OpenAI chat")
-    parser.add_argument("question", help="Cau hoi tinh huong phap ly")
+    parser.add_argument("question", help="Câu hỏi tình huống pháp lý")
     parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")
     parser.add_argument("--bm25-index", default="output/chunks/retrieval/bm25_index.json", help="Path to BM25 index JSON")
-    parser.add_argument("--vector-dir", default="output/chunks/retrieval/vector", help="Thu muc chua FAISS index")
-    parser.add_argument("--query-rewrite-mode", choices=["none", "llm"], default="none", help="Che do rewrite query truoc retrieval")
-    parser.add_argument("--query-rewrite-model", default="gpt-5.4-mini", help="LLM model dung de rewrite query")
-    parser.add_argument("--query-rewrite-count", type=int, default=4, help="So truy van rewrite toi da")
-    parser.add_argument("--retrieval-mode", choices=["hybrid", "vector", "bm25"], default="hybrid", help="Che do retrieval")
+    parser.add_argument("--vector-dir", default="output/chunks/retrieval/vector", help="Thư mục chứa FAISS index")
+    parser.add_argument("--query-rewrite-mode", choices=["none", "llm"], default="none", help="Chế độ rewrite query trước retrieval")
+    parser.add_argument("--query-rewrite-model", default="gpt-5.4-mini", help="LLM model dùng để rewrite query")
+    parser.add_argument("--query-rewrite-count", type=int, default=4, help="Số truy vấn rewrite tối đa")
+    parser.add_argument("--retrieval-mode", choices=["hybrid", "vector", "bm25"], default="hybrid", help="Chế độ retrieval")
     parser.add_argument("--vector-backend", choices=["faiss", "atlas"], default="faiss", help="Backend vector retrieval")
     parser.add_argument("--embedding-model", default="text-embedding-3-small", help="Embedding model cho vector query")
     parser.add_argument("--atlas-uri", default=None, help="MongoDB Atlas connection string")
-    parser.add_argument("--atlas-db", default=None, help="Ten database tren Atlas")
-    parser.add_argument("--atlas-collection", default=None, help="Ten collection tren Atlas")
-    parser.add_argument("--atlas-vector-index", default=None, help="Ten Atlas Vector Search index")
+    parser.add_argument("--atlas-db", default=None, help="Tên database trên Atlas")
+    parser.add_argument("--atlas-collection", default=None, help="Tên collection trên Atlas")
+    parser.add_argument("--atlas-vector-index", default=None, help="Tên Atlas Vector Search index")
     parser.add_argument("--model", default=DEFAULT_CHAT_MODEL, help="OpenAI chat model")
-    parser.add_argument("--memory-model", default=DEFAULT_MEMORY_MODEL, help="LLM model dung de cap nhat bo nho hoi thoai")
-    parser.add_argument("--top-k", type=int, default=5, help="So chunk dua vao answer stage")
-    parser.add_argument("--session-id", default=None, help="ID de giu nho hoi thoai qua nhieu luot")
-    parser.add_argument("--session-dir", default="output/sessions", help="Noi luu session JSON")
-    parser.add_argument("--json", action="store_true", help="In JSON day du")
+    parser.add_argument("--memory-model", default=DEFAULT_MEMORY_MODEL, help="LLM model dùng để cập nhật bộ nhớ hội thoại")
+    parser.add_argument("--top-k", type=int, default=5, help="Số chunk đưa vào answer stage")
+    parser.add_argument("--session-id", default=None, help="ID để giữ nhớ hội thoại qua nhiều lượt")
+    parser.add_argument("--session-dir", default="output/sessions", help="Nơi lưu session JSON")
+    parser.add_argument("--json", action="store_true", help="In JSON đầy đủ")
     args = parser.parse_args()
 
     payload = answer_question(

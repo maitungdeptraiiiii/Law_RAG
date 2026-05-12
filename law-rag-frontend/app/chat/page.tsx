@@ -1,24 +1,21 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Scale, Send, Loader2, ChevronRight, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { AnswerCard } from '@/components/chat/answer-card'
+import { useRetrievalSettings } from '@/components/chat/retrieval-settings-context'
 import { SourceEvidencePanel } from '@/components/chat/source-evidence-panel'
 import { askQuestion } from '@/lib/api'
 import type { Message, RetrievedSource, RetrievalSettings } from '@/lib/types'
 
-const defaultSettings: RetrievalSettings = {
-  mode: 'hybrid',
-  vectorBackend: 'faiss',
-  topK: 5,
-  queryRewrite: true,
-}
-
 export default function ChatPage() {
+  const router = useRouter()
+  const { settings } = useRetrievalSettings()
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -54,10 +51,17 @@ export default function ChatPage() {
       const response = await askQuestion({
         question: userMessage.content,
         sessionId: sessionId || undefined,
-        settings: defaultSettings,
+        settings,
       })
 
       if (response.success) {
+        window.dispatchEvent(new CustomEvent('law-rag:sessions-updated'))
+
+        if (!sessionId) {
+          router.replace(`/chat/${response.data.sessionId}`)
+          return
+        }
+
         const assistantMessage: Message = {
           id: response.data.messageId,
           role: 'assistant',
@@ -92,9 +96,9 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full min-h-0">
       {/* Chat Area */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 min-h-0">
         {messages.length === 0 ? (
           // Empty State
           <div className="flex-1 flex items-center justify-center p-8">
@@ -128,7 +132,7 @@ export default function ChatPage() {
           </div>
         ) : (
           // Messages
-          <ScrollArea className="flex-1">
+          <ScrollArea className="flex-1 min-h-0">
             <div className="max-w-3xl mx-auto py-6 px-4">
               <AnimatePresence initial={false}>
                 {messages.map((message) => (

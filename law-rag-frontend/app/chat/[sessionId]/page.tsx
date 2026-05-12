@@ -8,21 +8,16 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { AnswerCard } from '@/components/chat/answer-card'
+import { useRetrievalSettings } from '@/components/chat/retrieval-settings-context'
 import { SourceEvidencePanel } from '@/components/chat/source-evidence-panel'
 import { askQuestion, getConversation } from '@/lib/api'
 import type { Message, RetrievedSource, RetrievalSettings } from '@/lib/types'
 import useSWR from 'swr'
 
-const defaultSettings: RetrievalSettings = {
-  mode: 'hybrid',
-  vectorBackend: 'faiss',
-  topK: 5,
-  queryRewrite: true,
-}
-
 export default function SessionChatPage() {
   const params = useParams()
   const sessionId = params.sessionId as string
+  const { settings } = useRetrievalSettings()
   
   const { data: conversationData, mutate } = useSWR(
     sessionId ? ['conversation', sessionId] : null,
@@ -70,7 +65,7 @@ export default function SessionChatPage() {
       const response = await askQuestion({
         question: userMessage.content,
         sessionId: sessionId,
-        settings: defaultSettings,
+        settings,
       })
 
       if (response.success) {
@@ -83,6 +78,7 @@ export default function SessionChatPage() {
           metadata: response.data.metadata,
         }
         setMessages((prev) => [...prev, assistantMessage])
+        window.dispatchEvent(new CustomEvent('law-rag:sessions-updated'))
         mutate() // Refresh conversation data
       }
     } catch (error) {
@@ -108,9 +104,9 @@ export default function SessionChatPage() {
   }
 
   return (
-    <div className="flex h-full">
+    <div className="flex h-full min-h-0">
       {/* Chat Area */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 min-h-0">
         {messages.length === 0 ? (
           // Empty/Loading State
           <div className="flex-1 flex items-center justify-center p-8">
@@ -128,7 +124,7 @@ export default function SessionChatPage() {
           </div>
         ) : (
           // Messages
-          <ScrollArea className="flex-1">
+          <ScrollArea className="flex-1 min-h-0">
             <div className="max-w-3xl mx-auto py-6 px-4">
               <AnimatePresence initial={false}>
                 {messages.map((message) => (

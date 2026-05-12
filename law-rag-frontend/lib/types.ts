@@ -26,6 +26,7 @@ export interface Session {
   messageCount: number
   preview?: string
   archived?: boolean
+  pinned?: boolean
 }
 
 export interface Conversation {
@@ -191,6 +192,11 @@ export interface AskQuestionResponse {
   messageId: string
   sources: RetrievedSource[]
   metadata: MessageMetadata
+}
+
+export interface UpdateSessionRequest {
+  title?: string
+  pinned?: boolean
 }
 
 export interface DebugQueryRequest {

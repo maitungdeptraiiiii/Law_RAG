@@ -37,7 +37,7 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: '100%', opacity: 0 }}
       transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-      className="w-96 border-l border-border bg-card flex flex-col"
+      className="w-96 border-l border-border bg-card flex flex-col min-h-0 overflow-hidden"
     >
       {/* Header */}
       <div className="flex items-center justify-between h-14 px-4 border-b border-border flex-shrink-0">
@@ -53,7 +53,7 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
       </div>
 
       {/* Sources List */}
-      <ScrollArea className="flex-1">
+      <ScrollArea className="flex-1 min-h-0">
         <div className="p-4 space-y-3">
           {sources.map((source, index) => (
             <div
@@ -156,7 +156,7 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
       </ScrollArea>
 
       {/* Footer */}
-      <div className="p-4 border-t border-border bg-muted/30">
+      <div className="p-4 border-t border-border bg-muted/30 flex-shrink-0">
         <p className="text-xs text-muted-foreground text-center leading-relaxed">
           Các nguồn được xếp hạng theo độ liên quan với câu hỏi của bạn. 
           Nhấn vào từng nguồn để xem chi tiết nội dung trích xuất.

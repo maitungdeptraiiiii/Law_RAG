@@ -20,7 +20,8 @@ Trong Bộ luật này, các từ ngữ dưới đây được hiểu như sau:
 3. Tàu ngầm là phương tiện có khả năng hoạt động độc lập trên mặt nước và dưới mặt nước.
 4. Tàu lặn là phương tiện có khả năng hoạt động dưới mặt nước phụ thuộc vào sự hỗ trợ của phương tiện, thiết bị trên mặt nước hoặc trên bờ.
 5. Kho chứa nổi là cấu trúc nổi chuyên dùng để chứa, sơ chế dầu phục vụ thăm dò, khai thác, chế biến dầu khí.
-6. Giàn di động là cấu trúc nổi chuyên dùng phục vụ thăm dò, khai thác và hoạt động trên biển. 7.Ụ nổi là cấu trúc nổi không tự hành dùng để nâng, hạ tàu thuyền phục vụ cho mục đích đóng mới, sửa chữa, kiểm tra tàu thuyền.
+6. Giàn di động là cấu trúc nổi chuyên dùng phục vụ thăm dò, khai thác và hoạt động trên biển.
+7.Ụ nổi là cấu trúc nổi không tự hành dùng để nâng, hạ tàu thuyền phục vụ cho mục đích đóng mới, sửa chữa, kiểm tra tàu thuyền.
 8. Vùng đất cảng là vùng đất được giới hạn để xây dựng cầu cảng, kho, bãi, nhà xưởng, trụ sở, cơ sở dịch vụ, hệ thống giao thông, thông tin liên lạc, điện, nước, các công trình phụ trợ khác và lắp đặt trang thiết bị.
 9. Vùng nước cảng là vùng nước được giới hạn để thiết lập vùng nước trước cầu cảng, vùng quay trở tàu, khu neo đậu, khu chuyển tải, khu tránh bão, vùng đón trả hoa tiêu, vùng kiểm dịch, luồng hàng hải và xây dựng các công trình phụ trợ khác.
 10. Bến cảng là khu vực bao gồm vùng đất và vùng nước thuộc một cảng biển, được xây dựng cầu cảng, kho, bãi, nhà xưởng, trụ sở, cơ sở dịch vụ, hệ thống giao thông, thông tin liên lạc, điện, nước, vùng nước trước cầu cảng, luồng hàng hải và các công trình phụ trợ khác. Bến cảng có một hoặc nhiều cầu cảng.
@@ -49,7 +50,10 @@ Trong Bộ luật này, các từ ngữ dưới đây được hiểu như sau:
 3. Hoạt động hàng hải phải phù hợp với chiến lược phát triển kinh tế - xã hội của đất nước và chiến lược, quy hoạch, kế hoạch phát triển giao thông vận tải.
 4. Hoạt động hàng hải phải bảo đảm hiệu quả kinh tế gắn với bảo vệ, tái tạo, phát triển bền vững môi trường và cảnh quan thiên nhiên.
 Điều 7. Chính sách của Nhà nước về phát triển hàng hải
-1. Nhà nước có chính sách phát triển hàng hải phục vụ phát triển kinh tế biển và bảo vệ tổ quốc. 2.Ưu tiên phát triển kết cấu hạ tầng hàng hải thông qua chính sách ưu tiên trong quy hoạch cảng biển và thu hút nguồn vốn đầu tư xây dựng, khai thác kết cấu hạ tầng hàng hải. 3.Ưu tiên phát triển đội tàu vận tải biển thông qua chính sách ưu đãi về thuế, lãi suất vay vốn trong đầu tư phát triển đội tàu và trong hoạt động vận tải biển. 4.Ưu tiên phát triển nguồn nhân lực hàng hải; phát triển đội ngũ thuyền viên đáp ứng nhu cầu trong nước và quốc tế thông qua các chính sách về đào tạo, huấn luyện thuyền viên; tiêu chuẩn, chế độ lao động của thuyền viên.
+1. Nhà nước có chính sách phát triển hàng hải phục vụ phát triển kinh tế biển và bảo vệ tổ quốc.
+2.Ưu tiên phát triển kết cấu hạ tầng hàng hải thông qua chính sách ưu tiên trong quy hoạch cảng biển và thu hút nguồn vốn đầu tư xây dựng, khai thác kết cấu hạ tầng hàng hải.
+3.Ưu tiên phát triển đội tàu vận tải biển thông qua chính sách ưu đãi về thuế, lãi suất vay vốn trong đầu tư phát triển đội tàu và trong hoạt động vận tải biển.
+4.Ưu tiên phát triển nguồn nhân lực hàng hải; phát triển đội ngũ thuyền viên đáp ứng nhu cầu trong nước và quốc tế thông qua các chính sách về đào tạo, huấn luyện thuyền viên; tiêu chuẩn, chế độ lao động của thuyền viên.
 5. Tăng cường hợp tác quốc tế, đẩy mạnh việc tham gia các tổ chức quốc tế về hàng hải, ký kết, gia nhập và tổ chức thực hiện các điều ước quốc tế về hàng hải.
 6. Khuyến khích nghiên cứu và chuyển giao các ứng dụng khoa học, công nghệ tiên tiến, hiện đại trong lĩnh vực hàng hải.
 7. Khuyến khích mọi tổ chức, cá nhân đầu tư phát triển đội tàu biển, cảng biển, công nghiệp tàu thủy; tham gia cung cấp dịch vụ công ích trong lĩnh vực hàng hải và thực hiện các hoạt động hàng hải khác theo quy định tại Việt Nam.
@@ -77,7 +81,8 @@ c) Để phòng chống, khắc phục thiên tai, dịch bệnh hoặc cứu tr
 1. Chính phủ thống nhất quản lý nhà nước về hàng hải.
 2. Bộ Giao thông vận tải chịu trách nhiệm trước Chính phủ thực hiện quản lý nhà nước về hàng hải.
 3. Cơ quan quản lý nhà nước chuyên ngành hàng hải trực thuộc Bộ Giao thông vận tải giúp Bộ trưởng Bộ Giao thông vận tải thực hiện quản lý nhà nước về hàng hải theo quy định của pháp luật.
-4. Bộ, cơ quan ngang bộ trong phạm vi nhiệm vụ, quyền hạn của mình có trách nhiệm phối hợp với Bộ Giao thông vận tải thực hiện quản lý nhà nước về hàng hải. 5.Ủy ban nhân dân các cấp trong phạm vi nhiệm vụ, quyền hạn của mình thực hiện quản lý nhà nước về hàng hải tại địa phương.
+4. Bộ, cơ quan ngang bộ trong phạm vi nhiệm vụ, quyền hạn của mình có trách nhiệm phối hợp với Bộ Giao thông vận tải thực hiện quản lý nhà nước về hàng hải.
+5.Ủy ban nhân dân các cấp trong phạm vi nhiệm vụ, quyền hạn của mình thực hiện quản lý nhà nước về hàng hải tại địa phương.
 Điều 11. Thanh tra hàng hải
 1. Thanh tra hàng hải trực thuộc Cơ quan quản lý nhà nước chuyên ngành hàng hải thực hiện chức năng thanh tra chuyên ngành về hàng hải.
 2. Thanh tra hàng hải có các nhiệm vụ và quyền hạn sau đây:
@@ -289,14 +294,16 @@ a) Lập và trình Thủ tướng Chính phủ phê duyệt, quyết định đ
 b) Lập và phê duyệt quy hoạch chi tiết các cơ sở đóng mới và sửa chữa tàu biển;
 c) Xây dựng chương trình, kế hoạch phát triển nguồn nhân lực chất lượng cao; nội dung đào tạo, dạy nghề phục vụ ngành công nghiệp đóng mới và sửa chữa tàu biển;
 d) Ban hành quy chuẩn kỹ thuật quốc gia đóng mới và sửa chữa tàu biển.
-4. Việc đầu tư xây dựng cơ sở đóng mới và sửa chữa tàu biển phải phù hợp với quy hoạch phát triển ngành công nghiệp đóng mới và sửa chữa tàu biển, quy định của pháp luật về đầu tư, xây dựng và pháp luật có liên quan. 5.Ủy ban nhân dân cấp tỉnh có trách nhiệm dành quỹ đất thích hợp tại địa phương phục vụ phát triển công nghiệp đóng mới và sửa chữa tàu biển theo quy hoạch.
+4. Việc đầu tư xây dựng cơ sở đóng mới và sửa chữa tàu biển phải phù hợp với quy hoạch phát triển ngành công nghiệp đóng mới và sửa chữa tàu biển, quy định của pháp luật về đầu tư, xây dựng và pháp luật có liên quan.
+5.Ủy ban nhân dân cấp tỉnh có trách nhiệm dành quỹ đất thích hợp tại địa phương phục vụ phát triển công nghiệp đóng mới và sửa chữa tàu biển theo quy hoạch.
 Điều 45. Cơ sở đóng mới, sửa chữa tàu biển
 1. Cơ sở đóng mới, sửa chữa tàu biển là doanh nghiệp được thành lập, hoạt động theo quy định của pháp luật và phải bảo đảm các điều kiện sau đây:
 a) Có cơ sở vật chất, trang thiết bị phù hợp; có phương án tổ chức sản xuất, kinh doanh phù hợp với chủng loại, kích cỡ tàu biển được đóng mới, sửa chữa;
 b) Có bộ phận giám sát, quản lý chất lượng để bảo đảm sản phẩm đáp ứng đầy đủ các tiêu chuẩn, điều kiện về chất lượng, an toàn kỹ thuật và bảo vệ môi trường theo quy định;
 c) Có đủ nhân lực đáp ứng yêu cầu sản xuất, kinh doanh;
 d) Có phương án bảo đảm phòng, chống cháy, nổ, an toàn, vệ sinh lao động và kế hoạch phòng, chống ô nhiễm môi trường đã được cơ quan có thẩm quyền phê duyệt theo quy định.
-2. Bộ trưởng Bộ Giao thông vận tải ban hành quy chuẩn kỹ thuật quốc gia của cơ sở đóng mới, sửa chữa tàu biển. 3.Ủy ban nhân dân cấp tỉnh căn cứ chức năng, nhiệm vụ, quyền hạn theo quy định có trách nhiệm quản lý nhà nước đối với hoạt động của cơ sở đóng mới, sửa chữa tàu biển hoạt động trên địa bàn.
+2. Bộ trưởng Bộ Giao thông vận tải ban hành quy chuẩn kỹ thuật quốc gia của cơ sở đóng mới, sửa chữa tàu biển.
+3.Ủy ban nhân dân cấp tỉnh căn cứ chức năng, nhiệm vụ, quyền hạn theo quy định có trách nhiệm quản lý nhà nước đối với hoạt động của cơ sở đóng mới, sửa chữa tàu biển hoạt động trên địa bàn.
 4. Bộ Công an, Bộ Tài nguyên và Môi trường có trách nhiệm phối hợp với Bộ Giao thông vận tải hướng dẫn chi tiết về kế hoạch phòng, chống cháy, nổ, ô nhiễm môi trường đối với cơ sở đóng mới, sửa chữa tàu biển.
 5. Chính phủ quy định chi tiết khoản 1 Điều này.
 Mục 8. PHÁ DỠ TÀU BIỂN
@@ -331,7 +338,8 @@ Mục 1. THUYỀN BỘ
 1. Tổ chức quản lý, khai thác tàu biển theo quy định của pháp luật.
 2. Thực hiện trách nhiệm để tàu biển có đủ các điều kiện an toàn hàng hải, an ninh hàng hải, điều kiện bảo đảm lao động hàng hải và phòng ngừa ô nhiễm môi trường cần thiết, phù hợp với tiêu chuẩn chuyên môn, các quy định về trang thiết bị, vỏ tàu, dự trữ, chất lượng thuyền bộ và các vấn đề khác có liên quan đến an toàn hàng hải, an ninh hàng hải, điều kiện bảo đảm lao động hàng hải và phòng ngừa ô nhiễm môi trường cho tàu biển và người ở trên tàu biển trước và trong khi tàu biển đang hành trình.
 3. Thường xuyên giám sát để hàng hóa được bốc lên tàu biển, sắp xếp và bảo quản trên tàu biển, dỡ khỏi tàu một cách hợp lý, mặc dù các công việc này đã được giao cho những người có trách nhiệm thực hiện.
-4. Có biện pháp để hàng hóa trên tàu biển không bị hư hỏng, mất mát; áp dụng các biện pháp cần thiết để bảo vệ quyền lợi của những người có lợi ích liên quan đến hàng hóa; phải tận dụng mọi khả năng thông báo cho những người có lợi ích liên quan biết về những sự kiện đặc biệt liên quan đến hàng hóa. 5.Áp dụng mọi biện pháp cần thiết để bảo vệ tàu biển, người và các tài sản khác trên tàu biển; ngăn ngừa việc vận chuyển người, hàng hóa bất hợp pháp trên tàu biển.
+4. Có biện pháp để hàng hóa trên tàu biển không bị hư hỏng, mất mát; áp dụng các biện pháp cần thiết để bảo vệ quyền lợi của những người có lợi ích liên quan đến hàng hóa; phải tận dụng mọi khả năng thông báo cho những người có lợi ích liên quan biết về những sự kiện đặc biệt liên quan đến hàng hóa.
+5.Áp dụng mọi biện pháp cần thiết để bảo vệ tàu biển, người và các tài sản khác trên tàu biển; ngăn ngừa việc vận chuyển người, hàng hóa bất hợp pháp trên tàu biển.
 6. Đưa tàu biển đến cảng an toàn gần nhất và thực hiện mọi biện pháp cần thiết để bảo vệ tàu, người, tài sản trên tàu và tài liệu của tàu trong trường hợp cảng trả hàng hoặc cảng trả khách bị phong tỏa, chiến tranh đe dọa hoặc trong tình trạng khẩn cấp khác.
 7. Tận dụng mọi khả năng cho phép để trước hết tổ chức cứu hành khách và sau đó cứu thuyền viên trong trường hợp tàu biển có nguy cơ bị chìm đắm hoặc bị phá huỷ. Thuyền trưởng phải là người cuối cùng rời tàu biển sau khi đã tìm mọi cách cứu nhật ký hàng hải, hải đồ và tài liệu quan trọng khác của tàu biển.
 8. Không được rời tàu biển khi tàu biển đang gặp nguy hiểm, trừ trường hợp việc rời tàu là hết sức cần thiết.
@@ -343,7 +351,8 @@ Mục 1. THUYỀN BỘ
 Điều 54. Quyền của thuyền trưởng
 1. Đại diện cho chủ tàu và những người có lợi ích liên quan đến hàng hóa khi giải quyết những công việc trong điều khiển, quản trị tàu và hàng hóa được vận chuyển trên tàu biển.
 2. Nhân danh chủ tàu và người có lợi ích liên quan đến hàng hóa thực hiện các hành vi pháp lý trong phạm vi công việc quy định tại khoản 1 Điều này, có thể khởi kiện hoặc tham gia tố tụng trước Tòa án hoặc Trọng tài khi tàu biển ở ngoài cảng đăng ký, trừ trường hợp chủ tàu hoặc người có lợi ích liên quan đến hàng hóa tuyên bố hạn chế một phần hoặc toàn bộ quyền đại diện đó.
-3. Không cho tàu biển hành trình, nếu xét thấy chưa đủ điều kiện an toàn hàng hải, an ninh hàng hải, lao động hàng hải và phòng ngừa ô nhiễm môi trường. 4.Áp dụng các hình thức khen thưởng hoặc biện pháp kỷ luật đối với thuyền viên thuộc quyền; có quyền từ chối tiếp nhận hoặc buộc phải rời khỏi tàu biển những thuyền viên không đủ trình độ chuyên môn theo chức danh hoặc có hành vi vi phạm pháp luật.
+3. Không cho tàu biển hành trình, nếu xét thấy chưa đủ điều kiện an toàn hàng hải, an ninh hàng hải, lao động hàng hải và phòng ngừa ô nhiễm môi trường.
+4.Áp dụng các hình thức khen thưởng hoặc biện pháp kỷ luật đối với thuyền viên thuộc quyền; có quyền từ chối tiếp nhận hoặc buộc phải rời khỏi tàu biển những thuyền viên không đủ trình độ chuyên môn theo chức danh hoặc có hành vi vi phạm pháp luật.
 5. Nhân danh chủ tàu vay tín dụng hoặc vay tiền mặt trong trường hợp cần thiết nhưng chỉ trong giới hạn đủ để sửa chữa tàu biển, bổ sung thuyền viên, cung ứng cho tàu hoặc vì nhu cầu khác để có thể tiếp tục chuyến đi.
 6. Bán một phần tài sản hoặc phần dự trữ dư thừa của tàu biển trong phạm vi quy định tại khoản 5 Điều này, nếu việc chờ nhận tiền hoặc chỉ thị của chủ tàu không có lợi hoặc không thực hiện được.
 7. Trong thời gian thực hiện chuyến đi, nếu không còn cách nào khác để có đủ các điều kiện cần thiết cho việc kết thúc chuyến đi thì có quyền cầm cố hoặc bán một phần hàng hóa sau khi đã tìm mọi cách xin chỉ thị của người thuê vận chuyển và chủ tàu mà không được. Trong trường hợp này, thuyền trưởng phải giảm tới mức thấp nhất sự thiệt hại của chủ tàu, người thuê vận chuyển và những người có lợi ích liên quan đến hàng hóa.
@@ -355,7 +364,8 @@ Mục 1. THUYỀN BỘ
 3. Sau khi đã cố gắng tìm mọi cách để xin chỉ thị của chủ tàu và hỏi ý kiến của thân nhân người chết, thuyền trưởng nhân danh chủ tàu làm thủ tục và tổ chức mai táng. Mọi chi phí liên quan đến việc mai táng được thanh toán theo quy định của pháp luật.
 Điều 56. Trách nhiệm của thuyền trưởng trong việc bắt, giữ người trên tàu biển
 1. Khi phát hiện hành vi phạm tội quả tang, người đang bị truy nã hoặc giữ người trong trường hợp khẩn cấp trên tàu biển khi tàu đã rời cảng, thuyền trưởng có trách nhiệm sau đây:
-a) Bắt hoặc ra lệnh bắt người phạm tội quả tang hoặc người đang bị truy nã; giữ người trong trường hợp khẩn cấp; b)Áp dụng các biện pháp ngăn chặn cần thiết, lập hồ sơ theo quy định của pháp luật;
+a) Bắt hoặc ra lệnh bắt người phạm tội quả tang hoặc người đang bị truy nã; giữ người trong trường hợp khẩn cấp;
+b)Áp dụng các biện pháp ngăn chặn cần thiết, lập hồ sơ theo quy định của pháp luật;
 c) Bảo vệ chứng cứ và tùy theo điều kiện cụ thể, chuyển giao người bị bắt, giữ và hồ sơ cho cơ quan nhà nước có thẩm quyền ở cảng Việt Nam đầu tiên tàu biển ghé vào hoặc cho tàu công vụ Việt Nam gặp ở trên biển hoặc thông báo cho cơ quan đại diện của Việt Nam nơi gần nhất và làm theo chỉ thị của cơ quan này, nếu tàu biển đến cảng nước ngoài.
 2. Trường hợp cần thiết để bảo đảm an toàn, trật tự cho tàu biển, người và hàng hóa vận chuyển trên tàu, thuyền trưởng có quyền tạm giữ người đang chuẩn bị phạm tội, người phạm tội quả tang hoặc người đang bị truy nã trên tàu biển tại một phòng riêng.
 Điều 57. Trách nhiệm của thuyền trưởng trong việc thông báo cho cơ quan đại diện của Việt Nam
@@ -1398,7 +1408,8 @@ CỨU HỘ HÀNG HẢI
 4. Các bên tham gia hợp đồng cứu hộ hàng hải có quyền yêu cầu hủy bỏ hoặc thay đổi những thỏa thuận không hợp lý trong hợp đồng, nếu các thỏa thuận này được giao kết trong tình trạng nguy cấp và bị tác động bởi tình trạng đó hoặc chứng minh được là bị lừa dối, lợi dụng khi giao kết hoặc khi tiền công cứu hộ quá thấp hoặc quá cao so với thực tế được cung cấp.
 Điều 265. Nghĩa vụ của người cứu hộ, chủ tàu và thuyền trưởng
 1. Trong quá trình cứu hộ, người cứu hộ có nghĩa vụ sau đây:
-a) Tiến hành việc cứu hộ một cách mẫn cán; b)Áp dụng các biện pháp thích hợp để ngăn ngừa hoặc giảm thiệt hại cho môi trường;
+a) Tiến hành việc cứu hộ một cách mẫn cán;
+b)Áp dụng các biện pháp thích hợp để ngăn ngừa hoặc giảm thiệt hại cho môi trường;
 c) Phải yêu cầu sự hỗ trợ của những người cứu hộ khác trong trường hợp cần thiết;
 d) Chấp nhận hành động cứu hộ của những người cứu hộ khác khi có yêu cầu hợp lý của chủ tàu, thuyền trưởng của tàu biển hoặc chủ của tài sản đang gặp nguy hiểm. Trong trường hợp này, số tiền công của người cứu hộ đó không bị ảnh hưởng, nếu việc cứu hộ của những người cứu hộ khác là bất hợp lý.
 2. Chủ tàu, thuyền trưởng của tàu biển hoặc chủ của tài sản đang gặp nguy hiểm có nghĩa vụ sau đây:
@@ -1482,7 +1493,8 @@ TRỤC VỚT TÀI SẢN CHÌM ĐẮM
 1. Bộ Giao thông vận tải chủ trì tổ chức xử lý tài sản chìm đắm gây nguy hiểm.
 2. Bộ Văn hóa, Thể thao và Du lịch chủ trì tổ chức xử lý tài sản chìm đắm là di sản văn hóa.
 3. Bộ Quốc phòng chủ trì tổ chức xử lý tài sản chìm đắm liên quan đến quốc phòng và tài sản chìm đắm trong khu vực quân sự.
-4. Bộ Công an chủ trì tổ chức xử lý tài sản chìm đắm liên quan đến an ninh quốc gia. 5.Ủy ban nhân dân cấp tỉnh chủ trì tổ chức xử lý tài sản chìm đắm không thuộc tài sản quy định tại các khoản 1, 2, 3 và 4 Điều này.
+4. Bộ Công an chủ trì tổ chức xử lý tài sản chìm đắm liên quan đến an ninh quốc gia.
+5.Ủy ban nhân dân cấp tỉnh chủ trì tổ chức xử lý tài sản chìm đắm không thuộc tài sản quy định tại các khoản 1, 2, 3 và 4 Điều này.
 6. Chính phủ quy định chi tiết việc xử lý tài sản chìm đắm.
 Chương XV
 TAI NẠN ĐÂM VA
@@ -1718,4 +1730,5 @@ Chương XX
 Điều 340. Hiệu lực thi hành
 1. Bộ luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2017.
 2. Bộ luật hàng hải Việt Nam năm 2005 hết hiệu lực kể từ ngày Bộ luật này có hiệu lực thi hành.
-Điều 341. Quy định chi tiết Chính phủ, cơ quan có thẩm quyền quy định chi tiết các điều, khoản được giao trong Bộ luật. Bộ luật này đã được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XIII, kỳ họp thứ 10 thông qua ngày 25 tháng 11 năm 2015./. CHỦ TỊCH QUỐC HỘI Nguyễn Sinh Hùng
+Điều 341. Quy định chi tiết Chính phủ, cơ quan có thẩm quyền quy định chi tiết các điều, khoản được giao trong Bộ luật. Bộ luật này đã được Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam khóa XIII, kỳ họp thứ 10 thông qua ngày 25 tháng 11 năm 2015./.
+CHỦ TỊCH QUỐC HỘI Nguyễn Sinh Hùng

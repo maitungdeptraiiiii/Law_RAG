@@ -8,6 +8,7 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet'
 import { Label } from '@/components/ui/label'
+import { ScrollArea } from '@/components/ui/scroll-area'
 import { Switch } from '@/components/ui/switch'
 import { Slider } from '@/components/ui/slider'
 import {
@@ -50,8 +51,8 @@ export function RetrievalSettingsDrawer({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent className="w-[400px] sm:w-[450px]">
-        <SheetHeader>
+      <SheetContent className="w-[400px] p-0 sm:w-[450px] sm:max-w-[450px]">
+        <SheetHeader className="border-b border-border px-6 py-5 pr-14">
           <SheetTitle>Cài đặt truy xuất nâng cao</SheetTitle>
           <SheetDescription>
             Điều chỉnh cách hệ thống tìm kiếm văn bản pháp luật. Các cài đặt mặc định 
@@ -59,7 +60,8 @@ export function RetrievalSettingsDrawer({
           </SheetDescription>
         </SheetHeader>
 
-        <div className="mt-8 space-y-8">
+        <ScrollArea className="flex-1 min-h-0">
+          <div className="space-y-8 px-6 py-6">
           {/* Retrieval Mode */}
           <div className="space-y-3">
             <Label htmlFor="retrieval-mode">Chế độ tìm kiếm</Label>
@@ -122,7 +124,7 @@ export function RetrievalSettingsDrawer({
               min={1}
               max={10}
               step={1}
-              className="w-full"
+              className="w-full py-2"
             />
             <p className="text-xs text-muted-foreground">
               Số lượng văn bản pháp luật được truy xuất để tổng hợp câu trả lời.
@@ -132,9 +134,14 @@ export function RetrievalSettingsDrawer({
           {/* Query Rewrite */}
           <div className="flex items-center justify-between">
             <div className="space-y-1">
-              <Label htmlFor="query-rewrite">Viết lại câu hỏi</Label>
+              <div className="flex items-center gap-2">
+                <Label htmlFor="query-rewrite">LLM rewrite câu hỏi</Label>
+                <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary">
+                  Mặc định bật
+                </span>
+              </div>
               <p className="text-xs text-muted-foreground">
-                AI sẽ tối ưu câu hỏi trước khi tìm kiếm
+                Dùng LLM để viết lại câu hỏi trước khi tìm kiếm nhằm tăng độ phủ và độ chính xác.
               </p>
             </div>
             <Switch
@@ -148,12 +155,14 @@ export function RetrievalSettingsDrawer({
           <div className="p-4 rounded-lg bg-muted/50 border border-border">
             <h4 className="text-sm font-medium mb-2">Gợi ý cài đặt</h4>
             <ul className="text-xs text-muted-foreground space-y-1.5">
+              <li>• <strong>LLM rewrite:</strong> mặc định bật cho hầu hết câu hỏi pháp lý tự nhiên</li>
               <li>• <strong>Câu hỏi cụ thể:</strong> BM25 hoặc Hybrid, Top-K = 3-5</li>
               <li>• <strong>Câu hỏi khái niệm:</strong> Vector hoặc Hybrid, Top-K = 5-7</li>
               <li>• <strong>Nghiên cứu sâu:</strong> Hybrid, Top-K = 8-10</li>
             </ul>
           </div>
-        </div>
+          </div>
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   )

@@ -406,7 +406,8 @@ h) Quyền khác theo quy định của Luật này và Điều lệ công ty.
 2. Ngoài các quyền quy định tại khoản 1 Điều này, thành viên, nhóm thành viên sở hữu từ 10% số vốn điều lệ trở lên hoặc một tỷ lệ khác nhỏ hơn do Điều lệ công ty quy định hoặc thuộc trường hợp quy định tại khoản 3 Điều này có các quyền sau đây:
 a) Yêu cầu triệu tập họ p Hội đồng thành viên để giải quyết những vấn đề thuộc thẩm quyền;
 b) Kiểm tra, xem xét, tra cứu sổ ghi chép và theo dõi các giao dịch, sổ kế toán, báo cáo tài chính hằng năm;
-c) Kiểm tra, xem xét, tra cứu và sao chụp sổ đăng ký thành viên, biên bản họp, nghị quyết, quyết định của Hội đồng thành viên và tài liệu khác của công ty; d)Yêu cầu Tòa án hủy bỏ nghị quyết, quyết định của Hội đồng thành viên trong thời hạn 90 ngày kể từ ngày kết thúc họp Hội đồng thành viên, nếu trình tự, thủ tục, điều kiện cuộc họp hoặc nội dung nghị quyết, quyết định đó không thực hiện đúng hoặc không phù hợp với quy định của Luật này và Điều lệ công ty.
+c) Kiểm tra, xem xét, tra cứu và sao chụp sổ đăng ký thành viên, biên bản họp, nghị quyết, quyết định của Hội đồng thành viên và tài liệu khác của công ty;
+d)Yêu cầu Tòa án hủy bỏ nghị quyết, quyết định của Hội đồng thành viên trong thời hạn 90 ngày kể từ ngày kết thúc họp Hội đồng thành viên, nếu trình tự, thủ tục, điều kiện cuộc họp hoặc nội dung nghị quyết, quyết định đó không thực hiện đúng hoặc không phù hợp với quy định của Luật này và Điều lệ công ty.
 3. Trường hợp công ty có một thành viên sở hữu trên 90% vốn điều lệ và Điều lệ công ty không quy định một tỷ lệ khác nhỏ hơn theo quy định tại khoản 2 Điều này thì nhóm thành viên còn lại đương nhiên có quyền theo quy định tại khoản 2 Điều này.
 Điều 50. Nghĩa vụ của thành viên Hội đồng thành viên
 1. Góp đủ, đúng hạn số vốn đã cam kết, chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của công ty trong phạm vi số vốn đã góp vào công ty, trừ trường hợp quy định tại khoản 2 và khoản 4 Điều 47 của Luật này.
@@ -422,7 +423,8 @@ c) Thanh toán khoản nợ chưa đến hạn trước nguy cơ tài chính có
 1. Thành viên có quyền yêu cầu công ty mua lại phần vốn góp của mình nếu thành viên đó đã bỏ phiếu không tán thành đối với nghị quyết, quyết định của Hội đồng thành viên về vấn đề sau đây:
 a) Sửa đổi, bổ sung các nội dung trong Điều lệ công ty liên quan đến quyền và nghĩa vụ của thành viên, Hội đồng thành viên;
 b) Tổ chức lại công ty;
-c) Trường hợp khác theo quy định tại Điều lệ công ty. 2.Yêu cầu mua lại phần vốn góp phải bằng văn bản và được gửi đến công ty trong thời hạn 15 ngày kể từ ngày thông qua nghị quyết, quyết định quy định tại khoản 1 Điều này.
+c) Trường hợp khác theo quy định tại Điều lệ công ty.
+2.Yêu cầu mua lại phần vốn góp phải bằng văn bản và được gửi đến công ty trong thời hạn 15 ngày kể từ ngày thông qua nghị quyết, quyết định quy định tại khoản 1 Điều này.
 3. Trong thời hạn 15 ngày kể từ ngày nhận được yêu cầu của thành viên quy định tại khoản 1 Điều này thì công ty phải mua lại phần vốn góp của thành viên đó theo giá thị trường hoặc giá được xác định theo nguyên tắc quy định tại Điều lệ công ty, trừ trường hợp hai bên thỏa thuận được về giá. Việc thanh toán chỉ được thực hiện nếu sau khi thanh toán đủ phần vốn góp được mua lại, công ty vẫn thanh toán đủ các khoản nợ và nghĩa vụ tài sản khác.
 4. Trường hợp công ty không thanh toán được phần vốn góp được yêu cầu mua lại theo quy định tại khoản 3 Điều này thì thành viên đó có quyền tự do chuyển nhượng phần vốn góp của mình cho thành viên khác hoặc người không phải là thành viên công ty.
 Điều 52. Chuyển nhượng phần vốn góp
@@ -515,7 +517,8 @@ d) Thông qua báo cáo tài chính hằng năm;
 a) Được các thành viên dự họp sở hữu từ 65% tổng số vốn góp của tất cả thành viên dự họp trở lên tán thành, trừ trường hợp quy định tại điểm b khoản này;
 b) Được các thành viên dự họp sở hữu từ 75% tổng số vốn góp của tất cả thành viên dự họp trở lên tán thành đối với nghị quyết, quyết định bán tài sản có giá trị từ 50% tổng giá trị tài sản trở lên được ghi trong báo cáo tài chính gần nhất của công ty hoặc một tỷ lệ hoặc giá trị khác nhỏ hơn quy định tại Điều lệ công ty; sửa đổi, bổ sung Điều lệ công ty; tổ chức lại, giải thể công ty.
 4. Thành viên được coi là tham dự và biểu quyết tại cuộc họp Hội đồng thành viên trong trường hợp sau đây:
-a) Tham dự và biểu quyết trực tiếp tại cuộc họp; b)Ủy quyền cho người khác tham dự và biểu quyết tại cuộc họp;
+a) Tham dự và biểu quyết trực tiếp tại cuộc họp;
+b)Ủy quyền cho người khác tham dự và biểu quyết tại cuộc họp;
 c) Tham dự và biểu quyết thông qua cuộc họp trực tuyến, bỏ phiếu điện tử hoặc hình thức điện tử khác;
 d) Gửi phiếu biểu quyết đến cuộc họp thông qua thư, fax, thư điện tử.
 5. Nghị quyết, quyết định của Hội đồng thành viên được thông qua dưới hình thức lấy ý kiến bằng văn bản khi được số thành viên sở hữu từ 65% vốn điều lệ trở lên tán thành; tỷ lệ cụ thể do Điều lệ công ty quy định.
@@ -886,7 +889,9 @@ i) Thực hiện nghĩa vụ khác theo yêu cầu của cơ quan đại diện 
 2. Tiền lương, thù lao, thưởng và lợi ích khác của Kiểm soát viên do cơ quan đại diện chủ sở hữu quyết định và chi trả.
 Điều 105. Quyền của Ban kiểm soát
 1. Tham gia các cuộc họp Hội đồng thành viên, các cuộc tham vấn, trao đổi chính thức và không chính thức của cơ quan đại diện chủ sở hữu với Hội đồng thành viên; chất vấn Hội đồng thành viên, thành viên Hội đồng thành viên, Chủ tịch công ty và Giám đốc hoặc Tổng giám đốc về kế hoạch, dự án, chương trình đầu tư phát triển và các quyết định khác trong quản lý, điều hành công ty.
-2. Xem xét sổ sách kế toán, báo cáo, hợp đồng, giao dịch và tài liệu khác của công ty; kiểm tra công việc quản lý, điều hành của Hội đồng thành viên, thành viên Hội đồng thành viên, Chủ tịch công ty, Giám đốc hoặc Tổng giám đốc khi xét thấy cần thiết hoặc theo yêu cầu của cơ quan đại diện chủ sở hữu. 3.Yêu cầu Hội đồng thành viên, thành viên Hội đồng thành viên, Chủ tịch công ty, Giám đốc, Phó giám đốc hoặc Tổng giám đốc, Phó Tổng giám đốc, Kế toán trưởng và người quản lý khác báo cáo, cung cấp thông tin trong phạm vi quản lý và hoạt động đầu tư, kinh doanh của công ty. 4.Yêu cầu người quản lý công ty báo cáo về thực trạng tài chính và kết quả kinh doanh của công ty con khi xét thấy cần thiết để thực hiện các nhiệm vụ theo quy định của pháp luật và Điều lệ công ty.
+2. Xem xét sổ sách kế toán, báo cáo, hợp đồng, giao dịch và tài liệu khác của công ty; kiểm tra công việc quản lý, điều hành của Hội đồng thành viên, thành viên Hội đồng thành viên, Chủ tịch công ty, Giám đốc hoặc Tổng giám đốc khi xét thấy cần thiết hoặc theo yêu cầu của cơ quan đại diện chủ sở hữu.
+3.Yêu cầu Hội đồng thành viên, thành viên Hội đồng thành viên, Chủ tịch công ty, Giám đốc, Phó giám đốc hoặc Tổng giám đốc, Phó Tổng giám đốc, Kế toán trưởng và người quản lý khác báo cáo, cung cấp thông tin trong phạm vi quản lý và hoạt động đầu tư, kinh doanh của công ty.
+4.Yêu cầu người quản lý công ty báo cáo về thực trạng tài chính và kết quả kinh doanh của công ty con khi xét thấy cần thiết để thực hiện các nhiệm vụ theo quy định của pháp luật và Điều lệ công ty.
 5. Đề nghị cơ quan đại diện chủ sở hữu thành lập đơn vị thực hiện nhiệm vụ kiểm toán để tham mưu và trực tiếp hỗ trợ Ban kiểm soát thực hiện quyền và nghĩa vụ được giao.
 6. Quyền khác quy định tại Điều lệ công ty.
 Điều 106. Chế độ làm việc của Ban kiểm soát
@@ -987,17 +992,21 @@ d) Cổ phần ưu đãi khác theo quy định tại Điều lệ công ty và 
 Điều 115. Quyền của cổ đông phổ thông
 1. Cổ đông phổ thông có quyền sau đây:
 a) Tham dự, phát biểu trong cuộc họp Đại hội đồng cổ đông và thực hiện quyền biểu quyết trực tiếp hoặc thông qua người đại diện theo ủy quyền hoặc hình thức khác do Điều lệ công ty, pháp luật quy định. Mỗi cổ phần phổ thông có một phiếu biểu quyết;
-b) Nhận cổ tức với mức theo quyết định của Đại hội đồng cổ đông; c)Ưu tiên mua cổ phần mới tương ứng với tỷ lệ sở hữu cổ phần phổ thông của từng cổ đông trong công ty;
+b) Nhận cổ tức với mức theo quyết định của Đại hội đồng cổ đông;
+c)Ưu tiên mua cổ phần mới tương ứng với tỷ lệ sở hữu cổ phần phổ thông của từng cổ đông trong công ty;
 d) Tự do chuyển nhượng cổ phần của mình cho người khác, trừ trường hợp quy định tại khoản 3 Điều 120, khoản 1 Điều 127 của Luật này và quy định khác của pháp luật có liên quan;
 đ) Xem xét, tra cứu và trích lục thông tin về tên và địa chỉ liên lạc trong danh sách cổ đông có quyền biểu quyết; yêu cầu sửa đổi thông tin không chính xác của mình;
 e) Xem xét, tra cứu, trích lục hoặc sao chụp Điều lệ công ty, biên bản họp Đại hội đồng cổ đông và nghị quyết Đại hội đồng cổ đông;
 g) Khi công ty giải thể hoặc phá sản, được nhận một phần tài sản còn lại tương ứng với tỷ lệ sở hữu cổ phần tại công ty.
 2. Cổ đông hoặc nhóm cổ đông sở hữu từ 05% tổng số cổ phần phổ thông trở lên hoặc một tỷ lệ khác nhỏ hơn theo quy định tại Điều lệ công ty có quyền sau đây:
-a) Xem xét, tra cứu, trích lục sổ biên bản và nghị quyết, quyết định của Hội đồng quản trị, báo cáo tài chính giữa năm và hằng năm, báo cáo của Ban kiểm soát, hợp đồng, giao dịch phải thông qua Hội đồng quản trị và tài liệu khác, trừ tài liệu liên quan đến bí mật thương mại, bí mật kinh doanh của công ty; b)Yêu cầu triệu tập họp Đại hội đồng cổ đông trong trường hợp quy định tại khoản 3 Điều này; c)Yêu cầu Ban kiểm soát kiểm tra từng vấn đề cụ thể liên quan đến quản lý, điều hành hoạt động của công ty khi xét thấy cần thiết. Yêu cầu phải bằng văn bản và phải bao gồm các nội dung sau đây: họ, tên, địa chỉ liên lạc, quốc tịch, số giấy tờ pháp lý của cá nhân đối với cổ đông là cá nhân; tên, mã số doanh nghiệp hoặc số giấy tờ pháp lý của tổ chức, địa chỉ trụ sở chính đối với cổ đông là tổ chức; số lượng cổ phần và thời điểm đăng ký cổ phần của từng cổ đông, tổng số cổ phần của cả nhóm cổ đông và tỷ lệ sở hữu trong tổng số cổ phần của công ty; vấn đề cần kiểm tra, mục đích kiểm tra;
+a) Xem xét, tra cứu, trích lục sổ biên bản và nghị quyết, quyết định của Hội đồng quản trị, báo cáo tài chính giữa năm và hằng năm, báo cáo của Ban kiểm soát, hợp đồng, giao dịch phải thông qua Hội đồng quản trị và tài liệu khác, trừ tài liệu liên quan đến bí mật thương mại, bí mật kinh doanh của công ty;
+b)Yêu cầu triệu tập họp Đại hội đồng cổ đông trong trường hợp quy định tại khoản 3 Điều này;
+c)Yêu cầu Ban kiểm soát kiểm tra từng vấn đề cụ thể liên quan đến quản lý, điều hành hoạt động của công ty khi xét thấy cần thiết. Yêu cầu phải bằng văn bản và phải bao gồm các nội dung sau đây: họ, tên, địa chỉ liên lạc, quốc tịch, số giấy tờ pháp lý của cá nhân đối với cổ đông là cá nhân; tên, mã số doanh nghiệp hoặc số giấy tờ pháp lý của tổ chức, địa chỉ trụ sở chính đối với cổ đông là tổ chức; số lượng cổ phần và thời điểm đăng ký cổ phần của từng cổ đông, tổng số cổ phần của cả nhóm cổ đông và tỷ lệ sở hữu trong tổng số cổ phần của công ty; vấn đề cần kiểm tra, mục đích kiểm tra;
 d) Quyền khác theo quy định của Luật này và Điều lệ công ty.
 3. Cổ đông hoặc nhóm cổ đông quy định tại khoản 2 Điều này có quyền yêu cầu triệu tập họp Đại hội đồng cổ đông trong trường hợp sau đây:
 a) Hội đồng quản trị vi phạm nghiêm trọng quyền của cổ đông, nghĩa vụ của người quản lý hoặc ra quyết định vượt quá thẩm quyền được giao;
-b) Trường hợp khác theo quy định tại Điều lệ công ty. 4.Yêu cầu triệu tập họp Đại hội đồng cổ đông quy định tại khoản 3 Điều này phải bằng văn bản và phải bao gồm các nội dung sau đây: họ, tên, địa chỉ liên lạc, quốc tịch, số giấy tờ pháp lý của cá nhân đối với cổ đông là cá nhân; tên, mã số doanh nghiệp hoặc số giấy tờ pháp lý của tổ chức, địa chỉ trụ sở chính đối với cổ đông là tổ chức; số lượng cổ phần và thời điểm đăng ký cổ phần của từng cổ đông, tổng số cổ phần của cả nhóm cổ đông và tỷ lệ sở hữu trong tổng số cổ phần của công ty, căn cứ và lý do yêu cầu triệu tập họp Đại hội đồng cổ đông. Kèm theo yêu cầu triệu tập họp phải có các tài liệu, chứng cứ về các vi phạm của Hội đồng quản trị, mức độ vi phạm hoặc về quyết định vượt quá thẩm quyền.
+b) Trường hợp khác theo quy định tại Điều lệ công ty.
+4.Yêu cầu triệu tập họp Đại hội đồng cổ đông quy định tại khoản 3 Điều này phải bằng văn bản và phải bao gồm các nội dung sau đây: họ, tên, địa chỉ liên lạc, quốc tịch, số giấy tờ pháp lý của cá nhân đối với cổ đông là cá nhân; tên, mã số doanh nghiệp hoặc số giấy tờ pháp lý của tổ chức, địa chỉ trụ sở chính đối với cổ đông là tổ chức; số lượng cổ phần và thời điểm đăng ký cổ phần của từng cổ đông, tổng số cổ phần của cả nhóm cổ đông và tỷ lệ sở hữu trong tổng số cổ phần của công ty, căn cứ và lý do yêu cầu triệu tập họp Đại hội đồng cổ đông. Kèm theo yêu cầu triệu tập họp phải có các tài liệu, chứng cứ về các vi phạm của Hội đồng quản trị, mức độ vi phạm hoặc về quyết định vượt quá thẩm quyền.
 5. Cổ đông hoặc nhóm cổ đông sở hữu từ 10% tổng số cổ phần phổ thông trở lên hoặc một tỷ lệ khác nhỏ hơn theo quy định tại Điều lệ công ty có quyền đề cử người vào Hội đồng quản trị, Ban kiểm soát. Trường hợp Điều lệ công ty không có quy định khác thì việc đề cử người và o Hội đồng quản trị và Ban kiểm soát thực hiện như sau:
 a) Các cổ đông phổ thông hợp thành nhóm để đề cử người vào Hội đồng quản trị và Ban kiểm soát phải thông báo về việc họp nhóm cho các cổ đông dự họp biết trước khi khai mạc Đại hội đồng cổ đông;
 b) Căn cứ số lượng thành viên Hội đồng quản trị và Ban kiểm soát, cổ đông hoặc nhóm cổ đông quy định tại khoản này được quyền đề cử một hoặc một số ngườ i theo quyết định của Đại hội đồng cổ đông làm ứng cử viên Hội đồng quản trị và Ban kiểm soát. Trường hợp số ứng cử viên được cổ đông hoặc nhóm cổ đông đề cử thấp hơn số ứng cử viên mà họ được quyền đề cử theo quyết định của Đại hội đồng cổ đông thì số ứng cử viên còn lại do Hội đồng quản trị, Ban kiểm soát và các cổ đông khác đề cử.
@@ -1219,7 +1228,8 @@ b) Phiếu biểu quyết.
 Điều 144. Thực hiện quyền dự họp Đại hội đồng cổ đông
 1. Cổ đông, người đại diện theo ủy quyền của cổ đông là tổ chức có thể trực tiếp tham dự họp, ủy quyền bằng văn bản cho một hoặc một số cá nhân, tổ chức khác dự họp hoặc dự họp thông qua một trong các hình thức quy định tại khoản 3 Điều này.
 2. Việc ủy quyền cho cá nhân, tổ chức đại diện dự họp Đại hội đồng cổ đông phải lập thành văn bản. Văn bản ủy quyền được lập theo quy định của pháp luật về dân sự và phải nêu rõ tên cá nhân, tổ chức được ủy quyền và số lượng cổ phần được ủy quyền. Cá nhân, tổ chức được ủy quyền dự họp Đại hội đồng cổ đông phải xuất trình văn bản ủy quyền khi đăng ký dự họp trước khi vào phòng họp.
-3. Cổ đông được coi là tham dự và biểu quyết tại cuộc họp Đại hội đồng cổ đông trong trường hợp sau đây: b)Ủy quyền cho cá nhân, tổ chức khác tham dự và biểu quyết tại cuộc họp;
+3. Cổ đông được coi là tham dự và biểu quyết tại cuộc họp Đại hội đồng cổ đông trong trường hợp sau đây:
+b)Ủy quyền cho cá nhân, tổ chức khác tham dự và biểu quyết tại cuộc họp;
 c) Tham dự và biểu quyết thông qua hội nghị trực tuyến, bỏ phiếu điện tử hoặc hình thức điện tử khác;
 d) Gửi phiếu biểu quyết đến cuộc họp thông qua gửi thư, fax, thư điện tử;
 đ) Gửi phiếu biểu quyết bằng phương tiện khác theo quy định trong Điều lệ công ty.
@@ -1240,7 +1250,8 @@ d) Đại hội đồng cổ đông bầu một hoặc một số ngườ i vào
 5. Đại hội đồng cổ đông thảo luận và biểu quyết theo từng vấn đề trong nội dung chương trình. Việc biểu quyết được tiến hành bằng biểu quyết tán thành, không tán thành và không có ý kiến. Kết quả kiểm phiếu được chủ tọa công bố ngay trước khi bế mạc cuộc họp, trừ trường hợp Điều lệ công ty có quy định khác;
 6. Cổ đông hoặc người được ủy quyền dự họp đến sau khi cuộc họp đã khai mạc vẫn được đăng ký và có quyền tham gia biểu quyết ngay sau khi đăng ký; trong trường hợp này, hiệu lực của những nội dung đã được biểu quyết trước đó không thay đổi;
 7. Người triệu tập họp hoặc chủ tọa cuộc họp Đại hội đồng cổ đông có quyền sau đây:
-a) Yêu cầu tất cả người dự họp chịu sự kiểm tra hoặc các biện pháp an ninh hợp pháp, hợp lý khác; b)Yêu cầu cơ quan có thẩm quyền duy trì trật tự cuộc họp; trục xuất những người không tuân thủ quyền điều hành của chủ tọa, cố ý gây rối trật tự, ngăn cản tiến triển bình thường của cuộc họp hoặc không tuân thủ các yêu cầu về kiểm tra an ninh ra khỏi cuộc họp Đại hội đồng cổ đông;
+a) Yêu cầu tất cả người dự họp chịu sự kiểm tra hoặc các biện pháp an ninh hợp pháp, hợp lý khác;
+b)Yêu cầu cơ quan có thẩm quyền duy trì trật tự cuộc họp; trục xuất những người không tuân thủ quyền điều hành của chủ tọa, cố ý gây rối trật tự, ngăn cản tiến triển bình thường của cuộc họp hoặc không tuân thủ các yêu cầu về kiểm tra an ninh ra khỏi cuộc họp Đại hội đồng cổ đông;
 8. Chủ tọa có quyền hoãn cuộc họp Đại hội đồng cổ đông đã có đủ số người đăng ký dự họp tối đa không quá 03 ngày làm việc kể từ ngày cuộc họp dự định khai mạc và chỉ được hoãn cuộc họp hoặc thay đổi địa điểm họp trong trường hợp sau đây:
 a) Địa điểm họp không có đủ chỗ ngồi thuận tiện cho tất cả người dự họp;
 b) Phương tiện thông tin tại địa điểm họp không bảo đảm cho cổ đông dự họp tham gia, thảo luận và biểu quyết;
@@ -1380,7 +1391,8 @@ d) Trường hợp khác do Điều lệ công ty quy định.
 6. Chủ tịch Hội đồng quản trị hoặc người triệu tập họp Hội đồng quản trị phải gửi thông báo mời họp chậm nhất là 03 ngày làm việc trước ngày họp nếu Điều lệ công ty không có quy định khác. Thông báo mời họp phải xác định cụ thể thời gian và địa điểm họp, chương trình, các vấn đề thảo luận và quyết định. Kèm theo thông báo mời họp phải có tài liệu sử dụng tại cuộc họp và phiếu biểu quyết của thành viên. Thông báo mời họp Hội đồng quản trị có thể gửi bằng giấy mời, điện thoại, fax, phương tiện điện tử hoặc phương thức khác do Điều lệ công ty quy định và bảo đảm đến được địa chỉ liên lạc của từng thành viên Hội đồng quản trị được đăng ký tại công ty.
 7. Chủ tịch Hội đồng quản trị hoặc người triệu tập gửi thông báo mời họp và các tài liệu kèm theo đến các Kiểm soát viên như đối với các thành viên Hội đồng quản trị. Kiểm soát viên có quyền dự các cuộc họp Hội đồng quản trị; có quyền thảo luận nhưng không được biểu quyết.
 8. Cuộc họp Hội đồng quản trị được tiến hành khi có từ ba phần tư tổng số thành viên trở lên dự họp. Trường hợp cuộc họp được triệu tập theo quy định tại khoản này không đủ số thành viên dự họp theo quy định thì được triệu tập lần thứ hai trong thời hạn 07 ngày kể từ ngày dự định họp lần thứ nhất, trừ trường hợp Điều lệ công ty quy định thời hạn khác ngắn hơn. Trường hợp này, cuộc họp được tiến hành nếu có hơn một nửa số thành viên Hội đồng quản trị dự họp.
-9. Thành viên Hội đồng quản trị được coi là tham dự và biểu quyết tại cuộc họp trong trường hợp sau đây: b)Ủy quyền cho người khác đến dự họp và biểu quyết theo quy định tại khoản 11 Điều này;
+9. Thành viên Hội đồng quản trị được coi là tham dự và biểu quyết tại cuộc họp trong trường hợp sau đây:
+b)Ủy quyền cho người khác đến dự họp và biểu quyết theo quy định tại khoản 11 Điều này;
 d) Gửi phiếu biểu quyết đến cuộc họp thông qua thư, fax, thư điện tử;
 10. Trường hợp gửi phiếu biểu quyết đến cuộc họp thông qua thư, phiếu biểu quyết phải đựng trong phong bì dán kín và phải được chuyển đến Chủ tịch Hội đồng quản trị chậm nhất là 01 giờ trước khi khai mạc. Phiếu biểu quyết chỉ được mở trước sự chứng kiến của tất cả những người dự họp.
 11. Thành viên phải tham dự đầy đủ các cuộc họp Hội đồng quản trị. Thành viên được ủy quyền cho người khác dự họp và biểu quyết nếu được đa số thành viên Hội đồng quản trị chấp thuận.
@@ -1415,7 +1427,10 @@ b) Trường hợp khác quy định tại Điều lệ công ty.
 a) Số thành viên Hội đồng quản trị bị giảm quá một phần ba so với số quy định tại Điều lệ công ty. Trường hợp này, Hội đồng quản trị phải triệu tập họp Đại hội đồng cổ đông trong thời hạn 60 ngày kể từ ngày số thành viên bị giảm quá một phần ba;
 b) Số lượng thành viên độc lập Hội đồng quản trị giảm xuống, không bảo đảm tỷ lệ theo quy định tại điểm b khoản 1 Điều 137 của Luật này;
 c) Trừ trường hợp quy định tại điểm a và điểm b khoản này, Đại hội đồng cổ đông bầu thành viên mới thay thế thành viên Hội đồng quản trị đã bị miễn nhiệm, bãi nhiệm tại cuộc họp gần nhất.
-Điều 161. Ủy ban kiểm toán 1.Ủy ban kiểm toán là cơ quan chuyên môn thuộc Hội đồng quản trị. Ủy ban kiểm toán có từ 02 thành viên trở lên. Chủ tịch Ủy ban kiểm toán phải là thành viên độc lập Hội đồng quản trị. Các thành viên khác của Ủy ban kiểm toán phải là thành viên Hội đồng quản trị không điều hành. 2.Ủy ban kiểm toán thông qua quyết định bằng biểu quyết tại cuộc họp, lấy ý kiến bằng văn bản hoặc hình thức khác do Điều lệ công ty hoặc quy chế hoạt động Ủy ban kiểm toán quy định. Mỗi thành viên Ủy ban kiểm toán có một phiếu biểu quyết. Trừ trường hợp Điều lệ công ty hoặc quy chế hoạt động Ủy ban kiểm toán có quy định tỷ lệ khác cao hơn, quyết định của Ủy ban kiểm toán được thông qua nếu được đa số thành viên dự họp tán thành; trường hợp số phiếu ngang nhau thì quyết định cuối cùng thuộc về phía có ý kiến của Chủ tịch Ủy ban kiểm toán. 3.Ủy ban kiểm toán có quyền và nghĩa vụ sau đây:
+Điều 161. Ủy ban kiểm toán
+1.Ủy ban kiểm toán là cơ quan chuyên môn thuộc Hội đồng quản trị. Ủy ban kiểm toán có từ 02 thành viên trở lên. Chủ tịch Ủy ban kiểm toán phải là thành viên độc lập Hội đồng quản trị. Các thành viên khác của Ủy ban kiểm toán phải là thành viên Hội đồng quản trị không điều hành.
+2.Ủy ban kiểm toán thông qua quyết định bằng biểu quyết tại cuộc họp, lấy ý kiến bằng văn bản hoặc hình thức khác do Điều lệ công ty hoặc quy chế hoạt động Ủy ban kiểm toán quy định. Mỗi thành viên Ủy ban kiểm toán có một phiếu biểu quyết. Trừ trường hợp Điều lệ công ty hoặc quy chế hoạt động Ủy ban kiểm toán có quy định tỷ lệ khác cao hơn, quyết định của Ủy ban kiểm toán được thông qua nếu được đa số thành viên dự họp tán thành; trường hợp số phiếu ngang nhau thì quyết định cuối cùng thuộc về phía có ý kiến của Chủ tịch Ủy ban kiểm toán.
+3.Ủy ban kiểm toán có quyền và nghĩa vụ sau đây:
 a) Giám sát tính trung thực của báo cáo tài chính của công ty và công bố chính thức liên quan đến kết quả tài chính của công ty;
 b) Rà soát hệ thống kiểm soát nội bộ và quản lý rủi ro;
 c) Rà soát giao dịch với người có liên quan thuộc thẩm quyền phê duyệt của Hội đồng quản trị hoặc Đại hội đồng cổ đông và đưa ra khuyến nghị về những giao dịch cần có phê duyệt của Hội đồng quản trị hoặc Đại hội đồng cổ đông;
@@ -1590,7 +1605,9 @@ g) Họ, tên, chữ ký của người sở hữu giấy chứng nhận phần 
 1. Thành viên hợp danh có quyền sau đây:
 a) Tham gia họp, thảo luận và biểu quyết về các vấn đề của công ty; mỗi thành viên hợp danh có một phiếu biểu quyết hoặc có số phiếu biểu quyết khác quy định tại Điều lệ công ty;
 b) Nhân danh công ty kinh doanh các ngành, nghề kinh doanh của công ty; đàm phán và ký kết hợp đồng, giao dịch hoặc giao ước với những điều kiện mà thành viên hợp danh đó cho là có lợi nhất cho công ty;
-c) Sử dụng tài sản của công ty để kinh doanh các ngành, nghề kinh doanh của công ty; trường hợp ứng trước tiền của mình để kinh doanh cho công ty thì có quyền yêu cầu công ty hoàn trả lại cả số tiền gốc và lãi theo lãi suất thị trường trên số tiền gốc đã ứng trước; d)Yêu cầu công ty bù đắp thiệt hại từ hoạt động kinh doanh trong phạm vi nhiệm vụ được phân công nếu thiệt hại đó xảy ra không phải do sai sót cá nhân của thành viên đó; đ)Yêu cầu công ty, thành viên hợp danh khác cung cấp thông tin về tình hình kinh doanh của công ty; kiểm tra tài sản, sổ kế toán và tài liệu khác của công ty khi thấy cần thiết;
+c) Sử dụng tài sản của công ty để kinh doanh các ngành, nghề kinh doanh của công ty; trường hợp ứng trước tiền của mình để kinh doanh cho công ty thì có quyền yêu cầu công ty hoàn trả lại cả số tiền gốc và lãi theo lãi suất thị trường trên số tiền gốc đã ứng trước;
+d)Yêu cầu công ty bù đắp thiệt hại từ hoạt động kinh doanh trong phạm vi nhiệm vụ được phân công nếu thiệt hại đó xảy ra không phải do sai sót cá nhân của thành viên đó;
+đ)Yêu cầu công ty, thành viên hợp danh khác cung cấp thông tin về tình hình kinh doanh của công ty; kiểm tra tài sản, sổ kế toán và tài liệu khác của công ty khi thấy cần thiết;
 e) Được chia lợi nhuận tương ứng với tỷ lệ phần vốn góp hoặc theo thỏa thuận quy định tại Điều lệ công ty;
 g) Khi công ty giải thể hoặc phá sản, được chia giá trị tài sản còn lại tương ứng theo tỷ lệ phần vốn góp vào công ty nếu Điều lệ công ty không quy định một tỷ lệ khác;
 h) Trường hợp thành viên hợp danh chết thì người thừa kế của thành viên được hưởng phần giá trị tài sản tại công ty sau khi đã trừ đi phần nợ và nghĩa vụ tài sản khác thuộc trách nhiệm của thành viên đó. Người thừa kế có thể trở thành thành viên hợp danh nếu được Hội đồng thành viên chấp thuận;
@@ -1623,7 +1640,8 @@ i) Quyết định giải thể; yêu cầu phá sản công ty.
 1. Chủ tịch Hội đồng thành viên có thể triệu tập họp Hội đồng thành viên khi xét thấy cần thiết hoặc theo yêu cầu của thành viên hợp danh. Trường hợp Chủ tịch Hội đồng thành viên không triệu tập họp theo yêu cầu của thành viên hợp danh thì thành viên đó triệu tập họp Hội đồng thành viên.
 2. Thông báo mời họp Hội đồng thành viên có thể gửi bằng giấy mời, điện thoại, fax, phương tiện điện tử hoặc phương thức khác do Điều lệ công ty quy định. Thông báo mời họp phải nêu rõ mục đích, yêu cầu và nội dung họp, chương trình và địa điểm họp, tên thành viên yêu cầu triệu tập họp. Các tài liệu thảo luận được sử dụng để quyết định các vấn đề quy định tại khoản 3 Điều 182 của Luật này phải được gửi trước đến tất cả thành viên; thời hạn gửi trước do Điều lệ công ty quy định.
 3. Chủ tịch Hội đồng thành viên hoặc thành viên yêu cầu triệu tập họp chủ tọa cuộc họp. Cuộc họp Hội đồng thành viên phải được ghi biên bản, bao gồm các nội dung chủ yếu sau đây:
-d) Họ, tên chủ tọa, thành viên dự họp; đ)Ý kiến của thành viên dự họp;
+d) Họ, tên chủ tọa, thành viên dự họp;
+đ)Ý kiến của thành viên dự họp;
 e) Nghị quyết, quyết định được thông qua, số thành viên tán thành, không tán thành, không có ý kiến và nội dung cơ bản của nghị quyết, quyết định đó;
 g) Họ, tên, chữ ký của các thành viên dự họp.
 Điều 184. Điều hành kinh doanh của công ty hợp danh
@@ -1870,7 +1888,8 @@ Chương X
 ĐIỀU KHOẢN THI HÀNH
 Điều 215. Trách nhiệm các cơ quan quản lý nhà nước
 1. Chính phủ thống nhất quản lý nhà nước đối với doanh nghiệp.
-2. Bộ, cơ quan ngang Bộ chịu trách nhiệm trước Chính phủ về việc thực hiện nhiệm vụ được phân công trong quản lý nhà nước đối với doanh nghiệp. 3.Ủy ban nhân dân cấp tỉnh thực hiện quản lý nhà nước đối với doanh nghiệp trong phạm vi địa phương.
+2. Bộ, cơ quan ngang Bộ chịu trách nhiệm trước Chính phủ về việc thực hiện nhiệm vụ được phân công trong quản lý nhà nước đối với doanh nghiệp.
+3.Ủy ban nhân dân cấp tỉnh thực hiện quản lý nhà nước đối với doanh nghiệp trong phạm vi địa phương.
 4. Bộ, cơ quan ngang Bộ và cơ quan có liên quan, Ủy ban nhân dân cấp tỉnh, trong phạm vi nhiệm vụ, quyền hạn được phân công, chịu trách nhiệm thiết lập kết nối, liên thông và chia sẻ thông tin với Cơ sở dữ liệu quốc gia về đăng ký doanh nghiệp các thông tin sau đây:
 a) Thông tin về giấy phép kinh doanh, giấy chứng nhận đủ điều kiện kinh doanh, chứng chỉ hành nghề, giấy chứng nhận hoặc văn bản chấp thuận về điều kiện kinh doanh đã cấp cho doanh nghiệp và quyết định xử phạt đối với hành vi vi phạm hành chính của doanh nghiệp;
 b) Thông tin về tình hình hoạt động và nộp thuế của doanh nghiệp từ báo cáo thuế; báo cáo tài chính của doanh nghiệp;
@@ -1878,7 +1897,8 @@ c) Phối hợp, chia sẻ thông tin về tình hình hoạt động doanh nghi
 Điều 216. Cơ quan đăng ký kinh doanh
 1. Cơ quan đăng ký kinh doanh có nhiệm vụ, quyền hạn sau đây:
 a) Giải quyết việc đăng ký doanh nghiệp và cấp Giấy chứng nhận đăng ký doanh nghiệp theo quy định của pháp luật;
-b) Phối hợp xây dựng, quản lý Hệ thống thông tin quốc gia về đăng ký doanh nghiệp; công khai, cung cấp thông tin cho cơ quan nhà nước, tổ chức và cá nhân có yêu cầu theo quy định của pháp luật; c)Yêu cầu doanh nghiệp báo cáo về việc tuân thủ quy định của Luật này khi xét thấy cần thiết; đôn đốc việc thực hiện nghĩa vụ báo cáo của doanh nghiệp;
+b) Phối hợp xây dựng, quản lý Hệ thống thông tin quốc gia về đăng ký doanh nghiệp; công khai, cung cấp thông tin cho cơ quan nhà nước, tổ chức và cá nhân có yêu cầu theo quy định của pháp luật;
+c)Yêu cầu doanh nghiệp báo cáo về việc tuân thủ quy định của Luật này khi xét thấy cần thiết; đôn đốc việc thực hiện nghĩa vụ báo cáo của doanh nghiệp;
 d) Trực tiếp hoặc đề nghị cơ quan nhà nước có thẩm quyền kiểm tra, giám sát doanh nghiệp theo nội dung trong hồ sơ đăng ký doanh nghiệp;
 đ) Chịu trách nhiệm về tính hợp lệ của hồ sơ đăng ký doanh nghiệp, không chịu trách nhiệm về những vi phạm của doanh nghiệp xảy ra trước và sau khi đăng ký doanh nghiệp;
 e) Xử lý vi phạm quy định của pháp luật về đăng ký doanh nghiệp; thu hồi Giấy chứng nhận đăng ký doanh nghiệp và yêu cầu doanh nghiệp làm thủ tục giải thể theo quy định của Luật này;

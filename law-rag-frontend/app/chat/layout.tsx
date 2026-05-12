@@ -4,6 +4,7 @@ import { useState, useCallback } from 'react'
 import Link from 'next/link'
 import { Scale, PanelLeftClose, PanelLeft, Settings2, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { RetrievalSettingsProvider } from '@/components/chat/retrieval-settings-context'
 import { SessionSidebar } from '@/components/chat/session-sidebar'
 import { RetrievalSettingsDrawer } from '@/components/chat/retrieval-settings-drawer'
 import type { RetrievalSettings } from '@/lib/types'
@@ -73,7 +74,7 @@ export default function ChatLayout({
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="flex-1 flex flex-col min-w-0 min-h-0">
         {/* Top Bar */}
         <header className="flex items-center justify-between h-14 px-4 border-b border-border bg-card">
           <div className="flex items-center gap-2">
@@ -110,9 +111,11 @@ export default function ChatLayout({
         </header>
 
         {/* Chat Content */}
-        <main className="flex-1 overflow-hidden">
-          {children}
-        </main>
+        <RetrievalSettingsProvider value={{ settings, setSettings }}>
+          <main className="flex-1 overflow-hidden min-h-0">
+            {children}
+          </main>
+        </RetrievalSettingsProvider>
       </div>
 
       {/* Settings Drawer */}

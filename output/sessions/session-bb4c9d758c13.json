@@ -1,0 +1,240 @@
+{
+  "session_id": "session-bb4c9d758c13",
+  "history": [
+    {
+      "id": "msg-669e5b05e8d7",
+      "role": "user",
+      "content": "tôi đánh người bị tội gì",
+      "timestamp": "2026-05-12T04:55:34.968313+00:00"
+    },
+    {
+      "id": "msg-0b2e499293f5",
+      "role": "assistant",
+      "content": "Bạn đánh người trong hoàn cảnh nào và nạn nhân bị thương tích bao nhiêu % (nếu có)?",
+      "timestamp": "2026-05-12T04:55:39.732094+00:00",
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": null,
+        "processingTimeMs": 4890
+      }
+    },
+    {
+      "id": "msg-6d7fafbb9cd2",
+      "role": "user",
+      "content": "họ đánh tôi trước vào tôi không rõ họ thương tích bao nhiêu phần trăm",
+      "timestamp": "2026-05-12T04:56:02.005176+00:00"
+    },
+    {
+      "id": "msg-500d6d72b883",
+      "role": "assistant",
+      "content": "Bạn có bị thương tích bao nhiêu % và có dùng hung khí hay chỉ xô xát tay không?",
+      "timestamp": "2026-05-12T04:56:05.916657+00:00",
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": null,
+        "processingTimeMs": 3930
+      }
+    },
+    {
+      "id": "msg-4098efd7fe4e",
+      "role": "user",
+      "content": "tôi bị thương 10% và tôi không dùng hung khí khi xô xát còn họ thì có",
+      "timestamp": "2026-05-12T04:56:29.399568+00:00"
+    },
+    {
+      "id": "msg-67a970ef354c",
+      "role": "assistant",
+      "content": "Phía đối phương bị thương tích bao nhiêu % và vụ việc xảy ra trong bối cảnh phòng vệ hay xô xát thông thường?",
+      "timestamp": "2026-05-12T04:56:32.673684+00:00",
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": null,
+        "processingTimeMs": 3290
+      }
+    },
+    {
+      "id": "msg-15ccfd3a393e",
+      "role": "user",
+      "content": "đối phương thương tích 40% và có phòng vệ chính đáng",
+      "timestamp": "2026-05-12T04:57:05.589269+00:00"
+    },
+    {
+      "id": "msg-5ca87454ea75",
+      "role": "assistant",
+      "content": "Bạn có thể mô tả ngắn diễn biến cụ thể lúc xảy ra xô xát để xác định có đúng là phòng vệ chính đáng không?",
+      "timestamp": "2026-05-12T04:57:08.850909+00:00",
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": null,
+        "processingTimeMs": 3285
+      }
+    },
+    {
+      "id": "msg-60b41d0a8440",
+      "role": "user",
+      "content": "tôi và họ xảy ra va chạm giao thông,họ đánh tôi trước sau đó tôi chống trả",
+      "timestamp": "2026-05-12T04:57:31.346004+00:00"
+    },
+    {
+      "id": "msg-d2d6b0973352",
+      "role": "assistant",
+      "content": "Bạn có thể cho biết cụ thể ai là người dùng hung khí trước và hành vi chống trả của bạn diễn ra như thế nào?",
+      "timestamp": "2026-05-12T04:57:35.726590+00:00",
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": null,
+        "processingTimeMs": 4395
+      }
+    },
+    {
+      "id": "msg-137a660c5a5d",
+      "role": "user",
+      "content": "họ dùng hung khí trước và tôi chỉ đánh trả lại",
+      "timestamp": "2026-05-12T04:57:57.401031+00:00"
+    },
+    {
+      "id": "msg-1970ab91a562",
+      "role": "assistant",
+      "content": "Bạn cho biết hành vi chống trả của bạn có gây hậu quả gì khác ngoài thương tích 40% cho đối phương, và hiện đã có biên bản công an hoặc kết luận giám định thương tích chưa?",
+      "timestamp": "2026-05-12T04:58:00.726513+00:00",
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": null,
+        "processingTimeMs": 3344
+      }
+    },
+    {
+      "id": "msg-a618898e1cc3",
+      "role": "user",
+      "content": "không gây hậu quả gì khác,hiện đã có biên bản giám định",
+      "timestamp": "2026-05-12T04:58:25.243590+00:00"
+    },
+    {
+      "id": "msg-3548209c123b",
+      "role": "assistant",
+      "content": "Bạn có thể cho biết cụ thể diễn biến lúc xô xát và hành vi chống trả của bạn có tương xứng với mức tấn công của họ không?",
+      "timestamp": "2026-05-12T04:58:28.679195+00:00",
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": null,
+        "processingTimeMs": 3462
+      }
+    },
+    {
+      "id": "msg-3e3a41e6e083",
+      "role": "user",
+      "content": "có",
+      "timestamp": "2026-05-12T04:58:33.432914+00:00"
+    },
+    {
+      "id": "msg-d35f95cd98a7",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:**  \nVới dữ kiện hiện có, **nếu việc chống trả của bạn là cần thiết và tương xứng** với hành vi tấn công bằng hung khí của đối phương thì có cơ sở để xem là **phòng vệ chính đáng**, và **không phải tội phạm**.  \nTuy nhiên, nếu cơ quan có thẩm quyền xác định bạn **chống trả rõ ràng quá mức cần thiết** thì có thể bị xem là **vượt quá giới hạn phòng vệ chính đáng**.\n\n**Căn cứ liên quan:**  \n- **Điều 22 Bộ luật Hình sự 2015**: phòng vệ chính đáng là hành vi chống trả cần thiết để bảo vệ quyền, lợi ích hợp pháp; **phòng vệ chính đáng không phải là tội phạm**.  \n- Cũng tại **Điều 22**: nếu **vượt quá giới hạn phòng vệ chính đáng** thì phải chịu trách nhiệm hình sự.  \n- **Điều 136 Bộ luật Hình sự 2015**: nếu gây thương tích **từ 31% đến 60%** do vượt quá giới hạn phòng vệ chính đáng thì có thể bị xử lý theo điều này.  \n- **Điều 594 Bộ luật Dân sự 2015**: nếu là phòng vệ chính đáng thì **không phải bồi thường**; nếu vượt quá giới hạn phòng vệ chính đáng thì **phải bồi thường**.\n\n**Lưu ý do còn thiếu dữ kiện:**  \nHiện chưa đủ để kết luận chắc chắn bạn có được coi là phòng vệ chính đáng hay không, vì còn cần làm rõ thêm:  \n1. **Diễn biến cụ thể lúc xô xát** và mức độ nguy hiểm từ phía đối phương.  \n2. **Mức độ chống trả thực tế** của bạn có đúng là chỉ để tự vệ hay đã vượt quá cần thiết.  \n3. **Biên bản công an/kết luận điều tra** hiện đã có chưa và nội dung xác định thế nào.  \n4. Có **thiệt hại khác** ngoài thương tích hay không.\n\nNếu bạn muốn, tôi có thể giúp bạn **đánh giá khả năng bị xử lý theo Điều 136 hay được xem là phòng vệ chính đáng** dựa trên diễn biến cụ thể hơn.",
+      "timestamp": "2026-05-12T04:58:48.263552+00:00",
+      "sources": [
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:22",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "22",
+          "clauseNumber": null,
+          "chunkText": "Điều 22. Phòng vệ chính đáng\n1. Phòng vệ chính đáng là hành vi của người vì bảo vệ quyền hoặc lợi ích chính đáng của mình, của người khác hoặc lợi ích của Nhà nước, của cơ quan, tổ chức mà chống trả lại một cách cần thiết người đang có hành vi xâm phạm các lợi ích nói trên. Phòng vệ chính đáng không phải là tội phạm.\n2. Vượt quá giới hạn phòng vệ chính đáng là hành vi chống trả rõ ràng quá mức cần",
+          "relevanceScore": 0.08170280274986781,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "other"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:136",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "136",
+          "clauseNumber": null,
+          "chunkText": "Điều 136. Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác do vượt quá giới hạn phòng vệ chính đáng hoặc do vượt quá mức cần thiết khi bắt giữ người phạm tội\n1. Người nào cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 31% đến 60% do vượt quá giới hạn phòng vệ chính đáng hoặc do vượt quá mức cần thiết khi bắt giữ người phạm tội, ",
+          "relevanceScore": 0.07889267990074442,
+          "retrievalOrigin": "bm25",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "other"
+        },
+        {
+          "id": "001_Bo-luat-dan-su-2015-296215:article:594",
+          "documentId": "001_Bo-luat-dan-su-2015-296215",
+          "documentTitle": "Bo Luat Dan Su 2015 296215",
+          "articleNumber": "594",
+          "clauseNumber": null,
+          "chunkText": "Điều 594. Bồi thường thiệt hại trong trường hợp vượt quá giới hạn phòng vệ chính đáng Người gây thiệt hại trong trường hợp phòng vệ chính đáng không phải bồi thường cho người bị thiệt hại. Người gây thiệt hại do vượt quá giới hạn phòng vệ chính đáng phải bồi thường cho người bị thiệt hại.",
+          "relevanceScore": 0.07882663178968045,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx",
+          "issuedDate": null,
+          "documentType": "other"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:126",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "126",
+          "clauseNumber": null,
+          "chunkText": "Điều 126. Tội giết người do vượt quá giới hạn phòng vệ chính đáng hoặc do vượt quá mức cần thiết khi bắt giữ người phạm tội\n1. Người nào giết người trong trường hợp vượt quá giới hạn phòng vệ chính đáng hoặc trong trường hợp vượt quá mức cần thiết khi bắt giữ người phạm tội, thì bị phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 02 năm.\n2. Phạm tội đối với 02 người trở lên, thì",
+          "relevanceScore": 0.046671404880360104,
+          "retrievalOrigin": "bm25",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "other"
+        },
+        {
+          "id": "001_Bo-luat-dan-su-2015-296215:article:590",
+          "documentId": "001_Bo-luat-dan-su-2015-296215",
+          "documentTitle": "Bo Luat Dan Su 2015 296215",
+          "articleNumber": "590",
+          "clauseNumber": null,
+          "chunkText": "Điều 590. Thiệt hại do sức khỏe bị xâm phạm\n1. Thiệt hại do sức khỏe bị xâm phạm bao gồm:\na) Chi phí hợp lý cho việc cứu chữa, bồi dưỡng, phục hồi sức khỏe và chức năng bị mất, bị giảm sút của người bị thiệt hại;\nb) Thu nhập thực tế bị mất hoặc bị giảm sút của người bị thiệt hại; nếu thu nhập thực tế của người bị thiệt hại không ổn định và không thể xác định được thì áp dụng mức thu nhập trung bìn",
+          "relevanceScore": 0.03252247488101534,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Quyen-dan-su/Bo-luat-dan-su-2015-296215.aspx",
+          "issuedDate": null,
+          "documentType": "other"
+        }
+      ],
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": "Phòng vệ chính đáng trong vụ xô xát do va chạm giao thông, bên kia đánh trước và dùng hung khí trước, người dùng chỉ chống trả lại không dùng hung khí, thương tích người dùng 10%, đối phương 40%, có biên bản giám định thương tích, không có hậu quả khác, xem xét trách nhiệm hình sự và dân sự đối với hành vi đánh người, vượt quá giới hạn phòng vệ chính đáng hay không theo pháp luật Việt Nam",
+        "processingTimeMs": 14863
+      }
+    }
+  ],
+  "facts": {
+    "incident": "Va chạm giao thông dẫn đến xô xát/đánh nhau",
+    "aggressor_first": true,
+    "other_party_used_weapon": true,
+    "user_response": "Chống trả sau khi bị đánh trước",
+    "user_used_weapon": false,
+    "user_injured_percentage": 10,
+    "other_party_injured_percentage": 40,
+    "other_harm": "Không gây hậu quả gì khác ngoài thương tích",
+    "biên_bản_giám_định": true,
+    "claimed_justification": "Phòng vệ chính đáng",
+    "legal_question": "Hành vi đánh người có thể bị xử lý về tội gì",
+    "proportionality_claim": true,
+    "unknown_details": [
+      "Diễn biến cụ thể của va chạm giao thông và mức độ tấn công ban đầu",
+      "Có biên bản công an, kết luận giám định thương tích hoặc đơn tố giác chưa",
+      "Có hậu quả chết người hay thiệt hại tài sản khác không"
+    ]
+  },
+  "case_summary": "Người dùng hỏi về trách nhiệm pháp lý trong vụ xô xát phát sinh từ va chạm giao thông. Theo thông tin đã biết, phía đối phương là người đánh trước và dùng hung khí trước; người dùng chỉ chống trả lại, không dùng hung khí. Người dùng bị thương tích 10%, phía đối phương bị thương tích 40%. Người dùng cho biết không có hậu quả gì khác ngoài thương tích và hiện đã có biên bản giám định. Người dùng xác nhận hành vi chống trả có tính tương xứng với mức tấn công ban đầu. Vẫn chưa có đủ dữ kiện để kết luận chắc chắn việc chống trả có vượt quá giới hạn phòng vệ chính đáng hay không, cũng như hướng xử lý hình sự/dân sự cụ thể.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Phòng vệ chính đáng trong vụ xô xát do va chạm giao thông, bên kia đánh trước và dùng hung khí trước, người dùng chỉ chống trả lại không dùng hung khí, thương tích người dùng 10%, đối phương 40%, có biên bản giám định thương tích, không có hậu quả khác, xem xét trách nhiệm hình sự và dân sự đối với hành vi đánh người, vượt quá giới hạn phòng vệ chính đáng hay không theo pháp luật Việt Nam",
+  "updated_at": "2026-05-12T05:45:01.742127+00:00",
+  "archived": true
+}

@@ -87,6 +87,11 @@ class DebugQueryPayload(BaseModel):
     settings: RetrievalSettingsPayload | None = None
 
 
+class UpdateSessionPayload(BaseModel):
+    title: str | None = None
+    pinned: bool | None = None
+
+
 app = FastAPI(title="Law RAG API", version="0.1.0")
 
 app.add_middleware(
@@ -320,24 +325,27 @@ def session_message_to_api(message: dict[str, Any], fallback_time: datetime) -> 
 def load_session_documents() -> list[dict[str, Any]]:
     ensure_directory(SESSIONS_DIR)
     sessions: list[dict[str, Any]] = []
-    for path in sorted(SESSIONS_DIR.glob("*.json"), key=lambda item: item.stat().st_mtime, reverse=True):
+    for path in SESSIONS_DIR.glob("*.json"):
         payload = safe_json_load(path, {})
         history = payload.get("history", []) if isinstance(payload.get("history"), list) else []
         if not history:
             continue
         updated_at = parse_iso_datetime(payload.get("updated_at"), datetime.fromtimestamp(path.stat().st_mtime, tz=UTC))
         created_at = datetime.fromtimestamp(path.stat().st_ctime, tz=UTC)
+        custom_title = str(payload.get("title") or "").strip()
         sessions.append(
             {
                 "id": payload.get("session_id") or path.stem,
-                "title": session_title_from_history(history),
+                "title": custom_title or session_title_from_history(history),
                 "createdAt": serialize_datetime(created_at),
                 "updatedAt": serialize_datetime(updated_at),
                 "messageCount": len(history),
                 "preview": next((str(item.get("content", "")).strip() for item in history if item.get("role") == "user"), ""),
                 "archived": bool(payload.get("archived", False)),
+                "pinned": bool(payload.get("pinned", False)),
             }
         )
+    sessions.sort(key=lambda item: (bool(item.get("pinned")), str(item.get("updatedAt") or "")), reverse=True)
     return sessions
 
 
@@ -505,6 +513,28 @@ def get_session(session_id: str) -> dict[str, Any]:
     return {"success": False, "error": "Session not found"}
 
 
+@app.patch("/api/sessions/{session_id}")
+def update_session(session_id: str, payload: UpdateSessionPayload) -> dict[str, Any]:
+    session = load_session(session_id, SESSIONS_DIR)
+    if not session.get("history"):
+        return {"success": False, "error": "Session not found"}
+
+    if payload.title is not None:
+        title = payload.title.strip()
+        if not title:
+            return {"success": False, "error": "Tiêu đề không được để trống"}
+        session["title"] = title[:120]
+
+    if payload.pinned is not None:
+        session["pinned"] = payload.pinned
+
+    save_session(session, SESSIONS_DIR, touch_updated_at=False)
+    for item in load_session_documents():
+        if item["id"] == session_id:
+            return {"success": True, "data": item}
+    return {"success": False, "error": "Session not found"}
+
+
 @app.get("/api/sessions/{session_id}/conversation")
 def get_conversation(session_id: str) -> dict[str, Any]:
     path = SESSIONS_DIR / f"{session_id}.json"
@@ -536,7 +566,7 @@ def archive_session(session_id: str) -> dict[str, Any]:
     if not session.get("history"):
         return {"success": False, "error": "Session not found"}
     session["archived"] = True
-    save_session(session, SESSIONS_DIR)
+    save_session(session, SESSIONS_DIR, touch_updated_at=False)
     for item in load_session_documents():
         if item["id"] == session_id:
             item["archived"] = True

@@ -34,7 +34,8 @@ Trong Luật này, các từ ngữ dưới đây được hiểu như sau:
 1. Chính phủ thống nhất quản lý nhà nước về giám định tư pháp trong phạm vi toàn quốc.
 2. Bộ Tư pháp là cơ quan đầu mối, giúp Chính phủ thống nhất quản lý nhà nước về giám định tư pháp.
 3. Bộ, cơ quan ngang Bộ có trách nhiệm giúp Chính phủ quản lý nhà nước về giám định tư pháp ở lĩnh vực chuyên môn thuộc thẩm quyền quản lý; phối hợp với Bộ Tư pháp trong việc thống nhất quản lý nhà nước về giám định tư pháp.
-4. Viện kiểm sát nhân dân tối cao thực hiện nội dung quản lý đối với tổ chức giám định tư pháp công lập thuộc tổ chức mình; tổng kết về tổ chức, hoạt động giám định tư pháp thuộc thẩm quyền quản lý và gửi báo cáo về Bộ Tư pháp để tổng hợp báo cáo Chính phủ hằng năm. 5.Ủy ban nhân dân tỉnh, thành phố có trách nhiệm quản lý nhà nước về giám định tư pháp tại địa phương theo quy định.
+4. Viện kiểm sát nhân dân tối cao thực hiện nội dung quản lý đối với tổ chức giám định tư pháp công lập thuộc tổ chức mình; tổng kết về tổ chức, hoạt động giám định tư pháp thuộc thẩm quyền quản lý và gửi báo cáo về Bộ Tư pháp để tổng hợp báo cáo Chính phủ hằng năm.
+5.Ủy ban nhân dân tỉnh, thành phố có trách nhiệm quản lý nhà nước về giám định tư pháp tại địa phương theo quy định.
 Điều 8. Trách nhiệm của cơ quan tiến hành tố tụng trong hoạt động giám định tư pháp
 1. Trách nhiệm của cơ quan tiến hành tố tụng ở trung ương:
 a) Bộ Công an chủ trì, phối hợp với Bộ Quốc phòng, Bộ Tư pháp, Viện kiểm sát nhân dân tối cao, Tòa án nhân dân tối cao ban hành quy định cụ thể về trưng cầu, yêu cầu giám định và đánh giá, sử dụng kết luận giám định tư pháp trong quá trình giải quyết các vụ việc, vụ án hình sự;
@@ -209,7 +210,9 @@ Chương IV
 TRÌNH TỰ, THỦ TỤC GIÁM ĐỊNH TƯ PHÁP
 Điều 22. Quyền, nghĩa vụ của người trưng cầu giám định tư pháp
 1. Người trưng cầu giám định tư pháp có các quyền sau đây:
-a) Trưng cầu người giám định tư pháp, tổ chức giám định tư pháp để thực hiện giám định; b)Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp trả kết luận giám định đúng nội dung và thời hạn đã yêu cầu; c)Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp đã thực hiện giám định giải thích kết luận giám định;
+a) Trưng cầu người giám định tư pháp, tổ chức giám định tư pháp để thực hiện giám định;
+b)Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp trả kết luận giám định đúng nội dung và thời hạn đã yêu cầu;
+c)Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp đã thực hiện giám định giải thích kết luận giám định;
 d) Đề nghị Tòa án triệu tập người giám định tư pháp, tổ chức giám định tư pháp đã thực hiện giám định tham gia phiên tòa để giải thích, trình bày kết luận giám định;
 đ) Quyết định giám định bổ sung, giám định lại, thay đổi hoặc yêu cầu thay đổi người giám định tư pháp;
 e) Quyền khác theo quy định của pháp luật.
@@ -224,7 +227,10 @@ g) Thanh toán kịp thời, đầy đủ chi phí giám định tư pháp khi t
 h) Nghĩa vụ khác theo quy định của pháp luật.
 Điều 23. Quyền, nghĩa vụ của người yêu cầu giám định tư pháp
 1. Người yêu cầu giám định tư pháp có các quyền sau đây:
-a) Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp thực hiện giám định sau khi đã đề nghị người trưng cầu giám định tư pháp trưng cầu giám định mà không được chấp nhận; b)Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp trả kết luận giám định đúng thời hạn quy định tại Luật này; c)Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp giải thích kết luận giám định; đ)Yêu cầu người trưng cầu giám định tư pháp trưng cầu giám định bổ sung, giám định lại theo quy định tại Điều 32 của Luật này;
+a) Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp thực hiện giám định sau khi đã đề nghị người trưng cầu giám định tư pháp trưng cầu giám định mà không được chấp nhận;
+b)Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp trả kết luận giám định đúng thời hạn quy định tại Luật này;
+c)Yêu cầu người giám định tư pháp, tổ chức giám định tư pháp giải thích kết luận giám định;
+đ)Yêu cầu người trưng cầu giám định tư pháp trưng cầu giám định bổ sung, giám định lại theo quy định tại Điều 32 của Luật này;
 2. Người yêu cầu giám định tư pháp có các nghĩa vụ sau đây:
 a) Cung cấp đầy đủ hồ sơ yêu cầu giám định và chịu trách nhiệm trước pháp luật về hồ sơ yêu cầu giám định do mình cung cấp;
 b) Nộp tạm ứng chi phí giám định tư pháp khi yêu cầu giám định; thanh toán kịp thời, đầy đủ chi phí giám định cho người giám định tư pháp, tổ chức giám định tư pháp khi nhận kết luận giám định;
