@@ -72,146 +72,7 @@ Phần giới thiệu các điểm mạnh của hệ thống như Hybrid Retriev
 
 Trang quản trị theo dõi tình trạng dữ liệu, số lượng văn bản và điều khiển pipeline crawl, chunk, BM25, vector index.
 
-## 3. Yêu cầu môi trường
-
-### Backend
-
-- Python 3.11 khuyến nghị
-- OpenAI API key
-- Tùy chọn: MongoDB Atlas nếu muốn dùng vector backend là `atlas`
-
-### Frontend
-
-- Node.js 20 trở lên khuyến nghị
-- `pnpm` khuyến nghị vì repo đang có `pnpm-lock.yaml`
-
-## 4. Cài đặt backend
-
-Từ thư mục gốc của repo:
-
-### Cách 1: dùng `venv`
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
-
-### Cách 2: dùng Conda
-
-```powershell
-conda create -n law_rag python=3.11 -y
-conda activate law_rag
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
-
-## 5. Cấu hình biến môi trường backend
-
-Tạo hoặc cập nhật file `env.txt` ở thư mục gốc dựa trên `env.example`:
-
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-
-# Optional: chỉ cần khi dùng MongoDB Atlas làm vector backend.
-MONGODB_ATLAS_URI=mongodb+srv://username:password@cluster.mongodb.net/?appName=Cluster0
-MONGODB_ATLAS_DB=law_rag
-MONGODB_ATLAS_COLLECTION=legal_chunks
-MONGODB_ATLAS_VECTOR_INDEX=legal_chunks_vector_index
-```
-
-Lưu ý:
-
-- `env.txt` được backend tự nạp khi chạy.
-- Nếu chỉ dùng FAISS thì chỉ cần `OPENAI_API_KEY`.
-- Không commit `env.txt` chứa secret lên Git.
-
-## 6. Cài đặt frontend
-
-Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
-
-```powershell
-cd law-rag-frontend
-pnpm install
-```
-
-Nếu máy chưa có `pnpm`:
-
-```powershell
-npm install -g pnpm
-```
-
-## 7. Cấu hình biến môi trường frontend
-
-Tạo file `.env.local` trong thư mục frontend dựa trên [law-rag-frontend/.env.example](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend/.env.example):
-
-```env
-NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
-```
-
-Nếu backend chạy ở host hoặc port khác thì cập nhật lại biến này.
-
-## 8. Chạy dự án ở môi trường dev
-
-Bạn cần chạy 2 tiến trình riêng.
-
-### Terminal 1: chạy backend FastAPI
-
-Từ thư mục gốc repo:
-
-```powershell
-uvicorn law_rag.api.server:app --reload --host 127.0.0.1 --port 8000
-```
-
-Kiểm tra nhanh:
-
-- Health check: `http://127.0.0.1:8000/health`
-- API docs: `http://127.0.0.1:8000/docs`
-
-### Terminal 2: chạy frontend Next.js
-
-Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
-
-```powershell
-pnpm dev
-```
-
-Mặc định frontend chạy tại:
-
-- `http://localhost:3000`
-
-Các trang chính:
-
-- Landing page: `http://localhost:3000/`
-- Chat: `http://localhost:3000/chat`
-- Admin dashboard: `http://localhost:3000/admin`
-
-## 9. Chạy nhanh nếu đã có dữ liệu/index sẵn
-
-Repo hiện đã có dữ liệu trong `output/`. Nếu các file sau đã tồn tại thì bạn có thể mở chat ngay sau khi chạy backend + frontend:
-
-- `output/chunks/all_chunks.jsonl`
-- `output/chunks/retrieval/bm25_index.json`
-- `output/chunks/retrieval/vector/faiss.index` hoặc manifest Atlas
-
-Nếu chưa đủ dữ liệu/index, hãy vào trang `/admin` để chạy lần lượt:
-
-1. Thu thập văn bản
-2. Chia chunks
-3. Xây dựng BM25
-4. Xây dựng Vector
-
-## 10. Build frontend cho production
-
-Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
-
-```powershell
-pnpm build
-pnpm start
-```
-
-## 10.1. Chạy bằng Docker
+## 3. Chạy bằng Docker
 
 Repo hiện dùng [docker-compose.yml](c:/Users/Admin/Desktop/Law-RAG/docker-compose.yml) theo mode chạy từ image đã được push lên Docker Hub.
 
@@ -294,11 +155,150 @@ docker login
 
 Lưu ý: frontend image hiện tại đã được build với backend URL mặc định là `http://localhost:8000`. Nếu sau này backend cần chạy ở URL khác, bạn phải build lại và push lại frontend image.
 
-## 11. Luồng xử lý dữ liệu backend
+## 4. Yêu cầu môi trường
+
+### Backend
+
+- Python 3.11 khuyến nghị
+- OpenAI API key
+- Tùy chọn: MongoDB Atlas nếu muốn dùng vector backend là `atlas`
+
+### Frontend
+
+- Node.js 20 trở lên khuyến nghị
+- `pnpm` khuyến nghị vì repo đang có `pnpm-lock.yaml`
+
+## 5. Cài đặt backend
+
+Từ thư mục gốc của repo:
+
+### Cách 1: dùng `venv`
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### Cách 2: dùng Conda
+
+```powershell
+conda create -n law_rag python=3.11 -y
+conda activate law_rag
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+## 6. Cấu hình biến môi trường backend
+
+Tạo hoặc cập nhật file `env.txt` ở thư mục gốc dựa trên `env.example`:
+
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Optional: chỉ cần khi dùng MongoDB Atlas làm vector backend.
+MONGODB_ATLAS_URI=mongodb+srv://username:password@cluster.mongodb.net/?appName=Cluster0
+MONGODB_ATLAS_DB=law_rag
+MONGODB_ATLAS_COLLECTION=legal_chunks
+MONGODB_ATLAS_VECTOR_INDEX=legal_chunks_vector_index
+```
+
+Lưu ý:
+
+- `env.txt` được backend tự nạp khi chạy.
+- Nếu chỉ dùng FAISS thì chỉ cần `OPENAI_API_KEY`.
+- Không commit `env.txt` chứa secret lên Git.
+
+## 7. Cài đặt frontend
+
+Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
+
+```powershell
+cd law-rag-frontend
+pnpm install
+```
+
+Nếu máy chưa có `pnpm`:
+
+```powershell
+npm install -g pnpm
+```
+
+## 8. Cấu hình biến môi trường frontend
+
+Tạo file `.env.local` trong thư mục frontend dựa trên [law-rag-frontend/.env.example](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend/.env.example):
+
+```env
+NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+```
+
+Nếu backend chạy ở host hoặc port khác thì cập nhật lại biến này.
+
+## 9. Chạy dự án ở môi trường dev
+
+Bạn cần chạy 2 tiến trình riêng.
+
+### Terminal 1: chạy backend FastAPI
+
+Từ thư mục gốc repo:
+
+```powershell
+uvicorn law_rag.api.server:app --reload --host 127.0.0.1 --port 8000
+```
+
+Kiểm tra nhanh:
+
+- Health check: `http://127.0.0.1:8000/health`
+- API docs: `http://127.0.0.1:8000/docs`
+
+### Terminal 2: chạy frontend Next.js
+
+Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
+
+```powershell
+pnpm dev
+```
+
+Mặc định frontend chạy tại:
+
+- `http://localhost:3000`
+
+Các trang chính:
+
+- Landing page: `http://localhost:3000/`
+- Chat: `http://localhost:3000/chat`
+- Admin dashboard: `http://localhost:3000/admin`
+
+## 10. Chạy nhanh nếu đã có dữ liệu/index sẵn
+
+Repo hiện đã có dữ liệu trong `output/`. Nếu các file sau đã tồn tại thì bạn có thể mở chat ngay sau khi chạy backend + frontend:
+
+- `output/chunks/all_chunks.jsonl`
+- `output/chunks/retrieval/bm25_index.json`
+- `output/chunks/retrieval/vector/faiss.index` hoặc manifest Atlas
+
+Nếu chưa đủ dữ liệu/index, hãy vào trang `/admin` để chạy lần lượt:
+
+1. Thu thập văn bản
+2. Chia chunks
+3. Xây dựng BM25
+4. Xây dựng Vector
+
+## 11. Build frontend cho production
+
+Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
+
+```powershell
+pnpm build
+pnpm start
+```
+
+## 12. Luồng xử lý dữ liệu backend
 
 Backend hỗ trợ cả chạy qua dashboard admin lẫn chạy CLI trực tiếp.
 
-### 11.1. Crawl văn bản luật
+### 12.1. Crawl văn bản luật
 
 ```powershell
 python -m law_rag.crawl.crawl_laws --docx luat.docx --output output/laws --clean
@@ -310,13 +310,13 @@ Ví dụ giới hạn số lượng văn bản:
 python -m law_rag.crawl.crawl_laws --docx luat.docx --output output/laws --limit 5 --clean
 ```
 
-### 11.2. Kiểm tra framework chunking
+### 12.2. Kiểm tra framework chunking
 
 ```powershell
 python -m law_rag.crawl.chunk_framework_check --input output/laws --json-out output/chunk_framework_report.json
 ```
 
-### 11.3. Chunk corpus
+### 12.3. Chunk corpus
 
 ```powershell
 python -m law_rag.crawl.chunk_laws --input output/laws --output-dir output/chunks --max-chars 1800
@@ -328,13 +328,13 @@ Output chính:
 - `output/chunks/chunk_report.json`
 - `output/chunks/*.chunks.json`
 
-### 11.4. Build BM25 index
+### 12.4. Build BM25 index
 
 ```powershell
 python -m law_rag.retrieval.retrieve_chunks build --chunks output/chunks/all_chunks.jsonl --output output/chunks/retrieval/bm25_index.json
 ```
 
-### 11.5. Build vector index
+### 12.5. Build vector index
 
 #### FAISS
 
@@ -348,7 +348,7 @@ python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks
 python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector --backend atlas
 ```
 
-## 12. Chạy hỏi đáp từ CLI
+## 13. Chạy hỏi đáp từ CLI
 
 ### One-shot
 
@@ -376,7 +376,7 @@ python -m law_rag.app.ask_law "Không dùng hung khí" --session-id vu_001
 python -m law_rag.app.ask_law "Tôi gây thương tích 18% cho người khác thì có thể bị xử lý thế nào?" --json
 ```
 
-## 13. Một số API đáng chú ý
+## 14. Một số API đáng chú ý
 
 - `GET /health`: kiểm tra backend sống.
 - `POST /api/chat/ask`: gửi câu hỏi pháp luật.
@@ -390,7 +390,7 @@ python -m law_rag.app.ask_law "Tôi gây thương tích 18% cho người khác t
 - `POST /api/admin/debug/query`: debug retrieval.
 - `POST /api/uploads`: upload tài liệu.
 
-## 14. Các file/thư mục đầu ra quan trọng
+## 15. Các file/thư mục đầu ra quan trọng
 
 - `output/laws`: dữ liệu văn bản đã crawl.
 - `output/chunks`: dữ liệu chunk.
@@ -398,7 +398,7 @@ python -m law_rag.app.ask_law "Tôi gây thương tích 18% cho người khác t
 - `output/sessions`: lịch sử chat nhiều lượt.
 - `output/api_jobs.json`: trạng thái job chạy từ dashboard admin.
 
-## 15. Lệnh trợ giúp nhanh
+## 16. Lệnh trợ giúp nhanh
 
 ```powershell
 python -m law_rag.app.ask_law --help
@@ -410,7 +410,7 @@ python -m law_rag.crawl.chunk_framework_check --help
 python -m law_rag.crawl.chunk_laws --help
 ```
 
-## 16. Ghi chú triển khai
+## 17. Ghi chú triển khai
 
 - Frontend mặc định gọi backend qua `NEXT_PUBLIC_API_URL`.
 - Backend đã mở CORS cho `localhost:3000`, `127.0.0.1:3000`, `localhost:3001`, `127.0.0.1:3001`.
