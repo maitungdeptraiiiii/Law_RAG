@@ -45,8 +45,6 @@ Law-RAG/
 
 ## 2.1. Demo giao diện
 
-Các ảnh dưới đây minh họa giao diện hiện tại của hệ thống. Đặt file ảnh tương ứng vào thư mục `docs/screenshots/` để README hiển thị đúng.
-
 ### Landing page
 
 ![Landing page](docs/screenshots/landing-page.png)
