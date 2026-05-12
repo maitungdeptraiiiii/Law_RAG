@@ -184,19 +184,25 @@ pnpm start
 
 ## 10.1. Chạy bằng Docker
 
-Repo đã có sẵn cấu hình Docker cho cả backend và frontend.
+Repo hiện dùng [docker-compose.yml](c:/Users/Admin/Desktop/Law-RAG/docker-compose.yml) theo mode chạy từ image đã được push lên Docker Hub.
+
+Ý nghĩa của mô hình này:
+
+- Máy khác không cần source code để build lại.
+- Chỉ cần file compose, Docker và quyền pull image từ Docker Hub.
+- Compose sẽ kéo 2 image `maitung123/law-rag-backend:latest` và `maitung123/law-rag-frontend:latest` về để chạy.
 
 ### Chuẩn bị
 
-1. Tạo `env.txt` ở thư mục gốc từ `env.example` và điền `OPENAI_API_KEY`.
-2. Nếu muốn frontend gọi API khác `http://localhost:8000`, đặt biến môi trường `NEXT_PUBLIC_API_URL` trước khi build hoặc sửa trực tiếp trong `docker-compose.yml`.
+1. Bảo đảm bạn có `OPENAI_API_KEY` dưới dạng biến môi trường shell hoặc file `.env` cho Docker Compose.
+2. Đăng nhập Docker Hub nếu repository là private bằng `docker login`.
 
-### Build và chạy
+### Chạy
 
 Từ thư mục gốc repo:
 
 ```powershell
-docker compose up --build
+docker compose up -d
 ```
 
 Nếu máy bạn đã có service khác chiếm `3000` hoặc `8000`, có thể đổi cổng host ngay lúc chạy:
@@ -204,8 +210,7 @@ Nếu máy bạn đã có service khác chiếm `3000` hoặc `8000`, có thể 
 ```powershell
 $env:FRONTEND_PORT=3001
 $env:BACKEND_PORT=8001
-$env:NEXT_PUBLIC_API_URL=http://localhost:8001
-docker compose up --build
+docker compose up -d
 ```
 
 Sau khi chạy:
@@ -219,7 +224,7 @@ Nếu đã đổi cổng host thì thay các URL trên theo giá trị `FRONTEND
 ### Chạy nền
 
 ```powershell
-docker compose up --build -d
+docker compose up -d
 ```
 
 ### Dừng container
@@ -230,10 +235,35 @@ docker compose down
 
 ### Ghi chú Docker
 
-- Backend mount `output/`, `env.txt` và `luat.docx` từ máy host để dữ liệu crawl/index và session vẫn được giữ lại ngoài container.
+- Backend dùng named volume `law_rag_output` để giữ dữ liệu crawl/index/session giữa các lần chạy.
+- `luat.docx` và dữ liệu ban đầu trong `output/` đã được copy sẵn vào image backend trước khi push Docker Hub.
 - Frontend được build theo chế độ `standalone` để image gọn hơn.
-- `NEXT_PUBLIC_API_URL` là biến được dùng lúc build frontend. Nếu đổi URL API, cần build lại frontend image.
 - `FRONTEND_PORT` và `BACKEND_PORT` chỉ đổi cổng host bind ra ngoài, không đổi cổng chạy bên trong container.
+- `OPENAI_API_KEY` và các biến `MONGODB_ATLAS_*` được truyền trực tiếp vào container runtime, không còn phụ thuộc `env.txt` trên máy host.
+
+### Máy khác cần gì để chạy
+
+Máy khác chỉ cần:
+
+- [docker-compose.yml](c:/Users/Admin/Desktop/Law-RAG/docker-compose.yml)
+- Docker Desktop hoặc Docker Engine
+- internet để pull image từ Docker Hub
+- biến môi trường cần thiết như `OPENAI_API_KEY`
+
+Sau đó trên máy đích chỉ cần:
+
+```powershell
+$env:OPENAI_API_KEY="your_openai_key"
+docker compose up -d
+```
+
+Nếu repository trên Docker Hub là `private` thì thêm bước:
+
+```powershell
+docker login
+```
+
+Lưu ý: frontend image hiện tại đã được build với backend URL mặc định là `http://localhost:8000`. Nếu sau này backend cần chạy ở URL khác, bạn phải build lại và push lại frontend image.
 
 ## 11. Luồng xử lý dữ liệu backend
 

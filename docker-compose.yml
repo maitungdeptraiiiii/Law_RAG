@@ -1,15 +1,15 @@
 services:
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
+    image: maitung123/law-rag-backend:latest
     container_name: law-rag-backend
-    env_file:
-      - ./env.txt
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      MONGODB_ATLAS_URI: ${MONGODB_ATLAS_URI:-}
+      MONGODB_ATLAS_DB: ${MONGODB_ATLAS_DB:-}
+      MONGODB_ATLAS_COLLECTION: ${MONGODB_ATLAS_COLLECTION:-}
+      MONGODB_ATLAS_VECTOR_INDEX: ${MONGODB_ATLAS_VECTOR_INDEX:-}
     volumes:
-      - ./output:/app/output
-      - ./env.txt:/app/env.txt:ro
-      - ./luat.docx:/app/luat.docx:ro
+      - law_rag_output:/app/output
     ports:
       - "${BACKEND_PORT:-8000}:8000"
     healthcheck:
@@ -20,23 +20,18 @@ services:
           "-c",
           "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')",
         ]
-      interval: 30s
+      interval: 30s 
       timeout: 10s
       retries: 5
       start_period: 20s
 
   frontend:
-    build:
-      context: ./law-rag-frontend
-      dockerfile: Dockerfile
-      args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    image: maitung123/law-rag-frontend:latest
     container_name: law-rag-frontend
     depends_on:
       backend:
         condition: service_healthy
     environment:
-      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
       PORT: 3000
       HOSTNAME: 0.0.0.0
     ports:
@@ -53,3 +48,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 20s
+
+volumes:
+  law_rag_output:
+
