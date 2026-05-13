@@ -168,7 +168,7 @@ def slug_to_title(slug: str) -> str:
 
 
 def detect_document_type(identifier: str) -> str:
-    normalized = identifier.casefold().replace("-", "_")
+    normalized = re.sub(r"^[0-9]+[_-]*", "", identifier.casefold().replace("-", "_"))
     for prefix, document_type in DOCUMENT_TYPE_MAP.items():
         if normalized.startswith(prefix):
             return document_type
@@ -296,6 +296,7 @@ def map_retrieved_source(item: dict[str, Any]) -> dict[str, Any]:
         "documentTitle": item.get("document_title") or slug_to_title(Path(str(text_file)).stem if text_file else "document"),
         "articleNumber": item.get("article_number"),
         "clauseNumber": item.get("clause_number"),
+        "targetArticle": item.get("target_article"),
         "chunkText": item.get("text") or item.get("preview") or "",
         "relevanceScore": float(item.get("rrf_score") or item.get("score") or 0.0),
         "retrievalOrigin": retrieval_origin,

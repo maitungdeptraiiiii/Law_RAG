@@ -1,0 +1,36 @@
+{
+  "session_id": "eval-civil_adopted_child_inheritance_001-1778644538",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-949e4c011cdb",
+      "role": "user",
+      "content": "Con nuôi có được hưởng thừa kế của cha mẹ nuôi không?",
+      "timestamp": "2026-05-13T03:55:38.279798+00:00"
+    },
+    {
+      "id": "msg-68665539818f",
+      "role": "assistant",
+      "content": "Có. **Con nuôi được hưởng thừa kế của cha mẹ nuôi** theo pháp luật Việt Nam.\n\n**Căn cứ:**\n- **Điều 653 Bộ luật Dân sự 2015**: “Con nuôi và cha nuôi, mẹ nuôi được thừa kế di sản của nhau…”\n- **Điều 651 Bộ luật Dân sự 2015**: con nuôi, cha nuôi, mẹ nuôi đều thuộc **hàng thừa kế thứ nhất**.\n\n**Suy ra từ context hiện có:**\n- Nếu **quan hệ nuôi con nuôi hợp pháp** thì con nuôi có quyền hưởng di sản của cha mẹ nuôi như người thừa kế theo pháp luật.\n- Nếu **cha mẹ nuôi có di chúc** thì việc hưởng thừa kế còn phụ thuộc nội dung di chúc; tuy nhiên, từ context hiện có chỉ khẳng định được rằng con nuôi là người có quan hệ thừa kế với cha mẹ nuôi.\n- Nếu có **nhiều người cùng hàng thừa kế**, thì những người cùng hàng được hưởng **phần di sản bằng nhau** theo Điều 651 khoản 2.\n\n**Kết luận ngắn:** Trong trường hợp nuôi con nuôi hợp pháp, con nuôi **có quyền thừa kế** của cha mẹ nuôi.\n\nCần bổ sung thêm: **Việc nuôi con nuôi có được đăng ký/hợp pháp không, và cha mẹ nuôi có để lại di chúc hay không?**",
+      "timestamp": "2026-05-13T03:55:50.815261+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Quyền thừa kế của con nuôi đối với cha mẹ nuôi",
+    "jurisdiction": "Việt Nam",
+    "case_type": "tư vấn pháp lý chung",
+    "known_facts": [],
+    "unknown_facts": [
+      "Có hay không có quan hệ nuôi con nuôi hợp pháp",
+      "Cha mẹ nuôi có để lại di chúc hay không",
+      "Có người thừa kế khác và hàng thừa kế cụ thể",
+      "Di sản và thời điểm mở thừa kế"
+    ]
+  },
+  "case_summary": "Người dùng hỏi về quyền thừa kế của con nuôi đối với cha mẹ nuôi theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi pháp lý chung.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quyền thừa kế của con nuôi đối với cha mẹ nuôi theo Bộ luật Dân sự Việt Nam; con nuôi có được coi là người thừa kế theo pháp luật của cha mẹ nuôi không; hàng thừa kế giữa con nuôi và cha mẹ nuôi; thừa kế theo pháp luật và thừa kế theo di chúc trong quan hệ nuôi con nuôi hợp pháp; điều kiện đăng ký nuôi con nuôi và hệ quả về quyền thừa kế",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:55:50.815425+00:00"
+}

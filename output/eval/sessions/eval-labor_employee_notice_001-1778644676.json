@@ -1,0 +1,33 @@
+{
+  "session_id": "eval-labor_employee_notice_001-1778644676",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-30d5134fa6f8",
+      "role": "user",
+      "content": "Người lao động đơn phương nghỉ việc phải báo trước bao lâu?",
+      "timestamp": "2026-05-13T03:57:57.195055+00:00"
+    },
+    {
+      "id": "msg-944219d69d3d",
+      "role": "assistant",
+      "content": "Người lao động đơn phương nghỉ việc **thường phải báo trước** theo loại hợp đồng lao động:\n\n- **Ít nhất 45 ngày** nếu là **hợp đồng lao động không xác định thời hạn**.\n- **Ít nhất 30 ngày** nếu là **hợp đồng lao động xác định thời hạn từ 12 tháng đến 36 tháng**.\n- **Ít nhất 03 ngày làm việc** nếu là **hợp đồng lao động xác định thời hạn dưới 12 tháng**.\n- **Một số ngành, nghề, công việc đặc thù** thì thời hạn báo trước **theo quy định của Chính phủ**.\n\n**Ngoại lệ:** Người lao động **có thể nghỉ việc không cần báo trước** nếu thuộc một trong các trường hợp như: không được bố trí đúng công việc/địa điểm/điều kiện làm việc; không được trả đủ hoặc đúng hạn lương; bị ngược đãi, quấy rối tình dục; lao động nữ mang thai phải nghỉ; đủ tuổi nghỉ hưu; hoặc người sử dụng lao động cung cấp thông tin không trung thực làm ảnh hưởng đến việc thực hiện hợp đồng.\n\n**Căn cứ:** Điều 35 Bộ luật Lao động 2019; Điều 38 Bộ luật Lao động 2019 (về việc hủy bỏ đơn phương chấm dứt trước khi hết thời hạn báo trước).\n\nCần bổ sung thêm: Người lao động đang ký **loại hợp đồng nào** và có thuộc **trường hợp được nghỉ không cần báo trước** không?",
+      "timestamp": "2026-05-13T03:58:10.660794+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Thời hạn báo trước khi người lao động đơn phương chấm dứt hợp đồng lao động",
+    "known_context": [],
+    "unknown_context": [
+      "Loại hợp đồng lao động (không xác định thời hạn, xác định thời hạn, theo mùa vụ/công việc nhất định)",
+      "Lý do người lao động nghỉ việc",
+      "Có thuộc trường hợp đặc thù phải báo trước dài hơn hay không (ví dụ: một số vị trí quản lý, ngành nghề đặc thù theo luật chuyên ngành hoặc thỏa thuận)"
+    ]
+  },
+  "case_summary": "Người dùng hỏi về thời hạn báo trước khi người lao động đơn phương chấm dứt hợp đồng lao động (nghỉ việc). Hiện chưa có tình tiết cụ thể về loại hợp đồng, lý do nghỉ việc, vị trí công việc hay ngành nghề đặc thù.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Thời hạn báo trước khi người lao động đơn phương chấm dứt hợp đồng lao động theo Bộ luật Lao động 2019; người lao động nghỉ việc báo trước bao lâu; đơn phương chấm dứt hợp đồng lao động của người lao động; thời hạn báo trước theo loại hợp đồng lao động và trường hợp đặc biệt",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:58:10.660993+00:00"
+}

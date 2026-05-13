@@ -86,7 +86,9 @@ def build_context(results: list[dict]) -> str:
         if item.get("target_article"):
             reference.append(f"sửa {item['target_article']}")
 
-        if "rrf_score" in item:
+        if "rerank_score" in item:
+            score_label = f"Rerank score: {item['rerank_score']:.6f}"
+        elif "rrf_score" in item:
             score_label = f"RRF score: {item['rrf_score']:.6f}"
         else:
             score_label = f"Score: {item.get('score', 0.0):.6f}"
@@ -241,7 +243,10 @@ def answer_question(
                 "clause_number": item.get("clause_number"),
                 "target_article": item.get("target_article"),
                 "rrf_score": item["rrf_score"],
+                "rerank_score": item.get("rerank_score"),
+                "rerank_features": item.get("rerank_features"),
                 "sources": item.get("sources", []),
+                "text": item.get("text", item["preview"]),
                 "preview": item["preview"],
             }
             for item in retrieved

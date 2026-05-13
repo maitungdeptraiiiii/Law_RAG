@@ -1,0 +1,30 @@
+{
+  "session_id": "eval-civil_inheritance_first_rank_001-1778644527",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-6b7277f0ade5",
+      "role": "user",
+      "content": "Hàng thừa kế thứ nhất theo pháp luật gồm những ai?",
+      "timestamp": "2026-05-13T03:55:27.644061+00:00"
+    },
+    {
+      "id": "msg-5a612ada72bc",
+      "role": "assistant",
+      "content": "Theo **Điều 651 Bộ luật Dân sự 2015**, **hàng thừa kế thứ nhất** gồm:\n\n- **Vợ, chồng** của người chết;\n- **Cha đẻ, mẹ đẻ**;\n- **Cha nuôi, mẹ nuôi**;\n- **Con đẻ, con nuôi** của người chết.\n\n**Căn cứ:** Điều 651 khoản 1 điểm a Bộ luật Dân sự 2015.\n\nTrong context hiện có, có thể khẳng định đây là danh sách đầy đủ của hàng thừa kế thứ nhất theo pháp luật. Những người cùng hàng này được hưởng **phần di sản bằng nhau** theo khoản 2 Điều 651.",
+      "timestamp": "2026-05-13T03:55:38.048584+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "legal_issue": "Xác định hàng thừa kế thứ nhất theo pháp luật",
+    "case_status": "Chưa có tình tiết vụ việc cụ thể",
+    "user_question": "Hàng thừa kế thứ nhất theo pháp luật gồm những ai?"
+  },
+  "case_summary": "Người dùng đang hỏi về quy định pháp luật Việt Nam liên quan đến hàng thừa kế thứ nhất theo pháp luật. Hiện chưa có tình tiết vụ việc cụ thể nào ngoài câu hỏi mang tính khái quát.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Bộ luật Dân sự Việt Nam 2015 quy định hàng thừa kế thứ nhất theo pháp luật gồm những ai; điều 651 BLDS 2015 về người thừa kế theo pháp luật; phạm vi vợ chồng, cha mẹ đẻ, cha mẹ nuôi, con đẻ, con nuôi trong hàng thừa kế thứ nhất; giải thích áp dụng thừa kế theo pháp luật",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:55:38.048814+00:00"
+}

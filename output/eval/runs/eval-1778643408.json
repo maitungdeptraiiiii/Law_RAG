@@ -1,0 +1,571 @@
+{
+  "summary": {
+    "case_count": 5,
+    "scores": {
+      "retrieval_relevance": 5,
+      "citation_accuracy": 5,
+      "groundedness": 5,
+      "answer_correctness": 5,
+      "answer_relevance": 5,
+      "completeness": 5,
+      "no_overclaiming": 4.4,
+      "overall": 5.0
+    },
+    "latency_ms_avg": 12795.4,
+    "latency_ms_max": 14361
+  },
+  "results": [
+    {
+      "case_id": "civil_transaction_validity_001",
+      "category": "dan_su",
+      "question": "Một giao dịch dân sự muốn có hiệu lực thì cần đáp ứng những điều kiện nào?",
+      "answer": "Một giao dịch dân sự muốn có hiệu lực thì, theo Bộ luật Dân sự 2015, phải đáp ứng các điều kiện chính sau:\n\n1. **Chủ thể có năng lực phù hợp** với giao dịch được xác lập.  \n2. **Các bên tham gia hoàn toàn tự nguyện**.  \n3. **Mục đích và nội dung không vi phạm điều cấm của luật, không trái đạo đức xã hội**.  \n4. **Hình thức của giao dịch** phải đúng quy định **nếu luật có yêu cầu hình thức là điều kiện có hiệu lực**.\n\n**Căn cứ:** Điều 117 khoản 1, khoản 2 Bộ luật Dân sự 2015.\n\nNếu **không có một trong các điều kiện trên**, giao dịch thường **vô hiệu**, trừ trường hợp Bộ luật Dân sự có quy định khác.  \n**Căn cứ:** Điều 122 Bộ luật Dân sự 2015.\n\nRiêng về **hình thức**, nếu giao dịch vi phạm quy định về hình thức thì có thể vô hiệu, **trừ** trường hợp:\n- giao dịch phải lập bằng văn bản nhưng văn bản không đúng quy định, hoặc\n- giao dịch phải công chứng/chứng thực mà các bên đã thực hiện **ít nhất 2/3 nghĩa vụ**,\n\nthì Tòa án có thể công nhận hiệu lực theo yêu cầu của một hoặc các bên.  \n**Căn cứ:** Điều 129 Bộ luật Dân sự 2015.\n\nNếu bạn muốn, tôi có thể tóm tắt thêm theo dạng **“4 điều kiện + hậu quả nếu thiếu từng điều kiện”**.",
+      "retrieval_input": "Điều kiện có hiệu lực của giao dịch dân sự theo Bộ luật Dân sự Việt Nam; giao dịch dân sự vô hiệu khi nào; chủ thể có năng lực pháp luật dân sự và năng lực hành vi dân sự; tự nguyện; mục đích và nội dung không vi phạm điều cấm của luật, không trái đạo đức xã hội; hình thức giao dịch dân sự; Điều 117 Bộ luật Dân sự 2015",
+      "legal_intent": "Tra cứu quy định về điều kiện có hiệu lực của giao dịch dân sự theo Bộ luật Dân sự 2015, các trường hợp giao dịch dân sự vô hiệu, năng lực pháp luật dân sự và năng lực hành vi dân sự của chủ thể, yếu tố tự nguyện, mục đích và nội dung không vi phạm điều cấm của luật, không trái đạo đức xã hội, và hình thức của giao dịch dân sự, trọng tâm là Điều 117 BLDS 2015.",
+      "retrieval_queries": [
+        "Điều kiện có hiệu lực của giao dịch dân sự theo Bộ luật Dân sự Việt Nam; giao dịch dân sự vô hiệu khi nào; chủ thể có năng lực pháp luật dân sự và năng lực hành vi dân sự; tự nguyện; mục đích và nội dung không vi phạm điều cấm của luật, không trái đạo đức xã hội; hình thức giao dịch dân sự; Điều 117 Bộ luật Dân sự 2015",
+        "Điều 117 Bộ luật Dân sự 2015 điều kiện có hiệu lực của giao dịch dân sự",
+        "giao dịch dân sự vô hiệu khi nào theo Bộ luật Dân sự 2015",
+        "năng lực pháp luật dân sự năng lực hành vi dân sự tự nguyện mục đích nội dung hình thức giao dịch dân sự",
+        "Điều kiện có hiệu lực của giao dịch dân sự Điều 117 BLDS 2015"
+      ],
+      "sources": [
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:117",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "117",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.14603464577023542,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 117. Điều kiện có hiệu lực của giao dịch dân sự\n1. Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây:\na) Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập;\nb) Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện;\nc) Mục đích và nội dung của giao dịch dân sự không vi phạm điều cấm của luật, không trái đạo đức xã hội.\n2. Hình thức của giao dịch dân sự là điều kiện có hiệu lực của giao dịch dân sự trong trường hợp luật có quy định.",
+          "preview": "Điều 117. Điều kiện có hiệu lực của giao dịch dân sự\n1. Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây:\na) Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập;\nb) Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện;\nc) Mục đích và nội dung của giao dịch dân sự không vi phạm điều cấm của luật, không trái đạo đức xã hội.\n2. Hình thứ"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:122",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "122",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.12788191250411676,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 122. Giao dịch dân sự vô hiệu Giao dịch dân sự không có một trong các điều kiện được quy định tại Điều 117 của Bộ luật này thì vô hiệu, trừ trường hợp Bộ luật này có quy định khác.",
+          "preview": "Điều 122. Giao dịch dân sự vô hiệu Giao dịch dân sự không có một trong các điều kiện được quy định tại Điều 117 của Bộ luật này thì vô hiệu, trừ trường hợp Bộ luật này có quy định khác."
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:129",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "129",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.12253139017844901,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 129. Giao dịch dân sự vô hiệu do không tuân thủ quy định về hình thức Giao dịch dân sự vi phạm quy định điều kiện có hiệu lực về hình thức thì vô hiệu, trừ trường hợp sau đây:\n1. Giao dịch dân sự đã được xác lập theo quy định phải bằng văn bản nhưng văn bản không đúng quy định của luật mà một bên hoặc các bên đã thực hiện ít nhất hai phần ba nghĩa vụ trong giao dịch thì theo yêu cầu của một bên hoặc các bên, Tòa án ra quyết định công nhận hiệu lực của giao dịch đó.\n2. Giao dịch dân sự đã được xác lập bằng văn bản nhưng vi phạm quy định bắt buộc về công chứng, chứng thực mà một bên hoặc các bên đã thực hiện ít nhất hai phần ba nghĩa vụ trong giao dịch thì theo yêu cầu của một bên hoặc các bên, Tòa án ra quyết định công nhận hiệu lực của giao dịch đó. Trong trường hợp này, các bên không phải thực hiện việc công chứng, chứng thực.",
+          "preview": "Điều 129. Giao dịch dân sự vô hiệu do không tuân thủ quy định về hình thức Giao dịch dân sự vi phạm quy định điều kiện có hiệu lực về hình thức thì vô hiệu, trừ trường hợp sau đây:\n1. Giao dịch dân sự đã được xác lập theo quy định phải bằng văn bản nhưng văn bản không đúng quy định của luật mà một bên hoặc các bên đã thực hiện ít nhất hai phần ba nghĩa vụ trong giao dịch thì theo yêu cầu của một b"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:132",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "132",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.11930220101659103,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 132. Thời hiệu yêu cầu Tòa án tuyên bố giao dịch dân sự vô hiệu\n1. Thời hiệu yêu cầu Tòa án tuyên bố giao dịch dân sự vô hiệu quy định tại các Điều 125, 126, 127, 128 và 129 của Bộ luật này là 02 năm, kể từ ngày:\na) Người đại diện của người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi, người bị hạn chế năng lực hành vi dân sự biết hoặc phải biết người được đại diện tự mình xác lập, thực hiện giao dịch;\nb) Người bị nhầm lẫn, bị lừa dối biết hoặc phải biết giao dịch được xác lập do bị nhầm lẫn, do bị lừa dối;\nc) Người có hành vi đe dọa, cưỡng ép chấm dứt hành vi đe dọa, cưỡng ép;\nd) Người không nhận thức và làm chủ được hành vi của mình xác lập giao dịch;\nđ) Giao dịch dân sự được xác lập trong trường hợp giao dịch dân sự không tuân thủ quy định về hình thức.\n2. Hết thời hiệu quy định tại khoản 1 Điều này mà không có yêu cầu tuyên bố giao dịch dân sự vô hiệu thì giao dịch dân sự có hiệu lực.\n3. Đối với giao dịch dân sự quy định tại Điều 123 và Điều 124 của Bộ luật này thì thời hiệu yêu cầu Tòa án tuyên bố giao dịch dân sự vô hiệu không bị hạn chế.",
+          "preview": "Điều 132. Thời hiệu yêu cầu Tòa án tuyên bố giao dịch dân sự vô hiệu\n1. Thời hiệu yêu cầu Tòa án tuyên bố giao dịch dân sự vô hiệu quy định tại các Điều 125, 126, 127, 128 và 129 của Bộ luật này là 02 năm, kể từ ngày:\na) Người đại diện của người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi, người bị hạn chế năng lực hành vi dân sự biết hoặc"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:125",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "125",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.07655867675267827,
+          "sources": [
+            "bm25"
+          ],
+          "text": "Điều 125. Giao dịch dân sự vô hiệu do người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi, người bị hạn chế năng lực hành vi dân sự xác lập, thực hiện\n1. Khi giao dịch dân sự do người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi hoặc người bị hạn chế năng lực hành vi dân sự xác lập, t",
+          "preview": "Điều 125. Giao dịch dân sự vô hiệu do người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi, người bị hạn chế năng lực hành vi dân sự xác lập, thực hiện\n1. Khi giao dịch dân sự do người chưa thành niên, người mất năng lực hành vi dân sự, người có khó khăn trong nhận thức, làm chủ hành vi hoặc người bị hạn chế năng lực hành vi dân sự xác lập, t"
+        }
+      ],
+      "scores": {
+        "retrieval_relevance": 5,
+        "citation_accuracy": 5,
+        "groundedness": 5,
+        "answer_correctness": 5,
+        "answer_relevance": 5,
+        "completeness": 5,
+        "no_overclaiming": 4,
+        "overall": 5.0,
+        "judge": "llm",
+        "judge_model": "gpt-5.4-mini",
+        "judge_notes": "Khớp đầy đủ Điều 117 BLDS 2015 và nêu đúng hệ quả theo Điều 122, bổ sung đúng ngoại lệ về hình thức theo Điều 129. Có hơi mở rộng so với câu hỏi nhưng không sai đáng kể."
+      },
+      "metadata": {
+        "retrieval_mode": "hybrid",
+        "vector_backend": "faiss",
+        "top_k": 5,
+        "query_rewrite": true,
+        "chat_model": "gpt-5.4-mini",
+        "memory_model": "gpt-5.4-mini",
+        "embedding_model": "text-embedding-3-small",
+        "latency_ms": 14096
+      },
+      "todo": null
+    },
+    {
+      "case_id": "civil_transaction_form_001",
+      "category": "dan_su",
+      "question": "Giao dịch dân sự có bắt buộc phải lập thành văn bản không?",
+      "answer": "Không. Theo **Điều 119 Bộ luật Dân sự 2015**, giao dịch dân sự **có thể được thể hiện bằng lời nói, bằng văn bản hoặc bằng hành vi cụ thể**; giao dịch qua phương tiện điện tử dưới dạng thông điệp dữ liệu cũng **được coi là giao dịch bằng văn bản**.\n\nTuy nhiên, **nếu luật chuyên ngành quy định** giao dịch đó **phải lập bằng văn bản, có công chứng, chứng thực hoặc đăng ký** thì phải tuân theo đúng hình thức đó (**khoản 2 Điều 119**).  \nNếu không tuân thủ quy định về hình thức, giao dịch có thể **vô hiệu** theo **Điều 129**, trừ trường hợp đã thực hiện ít nhất **2/3 nghĩa vụ** và được Tòa án công nhận hiệu lực theo điều kiện luật định.\n\n**Tóm tắt:**  \n- **Nguyên tắc chung:** không bắt buộc phải bằng văn bản.  \n- **Ngoại lệ:** khi luật quy định riêng thì phải bằng văn bản/công chứng/chứng thực/đăng ký.\n\n**Căn cứ:** Điều 119, Điều 117 khoản 2, Điều 129 Bộ luật Dân sự 2015.",
+      "retrieval_input": "quy định pháp luật Việt Nam về hình thức giao dịch dân sự có bắt buộc phải lập thành văn bản không; Bộ luật Dân sự 2015 điều 119 hình thức giao dịch dân sự; trường hợp giao dịch bằng lời nói, bằng văn bản, bằng hành vi cụ thể; giao dịch phải công chứng chứng thực đăng ký theo luật chuyên ngành",
+      "legal_intent": "Xác định quy định pháp luật Việt Nam về hình thức giao dịch dân sự theo Bộ luật Dân sự 2015, bao gồm việc giao dịch có bắt buộc lập thành văn bản hay không, các hình thức giao dịch bằng lời nói/bằng văn bản/bằng hành vi cụ thể, và trường hợp phải công chứng, chứng thực, đăng ký theo luật chuyên ngành.",
+      "retrieval_queries": [
+        "quy định pháp luật Việt Nam về hình thức giao dịch dân sự có bắt buộc phải lập thành văn bản không; Bộ luật Dân sự 2015 điều 119 hình thức giao dịch dân sự; trường hợp giao dịch bằng lời nói, bằng văn bản, bằng hành vi cụ thể; giao dịch phải công chứng chứng thực đăng ký theo luật chuyên ngành",
+        "Bộ luật Dân sự 2015 Điều 119 hình thức giao dịch dân sự",
+        "giao dịch dân sự có bắt buộc lập thành văn bản không",
+        "giao dịch dân sự bằng lời nói bằng văn bản bằng hành vi cụ thể",
+        "giao dịch dân sự phải công chứng chứng thực đăng ký theo luật chuyên ngành"
+      ],
+      "sources": [
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:119",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "119",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.16190766164325127,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 119. Hình thức giao dịch dân sự\n1. Giao dịch dân sự được thể hiện bằng lời nói, bằng văn bản hoặc bằng hành vi cụ thể. Giao dịch dân sự thông qua phương tiện điện tử dưới hình thức thông điệp dữ liệu theo quy định của pháp luật về giao dịch điện tử được coi là giao dịch bằng văn bản.\n2. Trường hợp luật quy định giao dịch dân sự phải được thể hiện bằng văn bản có công chứng, chứng thực, đăng ký thì phải tuân theo quy định đó.",
+          "preview": "Điều 119. Hình thức giao dịch dân sự\n1. Giao dịch dân sự được thể hiện bằng lời nói, bằng văn bản hoặc bằng hành vi cụ thể. Giao dịch dân sự thông qua phương tiện điện tử dưới hình thức thông điệp dữ liệu theo quy định của pháp luật về giao dịch điện tử được coi là giao dịch bằng văn bản.\n2. Trường hợp luật quy định giao dịch dân sự phải được thể hiện bằng văn bản có công chứng, chứng thực, đăng k"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:129",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "129",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.12434595158352431,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 129. Giao dịch dân sự vô hiệu do không tuân thủ quy định về hình thức Giao dịch dân sự vi phạm quy định điều kiện có hiệu lực về hình thức thì vô hiệu, trừ trường hợp sau đây:\n1. Giao dịch dân sự đã được xác lập theo quy định phải bằng văn bản nhưng văn bản không đúng quy định của luật mà một bên hoặc các bên đã thực hiện ít nhất hai phần ba nghĩa vụ trong giao dịch thì theo yêu cầu của một bên hoặc các bên, Tòa án ra quyết định công nhận hiệu lực của giao dịch đó.\n2. Giao dịch dân sự đã được xác lập bằng văn bản nhưng vi phạm quy định bắt buộc về công chứng, chứng thực mà một bên hoặc các bên đã thực hiện ít nhất hai phần ba nghĩa vụ trong giao dịch thì theo yêu cầu của một bên hoặc các bên, Tòa án ra quyết định công nhận hiệu lực của giao dịch đó. Trong trường hợp này, các bên không phải thực hiện việc công chứng, chứng thực.",
+          "preview": "Điều 129. Giao dịch dân sự vô hiệu do không tuân thủ quy định về hình thức Giao dịch dân sự vi phạm quy định điều kiện có hiệu lực về hình thức thì vô hiệu, trừ trường hợp sau đây:\n1. Giao dịch dân sự đã được xác lập theo quy định phải bằng văn bản nhưng văn bản không đúng quy định của luật mà một bên hoặc các bên đã thực hiện ít nhất hai phần ba nghĩa vụ trong giao dịch thì theo yêu cầu của một b"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:121",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "121",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.06327607388058208,
+          "sources": [
+            "vector"
+          ],
+          "text": "Điều 121. Giải thích giao dịch dân sự\n1. Giao dịch dân sự có nội dung không rõ ràng, khó hiểu, được hiểu theo nhiều nghĩa khác nhau và không thuộc quy định tại khoản 2 Điều này thì việc giải thích giao dịch dân sự đó được thực hiện theo thứ tự sau đây:\na) Theo ý chí đích thực của các bên khi xác lập giao dịch;\nb) Theo nghĩa phù hợp với mục đích của giao dịch;\nc) Theo tập quán nơi giao dịch được xác lập.\n2. Việc giải thích hợp đồng được thực hiện theo quy định tại Điều 404 của Bộ luật này; việc giải thích nội dung di chúc được thực hiện theo quy định tại Điều 648 của Bộ luật này.",
+          "preview": "Điều 121. Giải thích giao dịch dân sự\n1. Giao dịch dân sự có nội dung không rõ ràng, khó hiểu, được hiểu theo nhiều nghĩa khác nhau và không thuộc quy định tại khoản 2 Điều này thì việc giải thích giao dịch dân sự đó được thực hiện theo thứ tự sau đây:\na) Theo ý chí đích thực của các bên khi xác lập giao dịch;\nb) Theo nghĩa phù hợp với mục đích của giao dịch;\nc) Theo tập quán nơi giao dịch được xá"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:508",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "508",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.062168778801843315,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 508. Xác lập, thực hiện giao dịch dân sự\n1. Trường hợp các thành viên hợp tác cử người đại diện thì người này là người đại diện trong xác lập, thực hiện giao dịch dân sự.\n2. Trường hợp các thành viên hợp tác không cử ra người đại diện thì các thành viên hợp tác phải cùng tham gia xác lập, thực hiện giao dịch dân sự, trừ trường hợp có thỏa thuận khác.\n3. Giao dịch dân sự do chủ thể quy định tại khoản 1 và khoản 2 Điều này xác lập, thực hiện làm phát sinh quyền, nghĩa vụ của tất cả thành viên hợp tác.",
+          "preview": "Điều 508. Xác lập, thực hiện giao dịch dân sự\n1. Trường hợp các thành viên hợp tác cử người đại diện thì người này là người đại diện trong xác lập, thực hiện giao dịch dân sự.\n2. Trường hợp các thành viên hợp tác không cử ra người đại diện thì các thành viên hợp tác phải cùng tham gia xác lập, thực hiện giao dịch dân sự, trừ trường hợp có thỏa thuận khác.\n3. Giao dịch dân sự do chủ thể quy định tạ"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:117",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "117",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.046153846153846156,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 117. Điều kiện có hiệu lực của giao dịch dân sự\n1. Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây:\na) Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập;\nb) Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện;\nc) Mục đích và nội dung của giao dịch dân sự không vi phạm điều cấm của luật, không trái đạo đức xã hội.\n2. Hình thức của giao dịch dân sự là điều kiện có hiệu lực của giao dịch dân sự trong trường hợp luật có quy định.",
+          "preview": "Điều 117. Điều kiện có hiệu lực của giao dịch dân sự\n1. Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây:\na) Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập;\nb) Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện;\nc) Mục đích và nội dung của giao dịch dân sự không vi phạm điều cấm của luật, không trái đạo đức xã hội.\n2. Hình thứ"
+        }
+      ],
+      "scores": {
+        "retrieval_relevance": 5,
+        "citation_accuracy": 5,
+        "groundedness": 5,
+        "answer_correctness": 5,
+        "answer_relevance": 5,
+        "completeness": 5,
+        "no_overclaiming": 4,
+        "overall": 5.0,
+        "judge": "llm",
+        "judge_model": "gpt-5.4-mini",
+        "judge_notes": "Bám sát Điều 119 BLDS 2015 và đúng với các ý trong reference. Có thêm dẫn Điều 117 và 129, đều phù hợp nhưng phần về vô hiệu là bổ sung ngoài câu hỏi nên hơi vượt nhu cầu, không làm sai nội dung."
+      },
+      "metadata": {
+        "retrieval_mode": "hybrid",
+        "vector_backend": "faiss",
+        "top_k": 5,
+        "query_rewrite": true,
+        "chat_model": "gpt-5.4-mini",
+        "memory_model": "gpt-5.4-mini",
+        "embedding_model": "text-embedding-3-small",
+        "latency_ms": 12316
+      },
+      "todo": null
+    },
+    {
+      "case_id": "civil_loan_contract_001",
+      "category": "dan_su",
+      "question": "Hợp đồng vay tài sản là gì và bên vay có nghĩa vụ trả nợ như thế nào?",
+      "answer": "**Tóm tắt nhận định chính:**  \nHợp đồng vay tài sản là sự thỏa thuận mà bên cho vay giao tài sản cho bên vay; đến hạn, bên vay phải hoàn trả tài sản **cùng loại**, đúng **số lượng, chất lượng**, và **chỉ phải trả lãi nếu có thỏa thuận hoặc pháp luật có quy định**.\n\n**Căn cứ pháp lý:**  \n- **Điều 463 BLDS 2015**: định nghĩa hợp đồng vay tài sản và nguyên tắc trả nợ, trả lãi.  \n- **Điều 466 BLDS 2015**: quy định cụ thể nghĩa vụ trả nợ của bên vay.  \n- **Điều 469, 470 BLDS 2015**: quy định cách thực hiện hợp đồng vay không kỳ hạn và có kỳ hạn.\n\n**Nghĩa vụ trả nợ của bên vay theo từng trường hợp có thể áp dụng:**  \n- **Nếu vay tiền**: bên vay phải **trả đủ tiền khi đến hạn**.  \n- **Nếu vay vật**: bên vay phải **trả vật cùng loại, đúng số lượng, chất lượng**, trừ khi có thỏa thuận khác.  \n- **Nếu không thể trả vật**: có thể trả bằng tiền theo trị giá của vật đã vay tại **địa điểm và thời điểm trả nợ**, nhưng **phải được bên cho vay đồng ý**.  \n- **Về địa điểm trả nợ**: mặc định là **nơi cư trú hoặc trụ sở của bên cho vay**, trừ khi có thỏa thuận khác.  \n- **Nếu chậm trả hoặc trả không đầy đủ**:  \n  - **Vay không có lãi**: bên cho vay có quyền yêu cầu trả lãi chậm trả theo mức tại khoản 2 Điều 468 BLDS 2015 trên số tiền chậm trả.  \n  - **Vay có lãi**: bên vay phải trả lãi theo lãi suất thỏa thuận trong thời hạn vay; nếu chậm trả còn phải trả lãi chậm trả theo khoản 2 Điều 468, và lãi trên nợ gốc quá hạn chưa trả bằng **150% lãi suất vay theo hợp đồng** cho thời gian chậm trả, trừ khi có thỏa thuận khác.\n\n**Trong context hiện có, có thể khẳng định:**  \n- Hợp đồng vay tài sản không chỉ là vay tiền mà còn có thể là vay **vật cùng loại**.  \n- Nghĩa vụ cốt lõi của bên vay là **hoàn trả đúng loại tài sản đã vay khi đến hạn**; lãi chỉ phát sinh khi có thỏa thuận hoặc luật quy định.  \n- Cách trả nợ còn phụ thuộc vào việc hợp đồng là **có kỳ hạn hay không kỳ hạn**, **có lãi hay không có lãi**.\n\n**Cần bổ sung thêm:**  \nBạn muốn hỏi về **vay tiền hay vay vật**, và hợp đồng đó **có kỳ hạn/có lãi hay không**?",
+      "retrieval_input": "Quy định pháp luật Việt Nam về hợp đồng vay tài sản theo Bộ luật Dân sự 2015, khái niệm hợp đồng vay tài sản, nghĩa vụ trả nợ của bên vay, thời hạn trả nợ, địa điểm trả nợ, trả nợ bằng tiền hoặc vật cùng loại, lãi suất trong hợp đồng vay tài sản, hậu quả chậm trả nợ, quyền và nghĩa vụ của các bên trong hợp đồng vay tài sản",
+      "legal_intent": "Tra cứu quy định pháp luật Việt Nam về hợp đồng vay tài sản theo Bộ luật Dân sự 2015, bao gồm khái niệm hợp đồng vay tài sản, nghĩa vụ trả nợ của bên vay, thời hạn trả nợ, địa điểm trả nợ, trả nợ bằng tiền hoặc vật cùng loại, lãi suất, hậu quả chậm trả nợ, và quyền nghĩa vụ của các bên.",
+      "retrieval_queries": [
+        "Quy định pháp luật Việt Nam về hợp đồng vay tài sản theo Bộ luật Dân sự 2015, khái niệm hợp đồng vay tài sản, nghĩa vụ trả nợ của bên vay, thời hạn trả nợ, địa điểm trả nợ, trả nợ bằng tiền hoặc vật cùng loại, lãi suất trong hợp đồng vay tài sản, hậu quả chậm trả nợ, quyền và nghĩa vụ của các bên trong hợp đồng vay tài sản",
+        "Bộ luật Dân sự 2015 hợp đồng vay tài sản Điều 463 khái niệm",
+        "Bộ luật Dân sự 2015 nghĩa vụ trả nợ của bên vay thời hạn địa điểm trả nợ Điều 466",
+        "Bộ luật Dân sự 2015 lãi suất hợp đồng vay tài sản chậm trả nợ Điều 468 Điều 357",
+        "Bộ luật Dân sự 2015 quyền và nghĩa vụ của các bên trong hợp đồng vay tài sản Điều 463 Điều 466 Điều 468"
+      ],
+      "sources": [
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:463",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "463",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.09428421041324267,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 463. Hợp đồng vay tài sản Hợp đồng vay tài sản là sự thỏa thuận giữa các bên, theo đó bên cho vay giao tài sản cho bên vay; khi đến hạn trả, bên vay phải hoàn trả cho bên cho vay tài sản cùng loại theo đúng số lượng, chất lượng và chỉ phải trả lãi nếu có thỏa thuận hoặc pháp luật có quy định.",
+          "preview": "Điều 463. Hợp đồng vay tài sản Hợp đồng vay tài sản là sự thỏa thuận giữa các bên, theo đó bên cho vay giao tài sản cho bên vay; khi đến hạn trả, bên vay phải hoàn trả cho bên cho vay tài sản cùng loại theo đúng số lượng, chất lượng và chỉ phải trả lãi nếu có thỏa thuận hoặc pháp luật có quy định."
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:470",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "470",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.09119789524201288,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 470. Thực hiện hợp đồng vay có kỳ hạn\n1. Đối với hợp đồng vay có kỳ hạn và không có lãi thì bên vay có quyền trả lại tài sản bất cứ lúc nào, nhưng phải báo trước cho bên cho vay một thời gian hợp lý, còn bên cho vay chỉ được đòi lại tài sản trước kỳ hạn, nếu được bên vay đồng ý.\n2. Đối với hợp đồng vay có kỳ hạn và có lãi thì bên vay có quyền trả lại tài sản trước kỳ hạn, nhưng phải trả toàn bộ lãi theo kỳ hạn, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+          "preview": "Điều 470. Thực hiện hợp đồng vay có kỳ hạn\n1. Đối với hợp đồng vay có kỳ hạn và không có lãi thì bên vay có quyền trả lại tài sản bất cứ lúc nào, nhưng phải báo trước cho bên cho vay một thời gian hợp lý, còn bên cho vay chỉ được đòi lại tài sản trước kỳ hạn, nếu được bên vay đồng ý.\n2. Đối với hợp đồng vay có kỳ hạn và có lãi thì bên vay có quyền trả lại tài sản trước kỳ hạn, nhưng phải trả toàn "
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:466",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "466",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.0819672131147541,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 466. Nghĩa vụ trả nợ của bên vay\n1. Bên vay tài sản là tiền thì phải trả đủ tiền khi đến hạn; nếu tài sản là vật thì phải trả vật cùng loại đúng số lượng, chất lượng, trừ trường hợp có thỏa thuận khác.\n2. Trường hợp bên vay không thể trả vật thì có thể trả bằng tiền theo trị giá của vật đã vay tại địa điểm và thời điểm trả nợ, nếu được bên cho vay đồng ý.\n3. Địa điểm trả nợ là nơi cư trú hoặc nơi đặt trụ sở của bên cho vay, trừ trường hợp có thỏa thuận khác.\n4. Trường hợp vay không có lãi mà khi đến hạn bên vay không trả nợ hoặc trả không đầy đủ thì bên cho vay có quyền yêu cầu trả tiền lãi với mức lãi suất theo quy định tại khoản 2 Điều 468 của Bộ luật này trên số tiền chậm trả tương ứng với thời gian chậm trả, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.\n5. Trường hợp vay có lãi mà khi đến hạn bên vay không trả hoặc trả không đầy đủ thì bên vay phải trả lãi như sau:\na) Lãi trên nợ gốc theo lãi suất thỏa thuận trong hợp đồng tương ứng với thời hạn vay mà đến hạn chưa trả; trường hợp chậm trả thì còn phải trả lãi theo mức lãi suất quy định tại khoản 2 Điều 468 của Bộ luật này;\nb) Lãi trên nợ gốc quá hạn chưa trả bằng 150% lãi suất vay theo hợp đồng tương ứng với thời gian chậm trả, trừ trường hợp có thỏa thuận khác.",
+          "preview": "Điều 466. Nghĩa vụ trả nợ của bên vay\n1. Bên vay tài sản là tiền thì phải trả đủ tiền khi đến hạn; nếu tài sản là vật thì phải trả vật cùng loại đúng số lượng, chất lượng, trừ trường hợp có thỏa thuận khác.\n2. Trường hợp bên vay không thể trả vật thì có thể trả bằng tiền theo trị giá của vật đã vay tại địa điểm và thời điểm trả nợ, nếu được bên cho vay đồng ý.\n3. Địa điểm trả nợ là nơi cư trú hoặc"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:469",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "469",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.0789374699085219,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 469. Thực hiện hợp đồng vay không kỳ hạn\n1. Đối với hợp đồng vay không kỳ hạn và không có lãi thì bên cho vay có quyền đòi lại tài sản và bên vay cũng có quyền trả nợ vào bất cứ lúc nào, nhưng phải báo cho nhau biết trước một thời gian hợp lý, trừ trường hợp có thỏa thuận khác.\n2. Đối với hợp đồng vay không kỳ hạn và có lãi thì bên cho vay có quyền đòi lại tài sản bất cứ lúc nào, nhưng phải báo trước cho bên vay một thời gian hợp lý và được trả lãi đến thời điểm nhận lại tài sản, còn bên vay cũng có quyền trả lại tài sản bất cứ lúc nào và chỉ phải trả lãi cho đến thời điểm trả nợ, nhưng cũng phải báo trước cho bên cho vay một thời gian hợp lý.",
+          "preview": "Điều 469. Thực hiện hợp đồng vay không kỳ hạn\n1. Đối với hợp đồng vay không kỳ hạn và không có lãi thì bên cho vay có quyền đòi lại tài sản và bên vay cũng có quyền trả nợ vào bất cứ lúc nào, nhưng phải báo cho nhau biết trước một thời gian hợp lý, trừ trường hợp có thỏa thuận khác.\n2. Đối với hợp đồng vay không kỳ hạn và có lãi thì bên cho vay có quyền đòi lại tài sản bất cứ lúc nào, nhưng phải b"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:465",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "465",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.06162340075383554,
+          "sources": [
+            "bm25"
+          ],
+          "text": "Điều 465. Nghĩa vụ của bên cho vay\n1. Giao tài sản cho bên vay đầy đủ, đúng chất lượng, số lượng vào thời điểm và địa điểm đã thỏa thuận.\n2. Bồi thường thiệt hại cho bên vay, nếu bên cho vay biết tài sản không bảo đảm chất lượng mà không báo cho bên vay biết, trừ trường hợp bên vay biết mà vẫn nhận tài sản đó.\n3. Không được yêu cầu bên vay trả lại tài sản trước thời hạn, trừ trường hợp quy định tạ",
+          "preview": "Điều 465. Nghĩa vụ của bên cho vay\n1. Giao tài sản cho bên vay đầy đủ, đúng chất lượng, số lượng vào thời điểm và địa điểm đã thỏa thuận.\n2. Bồi thường thiệt hại cho bên vay, nếu bên cho vay biết tài sản không bảo đảm chất lượng mà không báo cho bên vay biết, trừ trường hợp bên vay biết mà vẫn nhận tài sản đó.\n3. Không được yêu cầu bên vay trả lại tài sản trước thời hạn, trừ trường hợp quy định tạ"
+        }
+      ],
+      "scores": {
+        "retrieval_relevance": 5,
+        "citation_accuracy": 5,
+        "groundedness": 5,
+        "answer_correctness": 5,
+        "answer_relevance": 5,
+        "completeness": 5,
+        "no_overclaiming": 5,
+        "overall": 5.0,
+        "judge": "llm",
+        "judge_model": "gpt-5.4-mini",
+        "judge_notes": "Bám sát Điều 463 và 466 BLDS 2015; nêu đúng định nghĩa, nghĩa vụ trả nợ, lãi và các trường hợp chậm trả. Không thấy sai lệch hay vượt nguồn."
+      },
+      "metadata": {
+        "retrieval_mode": "hybrid",
+        "vector_backend": "faiss",
+        "top_k": 5,
+        "query_rewrite": true,
+        "chat_model": "gpt-5.4-mini",
+        "memory_model": "gpt-5.4-mini",
+        "embedding_model": "text-embedding-3-small",
+        "latency_ms": 14361
+      },
+      "todo": null
+    },
+    {
+      "case_id": "civil_loan_interest_001",
+      "category": "dan_su",
+      "question": "Các bên thỏa thuận lãi suất vay dân sự tối đa bao nhiêu phần trăm một năm?",
+      "answer": "**Nhận định chính:** Trong giao dịch vay dân sự, các bên được thỏa thuận lãi suất nhưng **không được vượt quá 20%/năm của khoản tiền vay**. Nếu thỏa thuận vượt quá mức này thì **phần vượt quá không có hiệu lực**.\n\n**Căn cứ:**  \n- **Điều 468 khoản 1 Bộ luật Dân sự 2015**: lãi suất thỏa thuận không được vượt quá **20%/năm**, trừ trường hợp luật khác có liên quan quy định khác.  \n- **Điều 468 khoản 1** cũng quy định: nếu vượt quá mức giới hạn thì **mức lãi suất vượt quá không có hiệu lực**.  \n- Liên quan thêm, **Điều 201 Bộ luật Hình sự 2015** cho thấy nếu cho vay với lãi suất **gấp 05 lần mức lãi suất cao nhất** theo Bộ luật Dân sự thì có thể bị xem xét về **tội cho vay lãi nặng trong giao dịch dân sự**.\n\n**Kết luận ngắn:** Mức tối đa các bên có thể thỏa thuận trong vay dân sự là **20%/năm**, trừ trường hợp luật khác quy định khác.  \n\nCần bổ sung thêm: Không cần bổ sung thêm nếu bạn chỉ hỏi mức trần lãi suất chung.",
+      "retrieval_input": "Quy định pháp luật Việt Nam về lãi suất trong hợp đồng vay tài sản dân sự; mức lãi suất tối đa các bên được thỏa thuận theo Bộ luật Dân sự 2015, Điều 468; lãi suất vượt quá giới hạn; hậu quả pháp lý khi thỏa thuận lãi suất vượt trần; cách tính lãi suất theo năm trong giao dịch vay dân sự",
+      "legal_intent": "Tra cứu quy định pháp luật Việt Nam về lãi suất trong hợp đồng vay tài sản dân sự theo Bộ luật Dân sự 2015, đặc biệt mức lãi suất tối đa các bên được thỏa thuận tại Điều 468, trường hợp lãi suất vượt quá giới hạn, hậu quả pháp lý của thỏa thuận vượt trần và cách tính lãi suất theo năm trong giao dịch vay dân sự.",
+      "retrieval_queries": [
+        "Quy định pháp luật Việt Nam về lãi suất trong hợp đồng vay tài sản dân sự; mức lãi suất tối đa các bên được thỏa thuận theo Bộ luật Dân sự 2015, Điều 468; lãi suất vượt quá giới hạn; hậu quả pháp lý khi thỏa thuận lãi suất vượt trần; cách tính lãi suất theo năm trong giao dịch vay dân sự",
+        "Bộ luật Dân sự 2015 Điều 468 lãi suất vay tài sản mức tối đa 20%/năm",
+        "hợp đồng vay tài sản dân sự lãi suất vượt quá giới hạn hậu quả pháp lý",
+        "thỏa thuận lãi suất vượt trần trong giao dịch vay dân sự vô hiệu phần vượt quá",
+        "cách tính lãi suất theo năm trong giao dịch vay dân sự theo Bộ luật Dân sự 2015"
+      ],
+      "sources": [
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:468",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "468",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.1454829088885144,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 468. Lãi suất\n1. Lãi suất vay do các bên thỏa thuận. Trường hợp các bên có thỏa thuận về lãi suất thì lãi suất theo thỏa thuận không được vượt quá 20%/năm của khoản tiền vay, trừ trường hợp luật khác có liên quan quy định khác. Căn cứ tình hình thực tế và theo đề xuất của Chính phủ, Ủy ban thường vụ Quốc hội quyết định điều chỉnh mức lãi suất nói trên và báo cáo Quốc hội tại kỳ họp gần nhất. Trường hợp lãi suất theo thỏa thuận vượt quá lãi suất giới hạn được quy định tại khoản này thì mức lãi suất vượt quá không có hiệu lực.\n2. Trường hợp các bên có thỏa thuận về việc trả lãi, nhưng không xác định rõ lãi suất và có tranh chấp về lãi suất thì lãi suất được xác định bằng 50% mức lãi suất giới hạn quy định tại khoản 1 Điều này tại thời điểm trả nợ.",
+          "preview": "Điều 468. Lãi suất\n1. Lãi suất vay do các bên thỏa thuận. Trường hợp các bên có thỏa thuận về lãi suất thì lãi suất theo thỏa thuận không được vượt quá 20%/năm của khoản tiền vay, trừ trường hợp luật khác có liên quan quy định khác. Căn cứ tình hình thực tế và theo đề xuất của Chính phủ, Ủy ban thường vụ Quốc hội quyết định điều chỉnh mức lãi suất nói trên và báo cáo Quốc hội tại kỳ họp gần nhất. "
+        },
+        {
+          "chunk_id": "002_Bo-luat-hinh-su-2015-296661:article:201",
+          "source_file": "002_Bo-luat-hinh-su-2015-296661.txt",
+          "article_number": "201",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.11043587924934267,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 201. Tội cho vay lãi nặng trong giao dịch dân sự\n1. Người nào trong giao dịch dân sự mà cho vay với lãi suất gấp 05 lần mức lãi suất cao nhất quy định trong Bộ luật dân sự, thu lợi bất chính từ 30.000.000 đồng đến dưới 100.000.000 đồng hoặc đã bị xử phạt vi phạm hành chính về hành vi này hoặc đã bị kết án về tội này, chưa được xóa án tích mà còn vi phạm, thì bị phạt tiền từ 50.000.000 đồng đến 200.000.000 đồng hoặc phạt cải tạo không giam giữ đến 03 năm.\n2. Phạm tội thu lợi bất chính từ 100.000.000 đồng trở lên, thì bị phạt tiền từ 200.000.000 đồng đến 1.000.000.000 đồng hoặc phạt tù từ 06 tháng đến 03 năm.\n3. Người phạm tội còn có thể bị phạt tiền từ 30.000.000 đồng đến 100.000.000 đồng, cấm đảm nhiệm chức vụ, cấm hành nghề hoặc làm công việc nhất định từ 01 năm đến 05 năm.",
+          "preview": "Điều 201. Tội cho vay lãi nặng trong giao dịch dân sự\n1. Người nào trong giao dịch dân sự mà cho vay với lãi suất gấp 05 lần mức lãi suất cao nhất quy định trong Bộ luật dân sự, thu lợi bất chính từ 30.000.000 đồng đến dưới 100.000.000 đồng hoặc đã bị xử phạt vi phạm hành chính về hành vi này hoặc đã bị kết án về tội này, chưa được xóa án tích mà còn vi phạm, thì bị phạt tiền từ 50.000.000 đồng đế"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:466",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "466",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.09601414490527393,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 466. Nghĩa vụ trả nợ của bên vay\n1. Bên vay tài sản là tiền thì phải trả đủ tiền khi đến hạn; nếu tài sản là vật thì phải trả vật cùng loại đúng số lượng, chất lượng, trừ trường hợp có thỏa thuận khác.\n2. Trường hợp bên vay không thể trả vật thì có thể trả bằng tiền theo trị giá của vật đã vay tại địa điểm và thời điểm trả nợ, nếu được bên cho vay đồng ý.\n3. Địa điểm trả nợ là nơi cư trú hoặc nơi đặt trụ sở của bên cho vay, trừ trường hợp có thỏa thuận khác.\n4. Trường hợp vay không có lãi mà khi đến hạn bên vay không trả nợ hoặc trả không đầy đủ thì bên cho vay có quyền yêu cầu trả tiền lãi với mức lãi suất theo quy định tại khoản 2 Điều 468 của Bộ luật này trên số tiền chậm trả tương ứng với thời gian chậm trả, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.\n5. Trường hợp vay có lãi mà khi đến hạn bên vay không trả hoặc trả không đầy đủ thì bên vay phải trả lãi như sau:\na) Lãi trên nợ gốc theo lãi suất thỏa thuận trong hợp đồng tương ứng với thời hạn vay mà đến hạn chưa trả; trường hợp chậm trả thì còn phải trả lãi theo mức lãi suất quy định tại khoản 2 Điều 468 của Bộ luật này;\nb) Lãi trên nợ gốc quá hạn chưa trả bằng 150% lãi suất vay theo hợp đồng tương ứng với thời gian chậm trả, trừ trường hợp có thỏa thuận khác.",
+          "preview": "Điều 466. Nghĩa vụ trả nợ của bên vay\n1. Bên vay tài sản là tiền thì phải trả đủ tiền khi đến hạn; nếu tài sản là vật thì phải trả vật cùng loại đúng số lượng, chất lượng, trừ trường hợp có thỏa thuận khác.\n2. Trường hợp bên vay không thể trả vật thì có thể trả bằng tiền theo trị giá của vật đã vay tại địa điểm và thời điểm trả nợ, nếu được bên cho vay đồng ý.\n3. Địa điểm trả nợ là nơi cư trú hoặc"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:470",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "470",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.09018778140373843,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 470. Thực hiện hợp đồng vay có kỳ hạn\n1. Đối với hợp đồng vay có kỳ hạn và không có lãi thì bên vay có quyền trả lại tài sản bất cứ lúc nào, nhưng phải báo trước cho bên cho vay một thời gian hợp lý, còn bên cho vay chỉ được đòi lại tài sản trước kỳ hạn, nếu được bên vay đồng ý.\n2. Đối với hợp đồng vay có kỳ hạn và có lãi thì bên vay có quyền trả lại tài sản trước kỳ hạn, nhưng phải trả toàn bộ lãi theo kỳ hạn, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác.",
+          "preview": "Điều 470. Thực hiện hợp đồng vay có kỳ hạn\n1. Đối với hợp đồng vay có kỳ hạn và không có lãi thì bên vay có quyền trả lại tài sản bất cứ lúc nào, nhưng phải báo trước cho bên cho vay một thời gian hợp lý, còn bên cho vay chỉ được đòi lại tài sản trước kỳ hạn, nếu được bên vay đồng ý.\n2. Đối với hợp đồng vay có kỳ hạn và có lãi thì bên vay có quyền trả lại tài sản trước kỳ hạn, nhưng phải trả toàn "
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:104",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "104",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.07652690003233481,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 104. Hậu quả pháp lý đối với giao dịch dân sự do thành viên không có quyền đại diện hoặc vượt quá phạm vi đại diện xác lập, thực hiện\n1. Trường hợp thành viên không có quyền đại diện mà xác lập, thực hiện giao dịch dân sự nhân danh các thành viên khác của hộ gia đình, tổ hợp tác, tổ chức khác không có tư cách pháp nhân hoặc người đại diện xác lập, thực hiện vượt quá phạm vi đại diện thì hậu quả pháp lý của giao dịch được áp dụng theo quy định tại các Điều 130, 142 và 143 của Bộ luật này.\n2. Giao dịch dân sự do bên không có quyền đại diện hoặc vượt quá phạm vi đại diện xác lập, thực hiện mà gây thiệt hại cho thành viên khác của hộ gia đình, tổ hợp tác, tổ chức khác không có tư cách pháp nhân hoặc người thứ ba thì phải bồi thường cho người bị thiệt hại.\nTÀI SẢN",
+          "preview": "Điều 104. Hậu quả pháp lý đối với giao dịch dân sự do thành viên không có quyền đại diện hoặc vượt quá phạm vi đại diện xác lập, thực hiện\n1. Trường hợp thành viên không có quyền đại diện mà xác lập, thực hiện giao dịch dân sự nhân danh các thành viên khác của hộ gia đình, tổ hợp tác, tổ chức khác không có tư cách pháp nhân hoặc người đại diện xác lập, thực hiện vượt quá phạm vi đại diện thì hậu q"
+        }
+      ],
+      "scores": {
+        "retrieval_relevance": 5,
+        "citation_accuracy": 5,
+        "groundedness": 5,
+        "answer_correctness": 5,
+        "answer_relevance": 5,
+        "completeness": 5,
+        "no_overclaiming": 4,
+        "overall": 5.0,
+        "judge": "llm",
+        "judge_model": "gpt-5.4-mini",
+        "judge_notes": "Khớp trực tiếp Điều 468 BLDS 2015 từ nguồn truy xuất. Trả lời đúng trần 20%/năm và nêu đúng hiệu lực phần vượt quá. Có nhắc thêm Điều 201 BLHS nhưng không làm sai nội dung chính; hơi thừa so với câu hỏi."
+      },
+      "metadata": {
+        "retrieval_mode": "hybrid",
+        "vector_backend": "faiss",
+        "top_k": 5,
+        "query_rewrite": true,
+        "chat_model": "gpt-5.4-mini",
+        "memory_model": "gpt-5.4-mini",
+        "embedding_model": "text-embedding-3-small",
+        "latency_ms": 12311
+      },
+      "todo": null
+    },
+    {
+      "case_id": "civil_inheritance_first_rank_001",
+      "category": "dan_su",
+      "question": "Hàng thừa kế thứ nhất theo pháp luật gồm những ai?",
+      "answer": "Theo **Điều 651 Bộ luật Dân sự 2015**, **hàng thừa kế thứ nhất** gồm:\n\n- **Vợ, chồng** của người chết;\n- **Cha đẻ, mẹ đẻ**;\n- **Cha nuôi, mẹ nuôi**;\n- **Con đẻ, con nuôi** của người chết.\n\n**Căn cứ:** Điều 651 khoản 1 điểm a Bộ luật Dân sự 2015.\n\nTrong context hiện có, có thể khẳng định đây là các chủ thể thuộc **hàng thừa kế thứ nhất theo pháp luật**; những người cùng hàng này thì **được hưởng phần di sản bằng nhau** theo khoản 2 Điều 651.",
+      "retrieval_input": "Quy định Bộ luật Dân sự Việt Nam về hàng thừa kế thứ nhất theo pháp luật; những người thừa kế theo pháp luật thuộc hàng thứ nhất gồm vợ chồng, cha mẹ đẻ, cha mẹ nuôi, con đẻ, con nuôi; điều kiện áp dụng và căn cứ Điều 651 Bộ luật Dân sự 2015",
+      "legal_intent": "Xác định quy định về hàng thừa kế thứ nhất theo pháp luật trong Bộ luật Dân sự 2015, bao gồm thành phần người thừa kế, điều kiện áp dụng và căn cứ Điều 651.",
+      "retrieval_queries": [
+        "Quy định Bộ luật Dân sự Việt Nam về hàng thừa kế thứ nhất theo pháp luật; những người thừa kế theo pháp luật thuộc hàng thứ nhất gồm vợ chồng, cha mẹ đẻ, cha mẹ nuôi, con đẻ, con nuôi; điều kiện áp dụng và căn cứ Điều 651 Bộ luật Dân sự 2015",
+        "Điều 651 Bộ luật Dân sự 2015 hàng thừa kế thứ nhất",
+        "thừa kế theo pháp luật hàng thứ nhất gồm vợ chồng cha mẹ đẻ cha mẹ nuôi con đẻ con nuôi",
+        "điều kiện áp dụng thừa kế theo pháp luật theo Điều 651 BLDS 2015",
+        "quy định về người thừa kế theo pháp luật hàng thứ nhất Bộ luật Dân sự 2015"
+      ],
+      "sources": [
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:651",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "651",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.1126876296627751,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 651. Người thừa kế theo pháp luật\n1. Những người thừa kế theo pháp luật được quy định theo thứ tự sau đây:\na) Hàng thừa kế thứ nhất gồm: vợ, chồng, cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi, con đẻ, con nuôi của người chết;\nb) Hàng thừa kế thứ hai gồm: ông nội, bà nội, ông ngoại, bà ngoại, anh ruột, chị ruột, em ruột của người chết; cháu ruột của người chết mà người chết là ông nội, bà nội, ông ngoại, bà ngoại;\nc) Hàng thừa kế thứ ba gồm: cụ nội, cụ ngoại của người chết; bác ruột, chú ruột, cậu ruột, cô ruột, dì ruột của người chết; cháu ruột của người chết mà người chết là bác ruột, chú ruột, cậu ruột, cô ruột, dì ruột; chắt ruột của người chết mà người chết là cụ nội, cụ ngoại.\n2. Những người thừa kế cùng hàng được hưởng phần di sản bằng nhau.\n3. Những người ở hàng thừa kế sau chỉ được hưởng thừa kế, nếu không còn ai ở hàng thừa kế trước do đã chết, không có quyền hưởng di sản, bị truất quyền hưởng di sản hoặc từ chối nhận di sản.",
+          "preview": "Điều 651. Người thừa kế theo pháp luật\n1. Những người thừa kế theo pháp luật được quy định theo thứ tự sau đây:\na) Hàng thừa kế thứ nhất gồm: vợ, chồng, cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi, con đẻ, con nuôi của người chết;\nb) Hàng thừa kế thứ hai gồm: ông nội, bà nội, ông ngoại, bà ngoại, anh ruột, chị ruột, em ruột của người chết; cháu ruột của người chết mà người chết là ông nội, bà nội, ông ngoại,"
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:653",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "653",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.09809624537281862,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 653. Quan hệ thừa kế giữa con nuôi và cha nuôi, mẹ nuôi và cha đẻ, mẹ đẻ Con nuôi và cha nuôi, mẹ nuôi được thừa kế di sản của nhau và còn được thừa kế di sản theo quy định tại Điều 651 và Điều 652 của Bộ luật này.",
+          "preview": "Điều 653. Quan hệ thừa kế giữa con nuôi và cha nuôi, mẹ nuôi và cha đẻ, mẹ đẻ Con nuôi và cha nuôi, mẹ nuôi được thừa kế di sản của nhau và còn được thừa kế di sản theo quy định tại Điều 651 và Điều 652 của Bộ luật này."
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:649",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "649",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.079621095750128,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 649. Thừa kế theo pháp luật Thừa kế theo pháp luật là thừa kế theo hàng thừa kế, điều kiện và trình tự thừa kế do pháp luật quy định.",
+          "preview": "Điều 649. Thừa kế theo pháp luật Thừa kế theo pháp luật là thừa kế theo hàng thừa kế, điều kiện và trình tự thừa kế do pháp luật quy định."
+        },
+        {
+          "chunk_id": "001_Bo-luat-dan-su-2015-296215:article:680",
+          "source_file": "001_Bo-luat-dan-su-2015-296215.txt",
+          "article_number": "680",
+          "clause_number": null,
+          "target_article": null,
+          "rrf_score": 0.0610865036704589,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 680. Thừa kế\n1. Thừa kế được xác định theo pháp luật của nước mà người để lại di sản thừa kế có quốc tịch ngay trước khi chết.\n2. Việc thực hiện quyền thừa kế đối với bất động sản được xác định theo pháp luật của nước nơi có bất động sản đó.",
+          "preview": "Điều 680. Thừa kế\n1. Thừa kế được xác định theo pháp luật của nước mà người để lại di sản thừa kế có quốc tịch ngay trước khi chết.\n2. Việc thực hiện quyền thừa kế đối với bất động sản được xác định theo pháp luật của nước nơi có bất động sản đó."
+        },
+        {
+          "chunk_id": "025_Luat-Bao-hiem-xa-hoi-2024-557190:article:3:clause:8",
+          "source_file": "025_Luat-Bao-hiem-xa-hoi-2024-557190.txt",
+          "article_number": "3",
+          "clause_number": "7",
+          "target_article": null,
+          "rrf_score": 0.04551728464771943,
+          "sources": [
+            "bm25",
+            "vector"
+          ],
+          "text": "Điều 3. Giải thích từ ngữ\n7. Thân nhân là con đẻ, con nuôi, vợ hoặc chồng, cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi, cha vợ hoặc cha chồng, mẹ vợ hoặc mẹ chồng của người tham gia bảo hiểm xã hội hoặc thành viên khác trong gia đình mà người tham gia bảo hiểm xã hội đang có nghĩa vụ nuôi dưỡng theo quy định của pháp luật về hôn nhân và gia đình.",
+          "preview": "Điều 3. Giải thích từ ngữ\n7. Thân nhân là con đẻ, con nuôi, vợ hoặc chồng, cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi, cha vợ hoặc cha chồng, mẹ vợ hoặc mẹ chồng của người tham gia bảo hiểm xã hội hoặc thành viên khác trong gia đình mà người tham gia bảo hiểm xã hội đang có nghĩa vụ nuôi dưỡng theo quy định của pháp luật về hôn nhân và gia đình."
+        }
+      ],
+      "scores": {
+        "retrieval_relevance": 5,
+        "citation_accuracy": 5,
+        "groundedness": 5,
+        "answer_correctness": 5,
+        "answer_relevance": 5,
+        "completeness": 5,
+        "no_overclaiming": 5,
+        "overall": 5.0,
+        "judge": "llm",
+        "judge_model": "gpt-5.4-mini",
+        "judge_notes": "Khớp Điều 651 BLDS 2015; nêu đúng các chủ thể hàng thừa kế thứ nhất và nguyên tắc chia đều. Không có overclaim."
+      },
+      "metadata": {
+        "retrieval_mode": "hybrid",
+        "vector_backend": "faiss",
+        "top_k": 5,
+        "query_rewrite": true,
+        "chat_model": "gpt-5.4-mini",
+        "memory_model": "gpt-5.4-mini",
+        "embedding_model": "text-embedding-3-small",
+        "latency_ms": 10893
+      },
+      "todo": null
+    }
+  ]
+}

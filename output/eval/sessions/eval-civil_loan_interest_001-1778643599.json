@@ -1,0 +1,31 @@
+{
+  "session_id": "eval-civil_loan_interest_001-1778643599",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-246f8f2f9887",
+      "role": "user",
+      "content": "Các bên thỏa thuận lãi suất vay dân sự tối đa bao nhiêu phần trăm một năm?",
+      "timestamp": "2026-05-13T03:40:00.113282+00:00"
+    },
+    {
+      "id": "msg-6e15ca3d0d56",
+      "role": "assistant",
+      "content": "Trong hợp đồng vay dân sự, **lãi suất do các bên thỏa thuận nhưng không được vượt quá 20%/năm của khoản tiền vay**; phần vượt quá **không có hiệu lực**.\n\n**Căn cứ:** Điều 468 khoản 1 Bộ luật Dân sự 2015.\n\nLưu ý thêm:\n- Nếu **có thỏa thuận trả lãi nhưng không ghi rõ lãi suất** và phát sinh tranh chấp, thì lãi suất được xác định bằng **50% mức lãi suất giới hạn**, tức là **10%/năm** tại thời điểm trả nợ.  \n- Nếu có **luật khác liên quan quy định khác** thì áp dụng theo luật đó.  \n- Trường hợp cho vay với lãi suất **gấp 5 lần mức tối đa** nêu trên có thể bị xem xét theo **Điều 201 Bộ luật Hình sự 2015** về tội cho vay lãi nặng trong giao dịch dân sự.",
+      "timestamp": "2026-05-13T03:40:16.491245+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Mức lãi suất tối đa trong giao dịch vay dân sự",
+    "jurisdiction": "Việt Nam",
+    "case_type": "tư vấn pháp lý chung, không gắn với vụ việc cụ thể",
+    "known_facts": [],
+    "user_question": "Các bên thỏa thuận lãi suất vay dân sự tối đa bao nhiêu phần trăm một năm?"
+  },
+  "case_summary": "Người dùng đang hỏi về mức lãi suất tối đa mà các bên được thỏa thuận trong hợp đồng vay dân sự theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi pháp lý chung.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quy định pháp luật Việt Nam về lãi suất trong hợp đồng vay tài sản dân sự; mức lãi suất tối đa các bên được thỏa thuận theo Bộ luật Dân sự 2015, Điều 468; hậu quả pháp lý khi thỏa thuận vượt quá trần lãi suất; cách tính lãi suất theo năm trong giao dịch vay dân sự",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:40:16.491474+00:00"
+}

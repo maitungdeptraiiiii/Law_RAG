@@ -1,0 +1,31 @@
+{
+  "session_id": "eval-civil_loan_interest_001-1778643455",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-27a6ee8d4a44",
+      "role": "user",
+      "content": "Các bên thỏa thuận lãi suất vay dân sự tối đa bao nhiêu phần trăm một năm?",
+      "timestamp": "2026-05-13T03:37:35.500031+00:00"
+    },
+    {
+      "id": "msg-9bd26e4299d3",
+      "role": "assistant",
+      "content": "**Nhận định chính:** Trong giao dịch vay dân sự, các bên được thỏa thuận lãi suất nhưng **không được vượt quá 20%/năm của khoản tiền vay**. Nếu thỏa thuận vượt quá mức này thì **phần vượt quá không có hiệu lực**.\n\n**Căn cứ:**  \n- **Điều 468 khoản 1 Bộ luật Dân sự 2015**: lãi suất thỏa thuận không được vượt quá **20%/năm**, trừ trường hợp luật khác có liên quan quy định khác.  \n- **Điều 468 khoản 1** cũng quy định: nếu vượt quá mức giới hạn thì **mức lãi suất vượt quá không có hiệu lực**.  \n- Liên quan thêm, **Điều 201 Bộ luật Hình sự 2015** cho thấy nếu cho vay với lãi suất **gấp 05 lần mức lãi suất cao nhất** theo Bộ luật Dân sự thì có thể bị xem xét về **tội cho vay lãi nặng trong giao dịch dân sự**.\n\n**Kết luận ngắn:** Mức tối đa các bên có thể thỏa thuận trong vay dân sự là **20%/năm**, trừ trường hợp luật khác quy định khác.  \n\nCần bổ sung thêm: Không cần bổ sung thêm nếu bạn chỉ hỏi mức trần lãi suất chung.",
+      "timestamp": "2026-05-13T03:37:47.578977+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Mức lãi suất tối đa trong giao dịch vay dân sự",
+    "jurisdiction": "Việt Nam",
+    "case_stage": "Chưa có tranh chấp/vụ việc cụ thể; chỉ là yêu cầu tra cứu quy định pháp luật",
+    "known_details": [],
+    "user_question": "Các bên thỏa thuận lãi suất vay dân sự tối đa bao nhiêu phần trăm một năm?"
+  },
+  "case_summary": "Người dùng đang hỏi về mức lãi suất tối đa mà các bên được thỏa thuận trong hợp đồng vay dân sự theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi mang tính khái quát.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quy định pháp luật Việt Nam về lãi suất trong hợp đồng vay tài sản dân sự; mức lãi suất tối đa các bên được thỏa thuận theo Bộ luật Dân sự 2015, Điều 468; lãi suất vượt quá giới hạn; hậu quả pháp lý khi thỏa thuận lãi suất vượt trần; cách tính lãi suất theo năm trong giao dịch vay dân sự",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:37:47.579170+00:00"
+}

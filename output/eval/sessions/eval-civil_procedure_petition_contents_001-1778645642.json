@@ -1,0 +1,30 @@
+{
+  "session_id": "eval-civil_procedure_petition_contents_001-1778645642",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-1d42a0fceb20",
+      "role": "user",
+      "content": "Đơn khởi kiện vụ án dân sự phải có những nội dung chính nào?",
+      "timestamp": "2026-05-13T04:14:03.048239+00:00"
+    },
+    {
+      "id": "msg-3b49da87214c",
+      "role": "assistant",
+      "content": "Theo **Điều 189 khoản 4 Bộ luật Tố tụng dân sự 2015**, đơn khởi kiện vụ án dân sự phải có các nội dung chính sau:\n\n1. **Ngày, tháng, năm làm đơn khởi kiện**.  \n2. **Tên Tòa án nhận đơn khởi kiện**.  \n3. **Thông tin người khởi kiện**: họ tên, nơi cư trú/làm việc; nếu là cơ quan, tổ chức thì ghi trụ sở; kèm số điện thoại, fax, email nếu có.  \n4. **Thông tin người có quyền và lợi ích được bảo vệ**: họ tên, nơi cư trú/làm việc; nếu là cơ quan, tổ chức thì ghi trụ sở; kèm số điện thoại, fax, email nếu có.  \n5. **Thông tin người bị kiện**: họ tên, nơi cư trú/làm việc; nếu là cơ quan, tổ chức thì ghi trụ sở; kèm số điện thoại, fax, email nếu có. Nếu không rõ nơi cư trú/làm việc/trụ sở thì ghi **địa chỉ cuối cùng** biết được.  \n6. **Thông tin người có quyền lợi, nghĩa vụ liên quan**: tương tự như trên; nếu không rõ thì ghi **địa chỉ cuối cùng** biết được.  \n7. **Quyền, lợi ích hợp pháp bị xâm phạm** và **những yêu cầu cụ thể Tòa án giải quyết** đối với người bị kiện, người có quyền lợi, nghĩa vụ liên quan.  \n8. **Họ tên, địa chỉ người làm chứng** (nếu có).  \n9. **Danh mục tài liệu, chứng cứ kèm theo đơn khởi kiện**.\n\nNgoài ra, theo **khoản 5 Điều 189**, đơn khởi kiện phải kèm **tài liệu, chứng cứ chứng minh quyền, lợi ích hợp pháp bị xâm phạm**; nếu chưa thể nộp đầy đủ vì lý do khách quan thì nộp những tài liệu, chứng cứ hiện có và bổ sung sau theo yêu cầu của Tòa án.\n\n**Căn cứ:** Điều 189 khoản 1, 2, 3, 4, 5 Bộ luật Tố tụng dân sự 2015.",
+      "timestamp": "2026-05-13T04:14:15.084719+00:00"
+    }
+  ],
+  "facts": {
+    "issue_type": "Tố tụng dân sự",
+    "user_question": "Đơn khởi kiện vụ án dân sự phải có những nội dung chính nào?",
+    "known_facts": [],
+    "jurisdiction": "Việt Nam"
+  },
+  "case_summary": "Người dùng đang hỏi về các nội dung chính bắt buộc của đơn khởi kiện vụ án dân sự theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài yêu cầu tra cứu quy định về hình thức/nội dung đơn khởi kiện.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quy định pháp luật Việt Nam về nội dung bắt buộc của đơn khởi kiện vụ án dân sự; Bộ luật Tố tụng dân sự 2015 điều 189 về đơn khởi kiện; hình thức, nội dung, tài liệu kèm theo đơn khởi kiện vụ án dân sự; yêu cầu thụ lý đơn khởi kiện",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:14:15.084902+00:00"
+}

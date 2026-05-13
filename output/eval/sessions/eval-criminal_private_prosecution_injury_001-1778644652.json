@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-criminal_private_prosecution_injury_001-1778644652",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-f9cb566981fe",
+      "role": "user",
+      "content": "Tội cố ý gây thương tích ở khoản 1 Điều 134 có cần yêu cầu của bị hại để khởi tố không?",
+      "timestamp": "2026-05-13T03:57:32.687461+00:00"
+    },
+    {
+      "id": "msg-0af84ac3bb66",
+      "role": "assistant",
+      "content": "Có. **Tội cố ý gây thương tích theo khoản 1 Điều 134 BLHS chỉ được khởi tố khi có yêu cầu của bị hại**; nếu bị hại là người dưới 18 tuổi, có nhược điểm về tâm thần hoặc thể chất, hoặc đã chết thì **người đại diện của họ** có thể yêu cầu khởi tố.\n\n**Căn cứ:**\n- **Điều 155 khoản 1 BLTTHS 2015** (đã được sửa đổi): chỉ được khởi tố vụ án hình sự về tội phạm quy định tại **khoản 1 Điều 134** khi có yêu cầu của bị hại hoặc người đại diện hợp pháp trong các trường hợp nêu trên.\n- **Điều 157 khoản 8 BLTTHS 2015**: không được khởi tố nếu thuộc tội tại khoản 1 Điều 134 mà **bị hại hoặc người đại diện của bị hại không yêu cầu khởi tố**.\n\n**Trong context hiện có, có thể khẳng định:**\n- Nếu hành vi chỉ thuộc **khoản 1 Điều 134**, thì **thiếu yêu cầu khởi tố của bị hại** là căn cứ không khởi tố.\n- Nếu đã có yêu cầu khởi tố hợp lệ, thì mới có thể khởi tố theo quy định này.\n- Nếu bị hại rút yêu cầu thì vụ án phải đình chỉ, trừ trường hợp rút yêu cầu do bị ép buộc, cưỡng bức.\n\n**Cần bổ sung thêm:**  \nBị hại có **đã nộp yêu cầu khởi tố hay chưa**?",
+      "timestamp": "2026-05-13T03:57:45.518278+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Điều kiện khởi tố tội cố ý gây thương tích theo khoản 1 Điều 134 BLHS",
+    "specific_question": "Có cần yêu cầu của bị hại để khởi tố hay không",
+    "case_status": "Chưa có dữ kiện vụ việc cụ thể"
+  },
+  "case_summary": "Người dùng đang hỏi về điều kiện khởi tố đối với tội cố ý gây thương tích theo khoản 1 Điều 134 Bộ luật Hình sự, cụ thể là có cần yêu cầu của bị hại hay không. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi pháp lý chung.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Điều 134 Bộ luật Hình sự 2015 sửa đổi 2017 khoản 1 khởi tố vụ án cố ý gây thương tích có cần yêu cầu của bị hại hay không; trường hợp nào thuộc tội phạm chỉ khởi tố theo yêu cầu của bị hại theo Điều 155 BLTTHS; phân biệt khoản 1 Điều 134 với các trường hợp khởi tố không phụ thuộc yêu cầu của bị hại",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:57:45.518458+00:00"
+}

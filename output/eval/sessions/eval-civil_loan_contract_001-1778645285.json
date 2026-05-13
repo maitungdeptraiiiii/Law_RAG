@@ -1,0 +1,31 @@
+{
+  "session_id": "eval-civil_loan_contract_001-1778645285",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-8218e44b6613",
+      "role": "user",
+      "content": "Hợp đồng vay tài sản là gì và bên vay có nghĩa vụ trả nợ như thế nào?",
+      "timestamp": "2026-05-13T04:08:06.084592+00:00"
+    },
+    {
+      "id": "msg-a4d2e90bd1b5",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:**  \nHợp đồng vay tài sản là sự thỏa thuận theo đó bên cho vay giao tài sản cho bên vay; đến hạn, bên vay phải hoàn trả tài sản cùng loại, đúng số lượng, chất lượng và chỉ phải trả lãi nếu có thỏa thuận hoặc pháp luật có quy định. Nghĩa vụ trả nợ của bên vay phụ thuộc vào việc vay là **tiền hay vật**, **có lãi hay không**, và **có chậm trả hay không**.\n\n**Căn cứ pháp lý:**  \n- **Điều 463 Bộ luật Dân sự 2015**: định nghĩa hợp đồng vay tài sản.  \n- **Điều 466 Bộ luật Dân sự 2015**: nghĩa vụ trả nợ của bên vay.  \n- **Điều 469, 470 Bộ luật Dân sự 2015**: cách thực hiện hợp đồng vay không kỳ hạn / có kỳ hạn.  \n- **Điều 357 Bộ luật Dân sự 2015**: trách nhiệm do chậm thực hiện nghĩa vụ trả tiền.\n\n**Có thể hiểu cụ thể như sau:**  \n- **Nếu vay tiền** thì khi đến hạn phải trả **đủ tiền**.  \n- **Nếu vay vật** thì phải trả **vật cùng loại, đúng số lượng, chất lượng**; nếu không thể trả vật thì **có thể trả bằng tiền theo trị giá của vật đã vay tại địa điểm và thời điểm trả nợ**, nhưng **phải được bên cho vay đồng ý**.  \n- **Nếu vay không có lãi mà chậm trả hoặc trả không đủ** thì bên cho vay có quyền yêu cầu trả **lãi trên số tiền chậm trả** theo mức tại **khoản 2 Điều 468**.  \n- **Nếu vay có lãi mà chậm trả hoặc trả không đủ** thì bên vay phải trả:  \n  1) **lãi trên nợ gốc** theo lãi suất thỏa thuận đến hạn chưa trả;  \n  2) **lãi chậm trả** theo quy định tại **khoản 2 Điều 468**;  \n  3) **lãi trên nợ gốc quá hạn chưa trả bằng 150% lãi suất vay theo hợp đồng** cho thời gian chậm trả, trừ khi có thỏa thuận khác.  \n- **Về địa điểm trả nợ**: là nơi cư trú hoặc trụ sở của bên cho vay, trừ khi có thỏa thuận khác.  \n- **Nếu là vay không kỳ hạn**: bên vay có thể trả bất cứ lúc nào nhưng phải báo trước một thời gian hợp lý; nếu có lãi thì chỉ phải trả lãi đến thời điểm trả nợ.  \n- **Nếu là vay có kỳ hạn**: bên vay có thể trả trước hạn; nếu có lãi thì phải trả toàn bộ lãi theo kỳ hạn, trừ khi có thỏa thuận khác hoặc luật có quy định khác.\n\n**Kết luận ngắn:**  \nTrong context hiện có, điều có thể khẳng định là bên vay luôn có nghĩa vụ hoàn trả đúng loại tài sản đã vay khi đến hạn; nếu chậm trả thì có thể phát sinh nghĩa vụ trả lãi/chậm trả theo Điều 466 và Điều 357 BLDS 2015.\n\n**Cần bổ sung thêm:**  \nBạn muốn hỏi về **vay tiền hay vay vật**, và **hợp đồng có lãi hay không**?",
+      "timestamp": "2026-05-13T04:08:19.913637+00:00"
+    }
+  ],
+  "facts": {
+    "case_type": "tra cứu pháp lý chung",
+    "topic": "hợp đồng vay tài sản",
+    "known_facts": [],
+    "jurisdiction": "Việt Nam",
+    "procedural_stage": "chưa xác định"
+  },
+  "case_summary": "Người dùng đang hỏi khái niệm pháp lý về hợp đồng vay tài sản và nghĩa vụ trả nợ của bên vay theo pháp luật Việt Nam, chưa có tình tiết vụ việc cụ thể nào khác.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Pháp luật Việt Nam về hợp đồng vay tài sản theo Bộ luật Dân sự 2015: khái niệm hợp đồng vay tài sản, đặc điểm pháp lý, nghĩa vụ của bên vay khi đến hạn trả nợ, trả đúng tài sản hoặc hoàn trả tiền, lãi suất vay, thời hạn trả, địa điểm trả, nghĩa vụ trả lãi và hậu quả chậm trả, quy định về vay không kỳ hạn và có kỳ hạn, điều 463, 466, 468 Bộ luật Dân sự 2015",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:08:19.913802+00:00"
+}

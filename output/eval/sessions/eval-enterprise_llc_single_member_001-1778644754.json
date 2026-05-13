@@ -1,0 +1,36 @@
+{
+  "session_id": "eval-enterprise_llc_single_member_001-1778644754",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-926fc57480e0",
+      "role": "user",
+      "content": "Công ty trách nhiệm hữu hạn một thành viên là gì và chủ sở hữu chịu trách nhiệm trong phạm vi nào?",
+      "timestamp": "2026-05-13T03:59:15.288366+00:00"
+    },
+    {
+      "id": "msg-ae44936f9cbc",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:**  \nCông ty trách nhiệm hữu hạn một thành viên là doanh nghiệp do **một tổ chức hoặc một cá nhân** làm chủ sở hữu. Về nguyên tắc, **chủ sở hữu chỉ chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của công ty trong phạm vi số vốn điều lệ của công ty**.\n\n**Căn cứ pháp lý:**  \n- **Điều 74 khoản 1 Luật Doanh nghiệp 2020**: quy định khái niệm công ty TNHH một thành viên và phạm vi trách nhiệm của chủ sở hữu.  \n- **Điều 74 khoản 2**: công ty có tư cách pháp nhân kể từ ngày được cấp Giấy chứng nhận đăng ký doanh nghiệp.  \n- **Điều 75 khoản 2, 3, 4** và **Điều 77 khoản 1, 3, 5, 6 Luật Doanh nghiệp 2020**: quy định nghĩa vụ góp đủ vốn, hậu quả nếu không góp đủ vốn, và trường hợp rút vốn trái luật.\n\n**Trong context hiện có, có thể khẳng định:**  \n- Nếu công ty được thành lập hợp lệ, thì chủ sở hữu **không phải chịu trách nhiệm vô hạn** cho mọi nghĩa vụ của công ty; nguyên tắc chung là chỉ trong **phạm vi vốn điều lệ**.  \n- Nếu **không góp đủ vốn điều lệ, không góp đúng hạn**, thì có thể phát sinh trách nhiệm rộng hơn theo **Điều 75 khoản 3, 4**:  \n  - phải đăng ký điều chỉnh vốn điều lệ;  \n  - có thể phải chịu trách nhiệm tương ứng với phần vốn đã cam kết đối với nghĩa vụ tài chính phát sinh trong thời gian luật định;  \n  - và trong trường hợp không góp/không góp đủ/không góp đúng hạn, chủ sở hữu có thể phải **chịu trách nhiệm bằng toàn bộ tài sản của mình** đối với nghĩa vụ tài chính và thiệt hại phát sinh.  \n- Nếu **rút vốn trái luật** (không thông qua chuyển nhượng vốn điều lệ), thì chủ sở hữu và người liên quan có thể **liên đới chịu trách nhiệm** về các khoản nợ và nghĩa vụ tài sản khác của công ty theo **Điều 77 khoản 5**.\n\n**Kết luận ngắn:**  \n- **Khái niệm:** doanh nghiệp do một tổ chức hoặc một cá nhân làm chủ sở hữu.  \n- **Phạm vi trách nhiệm thông thường:** trong phạm vi **số vốn điều lệ** của công ty.  \n- **Ngoại lệ đáng chú ý:** nếu không góp đủ vốn, góp không đúng hạn, hoặc rút vốn trái luật thì có thể phát sinh trách nhiệm bằng **toàn bộ tài sản** hoặc **liên đới trách nhiệm** theo luật.\n\n**Cần bổ sung thêm:**  \nChủ sở hữu trong trường hợp này là **cá nhân hay tổ chức**, và có **góp đủ vốn điều lệ đúng hạn** hay không?",
+      "timestamp": "2026-05-13T03:59:30.379435+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Xác định khái niệm công ty trách nhiệm hữu hạn một thành viên và phạm vi trách nhiệm của chủ sở hữu",
+    "jurisdiction": "Việt Nam",
+    "case_type": "general_legal_information",
+    "known_facts": [],
+    "unknown_facts": [
+      "Chủ sở hữu là cá nhân hay tổ chức",
+      "Có hay không việc chủ sở hữu góp đủ vốn điều lệ",
+      "Có hay không hành vi lạm dụng tư cách pháp nhân hoặc rút vốn trái luật",
+      "Có hay không tranh chấp, nghĩa vụ nợ hoặc trách nhiệm phát sinh cụ thể"
+    ]
+  },
+  "case_summary": "Người dùng đang hỏi về khái niệm công ty trách nhiệm hữu hạn một thành viên và phạm vi trách nhiệm của chủ sở hữu theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào ngoài câu hỏi mang tính khái quát pháp lý.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Pháp luật Việt Nam về công ty trách nhiệm hữu hạn một thành viên: khái niệm, tư cách pháp nhân, cơ cấu chủ sở hữu là cá nhân hoặc tổ chức, trách nhiệm của chủ sở hữu trong phạm vi vốn điều lệ đã góp, nghĩa vụ góp đủ vốn, trách nhiệm tài sản của công ty và ngoại lệ khi chủ sở hữu lạm dụng tư cách pháp nhân hoặc không góp đủ vốn theo Luật Doanh nghiệp 2020.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:59:30.379657+00:00"
+}

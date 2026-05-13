@@ -1,0 +1,28 @@
+{
+  "session_id": "eval-social_insurance_contribution_rate_001-1778645745",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-ce44c79f2fed",
+      "role": "user",
+      "content": "Tỷ lệ đóng bảo hiểm xã hội bắt buộc và tự nguyện theo Luật Bảo hiểm xã hội 2024 là bao nhiêu?",
+      "timestamp": "2026-05-13T04:15:45.243055+00:00"
+    },
+    {
+      "id": "msg-c1b8d06f817f",
+      "role": "assistant",
+      "content": "Theo Luật BHXH 2024, có thể tóm tắt như sau:\n\n- **BHXH bắt buộc**: tỷ lệ đóng là **25% tiền lương làm căn cứ đóng BHXH bắt buộc**, gồm:\n  - **3%** vào quỹ **ốm đau và thai sản**;\n  - **22%** vào quỹ **hưu trí và tử tuất**.  \n  **Căn cứ:** Điều 32 khoản 1; Điều 5 khoản 2 Luật BHXH 2024.\n\n- **BHXH tự nguyện**: tỷ lệ đóng là **22% thu nhập làm căn cứ đóng BHXH tự nguyện**, vào quỹ **hưu trí và tử tuất**.  \n  **Căn cứ:** Điều 32 khoản 2; Điều 5 khoản 2; Điều 31 khoản 2 Luật BHXH 2024.\n\nLưu ý ngắn:\n- Với **BHXH bắt buộc**, mức đóng được tính trên **tiền lương làm căn cứ đóng**.\n- Với **BHXH tự nguyện**, mức đóng được tính trên **thu nhập do người tham gia lựa chọn**, nhưng **không thấp hơn mức chuẩn hộ nghèo khu vực nông thôn** và **không cao hơn 20 lần mức tham chiếu** tại thời điểm đóng.  \n  **Căn cứ:** Điều 5 khoản 2; Điều 31 khoản 2.\n\nNếu bạn muốn, tôi có thể tách tiếp **phần người lao động đóng bao nhiêu, người sử dụng lao động đóng bao nhiêu** theo từng nhóm đối tượng.",
+      "timestamp": "2026-05-13T04:15:56.546883+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Xác định tỷ lệ đóng BHXH bắt buộc và BHXH tự nguyện theo Luật BHXH 2024",
+    "known_context": "Chỉ có câu hỏi chung về mức đóng, chưa có thông tin về đối tượng tham gia, tiền lương làm căn cứ đóng, hay thời điểm áp dụng"
+  },
+  "case_summary": "Người dùng đang hỏi về tỷ lệ đóng bảo hiểm xã hội (BHXH) bắt buộc và BHXH tự nguyện theo Luật BHXH 2024, chưa có tình tiết vụ việc cá nhân cụ thể nào khác.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Luật Bảo hiểm xã hội 2024 tỷ lệ đóng bảo hiểm xã hội bắt buộc và bảo hiểm xã hội tự nguyện mức đóng của người lao động người sử dụng lao động căn cứ đóng tỷ lệ phần trăm trên tiền lương tháng mức thu nhập làm căn cứ đóng quy định mới 2024",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:15:56.547060+00:00"
+}

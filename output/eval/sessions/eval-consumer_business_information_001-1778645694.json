@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-consumer_business_information_001-1778645694",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-5fc5bf666f47",
+      "role": "user",
+      "content": "Tổ chức, cá nhân kinh doanh phải cung cấp thông tin gì về sản phẩm, hàng hóa, dịch vụ cho người tiêu dùng?",
+      "timestamp": "2026-05-13T04:14:54.413909+00:00"
+    },
+    {
+      "id": "msg-7bcd63342290",
+      "role": "assistant",
+      "content": "Tổ chức, cá nhân kinh doanh phải **cung cấp thông tin chính xác, đầy đủ, minh bạch** cho người tiêu dùng về sản phẩm, hàng hóa, dịch vụ; đồng thời còn phải thực hiện một số nghĩa vụ thông tin liên quan khác.\n\n**Căn cứ Điều 21 Luật Bảo vệ quyền lợi người tiêu dùng 2023**, các thông tin cần cung cấp gồm:\n1. **Về sản phẩm, hàng hóa, dịch vụ**: đo lường, số lượng, khối lượng, chất lượng, công dụng, giá, xuất xứ, thời hạn sử dụng, phí, chi phí, phương thức và thời hạn giao hàng, vận chuyển, thanh toán.\n2. **Về tổ chức, cá nhân kinh doanh**.\n3. **Về nhận xét, đánh giá của người tiêu dùng** về sản phẩm, hàng hóa, dịch vụ, tổ chức, cá nhân kinh doanh (nếu có).\n4. **Ghi nhãn hàng hóa trung thực, rõ ràng, chính xác**.\n5. **Niêm yết giá** theo quy định pháp luật về giá.\n6. **Thông tin về khả năng cung ứng linh kiện, phụ kiện thay thế**.\n7. **Hướng dẫn sử dụng; chính sách bảo hành** nếu sản phẩm, hàng hóa, dịch vụ có bảo hành.\n8. **Minh bạch thông tin về thành phần, chức năng, lợi ích khác biệt** đối với sản phẩm/dịch vụ dành riêng cho từng giới tính.\n9. **Thông báo chính xác, đầy đủ về hợp đồng theo mẫu, điều kiện giao dịch chung trước khi giao dịch**.\n\n**Trong trường hợp giao dịch trên không gian mạng**, còn phải **hiển thị đầy đủ, minh bạch thông tin sản phẩm, hàng hóa, dịch vụ**, gồm cả các nội dung bắt buộc trên nhãn hàng hóa theo quy định, trừ các thông tin có tính chất riêng biệt theo sản phẩm.  \n**Căn cứ Điều 39 khoản 3 điểm đ** Luật này.\n\n**Tóm lại:** nghĩa vụ cốt lõi là cung cấp thông tin **đúng, đủ, rõ ràng, minh bạch** về hàng hóa/dịch vụ và các điều kiện giao dịch liên quan trước khi người tiêu dùng quyết định giao dịch.\n\nCần bổ sung thêm: Bạn muốn hỏi theo **giao dịch trực tiếp hay trên không gian mạng** để mình trích đúng nhóm nghĩa vụ áp dụng?",
+      "timestamp": "2026-05-13T04:15:06.827577+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Nghĩa vụ cung cấp thông tin của tổ chức, cá nhân kinh doanh cho người tiêu dùng",
+    "context": "Câu hỏi chung, chưa có dữ kiện về loại hàng hóa/dịch vụ, hình thức giao dịch, hay tranh chấp cụ thể",
+    "known_details": []
+  },
+  "case_summary": "Người dùng đang hỏi về nghĩa vụ của tổ chức, cá nhân kinh doanh trong việc cung cấp thông tin cho người tiêu dùng đối với sản phẩm, hàng hóa, dịch vụ. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi mang tính khái quát pháp lý.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Nghĩa vụ cung cấp thông tin của tổ chức cá nhân kinh doanh đối với người tiêu dùng về sản phẩm hàng hóa dịch vụ theo Luật Bảo vệ quyền lợi người tiêu dùng Việt Nam; nội dung thông tin bắt buộc phải cung cấp; thông tin trung thực đầy đủ chính xác; nhãn hàng hóa hướng dẫn sử dụng cảnh báo rủi ro giá cả xuất xứ bảo hành điều kiện giao dịch; trách nhiệm cung cấp thông tin trước trong và sau giao dịch",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:15:06.827743+00:00"
+}

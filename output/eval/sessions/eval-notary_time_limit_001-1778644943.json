@@ -1,0 +1,33 @@
+{
+  "session_id": "eval-notary_time_limit_001-1778644943",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-946d027975c0",
+      "role": "user",
+      "content": "Thời hạn công chứng tối đa là bao lâu?",
+      "timestamp": "2026-05-13T04:02:24.204026+00:00"
+    },
+    {
+      "id": "msg-416e3a4b28a5",
+      "role": "assistant",
+      "content": "**Nhận định chính:**  \nTheo Luật Công chứng 2024, **thời hạn công chứng tối đa là 02 ngày làm việc** kể từ khi công chứng viên tiếp nhận **hồ sơ yêu cầu công chứng hợp lệ**.  \nNếu **giao dịch có nội dung phức tạp** thì thời hạn **có thể kéo dài nhưng không quá 10 ngày làm việc**.\n\n**Căn cứ pháp lý:**  \n- **Điều 45 khoản 2 Luật Công chứng 2024**:  \n  - “Thời hạn công chứng không quá 02 ngày làm việc”;  \n  - “đối với giao dịch có nội dung phức tạp thì … không quá 10 ngày làm việc”.  \n- **Điều 45 khoản 1**: thời hạn được tính từ ngày tiếp nhận hồ sơ hợp lệ đến ngày trả kết quả; thời gian **xác minh, giám định**, và **niêm yết việc tiếp nhận công chứng văn bản phân chia di sản** **không tính** vào thời hạn công chứng.\n\n**Trong context hiện có, có thể khẳng định:**  \n- Nếu hồ sơ đã hợp lệ và giao dịch không phức tạp: **tối đa 02 ngày làm việc**.  \n- Nếu giao dịch phức tạp: **tối đa 10 ngày làm việc**.  \n- Nếu có **sự kiện bất khả kháng, trở ngại khách quan, hoặc do người yêu cầu công chứng** làm không bảo đảm thời hạn, thì **có thể thỏa thuận bằng văn bản** với tổ chức hành nghề công chứng về thời hạn công chứng.\n\n**Cần bổ sung thêm:**  \nGiao dịch/văn bản công chứng cụ thể của bạn là loại nào, và có thuộc trường hợp **phức tạp**, **xác minh/giám định**, hoặc **niêm yết** không?",
+      "timestamp": "2026-05-13T04:02:37.681821+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Xác định thời hạn công chứng tối đa",
+    "jurisdiction": "Việt Nam",
+    "case_stage": "Chưa có tình tiết vụ việc cụ thể",
+    "document_type": null,
+    "transaction_type": null,
+    "notary_office": null,
+    "submission_date": null
+  },
+  "case_summary": "Người dùng đang hỏi về thời hạn công chứng tối đa theo quy định pháp luật Việt Nam, hiện chưa có tình tiết vụ việc cụ thể nào khác (loại giao dịch, hồ sơ, nơi nộp, hình thức công chứng).",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Thời hạn công chứng tối đa theo Luật Công chứng Việt Nam; thời hạn giải quyết hồ sơ công chứng hợp đồng giao dịch, văn bản công chứng, trường hợp công chứng viên phải xác minh, giám định, niêm yết; quy định về thời hạn công chứng tại tổ chức hành nghề công chứng",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:02:37.682095+00:00"
+}

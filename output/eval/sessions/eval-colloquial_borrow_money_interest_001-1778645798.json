@@ -1,0 +1,39 @@
+{
+  "session_id": "eval-colloquial_borrow_money_interest_001-1778645798",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-7d6cf67f12e0",
+      "role": "user",
+      "content": "Cho bạn vay tiền thì tính lãi cao nhất bao nhiêu là đúng luật?",
+      "timestamp": "2026-05-13T04:16:38.486860+00:00"
+    },
+    {
+      "id": "msg-803b2cd38870",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:**  \nTrong giao dịch vay tiền dân sự giữa cá nhân, **lãi suất thỏa thuận tối đa là 20%/năm của khoản tiền vay**. Nếu thỏa thuận vượt quá mức này thì **phần vượt quá không có hiệu lực**.\n\n**Căn cứ pháp lý:**  \n- **Điều 468 khoản 1 Bộ luật Dân sự 2015**: lãi suất do các bên thỏa thuận nhưng **không được vượt quá 20%/năm** của khoản tiền vay.  \n- **Điều 463 Bộ luật Dân sự 2015**: chỉ phải trả lãi nếu có thỏa thuận hoặc pháp luật có quy định.  \n- **Điều 466 khoản 4, 5 Bộ luật Dân sự 2015**: nếu chậm trả thì có thể phát sinh lãi chậm trả/lãi quá hạn theo quy định.  \n- **Điều 201 Bộ luật Hình sự 2015**: nếu cho vay với lãi suất **gấp 5 lần mức cao nhất** của BLDS (tức khoảng **100%/năm** trở lên) và có đủ dấu hiệu về thu lợi bất chính theo luật thì có thể bị xem xét về tội cho vay lãi nặng.\n\n**Trong context hiện có, có thể khẳng định:**  \n- Nếu bạn cho bạn vay tiền theo quan hệ dân sự thông thường, **mức lãi hợp pháp cao nhất là 20%/năm**.  \n- Nếu **không ghi rõ lãi suất** nhưng có thỏa thuận trả lãi, khi có tranh chấp thì lãi suất được xác định bằng **50% của mức trần**, tức **10%/năm** theo **Điều 468 khoản 2**.  \n- Nếu **vay không lãi** mà bên vay chậm trả, bên cho vay có thể yêu cầu **lãi chậm trả theo khoản 2 Điều 468** trên số tiền chậm trả.\n\n**Cần bổ sung thêm:**  \nBạn muốn hỏi **lãi suất thỏa thuận ban đầu**, hay **lãi khi chậm trả/quá hạn**?",
+      "timestamp": "2026-05-13T04:16:53.236160+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "issue_type": "lãi suất cho vay dân sự giữa cá nhân",
+    "known_details": {
+      "loan_relationship": "cho bạn vay tiền",
+      "asked_issue": "mức lãi cao nhất đúng luật"
+    },
+    "unknown_details": [
+      "số tiền vay",
+      "thời hạn vay",
+      "có thỏa thuận bằng văn bản hay không",
+      "có thỏa thuận lãi suất hay chỉ vay không lãi",
+      "có phát sinh giao dịch kinh doanh/tín dụng chuyên nghiệp hay không"
+    ]
+  },
+  "case_summary": "Người dùng hỏi về mức lãi suất tối đa được phép khi cho bạn bè vay tiền theo pháp luật Việt Nam. Hiện chưa có tình tiết cụ thể về số tiền vay, thời hạn vay, hình thức thỏa thuận lãi suất hay việc có/không có giấy tờ.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Pháp luật Việt Nam về lãi suất cho vay giữa cá nhân với cá nhân trong giao dịch dân sự; mức lãi suất tối đa theo Bộ luật Dân sự 2015 Điều 468; hậu quả khi thỏa thuận lãi vượt quá 20%/năm của khoản tiền vay; cách tính lãi trong trường hợp không thỏa thuận lãi, có thỏa thuận nhưng vượt trần, và trường hợp cho vay nặng lãi theo Bộ luật Hình sự; điều kiện áp dụng đối với vay tiền giữa bạn bè, vay dân sự không kinh doanh tín dụng.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:16:53.236410+00:00"
+}

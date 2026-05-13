@@ -1,0 +1,108 @@
+{
+  "session_id": "session-8928b2c3c54a",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-33387b9f853a",
+      "role": "user",
+      "content": "đánh người bị tội gì",
+      "timestamp": "2026-05-12T11:49:13.073025+00:00"
+    },
+    {
+      "id": "msg-6dc7cacd1bb5",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:**  \n“Đánh người” ở Việt Nam **có thể bị xử lý hình sự hoặc chỉ bị xử phạt hành chính**, tùy mức độ thương tích, hậu quả và bối cảnh.\n\n**Căn cứ trong context hiện có:**  \n- **Điều 134 BLHS 2015**: Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác.  \n  - Nếu tỷ lệ tổn thương cơ thể **từ 11% đến 30%**, hoặc **dưới 11% nhưng có tình tiết** như dùng hung khí nguy hiểm... thì có thể bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm.  \n  - Nếu tỷ lệ tổn thương cơ thể **từ 31% đến 60%** thì bị phạt tù từ 04 năm đến 07 năm.  \n  - Nếu tỷ lệ tổn thương cơ thể **từ 61% trở lên** hoặc **dẫn đến chết người** thì khung hình phạt nặng hơn, có thể đến 10–15 năm; một số trường hợp đặc biệt có thể đến 12–20 năm hoặc tù chung thân.  \n- **Điều 135 BLHS 2015**: Nếu đánh người trong **trạng thái tinh thần bị kích động mạnh** do hành vi trái pháp luật nghiêm trọng của nạn nhân, thì vẫn có thể bị truy cứu, nhưng khung hình phạt có thể nhẹ hơn Điều 134.\n\n**Trong context hiện có, có thể khẳng định:**  \n- Nếu chỉ là **xô xát nhẹ, chưa rõ thương tích**, chưa chắc đã là tội hình sự; cần xem có **tỷ lệ thương tật** và **tình tiết tăng nặng** hay không.  \n- Nếu có **thương tích** và đạt ngưỡng luật định, hành vi có thể bị xử lý theo **Điều 134** hoặc **Điều 135** tùy hoàn cảnh.  \n- Nếu chưa có thương tích đáng kể hoặc chưa đủ dấu hiệu hình sự, vụ việc có thể chỉ bị xử lý theo hướng khác ngoài hình sự, nhưng **context hiện chưa có văn bản hành chính cụ thể để kết luận chắc chắn**.\n\n**Cần bổ sung thêm:**  \nCó thương tích không, và nếu có thì **tỷ lệ tổn thương cơ thể bao nhiêu %**?",
+      "timestamp": "2026-05-12T11:49:32.010655+00:00",
+      "sources": [
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:135",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "135",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 135. Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác trong trạng thái tinh thần bị kích động mạnh\n1. Người nào cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 31% đến 60% trong trạng thái tinh thần bị kích động mạnh do hành vi trái pháp luật nghiêm trọng của nạn nhân đối với người đó hoặc đối với người thân thích của người đó, thì bị phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng hoặc phạt cải tạo không giam giữ đến 03 năm.\n2. Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 06 tháng đến 03 năm:\na) Đối với 02 người trở lên mà tỷ lệ tổn thương cơ thể của mỗi người từ 31% đến 60%;\nb) Gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể 61% trở lên hoặc dẫn đến chết người.",
+          "relevanceScore": 0.07354878710377431,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:134:clause:3",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "134",
+          "clauseNumber": "3",
+          "targetArticle": null,
+          "chunkText": "Điều 134. Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác\n3. Phạm tội gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 31% đến 60%, thì bị phạt tù từ 04 năm đến 07 năm.",
+          "relevanceScore": 0.0640445165035329,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:134:clause:1",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "134",
+          "clauseNumber": "1",
+          "targetArticle": null,
+          "chunkText": "Điều 134. Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác\n1. Người nào cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 11% đến 30% hoặc dưới 11% nhưng thuộc một trong các trường hợp sau đây, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm:\na) Dùng hung khí nguy hiểm hoặc thủ đoạn gây nguy hại ch",
+          "relevanceScore": 0.062418140733171174,
+          "retrievalOrigin": "bm25",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:134:clause:6",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "134",
+          "clauseNumber": "6",
+          "targetArticle": null,
+          "chunkText": "Điều 134. Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác\n6. Phạm tội thuộc một trong các trường hợp sau, thì bị phạt tù từ 12 năm đến 20 năm hoặc tù chung thân:\nb) Gây thương tích hoặc gây tổn hại sức khỏe cho 02 người trở lên mà tỷ lệ tổn thương cơ thể của mỗi người 61% trở lên;\nc) Gây thương tích vào vùng mặt của người khác mà tỷ lệ tổn thương cơ thể 61% trở lên.",
+          "relevanceScore": 0.062324929971988796,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:134:clause:5",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "134",
+          "clauseNumber": "5",
+          "targetArticle": null,
+          "chunkText": "Điều 134. Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác\n5. Phạm tội gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể 61% trở lên, nếu không thuộc trường hợp quy định tại điểm c khoản 6 Điều này hoặc dẫn đến chết người, thì bị phạt tù từ 10 năm đến 15 năm.",
+          "relevanceScore": 0.0619283941864587,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        }
+      ],
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "modelUsed": "gpt-5.4-mini",
+        "queryRewritten": "Pháp luật Việt Nam về trách nhiệm hình sự và xử phạt hành chính đối với hành vi đánh người; tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác theo Bộ luật Hình sự 2015 sửa đổi 2017; điều kiện truy cứu trách nhiệm hình sự theo tỷ lệ thương tật, dùng hung khí, tính chất côn đồ, phạm tội nhiều lần; xử phạt hành chính hành vi xâm hại sức khỏe người khác khi chưa đủ yếu tố cấu thành tội phạm.",
+        "processingTimeMs": 19186
+      }
+    }
+  ],
+  "facts": {
+    "incident_type": "hành vi đánh người (chưa rõ bối cảnh)",
+    "known_details": [],
+    "legal_issue": "xác định trách nhiệm pháp lý khi đánh người",
+    "jurisdiction": "Việt Nam"
+  },
+  "case_summary": "Người dùng hỏi chung về việc \"đánh người bị tội gì\" nhưng chưa cung cấp tình tiết cụ thể nào về hành vi, mức độ thương tích, hoàn cảnh, quan hệ giữa các bên hay hậu quả xảy ra. Hiện chỉ có thể định hướng theo khung pháp lý chung về hành vi cố ý gây thương tích, gây rối trật tự công cộng, hoặc xử phạt hành chính tùy tính chất vụ việc.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Pháp luật Việt Nam về trách nhiệm hình sự và xử phạt hành chính đối với hành vi đánh người; tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác theo Bộ luật Hình sự 2015 sửa đổi 2017; điều kiện truy cứu trách nhiệm hình sự theo tỷ lệ thương tật, dùng hung khí, tính chất côn đồ, phạm tội nhiều lần; xử phạt hành chính hành vi xâm hại sức khỏe người khác khi chưa đủ yếu tố cấu thành tội phạm.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-12T11:49:32.020136+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "session_id": "eval-criminal_fraud_001-1778643722",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-30764a05fbf0",
+      "role": "user",
+      "content": "Dùng thủ đoạn gian dối để chiếm đoạt 20 triệu đồng của người khác thì có thể phạm tội gì?",
+      "timestamp": "2026-05-13T03:42:03.190912+00:00"
+    },
+    {
+      "id": "msg-87f3dd898804",
+      "role": "assistant",
+      "content": "**Nhận định chính:**  \nVới tình tiết “**dùng thủ đoạn gian dối để chiếm đoạt 20 triệu đồng**”, trong context hiện có **có thể cấu thành Tội lừa đảo chiếm đoạt tài sản** theo **Điều 174 Bộ luật Hình sự 2015**. Vì số tiền là **20.000.000 đồng**, nên nếu đúng là hành vi gian dối làm cho người bị hại giao tài sản rồi bị chiếm đoạt, thì **thuộc khung cơ bản tại khoản 1 Điều 174**: phạt **cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm**.\n\n**Căn cứ:**  \n- **Điều 174 BLHS 2015**: “Người nào **bằng thủ đoạn gian dối chiếm đoạt tài sản của người khác trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng**...”  \n- Mức **20 triệu đồng** nằm trong khoảng **từ 2 triệu đến dưới 50 triệu**, nên về ngưỡng tài sản thì **đủ dấu hiệu định lượng** của khoản 1 Điều 174.\n\n**Các khả năng cần phân biệt từ context hiện có:**  \n- **Nếu** người phạm tội **dùng gian dối ngay từ đầu để làm người khác giao tài sản**, thì **nghiêng về Điều 174**.  \n- **Nếu** ban đầu có việc **vay, mượn, thuê, nhận tài sản qua hợp đồng** rồi sau đó mới dùng gian dối để chiếm đoạt hoặc cố tình không trả, thì **có thể xem xét Điều 175** về **lạm dụng tín nhiệm chiếm đoạt tài sản**.  \n- **Nếu** hành vi gian dối được thực hiện qua **mạng máy tính, mạng viễn thông, phương tiện điện tử**, thì còn cần đối chiếu **Điều 290**; tuy nhiên Điều 290 nêu rõ là áp dụng khi **không thuộc Điều 173 và Điều 174**.\n\n**Trong context hiện có, điều có thể khẳng định được là:**  \n- Với mô tả chung “**dùng thủ đoạn gian dối để chiếm đoạt 20 triệu đồng**”, **khả năng chính là tội lừa đảo chiếm đoạt tài sản theo Điều 174**.  \n- Chưa đủ dữ kiện để loại trừ hoàn toàn **Điều 175** nếu đây là quan hệ vay/mượn/thuê/nhận tài sản theo hợp đồng rồi mới chiếm đoạt.\n\n**Cần bổ sung thêm:**  \nNgười đó **lừa để bạn giao tiền ngay từ đầu**, hay là **đã nhận tiền qua vay/mượn/hợp đồng rồi mới chiếm đoạt**?",
+      "timestamp": "2026-05-13T03:42:21.229789+00:00"
+    }
+  ],
+  "facts": {
+    "amount_vnd": 20000000,
+    "conduct": "Dùng thủ đoạn gian dối để chiếm đoạt tài sản của người khác",
+    "victim": "Người khác (chưa xác định cụ thể)",
+    "case_stage": "Chưa có thông tin về việc đã bị tố giác/khởi tố hay chưa",
+    "additional_context": "Chưa có tình tiết về phương thức gian dối, mục đích, hậu quả, hoặc việc tài sản đã được giao do bị lừa hay bị chiếm đoạt bằng cách khác"
+  },
+  "case_summary": "Người dùng hỏi về hành vi dùng thủ đoạn gian dối để chiếm đoạt 20 triệu đồng của người khác và muốn biết có thể cấu thành tội danh nào theo pháp luật hình sự Việt Nam. Hiện chưa có thêm tình tiết về cách thức gian dối, thời điểm chiếm đoạt, quan hệ giữa các bên, hay việc đã giao nhận tài sản hay chưa.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Pháp luật hình sự Việt Nam về tội lừa đảo chiếm đoạt tài sản theo Điều 174 Bộ luật Hình sự 2015 sửa đổi 2017; phân biệt với tội lạm dụng tín nhiệm chiếm đoạt tài sản Điều 175 và các tội chiếm đoạt tài sản khác; dấu hiệu cấu thành khi dùng thủ đoạn gian dối chiếm đoạt 20 triệu đồng; khung hình phạt đối với giá trị tài sản 20 triệu đồng; điều kiện truy cứu trách nhiệm hình sự và các tình tiết định tội, định khung.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:42:21.229974+00:00"
+}

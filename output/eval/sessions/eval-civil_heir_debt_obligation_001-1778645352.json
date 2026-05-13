@@ -1,0 +1,36 @@
+{
+  "session_id": "eval-civil_heir_debt_obligation_001-1778645352",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-6e09720e2cfa",
+      "role": "user",
+      "content": "Người hưởng thừa kế có phải trả nợ do người chết để lại không?",
+      "timestamp": "2026-05-13T04:09:12.462051+00:00"
+    },
+    {
+      "id": "msg-b8a6398987f3",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:** Có, nhưng **chỉ trong phạm vi di sản do người chết để lại**; nếu di sản đã chia thì mỗi người thừa kế chỉ phải thực hiện nghĩa vụ tương ứng với phần mình nhận, **không vượt quá phần tài sản đã nhận**, trừ khi có thỏa thuận khác.\n\n**Căn cứ pháp lý:**\n- **Điều 615 BLDS 2015**:\n  - Khoản 1: Người hưởng thừa kế có trách nhiệm thực hiện nghĩa vụ tài sản trong **phạm vi di sản** do người chết để lại.\n  - Khoản 2: Nếu **di sản chưa chia**, người quản lý di sản thực hiện nghĩa vụ theo thỏa thuận của những người thừa kế, vẫn trong phạm vi di sản.\n  - Khoản 3: Nếu **di sản đã chia**, mỗi người thừa kế thực hiện nghĩa vụ tương ứng nhưng **không vượt quá phần tài sản mình đã nhận**.\n- **Điều 623 BLDS 2015**:\n  - Khoản 3: Thời hiệu yêu cầu người thừa kế thực hiện nghĩa vụ tài sản của người chết để lại là **03 năm** kể từ thời điểm mở thừa kế.\n\n**Trong context hiện có, có thể khẳng định:**\n- Nếu người chết **có di sản**, thì khoản nợ/nghĩa vụ tài sản của họ được thanh toán từ **di sản đó trước**.\n- Người thừa kế **không phải dùng tài sản riêng** để trả nợ, trừ trường hợp có **thỏa thuận khác** hoặc trường hợp nghĩa vụ được xác định theo thỏa thuận giữa những người thừa kế trong phạm vi luật cho phép.\n- Nếu **di sản chưa chia**, việc thực hiện nghĩa vụ do người quản lý di sản thực hiện.\n- Nếu **di sản đã chia**, mỗi người thừa kế chỉ chịu trong phần mình nhận.\n\n**Cần bổ sung thêm:** Người chết có để lại di sản không, và di sản đã chia hay chưa?",
+      "timestamp": "2026-05-13T04:09:26.553576+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Trách nhiệm của người thừa kế đối với nghĩa vụ tài sản của người chết",
+    "known_facts": [],
+    "unknown_facts": [
+      "Có di sản hay không",
+      "Giá trị di sản",
+      "Tổng số nợ/nghĩa vụ tài sản",
+      "Người hỏi đã nhận di sản hay chưa",
+      "Có thỏa thuận phân chia di sản hay từ chối nhận di sản hay không",
+      "Loại nghĩa vụ tài sản (nợ vay, bồi thường, thuế, cấp dưỡng, nghĩa vụ khác)"
+    ]
+  },
+  "case_summary": "Người dùng hỏi về trách nhiệm của người hưởng thừa kế đối với các khoản nợ do người chết để lại. Hiện chưa có tình tiết cụ thể về di sản, giá trị nợ, số người thừa kế, hay việc đã nhận di sản hay chưa.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Trách nhiệm của người thừa kế đối với nghĩa vụ tài sản của người chết để lại theo Bộ luật Dân sự Việt Nam; người thừa kế có phải dùng di sản để thanh toán nợ không; phạm vi thanh toán trong giới hạn di sản; thứ tự ưu tiên thanh toán nghĩa vụ tài sản của người chết; từ chối nhận di sản và trách nhiệm của người thừa kế đối với nợ vay, bồi thường, thuế, nghĩa vụ khác",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:09:26.553753+00:00"
+}

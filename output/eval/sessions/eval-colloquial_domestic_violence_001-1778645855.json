@@ -1,0 +1,37 @@
+{
+  "session_id": "eval-colloquial_domestic_violence_001-1778645855",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-8f4b292a770d",
+      "role": "user",
+      "content": "Chồng hay chửi bới, đe dọa và đánh vợ thì có phải bạo lực gia đình không?",
+      "timestamp": "2026-05-13T04:17:36.078522+00:00"
+    },
+    {
+      "id": "msg-57a7f35e53c3",
+      "role": "assistant",
+      "content": "**Nhận định chính:** Có. Trong context hiện có, hành vi **chửi bới, đe dọa và đánh vợ** có thể được xem là **hành vi bạo lực gia đình**; đặc biệt **đánh** là dấu hiệu rõ của bạo lực, còn **đe dọa** cũng là hành vi bị pháp luật phòng, chống bạo lực gia đình nghiêm cấm khi gắn với hành vi bạo lực gia đình.\n\n**Căn cứ:**\n- **Điều 5 Luật Phòng, chống bạo lực gia đình 2022**: nghiêm cấm **hành vi bạo lực gia đình** quy định tại **Điều 3** của Luật này.\n- **Điều 22**: khi có hành vi bạo lực gia đình, có thể áp dụng các biện pháp như **buộc chấm dứt hành vi**, **cấm tiếp xúc**, **yêu cầu đến Công an xã**, **bố trí nơi tạm lánh**, **trợ giúp pháp lý, tư vấn tâm lý**...\n- **Điều 9**: người bị bạo lực gia đình có quyền yêu cầu bảo vệ sức khỏe, tính mạng, danh dự, nhân phẩm và yêu cầu áp dụng biện pháp ngăn chặn, bảo vệ, hỗ trợ.\n- **Điều 10**: người có hành vi bạo lực gia đình phải chấm dứt hành vi, chấp hành yêu cầu của cơ quan có thẩm quyền và bồi thường, khắc phục hậu quả.\n- **Điều 31**: người có hành vi bạo lực gia đình có thể được giáo dục, hỗ trợ chuyển đổi hành vi.\n\n**Trong context hiện có, có thể suy ra:**\n- Nếu chỉ **chửi bới, đe dọa** nhưng chưa rõ có kèm hành vi xâm hại khác, vẫn có cơ sở để xem xét là hành vi bạo lực gia đình khi nó xâm phạm danh dự, nhân phẩm, gây sợ hãi, đe dọa an toàn của người vợ.\n- Nếu có **đánh**, thì càng có cơ sở rõ ràng để xác định là **bạo lực gia đình** và có thể đề nghị biện pháp bảo vệ theo Điều 22.\n\n**Cần bổ sung thêm:** Hành vi xảy ra **bao nhiêu lần, vào thời điểm nào, có gây thương tích hoặc ảnh hưởng tinh thần cụ thể không, và có chứng cứ gì (tin nhắn, ghi âm, ảnh, bệnh án, nhân chứng)?**",
+      "timestamp": "2026-05-13T04:17:50.118362+00:00"
+    }
+  ],
+  "facts": {
+    "parties": {
+      "victim": "vợ",
+      "alleged_perpetrator": "chồng"
+    },
+    "alleged_conduct": [
+      "chửi bới",
+      "đe dọa",
+      "đánh"
+    ],
+    "context": "hành vi được mô tả là xảy ra lặp lại theo cách nói 'hay'",
+    "jurisdiction": "Việt Nam"
+  },
+  "case_summary": "Người dùng hỏi liệu hành vi của chồng thường xuyên chửi bới, đe dọa và đánh vợ có được coi là bạo lực gia đình hay không. Hiện chưa có thêm tình tiết cụ thể về mức độ, tần suất, hậu quả, thời điểm xảy ra hoặc có chứng cứ kèm theo.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Bạo lực gia đình theo Luật Phòng, chống bạo lực gia đình Việt Nam; hành vi chửi bới, đe dọa, đánh vợ; xác định hành vi bạo lực tinh thần và bạo lực thể chất; căn cứ xử lý, biện pháp bảo vệ nạn nhân, chứng cứ và chế tài đối với chồng",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:17:50.118548+00:00"
+}

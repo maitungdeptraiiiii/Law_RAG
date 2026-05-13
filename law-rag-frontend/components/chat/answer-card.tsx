@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { 
   Scale, 
   FileText, 
@@ -18,6 +17,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
+import { formatSourceCitation } from '@/lib/legal-citation'
 import { toast } from 'sonner'
 import type { Message, RetrievedSource } from '@/lib/types'
 
@@ -210,6 +210,7 @@ function SourceBadge({ source, index }: { source: RetrievedSource; index: number
     guideline: 'Hướng dẫn',
     other: 'Khác',
   }
+  const citation = formatSourceCitation(source)
 
   return (
     <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
@@ -225,12 +226,7 @@ function SourceBadge({ source, index }: { source: RetrievedSource; index: number
             </span>
           )}
         </div>
-        {source.articleNumber && (
-          <p className="text-xs text-muted-foreground">
-            {source.articleNumber}
-            {source.clauseNumber && `, ${source.clauseNumber}`}
-          </p>
-        )}
+        <p className="text-xs text-muted-foreground leading-relaxed">{citation}</p>
         <div className="flex items-center gap-2 mt-1">
           <span 
             className={`text-xs px-1.5 py-0.5 rounded ${

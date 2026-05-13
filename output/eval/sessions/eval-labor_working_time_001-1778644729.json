@@ -1,0 +1,30 @@
+{
+  "session_id": "eval-labor_working_time_001-1778644729",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-52281537eb61",
+      "role": "user",
+      "content": "Thời giờ làm việc bình thường tối đa là bao nhiêu giờ một ngày và một tuần?",
+      "timestamp": "2026-05-13T03:58:49.625490+00:00"
+    },
+    {
+      "id": "msg-dd39f5b98ab4",
+      "role": "assistant",
+      "content": "Theo **Điều 105 Bộ luật Lao động 2019**, thời giờ làm việc bình thường tối đa là:\n\n- **Không quá 08 giờ trong 01 ngày**\n- **Không quá 48 giờ trong 01 tuần**\n\nNgoài ra, nếu người sử dụng lao động **quy định theo tuần** thì thời giờ làm việc bình thường **không quá 10 giờ trong 01 ngày** và vẫn **không quá 48 giờ trong 01 tuần**; Nhà nước còn **khuyến khích tuần làm việc 40 giờ**.\n\n**Căn cứ:** Điều 105 khoản 1 và khoản 2 Bộ luật Lao động 2019.\n\nNếu bạn muốn, tôi có thể trích luôn quy định về **nghỉ giữa giờ** hoặc **làm thêm giờ** liên quan.",
+      "timestamp": "2026-05-13T03:59:00.406625+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "issue_type": "tra cứu quy định lao động",
+    "question": "Thời giờ làm việc bình thường tối đa là bao nhiêu giờ một ngày và một tuần?",
+    "case_specific_facts": []
+  },
+  "case_summary": "Người dùng đang hỏi về giới hạn pháp luật Việt Nam đối với thời giờ làm việc bình thường tối đa theo ngày và theo tuần. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi mang tính tra cứu quy định chung.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quy định pháp luật lao động Việt Nam về thời giờ làm việc bình thường tối đa 8 giờ trong 1 ngày và 48 giờ trong 1 tuần; trường hợp làm việc theo tuần; giới hạn thời giờ làm việc của người lao động theo Bộ luật Lao động 2019 và văn bản hướng dẫn",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:59:00.406820+00:00"
+}

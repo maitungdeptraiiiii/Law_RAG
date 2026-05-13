@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-labor_severance_allowance_001-1778644703",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-11f94c9e9bbe",
+      "role": "user",
+      "content": "Trợ cấp thôi việc được tính như thế nào theo Bộ luật Lao động?",
+      "timestamp": "2026-05-13T03:58:23.847833+00:00"
+    },
+    {
+      "id": "msg-53f7fd0b9fd5",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:**  \nTheo **Điều 46 Bộ luật Lao động 2019**, trợ cấp thôi việc được tính theo nguyên tắc: **mỗi năm làm việc được trợ cấp 1/2 tháng tiền lương**, với **thời gian tính trợ cấp** là thời gian làm việc thực tế **trừ** thời gian đã tham gia **bảo hiểm thất nghiệp** và thời gian đã được trả **trợ cấp thôi việc/trợ cấp mất việc làm** trước đó.\n\n**Căn cứ pháp lý:**  \n- **Điều 46 khoản 1**: Người sử dụng lao động phải trả trợ cấp thôi việc khi hợp đồng lao động chấm dứt theo các trường hợp tại **khoản 1, 2, 3, 4, 6, 7, 9 và 10 Điều 34**, nếu người lao động đã làm việc thường xuyên **từ đủ 12 tháng trở lên**; mức hưởng là **1/2 tháng tiền lương cho mỗi năm làm việc**.  \n- **Điều 46 khoản 2**: Thời gian tính trợ cấp = **tổng thời gian làm việc thực tế** − **thời gian tham gia bảo hiểm thất nghiệp** − **thời gian đã được chi trả trợ cấp thôi việc/mất việc làm**.  \n- **Điều 46 khoản 3**: Tiền lương tính trợ cấp là **tiền lương bình quân của 06 tháng liền kề theo hợp đồng lao động trước khi thôi việc**.\n\n**Hướng áp dụng theo các khả năng từ context hiện có:**  \n- **Nếu** người lao động chấm dứt HĐLĐ thuộc một trong các trường hợp nêu tại **Điều 34 khoản 1, 2, 3, 4, 6, 7, 9, 10** và đã làm việc **từ đủ 12 tháng**, **thì có thể được trợ cấp thôi việc**.  \n- **Nếu** người lao động **đủ điều kiện hưởng lương hưu** hoặc thuộc **trường hợp điểm e khoản 1 Điều 36**, thì **không áp dụng trợ cấp thôi việc** theo Điều 46 khoản 1.  \n- **Nếu** có thời gian đã đóng **bảo hiểm thất nghiệp**, thì thời gian đó **không tính** vào thời gian hưởng trợ cấp thôi việc.  \n- **Nếu** trước đó đã được trả trợ cấp thôi việc hoặc trợ cấp mất việc làm cho một phần thời gian, thì phần thời gian đó **cũng không tính lại**.\n\n**Công thức khái quát từ Điều 46:**  \n**Trợ cấp thôi việc = 1/2 tháng tiền lương × số năm làm việc tính trợ cấp**  \nTrong đó, **số năm làm việc tính trợ cấp** = thời gian làm việc thực tế − thời gian tham gia BHTN − thời gian đã được trả trợ cấp thôi việc/mất việc làm.\n\n**Cần bổ sung thêm:**  \nNgười lao động chấm dứt hợp đồng theo **trường hợp nào tại Điều 34** và đã **tham gia bảo hiểm thất nghiệp bao nhiêu thời gian**?",
+      "timestamp": "2026-05-13T03:58:38.687193+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Cách tính trợ cấp thôi việc theo Bộ luật Lao động Việt Nam",
+    "case_status": "Chưa có tình tiết vụ việc cụ thể",
+    "known_details": []
+  },
+  "case_summary": "Người dùng hỏi về cách tính trợ cấp thôi việc theo Bộ luật Lao động Việt Nam, hiện chưa có tình tiết vụ việc cụ thể nào khác (chưa rõ loại hợp đồng, thời gian làm việc, lý do chấm dứt, thời gian đã tham gia bảo hiểm thất nghiệp, mức lương làm căn cứ tính).",
+  "pending_follow_up": null,
+  "last_retrieval_query": "trợ cấp thôi việc được tính như thế nào theo Bộ luật Lao động Việt Nam điều kiện hưởng trợ cấp thôi việc thời gian làm việc thực tế trừ thời gian tham gia bảo hiểm thất nghiệp tiền lương làm căn cứ tính mức trợ cấp thôi việc chấm dứt hợp đồng lao động",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:58:38.687363+00:00"
+}

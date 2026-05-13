@@ -1,0 +1,1109 @@
+[
+  {
+    "id": "civil_transaction_validity_001",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Một giao dịch dân sự muốn có hiệu lực thì cần đáp ứng những điều kiện nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Giao dịch dân sự có hiệu lực khi chủ thể có năng lực pháp luật dân sự và năng lực hành vi dân sự phù hợp.",
+        "Chủ thể tham gia giao dịch phải hoàn toàn tự nguyện.",
+        "Mục đích và nội dung của giao dịch không được vi phạm điều cấm của luật, không trái đạo đức xã hội.",
+        "Hình thức của giao dịch là điều kiện có hiệu lực nếu luật có quy định."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "117"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_transaction_form_001",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Giao dịch dân sự có bắt buộc phải lập thành văn bản không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Giao dịch dân sự có thể được thể hiện bằng lời nói, bằng văn bản hoặc bằng hành vi cụ thể.",
+        "Giao dịch thông qua phương tiện điện tử dưới hình thức thông điệp dữ liệu được coi là giao dịch bằng văn bản.",
+        "Chỉ khi luật quy định giao dịch phải bằng văn bản, công chứng, chứng thực hoặc đăng ký thì phải tuân theo hình thức đó."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "119"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_loan_contract_001",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Hợp đồng vay tài sản là gì và bên vay có nghĩa vụ trả nợ như thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hợp đồng vay tài sản là sự thỏa thuận trong đó bên cho vay giao tài sản cho bên vay.",
+        "Khi đến hạn, bên vay phải hoàn trả tài sản cùng loại theo đúng số lượng, chất lượng.",
+        "Bên vay chỉ phải trả lãi nếu có thỏa thuận hoặc pháp luật có quy định.",
+        "Nếu vay tiền thì bên vay phải trả đủ tiền khi đến hạn."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "463"
+        },
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "466"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_loan_interest_001",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Các bên thỏa thuận lãi suất vay dân sự tối đa bao nhiêu phần trăm một năm?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Lãi suất vay do các bên thỏa thuận.",
+        "Nếu có thỏa thuận về lãi suất thì không được vượt quá 20% một năm của khoản tiền vay, trừ trường hợp luật khác có liên quan quy định khác.",
+        "Nếu lãi suất thỏa thuận vượt quá giới hạn thì phần vượt quá không có hiệu lực."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "468"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_inheritance_first_rank_001",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Hàng thừa kế thứ nhất theo pháp luật gồm những ai?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hàng thừa kế thứ nhất gồm vợ, chồng.",
+        "Hàng thừa kế thứ nhất gồm cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi.",
+        "Hàng thừa kế thứ nhất gồm con đẻ, con nuôi của người chết.",
+        "Những người thừa kế cùng hàng được hưởng phần di sản bằng nhau."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "651"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_adopted_child_inheritance_001",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Con nuôi có được hưởng thừa kế của cha mẹ nuôi không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Con nuôi và cha nuôi, mẹ nuôi được thừa kế di sản của nhau.",
+        "Con nuôi còn được thừa kế theo quy định về người thừa kế theo pháp luật.",
+        "Cần xác định quan hệ nuôi con nuôi hợp pháp và hàng thừa kế áp dụng."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "653"
+        },
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "651"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_inheritance_time_limit_001",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Thời hiệu yêu cầu chia di sản thừa kế là bao lâu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Thời hiệu yêu cầu chia di sản là 30 năm đối với bất động sản.",
+        "Thời hiệu yêu cầu chia di sản là 10 năm đối với động sản.",
+        "Thời hạn được tính từ thời điểm mở thừa kế.",
+        "Hết thời hạn thì di sản thuộc về người thừa kế đang quản lý di sản, nếu có."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "623"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_heir_debt_obligation_001",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Người hưởng thừa kế có phải trả nợ do người chết để lại không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người hưởng thừa kế có trách nhiệm thực hiện nghĩa vụ tài sản do người chết để lại.",
+        "Trách nhiệm này chỉ trong phạm vi di sản do người chết để lại, trừ trường hợp có thỏa thuận khác.",
+        "Nếu di sản chưa chia thì nghĩa vụ tài sản được người quản lý di sản thực hiện theo thỏa thuận của những người thừa kế."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "615"
+        }
+      ]
+    }
+  },
+  {
+    "id": "criminal_injury_18_percent_001",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Cố ý gây thương tích cho người khác với tỷ lệ tổn thương cơ thể 18% thì có thể bị xử lý thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hành vi cần được xem xét theo tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác.",
+        "Tỷ lệ tổn thương cơ thể từ 11% đến 30% thuộc ngưỡng của khoản 1 Điều 134 nếu không có tình tiết định khung nặng hơn.",
+        "Khung cơ bản có thể là cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm.",
+        "Nếu có các tình tiết như dùng hung khí nguy hiểm, có tổ chức hoặc tình tiết khác tại khoản 1 thì có thể chuyển sang khung nặng hơn."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat hinh su",
+          "article_number": "134"
+        }
+      ]
+    }
+  },
+  {
+    "id": "criminal_theft_value_001",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Trộm cắp tài sản trị giá 3 triệu đồng thì có thể bị truy cứu trách nhiệm hình sự không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Tội trộm cắp tài sản được xem xét theo Điều 173 Bộ luật Hình sự.",
+        "Giá trị tài sản từ 2 triệu đồng đến dưới 50 triệu đồng thuộc ngưỡng cấu thành cơ bản.",
+        "Khung cơ bản có thể là cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm.",
+        "Cần xác định thêm các tình tiết định khung hoặc tiền án, tiền sự nếu có."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat hinh su",
+          "article_number": "173"
+        }
+      ]
+    }
+  },
+  {
+    "id": "criminal_fraud_001",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Dùng thủ đoạn gian dối để chiếm đoạt 20 triệu đồng của người khác thì có thể phạm tội gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hành vi dùng thủ đoạn gian dối chiếm đoạt tài sản có thể cấu thành tội lừa đảo chiếm đoạt tài sản.",
+        "Giá trị chiếm đoạt từ 2 triệu đồng đến dưới 50 triệu đồng thuộc khung cơ bản của Điều 174.",
+        "Khung cơ bản có thể là cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm.",
+        "Cần kiểm tra thêm tình tiết định khung tăng nặng nếu có."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat hinh su",
+          "article_number": "174"
+        }
+      ]
+    }
+  },
+  {
+    "id": "criminal_abuse_trust_001",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Mượn tài sản rồi bỏ trốn để chiếm đoạt thì có thể bị xử lý theo tội nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hành vi có thể được xem xét theo tội lạm dụng tín nhiệm chiếm đoạt tài sản.",
+        "Điều 175 điều chỉnh các trường hợp vay, mượn, thuê tài sản hoặc nhận tài sản bằng hợp đồng rồi dùng thủ đoạn gian dối, bỏ trốn hoặc đến hạn có điều kiện nhưng cố tình không trả để chiếm đoạt.",
+        "Cần xác định giá trị tài sản và hành vi chiếm đoạt cụ thể để xác định khung trách nhiệm."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat hinh su",
+          "article_number": "175"
+        }
+      ]
+    }
+  },
+  {
+    "id": "criminal_gambling_001",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Đánh bạc trái phép được thua bằng tiền 5 triệu đồng thì có thể bị truy cứu trách nhiệm hình sự không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Tội đánh bạc được quy định tại Điều 321 Bộ luật Hình sự.",
+        "Đánh bạc trái phép được thua bằng tiền hoặc hiện vật trị giá từ 5 triệu đồng đến dưới 50 triệu đồng thuộc ngưỡng xử lý hình sự cơ bản.",
+        "Khung cơ bản có thể là phạt tiền, cải tạo không giam giữ hoặc phạt tù theo Điều 321.",
+        "Cần xem thêm tình tiết tái phạm, tiền án hoặc quy mô tổ chức nếu có."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat hinh su",
+          "article_number": "321"
+        }
+      ]
+    }
+  },
+  {
+    "id": "criminal_private_prosecution_injury_001",
+    "category": "to_tung_hinh_su",
+    "inputs": {
+      "question": "Tội cố ý gây thương tích ở khoản 1 Điều 134 có cần yêu cầu của bị hại để khởi tố không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Một số tội chỉ được khởi tố khi có yêu cầu của bị hại hoặc người đại diện của bị hại.",
+        "Khoản 1 Điều 134 Bộ luật Hình sự thuộc nhóm được liệt kê tại Điều 155 Bộ luật Tố tụng hình sự.",
+        "Nếu người đã yêu cầu khởi tố rút yêu cầu thì vụ án phải đình chỉ, trừ trường hợp rút yêu cầu trái ý muốn do bị ép buộc, cưỡng bức."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat to tung hinh su",
+          "article_number": "155"
+        },
+        {
+          "source_file_contains": "Bo luat hinh su",
+          "article_number": "134"
+        }
+      ]
+    }
+  },
+  {
+    "id": "labor_contract_types_001",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Bộ luật Lao động quy định có những loại hợp đồng lao động nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hợp đồng lao động phải được giao kết theo một trong hai loại.",
+        "Loại thứ nhất là hợp đồng lao động không xác định thời hạn.",
+        "Loại thứ hai là hợp đồng lao động xác định thời hạn, có thời hạn không quá 36 tháng kể từ thời điểm có hiệu lực.",
+        "Khi hợp đồng xác định thời hạn hết hạn mà người lao động vẫn làm việc thì phải xử lý theo quy định về ký hợp đồng mới."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo Luat lao dong",
+          "article_number": "20"
+        }
+      ]
+    }
+  },
+  {
+    "id": "labor_employee_notice_001",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Người lao động đơn phương nghỉ việc phải báo trước bao lâu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người lao động có quyền đơn phương chấm dứt hợp đồng lao động nhưng phải báo trước.",
+        "Ít nhất 45 ngày với hợp đồng không xác định thời hạn.",
+        "Ít nhất 30 ngày với hợp đồng xác định thời hạn từ 12 tháng đến 36 tháng.",
+        "Ít nhất 03 ngày làm việc với hợp đồng xác định thời hạn dưới 12 tháng.",
+        "Một số trường hợp người lao động có quyền nghỉ không cần báo trước theo khoản 2 Điều 35."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo Luat lao dong",
+          "article_number": "35"
+        }
+      ]
+    }
+  },
+  {
+    "id": "labor_employer_notice_001",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Người sử dụng lao động đơn phương chấm dứt hợp đồng thì phải báo trước cho người lao động bao lâu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Khi đơn phương chấm dứt hợp đồng trong các trường hợp luật định, người sử dụng lao động phải báo trước.",
+        "Ít nhất 45 ngày với hợp đồng không xác định thời hạn.",
+        "Ít nhất 30 ngày với hợp đồng xác định thời hạn từ 12 tháng đến 36 tháng.",
+        "Ít nhất 03 ngày làm việc với hợp đồng dưới 12 tháng và một số trường hợp người lao động ốm đau, tai nạn.",
+        "Một số trường hợp như người lao động không có mặt sau thời hạn luật định hoặc tự ý bỏ việc từ 05 ngày làm việc liên tục trở lên thì không phải báo trước."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo Luat lao dong",
+          "article_number": "36"
+        }
+      ]
+    }
+  },
+  {
+    "id": "labor_severance_allowance_001",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Trợ cấp thôi việc được tính như thế nào theo Bộ luật Lao động?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người sử dụng lao động phải trả trợ cấp thôi việc cho người lao động đã làm việc thường xuyên từ đủ 12 tháng trở lên khi hợp đồng chấm dứt trong các trường hợp luật định.",
+        "Mỗi năm làm việc được trợ cấp một nửa tháng tiền lương.",
+        "Thời gian tính trợ cấp là tổng thời gian làm việc thực tế trừ thời gian đã tham gia bảo hiểm thất nghiệp và thời gian đã được chi trả trợ cấp thôi việc, mất việc.",
+        "Tiền lương để tính trợ cấp là tiền lương bình quân của 06 tháng liền kề theo hợp đồng lao động trước khi thôi việc."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo Luat lao dong",
+          "article_number": "46"
+        }
+      ]
+    }
+  },
+  {
+    "id": "labor_salary_definition_001",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Tiền lương theo Bộ luật Lao động gồm những khoản nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Tiền lương là số tiền người sử dụng lao động trả cho người lao động theo thỏa thuận để thực hiện công việc.",
+        "Tiền lương bao gồm mức lương theo công việc hoặc chức danh, phụ cấp lương và các khoản bổ sung khác.",
+        "Mức lương theo công việc hoặc chức danh không được thấp hơn mức lương tối thiểu.",
+        "Người sử dụng lao động phải bảo đảm trả lương bình đẳng, không phân biệt giới tính với công việc có giá trị như nhau."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo Luat lao dong",
+          "article_number": "90"
+        }
+      ]
+    }
+  },
+  {
+    "id": "labor_working_time_001",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Thời giờ làm việc bình thường tối đa là bao nhiêu giờ một ngày và một tuần?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Thời giờ làm việc bình thường không quá 08 giờ trong 01 ngày.",
+        "Thời giờ làm việc bình thường không quá 48 giờ trong 01 tuần.",
+        "Nếu làm việc theo tuần thì thời giờ làm việc bình thường không quá 10 giờ trong 01 ngày và không quá 48 giờ trong 01 tuần.",
+        "Nhà nước khuyến khích tuần làm việc 40 giờ."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo Luat lao dong",
+          "article_number": "105"
+        }
+      ]
+    }
+  },
+  {
+    "id": "labor_overtime_conditions_001",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Người sử dụng lao động muốn cho người lao động làm thêm giờ thì cần điều kiện gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Làm thêm giờ là thời gian làm việc ngoài thời giờ làm việc bình thường.",
+        "Phải được sự đồng ý của người lao động.",
+        "Phải bảo đảm số giờ làm thêm không quá 50% số giờ làm việc bình thường trong 01 ngày.",
+        "Nếu áp dụng thời giờ làm việc theo tuần thì tổng giờ làm bình thường và làm thêm không quá 12 giờ trong 01 ngày.",
+        "Không quá 40 giờ trong 01 tháng và không quá 200 giờ trong 01 năm, trừ trường hợp được làm thêm đến 300 giờ."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo Luat lao dong",
+          "article_number": "107"
+        }
+      ]
+    }
+  },
+  {
+    "id": "enterprise_llc_single_member_001",
+    "category": "doanh_nghiep",
+    "inputs": {
+      "question": "Công ty trách nhiệm hữu hạn một thành viên là gì và chủ sở hữu chịu trách nhiệm trong phạm vi nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Công ty trách nhiệm hữu hạn một thành viên là doanh nghiệp do một tổ chức hoặc một cá nhân làm chủ sở hữu.",
+        "Chủ sở hữu chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của công ty trong phạm vi số vốn điều lệ.",
+        "Công ty trách nhiệm hữu hạn một thành viên có tư cách pháp nhân kể từ ngày được cấp Giấy chứng nhận đăng ký doanh nghiệp."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Doanh nghiep",
+          "article_number": "74"
+        }
+      ]
+    }
+  },
+  {
+    "id": "enterprise_capital_contribution_001",
+    "category": "doanh_nghiep",
+    "inputs": {
+      "question": "Chủ sở hữu công ty TNHH một thành viên phải góp vốn trong thời hạn bao lâu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Vốn điều lệ khi đăng ký thành lập là tổng giá trị tài sản do chủ sở hữu cam kết góp và ghi trong Điều lệ công ty.",
+        "Chủ sở hữu phải góp đủ và đúng loại tài sản đã cam kết trong thời hạn 90 ngày kể từ ngày được cấp Giấy chứng nhận đăng ký doanh nghiệp.",
+        "Thời hạn này không tính thời gian vận chuyển, nhập khẩu tài sản góp vốn và thực hiện thủ tục hành chính để chuyển quyền sở hữu tài sản."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Doanh nghiep",
+          "article_number": "75"
+        }
+      ]
+    }
+  },
+  {
+    "id": "enterprise_jsc_definition_001",
+    "category": "doanh_nghiep",
+    "inputs": {
+      "question": "Công ty cổ phần có đặc điểm pháp lý cơ bản nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Vốn điều lệ của công ty cổ phần được chia thành nhiều phần bằng nhau gọi là cổ phần.",
+        "Cổ đông có thể là tổ chức hoặc cá nhân, số lượng tối thiểu là 03 và không hạn chế tối đa.",
+        "Cổ đông chỉ chịu trách nhiệm về nợ và nghĩa vụ tài sản khác trong phạm vi số vốn đã góp.",
+        "Cổ đông có quyền tự do chuyển nhượng cổ phần, trừ trường hợp luật hoặc điều lệ có quy định hạn chế."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Doanh nghiep",
+          "article_number": "111"
+        }
+      ]
+    }
+  },
+  {
+    "id": "enterprise_charter_contents_001",
+    "category": "doanh_nghiep",
+    "inputs": {
+      "question": "Điều lệ công ty phải có những nội dung chủ yếu nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Điều lệ công ty gồm Điều lệ khi đăng ký doanh nghiệp và Điều lệ được sửa đổi, bổ sung trong quá trình hoạt động.",
+        "Nội dung chủ yếu bao gồm tên, địa chỉ trụ sở chính, chi nhánh, văn phòng đại diện nếu có.",
+        "Nội dung chủ yếu bao gồm ngành nghề kinh doanh, vốn điều lệ, cổ phần nếu là công ty cổ phần.",
+        "Nội dung chủ yếu còn bao gồm thông tin thành viên, chủ sở hữu hoặc cổ đông sáng lập, quyền và nghĩa vụ, cơ cấu tổ chức quản lý và các nội dung khác theo luật."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Doanh nghiep",
+          "article_number": "24"
+        }
+      ]
+    }
+  },
+  {
+    "id": "enterprise_board_authority_001",
+    "category": "doanh_nghiep",
+    "inputs": {
+      "question": "Hội đồng quản trị trong công ty cổ phần có vai trò gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hội đồng quản trị là cơ quan quản lý công ty.",
+        "Hội đồng quản trị có toàn quyền nhân danh công ty để quyết định, thực hiện quyền và nghĩa vụ của công ty.",
+        "Các quyền và nghĩa vụ thuộc thẩm quyền của Đại hội đồng cổ đông không thuộc thẩm quyền quyết định của Hội đồng quản trị.",
+        "Hội đồng quản trị có các quyền như quyết định chiến lược, kế hoạch kinh doanh, huy động vốn và giám sát Giám đốc hoặc Tổng giám đốc theo Điều 153."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Doanh nghiep",
+          "article_number": "153"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_procedure_territorial_jurisdiction_001",
+    "category": "to_tung_dan_su",
+    "inputs": {
+      "question": "Thông thường khởi kiện vụ án dân sự thì nộp đơn ở Tòa án nơi nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Thẩm quyền theo lãnh thổ thông thường là Tòa án nơi bị đơn cư trú, làm việc nếu bị đơn là cá nhân.",
+        "Nếu bị đơn là cơ quan, tổ chức thì Tòa án nơi bị đơn có trụ sở có thẩm quyền giải quyết.",
+        "Các đương sự có thể thỏa thuận bằng văn bản yêu cầu Tòa án nơi nguyên đơn cư trú, làm việc hoặc có trụ sở giải quyết.",
+        "Nếu đối tượng tranh chấp là bất động sản thì chỉ Tòa án nơi có bất động sản có thẩm quyền giải quyết."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat to tung dan su",
+          "article_number": "39"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_procedure_burden_of_proof_001",
+    "category": "to_tung_dan_su",
+    "inputs": {
+      "question": "Trong vụ án dân sự, ai có nghĩa vụ chứng minh yêu cầu của mình?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Đương sự có yêu cầu Tòa án bảo vệ quyền và lợi ích hợp pháp của mình phải thu thập, cung cấp, giao nộp tài liệu, chứng cứ.",
+        "Đương sự phải chứng minh yêu cầu đó là có căn cứ và hợp pháp.",
+        "Đương sự phản đối yêu cầu của người khác cũng phải thể hiện bằng văn bản và cung cấp chứng cứ để chứng minh sự phản đối.",
+        "Nếu không đưa ra được hoặc không đưa ra đủ chứng cứ thì Tòa án giải quyết theo chứng cứ đã thu thập được trong hồ sơ."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat to tung dan su",
+          "article_number": "91"
+        }
+      ]
+    }
+  },
+  {
+    "id": "civil_procedure_petition_contents_001",
+    "category": "to_tung_dan_su",
+    "inputs": {
+      "question": "Đơn khởi kiện vụ án dân sự phải có những nội dung chính nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Đơn khởi kiện phải có ngày, tháng, năm làm đơn.",
+        "Đơn phải ghi tên Tòa án nhận đơn khởi kiện.",
+        "Đơn phải có thông tin người khởi kiện, người có quyền lợi được bảo vệ, người bị kiện và người có quyền lợi, nghĩa vụ liên quan nếu có.",
+        "Đơn phải nêu quyền, lợi ích hợp pháp bị xâm phạm, vấn đề yêu cầu Tòa án giải quyết và danh mục tài liệu, chứng cứ kèm theo."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat to tung dan su",
+          "article_number": "189"
+        }
+      ]
+    }
+  },
+  {
+    "id": "domestic_violence_behaviors_001",
+    "category": "gia_dinh",
+    "inputs": {
+      "question": "Những hành vi nào được coi là bạo lực gia đình?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Bạo lực gia đình bao gồm hành hạ, ngược đãi, đánh đập, đe dọa hoặc hành vi cố ý khác xâm hại sức khỏe, tính mạng.",
+        "Bao gồm lăng mạ, chì chiết hoặc hành vi cố ý xúc phạm danh dự, nhân phẩm.",
+        "Bao gồm cô lập, gây áp lực tâm lý, ngăn cản quan hệ xã hội hợp pháp hoặc quyền, nghĩa vụ trong quan hệ gia đình.",
+        "Bao gồm cưỡng ép quan hệ tình dục, cưỡng ép kết hôn, ly hôn, mang thai, phá thai hoặc chiếm đoạt, hủy hoại tài sản trong gia đình."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Phong chong bao luc gia dinh",
+          "article_number": "3"
+        }
+      ]
+    }
+  },
+  {
+    "id": "domestic_violence_victim_rights_001",
+    "category": "gia_dinh",
+    "inputs": {
+      "question": "Người bị bạo lực gia đình có những quyền gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người bị bạo lực gia đình có quyền yêu cầu cơ quan, tổ chức, cá nhân có thẩm quyền bảo vệ sức khỏe, tính mạng, danh dự, nhân phẩm và quyền lợi hợp pháp.",
+        "Có quyền yêu cầu áp dụng biện pháp ngăn chặn, bảo vệ, hỗ trợ.",
+        "Có quyền được bố trí nơi tạm lánh, giữ bí mật nơi tạm lánh và thông tin đời sống riêng tư, bí mật cá nhân, bí mật gia đình.",
+        "Có quyền được cung cấp dịch vụ y tế, tư vấn tâm lý, kỹ năng ứng phó, trợ giúp pháp lý và hỗ trợ khác theo luật."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Phong chong bao luc gia dinh",
+          "article_number": "9"
+        }
+      ]
+    }
+  },
+  {
+    "id": "consumer_rights_001",
+    "category": "bao_ve_nguoi_tieu_dung",
+    "inputs": {
+      "question": "Người tiêu dùng có những quyền cơ bản nào khi mua, sử dụng hàng hóa, dịch vụ?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người tiêu dùng được bảo đảm an toàn tính mạng, sức khỏe, danh dự, nhân phẩm, uy tín, tài sản và bảo vệ thông tin.",
+        "Người tiêu dùng được cung cấp hóa đơn, chứng từ, tài liệu và thông tin kịp thời, chính xác, đầy đủ về sản phẩm, dịch vụ, giao dịch và tổ chức, cá nhân kinh doanh.",
+        "Người tiêu dùng được lựa chọn sản phẩm, dịch vụ, tổ chức, cá nhân kinh doanh và quyết định tham gia hoặc không tham gia giao dịch.",
+        "Người tiêu dùng có quyền góp ý và yêu cầu bồi thường thiệt hại khi sản phẩm, hàng hóa, dịch vụ không bảo đảm hoặc không đúng cam kết."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Bao ve quyen loi nguoi tieu dung",
+          "article_number": "4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "consumer_business_information_001",
+    "category": "bao_ve_nguoi_tieu_dung",
+    "inputs": {
+      "question": "Tổ chức, cá nhân kinh doanh phải cung cấp thông tin gì về sản phẩm, hàng hóa, dịch vụ cho người tiêu dùng?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Tổ chức, cá nhân kinh doanh phải cung cấp thông tin chính xác, đầy đủ về sản phẩm, hàng hóa, dịch vụ.",
+        "Thông tin bao gồm đo lường, số lượng, khối lượng, chất lượng, công dụng, giá, xuất xứ, thời hạn sử dụng, phí, chi phí, phương thức và thời hạn giao hàng, vận chuyển, thanh toán.",
+        "Phải cung cấp thông tin về tổ chức, cá nhân kinh doanh.",
+        "Phải cung cấp nhận xét, đánh giá của người tiêu dùng nếu có."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Bao ve quyen loi nguoi tieu dung",
+          "article_number": "21"
+        }
+      ]
+    }
+  },
+  {
+    "id": "notary_real_estate_authority_001",
+    "category": "cong_chung",
+    "inputs": {
+      "question": "Công chứng viên có được công chứng giao dịch bất động sản ngoài tỉnh nơi tổ chức hành nghề công chứng đặt trụ sở không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Công chứng viên của tổ chức hành nghề công chứng chỉ được công chứng giao dịch về bất động sản trong phạm vi tỉnh, thành phố trực thuộc trung ương nơi tổ chức đặt trụ sở.",
+        "Có các ngoại lệ như công chứng di chúc, văn bản từ chối nhận di sản, văn bản ủy quyền liên quan đến quyền đối với bất động sản.",
+        "Ngoại lệ còn gồm thỏa thuận xác lập chế độ tài sản của vợ chồng về bất động sản và việc sửa đổi, bổ sung, chấm dứt, hủy bỏ các giao dịch này theo luật."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat cong chung",
+          "article_number": "44"
+        }
+      ]
+    }
+  },
+  {
+    "id": "notary_time_limit_001",
+    "category": "cong_chung",
+    "inputs": {
+      "question": "Thời hạn công chứng tối đa là bao lâu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Thời hạn công chứng được tính từ ngày công chứng viên tiếp nhận hồ sơ hợp lệ đến ngày trả kết quả.",
+        "Thời gian xác minh, giám định, niêm yết việc tiếp nhận công chứng văn bản phân chia di sản không tính vào thời hạn công chứng.",
+        "Thời hạn công chứng không quá 02 ngày làm việc.",
+        "Với giao dịch có nội dung phức tạp thì có thể kéo dài hơn nhưng không quá 10 ngày làm việc."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat cong chung",
+          "article_number": "45"
+        }
+      ]
+    }
+  },
+  {
+    "id": "social_insurance_types_001",
+    "category": "bao_hiem_xa_hoi",
+    "inputs": {
+      "question": "Luật Bảo hiểm xã hội 2024 quy định các loại hình và chế độ bảo hiểm xã hội nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Trợ cấp hưu trí xã hội có các chế độ trợ cấp hằng tháng, hỗ trợ chi phí mai táng và hưởng bảo hiểm y tế do ngân sách nhà nước đóng.",
+        "Bảo hiểm xã hội bắt buộc có các chế độ ốm đau, thai sản, hưu trí, tử tuất và bảo hiểm tai nạn lao động, bệnh nghề nghiệp theo luật chuyên ngành.",
+        "Bảo hiểm xã hội tự nguyện có các chế độ trợ cấp thai sản, hưu trí, tử tuất và bảo hiểm tai nạn lao động theo luật chuyên ngành.",
+        "Ngoài ra còn có bảo hiểm thất nghiệp theo Luật Việc làm và bảo hiểm hưu trí bổ sung."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Bao hiem xa hoi",
+          "article_number": "4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "social_insurance_contribution_rate_001",
+    "category": "bao_hiem_xa_hoi",
+    "inputs": {
+      "question": "Tỷ lệ đóng bảo hiểm xã hội bắt buộc và tự nguyện theo Luật Bảo hiểm xã hội 2024 là bao nhiêu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Tỷ lệ đóng bảo hiểm xã hội bắt buộc gồm 3% tiền lương làm căn cứ đóng vào quỹ ốm đau và thai sản.",
+        "Tỷ lệ đóng bảo hiểm xã hội bắt buộc gồm 22% tiền lương làm căn cứ đóng vào quỹ hưu trí và tử tuất.",
+        "Tỷ lệ đóng bảo hiểm xã hội tự nguyện bằng 22% thu nhập làm căn cứ đóng vào quỹ hưu trí và tử tuất."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Bao hiem xa hoi",
+          "article_number": "32"
+        }
+      ]
+    }
+  },
+  {
+    "id": "social_insurance_pension_condition_001",
+    "category": "bao_hiem_xa_hoi",
+    "inputs": {
+      "question": "Điều kiện chung để người lao động được hưởng lương hưu theo Luật Bảo hiểm xã hội 2024 là gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người lao động thuộc các nhóm đối tượng luật định khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì có thể được hưởng lương hưu.",
+        "Phải thuộc một trong các trường hợp về đủ tuổi nghỉ hưu theo Bộ luật Lao động hoặc điều kiện tuổi thấp hơn trong một số trường hợp luật định.",
+        "Một số nhóm nghề, công việc nặng nhọc, độc hại, nguy hiểm hoặc vùng đặc biệt khó khăn có điều kiện riêng.",
+        "Cần xác định đúng nhóm đối tượng, tuổi nghỉ hưu và thời gian đóng bảo hiểm xã hội cụ thể."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Bao hiem xa hoi",
+          "article_number": "64"
+        }
+      ]
+    }
+  },
+  {
+    "id": "colloquial_injury_fight_001",
+    "category": "hinh_su_colloquial",
+    "inputs": {
+      "question": "Tôi lỡ đánh người ta bị thương thì có bị đi tù không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hành vi đánh người gây thương tích có thể bị xem xét theo tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác.",
+        "Cần xác định tỷ lệ tổn thương cơ thể và các tình tiết như dùng hung khí, có tổ chức, tái phạm hoặc tính chất côn đồ.",
+        "Căn cứ chính cần đối chiếu là Điều 134 Bộ luật Hình sự.",
+        "Không thể kết luận chắc chắn có bị đi tù hay không nếu chưa có đủ tỷ lệ thương tích và tình tiết vụ việc."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat hinh su",
+          "article_number": "134"
+        }
+      ],
+      "required_terms": [
+        "Điều 134",
+        "tỷ lệ tổn thương",
+        "tình tiết"
+      ],
+      "forbidden_claims": [
+        "chắc chắn bị đi tù",
+        "không bị xử lý"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_theft_small_money_001",
+    "category": "hinh_su_colloquial",
+    "inputs": {
+      "question": "Lấy trộm đồ khoảng 3 triệu thì có bị hình sự không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Hành vi lấy trộm tài sản có thể bị xem xét theo tội trộm cắp tài sản.",
+        "Giá trị tài sản từ 2 triệu đồng đến dưới 50 triệu đồng thuộc ngưỡng cấu thành cơ bản của Điều 173 Bộ luật Hình sự.",
+        "Khung cơ bản có thể là cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm.",
+        "Cần kiểm tra thêm tình tiết định khung, tiền án, tiền sự hoặc các trường hợp đặc biệt khác."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat hinh su",
+          "article_number": "173"
+        }
+      ],
+      "required_terms": [
+        "Điều 173",
+        "2 triệu",
+        "50 triệu"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị hình sự"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_borrow_money_interest_001",
+    "category": "dan_su_colloquial",
+    "inputs": {
+      "question": "Cho bạn vay tiền thì tính lãi cao nhất bao nhiêu là đúng luật?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Lãi suất vay do các bên thỏa thuận.",
+        "Nếu có thỏa thuận về lãi suất thì không được vượt quá 20% một năm của khoản tiền vay, trừ trường hợp luật khác có liên quan quy định khác.",
+        "Nếu lãi suất thỏa thuận vượt quá giới hạn thì phần vượt quá không có hiệu lực.",
+        "Căn cứ chính là Điều 468 Bộ luật Dân sự."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "468"
+        }
+      ],
+      "required_terms": [
+        "Điều 468",
+        "20%",
+        "một năm"
+      ],
+      "forbidden_claims": [
+        "muốn lấy bao nhiêu cũng được"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_quit_job_notice_001",
+    "category": "lao_dong_colloquial",
+    "inputs": {
+      "question": "Tôi muốn nghỉ việc thì phải báo trước mấy ngày?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người lao động có quyền đơn phương chấm dứt hợp đồng lao động nhưng thường phải báo trước.",
+        "Ít nhất 45 ngày với hợp đồng lao động không xác định thời hạn.",
+        "Ít nhất 30 ngày với hợp đồng lao động xác định thời hạn từ 12 tháng đến 36 tháng.",
+        "Ít nhất 03 ngày làm việc với hợp đồng xác định thời hạn dưới 12 tháng.",
+        "Một số trường hợp người lao động có quyền nghỉ không cần báo trước theo khoản 2 Điều 35 Bộ luật Lao động."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo Luat lao dong",
+          "article_number": "35"
+        }
+      ],
+      "required_terms": [
+        "Điều 35",
+        "45 ngày",
+        "30 ngày",
+        "03 ngày"
+      ],
+      "forbidden_claims": [
+        "nghỉ lúc nào cũng được",
+        "không cần báo trước trong mọi trường hợp"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_inheritance_adopted_child_001",
+    "category": "dan_su_colloquial",
+    "inputs": {
+      "question": "Con nuôi có được chia tài sản thừa kế như con ruột không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Con nuôi và cha nuôi, mẹ nuôi được thừa kế di sản của nhau nếu quan hệ nuôi con nuôi hợp pháp.",
+        "Con nuôi có thể thuộc hàng thừa kế thứ nhất theo quy định về thừa kế theo pháp luật.",
+        "Cần đối chiếu Điều 653 và Điều 651 Bộ luật Dân sự.",
+        "Cần xác định quan hệ nuôi con nuôi hợp pháp và trường hợp thừa kế cụ thể."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "653"
+        },
+        {
+          "source_file_contains": "Bo luat dan su",
+          "article_number": "651"
+        }
+      ],
+      "required_terms": [
+        "Điều 653",
+        "Điều 651",
+        "con nuôi"
+      ],
+      "forbidden_claims": [
+        "con nuôi không được thừa kế"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_domestic_violence_001",
+    "category": "gia_dinh_colloquial",
+    "inputs": {
+      "question": "Chồng hay chửi bới, đe dọa và đánh vợ thì có phải bạo lực gia đình không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Bạo lực gia đình bao gồm hành hạ, ngược đãi, đánh đập, đe dọa hoặc hành vi cố ý khác xâm hại sức khỏe, tính mạng.",
+        "Bạo lực gia đình cũng bao gồm lăng mạ, chì chiết hoặc hành vi cố ý xúc phạm danh dự, nhân phẩm.",
+        "Cần đối chiếu Điều 3 Luật Phòng, chống bạo lực gia đình.",
+        "Người bị bạo lực gia đình có thể yêu cầu cơ quan, tổ chức, cá nhân có thẩm quyền bảo vệ và hỗ trợ."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Phong chong bao luc gia dinh",
+          "article_number": "3"
+        },
+        {
+          "source_file_contains": "Luat Phong chong bao luc gia dinh",
+          "article_number": "9"
+        }
+      ],
+      "required_terms": [
+        "Điều 3",
+        "bạo lực gia đình",
+        "đánh đập",
+        "đe dọa"
+      ],
+      "forbidden_claims": [
+        "chỉ đánh mới là bạo lực gia đình"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_notary_house_other_province_001",
+    "category": "cong_chung_colloquial",
+    "inputs": {
+      "question": "Tôi mua đất ở tỉnh khác thì ra phòng công chứng gần nhà ký được không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Công chứng viên của tổ chức hành nghề công chứng chỉ được công chứng giao dịch về bất động sản trong phạm vi tỉnh, thành phố trực thuộc trung ương nơi tổ chức đặt trụ sở.",
+        "Có một số ngoại lệ như công chứng di chúc, văn bản từ chối nhận di sản hoặc văn bản ủy quyền liên quan đến quyền đối với bất động sản.",
+        "Căn cứ chính là Điều 44 Luật Công chứng.",
+        "Cần xác định loại giao dịch cụ thể để xem có thuộc ngoại lệ hay không."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat cong chung",
+          "article_number": "44"
+        }
+      ],
+      "required_terms": [
+        "Điều 44",
+        "bất động sản",
+        "phạm vi tỉnh"
+      ],
+      "forbidden_claims": [
+        "công chứng ở đâu cũng được"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_court_where_to_file_001",
+    "category": "to_tung_dan_su_colloquial",
+    "inputs": {
+      "question": "Muốn kiện người ta thì nộp đơn ở tòa nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Thẩm quyền theo lãnh thổ thông thường là Tòa án nơi bị đơn cư trú, làm việc nếu bị đơn là cá nhân.",
+        "Nếu bị đơn là cơ quan, tổ chức thì Tòa án nơi bị đơn có trụ sở có thẩm quyền giải quyết.",
+        "Các đương sự có thể thỏa thuận bằng văn bản yêu cầu Tòa án nơi nguyên đơn cư trú, làm việc hoặc có trụ sở giải quyết.",
+        "Nếu đối tượng tranh chấp là bất động sản thì chỉ Tòa án nơi có bất động sản có thẩm quyền giải quyết.",
+        "Căn cứ chính là Điều 39 Bộ luật Tố tụng dân sự."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Bo luat to tung dan su",
+          "article_number": "39"
+        }
+      ],
+      "required_terms": [
+        "Điều 39",
+        "nơi bị đơn cư trú",
+        "bất động sản"
+      ],
+      "forbidden_claims": [
+        "nộp ở tòa nào cũng được"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_consumer_bad_product_001",
+    "category": "bao_ve_nguoi_tieu_dung_colloquial",
+    "inputs": {
+      "question": "Mua hàng bị lỗi thì người mua có quyền đòi gì không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người tiêu dùng có quyền được bảo đảm an toàn tính mạng, sức khỏe, danh dự, nhân phẩm, uy tín, tài sản và bảo vệ thông tin.",
+        "Người tiêu dùng có quyền được cung cấp thông tin kịp thời, chính xác, đầy đủ về sản phẩm, hàng hóa, dịch vụ và giao dịch.",
+        "Người tiêu dùng có quyền góp ý và yêu cầu bồi thường thiệt hại khi sản phẩm, hàng hóa, dịch vụ không bảo đảm hoặc không đúng cam kết.",
+        "Căn cứ chính là Điều 4 Luật Bảo vệ quyền lợi người tiêu dùng."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Bao ve quyen loi nguoi tieu dung",
+          "article_number": "4"
+        }
+      ],
+      "required_terms": [
+        "Điều 4",
+        "bồi thường",
+        "người tiêu dùng"
+      ],
+      "forbidden_claims": [
+        "người mua không có quyền gì"
+      ]
+    }
+  },
+  {
+    "id": "colloquial_pension_15_years_001",
+    "category": "bao_hiem_xa_hoi_colloquial",
+    "inputs": {
+      "question": "Đóng bảo hiểm xã hội 15 năm thì có được lương hưu chưa?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Người lao động thuộc các nhóm đối tượng luật định khi nghỉ việc có thời gian đóng bảo hiểm xã hội bắt buộc từ đủ 15 năm trở lên thì có thể được hưởng lương hưu.",
+        "Ngoài thời gian đóng bảo hiểm xã hội, còn phải thuộc một trong các trường hợp về đủ tuổi nghỉ hưu hoặc điều kiện tuổi thấp hơn theo luật.",
+        "Cần xác định đúng nhóm đối tượng, tuổi nghỉ hưu và thời gian đóng bảo hiểm xã hội cụ thể.",
+        "Căn cứ chính là Điều 64 Luật Bảo hiểm xã hội 2024."
+      ],
+      "expected_sources": [
+        {
+          "source_file_contains": "Luat Bao hiem xa hoi",
+          "article_number": "64"
+        }
+      ],
+      "required_terms": [
+        "Điều 64",
+        "15 năm",
+        "tuổi nghỉ hưu"
+      ],
+      "forbidden_claims": [
+        "cứ đóng 15 năm là chắc chắn được lương hưu"
+      ]
+    }
+  }
+]

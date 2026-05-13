@@ -45,6 +45,7 @@ export interface RetrievedSource {
   documentTitle: string
   articleNumber?: string
   clauseNumber?: string
+  targetArticle?: string
   chunkText: string
   relevanceScore: number
   retrievalOrigin: 'bm25' | 'vector' | 'hybrid'

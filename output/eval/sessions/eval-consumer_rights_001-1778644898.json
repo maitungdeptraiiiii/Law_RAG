@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-consumer_rights_001-1778644898",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-002d47b9323f",
+      "role": "user",
+      "content": "Người tiêu dùng có những quyền cơ bản nào khi mua, sử dụng hàng hóa, dịch vụ?",
+      "timestamp": "2026-05-13T04:01:39.005206+00:00"
+    },
+    {
+      "id": "msg-25012e419027",
+      "role": "assistant",
+      "content": "Người tiêu dùng có các quyền cơ bản có thể rút ra từ context hiện có như sau:\n\n1. **Quyền lựa chọn và thỏa thuận về giá** khi mua hàng hóa, dịch vụ, trừ trường hợp hàng hóa, dịch vụ do Nhà nước định giá cụ thể.  \n2. **Quyền tiếp cận thông tin về giá**: được biết chính sách giá của Nhà nước và các biện pháp quản lý, điều tiết giá.  \n3. **Quyền yêu cầu cung cấp thông tin** về **giá, chất lượng, xuất xứ** hàng hóa, dịch vụ và **hóa đơn** theo quy định.  \n4. **Quyền khiếu nại, tố cáo, khởi kiện** hoặc **đề nghị tổ chức xã hội khởi kiện** để bảo vệ quyền lợi của mình.  \n5. **Quyền được bảo vệ thông tin cá nhân** khi tổ chức, cá nhân kinh doanh thu thập, lưu trữ, sử dụng, chỉnh sửa, cập nhật, hủy bỏ thông tin của người tiêu dùng; việc thuê/ủy quyền bên thứ ba phải có **sự đồng ý của người tiêu dùng** trong trường hợp luật nêu.  \n6. Về nguyên tắc chung, **quyền và lợi ích hợp pháp của người tiêu dùng được công nhận, tôn trọng, bảo đảm và bảo vệ**.\n\n**Căn cứ:**  \n- **Điều 10 Luật Giá 2023**: quyền của người tiêu dùng về giá, thông tin giá, khiếu nại/tố cáo/khởi kiện.  \n- **Điều 15 Luật Bảo vệ quyền lợi người tiêu dùng 2023**: bảo vệ thông tin của người tiêu dùng.  \n- **Điều 6 Luật Bảo vệ quyền lợi người tiêu dùng 2023**: nguyên tắc bảo vệ quyền lợi người tiêu dùng.\n\n**Lưu ý ngắn:** Context hiện có chưa cung cấp đầy đủ toàn bộ danh mục “quyền cơ bản” theo luật chuyên ngành, nhưng các quyền nêu trên là những quyền có thể khẳng định từ tài liệu đã trích.\n\nCần bổ sung thêm: Bạn muốn mình liệt kê **đầy đủ các quyền của người tiêu dùng theo Luật Bảo vệ quyền lợi người tiêu dùng 2023** hay chỉ cần các quyền liên quan trực tiếp đến **mua, sử dụng hàng hóa, dịch vụ**?",
+      "timestamp": "2026-05-13T04:01:52.067363+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Xác định các quyền cơ bản của người tiêu dùng khi mua, sử dụng hàng hóa, dịch vụ",
+    "jurisdiction": "Việt Nam",
+    "case_stage": "Chưa có tranh chấp/vụ việc cụ thể"
+  },
+  "case_summary": "Người dùng đang hỏi về các quyền cơ bản của người tiêu dùng khi mua, sử dụng hàng hóa, dịch vụ theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quyền cơ bản của người tiêu dùng theo Luật Bảo vệ quyền lợi người tiêu dùng Việt Nam; quyền được an toàn, được cung cấp thông tin, lựa chọn, góp ý, khiếu nại, bồi thường thiệt hại, tư vấn, tham gia tổ chức bảo vệ quyền lợi người tiêu dùng, bảo vệ dữ liệu cá nhân, nghĩa vụ của tổ chức kinh doanh hàng hóa dịch vụ",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:01:52.067639+00:00"
+}

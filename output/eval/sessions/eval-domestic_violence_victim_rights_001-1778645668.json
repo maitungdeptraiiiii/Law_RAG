@@ -1,0 +1,37 @@
+{
+  "session_id": "eval-domestic_violence_victim_rights_001-1778645668",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-e50e1096f787",
+      "role": "user",
+      "content": "Người bị bạo lực gia đình có những quyền gì?",
+      "timestamp": "2026-05-13T04:14:28.397290+00:00"
+    },
+    {
+      "id": "msg-4ea1363400c5",
+      "role": "assistant",
+      "content": "Người bị bạo lực gia đình có các quyền chính sau:\n\n1. **Yêu cầu bảo vệ** sức khỏe, tính mạng, danh dự, nhân phẩm và các quyền, lợi ích hợp pháp liên quan.  \n2. **Yêu cầu áp dụng biện pháp ngăn chặn, bảo vệ, hỗ trợ** như: buộc chấm dứt hành vi bạo lực, cấm tiếp xúc, bố trí nơi tạm lánh, chăm sóc/điều trị, trợ giúp pháp lý, tư vấn tâm lý, hỗ trợ kỹ năng ứng phó, và các biện pháp xử lý theo quy định.  \n3. **Được bố trí nơi tạm lánh** và **giữ bí mật** về nơi tạm lánh, đời sống riêng tư, bí mật cá nhân, bí mật gia đình.  \n4. **Được cung cấp dịch vụ y tế, tư vấn tâm lý, trợ giúp pháp lý, trợ giúp xã hội**.  \n5. **Yêu cầu người gây bạo lực khắc phục hậu quả, bồi thường thiệt hại** về sức khỏe, danh dự, nhân phẩm, tài sản.  \n6. **Được thông tin** về quyền, nghĩa vụ trong quá trình giải quyết mâu thuẫn, tranh chấp và xử lý hành vi bạo lực.  \n7. **Khiếu nại, tố cáo, khởi kiện** đối với hành vi vi phạm pháp luật về phòng, chống bạo lực gia đình.  \n8. Có **các quyền khác theo pháp luật liên quan**.\n\n**Căn cứ:** Điều 9 Luật Phòng, chống bạo lực gia đình 2022; Điều 22 về các biện pháp ngăn chặn, bảo vệ, hỗ trợ; Điều 4 về nguyên tắc lấy người bị bạo lực gia đình làm trung tâm.\n\nTrong context hiện có, có thể khẳng định thêm rằng: nếu người bị bạo lực gia đình là **trẻ em**, thì quá trình xử lý phải có sự tham gia của đại diện cơ quan quản lý nhà nước về trẻ em hoặc người được giao làm công tác bảo vệ trẻ em; và nếu thuộc nhóm **phụ nữ mang thai, phụ nữ nuôi con dưới 36 tháng tuổi, người cao tuổi, người khuyết tật, người không có khả năng tự chăm sóc** thì được ưu tiên bảo vệ.\n\nCần bổ sung thêm: Bạn muốn hỏi quyền của nạn nhân trong **trường hợp cụ thể nào** (ví dụ: bị đánh, bị đe dọa, bị cấm ra khỏi nhà, bị chiếm giữ giấy tờ, hay có trẻ em liên quan)?",
+      "timestamp": "2026-05-13T04:14:41.461150+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "issue": "Quyền của người bị bạo lực gia đình",
+    "case_stage": "Chưa có vụ việc cụ thể",
+    "known_facts": [],
+    "unknown_facts": [
+      "Quan hệ giữa các bên",
+      "Hành vi bạo lực cụ thể",
+      "Mức độ, tần suất, thời điểm xảy ra",
+      "Có trẻ em/người phụ thuộc liên quan hay không",
+      "Đã trình báo/có biện pháp bảo vệ nào đã áp dụng chưa"
+    ]
+  },
+  "case_summary": "Người dùng hỏi về các quyền của người bị bạo lực gia đình theo pháp luật Việt Nam, chưa cung cấp tình tiết vụ việc cụ thể nào.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quyền của người bị bạo lực gia đình theo Luật Phòng, chống bạo lực gia đình Việt Nam; quyền yêu cầu bảo vệ khẩn cấp, cấm tiếp xúc, nơi tạm lánh, hỗ trợ y tế, tư vấn tâm lý, trợ giúp pháp lý, tố giác và xử lý hành vi bạo lực gia đình; thủ tục áp dụng biện pháp bảo vệ nạn nhân bạo lực gia đình",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:14:41.461340+00:00"
+}

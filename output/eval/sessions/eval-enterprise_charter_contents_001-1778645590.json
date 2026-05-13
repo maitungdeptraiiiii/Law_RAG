@@ -1,0 +1,31 @@
+{
+  "session_id": "eval-enterprise_charter_contents_001-1778645590",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-dfc92d962e0a",
+      "role": "user",
+      "content": "Điều lệ công ty phải có những nội dung chủ yếu nào?",
+      "timestamp": "2026-05-13T04:13:11.031661+00:00"
+    },
+    {
+      "id": "msg-f4a6697f28a3",
+      "role": "assistant",
+      "content": "Theo **Điều 24 khoản 2 Luật Doanh nghiệp 2020**, điều lệ công ty phải có các nội dung chủ yếu sau:\n\n1. **Tên, địa chỉ trụ sở chính** của công ty; tên, địa chỉ **chi nhánh và văn phòng đại diện** (nếu có);\n2. **Ngành, nghề kinh doanh**;\n3. **Vốn điều lệ**; tổng số cổ phần, loại cổ phần và mệnh giá từng loại cổ phần đối với **công ty cổ phần**;\n4. **Thông tin về thành viên/chủ sở hữu/cổ đông sáng lập**:\n   - Họ, tên, địa chỉ liên lạc, quốc tịch của **thành viên hợp danh** (công ty hợp danh);\n   - của **chủ sở hữu công ty, thành viên** (công ty TNHH);\n   - của **cổ đông sáng lập** (công ty cổ phần);\n   - phần vốn góp và giá trị vốn góp của mỗi thành viên đối với công ty TNHH và công ty hợp danh;\n   - số cổ phần, loại cổ phần, mệnh giá từng loại cổ phần của cổ đông sáng lập đối với công ty cổ phần;\n5. **Quyền và nghĩa vụ** của thành viên/cổ đông;\n6. **Cơ cấu tổ chức quản lý**;\n7. **Số lượng, chức danh quản lý và quyền, nghĩa vụ của người đại diện theo pháp luật**; việc phân chia quyền, nghĩa vụ nếu có nhiều hơn một người đại diện theo pháp luật;\n8. **Thể thức thông qua quyết định của công ty**; nguyên tắc giải quyết tranh chấp nội bộ;\n9. **Căn cứ và phương pháp xác định tiền lương, thù lao, thưởng** của người quản lý và Kiểm soát viên;\n10. **Trường hợp thành viên/cổ đông có quyền yêu cầu công ty mua lại phần vốn góp/cổ phần**;\n11. **Nguyên tắc phân chia lợi nhuận sau thuế và xử lý lỗ**;\n12. **Trường hợp giải thể, trình tự giải thể và thủ tục thanh lý tài sản công ty**;\n13. **Thể thức sửa đổi, bổ sung điều lệ công ty**.\n\n**Căn cứ:** Điều 24 khoản 2 Luật Doanh nghiệp 2020.\n\nTrong context hiện có, có thể khẳng định đây là **danh mục nội dung chủ yếu bắt buộc** của điều lệ công ty theo luật.",
+      "timestamp": "2026-05-13T04:13:24.035228+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "issue": "Nội dung chủ yếu bắt buộc của điều lệ công ty",
+    "case_type": "tra cứu pháp luật doanh nghiệp",
+    "known_context": [],
+    "requested_information": "Danh mục nội dung chủ yếu phải có trong điều lệ công ty"
+  },
+  "case_summary": "Người dùng hỏi về các nội dung chủ yếu bắt buộc phải có trong điều lệ công ty theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi mang tính tra cứu quy định.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quy định pháp luật Việt Nam về điều lệ công ty phải có những nội dung chủ yếu nào; nội dung bắt buộc của điều lệ công ty theo Luật Doanh nghiệp và văn bản hướng dẫn; điều lệ công ty cổ phần, công ty TNHH, công ty hợp danh gồm các nội dung gì",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:13:24.035443+00:00"
+}

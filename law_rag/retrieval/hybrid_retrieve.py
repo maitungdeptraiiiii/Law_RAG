@@ -3,6 +3,9 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
+import sys
+import unicodedata
 from pathlib import Path
 
 import faiss
@@ -21,6 +24,104 @@ from .retrieve_chunks import (
 
 
 DEFAULT_QUERY_REWRITE_MODEL = "gpt-5.4-mini"
+TOKEN_RE = re.compile(r"\w+", re.UNICODE)
+ARTICLE_RE = re.compile(r"\b(?:điều|dieu|article)\s+(\d+[a-z]?)\b", re.IGNORECASE)
+
+COLLOQUIAL_QUERY_EXPANSIONS: list[tuple[tuple[str, ...], list[str]]] = [
+    (
+        ("đánh", "thương"),
+        [
+            "cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác Điều 134 Bộ luật Hình sự",
+            "tỷ lệ tổn thương cơ thể dùng hung khí côn đồ Điều 134",
+        ],
+    ),
+    (
+        ("gây thương tích",),
+        [
+            "cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác Điều 134 Bộ luật Hình sự",
+        ],
+    ),
+    (
+        ("lấy trộm",),
+        [
+            "trộm cắp tài sản giá trị tài sản Điều 173 Bộ luật Hình sự",
+        ],
+    ),
+    (
+        ("trộm",),
+        [
+            "trộm cắp tài sản giá trị tài sản Điều 173 Bộ luật Hình sự",
+        ],
+    ),
+    (
+        ("lãi", "vay"),
+        [
+            "lãi suất vay do các bên thỏa thuận không vượt quá 20% một năm Điều 468 Bộ luật Dân sự",
+        ],
+    ),
+    (
+        ("nghỉ việc",),
+        [
+            "người lao động đơn phương chấm dứt hợp đồng lao động thời hạn báo trước Điều 35 Bộ luật Lao động",
+        ],
+    ),
+    (
+        ("con nuôi", "thừa kế"),
+        [
+            "quan hệ thừa kế giữa con nuôi và cha nuôi mẹ nuôi Điều 653 Bộ luật Dân sự",
+            "người thừa kế theo pháp luật hàng thừa kế thứ nhất Điều 651 Bộ luật Dân sự",
+        ],
+    ),
+    (
+        ("bạo lực gia đình",),
+        [
+            "hành vi bạo lực gia đình Điều 3 Luật Phòng chống bạo lực gia đình",
+            "quyền của người bị bạo lực gia đình Điều 9 Luật Phòng chống bạo lực gia đình",
+        ],
+    ),
+    (
+        ("công chứng", "đất"),
+        [
+            "phạm vi công chứng giao dịch bất động sản Điều 44 Luật Công chứng",
+        ],
+    ),
+    (
+        ("mua đất", "công chứng"),
+        [
+            "phạm vi công chứng giao dịch bất động sản Điều 44 Luật Công chứng",
+        ],
+    ),
+    (
+        ("kiện", "tòa"),
+        [
+            "thẩm quyền của Tòa án theo lãnh thổ nơi bị đơn cư trú Điều 39 Bộ luật Tố tụng dân sự",
+        ],
+    ),
+    (
+        ("nộp đơn", "tòa"),
+        [
+            "thẩm quyền của Tòa án theo lãnh thổ nơi bị đơn cư trú Điều 39 Bộ luật Tố tụng dân sự",
+        ],
+    ),
+    (
+        ("mua hàng", "lỗi"),
+        [
+            "quyền của người tiêu dùng yêu cầu bồi thường sản phẩm hàng hóa dịch vụ không đúng cam kết Điều 4",
+        ],
+    ),
+    (
+        ("bảo hiểm xã hội", "15 năm"),
+        [
+            "điều kiện hưởng lương hưu thời gian đóng bảo hiểm xã hội từ đủ 15 năm Điều 64",
+        ],
+    ),
+    (
+        ("lương hưu", "15 năm"),
+        [
+            "điều kiện hưởng lương hưu thời gian đóng bảo hiểm xã hội từ đủ 15 năm Điều 64",
+        ],
+    ),
+]
 
 
 load_project_env()
@@ -59,6 +160,112 @@ def deduplicate_queries(queries: list[str]) -> list[str]:
     return ordered
 
 
+def build_rule_based_query_expansions(query: str) -> list[str]:
+    normalized = normalize_text(query)
+    expansions: list[str] = []
+    for triggers, generated_queries in COLLOQUIAL_QUERY_EXPANSIONS:
+        if all(normalize_text(trigger) in normalized for trigger in triggers):
+            expansions.extend(generated_queries)
+    return expansions
+
+
+def normalize_text(text: str) -> str:
+    normalized = str(text or "").casefold().replace("đ", "d")
+    normalized = unicodedata.normalize("NFD", normalized)
+    normalized = "".join(character for character in normalized if unicodedata.category(character) != "Mn")
+    return re.sub(r"\s+", " ", normalized).strip()
+
+
+def tokenize(text: str) -> list[str]:
+    return [token for token in TOKEN_RE.findall(normalize_text(text)) if len(token) >= 2]
+
+
+def extract_article_numbers(text: str) -> set[str]:
+    return {match.group(1).casefold() for match in ARTICLE_RE.finditer(str(text or ""))}
+
+
+def result_text(item: dict) -> str:
+    return " ".join(
+        str(item.get(key) or "")
+        for key in (
+            "source_file",
+            "document_title",
+            "article_number",
+            "clause_number",
+            "target_article",
+            "chapter",
+            "preview",
+            "text",
+        )
+    )
+
+
+def lexical_overlap_score(queries: list[str], item: dict) -> float:
+    query_tokens = set(token for query in queries for token in tokenize(query))
+    if not query_tokens:
+        return 0.0
+    text_tokens = set(tokenize(result_text(item)))
+    if not text_tokens:
+        return 0.0
+    return len(query_tokens & text_tokens) / len(query_tokens)
+
+
+def article_match_score(queries: list[str], item: dict) -> float:
+    query_articles = {article for query in queries for article in extract_article_numbers(query)}
+    if not query_articles:
+        return 0.0
+    actual_article = normalize_text(item.get("article_number"))
+    target_article = normalize_text(item.get("target_article"))
+    if actual_article in query_articles:
+        return 1.0
+    if any(article and article in target_article for article in query_articles):
+        return 0.6
+    return 0.0
+
+
+def source_coverage_score(item: dict) -> float:
+    sources = set(item.get("sources") or [])
+    if {"bm25", "vector"}.issubset(sources):
+        return 1.0
+    if sources:
+        return 0.4
+    return 0.0
+
+
+def rerank_results(results: list[dict], *, queries: list[str], top_k: int) -> list[dict]:
+    if not results:
+        return []
+
+    max_rrf = max(float(item.get("rrf_score") or 0.0) for item in results) or 1.0
+    reranked: list[dict] = []
+    for item in results:
+        rrf_component = float(item.get("rrf_score") or 0.0) / max_rrf
+        lexical_component = lexical_overlap_score(queries, item)
+        article_component = article_match_score(queries, item)
+        coverage_component = source_coverage_score(item)
+        rerank_score = (
+            0.55 * rrf_component
+            + 0.25 * lexical_component
+            + 0.15 * article_component
+            + 0.05 * coverage_component
+        )
+        reranked.append(
+            {
+                **item,
+                "rerank_score": round(rerank_score, 6),
+                "rerank_features": {
+                    "rrf": round(rrf_component, 6),
+                    "lexical_overlap": round(lexical_component, 6),
+                    "article_match": round(article_component, 6),
+                    "source_coverage": round(coverage_component, 6),
+                },
+            }
+        )
+
+    reranked.sort(key=lambda item: item["rerank_score"], reverse=True)
+    return reranked[:top_k]
+
+
 def rewrite_query_with_llm(query: str, *, model: str, max_rewrites: int) -> dict:
     client = get_openai_client()
     response = client.chat.completions.create(
@@ -94,15 +301,16 @@ def build_retrieval_queries(
     rewrite_model: str,
     max_rewrites: int,
 ) -> dict:
+    rule_based_queries = build_rule_based_query_expansions(query)
     if rewrite_mode == "none":
         return {
             "original_query": query,
             "legal_intent": "",
-            "retrieval_queries": [query],
+            "retrieval_queries": deduplicate_queries([query, *rule_based_queries]),
         }
 
     rewritten = rewrite_query_with_llm(query, model=rewrite_model, max_rewrites=max_rewrites)
-    retrieval_queries = deduplicate_queries([query, *rewritten["retrieval_queries"]])
+    retrieval_queries = deduplicate_queries([query, *rule_based_queries, *rewritten["retrieval_queries"]])
     return {
         "original_query": query,
         "legal_intent": rewritten["legal_intent"],
@@ -249,7 +457,7 @@ def vector_search(
     return faiss_vector_search(query, vector_dir, top_k, embedding_model=embedding_model)
 
 
-def reciprocal_rank_fusion(*ranked_lists: list[dict], top_k: int, k: int = 60) -> list[dict]:
+def reciprocal_rank_fusion(*ranked_lists: list[dict], candidate_k: int, k: int = 60) -> list[dict]:
     merged: dict[str, dict] = {}
 
     for ranked_list in ranked_lists:
@@ -271,7 +479,7 @@ def reciprocal_rank_fusion(*ranked_lists: list[dict], top_k: int, k: int = 60) -
             merged[chunk_id]["rrf_score"] += 1.0 / (k + rank)
 
     results = sorted(merged.values(), key=lambda item: item["rrf_score"], reverse=True)
-    return results[:top_k]
+    return results[:candidate_k]
 
 
 def finalize_single_source_results(results: list[dict], *, top_k: int) -> list[dict]:
@@ -306,6 +514,7 @@ def hybrid_search(
     final_top_k: int,
 ) -> list[dict]:
     active_queries = retrieval_queries or [query]
+    candidate_k = max(final_top_k * 4, final_top_k, 20)
 
     bm25_ranked_lists: list[list[dict]] = []
     if retrieval_mode in {"bm25", "hybrid"}:
@@ -334,16 +543,24 @@ def hybrid_search(
 
     if retrieval_mode == "vector":
         if len(vector_ranked_lists) <= 1:
-            return finalize_single_source_results(vector_ranked_lists[0] if vector_ranked_lists else [], top_k=final_top_k)
-        return reciprocal_rank_fusion(*vector_ranked_lists, top_k=final_top_k)
+            candidates = finalize_single_source_results(vector_ranked_lists[0] if vector_ranked_lists else [], top_k=candidate_k)
+        else:
+            candidates = reciprocal_rank_fusion(*vector_ranked_lists, candidate_k=candidate_k)
+        return rerank_results(candidates, queries=active_queries, top_k=final_top_k)
     if retrieval_mode == "bm25":
         if len(bm25_ranked_lists) <= 1:
-            return finalize_single_source_results(bm25_ranked_lists[0] if bm25_ranked_lists else [], top_k=final_top_k)
-        return reciprocal_rank_fusion(*bm25_ranked_lists, top_k=final_top_k)
-    return reciprocal_rank_fusion(*bm25_ranked_lists, *vector_ranked_lists, top_k=final_top_k)
+            candidates = finalize_single_source_results(bm25_ranked_lists[0] if bm25_ranked_lists else [], top_k=candidate_k)
+        else:
+            candidates = reciprocal_rank_fusion(*bm25_ranked_lists, candidate_k=candidate_k)
+        return rerank_results(candidates, queries=active_queries, top_k=final_top_k)
+    candidates = reciprocal_rank_fusion(*bm25_ranked_lists, *vector_ranked_lists, candidate_k=candidate_k)
+    return rerank_results(candidates, queries=active_queries, top_k=final_top_k)
 
 
 def main() -> None:
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
     parser = argparse.ArgumentParser(description="Retrieval: BM25, vector-only, hoac hybrid")
     parser.add_argument("query", help="Natural language legal query")
     parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")

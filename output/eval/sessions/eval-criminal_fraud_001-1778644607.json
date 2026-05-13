@@ -1,0 +1,31 @@
+{
+  "session_id": "eval-criminal_fraud_001-1778644607",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-e8b691c6b862",
+      "role": "user",
+      "content": "Dùng thủ đoạn gian dối để chiếm đoạt 20 triệu đồng của người khác thì có thể phạm tội gì?",
+      "timestamp": "2026-05-13T03:56:47.457342+00:00"
+    },
+    {
+      "id": "msg-5cd46a7f8af6",
+      "role": "assistant",
+      "content": "**Nhận định chính:**  \nVới tình tiết “**dùng thủ đoạn gian dối để chiếm đoạt 20 triệu đồng của người khác**”, trong context hiện có **có thể cấu thành Tội lừa đảo chiếm đoạt tài sản** theo **Điều 174 Bộ luật Hình sự 2015**. Vì giá trị tài sản là **20 triệu đồng**, nên nếu đúng là **bằng thủ đoạn gian dối chiếm đoạt** thì thuộc ngưỡng **từ 2.000.000 đồng đến dưới 50.000.000 đồng**, khung cơ bản của Điều 174.\n\n**Căn cứ:**  \n- **Điều 174 BLHS 2015**: Người nào **bằng thủ đoạn gian dối chiếm đoạt tài sản của người khác trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng** thì bị phạt **cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm**.  \n- Ngoài ra, Điều 174 còn nêu các trường hợp khác dù tài sản dưới 2 triệu đồng vẫn có thể bị xử lý nếu có tình tiết đặc biệt; nhưng với **20 triệu đồng** thì đã vượt ngưỡng tối thiểu.\n\n**Hướng đánh giá theo context hiện có:**  \n- **Nếu** người phạm tội **dùng gian dối ngay từ đầu để làm người bị hại giao tài sản rồi chiếm đoạt**, thì **nghiêng về Điều 174**.  \n- **Nếu** tài sản được giao trước theo quan hệ **vay, mượn, thuê, hợp đồng** rồi sau đó mới dùng gian dối để chiếm đoạt hoặc cố tình không trả, thì **có thể xem xét Điều 175 – Tội lạm dụng tín nhiệm chiếm đoạt tài sản**.  \n- Trong dữ kiện hiện có, mới chỉ biết là **“dùng thủ đoạn gian dối để chiếm đoạt”**, nên **khả năng phù hợp nhất là Điều 174**.\n\n**Cần bổ sung thêm:**  \nTài sản 20 triệu đồng đã bị chiếm đoạt **bằng cách lừa để người bị hại tự giao tài sản**, hay là **đã nhận tài sản trước theo vay/mượn/hợp đồng rồi mới chiếm đoạt**?",
+      "timestamp": "2026-05-13T03:57:01.677107+00:00"
+    }
+  ],
+  "facts": {
+    "amount_vnd": 20000000,
+    "conduct": "dùng thủ đoạn gian dối để chiếm đoạt tài sản",
+    "victim": "người khác",
+    "case_stage": "chỉ mới là câu hỏi pháp lý, chưa có tình tiết vụ việc cụ thể",
+    "known_context": "chưa có tình tiết vụ việc đã lưu"
+  },
+  "case_summary": "Người dùng hỏi về việc dùng thủ đoạn gian dối để chiếm đoạt 20 triệu đồng của người khác và muốn biết có thể cấu thành tội gì theo pháp luật hình sự Việt Nam. Hiện chưa có thêm tình tiết về cách thức gian dối, thời điểm, quan hệ giữa các bên, hay việc tài sản đã được giao hay chưa.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Pháp luật hình sự Việt Nam về tội lừa đảo chiếm đoạt tài sản theo Điều 174 Bộ luật Hình sự 2015 (sửa đổi, bổ sung 2017), dấu hiệu dùng thủ đoạn gian dối để chiếm đoạt tài sản trị giá 20 triệu đồng, phân biệt với tội lạm dụng tín nhiệm chiếm đoạt tài sản và các tội xâm phạm sở hữu khác, ngưỡng định lượng truy cứu trách nhiệm hình sự và khung hình phạt tương ứng",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:57:01.677305+00:00"
+}

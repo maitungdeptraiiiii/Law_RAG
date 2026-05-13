@@ -1,0 +1,31 @@
+{
+  "session_id": "eval-enterprise_board_authority_001-1778644811",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-e424d2ff5c38",
+      "role": "user",
+      "content": "Hội đồng quản trị trong công ty cổ phần có vai trò gì?",
+      "timestamp": "2026-05-13T04:00:12.089382+00:00"
+    },
+    {
+      "id": "msg-28a9bbce72b9",
+      "role": "assistant",
+      "content": "Trong công ty cổ phần, **Hội đồng quản trị là một cơ quan quản lý của công ty**, nằm trong cơ cấu tổ chức quản lý cùng với Đại hội đồng cổ đông và Giám đốc/Tổng giám đốc; trong một số mô hình còn có Ban kiểm soát hoặc Ủy ban kiểm toán.\n\n**Căn cứ:**\n- **Điều 137 Luật Doanh nghiệp 2020**: công ty cổ phần được tổ chức theo mô hình có **Hội đồng quản trị**; có thể kèm Ban kiểm soát hoặc Ủy ban kiểm toán tùy mô hình.\n- **Điều 138 Luật Doanh nghiệp 2020**: Đại hội đồng cổ đông là **cơ quan quyết định cao nhất**, nên Hội đồng quản trị là cơ quan quản lý ở cấp dưới, thực hiện quản trị công ty theo mô hình được lựa chọn.\n- **Điều 167 khoản 1 Luật Doanh nghiệp 2020**: trong một số giao dịch với người có liên quan, **Đại hội đồng cổ đông hoặc Hội đồng quản trị** có thẩm quyền chấp thuận, cho thấy Hội đồng quản trị có vai trò quyết định/giám sát đối với một số vấn đề quản trị quan trọng.\n\n**Tóm tắt vai trò có thể rút ra từ context hiện có:**\n- Nếu công ty theo mô hình quản trị thông thường, **Hội đồng quản trị là bộ phận quản lý, điều hành ở cấp chiến lược** của công ty.\n- Nếu công ty có giao dịch với người có liên quan thuộc các trường hợp luật nêu, **Hội đồng quản trị có thể là cơ quan chấp thuận giao dịch**.\n- Nếu Điều lệ công ty quy định người đại diện theo pháp luật là Chủ tịch Hội đồng quản trị, thì **Chủ tịch HĐQT còn có thể là người đại diện theo pháp luật** của công ty.\n\n**Phần chưa rõ:** context hiện có chưa nêu trực tiếp toàn bộ quyền, nghĩa vụ cụ thể của Hội đồng quản trị, nên chưa thể liệt kê đầy đủ chức năng chi tiết hơn.\n\nCần bổ sung thêm: Bạn muốn mình nêu **quyền và nghĩa vụ cụ thể của Hội đồng quản trị** theo Luật Doanh nghiệp 2020 không?",
+      "timestamp": "2026-05-13T04:00:26.938581+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "entity_type": "công ty cổ phần",
+    "topic": "vai trò/chức năng của Hội đồng quản trị",
+    "known_dispute_or_transaction": false,
+    "specific_company_details": null
+  },
+  "case_summary": "Người dùng đang hỏi về vai trò của Hội đồng quản trị trong công ty cổ phần theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi mang tính khái quát.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Vai trò, quyền và nghĩa vụ của Hội đồng quản trị trong công ty cổ phần theo Luật Doanh nghiệp Việt Nam; thẩm quyền quản trị, quyết định chiến lược, giám sát điều hành của Hội đồng quản trị; mối quan hệ giữa Hội đồng quản trị, Đại hội đồng cổ đông và Giám đốc/Tổng giám đốc trong công ty cổ phần",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:00:26.938818+00:00"
+}

@@ -1,0 +1,30 @@
+{
+  "session_id": "eval-enterprise_jsc_definition_001-1778644784",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-0892a2f2b81f",
+      "role": "user",
+      "content": "Công ty cổ phần có đặc điểm pháp lý cơ bản nào?",
+      "timestamp": "2026-05-13T03:59:44.307487+00:00"
+    },
+    {
+      "id": "msg-7c66d520c08a",
+      "role": "assistant",
+      "content": "Công ty cổ phần có các đặc điểm pháp lý cơ bản sau:\n\n1. **Vốn điều lệ được chia thành nhiều phần bằng nhau gọi là cổ phần**.  \n2. **Cổ đông có thể là tổ chức hoặc cá nhân**; **tối thiểu 03 cổ đông** và **không hạn chế số lượng tối đa**.  \n3. **Cổ đông chỉ chịu trách nhiệm trong phạm vi số vốn đã góp** vào doanh nghiệp.  \n4. **Cổ đông được tự do chuyển nhượng cổ phần**, trừ các trường hợp luật định tại **khoản 3 Điều 120** và **khoản 1 Điều 127**.  \n5. **Có tư cách pháp nhân** kể từ ngày được cấp **Giấy chứng nhận đăng ký doanh nghiệp**.  \n6. **Có quyền phát hành cổ phần, trái phiếu và các loại chứng khoán khác** của công ty.\n\n**Căn cứ:** Điều 111 Luật Doanh nghiệp 2020.\n\nTrong context hiện có, có thể khẳng định đây là các đặc điểm pháp lý cơ bản nhất của công ty cổ phần theo luật Việt Nam.",
+      "timestamp": "2026-05-13T03:59:56.664092+00:00"
+    }
+  ],
+  "facts": {
+    "entity_type": "công ty cổ phần",
+    "jurisdiction": "Việt Nam",
+    "issue": "hỏi về đặc điểm pháp lý cơ bản của công ty cổ phần",
+    "case_specific_facts": []
+  },
+  "case_summary": "Người dùng đang hỏi về đặc điểm pháp lý cơ bản của công ty cổ phần theo pháp luật Việt Nam, chưa có tình tiết vụ việc cụ thể nào khác.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Đặc điểm pháp lý cơ bản của công ty cổ phần theo Luật Doanh nghiệp Việt Nam: tư cách pháp nhân, vốn điều lệ chia thành cổ phần, trách nhiệm hữu hạn của cổ đông, số lượng cổ đông tối thiểu, khả năng phát hành cổ phần/chứng khoán, cơ cấu tổ chức quản trị và chuyển nhượng cổ phần",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:59:56.664281+00:00"
+}

@@ -1,0 +1,36 @@
+{
+  "session_id": "eval-civil_inheritance_time_limit_001-1778644550",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-3ad5f3024f5a",
+      "role": "user",
+      "content": "Thời hiệu yêu cầu chia di sản thừa kế là bao lâu?",
+      "timestamp": "2026-05-13T03:55:51.096367+00:00"
+    },
+    {
+      "id": "msg-92065028ab8f",
+      "role": "assistant",
+      "content": "**Nhận định chính:**  \nThời hiệu để **người thừa kế yêu cầu chia di sản** là:\n\n- **30 năm** đối với **bất động sản**  \n- **10 năm** đối với **động sản**  \n\nvà được tính **từ thời điểm mở thừa kế**.\n\n**Căn cứ:**  \n- **Điều 623 khoản 1 Bộ luật Dân sự 2015**: quy định thời hiệu yêu cầu chia di sản là 30 năm với bất động sản, 10 năm với động sản, kể từ thời điểm mở thừa kế.\n\n**Lưu ý theo context hiện có:**  \n- Nếu **hết thời hạn này**, di sản **thuộc về người thừa kế đang quản lý di sản**.  \n- Nếu **không có người thừa kế đang quản lý di sản** thì:\n  - di sản thuộc về **người đang chiếm hữu** theo **Điều 236 BLDS 2015**; hoặc\n  - thuộc về **Nhà nước** nếu không có người chiếm hữu theo quy định trên.\n\n**Cần bổ sung thêm:**  \nDi sản là **bất động sản hay động sản**, và **thời điểm mở thừa kế** là khi nào?",
+      "timestamp": "2026-05-13T03:56:02.796737+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Thời hiệu yêu cầu chia di sản thừa kế",
+    "jurisdiction": "Việt Nam",
+    "known_context": [],
+    "unknown_context": [
+      "Loại di sản",
+      "Thời điểm mở thừa kế",
+      "Có di chúc hay không",
+      "Tình trạng quản lý/sử dụng di sản",
+      "Quan hệ giữa các bên"
+    ]
+  },
+  "case_summary": "Người dùng đang hỏi về thời hiệu yêu cầu chia di sản thừa kế theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác (chưa rõ di sản là bất động sản hay động sản, thời điểm mở thừa kế, có di chúc hay không, các bên tranh chấp là ai).",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Thời hiệu yêu cầu chia di sản thừa kế theo Bộ luật Dân sự 2015 Việt Nam; thời hiệu khởi kiện yêu cầu chia di sản thừa kế; thời hiệu đối với bất động sản và động sản; thời hiệu yêu cầu xác nhận quyền thừa kế, bác bỏ quyền thừa kế, yêu cầu thực hiện nghĩa vụ tài sản của người chết để lại; thời điểm mở thừa kế và hậu quả hết thời hiệu",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:56:02.796965+00:00"
+}

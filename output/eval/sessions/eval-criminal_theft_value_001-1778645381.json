@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-criminal_theft_value_001-1778645381",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-c262be66da78",
+      "role": "user",
+      "content": "Trộm cắp tài sản trị giá 3 triệu đồng thì có thể bị truy cứu trách nhiệm hình sự không?",
+      "timestamp": "2026-05-13T04:09:41.390857+00:00"
+    },
+    {
+      "id": "msg-efa743610720",
+      "role": "assistant",
+      "content": "Có. **Với tài sản trị giá 3 triệu đồng, hành vi trộm cắp vẫn có thể bị truy cứu trách nhiệm hình sự**.\n\n**Căn cứ:** Điều 173 Bộ luật Hình sự 2015 (đã được sửa đổi, bổ sung năm 2017) quy định: người nào trộm cắp tài sản của người khác **trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng** thì bị phạt **cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm**.\n\n**Trong trường hợp 3 triệu đồng:**\n- **Nếu chỉ xét giá trị tài sản**: đã **đủ ngưỡng 2 triệu đồng**, nên **có thể bị truy cứu TNHS** theo khoản 1 Điều 173.\n- **Nếu có tình tiết khác** như đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt mà còn vi phạm, đã bị kết án về tội chiếm đoạt chưa được xóa án tích mà còn vi phạm, hoặc tài sản là phương tiện kiếm sống chính của bị hại, thì vẫn thuộc trường hợp bị xử lý hình sự theo Điều 173.\n- **Nếu không có các tình tiết này** thì với mức 3 triệu đồng, vẫn **đủ căn cứ truy cứu** vì đã vượt ngưỡng 2 triệu đồng.\n\n**Kết luận ngắn:** 3 triệu đồng **có thể bị truy cứu trách nhiệm hình sự về tội trộm cắp tài sản** theo **khoản 1 Điều 173 BLHS**.\n\nCần bổ sung thêm: Hành vi này có thuộc trường hợp đã từng bị xử phạt vi phạm hành chính/đã có án tích hoặc có tình tiết đặc biệt nào khác không?",
+      "timestamp": "2026-05-13T04:09:55.748714+00:00"
+    }
+  ],
+  "facts": {
+    "offense": "Trộm cắp tài sản",
+    "estimated_value_vnd": 3000000,
+    "other_circumstances": []
+  },
+  "case_summary": "Người dùng hỏi về khả năng bị truy cứu trách nhiệm hình sự đối với hành vi trộm cắp tài sản trị giá 3 triệu đồng. Hiện chưa có tình tiết cụ thể nào khác về hoàn cảnh phạm tội, nhân thân, tiền án/tiền sự, hay các tình tiết định khung liên quan.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quy định pháp luật Việt Nam về truy cứu trách nhiệm hình sự đối với tội trộm cắp tài sản khi giá trị tài sản khoảng 3 triệu đồng; điều kiện cấu thành tội trộm cắp tài sản theo Bộ luật Hình sự 2015 sửa đổi 2017; trường hợp tài sản dưới 2 triệu hoặc từ 2 triệu đến dưới 50 triệu nhưng vẫn bị truy cứu do đã bị xử phạt vi phạm hành chính, đã có án tích về hành vi chiếm đoạt, hoặc thuộc các trường hợp đặc biệt khác; mức xử phạt hành chính đối với hành vi trộm cắp tài sản giá trị nhỏ.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:09:55.748952+00:00"
+}

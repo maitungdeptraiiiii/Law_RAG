@@ -1,0 +1,35 @@
+{
+  "session_id": "eval-domestic_violence_victim_rights_001-1778644881",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-431faefdb435",
+      "role": "user",
+      "content": "Người bị bạo lực gia đình có những quyền gì?",
+      "timestamp": "2026-05-13T04:01:21.680452+00:00"
+    },
+    {
+      "id": "msg-04cbdeff8cc3",
+      "role": "assistant",
+      "content": "Người bị bạo lực gia đình có các quyền chính sau theo **Điều 9 Luật Phòng, chống bạo lực gia đình 2022**:\n\n1. **Yêu cầu bảo vệ** sức khỏe, tính mạng, danh dự, nhân phẩm và các quyền, lợi ích hợp pháp liên quan;  \n2. **Yêu cầu áp dụng biện pháp ngăn chặn, bảo vệ, hỗ trợ** theo Luật này;  \n3. **Được bố trí nơi tạm lánh** và được giữ bí mật về nơi tạm lánh, đời sống riêng tư, bí mật cá nhân, bí mật gia đình;  \n4. **Được cung cấp dịch vụ y tế, tư vấn tâm lý, kỹ năng ứng phó, trợ giúp pháp lý và trợ giúp xã hội**;  \n5. **Yêu cầu người gây bạo lực khắc phục hậu quả, bồi thường** thiệt hại về sức khỏe, danh dự, nhân phẩm, tài sản;  \n6. **Được thông tin** về quyền, nghĩa vụ trong quá trình giải quyết mâu thuẫn, tranh chấp và xử lý hành vi bạo lực gia đình;  \n7. **Khiếu nại, tố cáo, khởi kiện** đối với hành vi vi phạm pháp luật về phòng, chống bạo lực gia đình;  \n8. Và **các quyền khác** theo pháp luật có liên quan.\n\nNgoài ra, theo **Điều 22**, người bị bạo lực gia đình còn có thể được áp dụng các biện pháp bảo vệ, hỗ trợ như: buộc chấm dứt hành vi bạo lực, cấm tiếp xúc, bố trí nơi tạm lánh, chăm sóc điều trị, trợ giúp pháp lý, tư vấn tâm lý, và các biện pháp bảo vệ khác theo quy định.\n\n**Căn cứ:** Điều 9 và Điều 22 Luật Phòng, chống bạo lực gia đình 2022.\n\nCần bổ sung thêm: Nếu bạn muốn, tôi có thể liệt kê riêng **quyền của nạn nhân theo từng tình huống** như bị đánh đập, bị đe dọa, bị ép ra khỏi nhà, hoặc bị kiểm soát tài sản.",
+      "timestamp": "2026-05-13T04:01:38.722018+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "issue_type": "quyền của người bị bạo lực gia đình",
+    "known_context": "Câu hỏi mang tính khái quát, chưa có vụ việc cụ thể",
+    "specific_incident": null,
+    "victim_identity": null,
+    "perpetrator_identity": null,
+    "violence_form": null,
+    "injury_or_damage": null,
+    "police_or_authority_involved": null
+  },
+  "case_summary": "Người dùng hỏi về các quyền của người bị bạo lực gia đình theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào về nạn nhân, người gây bạo lực, mức độ hành vi, thời điểm, hay cơ quan đã can thiệp.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quyền của người bị bạo lực gia đình theo pháp luật Việt Nam; quyền được bảo vệ tính mạng, sức khỏe, danh dự, nhân phẩm, chỗ ở an toàn; quyền yêu cầu ngăn chặn, cấm tiếp xúc, áp dụng biện pháp bảo vệ khẩn cấp; quyền tố giác, yêu cầu xử lý hành chính hoặc hình sự; Luật Phòng, chống bạo lực gia đình 2022, Bộ luật Tố tụng hình sự, Luật Xử lý vi phạm hành chính, biện pháp bảo vệ nạn nhân bạo lực gia đình",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:01:38.722194+00:00"
+}

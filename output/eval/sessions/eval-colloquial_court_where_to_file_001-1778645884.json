@@ -1,0 +1,34 @@
+{
+  "session_id": "eval-colloquial_court_where_to_file_001-1778645884",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-56e9c5f122be",
+      "role": "user",
+      "content": "Muốn kiện người ta thì nộp đơn ở tòa nào?",
+      "timestamp": "2026-05-13T04:18:04.290945+00:00"
+    },
+    {
+      "id": "msg-754eaaa95002",
+      "role": "assistant",
+      "content": "Bạn thường nộp đơn **tại Tòa án nơi bị đơn cư trú, làm việc hoặc có trụ sở**.\n\n**Căn cứ:** Điều 39 khoản 1 điểm a Bộ luật Tố tụng dân sự 2015.\n\n**Các trường hợp có thể khác:**\n- **Nếu các bên có thỏa thuận bằng văn bản** thì có thể nộp tại **Tòa án nơi cư trú/làm việc của nguyên đơn** hoặc nơi có trụ sở của nguyên đơn.  \n  - Căn cứ: Điều 39 khoản 1 điểm b.\n- **Nếu tranh chấp liên quan đến bất động sản** thì **chỉ Tòa án nơi có bất động sản** có thẩm quyền.  \n  - Căn cứ: Điều 39 khoản 1 điểm c.\n- **Nếu không biết nơi cư trú/làm việc/trụ sở của bị đơn** thì nguyên đơn có thể yêu cầu **Tòa án nơi bị đơn cư trú/làm việc/trụ sở cuối cùng hoặc nơi bị đơn có tài sản**.  \n  - Căn cứ: Điều 40 khoản 1 điểm a.\n- **Nếu bị đơn không có nơi cư trú/làm việc/trụ sở ở Việt Nam** thì nguyên đơn có thể yêu cầu **Tòa án nơi mình cư trú/làm việc/trụ sở**.  \n  - Căn cứ: Điều 40 khoản 1 điểm c.\n\n**Trong context hiện có, điều có thể khẳng định được là:** mặc định là nộp ở **Tòa án nơi bị đơn**; còn nếu có thỏa thuận hoặc thuộc trường hợp đặc biệt thì có thể nộp ở nơi khác như trên.\n\n**Cần bổ sung thêm:** Bị đơn đang cư trú/làm việc hoặc có trụ sở ở đâu, và tranh chấp có liên quan đến bất động sản hay có thỏa thuận chọn tòa không?",
+      "timestamp": "2026-05-13T04:18:17.109512+00:00"
+    }
+  ],
+  "facts": {
+    "dispute_type": null,
+    "plaintiff_location": null,
+    "defendant_location": null,
+    "place_of_dispute": null,
+    "subject_matter": null,
+    "amount_in_dispute": null,
+    "special_jurisdiction_factors": null,
+    "procedural_stage": "pre-filing"
+  },
+  "case_summary": "Người dùng hỏi chung về việc muốn khởi kiện thì phải nộp đơn ở tòa án nào. Hiện chưa có thông tin về loại tranh chấp, nơi cư trú/làm việc của bị đơn, địa điểm phát sinh tranh chấp, hay giá trị/yếu tố thẩm quyền đặc biệt nào khác.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "thẩm quyền tòa án nơi nộp đơn khởi kiện theo Bộ luật Tố tụng dân sự Việt Nam xác định tòa án có thẩm quyền theo lãnh thổ nơi cư trú làm việc trụ sở bị đơn nơi có bất động sản nơi thực hiện hợp đồng tranh chấp dân sự hôn nhân gia đình lao động kinh doanh thương mại hành chính",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:18:17.109690+00:00"
+}

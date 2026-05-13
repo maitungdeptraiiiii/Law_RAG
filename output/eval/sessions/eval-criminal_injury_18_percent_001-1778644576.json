@@ -1,0 +1,35 @@
+{
+  "session_id": "eval-criminal_injury_18_percent_001-1778644576",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-69c057a31f77",
+      "role": "user",
+      "content": "Cố ý gây thương tích cho người khác với tỷ lệ tổn thương cơ thể 18% thì có thể bị xử lý thế nào?",
+      "timestamp": "2026-05-13T03:56:16.838520+00:00"
+    },
+    {
+      "id": "msg-02c8f5f2de45",
+      "role": "assistant",
+      "content": "**Nhận định chính:**  \nVới tỷ lệ tổn thương cơ thể **18%**, hành vi **cố ý gây thương tích** có thể bị xử lý hình sự theo **Điều 134 Bộ luật Hình sự 2015**. Trong trường hợp thông thường, mức này thuộc khung **phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm**.\n\n**Căn cứ:**  \n- **Điều 134 khoản 1 BLHS 2015**: người nào cố ý gây thương tích mà tỷ lệ tổn thương cơ thể **từ 11% đến 30%** thì bị phạt **cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm**.  \n- **Điều 134 khoản 2 BLHS 2015**: nếu tỷ lệ **11% đến 30%** nhưng có thêm các tình tiết như **dùng hung khí/vũ khí nguy hiểm, có tổ chức, có tính chất côn đồ, thuê gây thương tích, đối với người dưới 16 tuổi, phụ nữ có thai, người già yếu, người không có khả năng tự vệ, tái phạm nguy hiểm, đối với người đang thi hành công vụ...** thì bị phạt **tù từ 02 năm đến 05 năm**.  \n- **Điều 52 BLHS 2015**: một số tình tiết như **có tổ chức, có tính chất côn đồ, tái phạm nguy hiểm, phạm tội đối với người dưới 16 tuổi, người không thể tự vệ...** cũng là tình tiết tăng nặng, nhưng nếu đã là dấu hiệu định khung thì không tính lại là tình tiết tăng nặng.\n\n**Trong context hiện có, có thể suy ra:**  \n- **Nếu chỉ có 18% thương tật và không có tình tiết định khung tăng nặng** thì khả năng áp dụng là **khoản 1 Điều 134**.  \n- **Nếu có một trong các tình tiết định khung của khoản 2** thì có thể bị xử lý nặng hơn theo **khoản 2 Điều 134**.\n\n**Cần bổ sung thêm:**  \nCó dùng **hung khí/vũ khí nguy hiểm**, **có tính chất côn đồ**, **có tổ chức**, hoặc nạn nhân thuộc nhóm đặc biệt (dưới 16 tuổi, có thai, già yếu, không tự vệ được) không?",
+      "timestamp": "2026-05-13T03:56:32.797885+00:00"
+    }
+  ],
+  "facts": {
+    "incident_type": "Cố ý gây thương tích",
+    "injury_rate": 18,
+    "victim_count": null,
+    "weapon_used": null,
+    "context": null,
+    "relationship_between_parties": null,
+    "aggravating_circumstances": [],
+    "prior_record": null,
+    "current_stage": null
+  },
+  "case_summary": "Người dùng hỏi về khả năng xử lý pháp lý đối với hành vi cố ý gây thương tích cho người khác với tỷ lệ tổn thương cơ thể 18%. Hiện chưa có thêm tình tiết về công cụ, hoàn cảnh, quan hệ giữa các bên, số người bị hại, có tính chất côn đồ hay không, có dùng hung khí hay không, có thuộc trường hợp phạm tội có tổ chức/tái phạm/đối với người đặc biệt yếu thế hay không.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Xử lý hình sự hành vi cố ý gây thương tích theo Điều 134 Bộ luật Hình sự Việt Nam khi tỷ lệ tổn thương cơ thể của bị hại là 18%; khung hình phạt, dấu hiệu cấu thành tội phạm, các tình tiết định khung tăng nặng như dùng hung khí nguy hiểm, có tính chất côn đồ, có tổ chức, đối với người dưới 16 tuổi/phụ nữ có thai/người già yếu/người không có khả năng tự vệ, và khả năng xử phạt hành chính hoặc trách nhiệm dân sự trong trường hợp không đủ yếu tố truy cứu hình sự.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:56:32.798057+00:00"
+}

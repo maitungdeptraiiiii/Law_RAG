@@ -1,0 +1,34 @@
+{
+  "session_id": "eval-colloquial_consumer_bad_product_001-1778645897",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-d8d1890de8b6",
+      "role": "user",
+      "content": "Mua hàng bị lỗi thì người mua có quyền đòi gì không?",
+      "timestamp": "2026-05-13T04:18:17.406698+00:00"
+    },
+    {
+      "id": "msg-7ac1d75ac3c4",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:** Có. Nếu hàng hóa bị lỗi/khuyết tật, người mua có thể yêu cầu bên bán **sửa chữa, đổi hàng, giảm giá, trả lại hàng lấy lại tiền, và/hoặc bồi thường thiệt hại** tùy trường hợp.\n\n**Căn cứ pháp lý:**\n- **Điều 445 Bộ luật Dân sự 2015**: nếu sau khi mua phát hiện khuyết tật làm mất hoặc giảm giá trị sử dụng, bên mua phải báo ngay cho bên bán và có quyền yêu cầu **sửa chữa, đổi vật có khuyết tật lấy vật khác, giảm giá và bồi thường thiệt hại**, trừ khi có thỏa thuận khác.\n- **Điều 447 Bộ luật Dân sự 2015**: trong **thời hạn bảo hành**, bên mua có quyền yêu cầu **sửa chữa không phải trả tiền, giảm giá, đổi hàng, hoặc trả lại hàng và lấy lại tiền**.\n- Nếu là giao dịch với **tổ chức/cá nhân kinh doanh** hoặc **cá nhân kinh doanh độc lập, thường xuyên**, thì theo **Điều 32 Luật Bảo vệ quyền lợi người tiêu dùng 2023** và **Điều 9 khoản 1 điểm d** của luật này, bên bán có trách nhiệm **thu hồi/xử lý hàng khuyết tật** và có thể phải **đổi hàng hoặc trả tiền** khi hàng không bảo đảm chất lượng, công dụng như đã cung cấp.\n\n**Trong context hiện có, có thể khẳng định:**\n- Nếu hàng **có khuyết tật** và người mua **thông báo kịp thời**, thì người mua có quyền đòi các biện pháp khắc phục nêu trên.\n- Nếu hàng thuộc **diện bảo hành**, quyền của người mua còn rõ hơn: có thể yêu cầu **sửa chữa miễn phí, đổi hàng, giảm giá, hoặc trả lại hàng lấy lại tiền**.\n- Nếu lỗi do **người mua biết/ phải biết khi mua**, hoặc do **người mua gây ra**, hoặc là **hàng đấu giá/hàng cũ**, thì bên bán có thể **không phải chịu trách nhiệm** theo Điều 445.\n\n**Cần bổ sung thêm:** Hàng bị lỗi là **lỗi phát hiện ngay khi nhận hay sau thời gian sử dụng**, và **có bảo hành/điều khoản đổi trả không**?",
+      "timestamp": "2026-05-13T04:18:31.005787+00:00"
+    }
+  ],
+  "facts": {
+    "transaction_type": "mua hàng hóa",
+    "issue": "hàng bị lỗi",
+    "buyer_rights_question": "người mua có quyền đòi gì",
+    "specific_circumstances": null,
+    "seller_type": null,
+    "contract_terms": null,
+    "warranty": null,
+    "time_of_discovery": null
+  },
+  "case_summary": "Người dùng hỏi chung về quyền của người mua khi hàng hóa mua bị lỗi/không phù hợp. Hiện chưa có tình tiết cụ thể về loại hàng, thời điểm phát hiện lỗi, thỏa thuận bảo hành, hay việc mua giữa cá nhân hay từ thương nhân.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quyền của người mua khi hàng hóa mua bị lỗi theo pháp luật Việt Nam; trách nhiệm của bên bán đối với hàng hóa không phù hợp chất lượng, hàng hóa có khuyết tật, quyền yêu cầu sửa chữa, đổi hàng, giảm giá, hủy hợp đồng, bồi thường thiệt hại; quy định về bảo hành, đổi trả, khiếu nại trong mua bán hàng hóa và bảo vệ quyền lợi người tiêu dùng",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:18:31.005989+00:00"
+}

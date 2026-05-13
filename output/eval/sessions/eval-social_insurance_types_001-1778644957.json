@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-social_insurance_types_001-1778644957",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-fd82318bd9ac",
+      "role": "user",
+      "content": "Luật Bảo hiểm xã hội 2024 quy định các loại hình và chế độ bảo hiểm xã hội nào?",
+      "timestamp": "2026-05-13T04:02:37.931993+00:00"
+    },
+    {
+      "id": "msg-0f6838e2a386",
+      "role": "assistant",
+      "content": "Theo **Điều 4 Luật Bảo hiểm xã hội 2024**, luật này quy định **5 loại hình bảo hiểm xã hội** và các **chế độ tương ứng** như sau:\n\n1. **Trợ cấp hưu trí xã hội** gồm:\n   - Trợ cấp hưu trí xã hội hằng tháng;\n   - Hỗ trợ chi phí mai táng;\n   - Hưởng bảo hiểm y tế do ngân sách nhà nước đóng.\n\n2. **Bảo hiểm xã hội bắt buộc** gồm:\n   - Ốm đau;\n   - Thai sản;\n   - Hưu trí;\n   - Tử tuất;\n   - Bảo hiểm tai nạn lao động, bệnh nghề nghiệp theo Luật An toàn, vệ sinh lao động.\n\n3. **Bảo hiểm xã hội tự nguyện** gồm:\n   - Trợ cấp thai sản;\n   - Hưu trí;\n   - Tử tuất;\n   - Bảo hiểm tai nạn lao động theo Luật An toàn, vệ sinh lao động.\n\n4. **Bảo hiểm thất nghiệp**: theo quy định của **Luật Việc làm**.\n\n5. **Bảo hiểm hưu trí bổ sung**.\n\n**Căn cứ:** Điều 4 Luật Bảo hiểm xã hội 2024.",
+      "timestamp": "2026-05-13T04:02:50.094172+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "legal_issue": "Xác định các loại hình và chế độ bảo hiểm xã hội theo Luật Bảo hiểm xã hội 2024",
+    "user_request_type": "tra cứu quy định pháp luật"
+  },
+  "case_summary": "Người dùng đang hỏi về nội dung quy định của Luật Bảo hiểm xã hội 2024, cụ thể là các loại hình bảo hiểm xã hội và các chế độ bảo hiểm xã hội được luật này quy định.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Luật Bảo hiểm xã hội 2024 quy định các loại hình bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện, bảo hiểm hưu trí bổ sung và các chế độ bảo hiểm xã hội gồm ốm đau, thai sản, tai nạn lao động, bệnh nghề nghiệp, hưu trí, tử tuất; phạm vi áp dụng, đối tượng tham gia, điều kiện hưởng và điểm mới của Luật BHXH 2024",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:02:50.094418+00:00"
+}

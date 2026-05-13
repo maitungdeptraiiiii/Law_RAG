@@ -1,0 +1,31 @@
+{
+  "session_id": "eval-consumer_business_information_001-1778644912",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-598ef51f1a94",
+      "role": "user",
+      "content": "Tổ chức, cá nhân kinh doanh phải cung cấp thông tin gì về sản phẩm, hàng hóa, dịch vụ cho người tiêu dùng?",
+      "timestamp": "2026-05-13T04:01:52.411005+00:00"
+    },
+    {
+      "id": "msg-2bf2acaf8293",
+      "role": "assistant",
+      "content": "**Nhận định chính:**  \nTổ chức, cá nhân kinh doanh phải cung cấp **thông tin chính xác, đầy đủ** về sản phẩm, hàng hóa, dịch vụ cho người tiêu dùng; đồng thời còn phải cung cấp thêm một số thông tin liên quan khác theo Luật Bảo vệ quyền lợi người tiêu dùng 2023.\n\n**Căn cứ:** Điều 21 Luật Bảo vệ quyền lợi người tiêu dùng 2023.\n\n**Cụ thể, phải cung cấp các thông tin sau:**\n1. **Về sản phẩm, hàng hóa, dịch vụ**, gồm:  \n   - đo lường, số lượng, khối lượng, chất lượng, công dụng;  \n   - giá, xuất xứ hàng hóa;  \n   - thời hạn sử dụng;  \n   - phí, chi phí;  \n   - phương thức, thời hạn giao hàng;  \n   - phương thức vận chuyển, thanh toán.\n2. **Về tổ chức, cá nhân kinh doanh**.\n3. **Về nhận xét, đánh giá của người tiêu dùng** về sản phẩm, hàng hóa, dịch vụ, tổ chức, cá nhân kinh doanh (nếu có).\n4. **Thông tin về khả năng cung ứng linh kiện, phụ kiện thay thế** của sản phẩm, hàng hóa.\n5. **Hướng dẫn sử dụng** và **chính sách bảo hành** nếu sản phẩm, hàng hóa, dịch vụ có bảo hành.\n6. **Thông tin minh bạch về thành phần, chức năng, lợi ích khác biệt** đối với sản phẩm, hàng hóa/dịch vụ dành riêng cho từng giới tính.\n7. **Thông báo chính xác, đầy đủ về hợp đồng theo mẫu, điều kiện giao dịch chung** trước khi giao dịch.\n\n**Ngoài ra**, tổ chức, cá nhân kinh doanh còn phải:\n- ghi nhãn hàng hóa trung thực, rõ ràng, chính xác;\n- niêm yết giá theo quy định pháp luật về giá.\n\nNếu bạn muốn, tôi có thể tóm tắt tiếp thành **một checklist ngắn để áp dụng thực tế cho doanh nghiệp**.",
+      "timestamp": "2026-05-13T04:02:07.719365+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Nghĩa vụ cung cấp thông tin của tổ chức, cá nhân kinh doanh đối với người tiêu dùng",
+    "jurisdiction": "Việt Nam",
+    "case_type": "tư vấn pháp luật tiêu dùng",
+    "known_facts": [],
+    "user_question": "Tổ chức, cá nhân kinh doanh phải cung cấp thông tin gì về sản phẩm, hàng hóa, dịch vụ cho người tiêu dùng?"
+  },
+  "case_summary": "Người dùng đang hỏi về nghĩa vụ của tổ chức, cá nhân kinh doanh trong việc cung cấp thông tin về sản phẩm, hàng hóa, dịch vụ cho người tiêu dùng theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi mang tính khái quát pháp lý.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Nghĩa vụ cung cấp thông tin của tổ chức cá nhân kinh doanh đối với người tiêu dùng theo Luật Bảo vệ quyền lợi người tiêu dùng Việt Nam; thông tin bắt buộc về sản phẩm hàng hóa dịch vụ; nội dung phải cung cấp cho người tiêu dùng; trách nhiệm cung cấp thông tin trung thực đầy đủ chính xác; quy định pháp luật về ghi nhãn hàng hóa, công bố thông tin sản phẩm dịch vụ, điều kiện giao dịch và cảnh báo rủi ro",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:02:07.719559+00:00"
+}

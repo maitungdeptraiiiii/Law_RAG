@@ -1,0 +1,35 @@
+{
+  "session_id": "eval-social_insurance_types_001-1778645732",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-ef28eb4838f1",
+      "role": "user",
+      "content": "Luật Bảo hiểm xã hội 2024 quy định các loại hình và chế độ bảo hiểm xã hội nào?",
+      "timestamp": "2026-05-13T04:15:33.026545+00:00"
+    },
+    {
+      "id": "msg-2edb001a2dd7",
+      "role": "assistant",
+      "content": "Theo **Điều 4 Luật Bảo hiểm xã hội 2024**, luật này quy định các **loại hình bảo hiểm xã hội** và **chế độ** tương ứng như sau:\n\n1. **Trợ cấp hưu trí xã hội**, gồm:\n   - Trợ cấp hưu trí xã hội hằng tháng;\n   - Hỗ trợ chi phí mai táng;\n   - Hưởng bảo hiểm y tế do ngân sách nhà nước đóng.\n\n2. **Bảo hiểm xã hội bắt buộc**, gồm các chế độ:\n   - Ốm đau;\n   - Thai sản;\n   - Hưu trí;\n   - Tử tuất;\n   - Bảo hiểm tai nạn lao động, bệnh nghề nghiệp theo Luật An toàn, vệ sinh lao động.\n\n3. **Bảo hiểm xã hội tự nguyện**, gồm các chế độ:\n   - Trợ cấp thai sản;\n   - Hưu trí;\n   - Tử tuất;\n   - Bảo hiểm tai nạn lao động theo Luật An toàn, vệ sinh lao động.\n\n4. Ngoài ra, luật còn quy định:\n   - **Bảo hiểm thất nghiệp** theo Luật Việc làm;\n   - **Bảo hiểm hưu trí bổ sung**.\n\n**Căn cứ:** Điều 4 Luật Bảo hiểm xã hội 2024.\n\nTrong context hiện có, có thể khẳng định luật đã phân loại rõ 5 nhóm nội dung nêu trên; riêng **bảo hiểm thất nghiệp** và **bảo hiểm hưu trí bổ sung** được luật dẫn chiếu sang luật chuyên ngành/thiết kế riêng, không liệt kê thành các chế độ như 3 nhóm đầu.",
+      "timestamp": "2026-05-13T04:15:45.016805+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "legal_topic": "Bảo hiểm xã hội",
+    "question_type": "Tra cứu quy định pháp luật",
+    "requested_law": "Luật Bảo hiểm xã hội 2024",
+    "requested_scope": [
+      "các loại hình bảo hiểm xã hội",
+      "các chế độ bảo hiểm xã hội"
+    ],
+    "case_context": "Chưa có tình tiết vụ việc cá nhân cụ thể"
+  },
+  "case_summary": "Người dùng đang hỏi về nội dung quy định của Luật Bảo hiểm xã hội 2024, cụ thể là các loại hình và các chế độ bảo hiểm xã hội được luật này quy định.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Luật Bảo hiểm xã hội 2024 quy định các loại hình bảo hiểm xã hội bắt buộc, bảo hiểm xã hội tự nguyện và các chế độ bảo hiểm xã hội gồm ốm đau, thai sản, hưu trí, tử tuất, tai nạn lao động, bệnh nghề nghiệp, bảo hiểm thất nghiệp (nếu có liên quan theo hệ thống pháp luật hiện hành), phạm vi áp dụng, đối tượng tham gia và điểm mới của Luật BHXH 2024",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:15:45.017015+00:00"
+}

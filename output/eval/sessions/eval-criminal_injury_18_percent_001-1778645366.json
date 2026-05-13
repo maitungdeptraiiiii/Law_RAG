@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-criminal_injury_18_percent_001-1778645366",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-957f54ed68a4",
+      "role": "user",
+      "content": "Cố ý gây thương tích cho người khác với tỷ lệ tổn thương cơ thể 18% thì có thể bị xử lý thế nào?",
+      "timestamp": "2026-05-13T04:09:26.843872+00:00"
+    },
+    {
+      "id": "msg-358dbce7c0c5",
+      "role": "assistant",
+      "content": "Với tỷ lệ tổn thương cơ thể **18%**, hành vi **cố ý gây thương tích** có thể bị xử lý hình sự theo **Điều 134 BLHS 2015**.\n\n**Nhận định chính:**\n- Nếu chỉ xét riêng tỷ lệ **18%** và **không có tình tiết định khung tăng nặng**, thì thuộc **khoản 1 Điều 134**:  \n  **phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm**.\n- Nếu có các tình tiết như **dùng hung khí nguy hiểm, có tổ chức, thuê gây thương tích, có tính chất côn đồ, đối với người dưới 16 tuổi/người không có khả năng tự vệ, đối với người đang thi hành công vụ, tái phạm nguy hiểm...** thì có thể chuyển sang **khoản 2 Điều 134**, với mức **phạt tù từ 02 năm đến 05 năm**.\n\n**Căn cứ:**\n- **Điều 134 khoản 1 BLHS 2015**: tỷ lệ tổn thương cơ thể **từ 11% đến 30%** thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm.\n- **Điều 134 khoản 2 BLHS 2015**: nếu tỷ lệ **11% đến 30%** nhưng có các tình tiết quy định tại các điểm a, b, d, đ, e, g, h, i, k, l, m, n, o khoản 1 thì bị phạt tù từ 02 năm đến 05 năm.\n\n**Trong context hiện có, có thể khẳng định:**\n- **18%** là mức đủ để xem xét trách nhiệm hình sự theo **Điều 134**.\n- Mức xử lý cụ thể sẽ phụ thuộc vào việc có hay không các tình tiết định khung tăng nặng.\n\n**Cần bổ sung thêm:** Có dùng hung khí/vũ khí, có tổ chức, có tính chất côn đồ, hoặc có thuộc các trường hợp tăng nặng tại khoản 1 Điều 134 không?",
+      "timestamp": "2026-05-13T04:09:41.115666+00:00"
+    }
+  ],
+  "facts": {
+    "offense": "cố ý gây thương tích",
+    "injury_rate_percent": 18,
+    "other_details_provided": false
+  },
+  "case_summary": "Người dùng hỏi về khả năng xử lý pháp lý đối với hành vi cố ý gây thương tích cho người khác với tỷ lệ tổn thương cơ thể 18%. Hiện chưa có thêm tình tiết về công cụ, hoàn cảnh, quan hệ giữa các bên, có đồng phạm hay không, hoặc có thuộc trường hợp loại trừ/trường hợp tăng nặng nào không.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Xử lý hình sự hành vi cố ý gây thương tích theo Điều 134 Bộ luật Hình sự Việt Nam khi tỷ lệ tổn thương cơ thể của bị hại là 18%, các trường hợp định khung tăng nặng, khởi tố theo yêu cầu bị hại, mức phạt tù và phạt tiền, phân biệt trách nhiệm hình sự và xử phạt hành chính",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:09:41.115831+00:00"
+}

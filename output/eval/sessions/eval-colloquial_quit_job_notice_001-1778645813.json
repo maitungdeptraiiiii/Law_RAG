@@ -1,0 +1,35 @@
+{
+  "session_id": "eval-colloquial_quit_job_notice_001-1778645813",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-78c83c894afc",
+      "role": "user",
+      "content": "Tôi muốn nghỉ việc thì phải báo trước mấy ngày?",
+      "timestamp": "2026-05-13T04:16:53.669316+00:00"
+    },
+    {
+      "id": "msg-47a3e78656dd",
+      "role": "assistant",
+      "content": "Bạn muốn nghỉ việc thì **thời hạn báo trước phụ thuộc vào loại hợp đồng lao động**:\n\n- **Ít nhất 45 ngày** nếu là **hợp đồng lao động không xác định thời hạn**.\n- **Ít nhất 30 ngày** nếu là **hợp đồng lao động xác định thời hạn từ 12 tháng đến 36 tháng**.\n- **Ít nhất 03 ngày làm việc** nếu là **hợp đồng lao động xác định thời hạn dưới 12 tháng**.\n- **Một số ngành, nghề, công việc đặc thù** thì thời hạn báo trước sẽ theo **quy định của Chính phủ**.\n\n**Ngoại lệ: không cần báo trước** nếu bạn nghỉ trong các trường hợp như:\n- Không được bố trí đúng công việc/địa điểm/điều kiện làm việc;\n- Không được trả đủ lương hoặc trả lương không đúng hạn;\n- Bị ngược đãi, đánh đập, nhục mạ, cưỡng bức lao động;\n- Bị quấy rối tình dục tại nơi làm việc;\n- Lao động nữ mang thai phải nghỉ theo quy định;\n- Đủ tuổi nghỉ hưu;\n- Người sử dụng lao động cung cấp thông tin không trung thực làm ảnh hưởng đến việc thực hiện hợp đồng.\n\n**Căn cứ:** Điều 35 Bộ luật Lao động 2019.\n\nCần bổ sung thêm: Bạn đang ký **loại hợp đồng nào** và có thuộc **trường hợp được nghỉ không cần báo trước** không?",
+      "timestamp": "2026-05-13T04:17:22.036055+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Thời hạn báo trước khi người lao động đơn phương chấm dứt hợp đồng lao động/nghỉ việc",
+    "employment_contract_type": null,
+    "job_position": null,
+    "reason_for_resignation": null,
+    "is_probation": null,
+    "is_fixed_term_contract": null,
+    "is_indefinite_term_contract": null,
+    "is_special_sector_or_role": null,
+    "has_notice_been_given": null
+  },
+  "case_summary": "Người dùng hỏi về thời hạn báo trước khi người lao động muốn nghỉ việc. Hiện chưa có thông tin về loại hợp đồng lao động, vị trí công việc, lý do nghỉ việc, hay việc có thuộc trường hợp được nghỉ không cần báo trước hay không.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Thời hạn báo trước khi người lao động đơn phương chấm dứt hợp đồng lao động theo Bộ luật Lao động Việt Nam; quy định báo trước 45 ngày đối với hợp đồng không xác định thời hạn, 30 ngày đối với hợp đồng xác định thời hạn, 03 ngày làm việc đối với một số trường hợp đặc biệt; các trường hợp người lao động được quyền nghỉ việc không cần báo trước hoặc báo trước ngắn hơn; nghĩa vụ và hậu quả pháp lý khi người lao động nghỉ việc không báo trước đúng luật.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:17:22.036256+00:00"
+}

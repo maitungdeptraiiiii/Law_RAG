@@ -2,13 +2,10 @@
 
 import { useState } from 'react'
 import { 
-  Search, 
   Play, 
   Loader2,
   Clock,
-  FileText,
   Sparkles,
-  Database,
   Zap
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -26,6 +23,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { debugQuery } from '@/lib/api'
+import { formatSourceCitation } from '@/lib/legal-citation'
 import type { DebugQueryResponse, RetrievalMode, RetrievedSource } from '@/lib/types'
 
 export default function DebugPage() {
@@ -286,11 +284,21 @@ function DebugResultsList({
   timing: number
   label: string
 }) {
+  const [expandedIds, setExpandedIds] = useState<string[]>([])
+
   if (results.length === 0) {
     return (
       <div className="text-center py-8 text-muted-foreground">
         Không có kết quả
       </div>
+    )
+  }
+
+  const toggleExpanded = (sourceId: string) => {
+    setExpandedIds((current) =>
+      current.includes(sourceId)
+        ? current.filter((id) => id !== sourceId)
+        : [...current, sourceId],
     )
   }
 
@@ -323,16 +331,26 @@ function DebugResultsList({
                   </span>
                 </div>
                 
-                {source.articleNumber && (
-                  <p className="text-xs text-muted-foreground">
-                    {source.articleNumber}
-                    {source.clauseNumber && ` - ${source.clauseNumber}`}
-                  </p>
-                )}
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {formatSourceCitation(source)}
+                </p>
                 
-                <div className="p-2 rounded bg-muted/50 text-xs leading-relaxed line-clamp-3">
-                  {source.chunkText}
-                </div>
+                <button
+                  type="button"
+                  onClick={() => toggleExpanded(source.id)}
+                  className="w-full text-left"
+                >
+                  <div
+                    className={`p-2 rounded bg-muted/50 text-xs leading-relaxed whitespace-pre-wrap ${
+                      expandedIds.includes(source.id) ? '' : 'line-clamp-3'
+                    }`}
+                  >
+                    {source.chunkText}
+                  </div>
+                  <p className="mt-1 text-[11px] text-muted-foreground">
+                    {expandedIds.includes(source.id) ? 'Nhấn để thu gọn' : 'Nhấn để xem đầy đủ'}
+                  </p>
+                </button>
                 
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
                   <span>Score: {(source.relevanceScore * 100).toFixed(1)}%</span>

@@ -1,0 +1,32 @@
+{
+  "session_id": "eval-civil_transaction_validity_001-1778643544",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-444cba6e61bb",
+      "role": "user",
+      "content": "Một giao dịch dân sự muốn có hiệu lực thì cần đáp ứng những điều kiện nào?",
+      "timestamp": "2026-05-13T03:39:04.895076+00:00"
+    },
+    {
+      "id": "msg-c789f1144a91",
+      "role": "assistant",
+      "content": "Một giao dịch dân sự muốn có hiệu lực thì, theo **Điều 117 Bộ luật Dân sự 2015**, phải đáp ứng đủ các điều kiện sau:\n\n1. **Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp** với giao dịch được xác lập.  \n2. **Các bên tham gia hoàn toàn tự nguyện**.  \n3. **Mục đích và nội dung không vi phạm điều cấm của luật, không trái đạo đức xã hội**.  \n4. **Hình thức của giao dịch** phải đúng quy định **nếu luật có yêu cầu hình thức là điều kiện có hiệu lực**.\n\nCăn cứ liên quan:\n- **Điều 117 BLDS 2015**: quy định trực tiếp điều kiện có hiệu lực.\n- **Điều 122 BLDS 2015**: giao dịch không có một trong các điều kiện tại Điều 117 thì **vô hiệu**, trừ trường hợp luật có quy định khác.\n- **Điều 129 BLDS 2015**: nếu vi phạm về hình thức thì giao dịch **vô hiệu**, nhưng có ngoại lệ khi một bên hoặc các bên đã thực hiện **ít nhất hai phần ba nghĩa vụ** và Tòa án có thể công nhận hiệu lực.\n\nTrong context hiện có, có thể khẳng định: **điều kiện cốt lõi là năng lực chủ thể, tự nguyện, mục đích/nội dung hợp pháp; còn hình thức chỉ là điều kiện hiệu lực trong trường hợp luật quy định**.\n\nCần bổ sung thêm:  \nBạn muốn hỏi về **giao dịch dân sự nói chung** hay **một loại giao dịch cụ thể** (ví dụ: mua bán nhà đất, tặng cho, vay, ủy quyền)?",
+      "timestamp": "2026-05-13T03:39:18.862477+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "issue": "Điều kiện có hiệu lực của giao dịch dân sự",
+    "case_type": "general_legal_question",
+    "specific_transaction": null,
+    "parties": null,
+    "time": null
+  },
+  "case_summary": "Người dùng đang hỏi về điều kiện để một giao dịch dân sự có hiệu lực theo pháp luật Việt Nam. Hiện chưa có tình tiết vụ việc cụ thể nào ngoài câu hỏi mang tính khái quát.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Điều kiện có hiệu lực của giao dịch dân sự theo Bộ luật Dân sự Việt Nam; hiệu lực giao dịch dân sự; điều kiện có hiệu lực của giao dịch dân sự gồm chủ thể có năng lực pháp luật, năng lực hành vi dân sự phù hợp; mục đích và nội dung không vi phạm điều cấm của luật, không trái đạo đức xã hội; người tham gia hoàn toàn tự nguyện; hình thức giao dịch phù hợp quy định của luật; hậu quả pháp lý khi giao dịch dân sự vô hiệu",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:39:18.862750+00:00"
+}

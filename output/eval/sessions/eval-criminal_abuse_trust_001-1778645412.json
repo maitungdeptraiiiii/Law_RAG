@@ -1,0 +1,35 @@
+{
+  "session_id": "eval-criminal_abuse_trust_001-1778645412",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-ee1ec822d6cc",
+      "role": "user",
+      "content": "Mượn tài sản rồi bỏ trốn để chiếm đoạt thì có thể bị xử lý theo tội nào?",
+      "timestamp": "2026-05-13T04:10:12.843445+00:00"
+    },
+    {
+      "id": "msg-59bbe1382f88",
+      "role": "assistant",
+      "content": "Trong context hiện có, hành vi **mượn tài sản rồi bỏ trốn để chiếm đoạt** có thể bị xem xét theo **tội lạm dụng tín nhiệm chiếm đoạt tài sản** theo **Điều 175 Bộ luật Hình sự**.\n\n### Căn cứ chính\n- **Điều 175 khoản 1 điểm a**: người nào **vay, mượn, thuê tài sản của người khác hoặc nhận tài sản bằng hình thức hợp đồng rồi dùng thủ đoạn gian dối chiếm đoạt tài sản đó hoặc đến thời hạn trả lại tài sản mặc dù có điều kiện, khả năng nhưng cố tình không trả** thì bị xử lý hình sự khi tài sản đạt ngưỡng luật định.\n- **Điều 1 khoản 1 Luật sửa đổi, bổ sung một số điều của BLHS 2017**: trường hợp **“vay, mượn, thuê tài sản... rồi dùng thủ đoạn gian dối hoặc bỏ trốn để chiếm đoạt tài sản đó”** cũng thuộc nhóm hành vi của tội này.\n\n### Hướng áp dụng theo ngưỡng giá trị\n- Nếu tài sản **từ 4.000.000 đồng đến dưới 50.000.000 đồng**: có thể bị phạt **cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 03 năm**.\n- Nếu tài sản **dưới 4.000.000 đồng**: vẫn có thể bị xử lý nếu thuộc trường hợp đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt, hoặc đã bị kết án về tội này/các tội liên quan mà chưa được xóa án tích, hoặc tài sản là **phương tiện kiếm sống chính** của người bị hại, hoặc có **giá trị đặc biệt về mặt tinh thần**.\n- Nếu có tình tiết nặng hơn theo Điều 175 thì khung hình phạt có thể tăng, ví dụ:\n  - **05 năm đến 12 năm** nếu có tình tiết như **gây ảnh hưởng xấu đến an ninh, trật tự, an toàn xã hội**;\n  - **12 năm đến 20 năm** nếu tài sản **từ 500.000.000 đồng trở lên**.\n\n### Trong context hiện có, có thể khẳng định\n- Với mô tả “**mượn tài sản rồi bỏ trốn để chiếm đoạt**”, **hướng tội danh phù hợp nhất là Điều 175 – Tội lạm dụng tín nhiệm chiếm đoạt tài sản**.\n- Chưa thấy căn cứ từ context để chuyển sang tội khác như lừa đảo, vì dữ kiện hiện có chưa thể hiện rõ hành vi **gian dối ngay từ đầu**.\n\n### Cần bổ sung thêm:\nGiá trị tài sản mượn là bao nhiêu và việc bỏ trốn xảy ra **sau khi đã mượn hợp pháp** hay ngay từ đầu đã có ý định chiếm đoạt?",
+      "timestamp": "2026-05-13T04:10:27.979680+00:00"
+    }
+  ],
+  "facts": {
+    "legal_issue": "Xác định tội danh hình sự khi người mượn tài sản rồi bỏ trốn để chiếm đoạt",
+    "known_facts": [],
+    "jurisdiction": "Việt Nam",
+    "procedural_stage": "Chưa xác định",
+    "property_type": "Chưa xác định",
+    "property_value": "Chưa xác định",
+    "relationship_between_parties": "Chưa xác định",
+    "intent_timing": "Chưa xác định",
+    "conduct": "Mượn tài sản rồi bỏ trốn để chiếm đoạt (theo mô tả của người dùng)"
+  },
+  "case_summary": "Người dùng hỏi về việc mượn tài sản rồi bỏ trốn để chiếm đoạt và muốn biết có thể bị xử lý theo tội danh nào theo pháp luật Việt Nam. Hiện chưa có tình tiết cụ thể về loại tài sản, giá trị, quan hệ giữa các bên, thời điểm phát sinh ý định chiếm đoạt, hay cách thức bỏ trốn.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Pháp luật hình sự Việt Nam tội lạm dụng tín nhiệm chiếm đoạt tài sản theo Điều 175 Bộ luật Hình sự 2015 sửa đổi 2017 hành vi mượn tài sản rồi bỏ trốn để chiếm đoạt phân biệt với tội lừa đảo chiếm đoạt tài sản và các dấu hiệu cấu thành tội phạm",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:10:27.979923+00:00"
+}

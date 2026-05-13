@@ -5,6 +5,7 @@ import { X, ExternalLink, FileText, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { useState } from 'react'
+import { formatSourceCitation } from '@/lib/legal-citation'
 import type { RetrievedSource } from '@/lib/types'
 
 interface SourceEvidencePanelProps {
@@ -55,7 +56,10 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
       {/* Sources List */}
       <ScrollArea className="flex-1 min-h-0">
         <div className="p-4 space-y-3">
-          {sources.map((source, index) => (
+          {sources.map((source, index) => {
+            const citation = formatSourceCitation(source)
+
+            return (
             <div
               key={source.id}
               className="border border-border rounded-lg overflow-hidden bg-background"
@@ -86,12 +90,7 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
                         {(source.relevanceScore * 100).toFixed(0)}%
                       </span>
                     </div>
-                    {source.articleNumber && (
-                      <p className="text-xs text-muted-foreground mt-1">
-                        {source.articleNumber}
-                        {source.clauseNumber && ` - ${source.clauseNumber}`}
-                      </p>
-                    )}
+                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{citation}</p>
                   </div>
                   <div className="flex-shrink-0">
                     {expandedId === source.id ? (
@@ -123,6 +122,10 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
 
                     {/* Metadata */}
                     <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div className="col-span-2">
+                        <span className="text-muted-foreground">Căn cứ trích dẫn:</span>
+                        <p className="font-medium leading-relaxed">{citation}</p>
+                      </div>
                       {source.issuedDate && (
                         <div>
                           <span className="text-muted-foreground">Ngày ban hành:</span>
@@ -151,7 +154,8 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
                 </motion.div>
               )}
             </div>
-          ))}
+            )
+          })}
         </div>
       </ScrollArea>
 

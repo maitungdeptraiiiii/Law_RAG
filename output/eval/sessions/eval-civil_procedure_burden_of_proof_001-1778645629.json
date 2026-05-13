@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-civil_procedure_burden_of_proof_001-1778645629",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-4fb025b7236c",
+      "role": "user",
+      "content": "Trong vụ án dân sự, ai có nghĩa vụ chứng minh yêu cầu của mình?",
+      "timestamp": "2026-05-13T04:13:50.185292+00:00"
+    },
+    {
+      "id": "msg-b7fd922799b5",
+      "role": "assistant",
+      "content": "Trong vụ án dân sự, **nguyên tắc chung là đương sự có yêu cầu Tòa án bảo vệ quyền và lợi ích hợp pháp của mình phải tự thu thập, cung cấp, giao nộp chứng cứ để chứng minh yêu cầu đó là có căn cứ và hợp pháp**.\n\n**Căn cứ:**\n- **Điều 6 khoản 1 BLTTDS 2015**: đương sự có quyền và nghĩa vụ chủ động thu thập, giao nộp chứng cứ và chứng minh cho yêu cầu của mình.\n- **Điều 91 khoản 1 BLTTDS 2015**: người có yêu cầu Tòa án bảo vệ quyền, lợi ích hợp pháp của mình phải chứng minh yêu cầu đó, **trừ** các trường hợp luật quy định khác.\n- **Điều 91 khoản 2 BLTTDS 2015**: nếu đương sự **phản đối yêu cầu của người khác** thì phải chứng minh cho sự phản đối đó.\n- **Điều 91 khoản 3 BLTTDS 2015**: cơ quan, tổ chức, cá nhân khởi kiện để bảo vệ lợi ích công cộng, lợi ích Nhà nước hoặc quyền, lợi ích hợp pháp của người khác cũng phải chứng minh yêu cầu khởi kiện, **trừ** trường hợp tổ chức xã hội bảo vệ quyền lợi người tiêu dùng không phải chứng minh lỗi của bên kinh doanh.\n\n**Tóm lại:**\n- **Ai đưa ra yêu cầu thì người đó phải chứng minh yêu cầu của mình.**\n- **Ai phản đối yêu cầu của bên kia thì người đó phải chứng minh phần phản đối.**\n- Có một số **ngoại lệ** do luật chuyên ngành quy định, như:\n  - **Người tiêu dùng** không phải chứng minh lỗi của tổ chức/cá nhân kinh doanh;\n  - **Người lao động** trong một số trường hợp không có tài liệu do người sử dụng lao động quản lý thì người sử dụng lao động phải cung cấp, và có trường hợp nghĩa vụ chứng minh thuộc về người sử dụng lao động.\n\nNếu bạn muốn, tôi có thể tóm tiếp thành **1 câu ngắn để dùng trong bài làm/ý kiến pháp lý**.",
+      "timestamp": "2026-05-13T04:14:02.819638+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "procedure_type": "vụ án dân sự",
+    "legal_issue": "nghĩa vụ chứng minh yêu cầu của mình"
+  },
+  "case_summary": "Người dùng đang hỏi về nguyên tắc nghĩa vụ chứng minh trong vụ án dân sự tại Việt Nam: ai phải chứng minh yêu cầu của mình.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Nghĩa vụ chứng minh trong vụ án dân sự theo Bộ luật Tố tụng dân sự Việt Nam; đương sự nào có nghĩa vụ chứng minh yêu cầu, phản đối; nguyên tắc ai yêu cầu người đó phải chứng minh; nghĩa vụ cung cấp chứng cứ của nguyên đơn, bị đơn, người có quyền lợi nghĩa vụ liên quan; quy định về chứng minh trong tố tụng dân sự Việt Nam",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:14:02.819871+00:00"
+}

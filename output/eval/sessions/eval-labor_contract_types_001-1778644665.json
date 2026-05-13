@@ -1,0 +1,29 @@
+{
+  "session_id": "eval-labor_contract_types_001-1778644665",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-cb88a751d2d2",
+      "role": "user",
+      "content": "Bộ luật Lao động quy định có những loại hợp đồng lao động nào?",
+      "timestamp": "2026-05-13T03:57:45.766115+00:00"
+    },
+    {
+      "id": "msg-1890d7366586",
+      "role": "assistant",
+      "content": "Theo Bộ luật Lao động 2019, hợp đồng lao động có **2 loại**:\n\n1. **Hợp đồng lao động không xác định thời hạn**: hai bên không xác định thời hạn, thời điểm chấm dứt hiệu lực của hợp đồng.  \n2. **Hợp đồng lao động xác định thời hạn**: hai bên xác định thời hạn, thời điểm chấm dứt hiệu lực của hợp đồng, nhưng **không quá 36 tháng** kể từ thời điểm có hiệu lực.\n\n**Căn cứ:** Điều 20 khoản 1 điểm a, b Bộ luật Lao động 2019.\n\nNgoài ra, nếu **hợp đồng xác định thời hạn** hết hạn mà người lao động vẫn tiếp tục làm việc thì:\n- Trong **30 ngày** phải ký hợp đồng mới;\n- Nếu quá 30 ngày không ký mới thì hợp đồng cũ **chuyển thành không xác định thời hạn**;\n- Nếu ký mới vẫn là xác định thời hạn thì **chỉ được ký thêm 01 lần**, sau đó phải chuyển sang không xác định thời hạn, trừ một số trường hợp luật định.\n\n**Căn cứ:** Điều 20 khoản 2 Bộ luật Lao động 2019.\n\nCần bổ sung thêm: Không cần bổ sung thêm.",
+      "timestamp": "2026-05-13T03:57:56.941749+00:00"
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "legal_issue": "Phân loại hợp đồng lao động theo Bộ luật Lao động",
+    "known_context": "Chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi mang tính khái quát"
+  },
+  "case_summary": "Người dùng đang hỏi về quy định của Bộ luật Lao động Việt Nam liên quan đến các loại hợp đồng lao động.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Bộ luật Lao động 2019 quy định các loại hợp đồng lao động nào; phân loại hợp đồng lao động xác định thời hạn, không xác định thời hạn; quy định về hình thức, thời hạn, nội dung và trường hợp giao kết hợp đồng lao động theo pháp luật lao động Việt Nam",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T03:57:56.941926+00:00"
+}

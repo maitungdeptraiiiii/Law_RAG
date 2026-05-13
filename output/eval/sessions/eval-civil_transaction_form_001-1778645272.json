@@ -1,0 +1,28 @@
+{
+  "session_id": "eval-civil_transaction_form_001-1778645272",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-f08afaf93aeb",
+      "role": "user",
+      "content": "Giao dịch dân sự có bắt buộc phải lập thành văn bản không?",
+      "timestamp": "2026-05-13T04:07:52.891130+00:00"
+    },
+    {
+      "id": "msg-144d3f227ab7",
+      "role": "assistant",
+      "content": "Không. Theo nguyên tắc chung, **giao dịch dân sự có thể được thể hiện bằng lời nói, bằng văn bản hoặc bằng hành vi cụ thể**; giao dịch qua phương tiện điện tử dưới dạng thông điệp dữ liệu cũng **được coi là giao dịch bằng văn bản**.\n\n**Căn cứ:** Điều 119 khoản 1 Bộ luật Dân sự 2015.\n\nTuy nhiên, **nếu luật chuyên ngành hoặc luật có liên quan quy định giao dịch đó phải lập bằng văn bản, có công chứng, chứng thực hoặc đăng ký thì phải tuân theo đúng hình thức đó**. Khi vi phạm quy định về hình thức, giao dịch có thể **vô hiệu**, trừ trường hợp đã thực hiện ít nhất **2/3 nghĩa vụ** và Tòa án công nhận hiệu lực theo Điều 129 Bộ luật Dân sự 2015.\n\n**Trong context hiện có, có thể khẳng định:**\n- **Không phải mọi giao dịch dân sự đều bắt buộc phải lập thành văn bản.**\n- Chỉ những giao dịch mà **luật quy định riêng về hình thức** mới phải lập văn bản/công chứng/chứng thực/đăng ký.\n\n**Căn cứ thêm:** Điều 119 khoản 2 và Điều 129 Bộ luật Dân sự 2015.\n\nCần bổ sung thêm: **Bạn đang hỏi về loại giao dịch dân sự cụ thể nào (ví dụ: mua bán nhà đất, vay tiền, tặng cho, đặt cọc...)?**",
+      "timestamp": "2026-05-13T04:08:05.855952+00:00"
+    }
+  ],
+  "facts": {
+    "issue": "Xác định hình thức bắt buộc của giao dịch dân sự",
+    "context": "Câu hỏi mang tính khái quát, chưa nêu loại giao dịch cụ thể, chủ thể, giá trị, hay quy định chuyên ngành liên quan"
+  },
+  "case_summary": "Người dùng hỏi về nguyên tắc chung: giao dịch dân sự có bắt buộc phải lập thành văn bản hay không. Hiện chưa có tình tiết vụ việc cụ thể nào khác ngoài câu hỏi pháp lý khái quát.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Quy định pháp luật Việt Nam về hình thức giao dịch dân sự có bắt buộc phải lập thành văn bản hay không; điều kiện giao dịch dân sự bằng lời nói, bằng văn bản, bằng hành vi cụ thể; trường hợp pháp luật quy định giao dịch phải lập thành văn bản, công chứng, chứng thực, đăng ký; Bộ luật Dân sự 2015 điều 119 và các quy định chuyên ngành liên quan",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-13T04:08:05.856135+00:00"
+}
