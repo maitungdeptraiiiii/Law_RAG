@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useRef } from 'react'
 import { 
   Upload, 
   FileText, 
@@ -10,12 +10,14 @@ import {
   Loader2,
   CheckCircle2,
   AlertCircle,
-  Eye
+  Eye,
+  Trash2
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { Badge } from '@/components/ui/badge'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Select,
   SelectContent,
@@ -24,40 +26,44 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { Label } from '@/components/ui/label'
-import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { toast } from 'sonner'
-import { uploadDocument } from '@/lib/api'
-import type { UploadedDocument, UploadStatus } from '@/lib/types'
+import { deleteUpload, getRuntimeStatus, getUploadStatus, saveUploadText, uploadDocument } from '@/lib/api'
+import type { EmbeddingTarget, UploadedDocument } from '@/lib/types'
 import { OCRReviewPanel } from '@/components/admin/ocr-review-panel'
 
 export default function UploadPage() {
   const [uploads, setUploads] = useState<UploadedDocument[]>([])
   const [isDragging, setIsDragging] = useState(false)
   const [selectedUpload, setSelectedUpload] = useState<UploadedDocument | null>(null)
+  const [selectedUploadIds, setSelectedUploadIds] = useState<string[]>([])
+  const [batchSaving, setBatchSaving] = useState(false)
+  const [batchDeleting, setBatchDeleting] = useState(false)
+  const tempUploadSeq = useRef(0)
   const [uploadSettings, setUploadSettings] = useState({
     language: 'vi',
     documentType: 'other',
     workspace: 'private' as 'public' | 'private',
+    embeddingTarget: 'none' as EmbeddingTarget,
   })
 
-  const handleDragOver = useCallback((e: React.DragEvent) => {
+  const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault()
     setIsDragging(true)
-  }, [])
+  }
 
-  const handleDragLeave = useCallback((e: React.DragEvent) => {
+  const handleDragLeave = (e: React.DragEvent) => {
     e.preventDefault()
     setIsDragging(false)
-  }, [])
+  }
 
-  const handleDrop = useCallback(async (e: React.DragEvent) => {
+  const handleDrop = async (e: React.DragEvent) => {
     e.preventDefault()
     setIsDragging(false)
     
     const files = Array.from(e.dataTransfer.files)
     await processFiles(files)
-  }, [])
+  }
 
   const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || [])
@@ -65,10 +71,10 @@ export default function UploadPage() {
     e.target.value = '' // Reset input
   }
 
-  const processFiles = async (files: File[]) => {
+  async function processFiles(files: File[]) {
     const validFiles = files.filter(file => {
       const ext = file.name.split('.').pop()?.toLowerCase()
-      return ['pdf', 'jpg', 'jpeg', 'png', 'docx', 'doc'].includes(ext || '')
+      return ['pdf', 'jpg', 'jpeg', 'png', 'docx'].includes(ext || '')
     })
 
     if (validFiles.length !== files.length) {
@@ -77,8 +83,9 @@ export default function UploadPage() {
 
     for (const file of validFiles) {
       // Create temporary upload entry
+      tempUploadSeq.current += 1
       const tempUpload: UploadedDocument = {
-        id: `temp-${Date.now()}-${Math.random()}`,
+        id: `temp-${tempUploadSeq.current}-${file.name}`,
         fileName: file.name,
         fileType: getFileType(file.name),
         fileSize: file.size,
@@ -90,18 +97,16 @@ export default function UploadPage() {
       setUploads(prev => [...prev, tempUpload])
 
       try {
-        const response = await uploadDocument(file)
+        const response = await uploadDocument(file, uploadSettings)
         if (response.success) {
-          // Simulate OCR processing
-          simulateOCRProgress(response.data.id)
-          
           setUploads(prev => 
             prev.map(u => 
               u.id === tempUpload.id ? { ...response.data, status: 'processing' } : u
             )
           )
+          pollUploadStatus(response.data.id)
         }
-      } catch (error) {
+      } catch {
         setUploads(prev => 
           prev.map(u => 
             u.id === tempUpload.id ? { ...u, status: 'failed' } : u
@@ -112,39 +117,147 @@ export default function UploadPage() {
     }
   }
 
-  const simulateOCRProgress = (uploadId: string) => {
-    let progress = 0
-    const interval = setInterval(() => {
-      progress += Math.random() * 20
-      if (progress >= 100) {
-        progress = 100
-        clearInterval(interval)
-        
-        setUploads(prev => 
-          prev.map(u => 
-            u.id === uploadId 
-              ? { 
-                  ...u, 
-                  status: 'ocr_complete' as UploadStatus, 
-                  ocrProgress: 100,
-                  extractedText: mockExtractedText,
-                  confidence: 0.92,
-                } 
-              : u
-          )
+  const pollUploadStatus = (uploadId: string, attempt = 0) => {
+    window.setTimeout(async () => {
+      const response = await getUploadStatus(uploadId)
+      if (!response.success) {
+        setUploads(prev =>
+          prev.map(u => u.id === uploadId ? { ...u, status: 'failed', error: response.error } : u)
         )
-      } else {
-        setUploads(prev => 
-          prev.map(u => 
-            u.id === uploadId ? { ...u, ocrProgress: progress } : u
-          )
-        )
+        return
       }
-    }, 500)
+
+      const updatedUpload = response.data
+      setUploads(prev => prev.map(u => u.id === uploadId ? updatedUpload : u))
+      setSelectedUpload(current => current?.id === uploadId ? updatedUpload : current)
+
+      if (updatedUpload.status === 'processing' && attempt < 300) {
+        pollUploadStatus(uploadId, attempt + 1)
+      } else if (updatedUpload.status === 'ocr_complete') {
+        toast.success(`OCR hoàn tất: ${updatedUpload.fileName}`)
+      } else if (updatedUpload.status === 'failed') {
+        toast.error(updatedUpload.error || `OCR thất bại: ${updatedUpload.fileName}`)
+      }
+    }, 1000)
   }
 
-  const removeUpload = (id: string) => {
+  const removeUpload = async (id: string) => {
+    if (!id.startsWith('temp-')) {
+      const response = await deleteUpload(id)
+      if (!response.success) {
+        toast.error(response.error)
+        return
+      }
+    }
     setUploads(prev => prev.filter(u => u.id !== id))
+    setSelectedUploadIds(prev => prev.filter(uploadId => uploadId !== id))
+    setSelectedUpload(current => current?.id === id ? null : current)
+  }
+
+  const toggleUploadSelection = (id: string, checked: boolean) => {
+    setSelectedUploadIds(prev =>
+      checked ? Array.from(new Set([...prev, id])) : prev.filter(uploadId => uploadId !== id)
+    )
+  }
+
+  const toggleAllUploads = (checked: boolean) => {
+    setSelectedUploadIds(checked ? uploads.map(upload => upload.id) : [])
+  }
+
+  const selectedUploads = uploads.filter(upload => selectedUploadIds.includes(upload.id))
+  const selectedReadyUploads = selectedUploads.filter(upload => upload.status === 'ocr_complete' || upload.status === 'ready')
+  const allUploadsSelected = uploads.length > 0 && uploads.every(upload => selectedUploadIds.includes(upload.id))
+
+  const saveSelectedUploads = async () => {
+    if (batchSaving) return
+    if (selectedReadyUploads.length === 0) {
+      toast.error('Chọn ít nhất một tài liệu đã OCR xong để lưu.')
+      return
+    }
+    if (!confirmLowConfidence(selectedReadyUploads)) return
+    if (!(await canUseSelectedEmbedding())) return
+
+    setBatchSaving(true)
+    try {
+      toast.info(`Đang lưu ${selectedReadyUploads.length} tài liệu...`)
+      const results = await Promise.all(
+        selectedReadyUploads.map(upload =>
+          saveUploadText(upload.id, upload.extractedText || '', {
+            embeddingTarget: uploadSettings.embeddingTarget,
+            forceLowConfidence: true,
+          })
+        )
+      )
+      const updatedUploads = results.filter(result => result.success).map(result => result.data)
+      const failedResults = results.filter(result => !result.success)
+
+      setUploads(prev =>
+        prev.map(upload => updatedUploads.find(updated => updated.id === upload.id) || upload)
+      )
+      setSelectedUploadIds(prev =>
+        prev.filter(id => !updatedUploads.some(upload => upload.id === id))
+      )
+
+      if (updatedUploads.length > 0) {
+        toast.success(`Đã lưu ${updatedUploads.length} tài liệu.`)
+      }
+      if (failedResults.length > 0) {
+        toast.error(failedResults[0].error || `${failedResults.length} tài liệu chưa lưu được.`)
+      }
+    } finally {
+      setBatchSaving(false)
+    }
+  }
+
+  const deleteSelectedUploads = async () => {
+    if (batchDeleting) return
+    if (selectedUploads.length === 0) return
+
+    setBatchDeleting(true)
+    try {
+      const results = await Promise.all(
+        selectedUploads.map(upload =>
+          upload.id.startsWith('temp-') ? Promise.resolve({ success: true as const, data: undefined }) : deleteUpload(upload.id)
+        )
+      )
+      const deletedIds = selectedUploads
+        .filter((_upload, index) => results[index].success)
+        .map(upload => upload.id)
+      const failedCount = results.length - deletedIds.length
+
+      setUploads(prev => prev.filter(upload => !deletedIds.includes(upload.id)))
+      setSelectedUploadIds(prev => prev.filter(id => !deletedIds.includes(id)))
+      setSelectedUpload(current => current && deletedIds.includes(current.id) ? null : current)
+
+      if (deletedIds.length > 0) {
+        toast.success(`Đã xóa ${deletedIds.length} tài liệu.`)
+      }
+      if (failedCount > 0) {
+        toast.error(`${failedCount} tài liệu chưa xóa được.`)
+      }
+    } finally {
+      setBatchDeleting(false)
+    }
+  }
+
+  const confirmLowConfidence = (items: UploadedDocument[]) => {
+    const lowConfidenceItems = items.filter(upload => upload.qualityWarning || (upload.confidence ?? 1) < 0.7)
+    if (lowConfidenceItems.length === 0) return true
+    return window.confirm(
+      `${lowConfidenceItems.length} tài liệu có độ tin cậy OCR thấp. Bạn vẫn muốn tiếp tục lưu, chunk và embedding?`
+    )
+  }
+
+  const canUseSelectedEmbedding = async () => {
+    if (uploadSettings.embeddingTarget !== 'api' && uploadSettings.embeddingTarget !== 'both') {
+      return true
+    }
+    const response = await getRuntimeStatus()
+    if (!response.success || !response.data.hasOpenaiApiKey) {
+      toast.error('Chưa có OpenAI API key. Vào Admin > Tổng quan để cấu hình key hoặc chọn Local/Chưa embedding.')
+      return false
+    }
+    return true
   }
 
   const getFileType = (fileName: string): 'pdf' | 'image' | 'docx' => {
@@ -191,7 +304,7 @@ export default function UploadPage() {
                 <input
                   type="file"
                   multiple
-                  accept=".pdf,.jpg,.jpeg,.png,.docx,.doc"
+                  accept=".pdf,.jpg,.jpeg,.png,.docx"
                   onChange={handleFileSelect}
                   className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                 />
@@ -227,19 +340,65 @@ export default function UploadPage() {
           {/* Upload Queue */}
           {uploads.length > 0 && (
             <Card>
-              <CardHeader>
-                <CardTitle>Hàng đợi xử lý</CardTitle>
-                <CardDescription>
-                  {uploads.filter(u => u.status === 'ocr_complete').length} / {uploads.length} hoàn thành
-                </CardDescription>
+              <CardHeader className="gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <CardTitle>Hàng đợi xử lý</CardTitle>
+                  <CardDescription>
+                    {uploads.filter(u => u.status === 'ocr_complete' || u.status === 'ready').length} / {uploads.length} hoàn thành
+                  </CardDescription>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Checkbox
+                    checked={allUploadsSelected}
+                    onCheckedChange={(checked) => toggleAllUploads(checked === true)}
+                    aria-label="Chọn tất cả tài liệu"
+                  />
+                  <span className="text-sm text-muted-foreground">Chọn tất cả</span>
+                </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-3">
+                {selectedUploadIds.length > 0 && (
+                  <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border bg-muted/30 px-3 py-2">
+                    <span className="text-sm text-muted-foreground">
+                      Đã chọn {selectedUploadIds.length} tài liệu
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <Button
+                        size="sm"
+                        onClick={saveSelectedUploads}
+                        disabled={selectedReadyUploads.length === 0 || batchSaving}
+                      >
+                        {batchSaving ? (
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        ) : (
+                          <CheckCircle2 className="mr-2 h-4 w-4" />
+                        )}
+                        {batchSaving ? 'Đang lưu...' : 'Lưu đã chọn'}
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={deleteSelectedUploads}
+                        disabled={batchDeleting}
+                      >
+                        {batchDeleting ? (
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        ) : (
+                          <Trash2 className="mr-2 h-4 w-4" />
+                        )}
+                        {batchDeleting ? 'Đang xóa...' : 'Xóa đã chọn'}
+                      </Button>
+                    </div>
+                  </div>
+                )}
                 <ScrollArea className="max-h-[400px]">
                   <div className="space-y-3">
                     {uploads.map((upload) => (
                       <UploadItem 
                         key={upload.id} 
                         upload={upload}
+                        selected={selectedUploadIds.includes(upload.id)}
+                        onSelectedChange={(checked) => toggleUploadSelection(upload.id, checked)}
                         onRemove={() => removeUpload(upload.id)}
                         onReview={() => setSelectedUpload(upload)}
                       />
@@ -316,6 +475,27 @@ export default function UploadPage() {
                   Tài liệu riêng tư chỉ dùng cho câu hỏi của bạn
                 </p>
               </div>
+
+              <div className="space-y-2">
+                <Label>Embedding sau khi lưu</Label>
+                <Select
+                  value={uploadSettings.embeddingTarget}
+                  onValueChange={(v: EmbeddingTarget) => setUploadSettings(s => ({ ...s, embeddingTarget: v }))}
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="none">Chưa embedding</SelectItem>
+                    <SelectItem value="api">API embedding</SelectItem>
+                    <SelectItem value="local">Local embedding</SelectItem>
+                    <SelectItem value="both">Cả API và local</SelectItem>
+                  </SelectContent>
+                </Select>
+                <p className="text-xs text-muted-foreground">
+                  Tài liệu riêng tư sẽ lưu index API/local riêng biệt.
+                </p>
+              </div>
             </CardContent>
           </Card>
 
@@ -350,12 +530,18 @@ export default function UploadPage() {
         <OCRReviewPanel
           upload={selectedUpload}
           onClose={() => setSelectedUpload(null)}
-          onSave={(text) => {
-            setUploads(prev =>
-              prev.map(u =>
-                u.id === selectedUpload.id ? { ...u, extractedText: text, status: 'ready' } : u
-              )
-            )
+          onSave={async (text) => {
+            if (!confirmLowConfidence([selectedUpload])) return
+            if (!(await canUseSelectedEmbedding())) return
+            const response = await saveUploadText(selectedUpload.id, text, {
+              embeddingTarget: uploadSettings.embeddingTarget,
+              forceLowConfidence: true,
+            })
+            if (!response.success) {
+              toast.error(response.error)
+              return
+            }
+            setUploads(prev => prev.map(u => u.id === selectedUpload.id ? response.data : u))
             setSelectedUpload(null)
             toast.success('Đã lưu nội dung')
           }}
@@ -367,10 +553,14 @@ export default function UploadPage() {
 
 function UploadItem({ 
   upload, 
+  selected,
+  onSelectedChange,
   onRemove,
   onReview 
 }: { 
   upload: UploadedDocument
+  selected: boolean
+  onSelectedChange: (checked: boolean) => void
   onRemove: () => void
   onReview: () => void
 }) {
@@ -396,6 +586,11 @@ function UploadItem({
 
   return (
     <div className="flex items-center gap-4 p-3 rounded-lg border border-border bg-card">
+      <Checkbox
+        checked={selected}
+        onCheckedChange={(checked) => onSelectedChange(checked === true)}
+        aria-label={`Chọn ${upload.fileName}`}
+      />
       <div className="p-2 rounded-lg bg-muted">
         <FileIcon className="h-5 w-5 text-muted-foreground" />
       </div>
@@ -414,6 +609,12 @@ function UploadItem({
         {isProcessing && upload.ocrProgress !== undefined && (
           <Progress value={upload.ocrProgress} className="h-1 mt-2" />
         )}
+        {upload.qualityWarning && (
+          <p className="text-xs text-warning mt-2 line-clamp-2">{upload.qualityWarning}</p>
+        )}
+        {upload.status === 'failed' && upload.error && (
+          <p className="text-xs text-destructive mt-2 line-clamp-2">{upload.error}</p>
+        )}
       </div>
 
       <div className="flex items-center gap-1">
@@ -430,33 +631,3 @@ function UploadItem({
   )
 }
 
-const mockExtractedText = `QUỐC HỘI
-________
-
-Luật số: 91/2015/QH13
-
-CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
-Độc lập - Tự do - Hạnh phúc
-________________________
-
-BỘ LUẬT DÂN SỰ
-
-Căn cứ Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam;
-
-Quốc hội ban hành Bộ luật Dân sự.
-
-PHẦN THỨ NHẤT
-QUY ĐỊNH CHUNG
-
-Chương I
-NHỮNG QUY ĐỊNH CHUNG
-
-Điều 1. Phạm vi điều chỉnh
-
-Bộ luật này quy định địa vị pháp lý, chuẩn mực pháp lý về cách ứng xử của cá nhân, pháp nhân; quyền, nghĩa vụ về nhân thân và tài sản của cá nhân, pháp nhân trong các quan hệ được hình thành trên cơ sở bình đẳng, tự do ý chí, độc lập về tài sản và tự chịu trách nhiệm (sau đây gọi chung là quan hệ dân sự).
-
-Điều 2. Công nhận, tôn trọng, bảo vệ và bảo đảm quyền dân sự
-
-1. Ở nước Cộng hòa xã hội chủ nghĩa Việt Nam, các quyền dân sự được công nhận, tôn trọng, bảo vệ và bảo đảm theo Hiến pháp và pháp luật.
-
-2. Quyền dân sự chỉ có thể bị hạn chế theo quy định của luật trong trường hợp cần thiết vì lý do quốc phòng, an ninh quốc gia, trật tự, an toàn xã hội, đạo đức xã hội, sức khỏe của cộng đồng.`

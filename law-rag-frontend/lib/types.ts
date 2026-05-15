@@ -166,6 +166,24 @@ export interface IndexStatus {
 // ==================== OCR & Upload ====================
 
 export type UploadStatus = 'uploading' | 'processing' | 'ocr_complete' | 'ready' | 'failed'
+export type EmbeddingTarget = 'none' | 'api' | 'local' | 'both'
+
+export interface UploadEmbeddingResult {
+  built?: boolean
+  provider?: string
+  embedding_provider?: string
+  model?: string
+  embedding_model?: string
+  chunk_count?: number
+  dimension?: number
+  error?: string
+}
+
+export interface UploadEmbeddingStatus {
+  requested?: EmbeddingTarget
+  api?: UploadEmbeddingResult | null
+  local?: UploadEmbeddingResult | null
+}
 
 export interface UploadedDocument {
   id: string
@@ -177,8 +195,39 @@ export interface UploadedDocument {
   ocrProgress?: number
   extractedText?: string
   confidence?: number
+  qualityWarning?: string
+  chunkCount?: number
+  documentStorePath?: string
+  chunkStorePath?: string
+  indexedWorkspace?: 'public' | 'private'
+  embeddingTarget?: EmbeddingTarget
+  embeddingStatus?: UploadEmbeddingStatus
+  error?: string
+  ocrEngine?: string
+  documentType?: string
+  language?: 'vi' | 'en' | 'mixed'
   tags?: string[]
   workspace?: 'public' | 'private'
+}
+
+export interface ProcessedUploadDocument {
+  id: string
+  fileName: string
+  workspace: 'public' | 'private'
+  documentType?: string
+  confidence?: number
+  qualityWarning?: string
+  chunkCount?: number
+  embeddingStatus?: UploadEmbeddingStatus
+  documentPath?: string
+  chunksPath?: string
+}
+
+export interface ProcessedUploadContent extends ProcessedUploadDocument {
+  text: string
+  createdAt?: string
+  updatedAt?: string
+  sourceFile?: string
 }
 
 export interface OCRResult {

@@ -10,6 +10,8 @@ import type {
   CorpusStatus,
   PipelineJob,
   UploadedDocument,
+  ProcessedUploadDocument,
+  ProcessedUploadContent,
   DebugQueryRequest,
   DebugQueryResponse,
   UpdateSessionRequest,
@@ -17,6 +19,7 @@ import type {
   ApiResponse,
   RuntimeStatus,
   RuntimeConfigRequest,
+  EmbeddingTarget,
 } from './types'
 
 // ==================== Configuration ====================
@@ -296,16 +299,78 @@ export async function debugQuery(request: DebugQueryRequest): Promise<ApiRespons
 
 // ==================== Upload API ====================
 
-export async function uploadDocument(file: File): Promise<ApiResponse<UploadedDocument>> {
+export async function uploadDocument(
+  file: File,
+  options?: {
+    language?: string
+    documentType?: string
+    workspace?: 'public' | 'private'
+  },
+): Promise<ApiResponse<UploadedDocument>> {
   const formData = new FormData()
   formData.append('file', file)
-  const response = await requestFormData<UploadedDocument>('/api/uploads', formData)
+  const params = new URLSearchParams()
+  if (options?.language) params.set('language', options.language)
+  if (options?.documentType) params.set('document_type', options.documentType)
+  if (options?.workspace) params.set('workspace', options.workspace)
+  const query = params.toString()
+  const response = await requestFormData<UploadedDocument>(`/api/uploads${query ? `?${query}` : ''}`, formData)
   if (!response.success) return response
   return { success: true, data: reviveUpload(response.data) }
 }
 
 export async function getUploadStatus(uploadId: string): Promise<ApiResponse<UploadedDocument>> {
   const response = await requestJson<UploadedDocument>(`/api/uploads/${uploadId}`)
+  if (!response.success) return response
+  return { success: true, data: reviveUpload(response.data) }
+}
+
+export async function saveUploadText(
+  uploadId: string,
+  extractedText: string,
+  options?: {
+    embeddingTarget?: EmbeddingTarget
+    forceLowConfidence?: boolean
+  },
+): Promise<ApiResponse<UploadedDocument>> {
+  const response = await requestJson<UploadedDocument>(`/api/uploads/${uploadId}`, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      extractedText,
+      status: 'ready',
+      embeddingTarget: options?.embeddingTarget || 'none',
+      forceLowConfidence: options?.forceLowConfidence || false,
+    }),
+  })
+  if (!response.success) return response
+  return { success: true, data: reviveUpload(response.data) }
+}
+
+export async function deleteUpload(uploadId: string): Promise<ApiResponse<void>> {
+  return requestJson<void>(`/api/uploads/${uploadId}`, {
+    method: 'DELETE',
+  })
+}
+
+export async function getProcessedUploads(): Promise<ApiResponse<ProcessedUploadDocument[]>> {
+  return requestJson<ProcessedUploadDocument[]>('/api/uploads/processed')
+}
+
+export async function getProcessedUploadContent(uploadId: string): Promise<ApiResponse<ProcessedUploadContent>> {
+  return requestJson<ProcessedUploadContent>(`/api/uploads/processed/${uploadId}`)
+}
+
+export async function deleteProcessedUpload(uploadId: string): Promise<ApiResponse<{ deleted: boolean }>> {
+  return requestJson<{ deleted: boolean }>(`/api/uploads/processed/${uploadId}`, {
+    method: 'DELETE',
+  })
+}
+
+export async function embedUpload(uploadId: string, embeddingTarget: Exclude<EmbeddingTarget, 'none'>): Promise<ApiResponse<UploadedDocument>> {
+  const response = await requestJson<UploadedDocument>(`/api/uploads/${uploadId}/embed`, {
+    method: 'POST',
+    body: JSON.stringify({ embeddingTarget, forceLowConfidence: true }),
+  })
   if (!response.success) return response
   return { success: true, data: reviveUpload(response.data) }
 }

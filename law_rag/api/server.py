@@ -31,7 +31,9 @@ from ..core.runtime_config import (
     query_rewrite_model,
     runtime_mode,
 )
+from ..ocr import OCREngineUnavailable, extract_document_text
 from ..retrieval.hybrid_retrieve import build_retrieval_queries, hybrid_search
+from ..upload_pipeline import delete_processed_upload, list_processed_uploads, persist_reviewed_upload, quality_warning
 
 
 load_project_env()
@@ -103,6 +105,18 @@ class UpdateSessionPayload(BaseModel):
 class RuntimeConfigPayload(BaseModel):
     mode: Literal["openai", "local"]
     openaiApiKey: str | None = None
+
+
+class UpdateUploadPayload(BaseModel):
+    extractedText: str = ""
+    status: Literal["ocr_complete", "ready"] = "ready"
+    embeddingTarget: Literal["none", "api", "local", "both"] = "none"
+    forceLowConfidence: bool = False
+
+
+class EmbedUploadPayload(BaseModel):
+    embeddingTarget: Literal["api", "local", "both"]
+    forceLowConfidence: bool = True
 
 
 app = FastAPI(title="Law RAG API", version="0.1.0")
@@ -192,13 +206,46 @@ def detect_document_type(identifier: str) -> str:
     return "other"
 
 
-def extract_document_number(text: str) -> str:
-    match = re.search(r"Luật số:\s*([^\n]+)", text, flags=re.IGNORECASE)
-    if match:
-        return match.group(1).strip()
-    match = re.search(r"số[:\s]+([^\n]+)", text, flags=re.IGNORECASE)
-    if match:
-        return match.group(1).strip()
+def normalize_document_number(value: str) -> str:
+    text = value.strip().upper()
+    text = re.sub(r"\s+", "", text)
+    text = text.replace("-", "/")
+    text = re.sub(r"/+", "/", text).strip(".,;:()[]{} ")
+    return text
+
+
+def extract_document_number(text: str, identifier: str = "") -> str:
+    legal_number_pattern = (
+        r"\b\d{1,4}\s*[/\-]\s*\d{4}\s*[/\-]\s*"
+        r"(?:QH|UBTVQH|NQ|ND|NĐ|CP|TT|BTNMT|BTP|BTC|BYT|BGDĐT|BLĐTBXH|BCA|BQP|VPCP)\d*\b"
+    )
+    slug = identifier.replace("_", "-")
+    slug_patterns = (
+        r"(?:^|-)so-(\d{1,4})-(\d{4})-(QH\d+|UBTVQH\d+|NQ|ND|NĐ|CP|TT)(?:-|$)",
+        r"(?:^|-)(\d{1,4})-(\d{4})-(QH\d+|UBTVQH\d+|NQ|ND|NĐ|CP|TT)(?:-|$)",
+    )
+    for pattern in slug_patterns:
+        match = re.search(pattern, slug, flags=re.IGNORECASE)
+        if match:
+            return normalize_document_number("/".join(match.groups()))
+
+    header_lines = [line.strip() for line in text.splitlines()[:100]]
+    for line in header_lines:
+        if not line or len(line) > 160:
+            continue
+        lowered = line.casefold()
+        if "điều của" in lowered:
+            continue
+        has_header_marker = (
+            "luật số" in lowered
+            or lowered.startswith("số")
+            or re.search(r"(?:luật|bộ luật|nghị quyết|nghị định|thông tư|quyết định)\s+số\b", lowered)
+        )
+        if not has_header_marker:
+            continue
+        match = re.search(legal_number_pattern, line, flags=re.IGNORECASE)
+        if match:
+            return normalize_document_number(match.group(0))
     return ""
 
 
@@ -273,7 +320,7 @@ def load_documents_cache() -> list[dict[str, Any]]:
         document_type = detect_document_type(slug)
         issued_date = extract_issued_date(text_body) or ""
         title = source_title or slug_to_title(slug)
-        document_number = extract_document_number(text_body) or slug
+        document_number = extract_document_number(text_body, slug) or "Chưa rõ"
         status = "crawled"
         if chunk_count > 0:
             status = "indexed" if (bm25_built or vector_built) else "chunked"
@@ -322,6 +369,70 @@ def map_retrieved_source(item: dict[str, Any]) -> dict[str, Any]:
         "issuedDate": None,
         "documentType": detect_document_type(Path(str(text_file)).stem if text_file else ""),
     }
+
+
+def vector_dir_manifest(vector_dir: Path) -> dict[str, Any] | None:
+    manifest_path = vector_dir / "vector_manifest.json"
+    if not manifest_path.exists() or not (vector_dir / "faiss.index").exists():
+        return None
+    manifest = safe_json_load(manifest_path, {})
+    if not isinstance(manifest, dict):
+        return None
+    return manifest
+
+
+def vector_dir_provider(vector_dir: Path) -> str:
+    manifest = vector_dir_manifest(vector_dir)
+    if not manifest:
+        return ""
+    return str(manifest.get("embedding_provider") or manifest.get("provider") or "").casefold()
+
+
+def vector_dir_is_usable(vector_dir: Path, *, required_provider: str | None = None) -> bool:
+    provider = vector_dir_provider(vector_dir)
+    if not provider:
+        return False
+    if required_provider and provider != required_provider.casefold():
+        return False
+    if provider == "openai" and not os.getenv("OPENAI_API_KEY"):
+        return False
+    return True
+
+
+def private_retrieval_sources() -> tuple[list[tuple[Path, Path]], list[Path]]:
+    bm25_sources: list[tuple[Path, Path]] = []
+    vector_dirs: list[Path] = []
+    seen_bm25: set[Path] = set()
+    seen_vectors: set[Path] = set()
+    active_provider = embedding_provider()
+
+    for item in list_processed_uploads(OUTPUT_DIR):
+        if item.get("workspace") != "private":
+            continue
+
+        chunks_path_value = item.get("chunksPath")
+        if isinstance(chunks_path_value, str) and chunks_path_value.strip():
+            chunks_path = OUTPUT_DIR / chunks_path_value
+            chunks_jsonl_path = chunks_path.with_suffix(".jsonl") if chunks_path.suffix == ".json" else chunks_path
+            if chunks_jsonl_path.exists() and chunks_jsonl_path not in seen_bm25:
+                seen_bm25.add(chunks_jsonl_path)
+                bm25_sources.append((chunks_jsonl_path, chunks_jsonl_path.parent / "retrieval" / "bm25_index.json"))
+
+        embedding_status = item.get("embeddingStatus") if isinstance(item.get("embeddingStatus"), dict) else {}
+        for target in ("api", "local"):
+            result = embedding_status.get(target) if isinstance(embedding_status, dict) else None
+            index_path_value = result.get("index_path") if isinstance(result, dict) else None
+            if isinstance(index_path_value, str) and index_path_value.strip():
+                vector_dir = Path(index_path_value).parent
+            elif isinstance(chunks_path_value, str) and chunks_path_value.strip():
+                vector_dir = (OUTPUT_DIR / chunks_path_value).parent / "embeddings" / target
+            else:
+                continue
+            if vector_dir not in seen_vectors and vector_dir_is_usable(vector_dir, required_provider=active_provider):
+                seen_vectors.add(vector_dir)
+                vector_dirs.append(vector_dir)
+
+    return bm25_sources, vector_dirs
 
 
 def session_message_to_api(message: dict[str, Any], fallback_time: datetime) -> dict[str, Any]:
@@ -480,6 +591,62 @@ def apply_runtime_config(payload: RuntimeConfigPayload) -> None:
     load_documents_cache.cache_clear()
 
 
+def update_upload_metadata(status_path: Path, updates: dict[str, Any]) -> dict[str, Any]:
+    metadata = safe_json_load(status_path, {})
+    if not isinstance(metadata, dict):
+        metadata = {}
+    metadata.update(updates)
+    status_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+    return metadata
+
+
+def process_uploaded_document(status_path: Path, file_path: Path, file_type: str, language: str) -> None:
+    try:
+        update_upload_metadata(status_path, {"status": "processing", "ocrProgress": 10})
+        result = extract_document_text(file_path, file_type, language if language in {"vi", "en", "mixed"} else "vi")
+        update_upload_metadata(
+            status_path,
+            {
+                "status": "ocr_complete",
+                "ocrProgress": 100,
+                "extractedText": result.text,
+                "confidence": result.confidence,
+                "qualityWarning": quality_warning(result.confidence),
+                "ocrEngine": result.engine,
+                "ocrPages": [
+                    {
+                        "pageNumber": page.page_number,
+                        "text": page.text,
+                        "confidence": page.confidence,
+                        "source": page.source,
+                    }
+                    for page in result.pages
+                ],
+                "processedAt": utc_now_iso(),
+            },
+        )
+    except (OCREngineUnavailable, ValueError) as exc:
+        update_upload_metadata(
+            status_path,
+            {
+                "status": "failed",
+                "ocrProgress": 100,
+                "error": str(exc),
+                "processedAt": utc_now_iso(),
+            },
+        )
+    except Exception as exc:
+        update_upload_metadata(
+            status_path,
+            {
+                "status": "failed",
+                "ocrProgress": 100,
+                "error": f"OCR processing failed: {exc}",
+                "processedAt": utc_now_iso(),
+            },
+        )
+
+
 def load_vector_manifest() -> dict[str, Any] | None:
     vector_dir = active_vector_dir()
     manifest_path = vector_dir / "vector_manifest.json"
@@ -542,6 +709,7 @@ def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
         active_memory_model = memory_model()
         active_query_rewrite_model = query_rewrite_model()
         active_embedding_model = embedding_model()
+        private_bm25_sources, private_vector_dirs = private_retrieval_sources()
         result = answer_question(
             payload.question,
             chunks_path=CHUNKS_PATH,
@@ -560,6 +728,8 @@ def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
             model=active_chat_model,
             memory_model=active_memory_model,
             top_k=settings["top_k"],
+            additional_bm25_sources=private_bm25_sources,
+            additional_vector_dirs=private_vector_dirs,
             session_id=session_id,
             session_dir=SESSIONS_DIR,
         )
@@ -816,6 +986,7 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
     vector_dir = active_vector_dir()
     active_query_rewrite_model = query_rewrite_model()
     active_embedding_model = embedding_model()
+    private_bm25_sources, private_vector_dirs = private_retrieval_sources()
 
     rewrite_started = time.perf_counter()
     retrieval_plan = build_retrieval_queries(
@@ -849,6 +1020,8 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             bm25_top_k=max(settings["top_k"] * 2, 8),
             vector_top_k=max(settings["top_k"] * 2, 8),
             final_top_k=settings["top_k"],
+            additional_bm25_sources=private_bm25_sources,
+            additional_vector_dirs=private_vector_dirs,
         )
         bm25_ms = int((time.perf_counter() - started) * 1000)
 
@@ -871,6 +1044,8 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             bm25_top_k=max(settings["top_k"] * 2, 8),
             vector_top_k=max(settings["top_k"] * 2, 8),
             final_top_k=settings["top_k"],
+            additional_bm25_sources=private_bm25_sources,
+            additional_vector_dirs=private_vector_dirs,
         )
         vector_ms = int((time.perf_counter() - started) * 1000)
 
@@ -892,6 +1067,8 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             bm25_top_k=max(settings["top_k"] * 2, 8),
             vector_top_k=max(settings["top_k"] * 2, 8),
             final_top_k=settings["top_k"],
+            additional_bm25_sources=private_bm25_sources,
+            additional_vector_dirs=private_vector_dirs,
         )
     else:
         fused_results = bm25_results if settings["mode"] == "bm25" else vector_results
@@ -918,10 +1095,17 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
 
 
 @app.post("/api/uploads")
-async def upload_document(file: UploadFile = File(...)) -> dict[str, Any]:
+async def upload_document(
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(...),
+    language: str = "vi",
+    workspace: str = "private",
+    document_type: str = "other",
+) -> dict[str, Any]:
     ensure_directory(UPLOADS_DIR)
     upload_id = f"upload-{uuid.uuid4().hex[:12]}"
-    destination = UPLOADS_DIR / f"{upload_id}-{file.filename}"
+    original_filename = Path(file.filename or "upload").name
+    destination = UPLOADS_DIR / f"{upload_id}-{original_filename}"
     content = await file.read()
     destination.write_bytes(content)
     extension = destination.suffix.casefold()
@@ -936,15 +1120,174 @@ async def upload_document(file: UploadFile = File(...)) -> dict[str, Any]:
     status_path = UPLOADS_DIR / f"{upload_id}.json"
     metadata = {
         "id": upload_id,
-        "fileName": file.filename,
+        "fileName": original_filename,
         "fileType": file_type,
         "fileSize": len(content),
         "uploadedAt": created_at,
         "status": "processing",
-        "ocrProgress": 0,
+        "ocrProgress": 5,
+        "language": language,
+        "workspace": workspace if workspace in {"public", "private"} else "private",
+        "documentType": document_type,
+        "storagePath": str(destination.relative_to(ROOT_DIR)),
     }
     status_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+    background_tasks.add_task(process_uploaded_document, status_path, destination, file_type, language)
     return {"success": True, "data": metadata}
+
+
+@app.get("/api/uploads/processed")
+def get_processed_uploads() -> dict[str, Any]:
+    return {"success": True, "data": list_processed_uploads(OUTPUT_DIR)}
+
+
+@app.get("/api/uploads/processed/{upload_id}")
+def get_processed_upload_content(upload_id: str) -> dict[str, Any]:
+    processed_item = next((item for item in list_processed_uploads(OUTPUT_DIR) if item.get("id") == upload_id), None)
+    if not processed_item:
+        return {"success": False, "error": "Processed upload not found"}
+
+    document_path_value = processed_item.get("documentPath")
+    if not isinstance(document_path_value, str) or not document_path_value.strip():
+        return {"success": False, "error": "Processed document path is missing"}
+
+    document_path = (OUTPUT_DIR / document_path_value).resolve()
+    output_root = OUTPUT_DIR.resolve()
+    if not document_path.is_relative_to(output_root) or not document_path.exists() or not document_path.is_file():
+        return {"success": False, "error": "Processed document file not found"}
+
+    document_payload = safe_json_load(document_path, {})
+    if not isinstance(document_payload, dict):
+        return {"success": False, "error": "Processed document content is invalid"}
+
+    content_payload = {
+        **processed_item,
+        "text": str(document_payload.get("text") or ""),
+        "createdAt": document_payload.get("createdAt"),
+        "updatedAt": document_payload.get("updatedAt"),
+        "sourceFile": document_payload.get("sourceFile"),
+    }
+    return {"success": True, "data": content_payload}
+
+
+@app.delete("/api/uploads/processed/{upload_id}")
+def delete_processed_upload_endpoint(upload_id: str) -> dict[str, Any]:
+    deleted = delete_processed_upload(
+        upload_id=upload_id,
+        output_dir=OUTPUT_DIR,
+        law_output_dir=LAW_OUTPUT_DIR,
+        chunks_dir=CHUNKS_DIR,
+    )
+    status_path = UPLOADS_DIR / f"{upload_id}.json"
+    if status_path.exists():
+        update_upload_metadata(
+            status_path,
+            {
+                "status": "ocr_complete",
+                "documentStorePath": None,
+                "chunkStorePath": None,
+                "chunkCount": None,
+                "embeddingStatus": None,
+                "indexedWorkspace": None,
+            },
+        )
+    load_documents_cache.cache_clear()
+    load_chunk_report_map.cache_clear()
+    return {"success": True, "data": {"deleted": deleted}}
+
+
+@app.patch("/api/uploads/{upload_id}")
+def update_upload(upload_id: str, payload: UpdateUploadPayload) -> dict[str, Any]:
+    status_path = UPLOADS_DIR / f"{upload_id}.json"
+    if not status_path.exists():
+        return {"success": False, "error": "Upload not found"}
+    current_metadata = safe_json_load(status_path, {})
+    confidence = float(current_metadata.get("confidence") or 0.0)
+    warning = quality_warning(confidence)
+    if warning and not payload.forceLowConfidence:
+        return {"success": False, "error": warning}
+    pipeline_result = persist_reviewed_upload(
+        upload_id=upload_id,
+        file_name=str(current_metadata.get("fileName") or upload_id),
+        text=payload.extractedText,
+        metadata=current_metadata,
+        output_dir=OUTPUT_DIR,
+        law_output_dir=LAW_OUTPUT_DIR,
+        chunks_dir=CHUNKS_DIR,
+        embedding_target=payload.embeddingTarget,
+    )
+    metadata = update_upload_metadata(
+        status_path,
+        {
+            "status": payload.status,
+            "extractedText": payload.extractedText,
+            "reviewedAt": utc_now_iso(),
+            "qualityWarning": pipeline_result["qualityWarning"],
+            "chunkCount": pipeline_result["chunkCount"],
+            "documentStorePath": pipeline_result["documentStorePath"],
+            "chunkStorePath": pipeline_result["chunkStorePath"],
+            "indexedWorkspace": pipeline_result["workspace"],
+            "embeddingTarget": payload.embeddingTarget,
+            "embeddingStatus": pipeline_result["embeddingStatus"],
+        },
+    )
+    load_documents_cache.cache_clear()
+    load_chunk_report_map.cache_clear()
+    return {"success": True, "data": metadata}
+
+
+@app.post("/api/uploads/{upload_id}/embed")
+def embed_upload(upload_id: str, payload: EmbedUploadPayload) -> dict[str, Any]:
+    status_path = UPLOADS_DIR / f"{upload_id}.json"
+    if status_path.exists():
+        current_metadata = safe_json_load(status_path, {})
+        text = str(current_metadata.get("extractedText") or "")
+        file_name = str(current_metadata.get("fileName") or upload_id)
+    else:
+        processed_item = next((item for item in list_processed_uploads(OUTPUT_DIR) if item.get("id") == upload_id), None)
+        if not processed_item:
+            return {"success": False, "error": "Processed upload not found"}
+        document_path = OUTPUT_DIR / str(processed_item.get("documentPath"))
+        current_metadata = safe_json_load(document_path, {})
+        text = str(current_metadata.get("text") or "")
+        file_name = str(current_metadata.get("fileName") or processed_item.get("fileName") or upload_id)
+
+    confidence = float(current_metadata.get("confidence") or 0.0)
+    warning = quality_warning(confidence)
+    if warning and not payload.forceLowConfidence:
+        return {"success": False, "error": warning}
+    if not text.strip():
+        return {"success": False, "error": "Document text is empty; cannot build embeddings."}
+
+    pipeline_result = persist_reviewed_upload(
+        upload_id=upload_id,
+        file_name=file_name,
+        text=text,
+        metadata=current_metadata,
+        output_dir=OUTPUT_DIR,
+        law_output_dir=LAW_OUTPUT_DIR,
+        chunks_dir=CHUNKS_DIR,
+        embedding_target=payload.embeddingTarget,
+    )
+
+    result_payload = {
+        **current_metadata,
+        "id": upload_id,
+        "fileName": file_name,
+        "status": "ready",
+        "qualityWarning": pipeline_result["qualityWarning"],
+        "chunkCount": pipeline_result["chunkCount"],
+        "documentStorePath": pipeline_result["documentStorePath"],
+        "chunkStorePath": pipeline_result["chunkStorePath"],
+        "indexedWorkspace": pipeline_result["workspace"],
+        "embeddingTarget": payload.embeddingTarget,
+        "embeddingStatus": pipeline_result["embeddingStatus"],
+    }
+    if status_path.exists():
+        update_upload_metadata(status_path, result_payload)
+    load_documents_cache.cache_clear()
+    load_chunk_report_map.cache_clear()
+    return {"success": True, "data": result_payload}
 
 
 @app.get("/api/uploads/{upload_id}")
@@ -953,3 +1296,20 @@ def get_upload_status(upload_id: str) -> dict[str, Any]:
     if not status_path.exists():
         return {"success": False, "error": "Upload not found"}
     return {"success": True, "data": safe_json_load(status_path, {})}
+
+
+@app.delete("/api/uploads/{upload_id}")
+def delete_upload(upload_id: str) -> dict[str, Any]:
+    status_path = UPLOADS_DIR / f"{upload_id}.json"
+    if not status_path.exists():
+        return {"success": True, "data": None}
+
+    metadata = safe_json_load(status_path, {})
+    storage_path = metadata.get("storagePath") if isinstance(metadata, dict) else None
+    if isinstance(storage_path, str):
+        raw_path = ROOT_DIR / storage_path
+        if raw_path.exists() and raw_path.is_file():
+            raw_path.unlink()
+
+    status_path.unlink()
+    return {"success": True, "data": None}

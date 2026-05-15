@@ -1,0 +1,205 @@
+{
+  "session_id": "session-46c1f1927d7a",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-1ad40c0149f3",
+      "role": "user",
+      "content": "LUẬT QUY HOẠCH ĐÔ THỊ VÀ NÔNG THÔN  Luật số: 47/2024/QH15  có nằm trong database không kiểm tra",
+      "timestamp": "2026-05-15T09:44:43.329510+00:00"
+    },
+    {
+      "id": "msg-42b31e0833c7",
+      "role": "assistant",
+      "content": "Trong context hiện có, **có căn cứ để xác định “Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15” đang xuất hiện trong database**.\n\n**Căn cứ:**\n- **Nguồn 1**: *Luật Công nghiệp công nghệ số 2025* – **Điều 49 khoản 5 điểm c** nêu rõ:  \n  “**Khoản 5 Điều 2 và khoản 2 Điều 16 của Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15**”.\n- Việc một văn bản khác viện dẫn trực tiếp đúng tên và số hiệu này cho thấy văn bản đó **đã có trong dữ liệu được truy xuất**.\n\n**Kết luận ngắn:**\n- Nếu bạn hỏi **“có nằm trong database không”** theo context hiện có thì **có**.\n- Nếu cần kiểm tra sâu hơn như **toàn văn, hiệu lực, hoặc metadata đầy đủ**, thì cần tra tiếp theo đúng tên/số hiệu văn bản.\n\nCần bổ sung thêm:  \nBạn có muốn mình kiểm tra tiếp **toàn văn/hiệu lực/ngày ban hành** của Luật số 47/2024/QH15 không?",
+      "timestamp": "2026-05-15T09:44:55.962169+00:00",
+      "sources": [
+        {
+          "id": "026_Luat-Cong-nghiep-cong-nghe-so-2025-so-71-2025-QH15-621341:article:49:clause:5",
+          "documentId": "026_Luat-Cong-nghiep-cong-nghe-so-2025-so-71-2025-QH15-621341",
+          "documentTitle": "Luat Cong Nghiep Cong Nghe So 2025 So 71 2025 Qh15 621341",
+          "articleNumber": "49",
+          "clauseNumber": "5",
+          "targetArticle": null,
+          "chunkText": "Điều 49. Sửa đổi, bổ sung, thay thế, bãi bỏ một số điều của các luật có liên quan\n5. Thay thế cụm từ “khu công nghệ thông tin tập trung” bằng cụm từ “khu công nghệ số tập trung” tại các luật, nghị quyết sau đây:\na) Khoản 22 Điều 79 và khoản 1 Điều 202 của Luật Đất đai số 31/2024/QH15 đã được sửa đổi, bổ sung theo Luật số 43/2024/QH15, Luật số 47/2024/QH15 và Luật số 58/2024/QH15;\nb) Khoản 1 Điều 24 của Luật Thủ đô số 39/2024/QH15 đã được sửa đổi, bổ sung theo Luật số 47/2024/QH15, Luật số 55/2024/QH15, Luật số 57/2024/QH15, Luật số 58/2024/QH15 và Luật số 65/2025/QH15;\nc) Khoản 5 Điều 2 và khoản 2 Điều 16 của Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15;\nd) Điều 36a của Luật Đầu tư số 61/2020/QH14 đã được sửa đổi, bổ sung theo Luật số 72/2020/QH14, Luật số 03/2022/QH15, Luật số 05/2022/QH15, Luật số 08/2022/QH15, Luật số 09/2022/QH15, Luật số 20/2023/QH15, Luật số 26/2023/QH15, Luật số 27/2023/QH15, Luật số 28/2023/QH15, Luật số 31/2024/QH15, Luật số 33/2024/QH15, Luật số 43/2024/QH15 và Luật số 57/2024/QH15;\nđ) Điểm b khoản 1 Điều 3 và khoản 3 Điều 9 của Nghị quyết số 81/2023/QH15 ngày 09 tháng 01 năm 2023 của Quốc hội về Quy hoạch tổng thể quốc gia thời kỳ 2021-2030, tầm nhìn đến năm 2050;\ne) Điểm d khoản 1 Điều 8 của Nghị quyết số 98/2023/QH15 ngày 24 tháng 6 năm 2023 của Quốc hội về thí điểm cơ chế, chính sách đặc thù phát triển Thành phố Hồ Chí Minh;\ng) Khoản 3, điểm a khoản 5 Điều 11 và điểm a khoản 2 Điều 14 của Nghị quyết số 136/2024/QH15 ngày 26 tháng 6 năm 2024 của Quốc hội về tổ chức chính quyền đô thị và thí điểm một số cơ chế, chính sách đặc thù phát triển thành phố Đà Nẵng.",
+          "relevanceScore": 0.07898238949202102,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Cong-nghe-thong-tin/Luat-Cong-nghiep-cong-nghe-so-2025-so-71-2025-QH15-621341.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814:amendment:31",
+          "documentId": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814",
+          "documentTitle": "Luat Quy Hoach 2025 So 112 2025 Qh15 586814",
+          "articleNumber": "31",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 31. Nội dung quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn Nội dung quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn tuân thủ quy định tại các điểm đ,e, i, k và l khoản 3 Điều 5 và Điều 24 của Luật này và thực hiện theo quy định khác của pháp luật có liên quan.",
+          "relevanceScore": 0.08018994325346786,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Luat-Quy-hoach-2025-so-112-2025-QH15-586814.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "012_Luat-cong-chung-2024-so-46-2024-QH15-524982:article:75",
+          "documentId": "012_Luat-cong-chung-2024-so-46-2024-QH15-524982",
+          "documentTitle": "Luat Cong Chung 2024 So 46 2024 Qh15 524982",
+          "articleNumber": "75",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 75. Hiệu lực thi hành\n1. Luật này có hiệu lực thi hành từ ngày 01 tháng 7 năm 2025.\n2. Luật Công chứng số 53/2014/QH13 đã được sửa đổi, bổ sung một số điều theo Luật số 28/2018/QH14 và Luật số 16/2023/QH15 (sau đây gọi là Luật Công chứng số 53/2014/QH13) hết hiệu lực kể từ ngày Luật này có hiệu lực thi hành, trừ trường hợp quy định tại các khoản 1, 2, 3, 6, 7, 9, 11, 12 và 14 Điều 76 của Luật này.",
+          "relevanceScore": 0.06177239249227845,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Dich-vu-phap-ly/Luat-cong-chung-2024-so-46-2024-QH15-524982.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814:amendment:55:clause:8",
+          "documentId": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814",
+          "documentTitle": "Luat Quy Hoach 2025 So 112 2025 Qh15 586814",
+          "articleNumber": "55",
+          "clauseNumber": "5",
+          "targetArticle": "Điều 63",
+          "chunkText": "Điều 55. Sửa đổi, bổ sung, bãi bỏ một số điều, khoản của các luật có liên quan đến quy hoạch\n5. Sửa đổi, bổ sung một số điều của Luật Viễn thông số 24/2023/QH15 đã được sửa đổi, bổ sung một số điều theo Luật số 47/2024/QH15 như sau:\na) Thay thế cụm từ “quy hoạch hạ tầng kỹ thuật viễn thông thụ động” bằng cụm từ “phương hướng phát triển hạ tầng kỹ thuật viễn thông thụ động trong quy hoạch tỉnh” tại điểm b khoản 4 Điều 13, khoản 1 Điều 64, khoản 1 Điều 65 và điểm a khoản 2 Điều 67;\nb) Thay thế cụm từ “quy hoạch kho số viễn thông” bằng cụm từ “quy hoạch kho số viễn thông và tài nguyên Internet” tại khoản 2 Điều 25;\nc) Thay thế cụm từ “quy hoạch kho số viễn thông, quy hoạch tài nguyên Internet” bằng cụm từ “quy hoạch kho số viễn thông và tài nguyên Internet” tại khoản 3 Điều 34, Điều 49, điểm a khoản 1 Điều 50 và điểm b khoản 2 Điều 53;\nd) Sửa đổi, bổ sung Điều 63 như sau: “Điều 63. Phương hướng phát triển hạ tầng kỹ thuật viễn thông thụ động trong quy hoạch tỉnh",
+          "relevanceScore": 0.06079691053185351,
+          "retrievalOrigin": "vector",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Luat-Quy-hoach-2025-so-112-2025-QH15-586814.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "030_Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511:amendment:46:clause:20",
+          "documentId": "030_Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511",
+          "documentTitle": "Luat Sua Doi Cac Luat Co Lien Quan Den Quy Hoach 2018 390511",
+          "articleNumber": "29",
+          "clauseNumber": "13",
+          "targetArticle": "Điều 55",
+          "chunkText": "Điều 29. Sửa đổi, bổ sung một số điều của Luật Quy hoạch đô thị\n13. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 55 như sau: “2. Việc cung cấp thông tin về quy hoạch đô thị được thực hiện dưới các hình thức sau đây:\na) Giải thích trực tiếp theo yêu cầu của cơ quan, tổ chức, cá nhân;\nb) Cung cấp thông tin bằng văn bản giấy, văn bản điện tử theo yêu cầu của cơ quan, tổ chức, cá nhân;\nc) Đăng tải trên trang thông tin điện tử của cơ quan quản lý nhà nước về quy hoạch đô thị và phương tiện thông tin đại chúng;\nd) Cung cấp ấn phẩm về quy hoạch. 3.Ủy ban nhân dân các cấp có trách nhiệm tổ chức việc tiếp nhận, xử lý và cung cấp thông tin khi có yêu cầu. Các thông tin được cung cấp phải căn cứ vào đồ án quy hoạch đô thị, thiết kế đô thị đã được phê duyệt và Quy định quản lý theo đồ án quy hoạch, thiết kế đô thị đã được ban hành. Đối với trường hợp cung cấp thông tin bằng văn bản, trong thời hạn 15 ngày, kể từ ngày có yêu cầu, cơ quan quản lý quy hoạch đô thị có trách nhiệm cung cấp thông tin cho cơ quan, tổ chức, cá nhân có yêu cầu.”.",
+          "relevanceScore": 0.04692957315908136,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        }
+      ],
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "runtimeMode": "openai",
+        "modelUsed": "gpt-5.4-mini",
+        "embeddingModel": "text-embedding-3-small",
+        "queryRewritten": "Tra cứu trong cơ sở dữ liệu văn bản pháp luật Việt Nam xem có văn bản \"Luật Quy hoạch đô thị và nông thôn\" số 47/2024/QH15 hay không; xác minh tên đầy đủ, số hiệu, ngày ban hành, tình trạng hiệu lực và các thông tin liên quan của Luật số 47/2024/QH15.",
+        "processingTimeMs": 12895
+      }
+    },
+    {
+      "id": "msg-d9ffaa2a3d8d",
+      "role": "user",
+      "content": "nội dung luật Luật số: 47/2024/QH15",
+      "timestamp": "2026-05-15T09:45:20.608245+00:00"
+    },
+    {
+      "id": "msg-58415cd90ec4",
+      "role": "assistant",
+      "content": "Trong context hiện có, **chưa có toàn văn hay nội dung đầy đủ của Luật số 47/2024/QH15** để trích nguyên văn toàn bộ. Tuy nhiên, có thể khẳng định **văn bản này đang được viện dẫn trong các luật khác**, nên ít nhất đã có **dấu vết nội dung pháp lý liên quan** trong dữ liệu truy xuất.\n\n**Căn cứ từ context:**\n- **Luật Công nghiệp công nghệ số 2025 – Điều 49 khoản 5 điểm c** có dẫn:  \n  “**Khoản 5 Điều 2 và khoản 2 Điều 16 của Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15**”.\n- **Luật Quy hoạch 2025 – Điều 31** nêu:  \n  “Nội dung quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn tuân thủ quy định tại các điểm đ, e, i, k và l khoản 3 Điều 5 và Điều 24 của Luật này...”\n- **Luật Quy hoạch 2025 – Điều 6 khoản 9** nêu việc xử lý mâu thuẫn giữa các quy hoạch đô thị và nông thôn thực hiện theo pháp luật về quy hoạch đô thị và nông thôn.\n\n**Suy ra từ context hiện có:**\n- Nếu bạn cần **xác nhận văn bản có tồn tại trong dữ liệu**, thì **có căn cứ để nói là có**.\n- Nếu bạn cần **nội dung luật**, hiện mới chỉ thấy **các điều khoản được luật khác viện dẫn**, chưa có toàn văn để chép đầy đủ.\n- Nếu bạn cần **trích đúng điều khoản liên quan**, hiện có thể tra theo các mốc đã xuất hiện: **Điều 2 khoản 5, Điều 16 khoản 2** của Luật số 47/2024/QH15.\n\n**Cần bổ sung thêm:**  \nBạn muốn mình **trích các điều khoản đang được viện dẫn của Luật số 47/2024/QH15** hay cần **toàn văn/tóm tắt nội dung luật**?",
+      "timestamp": "2026-05-15T09:45:35.002719+00:00",
+      "sources": [
+        {
+          "id": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814:amendment:31",
+          "documentId": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814",
+          "documentTitle": "Luat Quy Hoach 2025 So 112 2025 Qh15 586814",
+          "articleNumber": "31",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 31. Nội dung quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn Nội dung quy hoạch chi tiết ngành, quy hoạch đô thị và nông thôn tuân thủ quy định tại các điểm đ,e, i, k và l khoản 3 Điều 5 và Điều 24 của Luật này và thực hiện theo quy định khác của pháp luật có liên quan.",
+          "relevanceScore": 0.1139692612458345,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Luat-Quy-hoach-2025-so-112-2025-QH15-586814.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814:amendment:6:clause:9",
+          "documentId": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814",
+          "documentTitle": "Luat Quy Hoach 2025 So 112 2025 Qh15 586814",
+          "articleNumber": "6",
+          "clauseNumber": "9",
+          "targetArticle": null,
+          "chunkText": "Điều 6. Nguyên tắc xác định quy hoạch phải điều chỉnh và quy hoạch được thực hiện khi có mâu thuẫn giữa các quy hoạch\n9. Việc xử lý trong trường hợp quy hoạch đô thị và nông thôn mâu thuẫn với nhau thì thực hiện theo quy định của pháp luật về quy hoạch đô thị và nông thôn.",
+          "relevanceScore": 0.0915297753058664,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Luat-Quy-hoach-2025-so-112-2025-QH15-586814.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814:amendment:55:clause:10",
+          "documentId": "033_Luat-Quy-hoach-2025-so-112-2025-QH15-586814",
+          "documentTitle": "Luat Quy Hoach 2025 So 112 2025 Qh15 586814",
+          "articleNumber": "55",
+          "clauseNumber": "2",
+          "targetArticle": "Điều 8",
+          "chunkText": "Điều 55. Sửa đổi, bổ sung, bãi bỏ một số điều, khoản của các luật có liên quan đến quy hoạch\n2. Quy ho ạch theo pháp luật về quy hoạch đô thị và nông thôn đối với khu đô thị, khu dân cư, khu chức năng, cụm công nghiệp phải bảo đảm tính thống nhất, đồng bộ với phương hướng phát triển hạ tầng kỹ thuật viễn thông thụ động trong quy hoạch tỉnh để thuận tiện cho việc thiết lập cơ sở hạ tầng viễn thông, cung cấp, sử dụng dịch vụ viễn thông.”;\nđ) Bãi bỏ Điều 8.",
+          "relevanceScore": 0.07445310030911435,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Luat-Quy-hoach-2025-so-112-2025-QH15-586814.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "030_Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511:amendment:46:clause:20",
+          "documentId": "030_Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511",
+          "documentTitle": "Luat Sua Doi Cac Luat Co Lien Quan Den Quy Hoach 2018 390511",
+          "articleNumber": "29",
+          "clauseNumber": "13",
+          "targetArticle": "Điều 55",
+          "chunkText": "Điều 29. Sửa đổi, bổ sung một số điều của Luật Quy hoạch đô thị\n13. Sửa đổi, bổ sung khoản 2 và khoản 3 Điều 55 như sau: “2. Việc cung cấp thông tin về quy hoạch đô thị được thực hiện dưới các hình thức sau đây:\na) Giải thích trực tiếp theo yêu cầu của cơ quan, tổ chức, cá nhân;\nb) Cung cấp thông tin bằng văn bản giấy, văn bản điện tử theo yêu cầu của cơ quan, tổ chức, cá nhân;\nc) Đăng tải trên trang thông tin điện tử của cơ quan quản lý nhà nước về quy hoạch đô thị và phương tiện thông tin đại chúng;\nd) Cung cấp ấn phẩm về quy hoạch. 3.Ủy ban nhân dân các cấp có trách nhiệm tổ chức việc tiếp nhận, xử lý và cung cấp thông tin khi có yêu cầu. Các thông tin được cung cấp phải căn cứ vào đồ án quy hoạch đô thị, thiết kế đô thị đã được phê duyệt và Quy định quản lý theo đồ án quy hoạch, thiết kế đô thị đã được ban hành. Đối với trường hợp cung cấp thông tin bằng văn bản, trong thời hạn 15 ngày, kể từ ngày có yêu cầu, cơ quan quản lý quy hoạch đô thị có trách nhiệm cung cấp thông tin cho cơ quan, tổ chức, cá nhân có yêu cầu.”.",
+          "relevanceScore": 0.06255457315908136,
+          "retrievalOrigin": "vector",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "030_Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511:amendment:46:clause:10",
+          "documentId": "030_Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511",
+          "documentTitle": "Luat Sua Doi Cac Luat Co Lien Quan Den Quy Hoach 2018 390511",
+          "articleNumber": "29",
+          "clauseNumber": "8",
+          "targetArticle": "Điều 47",
+          "chunkText": "Điều 29. Sửa đổi, bổ sung một số điều của Luật Quy hoạch đô thị\n8. Sửa đổi, bổ sung khoản 1 Điều 47 như sau: “1. Có sự điều chỉnh về chiến lược phát triển kinh tế - xã hội, quốc phòng, an ninh, quy hoạch cấp quốc gia, quy hoạch vùng, quy hoạch tỉnh hoặc điều chỉnh về địa giới hành chính làm ảnh hưởng lớn đến tính chất, chức năng, quy mô của đô thị hoặc khu vực lập quy hoạch;”.",
+          "relevanceScore": 0.05932884104323105,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Xay-dung-Do-thi/Luat-sua-doi-cac-Luat-co-lien-quan-den-quy-hoach-2018-390511.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        }
+      ],
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "runtimeMode": "openai",
+        "modelUsed": "gpt-5.4-mini",
+        "embeddingModel": "text-embedding-3-small",
+        "queryRewritten": "Tra cứu toàn văn và/hoặc nội dung chính của Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15; xác định tên văn bản, số hiệu, ngày ban hành, hiệu lực, phạm vi điều chỉnh, đối tượng áp dụng, các chương điều khoản và các quy định liên quan đến quy hoạch đô thị, quy hoạch nông thôn theo Luật 47/2024/QH15.",
+        "processingTimeMs": 14616
+      }
+    }
+  ],
+  "facts": {
+    "context": "Tra cứu văn bản pháp luật",
+    "document_name": "Luật Quy hoạch đô thị và nông thôn",
+    "document_number": "47/2024/QH15",
+    "user_request_history": [
+      "Kiểm tra sự tồn tại của Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15 trong database",
+      "Yêu cầu nội dung Luật số 47/2024/QH15"
+    ]
+  },
+  "case_summary": "Người dùng đang tra cứu văn bản pháp luật Việt Nam, cụ thể là yêu cầu xem nội dung của Luật số 47/2024/QH15 (Luật Quy hoạch đô thị và nông thôn). Trước đó đã có trao đổi về việc văn bản này có xuất hiện trong database hay không; hiện tại người dùng chuyển sang yêu cầu xem nội dung luật.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Tra cứu toàn văn và/hoặc nội dung chính của Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15; xác định tên văn bản, số hiệu, ngày ban hành, hiệu lực, phạm vi điều chỉnh, đối tượng áp dụng, các chương điều khoản và các quy định liên quan đến quy hoạch đô thị, quy hoạch nông thôn theo Luật 47/2024/QH15.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-15T09:45:35.013218+00:00"
+}

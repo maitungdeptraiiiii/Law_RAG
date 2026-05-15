@@ -26,6 +26,7 @@ from .retrieve_chunks import (
 DEFAULT_QUERY_REWRITE_MODEL = query_rewrite_model()
 TOKEN_RE = re.compile(r"\w+", re.UNICODE)
 ARTICLE_RE = re.compile(r"\b(?:điều|dieu|article)\s+(\d+[a-z]?)\b", re.IGNORECASE)
+LEGAL_NUMBER_RE = re.compile(r"\b\d{1,4}\s*[/\-]\s*\d{4}\s*[/\-]\s*[A-Za-zĐđ]+[A-Za-z0-9Đđ]*\b")
 
 COLLOQUIAL_QUERY_EXPANSIONS: list[tuple[tuple[str, ...], list[str]]] = [
     (
@@ -225,6 +226,59 @@ def source_coverage_score(item: dict) -> float:
     return 0.0
 
 
+def normalize_identifier(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", normalize_text(text))
+
+
+def query_document_identifiers(queries: list[str]) -> set[str]:
+    identifiers: set[str] = set()
+    for query in queries:
+        for match in LEGAL_NUMBER_RE.finditer(query):
+            identifiers.add(normalize_identifier(match.group(0)))
+    return identifiers
+
+
+def pinned_document_chunks(chunks_paths: list[Path], queries: list[str], *, limit_per_document: int = 4) -> list[dict]:
+    identifiers = query_document_identifiers(queries)
+    if not identifiers:
+        return []
+
+    pinned: list[dict] = []
+    pinned_count_by_source: dict[str, int] = {}
+    for chunks_path in chunks_paths:
+        if not chunks_path.exists():
+            continue
+        for line in chunks_path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            chunk = json.loads(line)
+            source_file = str(chunk.get("source_file") or "")
+            normalized_source = normalize_identifier(source_file)
+            if not any(identifier in normalized_source for identifier in identifiers):
+                continue
+            if pinned_count_by_source.get(source_file, 0) >= limit_per_document:
+                continue
+            pinned_count_by_source[source_file] = pinned_count_by_source.get(source_file, 0) + 1
+            text = str(chunk.get("text") or "")
+            pinned.append(
+                {
+                    "score": 1.0,
+                    "chunk_id": chunk["chunk_id"],
+                    "source_file": source_file,
+                    "article_number": chunk.get("article_number"),
+                    "clause_number": chunk.get("clause_number"),
+                    "point_number": chunk.get("point_number"),
+                    "document_title": chunk.get("document_title"),
+                    "chapter": chunk.get("chapter"),
+                    "target_article": chunk.get("target_article"),
+                    "preview": text[:400],
+                    "text": text,
+                    "search_source": "document",
+                }
+            )
+    return pinned
+
+
 def rerank_results(results: list[dict], *, queries: list[str], top_k: int) -> list[dict]:
     if not results:
         return []
@@ -236,11 +290,13 @@ def rerank_results(results: list[dict], *, queries: list[str], top_k: int) -> li
         lexical_component = lexical_overlap_score(queries, item)
         article_component = article_match_score(queries, item)
         coverage_component = source_coverage_score(item)
+        pinned_component = 1.0 if "document" in set(item.get("sources") or []) else 0.0
         rerank_score = (
-            0.55 * rrf_component
-            + 0.25 * lexical_component
-            + 0.15 * article_component
+            0.45 * rrf_component
+            + 0.22 * lexical_component
+            + 0.13 * article_component
             + 0.05 * coverage_component
+            + 0.15 * pinned_component
         )
         reranked.append(
             {
@@ -251,12 +307,39 @@ def rerank_results(results: list[dict], *, queries: list[str], top_k: int) -> li
                     "lexical_overlap": round(lexical_component, 6),
                     "article_match": round(article_component, 6),
                     "source_coverage": round(coverage_component, 6),
+                    "pinned_document": round(pinned_component, 6),
                 },
             }
         )
 
     reranked.sort(key=lambda item: item["rerank_score"], reverse=True)
     return reranked[:top_k]
+
+
+def prioritize_pinned_results(results: list[dict], pinned_results: list[dict], *, top_k: int, max_pinned: int = 3) -> list[dict]:
+    if not pinned_results:
+        return results[:top_k]
+
+    merged: list[dict] = []
+    seen: set[str] = set()
+    ranked_by_id = {str(item.get("chunk_id")): item for item in results}
+    for pinned in pinned_results[:max_pinned]:
+        chunk_id = str(pinned.get("chunk_id"))
+        item = ranked_by_id.get(chunk_id, pinned)
+        sources = list(dict.fromkeys([*(item.get("sources") or []), "document"]))
+        merged.append({**item, "sources": sources})
+        seen.add(chunk_id)
+
+    for item in results:
+        chunk_id = str(item.get("chunk_id"))
+        if chunk_id in seen:
+            continue
+        merged.append(item)
+        seen.add(chunk_id)
+        if len(merged) >= top_k:
+            break
+
+    return merged[:top_k]
 
 
 def rewrite_query_with_llm(query: str, *, model: str, max_rewrites: int) -> dict:
@@ -445,6 +528,13 @@ def vector_search(
     return faiss_vector_search(query, vector_dir, top_k, embedding_model=embedding_model)
 
 
+def safe_faiss_vector_search(query: str, vector_dir: Path, top_k: int) -> list[dict]:
+    try:
+        return faiss_vector_search(query, vector_dir, top_k)
+    except Exception:
+        return []
+
+
 def reciprocal_rank_fusion(*ranked_lists: list[dict], candidate_k: int, k: int = 60) -> list[dict]:
     merged: dict[str, dict] = {}
 
@@ -500,21 +590,32 @@ def hybrid_search(
     bm25_top_k: int,
     vector_top_k: int,
     final_top_k: int,
+    additional_bm25_sources: list[tuple[Path, Path]] | None = None,
+    additional_vector_dirs: list[Path] | None = None,
 ) -> list[dict]:
     active_queries = retrieval_queries or [query]
     candidate_k = max(final_top_k * 4, final_top_k, 20)
+    bm25_sources = [(chunks_path, bm25_index_path), *(additional_bm25_sources or [])]
+    pinned_results = pinned_document_chunks([source_chunks_path for source_chunks_path, _ in bm25_sources], active_queries)
 
     bm25_ranked_lists: list[list[dict]] = []
     if retrieval_mode in {"bm25", "hybrid"}:
-        bm25_index = ensure_bm25_index(chunks_path, bm25_index_path)
-        for retrieval_query in active_queries:
-            bm25_results = query_index(bm25_index, retrieval_query, bm25_top_k)
-            for item in bm25_results:
-                item["search_source"] = "bm25"
-            bm25_ranked_lists.append(bm25_results)
+        if pinned_results:
+            bm25_ranked_lists.append(pinned_results)
+        for source_chunks_path, source_index_path in bm25_sources:
+            if not source_chunks_path.exists():
+                continue
+            bm25_index = ensure_bm25_index(source_chunks_path, source_index_path)
+            for retrieval_query in active_queries:
+                bm25_results = query_index(bm25_index, retrieval_query, bm25_top_k)
+                for item in bm25_results:
+                    item["search_source"] = "bm25"
+                bm25_ranked_lists.append(bm25_results)
 
     vector_ranked_lists: list[list[dict]] = []
     if retrieval_mode in {"vector", "hybrid"}:
+        if retrieval_mode == "vector" and pinned_results:
+            vector_ranked_lists.append(pinned_results)
         for retrieval_query in active_queries:
             vector_results = vector_search(
                 retrieval_query,
@@ -528,21 +629,29 @@ def hybrid_search(
                 atlas_vector_index=atlas_vector_index,
             )
             vector_ranked_lists.append(vector_results)
+            for extra_vector_dir in additional_vector_dirs or []:
+                if not (extra_vector_dir / "faiss.index").exists():
+                    continue
+                extra_vector_results = safe_faiss_vector_search(retrieval_query, extra_vector_dir, vector_top_k)
+                vector_ranked_lists.append(extra_vector_results)
 
     if retrieval_mode == "vector":
         if len(vector_ranked_lists) <= 1:
             candidates = finalize_single_source_results(vector_ranked_lists[0] if vector_ranked_lists else [], top_k=candidate_k)
         else:
             candidates = reciprocal_rank_fusion(*vector_ranked_lists, candidate_k=candidate_k)
-        return rerank_results(candidates, queries=active_queries, top_k=final_top_k)
+        reranked = rerank_results(candidates, queries=active_queries, top_k=final_top_k)
+        return prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
     if retrieval_mode == "bm25":
         if len(bm25_ranked_lists) <= 1:
             candidates = finalize_single_source_results(bm25_ranked_lists[0] if bm25_ranked_lists else [], top_k=candidate_k)
         else:
             candidates = reciprocal_rank_fusion(*bm25_ranked_lists, candidate_k=candidate_k)
-        return rerank_results(candidates, queries=active_queries, top_k=final_top_k)
+        reranked = rerank_results(candidates, queries=active_queries, top_k=final_top_k)
+        return prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
     candidates = reciprocal_rank_fusion(*bm25_ranked_lists, *vector_ranked_lists, candidate_k=candidate_k)
-    return rerank_results(candidates, queries=active_queries, top_k=final_top_k)
+    reranked = rerank_results(candidates, queries=active_queries, top_k=final_top_k)
+    return prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
 
 
 def main() -> None:

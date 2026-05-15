@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { 
-  X, 
+import {
   Save, 
   FileText, 
   MessageSquare,
@@ -11,7 +10,6 @@ import {
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { Badge } from '@/components/ui/badge'
 import {
   Dialog,
@@ -47,8 +45,8 @@ export function OCRReviewPanel({ upload, onClose, onSave }: OCRReviewPanelProps)
 
   return (
     <Dialog open onOpenChange={() => onClose()}>
-      <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col">
-        <DialogHeader>
+      <DialogContent className="flex max-h-[92vh] w-[calc(100vw-2rem)] max-w-6xl flex-col overflow-hidden p-0 sm:max-w-6xl">
+        <DialogHeader className="shrink-0 border-b px-6 py-5 pr-12">
           <DialogTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
             Xem lại kết quả OCR
@@ -58,9 +56,10 @@ export function OCRReviewPanel({ upload, onClose, onSave }: OCRReviewPanelProps)
           </DialogDescription>
         </DialogHeader>
 
-        <div className="flex-1 grid md:grid-cols-[1fr,250px] gap-4 min-h-0">
+        <div className="min-h-0 flex-1 overflow-y-auto px-6 py-5">
+          <div className="grid min-h-0 gap-5 lg:grid-cols-[minmax(0,1fr)_280px]">
           {/* Text Editor */}
-          <div className="flex flex-col min-h-0">
+          <div className="flex min-w-0 flex-col">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium">Nội dung đã nhận dạng</span>
               {hasChanges && (
@@ -72,13 +71,13 @@ export function OCRReviewPanel({ upload, onClose, onSave }: OCRReviewPanelProps)
             <Textarea
               value={editedText}
               onChange={(e) => handleTextChange(e.target.value)}
-              className="flex-1 min-h-[400px] resize-none font-mono text-sm leading-relaxed"
+              className="h-[58vh] min-h-[360px] resize-none overflow-auto whitespace-pre-wrap font-mono text-sm leading-6"
               placeholder="Nội dung văn bản sẽ hiển thị ở đây sau khi OCR hoàn tất..."
             />
           </div>
 
           {/* Side Panel */}
-          <div className="space-y-4">
+          <div className="min-w-0 space-y-4">
             {/* Confidence */}
             <div className="p-4 rounded-lg border border-border bg-muted/30">
               <h4 className="text-sm font-medium mb-3">Độ tin cậy OCR</h4>
@@ -107,6 +106,13 @@ export function OCRReviewPanel({ upload, onClose, onSave }: OCRReviewPanelProps)
                 </div>
               </div>
             </div>
+
+            {upload.qualityWarning && (
+              <div className="p-4 rounded-lg border border-warning/40 bg-warning/10">
+                <h4 className="text-sm font-medium mb-2">Cháº¥t lÆ°á»£ng tháº¥p</h4>
+                <p className="text-xs text-muted-foreground">{upload.qualityWarning}</p>
+              </div>
+            )}
 
             {/* Tips */}
             <div className="p-4 rounded-lg border border-border bg-muted/30">
@@ -145,9 +151,10 @@ export function OCRReviewPanel({ upload, onClose, onSave }: OCRReviewPanelProps)
               </div>
             </div>
           </div>
+          </div>
         </div>
 
-        <DialogFooter className="mt-4">
+        <DialogFooter className="shrink-0 border-t px-6 py-4">
           <Button variant="outline" onClick={onClose}>
             Hủy
           </Button>

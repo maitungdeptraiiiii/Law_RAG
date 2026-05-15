@@ -9,7 +9,7 @@ import {
   FileText, 
   Search, 
   Upload,
-  Settings,
+  Archive,
   ChevronLeft,
   Menu
 } from 'lucide-react'
@@ -37,6 +37,11 @@ const navItems = [
     title: 'Tải lên tài liệu',
     href: '/admin/upload',
     icon: Upload,
+  },
+  {
+    title: 'Tài liệu đã xử lý',
+    href: '/admin/processed',
+    icon: Archive,
   },
 ]
 

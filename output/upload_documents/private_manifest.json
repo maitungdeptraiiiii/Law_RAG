@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "upload-255a0d5ceacf",
+      "fileName": "47-2024-qh15_01.pdf",
+      "workspace": "private",
+      "documentType": "other",
+      "confidence": 1.0,
+      "qualityWarning": null,
+      "chunkCount": 190,
+      "embeddingStatus": {
+        "requested": "both",
+        "api": {
+          "built": true,
+          "provider": "openai",
+          "embedding_provider": "openai",
+          "model": "text-embedding-3-small",
+          "embedding_model": "text-embedding-3-small",
+          "dimension": 1536,
+          "chunk_count": 190,
+          "chunks_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\chunks.jsonl",
+          "index_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\embeddings\\api\\faiss.index",
+          "metadata_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\embeddings\\api\\vector_metadata.json"
+        },
+        "local": {
+          "built": true,
+          "provider": "sentence-transformers",
+          "embedding_provider": "sentence-transformers",
+          "model": "intfloat/multilingual-e5-base",
+          "embedding_model": "intfloat/multilingual-e5-base",
+          "dimension": 768,
+          "chunk_count": 190,
+          "chunks_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\chunks.jsonl",
+          "index_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\embeddings\\local\\faiss.index",
+          "metadata_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\embeddings\\local\\vector_metadata.json"
+        }
+      },
+      "documentPath": "upload_documents\\private\\upload-255a0d5ceacf\\upload-255a0d5ceacf_47-2024-qh15_01.json",
+      "chunksPath": "upload_documents\\private\\upload-255a0d5ceacf\\chunks.json"
+    },
+    {
+      "id": "upload-ae93b441a5f5",
+      "fileName": "102-2016-qh13_01.pdf",
+      "workspace": "private",
+      "documentType": "other",
+      "confidence": 0.954742540205736,
+      "qualityWarning": null,
+      "chunkCount": 137,
+      "embeddingStatus": {
+        "requested": "none",
+        "api": null,
+        "local": null
+      },
+      "documentPath": "upload_documents\\private\\upload-ae93b441a5f5\\upload-ae93b441a5f5_102-2016-qh13_01.json",
+      "chunksPath": "upload_documents\\private\\upload-ae93b441a5f5\\chunks.json"
+    }
+  ]
+}
