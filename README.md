@@ -195,6 +195,12 @@ Tạo hoặc cập nhật file `env.txt` ở thư mục gốc dựa trên `env.e
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
 
+RAG_MODE=openai
+OPENAI_CHAT_MODEL=gpt-5.4-mini
+OPENAI_MEMORY_MODEL=gpt-5.4-mini
+OPENAI_QUERY_REWRITE_MODEL=gpt-5.4-mini
+OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+
 # Optional: chỉ cần khi dùng MongoDB Atlas làm vector backend.
 MONGODB_ATLAS_URI=mongodb+srv://username:password@cluster.mongodb.net/?appName=Cluster0
 MONGODB_ATLAS_DB=law_rag
@@ -205,8 +211,112 @@ MONGODB_ATLAS_VECTOR_INDEX=legal_chunks_vector_index
 Lưu ý:
 
 - `env.txt` được backend tự nạp khi chạy.
-- Nếu chỉ dùng FAISS thì chỉ cần `OPENAI_API_KEY`.
+- Nếu dùng OpenAI cho chat/embedding thì cần `OPENAI_API_KEY`; nếu chuyển cả chat và embedding sang local thì có thể không cần.
 - Không commit `env.txt` chứa secret lên Git.
+
+### Chế độ OpenAI API
+
+```env
+RAG_MODE=openai
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_CHAT_MODEL=gpt-5.4-mini
+OPENAI_MEMORY_MODEL=gpt-5.4-mini
+OPENAI_QUERY_REWRITE_MODEL=gpt-5.4-mini
+OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+```
+
+Build FAISS index cho OpenAI mode:
+
+```powershell
+python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector-openai --backend faiss
+```
+
+### Chế độ local
+
+```env
+RAG_MODE=local
+LOCAL_LLM_BASE_URL=http://127.0.0.1:8000/v1
+LOCAL_LLM_API_KEY=local
+LOCAL_CHAT_MODEL=qwen2.5:7b-instruct
+LOCAL_MEMORY_MODEL=qwen2.5:7b-instruct
+LOCAL_QUERY_REWRITE_MODEL=qwen2.5:7b-instruct
+LOCAL_EMBEDDING_PROVIDER=sentence-transformers
+LOCAL_EMBEDDING_MODEL=intfloat/multilingual-e5-base
+```
+
+Build FAISS index cho local mode:
+
+```powershell
+python -m pip install -r requirements-local.txt
+python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector-local --backend faiss
+```
+
+Biến `LLM_PROVIDER`, `CHAT_MODEL`, `MEMORY_MODEL`, `QUERY_REWRITE_MODEL`, `EMBEDDING_PROVIDER`, `EMBEDDING_MODEL` vẫn có thể dùng khi cần override thủ công, nhưng thường chỉ cần đổi `RAG_MODE`.
+
+### Dùng model local cho answer, memory và query rewrite
+
+Backend có 3 phần dùng chat LLM:
+
+- `CHAT_MODEL`: sinh câu trả lời cuối cùng từ retrieved context.
+- `MEMORY_MODEL`: cập nhật bộ nhớ hội thoại và tạo retrieval query theo ngữ cảnh nhiều lượt.
+- `QUERY_REWRITE_MODEL`: rewrite/mở rộng câu hỏi trước retrieval.
+
+Mặc định các phần này dùng OpenAI. Nếu muốn dùng model local như Qwen/HuggingFace qua server tương thích OpenAI API, cấu hình:
+
+```env
+LLM_PROVIDER=local
+LOCAL_LLM_BASE_URL=http://127.0.0.1:8000/v1
+LOCAL_LLM_API_KEY=local
+CHAT_MODEL=qwen2.5:7b-instruct
+MEMORY_MODEL=qwen2.5:7b-instruct
+QUERY_REWRITE_MODEL=qwen2.5:7b-instruct
+```
+
+Sau đó chạy backend như bình thường. Với vLLM hoặc LM Studio, chỉ cần thay `LOCAL_LLM_BASE_URL` và tên model theo server đang chạy.
+
+Nếu backend chạy trong Docker nhưng server local chạy trên máy host, thường dùng:
+
+```env
+LOCAL_LLM_BASE_URL=http://host.docker.internal:8000/v1
+```
+
+Lưu ý: cấu hình chat LLM ở trên chỉ áp dụng cho answer, memory và rewrite query. Vector embedding có cấu hình riêng bên dưới.
+
+### Dùng embedding local cho vector search
+
+Vector search có 2 giai đoạn đều phải dùng cùng embedding provider/model:
+
+- Build index: biến từng chunk luật thành vector và lưu vào FAISS hoặc Atlas.
+- Query runtime: biến câu hỏi/retrieval query thành vector để search.
+
+Các provider hỗ trợ:
+
+```env
+# OpenAI, mặc định
+EMBEDDING_PROVIDER=openai
+EMBEDDING_MODEL=text-embedding-3-small
+
+# OpenAI-compatible local endpoint, ví dụ vLLM/LM Studio nếu server có /v1/embeddings
+EMBEDDING_PROVIDER=local-openai
+LOCAL_EMBEDDING_BASE_URL=http://127.0.0.1:8001/v1
+LOCAL_EMBEDDING_API_KEY=local
+EMBEDDING_MODEL=your-local-embedding-model
+
+# HuggingFace SentenceTransformers chạy local trong process Python
+EMBEDDING_PROVIDER=sentence-transformers
+EMBEDDING_MODEL=intfloat/multilingual-e5-base
+```
+
+Ví dụ với SentenceTransformers:
+
+```powershell
+python -m pip install -r requirements-local.txt
+$env:EMBEDDING_PROVIDER="sentence-transformers"
+$env:EMBEDDING_MODEL="intfloat/multilingual-e5-base"
+python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector --backend faiss --model intfloat/multilingual-e5-base
+```
+
+Quan trọng: khi đổi `EMBEDDING_PROVIDER` hoặc `EMBEDDING_MODEL`, phải build lại vector index. FAISS manifest sẽ lưu `embedding_provider` và `embedding_model`, sau đó query runtime tự dùng lại đúng cấu hình đó.
 
 ## 7. Cài đặt frontend
 

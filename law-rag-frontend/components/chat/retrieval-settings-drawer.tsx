@@ -11,6 +11,8 @@ import { Label } from '@/components/ui/label'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Switch } from '@/components/ui/switch'
 import { Slider } from '@/components/ui/slider'
+import { Badge } from '@/components/ui/badge'
+import { Cloud, Cpu, Database } from 'lucide-react'
 import {
   Select,
   SelectContent,
@@ -18,13 +20,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import type { RetrievalSettings, RetrievalMode, VectorBackend } from '@/lib/types'
+import type { RetrievalSettings, RetrievalMode, VectorBackend, RuntimeStatus } from '@/lib/types'
 
 interface RetrievalSettingsDrawerProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   settings: RetrievalSettings
   onSettingsChange: (settings: RetrievalSettings) => void
+  runtimeStatus?: RuntimeStatus | null
 }
 
 export function RetrievalSettingsDrawer({
@@ -32,6 +35,7 @@ export function RetrievalSettingsDrawer({
   onOpenChange,
   settings,
   onSettingsChange,
+  runtimeStatus,
 }: RetrievalSettingsDrawerProps) {
   const handleModeChange = (mode: RetrievalMode) => {
     onSettingsChange({ ...settings, mode })
@@ -62,6 +66,40 @@ export function RetrievalSettingsDrawer({
 
         <ScrollArea className="flex-1 min-h-0">
           <div className="space-y-8 px-6 py-6">
+          {runtimeStatus && (
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <Label>Chế độ đang chạy</Label>
+                <Badge variant={runtimeStatus.mode === 'local' ? 'secondary' : 'default'} className="uppercase">
+                  {runtimeStatus.mode}
+                </Badge>
+              </div>
+              <div className="grid gap-2 rounded-lg border border-border bg-muted/40 p-3 text-xs">
+                <div className="flex items-center gap-2">
+                  {runtimeStatus.mode === 'local' ? (
+                    <Cpu className="h-3.5 w-3.5 text-primary" />
+                  ) : (
+                    <Cloud className="h-3.5 w-3.5 text-primary" />
+                  )}
+                  <span className="text-muted-foreground">Chat:</span>
+                  <span className="font-medium">{runtimeStatus.chatModel}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Database className="h-3.5 w-3.5 text-primary" />
+                  <span className="text-muted-foreground">Embedding:</span>
+                  <span className="font-medium">{runtimeStatus.embeddingModel}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Database className="h-3.5 w-3.5 text-primary" />
+                  <span className="text-muted-foreground">Index:</span>
+                  <span className="font-medium">
+                    {runtimeStatus.vectorIndex.built ? runtimeStatus.vectorDir : 'Chưa build'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Retrieval Mode */}
           <div className="space-y-3">
             <Label htmlFor="retrieval-mode">Chế độ tìm kiếm</Label>

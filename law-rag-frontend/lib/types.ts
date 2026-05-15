@@ -13,7 +13,9 @@ export interface Message {
 
 export interface MessageMetadata {
   retrievalMode?: RetrievalMode
+  runtimeMode?: RuntimeMode
   modelUsed?: string
+  embeddingModel?: string
   queryRewritten?: string
   processingTimeMs?: number
 }
@@ -38,6 +40,7 @@ export interface Conversation {
 
 export type RetrievalMode = 'hybrid' | 'vector' | 'bm25'
 export type VectorBackend = 'faiss' | 'atlas'
+export type RuntimeMode = 'openai' | 'local'
 
 export interface RetrievedSource {
   id: string
@@ -60,6 +63,31 @@ export interface RetrievalSettings {
   topK: number
   queryRewrite: boolean
   model?: string
+}
+
+export interface RuntimeStatus {
+  mode: RuntimeMode
+  llmProvider: 'openai' | 'local' | string
+  chatModel: string
+  memoryModel: string
+  queryRewriteModel: string
+  embeddingProvider: string
+  embeddingModel: string
+  localLlmBaseUrl?: string
+  hasOpenaiApiKey: boolean
+  vectorDir: string
+  vectorIndex: {
+    built: boolean
+    provider?: string
+    model?: string
+    dimension?: number
+    chunkCount?: number
+  }
+}
+
+export interface RuntimeConfigRequest {
+  mode: RuntimeMode
+  openaiApiKey?: string
 }
 
 // ==================== Legal Documents ====================

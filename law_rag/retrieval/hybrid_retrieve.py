@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 import re
 import sys
 import unicodedata
@@ -10,11 +9,12 @@ from pathlib import Path
 
 import faiss
 import numpy as np
-from openai import OpenAI
 
+from ..core.embedding_client import DEFAULT_EMBEDDING_MODEL, embed_query as embed_query_text, embedding_provider
 from ..core.env_loader import load_project_env
+from ..core.llm_client import chat_completion_json, get_chat_client
+from ..core.runtime_config import default_vector_dir, query_rewrite_model
 from .atlas_vector_store import atlas_vector_search, get_atlas_collection
-from .build_vector_index import DEFAULT_EMBEDDING_MODEL
 from .retrieve_chunks import (
     build_index_payload,
     load_index,
@@ -23,7 +23,7 @@ from .retrieve_chunks import (
 )
 
 
-DEFAULT_QUERY_REWRITE_MODEL = "gpt-5.4-mini"
+DEFAULT_QUERY_REWRITE_MODEL = query_rewrite_model()
 TOKEN_RE = re.compile(r"\w+", re.UNICODE)
 ARTICLE_RE = re.compile(r"\b(?:điều|dieu|article)\s+(\d+[a-z]?)\b", re.IGNORECASE)
 
@@ -136,13 +136,6 @@ Yeu cau:
 4. Neu co the, them mot truy van co dang Dieu/Khoan neu rat kha nang lien quan.
 5. Chi tra JSON hop le voi 2 khoa: legal_intent va retrieval_queries.
 """
-
-
-def get_openai_client() -> OpenAI:
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("Thieu OPENAI_API_KEY trong environment.")
-    return OpenAI(api_key=api_key)
 
 
 def deduplicate_queries(queries: list[str]) -> list[str]:
@@ -267,11 +260,11 @@ def rerank_results(results: list[dict], *, queries: list[str], top_k: int) -> li
 
 
 def rewrite_query_with_llm(query: str, *, model: str, max_rewrites: int) -> dict:
-    client = get_openai_client()
-    response = client.chat.completions.create(
+    client = get_chat_client()
+    payload = chat_completion_json(
+        client,
         model=model,
         temperature=0.1,
-        response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": QUERY_REWRITE_SYSTEM_PROMPT},
             {
@@ -283,8 +276,6 @@ def rewrite_query_with_llm(query: str, *, model: str, max_rewrites: int) -> dict
             },
         ],
     )
-    content = response.choices[0].message.content or "{}"
-    payload = json.loads(content)
     retrieval_queries = payload.get("retrieval_queries", [])
     if not isinstance(retrieval_queries, list):
         retrieval_queries = []
@@ -341,11 +332,6 @@ def load_atlas_manifest(vector_dir: Path) -> dict:
     return json.loads(manifest_path.read_text(encoding="utf-8"))
 
 
-def embed_query(client: OpenAI, query: str, model: str) -> np.ndarray:
-    response = client.embeddings.create(model=model, input=[query])
-    return np.array(response.data[0].embedding, dtype="float32")
-
-
 def normalize_query_for_faiss(vector: np.ndarray) -> np.ndarray:
     normalized = vector.reshape(1, -1)
     faiss.normalize_L2(normalized)
@@ -353,9 +339,10 @@ def normalize_query_for_faiss(vector: np.ndarray) -> np.ndarray:
 
 
 def faiss_vector_search(query: str, vector_dir: Path, top_k: int, embedding_model: str | None = None) -> list[dict]:
-    client = get_openai_client()
     manifest, metadata, index = load_vector_assets(vector_dir)
-    raw_query_vector = embed_query(client, query, embedding_model or manifest.get("embedding_model", DEFAULT_EMBEDDING_MODEL))
+    model = manifest.get("embedding_model") or embedding_model or DEFAULT_EMBEDDING_MODEL
+    provider = manifest.get("embedding_provider") or embedding_provider()
+    raw_query_vector = np.array(embed_query_text(query, model=model, provider=provider), dtype="float32")
     query_vector = normalize_query_for_faiss(raw_query_vector)
     scores, indices = index.search(query_vector, top_k)
 
@@ -394,7 +381,6 @@ def atlas_backend_search(
     atlas_collection: str | None,
     atlas_vector_index: str | None,
 ) -> list[dict]:
-    client = get_openai_client()
     atlas_manifest = load_atlas_manifest(vector_dir)
     collection, config = get_atlas_collection(
         uri=atlas_uri,
@@ -402,7 +388,9 @@ def atlas_backend_search(
         collection=atlas_collection or atlas_manifest.get("collection"),
         vector_index=atlas_vector_index or atlas_manifest.get("vector_index"),
     )
-    query_vector = embed_query(client, query, embedding_model).tolist()
+    provider = atlas_manifest.get("embedding_provider") or embedding_provider()
+    model = atlas_manifest.get("embedding_model") or embedding_model or DEFAULT_EMBEDDING_MODEL
+    query_vector = embed_query_text(query, model=model, provider=provider)
     documents = atlas_vector_search(
         collection,
         vector_index=config["vector_index"],
@@ -565,7 +553,7 @@ def main() -> None:
     parser.add_argument("query", help="Natural language legal query")
     parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")
     parser.add_argument("--bm25-index", default="output/chunks/retrieval/bm25_index.json", help="Path to BM25 index JSON")
-    parser.add_argument("--vector-dir", default="output/chunks/retrieval/vector", help="Thu muc chua FAISS index va metadata")
+    parser.add_argument("--vector-dir", default=default_vector_dir(), help="Thu muc chua FAISS index va metadata")
     parser.add_argument("--retrieval-mode", choices=["hybrid", "vector", "bm25"], default="hybrid", help="Che do retrieval")
     parser.add_argument("--query-rewrite-mode", choices=["none", "llm"], default="none", help="Che do rewrite query truoc retrieval")
     parser.add_argument("--query-rewrite-model", default=DEFAULT_QUERY_REWRITE_MODEL, help="LLM model dung de rewrite query")

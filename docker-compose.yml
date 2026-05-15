@@ -1,15 +1,18 @@
 services:
   backend:
-    image: maitung123/law-rag-backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    image: law-rag-backend:local
     container_name: law-rag-backend
+    env_file:
+      - ./env.txt
     environment:
-      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      MONGODB_ATLAS_URI: ${MONGODB_ATLAS_URI:-}
-      MONGODB_ATLAS_DB: ${MONGODB_ATLAS_DB:-}
-      MONGODB_ATLAS_COLLECTION: ${MONGODB_ATLAS_COLLECTION:-}
-      MONGODB_ATLAS_VECTOR_INDEX: ${MONGODB_ATLAS_VECTOR_INDEX:-}
+      LOCAL_LLM_BASE_URL: ${LOCAL_LLM_BASE_URL:-http://host.docker.internal:11434/v1}
+      LOCAL_LLM_API_KEY: ${LOCAL_LLM_API_KEY:-local}
     volumes:
-      - law_rag_output:/app/output
+      - ./output:/app/output
+      - ./env.txt:/app/env.txt
     ports:
       - "${BACKEND_PORT:-8000}:8000"
     healthcheck:
@@ -26,7 +29,12 @@ services:
       start_period: 20s
 
   frontend:
-    image: maitung123/law-rag-frontend:latest
+    build:
+      context: ./law-rag-frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:${BACKEND_PORT:-8000}
+    image: law-rag-frontend:local
     container_name: law-rag-frontend
     depends_on:
       backend:
@@ -48,7 +56,4 @@ services:
       timeout: 10s
       retries: 5
       start_period: 20s
-
-volumes:
-  law_rag_output:
 

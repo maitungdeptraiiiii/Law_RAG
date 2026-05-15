@@ -2,11 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 from pathlib import Path
 from typing import Any
-
-from openai import OpenAI
 
 from ..core.conversation_state import (
     append_history,
@@ -16,11 +13,13 @@ from ..core.conversation_state import (
     save_session,
 )
 from ..core.env_loader import load_project_env
+from ..core.llm_client import chat_completion_json, chat_completion_text, get_chat_client
+from ..core.runtime_config import chat_model, default_vector_dir, memory_model
 from ..retrieval.hybrid_retrieve import build_retrieval_queries, hybrid_search
 
 
-DEFAULT_CHAT_MODEL = "gpt-5.4-mini"
-DEFAULT_MEMORY_MODEL = "gpt-5.4-mini"
+DEFAULT_CHAT_MODEL = chat_model()
+DEFAULT_MEMORY_MODEL = memory_model()
 
 
 SYSTEM_PROMPT = """Bạn là trợ lý pháp lý nội bộ cho dự án RAG luật Việt Nam.
@@ -68,11 +67,8 @@ Nguyên tắc:
 load_project_env()
 
 
-def get_openai_client() -> OpenAI:
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("Thiếu OPENAI_API_KEY trong environment.")
-    return OpenAI(api_key=api_key)
+def get_openai_client() -> Any:
+    return get_chat_client()
 
 
 def build_context(results: list[dict]) -> str:
@@ -102,16 +98,16 @@ def build_context(results: list[dict]) -> str:
 
 
 def update_case_memory(
-    client: OpenAI,
+    client: Any,
     *,
     question: str,
     session: dict[str, Any],
     model: str,
 ) -> dict[str, Any]:
-    response = client.chat.completions.create(
+    payload = chat_completion_json(
+        client,
         model=model,
         temperature=0.1,
-        response_format={"type": "json_object"},
         messages=[
             {"role": "system", "content": MEMORY_UPDATE_SYSTEM_PROMPT},
             {
@@ -124,7 +120,6 @@ def update_case_memory(
             },
         ],
     )
-    payload = json.loads(response.choices[0].message.content or "{}")
     return {
         "case_summary": str(payload.get("case_summary", "")).strip(),
         "facts": payload.get("facts", {}) if isinstance(payload.get("facts", {}), dict) else {},
@@ -207,7 +202,8 @@ def answer_question(
     pending_follow_up_text = (
         memory_update["follow_up_question"] if memory_update and memory_update.get("follow_up_question") else "Không có."
     )
-    response = client.chat.completions.create(
+    answer = chat_completion_text(
+        client,
         model=model,
         temperature=0.1,
         messages=[
@@ -226,8 +222,6 @@ def answer_question(
             },
         ],
     )
-
-    answer = response.choices[0].message.content or ""
     payload = {
         "question": question,
         "legal_intent": retrieval_plan["legal_intent"],
@@ -271,7 +265,7 @@ def main() -> None:
     parser.add_argument("question", help="Câu hỏi tình huống pháp lý")
     parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")
     parser.add_argument("--bm25-index", default="output/chunks/retrieval/bm25_index.json", help="Path to BM25 index JSON")
-    parser.add_argument("--vector-dir", default="output/chunks/retrieval/vector", help="Thư mục chứa FAISS index")
+    parser.add_argument("--vector-dir", default=default_vector_dir(), help="Thư mục chứa FAISS index")
     parser.add_argument("--query-rewrite-mode", choices=["none", "llm"], default="none", help="Chế độ rewrite query trước retrieval")
     parser.add_argument("--query-rewrite-model", default="gpt-5.4-mini", help="LLM model dùng để rewrite query")
     parser.add_argument("--query-rewrite-count", type=int, default=4, help="Số truy vấn rewrite tối đa")
@@ -282,7 +276,7 @@ def main() -> None:
     parser.add_argument("--atlas-db", default=None, help="Tên database trên Atlas")
     parser.add_argument("--atlas-collection", default=None, help="Tên collection trên Atlas")
     parser.add_argument("--atlas-vector-index", default=None, help="Tên Atlas Vector Search index")
-    parser.add_argument("--model", default=DEFAULT_CHAT_MODEL, help="OpenAI chat model")
+    parser.add_argument("--model", default=DEFAULT_CHAT_MODEL, help="Chat model dùng để sinh câu trả lời")
     parser.add_argument("--memory-model", default=DEFAULT_MEMORY_MODEL, help="LLM model dùng để cập nhật bộ nhớ hội thoại")
     parser.add_argument("--top-k", type=int, default=5, help="Số chunk đưa vào answer stage")
     parser.add_argument("--session-id", default=None, help="ID để giữ nhớ hội thoại qua nhiều lượt")

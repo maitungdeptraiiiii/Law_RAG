@@ -18,11 +18,20 @@ from fastapi.middleware.cors import CORSMiddleware
 from openai import APIError, AuthenticationError
 from pydantic import BaseModel, Field
 
-from ..app.ask_law import DEFAULT_CHAT_MODEL, DEFAULT_MEMORY_MODEL, answer_question
+from ..app.ask_law import answer_question
 from ..core.conversation_state import append_history, load_session, save_session, utc_now_iso
 from ..core.env_loader import load_project_env
-from ..retrieval.build_vector_index import DEFAULT_EMBEDDING_MODEL
-from ..retrieval.hybrid_retrieve import DEFAULT_QUERY_REWRITE_MODEL, build_retrieval_queries, hybrid_search
+from ..core.runtime_config import (
+    chat_model,
+    default_vector_dir,
+    embedding_model,
+    embedding_provider,
+    llm_provider,
+    memory_model,
+    query_rewrite_model,
+    runtime_mode,
+)
+from ..retrieval.hybrid_retrieve import build_retrieval_queries, hybrid_search
 
 
 load_project_env()
@@ -34,7 +43,6 @@ CHUNKS_DIR = OUTPUT_DIR / "chunks"
 SESSIONS_DIR = OUTPUT_DIR / "sessions"
 UPLOADS_DIR = OUTPUT_DIR / "uploads"
 RETRIEVAL_DIR = CHUNKS_DIR / "retrieval"
-VECTOR_DIR = RETRIEVAL_DIR / "vector"
 CHUNKS_PATH = CHUNKS_DIR / "all_chunks.jsonl"
 BM25_INDEX_PATH = RETRIEVAL_DIR / "bm25_index.json"
 FRAMEWORK_REPORT_PATH = OUTPUT_DIR / "chunk_framework_report.json"
@@ -92,6 +100,11 @@ class UpdateSessionPayload(BaseModel):
     pinned: bool | None = None
 
 
+class RuntimeConfigPayload(BaseModel):
+    mode: Literal["openai", "local"]
+    openaiApiKey: str | None = None
+
+
 app = FastAPI(title="Law RAG API", version="0.1.0")
 
 app.add_middleware(
@@ -120,6 +133,10 @@ def safe_json_load(path: Path, default: Any) -> Any:
     if not path.exists():
         return default
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def active_vector_dir() -> Path:
+    return ROOT_DIR / default_vector_dir()
 
 
 def normalize_settings(settings: RetrievalSettingsPayload | None) -> dict[str, Any]:
@@ -238,7 +255,8 @@ def load_documents_cache() -> list[dict[str, Any]]:
     manifest = load_law_manifest()
     chunk_counts = load_chunk_report_map()
     bm25_built = BM25_INDEX_PATH.exists()
-    vector_built = (VECTOR_DIR / "faiss.index").exists() or (VECTOR_DIR / "atlas_manifest.json").exists()
+    vector_dir = active_vector_dir()
+    vector_built = (vector_dir / "faiss.index").exists() or (vector_dir / "atlas_manifest.json").exists()
     documents: list[dict[str, Any]] = []
 
     for item in manifest["items"]:
@@ -424,9 +442,91 @@ def atlas_settings_from_env() -> dict[str, str | None]:
     }
 
 
+def update_project_env_file(updates: dict[str, str]) -> None:
+    env_path = ROOT_DIR / "env.txt"
+    lines = env_path.read_text(encoding="utf-8").splitlines() if env_path.exists() else []
+    seen: set[str] = set()
+    updated_lines: list[str] = []
+
+    for line in lines:
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            updated_lines.append(line)
+            continue
+        key, _value = stripped.split("=", 1)
+        key = key.strip()
+        if key in updates:
+            updated_lines.append(f"{key}={updates[key]}")
+            seen.add(key)
+        else:
+            updated_lines.append(line)
+
+    for key, value in updates.items():
+        if key not in seen:
+            updated_lines.append(f"{key}={value}")
+
+    env_path.write_text("\n".join(updated_lines) + "\n", encoding="utf-8")
+
+
+def apply_runtime_config(payload: RuntimeConfigPayload) -> None:
+    updates = {"RAG_MODE": payload.mode}
+    if payload.openaiApiKey and payload.openaiApiKey.strip():
+        updates["OPENAI_API_KEY"] = payload.openaiApiKey.strip()
+
+    for key, value in updates.items():
+        os.environ[key] = value
+    os.environ.pop("VECTOR_DIR", None)
+    update_project_env_file(updates)
+    load_documents_cache.cache_clear()
+
+
+def load_vector_manifest() -> dict[str, Any] | None:
+    vector_dir = active_vector_dir()
+    manifest_path = vector_dir / "vector_manifest.json"
+    if not manifest_path.exists():
+        return None
+    payload = safe_json_load(manifest_path, {})
+    return payload if isinstance(payload, dict) else None
+
+
+def runtime_status_payload() -> dict[str, Any]:
+    vector_dir = active_vector_dir()
+    manifest = load_vector_manifest()
+    return {
+        "mode": runtime_mode(),
+        "llmProvider": llm_provider(),
+        "chatModel": chat_model(),
+        "memoryModel": memory_model(),
+        "queryRewriteModel": query_rewrite_model(),
+        "embeddingProvider": embedding_provider(),
+        "embeddingModel": embedding_model(),
+        "localLlmBaseUrl": os.getenv("LOCAL_LLM_BASE_URL"),
+        "hasOpenaiApiKey": bool(os.getenv("OPENAI_API_KEY")),
+        "vectorDir": str(vector_dir.relative_to(ROOT_DIR)) if vector_dir.is_relative_to(ROOT_DIR) else str(vector_dir),
+        "vectorIndex": {
+            "built": manifest is not None and (vector_dir / "faiss.index").exists(),
+            "provider": manifest.get("embedding_provider") if manifest else None,
+            "model": manifest.get("embedding_model") if manifest else None,
+            "dimension": manifest.get("dimension") if manifest else None,
+            "chunkCount": manifest.get("chunk_count") if manifest else None,
+        },
+    }
+
+
 @app.get("/health")
 def health_check() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/api/runtime/status")
+def runtime_status() -> dict[str, Any]:
+    return {"success": True, "data": runtime_status_payload()}
+
+
+@app.post("/api/runtime/config")
+def update_runtime_config(payload: RuntimeConfigPayload) -> dict[str, Any]:
+    apply_runtime_config(payload)
+    return {"success": True, "data": runtime_status_payload()}
 
 
 @app.post("/api/chat/ask")
@@ -437,23 +537,28 @@ def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
     atlas_settings = atlas_settings_from_env()
 
     try:
+        vector_dir = active_vector_dir()
+        active_chat_model = settings.get("model") or chat_model()
+        active_memory_model = memory_model()
+        active_query_rewrite_model = query_rewrite_model()
+        active_embedding_model = embedding_model()
         result = answer_question(
             payload.question,
             chunks_path=CHUNKS_PATH,
             bm25_index_path=BM25_INDEX_PATH,
-            vector_dir=VECTOR_DIR,
+            vector_dir=vector_dir,
             query_rewrite_mode="llm" if settings["query_rewrite"] else "none",
-            query_rewrite_model=DEFAULT_QUERY_REWRITE_MODEL,
+            query_rewrite_model=active_query_rewrite_model,
             query_rewrite_count=4,
             retrieval_mode=settings["mode"],
             vector_backend=settings["vector_backend"],
-            embedding_model=DEFAULT_EMBEDDING_MODEL,
+            embedding_model=active_embedding_model,
             atlas_uri=atlas_settings["atlas_uri"],
             atlas_db=atlas_settings["atlas_db"],
             atlas_collection=atlas_settings["atlas_collection"],
             atlas_vector_index=atlas_settings["atlas_vector_index"],
-            model=settings.get("model") or DEFAULT_CHAT_MODEL,
-            memory_model=DEFAULT_MEMORY_MODEL,
+            model=active_chat_model,
+            memory_model=active_memory_model,
             top_k=settings["top_k"],
             session_id=session_id,
             session_dir=SESSIONS_DIR,
@@ -478,7 +583,9 @@ def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
                 last_message["sources"] = sources
             last_message["metadata"] = {
                 "retrievalMode": settings["mode"],
-                "modelUsed": settings.get("model") or DEFAULT_CHAT_MODEL,
+                "runtimeMode": runtime_mode(),
+                "modelUsed": active_chat_model,
+                "embeddingModel": active_embedding_model,
                 "queryRewritten": result.get("retrieval_input") if result.get("retrieval_input") != payload.question else None,
                 "processingTimeMs": processing_time_ms,
             }
@@ -493,7 +600,9 @@ def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
             "sources": sources,
             "metadata": {
                 "retrievalMode": settings["mode"],
-                "modelUsed": settings.get("model") or DEFAULT_CHAT_MODEL,
+                "runtimeMode": runtime_mode(),
+                "modelUsed": active_chat_model,
+                "embeddingModel": active_embedding_model,
                 "queryRewritten": result.get("retrieval_input") if result.get("retrieval_input") != payload.question else None,
                 "processingTimeMs": processing_time_ms,
             },
@@ -626,9 +735,10 @@ def get_corpus_status() -> dict[str, Any]:
     chunked_documents = len([item for item in documents if item["chunkCount"] > 0])
     total_chunks = sum(int(item["chunkCount"] or 0) for item in documents)
     bm25_exists = BM25_INDEX_PATH.exists()
-    vector_exists = (VECTOR_DIR / "faiss.index").exists() or (VECTOR_DIR / "atlas_manifest.json").exists()
+    vector_dir = active_vector_dir()
+    vector_exists = (vector_dir / "faiss.index").exists() or (vector_dir / "atlas_manifest.json").exists()
     bm25_updated = serialize_datetime(datetime.fromtimestamp(BM25_INDEX_PATH.stat().st_mtime, tz=UTC)) if bm25_exists else None
-    vector_target = VECTOR_DIR / "faiss.index" if (VECTOR_DIR / "faiss.index").exists() else VECTOR_DIR / "atlas_manifest.json"
+    vector_target = vector_dir / "faiss.index" if (vector_dir / "faiss.index").exists() else vector_dir / "atlas_manifest.json"
     vector_updated = serialize_datetime(datetime.fromtimestamp(vector_target.stat().st_mtime, tz=UTC)) if vector_exists else None
 
     return {
@@ -692,7 +802,7 @@ def trigger_bm25() -> dict[str, Any]:
 @app.post("/api/admin/jobs/index-vector")
 def trigger_vector() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.retrieval.build_vector_index", "--chunks", "output/chunks/all_chunks.jsonl", "--output-dir", "output/chunks/retrieval/vector", "--backend", "faiss"],
+        [sys.executable, "-m", "law_rag.retrieval.build_vector_index", "--chunks", "output/chunks/all_chunks.jsonl", "--output-dir", str(active_vector_dir()), "--backend", "faiss"],
     ]
     job = start_job("index_vector", commands)
     return {"success": True, "data": job}
@@ -703,12 +813,15 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
     settings = normalize_settings(payload.settings)
     atlas_settings = atlas_settings_from_env()
     query_rewrite_mode = "llm" if settings["query_rewrite"] else "none"
+    vector_dir = active_vector_dir()
+    active_query_rewrite_model = query_rewrite_model()
+    active_embedding_model = embedding_model()
 
     rewrite_started = time.perf_counter()
     retrieval_plan = build_retrieval_queries(
         payload.query,
         rewrite_mode=query_rewrite_mode,
-        rewrite_model=DEFAULT_QUERY_REWRITE_MODEL,
+        rewrite_model=active_query_rewrite_model,
         max_rewrites=4,
     )
     rewrite_ms = int((time.perf_counter() - rewrite_started) * 1000) if settings["query_rewrite"] else None
@@ -725,10 +838,10 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             retrieval_queries=retrieval_plan["retrieval_queries"],
             chunks_path=CHUNKS_PATH,
             bm25_index_path=BM25_INDEX_PATH,
-            vector_dir=VECTOR_DIR,
+            vector_dir=vector_dir,
             retrieval_mode="bm25",
             vector_backend=settings["vector_backend"],
-            embedding_model=DEFAULT_EMBEDDING_MODEL,
+            embedding_model=active_embedding_model,
             atlas_uri=atlas_settings["atlas_uri"],
             atlas_db=atlas_settings["atlas_db"],
             atlas_collection=atlas_settings["atlas_collection"],
@@ -747,10 +860,10 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             retrieval_queries=retrieval_plan["retrieval_queries"],
             chunks_path=CHUNKS_PATH,
             bm25_index_path=BM25_INDEX_PATH,
-            vector_dir=VECTOR_DIR,
+            vector_dir=vector_dir,
             retrieval_mode="vector",
             vector_backend=settings["vector_backend"],
-            embedding_model=DEFAULT_EMBEDDING_MODEL,
+            embedding_model=active_embedding_model,
             atlas_uri=atlas_settings["atlas_uri"],
             atlas_db=atlas_settings["atlas_db"],
             atlas_collection=atlas_settings["atlas_collection"],
@@ -768,10 +881,10 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             retrieval_queries=retrieval_plan["retrieval_queries"],
             chunks_path=CHUNKS_PATH,
             bm25_index_path=BM25_INDEX_PATH,
-            vector_dir=VECTOR_DIR,
+            vector_dir=vector_dir,
             retrieval_mode="hybrid",
             vector_backend=settings["vector_backend"],
-            embedding_model=DEFAULT_EMBEDDING_MODEL,
+            embedding_model=active_embedding_model,
             atlas_uri=atlas_settings["atlas_uri"],
             atlas_db=atlas_settings["atlas_db"],
             atlas_collection=atlas_settings["atlas_collection"],

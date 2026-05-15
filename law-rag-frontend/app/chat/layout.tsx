@@ -1,13 +1,14 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import { Scale, PanelLeftClose, PanelLeft, Settings2, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { RetrievalSettingsProvider } from '@/components/chat/retrieval-settings-context'
 import { SessionSidebar } from '@/components/chat/session-sidebar'
 import { RetrievalSettingsDrawer } from '@/components/chat/retrieval-settings-drawer'
-import type { RetrievalSettings } from '@/lib/types'
+import { getRuntimeStatus } from '@/lib/api'
+import type { RetrievalSettings, RuntimeStatus } from '@/lib/types'
 
 const defaultSettings: RetrievalSettings = {
   mode: 'hybrid',
@@ -24,6 +25,13 @@ export default function ChatLayout({
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [settingsOpen, setSettingsOpen] = useState(false)
   const [settings, setSettings] = useState<RetrievalSettings>(defaultSettings)
+  const [runtimeStatus, setRuntimeStatus] = useState<RuntimeStatus | null>(null)
+
+  useEffect(() => {
+    getRuntimeStatus().then((response) => {
+      if (response.success) setRuntimeStatus(response.data)
+    })
+  }, [])
 
   const handleNewChat = useCallback(() => {
     // Navigate to fresh chat - in real app, this would clear the current session
@@ -98,6 +106,12 @@ export default function ChatLayout({
           </div>
 
           <div className="flex items-center gap-2">
+            {runtimeStatus && (
+              <div className="hidden items-center gap-2 rounded-md border border-border bg-muted/40 px-2.5 py-1 text-xs md:flex">
+                <span className="font-medium uppercase">{runtimeStatus.mode}</span>
+                <span className="text-muted-foreground">{runtimeStatus.chatModel}</span>
+              </div>
+            )}
             <Button
               variant="ghost"
               size="sm"
@@ -124,6 +138,7 @@ export default function ChatLayout({
         onOpenChange={setSettingsOpen}
         settings={settings}
         onSettingsChange={setSettings}
+        runtimeStatus={runtimeStatus}
       />
     </div>
   )

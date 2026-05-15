@@ -9,7 +9,8 @@ import {
   Check, 
   ChevronDown,
   ExternalLink,
-  Clock
+  Clock,
+  Cpu
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
@@ -103,6 +104,17 @@ export function AnswerCard({ message, onViewSources }: AnswerCardProps) {
               <span className="flex items-center gap-1">
                 <Clock className="h-3 w-3" />
                 {(metadata.processingTimeMs / 1000).toFixed(1)}s
+              </span>
+            )}
+            {metadata?.runtimeMode && (
+              <span className="flex items-center gap-1">
+                <Cpu className="h-3 w-3" />
+                {metadata.runtimeMode}
+              </span>
+            )}
+            {metadata?.modelUsed && (
+              <span className="hidden items-center gap-1 sm:flex">
+                {metadata.modelUsed}
               </span>
             )}
           </div>

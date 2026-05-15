@@ -2,38 +2,23 @@ from __future__ import annotations
 
 import argparse
 import json
-import os
 from pathlib import Path
 
 import faiss
 import numpy as np
-from openai import OpenAI
 
+from ..core.embedding_client import DEFAULT_EMBEDDING_MODEL, embed_texts, embedding_provider
 from ..core.env_loader import load_project_env
+from ..core.runtime_config import default_vector_dir
 from .atlas_vector_store import build_atlas_document, get_atlas_collection, upsert_atlas_documents
 from .retrieve_chunks import build_searchable_text, load_chunks
-
-
-DEFAULT_EMBEDDING_MODEL = "text-embedding-3-small"
 
 
 load_project_env()
 
 
-def get_openai_client() -> OpenAI:
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("Thieu OPENAI_API_KEY trong environment.")
-    return OpenAI(api_key=api_key)
-
-
 def batched(items: list[dict], batch_size: int) -> list[list[dict]]:
     return [items[index : index + batch_size] for index in range(0, len(items), batch_size)]
-
-
-def embed_texts(client: OpenAI, texts: list[str], model: str) -> list[list[float]]:
-    response = client.embeddings.create(model=model, input=texts)
-    return [item.embedding for item in response.data]
 
 
 def print_build_progress(*, backend: str, batch_number: int, total_batches: int, processed_chunks: int, total_chunks: int) -> None:
@@ -56,7 +41,7 @@ def build_vector_index(
     atlas_collection: str | None,
     atlas_vector_index: str | None,
 ) -> dict:
-    client = get_openai_client()
+    provider = embedding_provider()
     chunks = load_chunks(chunks_path)
     total_chunks = len(chunks)
     batches = batched(chunks, batch_size)
@@ -82,7 +67,7 @@ def build_vector_index(
     processed_chunks = 0
     for batch_number, batch in enumerate(batches, start=1):
         texts = [build_searchable_text(chunk) for chunk in batch]
-        vectors = embed_texts(client, texts, model)
+        vectors = embed_texts(texts, model=model, provider=provider)
         if backend in {"faiss", "both"}:
             all_vectors.extend(vectors)
 
@@ -121,6 +106,7 @@ def build_vector_index(
         )
 
     result = {
+        "embedding_provider": provider,
         "embedding_model": model,
         "chunk_count": total_chunks,
         "backend": backend,
@@ -144,6 +130,7 @@ def build_vector_index(
         manifest_path.write_text(
             json.dumps(
                 {
+                    "embedding_provider": provider,
                     "embedding_model": model,
                     "dimension": int(matrix.shape[1]),
                     "chunk_count": len(metadata),
@@ -170,6 +157,7 @@ def build_vector_index(
         atlas_manifest_path.write_text(
             json.dumps(
                 {
+                    "embedding_provider": provider,
                     "embedding_model": model,
                     "chunk_count": total_chunks,
                     "chunks_path": str(chunks_path),
@@ -194,10 +182,10 @@ def build_vector_index(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build OpenAI embedding index cho legal chunks tren FAISS hoac MongoDB Atlas.")
+    parser = argparse.ArgumentParser(description="Build embedding index cho legal chunks tren FAISS hoac MongoDB Atlas.")
     parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")
-    parser.add_argument("--output-dir", default="output/chunks/retrieval/vector", help="Noi luu FAISS index va metadata")
-    parser.add_argument("--model", default=DEFAULT_EMBEDDING_MODEL, help="OpenAI embedding model")
+    parser.add_argument("--output-dir", default=default_vector_dir(), help="Noi luu FAISS index va metadata")
+    parser.add_argument("--model", default=DEFAULT_EMBEDDING_MODEL, help="Embedding model")
     parser.add_argument("--batch-size", type=int, default=100, help="So chunks moi batch embedding")
     parser.add_argument("--backend", choices=["faiss", "atlas", "both"], default="faiss", help="Backend vector can build")
     parser.add_argument("--atlas-uri", default=None, help="MongoDB Atlas connection string")

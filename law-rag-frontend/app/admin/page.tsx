@@ -11,20 +11,34 @@ import {
   CheckCircle2,
   Clock,
   AlertCircle,
-  Loader2
+  Loader2,
+  Cpu,
+  Cloud,
+  Server
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import { Progress } from '@/components/ui/progress'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { 
   getCorpusStatus, 
   getJobs, 
   triggerCrawl, 
   triggerChunking, 
   triggerBM25Index, 
-  triggerVectorIndex 
+  triggerVectorIndex,
+  getRuntimeStatus,
+  updateRuntimeConfig
 } from '@/lib/api'
-import type { CorpusStatus, PipelineJob } from '@/lib/types'
+import type { CorpusStatus, PipelineJob, RuntimeMode, RuntimeStatus } from '@/lib/types'
 import { formatDistanceToNow } from 'date-fns'
 import { vi } from 'date-fns/locale'
 import { toast } from 'sonner'
@@ -32,8 +46,12 @@ import { toast } from 'sonner'
 export default function AdminDashboardPage() {
   const [corpusStatus, setCorpusStatus] = useState<CorpusStatus | null>(null)
   const [jobs, setJobs] = useState<PipelineJob[]>([])
+  const [runtimeStatus, setRuntimeStatus] = useState<RuntimeStatus | null>(null)
+  const [selectedMode, setSelectedMode] = useState<RuntimeMode>('local')
+  const [openaiApiKey, setOpenaiApiKey] = useState('')
   const [loading, setLoading] = useState(true)
   const [actionLoading, setActionLoading] = useState<string | null>(null)
+  const [runtimeSaving, setRuntimeSaving] = useState(false)
 
   useEffect(() => {
     loadData()
@@ -41,13 +59,18 @@ export default function AdminDashboardPage() {
 
   async function loadData() {
     try {
-      const [statusRes, jobsRes] = await Promise.all([
+      const [statusRes, jobsRes, runtimeRes] = await Promise.all([
         getCorpusStatus(),
         getJobs(),
+        getRuntimeStatus(),
       ])
       
       if (statusRes.success) setCorpusStatus(statusRes.data)
       if (jobsRes.success) setJobs(jobsRes.data)
+      if (runtimeRes.success) {
+        setRuntimeStatus(runtimeRes.data)
+        setSelectedMode(runtimeRes.data.mode)
+      }
     } catch (error) {
       console.error('[v0] Error loading admin data:', error)
     } finally {
@@ -78,10 +101,33 @@ export default function AdminDashboardPage() {
         toast.success('Tác vụ đã được khởi động')
         loadData()
       }
-    } catch (error) {
+    } catch {
       toast.error('Có lỗi xảy ra')
     } finally {
       setActionLoading(null)
+    }
+  }
+
+  async function handleRuntimeSave() {
+    setRuntimeSaving(true)
+    try {
+      const response = await updateRuntimeConfig({
+        mode: selectedMode,
+        openaiApiKey: openaiApiKey.trim() || undefined,
+      })
+      if (response.success) {
+        setRuntimeStatus(response.data)
+        setSelectedMode(response.data.mode)
+        setOpenaiApiKey('')
+        toast.success('Đã cập nhật chế độ chạy')
+        await loadData()
+      } else {
+        toast.error(response.error)
+      }
+    } catch {
+      toast.error('Không cập nhật được chế độ chạy')
+    } finally {
+      setRuntimeSaving(false)
     }
   }
 
@@ -108,6 +154,82 @@ export default function AdminDashboardPage() {
           Làm mới
         </Button>
       </div>
+
+      {runtimeStatus && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Chế độ chạy hiện tại</CardTitle>
+            <CardDescription>
+              Cấu hình backend đang được dùng cho chat model, embedding và thư mục vector index.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-5">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                <RuntimeInfo
+                  icon={runtimeStatus.mode === 'local' ? <Cpu className="h-5 w-5" /> : <Cloud className="h-5 w-5" />}
+                  label="Runtime"
+                  value={runtimeStatus.mode === 'local' ? 'Local' : 'OpenAI API'}
+                  detail={runtimeStatus.llmProvider}
+                />
+                <RuntimeInfo
+                  icon={<Server className="h-5 w-5" />}
+                  label="Model trả lời"
+                  value={runtimeStatus.chatModel}
+                  detail={runtimeStatus.localLlmBaseUrl || 'OpenAI API'}
+                />
+                <RuntimeInfo
+                  icon={<Database className="h-5 w-5" />}
+                  label="Embedding"
+                  value={runtimeStatus.embeddingModel}
+                  detail={runtimeStatus.embeddingProvider}
+                />
+                <RuntimeInfo
+                  icon={<Activity className="h-5 w-5" />}
+                  label="Vector index"
+                  value={runtimeStatus.vectorIndex.built ? 'Sẵn sàng' : 'Chưa build'}
+                  detail={`${runtimeStatus.vectorDir}${runtimeStatus.vectorIndex.chunkCount ? ` · ${runtimeStatus.vectorIndex.chunkCount.toLocaleString()} chunks` : ''}`}
+                />
+              </div>
+
+              <div className="grid gap-4 border-t border-border pt-5 lg:grid-cols-[220px_1fr_auto]">
+                <div className="space-y-2">
+                  <Label htmlFor="runtime-mode">Chế độ</Label>
+                  <Select value={selectedMode} onValueChange={(value) => setSelectedMode(value as RuntimeMode)}>
+                    <SelectTrigger id="runtime-mode">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="local">Local</SelectItem>
+                      <SelectItem value="openai">OpenAI API</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="openai-api-key">OpenAI API key</Label>
+                  <Input
+                    id="openai-api-key"
+                    type="password"
+                    value={openaiApiKey}
+                    onChange={(event) => setOpenaiApiKey(event.target.value)}
+                    placeholder={runtimeStatus.hasOpenaiApiKey ? 'Đã có key, nhập key mới nếu muốn đổi' : 'sk-...'}
+                    autoComplete="off"
+                  />
+                  <p className="text-xs text-muted-foreground">
+                    Chỉ cần nhập khi chuyển sang OpenAI API hoặc muốn thay key hiện tại.
+                  </p>
+                </div>
+                <div className="flex items-end">
+                  <Button onClick={handleRuntimeSave} disabled={runtimeSaving}>
+                    {runtimeSaving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                    Cập nhật
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Stats Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -214,6 +336,29 @@ export default function AdminDashboardPage() {
           </div>
         </CardContent>
       </Card>
+    </div>
+  )
+}
+
+function RuntimeInfo({
+  icon,
+  label,
+  value,
+  detail,
+}: {
+  icon: React.ReactNode
+  label: string
+  value: string
+  detail: string
+}) {
+  return (
+    <div className="rounded-lg border border-border bg-muted/30 p-4">
+      <div className="mb-3 flex items-center gap-2 text-primary">
+        {icon}
+        <span className="text-xs font-medium uppercase text-muted-foreground">{label}</span>
+      </div>
+      <p className="truncate text-sm font-semibold">{value}</p>
+      <p className="mt-1 truncate text-xs text-muted-foreground">{detail}</p>
     </div>
   )
 }

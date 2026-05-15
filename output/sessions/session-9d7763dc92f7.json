@@ -1,0 +1,77 @@
+{
+  "session_id": "session-9d7763dc92f7",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-fc4a70c11097",
+      "role": "user",
+      "content": "toi danh nguoi bi toi gi",
+      "timestamp": "2026-05-15T03:44:25.045548+00:00"
+    },
+    {
+      "id": "msg-fb7c6b53861c",
+      "role": "assistant",
+      "content": "Trong context hiện có, điều có thể khẳng định được là:\n\n- Người bị tố cáo có thể đang bị khởi tố về một tội danh cụ thể.\n- Quyết định khởi tố bị can hoặc quyết định đưa vụ án ra xét xử phải ghi rõ họ tên, ngày sinh, quốc tịch, tội danh và điểm, khoản, điều của Bộ luật hình sự.\n\nCần bổ sung thêm:\nBạn có thể cung cấp thêm thông tin về tên của người bị cáo và tội danh mà bạn đang hỏi không?",
+      "timestamp": "2026-05-15T03:46:28.670433+00:00",
+      "sources": [
+        {
+          "id": "015_Bo-luat-to-tung-hinh-su-2015-296884:article:179:clause:2",
+          "documentId": "015_Bo-luat-to-tung-hinh-su-2015-296884",
+          "documentTitle": "Bo Luat To Tung Hinh Su 2015 296884",
+          "articleNumber": "179",
+          "clauseNumber": "2",
+          "targetArticle": null,
+          "chunkText": "Điều 179. Khởi tố bị can\n2. Quyết định khởi tố bị can ghi rõ thời gian, địa điểm ra quyết định; họ tên, chức vụ người ra quyết định; họ tên, ngày, tháng, năm sinh, quốc tịch, dân tộc, tôn giáo, giới tính, chỗ ở, nghề nghiệp của bị can; bị can bị khởi tố về tội gì, theo điều, khoản nào của Bộ luật hình sự; thời gian, địa điểm phạm tội và những tình tiết khác của tội phạm. Trường hợp bị can bị khởi tố về nhiều tội khác nhau thì quyết định khởi tố bị can phải ghi rõ từng tội danh và điều, khoản của Bộ luật hình sự được áp dụng.",
+          "relevanceScore": 0.030776515151515152,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-to-tung-hinh-su-2015-296884.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "015_Bo-luat-to-tung-hinh-su-2015-296884:article:255",
+          "documentId": "015_Bo-luat-to-tung-hinh-su-2015-296884",
+          "documentTitle": "Bo Luat To Tung Hinh Su 2015 296884",
+          "articleNumber": "255",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 255. Quyết định đưa vụ án ra xét xử\n1. Quyết định đưa vụ án ra xét xử sơ thẩm ghi rõ:\na) Ngày, tháng, năm ra quyết định; tên Tòa án ra quyết định; giờ, ngày, tháng, năm, địa điểm mở phiên tòa;\nb) Xét xử công khai hay xét xử kín;\nc) Họ tên, ngày, tháng, năm sinh, nơi sinh, nghề nghiệp, nơi cư trú của bị cáo;\nd) Tội danh và điểm, khoản, điều của Bộ luật hình sự mà Viện kiểm sát truy tố đối với ",
+          "relevanceScore": 0.01639344262295082,
+          "retrievalOrigin": "bm25",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-to-tung-hinh-su-2015-296884.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "015_Bo-luat-to-tung-hinh-su-2015-296884:article:260:clause:2:point:3",
+          "documentId": "015_Bo-luat-to-tung-hinh-su-2015-296884",
+          "documentTitle": "Bo Luat To Tung Hinh Su 2015 296884",
+          "articleNumber": "260",
+          "clauseNumber": "2",
+          "targetArticle": null,
+          "chunkText": "Điều 260. Bản án\nb) Số, ngày, tháng, năm của bản cáo trạng hoặc quyết định truy tố; tên Viện kiểm sát truy tố; hành vi của bị cáo theo tội danh mà Viện kiểm sát truy tố; tội danh, điểm, khoản, điều của Bộ luật hình sự và mức hình phạt, hình phạt bổ sung, biện pháp tư pháp, trách nhiệm bồi thường thiệt hại mà Viện kiểm sát đề nghị áp dụng đối với bị cáo; xử lý vật chứng; c)Ý kiến của người bào chữa",
+          "relevanceScore": 0.016129032258064516,
+          "retrievalOrigin": "bm25",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-to-tung-hinh-su-2015-296884.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        }
+      ],
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "runtimeMode": "local",
+        "modelUsed": "qwen2.5:7b-instruct",
+        "embeddingModel": "intfloat/multilingual-e5-base",
+        "queryRewritten": "Tên bị cáo, tội danh",
+        "processingTimeMs": 112836
+      }
+    }
+  ],
+  "facts": {},
+  "case_summary": "",
+  "pending_follow_up": "Bạn có thể cung cấp thêm thông tin về tên của người bị cáo và tội danh mà bạn đang hỏi không?",
+  "last_retrieval_query": "Tên bị cáo, tội danh",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-15T03:46:28.708471+00:00"
+}

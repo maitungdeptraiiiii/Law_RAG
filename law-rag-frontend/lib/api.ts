@@ -15,6 +15,8 @@ import type {
   UpdateSessionRequest,
   PaginatedResponse,
   ApiResponse,
+  RuntimeStatus,
+  RuntimeConfigRequest,
 } from './types'
 
 // ==================== Configuration ====================
@@ -146,6 +148,17 @@ function reviveUpload(upload: UploadedDocument): UploadedDocument {
 }
 
 // ==================== Chat & Conversation API ====================
+
+export async function getRuntimeStatus(): Promise<ApiResponse<RuntimeStatus>> {
+  return requestJson<RuntimeStatus>('/api/runtime/status')
+}
+
+export async function updateRuntimeConfig(request: RuntimeConfigRequest): Promise<ApiResponse<RuntimeStatus>> {
+  return requestJson<RuntimeStatus>('/api/runtime/config', {
+    method: 'POST',
+    body: JSON.stringify(request),
+  })
+}
 
 export async function askQuestion(request: AskQuestionRequest): Promise<ApiResponse<AskQuestionResponse>> {
   return requestJson<AskQuestionResponse>('/api/chat/ask', {
@@ -303,4 +316,5 @@ export const fetchers = {
   sessions: getSessions,
   corpusStatus: getCorpusStatus,
   jobs: getJobs,
+  runtimeStatus: getRuntimeStatus,
 }
