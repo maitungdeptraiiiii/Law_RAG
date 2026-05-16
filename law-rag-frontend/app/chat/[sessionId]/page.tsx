@@ -11,8 +11,18 @@ import { AnswerCard } from '@/components/chat/answer-card'
 import { useRetrievalSettings } from '@/components/chat/retrieval-settings-context'
 import { SourceEvidencePanel } from '@/components/chat/source-evidence-panel'
 import { askQuestion, getConversation } from '@/lib/api'
-import type { Message, RetrievedSource, RetrievalSettings } from '@/lib/types'
+import type { Message, RetrievedSource } from '@/lib/types'
 import useSWR from 'swr'
+
+function createErrorMessage(error: unknown): Message {
+  const detail = error instanceof Error ? error.message : typeof error === 'string' ? error : 'Không thể kết nối backend.'
+  return {
+    id: `assistant-error-${Date.now()}`,
+    role: 'assistant',
+    content: `Không thể tạo câu trả lời.\n\nChi tiết: ${detail}`,
+    timestamp: new Date(),
+  }
+}
 
 export default function SessionChatPage() {
   const params = useParams()
@@ -68,21 +78,25 @@ export default function SessionChatPage() {
         settings,
       })
 
-      if (response.success) {
-        const assistantMessage: Message = {
-          id: response.data.messageId,
-          role: 'assistant',
-          content: response.data.answer,
-          timestamp: new Date(),
-          sources: response.data.sources,
-          metadata: response.data.metadata,
-        }
-        setMessages((prev) => [...prev, assistantMessage])
-        window.dispatchEvent(new CustomEvent('law-rag:sessions-updated'))
-        mutate() // Refresh conversation data
+      if (!response.success) {
+        setMessages((prev) => [...prev, createErrorMessage(response.error || 'Backend không trả về phản hồi hợp lệ.')])
+        return
       }
+
+      const assistantMessage: Message = {
+        id: response.data.messageId,
+        role: 'assistant',
+        content: response.data.answer,
+        timestamp: new Date(),
+        sources: response.data.sources,
+        metadata: response.data.metadata,
+      }
+      setMessages((prev) => [...prev, assistantMessage])
+      window.dispatchEvent(new CustomEvent('law-rag:sessions-updated'))
+      mutate() // Refresh conversation data
     } catch (error) {
       console.error('[v0] Error asking question:', error)
+      setMessages((prev) => [...prev, createErrorMessage(error)])
     } finally {
       setIsLoading(false)
     }

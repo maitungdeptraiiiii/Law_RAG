@@ -156,7 +156,7 @@ Nếu chưa đủ, nên thêm:
 Precision thấp cho thấy top-k còn nhiễu. Có thể thử:
 
 ```powershell
-python evaluate_law_rag.py --top-k 3
+python evaluation/evaluate_law_rag.py --top-k 3
 ```
 
 Sau đó so với `--top-k 5`. Nếu recall không giảm nhiều nhưng groundedness/latency tốt hơn, có thể dùng top-k 3 cho UI.

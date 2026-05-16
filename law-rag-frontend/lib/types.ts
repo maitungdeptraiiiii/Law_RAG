@@ -73,7 +73,7 @@ export interface RuntimeStatus {
   queryRewriteModel: string
   embeddingProvider: string
   embeddingModel: string
-  localLlmBaseUrl?: string
+  localLlmBaseUrl?: string | null
   hasOpenaiApiKey: boolean
   vectorDir: string
   vectorIndex: {
@@ -88,6 +88,13 @@ export interface RuntimeStatus {
 export interface RuntimeConfigRequest {
   mode: RuntimeMode
   openaiApiKey?: string
+  localLlmBaseUrl?: string
+  localQueryRewriteModel?: string
+}
+
+export interface LocalModel {
+  id: string
+  name: string
 }
 
 // ==================== Legal Documents ====================

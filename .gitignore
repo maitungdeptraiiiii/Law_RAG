@@ -1,4 +1,5 @@
 env.txt
+.env
 
 # Python cache / local env
 __pycache__/

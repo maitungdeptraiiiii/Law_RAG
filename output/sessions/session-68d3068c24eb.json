@@ -1,0 +1,105 @@
+{
+  "session_id": "session-68d3068c24eb",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-df011d53af0e",
+      "role": "user",
+      "content": "toi danh nguoi bi toi gi",
+      "timestamp": "2026-05-16T07:38:40.769402+00:00"
+    },
+    {
+      "id": "msg-058db0e1c4a6",
+      "role": "assistant",
+      "content": "Trong context hiện có, điều có thể khẳng định được là hành vi đánh người bị hại có thể cấu thành tội hiếp dâm nếu đáp ứng các dấu hiệu của tội này.\n\nNếu:\n- Người bị hại từ đủ 13 tuổi đến dưới 16 tuổi: Có thể áp dụng Điều 140 Bộ luật Hình sự về tội hiếp dâm.\n- Hành vi đánh người bị hại có dấu hiệu dùng vũ lực hoặc đe dọa dùng vũ lực: Cần xem xét kỹ các tình tiết vụ việc.\n\nCần bổ sung thêm:\nBạn có thể cung cấp thêm thông tin về độ tuổi của người bị hại và hành vi cụ thể không?",
+      "timestamp": "2026-05-16T07:39:45.002805+00:00",
+      "sources": [
+        {
+          "id": "015_Bo-luat-to-tung-hinh-su-2015-296884:article:85",
+          "documentId": "015_Bo-luat-to-tung-hinh-su-2015-296884",
+          "documentTitle": "Bo Luat To Tung Hinh Su 2015 296884",
+          "articleNumber": "85",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 85. Những vấn đề phải chứng minh trong vụ án hình sự\nKhi điều tra, truy tố và xét xử vụ án hình sự, cơ quan có thẩm quyền tiến hành tố tụng phải chứng minh:\n1. Có hành vi phạm tội xảy ra hay không, thời gian, địa điểm và những tình tiết khác của hành vi phạm tội; 2.Ai là người thực hiện hành vi phạm tội; có lỗi hay không có lỗi, do cố ý hay vô ý; có năng lực trách nhiệm hình sự hay không; mục đích, động cơ phạm tội;\n3. Những tình tiết giảm nhẹ, tăng nặng trách nhiệm hình sự của bị can, bị cáo và đặc điểm về nhân thân của bị can, bị cáo;\n4. Tính chất và mức độ thiệt hại do hành vi phạm tội gây ra;\n5. Nguyên nhân và điều kiện phạm tội;\n6. Những tình tiết khác liên quan đến việc loại trừ trách nhiệm hình sự, miễn trách nhiệm hình sự, miễn hình phạt.",
+          "relevanceScore": 0.032018442622950824,
+          "retrievalOrigin": "vector",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-to-tung-hinh-su-2015-296884.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "019_Luat-sua-doi-Bo-luat-To-tung-hinh-su-2025-so-99-2025-QH15-662829:amendment:1:clause:39",
+          "documentId": "019_Luat-sua-doi-Bo-luat-To-tung-hinh-su-2025-so-99-2025-QH15-662829",
+          "documentTitle": "Luat Sua Doi Bo Luat To Tung Hinh Su 2025 So 99 2025 Qh15 662829",
+          "articleNumber": "1",
+          "clauseNumber": "1",
+          "targetArticle": null,
+          "chunkText": "Điều 1. Sửa đổi, bổ sung một số điều của Bộ luật Tố tụng hình sự\n1. Viện kiểm sát quyết định truy tố bị can trước Tòa án bằng bản cáo trạng. Bản cáo trạng ghi rõ diễn biến hành vi phạm tội; chứng cứ xác định hành vi phạm tội của bị can, thủ đoạn, động cơ, mục đích phạm tội, tính chất, mức độ thiệt hại do hành vi phạm tội gây ra; việc áp dụng, thay đổi, hủy bỏ biện pháp ngăn chặn, biện pháp cưỡng chế; tình tiết tăng nặng, giảm nhẹ trách nhiệm hình sự, đặc điểm nhân thân của bị can; việc thu giữ, tạm giữ tài liệu, đồ vật và việc xử lý vật chứng; nguyên nhân và điều kiện dẫn đến hành vi phạm tội và tình tiết khác có ý nghĩa đối với vụ án.\nPhần kết luận của bản cáo trạng ghi rõ tội danh và điều, khoản, điểm của Bộ luật Hình sự được áp dụng.\nBản cáo trạng phải ghi rõ ngày, tháng, năm ra cáo trạng; họ tên, chức vụ và chữ ký của người ra bản cáo trạng.",
+          "relevanceScore": 0.030090497737556562,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Luat-sua-doi-Bo-luat-To-tung-hinh-su-2025-so-99-2025-QH15-662829.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "015_Bo-luat-to-tung-hinh-su-2015-296884:article:260:clause:2:point:2",
+          "documentId": "015_Bo-luat-to-tung-hinh-su-2015-296884",
+          "documentTitle": "Bo Luat To Tung Hinh Su 2015 296884",
+          "articleNumber": "260",
+          "clauseNumber": "2",
+          "targetArticle": null,
+          "chunkText": "Điều 260. Bản án\na) Tên Tòa án xét xử sơ thẩm; số và ngày thụ lý vụ án; số của bản án và ngày tuyên án; họ tên của các thành viên Hội đồng xét xử, Thư ký Tòa án, Kiểm sát viên; họ tên, ngày, tháng, năm sinh, nơi sinh, nơi cư trú, nghề nghiệp, trình độ văn hóa, dân tộc, tiền án, tiền sự của bị cáo; ngày bị cáo bị tạm giữ, tạm giam; họ tên, tuổi, nghề nghiệp, nơi sinh, nơi cư trú của người đại diện của bị cáo; họ tên của người bào chữa, người làm chứng, người giám định, người định giá tài sản, người phiên dịch, người dịch thuật và những người khác được Tòa án triệu tập tham gia phiên tòa; họ tên, tuổi, nghề nghiệp, nơi cư trú của bị hại, đương sự, người đại diện của họ; số, ngày, tháng, năm của quyết định đưa vụ án ra xét xử; xét xử công khai hoặc xét xử kín; thời gian và địa điểm xét xử;",
+          "relevanceScore": 0.030621785881252923,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-to-tung-hinh-su-2015-296884.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "015_Bo-luat-to-tung-hinh-su-2015-296884:article:144",
+          "documentId": "015_Bo-luat-to-tung-hinh-su-2015-296884",
+          "documentTitle": "Bo Luat To Tung Hinh Su 2015 296884",
+          "articleNumber": "144",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 144. Tố giác, tin báo về tội phạm, kiến nghị khởi tố\n1. Tố giác về tội phạm là việc cá nhân phát hiện và tố cáo hành vi có dấu hiệu tội phạm với cơ quan có thẩm quyền.\n2. Tin báo về tội phạm là thông tin về vụ việc có dấu hiệu tội phạm do cơ quan, tổ chức, cá nhân thông báo với cơ quan có thẩm quyền hoặc thông tin về tội phạm trên phương tiện thông tin đại chúng.\n3. Kiến nghị khởi tố là việc cơ quan nhà nước có thẩm quyền kiến nghị bằng văn bản và gửi kèm theo chứng cứ, tài liệu liên quan cho Cơ quan điều tra, Viện kiểm sát có thẩm quyền xem xét, xử lý vụ việc có dấu hiệu tội phạm.\n4. Tố giác, tin báo về tội phạm có thể bằng lời hoặc bằng văn bản.\n5. Người nào cố ý tố giác, báo tin về tội phạm sai sự thật thì tuỳ tính chất, mức độ vi phạm mà bị xử lý kỷ luật, xử phạt vi phạm hành chính hoặc bị truy cứu trách nhiệm hình sự theo quy định của luật.",
+          "relevanceScore": 0.029211087420042643,
+          "retrievalOrigin": "vector",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-to-tung-hinh-su-2015-296884.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "015_Bo-luat-to-tung-hinh-su-2015-296884:article:298",
+          "documentId": "015_Bo-luat-to-tung-hinh-su-2015-296884",
+          "documentTitle": "Bo Luat To Tung Hinh Su 2015 296884",
+          "articleNumber": "298",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 298. Giới hạn của việc xét xử\n1. Tòa án xét xử những bị cáo và những hành vi theo tội danh mà Viện kiểm sát truy tố và Tòa án đã quyết định đưa vụ án ra xét xử.\n2. Tòa án có thể xét xử bị cáo theo khoản khác với khoản mà Viện kiểm sát đã truy tố trong cùng một điều luật hoặc về một tội khác bằng hoặc nhẹ hơn tội mà Viện kiểm sát đã truy tố.\n3. Trường hợp xét thấy cần xét xử bị cáo về tội danh",
+          "relevanceScore": 0.030621785881252923,
+          "retrievalOrigin": "bm25",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-to-tung-hinh-su-2015-296884.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        }
+      ],
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "runtimeMode": "local",
+        "modelUsed": "qwen2.5:7b-instruct",
+        "embeddingModel": "intfloat/multilingual-e5-base",
+        "queryRewritten": "Trợ lý pháp lý cần thông tin về tên bị cáo và tội danh để đánh giá tình hình pháp lý.",
+        "processingTimeMs": 64464
+      }
+    }
+  ],
+  "facts": {},
+  "case_summary": "",
+  "pending_follow_up": "Bạn có thể cung cấp thêm thông tin về tên của người bị cáo và tội mà họ bị tố giác không?",
+  "last_retrieval_query": "Trợ lý pháp lý cần thông tin về tên bị cáo và tội danh để đánh giá tình hình pháp lý.",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-16T07:39:45.013353+00:00"
+}

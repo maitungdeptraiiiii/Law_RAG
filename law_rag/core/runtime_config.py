@@ -15,7 +15,7 @@ OPENAI_DEFAULT_EMBEDDING_MODEL = os.getenv("OPENAI_EMBEDDING_MODEL", "text-embed
 
 LOCAL_DEFAULT_CHAT_MODEL = os.getenv("LOCAL_CHAT_MODEL", "qwen2.5:7b-instruct")
 LOCAL_DEFAULT_MEMORY_MODEL = os.getenv("LOCAL_MEMORY_MODEL", LOCAL_DEFAULT_CHAT_MODEL)
-LOCAL_DEFAULT_QUERY_REWRITE_MODEL = os.getenv("LOCAL_QUERY_REWRITE_MODEL", LOCAL_DEFAULT_CHAT_MODEL)
+LOCAL_DEFAULT_LLM_BASE_URL = os.getenv("LOCAL_LLM_BASE_URL", "http://127.0.0.1:11434/v1")
 LOCAL_DEFAULT_EMBEDDING_PROVIDER = os.getenv("LOCAL_EMBEDDING_PROVIDER", "sentence-transformers")
 LOCAL_DEFAULT_EMBEDDING_MODEL = os.getenv("LOCAL_EMBEDDING_MODEL", "intfloat/multilingual-e5-base")
 
@@ -49,10 +49,23 @@ def memory_model() -> str:
 
 
 def query_rewrite_model() -> str:
+    if runtime_mode() == "local":
+        local_model = os.getenv("LOCAL_QUERY_REWRITE_MODEL")
+        if local_model:
+            return local_model
+        explicit_model = os.getenv("QUERY_REWRITE_MODEL")
+        if explicit_model:
+            return explicit_model
+        return os.getenv("LOCAL_CHAT_MODEL") or LOCAL_DEFAULT_CHAT_MODEL
+
     explicit_model = os.getenv("QUERY_REWRITE_MODEL")
     if explicit_model:
         return explicit_model
-    return LOCAL_DEFAULT_QUERY_REWRITE_MODEL if runtime_mode() == "local" else OPENAI_DEFAULT_QUERY_REWRITE_MODEL
+    return OPENAI_DEFAULT_QUERY_REWRITE_MODEL
+
+
+def local_llm_base_url() -> str:
+    return os.getenv("LOCAL_LLM_BASE_URL") or LOCAL_DEFAULT_LLM_BASE_URL
 
 
 def embedding_provider() -> str:

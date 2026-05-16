@@ -1,0 +1,74 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend
+    image: law-rag-backend:local
+    container_name: law-rag-backend
+    environment:
+      RAG_MODE: ${RAG_MODE:-openai}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
+      OPENAI_CHAT_MODEL: ${OPENAI_CHAT_MODEL:-gpt-5.4-mini}
+      OPENAI_MEMORY_MODEL: ${OPENAI_MEMORY_MODEL:-gpt-5.4-mini}
+      OPENAI_QUERY_REWRITE_MODEL: ${OPENAI_QUERY_REWRITE_MODEL:-gpt-5.4-mini}
+      OPENAI_EMBEDDING_MODEL: ${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      LOCAL_LLM_BASE_URL: ${LOCAL_LLM_BASE_URL:-http://host.docker.internal:11434/v1}
+      LOCAL_LLM_API_KEY: ${LOCAL_LLM_API_KEY:-local}
+      LOCAL_CHAT_MODEL: ${LOCAL_CHAT_MODEL:-qwen2.5:7b-instruct}
+      LOCAL_MEMORY_MODEL: ${LOCAL_MEMORY_MODEL:-qwen2.5:7b-instruct}
+      LOCAL_QUERY_REWRITE_MODEL: ${LOCAL_QUERY_REWRITE_MODEL:-qwen2.5:7b-instruct}
+      LOCAL_EMBEDDING_PROVIDER: ${LOCAL_EMBEDDING_PROVIDER:-sentence-transformers}
+      LOCAL_EMBEDDING_MODEL: ${LOCAL_EMBEDDING_MODEL:-intfloat/multilingual-e5-base}
+      LOCAL_EMBEDDING_BASE_URL: ${LOCAL_EMBEDDING_BASE_URL:-http://host.docker.internal:8001/v1}
+      LOCAL_EMBEDDING_API_KEY: ${LOCAL_EMBEDDING_API_KEY:-local}
+      MONGODB_ATLAS_URI: ${MONGODB_ATLAS_URI:-}
+      MONGODB_ATLAS_DB: ${MONGODB_ATLAS_DB:-law_rag}
+      MONGODB_ATLAS_COLLECTION: ${MONGODB_ATLAS_COLLECTION:-legal_chunks}
+      MONGODB_ATLAS_VECTOR_INDEX: ${MONGODB_ATLAS_VECTOR_INDEX:-legal_chunks_vector_index}
+    volumes:
+      - ../output:/app/output
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')",
+        ]
+      interval: 30s 
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+  frontend:
+    build:
+      context: ../law-rag-frontend
+      dockerfile: ../docker/Dockerfile.frontend
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:${BACKEND_PORT:-8000}
+    image: law-rag-frontend:local
+    container_name: law-rag-frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000').then((response) => { if (!response.ok) process.exit(1); }).catch(() => process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+

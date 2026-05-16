@@ -4,7 +4,7 @@
   "fileType": "pdf",
   "fileSize": 522863,
   "uploadedAt": "2026-05-15T08:32:02.119744+00:00",
-  "status": "ready",
+  "status": "ocr_complete",
   "ocrProgress": 100,
   "language": "vi",
   "workspace": "private",
@@ -318,36 +318,10 @@
   ],
   "processedAt": "2026-05-15T08:32:02.228486+00:00",
   "reviewedAt": "2026-05-15T08:33:06.787443+00:00",
-  "chunkCount": 190,
-  "documentStorePath": "upload_documents\\private\\upload-255a0d5ceacf\\upload-255a0d5ceacf_47-2024-qh15_01.json",
-  "chunkStorePath": "upload_documents\\private\\upload-255a0d5ceacf\\chunks.json",
-  "indexedWorkspace": "private",
+  "chunkCount": null,
+  "documentStorePath": null,
+  "chunkStorePath": null,
+  "indexedWorkspace": null,
   "embeddingTarget": "both",
-  "embeddingStatus": {
-    "requested": "both",
-    "api": {
-      "built": true,
-      "provider": "openai",
-      "embedding_provider": "openai",
-      "model": "text-embedding-3-small",
-      "embedding_model": "text-embedding-3-small",
-      "dimension": 1536,
-      "chunk_count": 190,
-      "chunks_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\chunks.jsonl",
-      "index_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\embeddings\\api\\faiss.index",
-      "metadata_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\embeddings\\api\\vector_metadata.json"
-    },
-    "local": {
-      "built": true,
-      "provider": "sentence-transformers",
-      "embedding_provider": "sentence-transformers",
-      "model": "intfloat/multilingual-e5-base",
-      "embedding_model": "intfloat/multilingual-e5-base",
-      "dimension": 768,
-      "chunk_count": 190,
-      "chunks_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\chunks.jsonl",
-      "index_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\embeddings\\local\\faiss.index",
-      "metadata_path": "C:\\Users\\Admin\\Desktop\\Law-RAG\\output\\upload_documents\\private\\upload-255a0d5ceacf\\embeddings\\local\\vector_metadata.json"
-    }
-  }
+  "embeddingStatus": null
 }

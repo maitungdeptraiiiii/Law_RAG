@@ -8,7 +8,7 @@ from typing import Any
 from openai import OpenAI
 
 from .env_loader import load_project_env
-from .runtime_config import llm_provider
+from .runtime_config import llm_provider, local_llm_base_url
 
 
 load_project_env()
@@ -17,11 +17,17 @@ load_project_env()
 JSON_OBJECT_RE = re.compile(r"\{.*\}", re.DOTALL)
 
 
+def _local_extra_body() -> dict[str, str] | None:
+    if llm_provider() != "local":
+        return None
+    return {"keep_alive": os.getenv("OLLAMA_KEEP_ALIVE", "2h")}
+
+
 def get_chat_client() -> OpenAI:
     provider = llm_provider()
 
     if provider == "local":
-        base_url = os.getenv("LOCAL_LLM_BASE_URL") or os.getenv("OPENAI_BASE_URL")
+        base_url = local_llm_base_url() or os.getenv("OPENAI_BASE_URL")
         if not base_url:
             raise RuntimeError("Thieu LOCAL_LLM_BASE_URL khi LLM_PROVIDER=local.")
         return OpenAI(
@@ -50,6 +56,7 @@ def chat_completion_text(
         model=model,
         temperature=temperature,
         messages=messages,
+        extra_body=_local_extra_body(),
     )
     return response.choices[0].message.content or ""
 
@@ -67,6 +74,7 @@ def chat_completion_json(
             temperature=temperature,
             response_format={"type": "json_object"},
             messages=messages,
+            extra_body=_local_extra_body(),
         )
         content = response.choices[0].message.content or "{}"
     except Exception as exc:
@@ -83,6 +91,7 @@ def chat_completion_json(
                     "content": "Chi tra ve mot JSON object hop le, khong them markdown hay giai thich.",
                 },
             ],
+            extra_body=_local_extra_body(),
         )
         content = response.choices[0].message.content or "{}"
 

@@ -1,0 +1,109 @@
+{
+  "session_id": "session-48cd8ab5de81",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-11b9cedff267",
+      "role": "user",
+      "content": "tội mua bán dâm bị xử lý như nào",
+      "timestamp": "2026-05-16T07:42:49.696570+00:00"
+    },
+    {
+      "id": "msg-e6f7f2dde9c7",
+      "role": "assistant",
+      "content": "**Tóm tắt nhận định chính:**  \nTrong context hiện có, hành vi **mua dâm/bán dâm thông thường** chưa thấy quy định hình sự trực tiếp; các điều luật được cung cấp chủ yếu xử lý **mua dâm người dưới 18 tuổi**, **môi giới mại dâm**, và **chứa mại dâm**. Vì vậy, muốn xác định “bị xử lý như nào” phải xem hành vi cụ thể là mua dâm, bán dâm, hay có thêm yếu tố người dưới 18 tuổi/môi giới/chứa mại dâm.\n\n**Căn cứ pháp lý liên quan:**  \n- **Điều 329 BLHS 2015**: *Tội mua dâm người dưới 18 tuổi*  \n  - Người **đủ 18 tuổi trở lên** mua dâm người **dưới 18 tuổi**: phạt tù **01 năm đến 05 năm**.  \n  - Phạm tội có tình tiết như **mua dâm 02 lần trở lên**, hoặc **mua dâm người từ đủ 13 tuổi đến dưới 16 tuổi**, hoặc **gây tổn hại sức khỏe 31%–60%**: có khung nặng hơn.  \n  - Có thể bị phạt tiền **10–50 triệu đồng**.\n- **Điều 328 BLHS 2015**: *Tội môi giới mại dâm*  \n  - Làm trung gian dụ dỗ, dẫn dắt để người khác mua dâm/bán dâm: phạt tù **06 tháng đến 03 năm**; có tình tiết tăng nặng thì nặng hơn.\n- **Điều 327 BLHS 2015**: *Tội chứa mại dâm*  \n  - Chứa mại dâm: phạt tù **01 năm đến 05 năm**; có tình tiết như đối với người **từ đủ 16 đến dưới 18 tuổi**, **thu lợi bất chính**, **cưỡng bức mại dâm**… thì bị xử lý nặng hơn.\n\n**Hướng đánh giá theo tình tiết hiện có:**  \n- **Nếu chỉ là mua dâm/bán dâm thông thường, không có người dưới 18 tuổi, không có môi giới, không có chứa mại dâm**: từ context hiện có **chưa thấy căn cứ hình sự trực tiếp** để kết luận tội danh cụ thể.  \n- **Nếu người mua dâm đủ 18 tuổi trở lên và người bán dâm dưới 18 tuổi**: có thể bị xử lý về **tội mua dâm người dưới 18 tuổi** theo Điều 329.  \n- **Nếu có người làm trung gian dụ dỗ, dẫn dắt**: xem xét **tội môi giới mại dâm** theo Điều 328.  \n- **Nếu có địa điểm/việc tổ chức để người khác mua bán dâm**: xem xét **tội chứa mại dâm** theo Điều 327.\n\n**Cần bổ sung thêm:**  \nNgười liên quan là **bao nhiêu tuổi**, và hành vi cụ thể là **mua dâm, bán dâm, môi giới hay chứa mại dâm**?",
+      "timestamp": "2026-05-16T07:43:05.031027+00:00",
+      "sources": [
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:328",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "329",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 329. Tội mua dâm người dưới 18 tuổi\n1. Người nào đủ 18 tuổi trở lên mua dâm người dưới 18 tuổi trừ trường hợp quy định tại điểm b khoản 1 Điều 142 của Bộ luật này, thì bị phạt tù từ 01 năm đến 05 năm.\na) Mua dâm 02 lần trở lên;\nb) Mua dâm người từ đủ 13 tuổi đến dưới 16 tuổi;\nc) Gây tổn hại cho sức khỏe của nạn nhân mà tỷ lệ tổn thương cơ thể từ 31% đến 60%.\na) Phạm tội 02 lần trở lên đối với người từ đủ 13 tuổi đến dưới 16 tuổi;\nb) Gây tổn hại cho sức khỏe của nạn nhân mà tỷ lệ tổn thương cơ thể 61% trở lên.\n4. Người phạm tội còn bị phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng.",
+          "relevanceScore": 0.14425522401527655,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:326",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "327",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 327. Tội chứa mại dâm\n1. Người nào chứa mại dâm, thì bị phạt tù từ 01 năm đến 05 năm.\nb) Cưỡng bức mại dâm;\nd) Chứa mại dâm 04 người trở lên;\nđ) Đối với người từ đủ 16 tuổi đến dưới 18 tuổi;\ne) Gây rối loạn tâm thần và hành vi của người bán dâm từ 11% đến 45%;\ng) Thu lợi bất chính từ 50.000.000 đồng đến dưới 200.000.000 đồng;\na) Đối với người từ đủ 13 tuổi đến dưới 16 tuổi;\nc) Gây rối loạn tâm thần và hành vi của người bán dâm 46% trở lên.\na) Đối với 02 người trở lên từ đủ 13 tuổi đến dưới 16 tuổi;\nc) Cưỡng bức mại dâm dẫn đến người đó chết hoặc tự sát.\n5. Người phạm tội còn có thể bị phạt tiền từ 10.000.000 đồng đến 100.000.000 đồng, phạt quản chế từ 01 năm đến 05 năm hoặc tịch thu một phần hoặc toàn bộ tài sản.",
+          "relevanceScore": 0.11191194924999791,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:91:clause:2",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "91",
+          "clauseNumber": "2",
+          "targetArticle": null,
+          "chunkText": "Điều 91. Nguyên tắc xử lý đối với người dưới 18 tuổi phạm tội\n2. Người dưới 18 tuổi phạm tội thuộc một trong các trường hợp sau đây và có nhiều tình tiết giảm nhẹ, tự nguyện khắc phục phần lớn hậu quả, nếu không thuộc trường hợp quy định tại Điều 29 của Bộ luật này, thì có thể được miễn trách nhiệm hình sự và áp dụng các biện pháp quy định tại Mục 2 Chương này:\na) Người từ đủ 16 tuổi đến dưới 18 tuổi phạm tội ít nghiêm trọng, phạm tội nghiêm trọng, trừ trường hợp quy định tại Điều 134 (tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác); Điều 141 (tội hiếp dâm); Điều 171 (tội cướp giật tài sản); Điều 248 (tội sản xuất trái phép chất ma túy); Điều 249 (tội tàng trữ trái phép chất ma túy); Điều 250 (tội vận chuyển trái phép chất ma túy); Điều 251 (tội mua bán trái phép chất ma túy); Điều 252 (tội chiếm đoạt chất ma túy) của Bộ luật này;\nb) Người từ đủ 14 tuổi đến dưới 16 tuổi phạm tội rất nghiêm trọng do cố ý quy định tại khoản 2 Điều 12 của Bộ luật này, trừ trường hợp quy định tại Điều 123 (tội giết người); Điều 134, các khoản 4, 5 và khoản 6 (tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác); Điều 141 (tội hiếp dâm), Điều 142 (tội hiếp dâm người dưới 16 tuổi); Điều 144 (tội cưỡng dâm người từ đủ 13 tuổi đến dưới 16 tuổi); Điều 150 (tội mua bán người); Điều 151 (tội mua bán người dưới 16 tuổi); Điều 168 (tội cướp tài sản); Điều 171 (tội cướp giật tài sản); Điều 248 (tội sản xuất trái phép chất ma túy); Điều 249 (tội tàng trữ trái phép chất ma túy); Điều 250 (tội vận chuyển trái phép chất ma túy); Điều 251 (tội mua bán trái phép chất ma túy); Điều 252 (tội chiếm đoạt chất ma túy) của Bộ luật này;\nc) Người dưới 18 tuổi là người đồng phạm nhưng có vai trò không đáng kể trong vụ án.",
+          "relevanceScore": 0.10852460842973177,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:327",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "328",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 328. Tội môi giới mại dâm\n1. Người nào làm trung gian dụ dỗ, dẫn dắt để người khác thực hiện việc mua dâm, bán dâm, thì bị phạt tù từ 06 tháng đến 03 năm.\na) Đối với người từ đủ 16 tuổi đến dưới 18 tuổi;\ne) Thu lợi bất chính từ 100.000.000 đồng đến dưới 500.000.000 đồng;",
+          "relevanceScore": 0.11271893979456117,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        },
+        {
+          "id": "002_Bo-luat-hinh-su-2015-296661:article:147",
+          "documentId": "002_Bo-luat-hinh-su-2015-296661",
+          "documentTitle": "Bo Luat Hinh Su 2015 296661",
+          "articleNumber": "147",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 147. Tội sử dụng người dưới 16 tuổi vào mục đích khiêu dâm\n1. Người nào đủ 18 tuổi trở lên mà lôi kéo, dụ dỗ, ép buộc người dưới 16 tuổi trình diễn khiêu dâm hoặc trực tiếp chứng kiến việc trình diễn khiêu dâm dưới mọi hình thức, thì bị phạt tù từ 06 tháng đến 03 năm.\nđ) Có mục đích thương mại;\ne) Gây rối loạn tâm thần và hành vi của nạn nhân từ 11% đến 45%;",
+          "relevanceScore": 0.10664465365552322,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": "https://thuvienphapluat.vn/van-ban/Trach-nhiem-hinh-su/Bo-luat-hinh-su-2015-296661.aspx",
+          "issuedDate": null,
+          "documentType": "law"
+        }
+      ],
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "runtimeMode": "openai",
+        "modelUsed": "gpt-5.4-mini",
+        "embeddingModel": "text-embedding-3-small",
+        "queryRewritten": "Xử lý hành vi mua dâm, bán dâm theo pháp luật Việt Nam; chế tài hành chính đối với mua dâm bán dâm; xử phạt hành vi mua dâm, bán dâm, môi giới mại dâm, chứa mại dâm; trường hợp liên quan người dưới 18 tuổi; căn cứ Nghị định xử phạt vi phạm hành chính và Bộ luật Hình sự Việt Nam về mại dâm",
+        "processingTimeMs": 15645
+      }
+    }
+  ],
+  "facts": {
+    "jurisdiction": "Việt Nam",
+    "issue": "Xử lý pháp lý đối với hành vi mua dâm/bán dâm",
+    "specific_facts_provided": []
+  },
+  "case_summary": "Người dùng hỏi về cách xử lý pháp lý đối với hành vi mua bán dâm tại Việt Nam. Hiện chưa có tình tiết cụ thể về chủ thể, độ tuổi, số lần vi phạm, có tổ chức hay không, có liên quan người dưới 18 tuổi hay không, hay có dấu hiệu môi giới/chứa mại dâm.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Xử lý hành vi mua dâm, bán dâm theo pháp luật Việt Nam; chế tài hành chính đối với mua dâm bán dâm; xử phạt hành vi mua dâm, bán dâm, môi giới mại dâm, chứa mại dâm; trường hợp liên quan người dưới 18 tuổi; căn cứ Nghị định xử phạt vi phạm hành chính và Bộ luật Hình sự Việt Nam về mại dâm",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-16T07:43:05.044239+00:00"
+}

@@ -6,6 +6,7 @@ import unicodedata
 from dataclasses import asdict, dataclass
 from pathlib import Path
 import shutil
+import threading
 from typing import Any, Literal
 
 import faiss
@@ -17,6 +18,7 @@ from .retrieval.retrieve_chunks import build_index_payload, build_searchable_tex
 LOW_CONFIDENCE_THRESHOLD = 0.7
 WORKSPACE = Literal["private", "public"]
 EmbeddingTarget = Literal["none", "api", "local", "both"]
+_MANIFEST_LOCK = threading.Lock()
 
 
 @dataclass
@@ -192,7 +194,7 @@ def list_processed_uploads(output_dir: Path) -> list[dict[str, Any]]:
         manifest_path = documents_root / f"{workspace}_manifest.json"
         if not manifest_path.exists():
             continue
-        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest = _read_json_file(manifest_path, {"items": []})
         for item in manifest.get("items", []):
             results.append({"workspace": workspace, **item})
     return sorted(results, key=lambda item: item.get("id", ""), reverse=True)
@@ -469,28 +471,53 @@ def _env(name: str, fallback: str) -> str:
     return os.getenv(name) or fallback
 
 
+def _read_json_file(path: Path, default: Any) -> Any:
+    if not path.exists():
+        return default
+    raw = path.read_text(encoding="utf-8")
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        decoder = json.JSONDecoder()
+        try:
+            payload, _end = decoder.raw_decode(raw)
+        except json.JSONDecodeError:
+            return default
+        _write_json_file(path, payload)
+        return payload
+
+
+def _write_json_file(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp_path = path.with_name(f"{path.name}.tmp")
+    temp_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    temp_path.replace(path)
+
+
 def _upsert_manifest_item(path: Path, item: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    manifest = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {"items": []}
-    items = [existing for existing in manifest.get("items", []) if existing.get("id") != item["id"]]
-    items.insert(0, item)
-    path.write_text(json.dumps({"items": items}, ensure_ascii=False, indent=2), encoding="utf-8")
+    with _MANIFEST_LOCK:
+        manifest = _read_json_file(path, {"items": []}) if path.exists() else {"items": []}
+        items = [existing for existing in manifest.get("items", []) if existing.get("id") != item["id"]]
+        items.insert(0, item)
+        _write_json_file(path, {"items": items})
 
 
 def _remove_manifest_item(path: Path, upload_id: str) -> None:
     if not path.exists():
         return
-    manifest = json.loads(path.read_text(encoding="utf-8"))
-    items = [item for item in manifest.get("items", []) if item.get("id") != upload_id]
-    path.write_text(json.dumps({"items": items}, ensure_ascii=False, indent=2), encoding="utf-8")
+    with _MANIFEST_LOCK:
+        manifest = _read_json_file(path, {"items": []})
+        items = [item for item in manifest.get("items", []) if item.get("id") != upload_id]
+        _write_json_file(path, {"items": items})
 
 
 def _remove_public_manifest_item(path: Path, source_file: str) -> None:
     if not path.exists():
         return
-    manifest = json.loads(path.read_text(encoding="utf-8"))
+    manifest = _read_json_file(path, {"items": []})
     items = [item for item in manifest.get("items", []) if item.get("text_file") != source_file]
-    path.write_text(json.dumps({"items": items}, ensure_ascii=False, indent=2), encoding="utf-8")
+    _write_json_file(path, {"items": items})
 
 
 def _remove_chunks_from_jsonl(path: Path, source_file: str) -> None:

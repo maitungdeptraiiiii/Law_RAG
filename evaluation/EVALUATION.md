@@ -293,7 +293,7 @@ Mỗi lần chạy evaluation nên lưu:
 
 ## Cách hiểu và cách tính từng thông số
 
-Phần này mô tả các thông số đang được sinh bởi `evaluate_law_rag.py`. Các metric dạng `*_at_k`, `mrr`, `ndcg_at_5`, `duplicate_rate`, `required_term_coverage`, `best_reference_token_iou` nằm trong thang `0.0-1.0`. Các metric như `retrieval_relevance`, `citation_accuracy`, `groundedness`, `answer_correctness`, `answer_relevance`, `completeness`, `no_overclaiming`, `overall` nằm trong thang `1-5`. Nếu dataset không khai báo dữ liệu chuẩn cần thiết, một số metric sẽ là `None` và không được tính vào trung bình.
+Phần này mô tả các thông số đang được sinh bởi `evaluation/evaluate_law_rag.py`. Các metric dạng `*_at_k`, `mrr`, `ndcg_at_5`, `duplicate_rate`, `required_term_coverage`, `best_reference_token_iou` nằm trong thang `0.0-1.0`. Các metric như `retrieval_relevance`, `citation_accuracy`, `groundedness`, `answer_correctness`, `answer_relevance`, `completeness`, `no_overclaiming`, `overall` nằm trong thang `1-5`. Nếu dataset không khai báo dữ liệu chuẩn cần thiết, một số metric sẽ là `None` và không được tính vào trung bình.
 
 ### Quy tắc xác định một source đúng
 
@@ -682,4 +682,4 @@ Nên chọn cấu hình tốt nhất dựa trên:
 - Đã kiểm tra citation không bịa Điều/Khoản.
 - Đã kiểm tra answer không vượt quá context.
 - Đã lưu kết quả evaluation theo từng experiment.
-- Đã xem các biểu đồ trong `evaluate_law_rag.ipynb`.
+- Đã xem các biểu đồ trong `evaluation/evaluate_law_rag.ipynb`.

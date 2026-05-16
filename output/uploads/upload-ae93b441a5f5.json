@@ -4,7 +4,7 @@
   "fileType": "pdf",
   "fileSize": 2890643,
   "uploadedAt": "2026-05-15T07:01:25.802189+00:00",
-  "status": "ready",
+  "status": "ocr_complete",
   "ocrProgress": 100,
   "language": "vi",
   "workspace": "private",
@@ -265,14 +265,10 @@
   ],
   "reviewedAt": "2026-05-15T08:21:55.097836+00:00",
   "qualityWarning": null,
-  "chunkCount": 137,
-  "documentStorePath": "upload_documents\\private\\upload-ae93b441a5f5\\upload-ae93b441a5f5_102-2016-qh13_01.json",
-  "chunkStorePath": "upload_documents\\private\\upload-ae93b441a5f5\\chunks.json",
-  "indexedWorkspace": "private",
+  "chunkCount": null,
+  "documentStorePath": null,
+  "chunkStorePath": null,
+  "indexedWorkspace": null,
   "embeddingTarget": "none",
-  "embeddingStatus": {
-    "requested": "none",
-    "api": null,
-    "local": null
-  }
+  "embeddingStatus": null
 }

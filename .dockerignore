@@ -9,5 +9,6 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 env.txt
+.env
 law-rag-frontend/
 node_modules/

@@ -1,0 +1,110 @@
+{
+  "session_id": "session-2473467ca43b",
+  "title": "",
+  "history": [
+    {
+      "id": "msg-fa51f5061a9d",
+      "role": "user",
+      "content": "tội mua bán dâm bị xử lý như nào",
+      "timestamp": "2026-05-16T07:30:38.966719+00:00"
+    },
+    {
+      "id": "msg-dd45b151f33e",
+      "role": "assistant",
+      "content": "Trong **context hiện có chưa có điều luật trực tiếp về xử lý hành vi mua dâm/bán dâm**, nên **không thể khẳng định chính xác mức phạt cụ thể** chỉ từ các đoạn luật đã cung cấp. Tuy vậy, có thể rút ra hướng đánh giá sơ bộ như sau:\n\n- **Nếu chỉ là hành vi mua dâm hoặc bán dâm đơn lẻ, không có dấu hiệu tổ chức, môi giới, chứa mại dâm, cưỡng ép, dụ dỗ, lôi kéo** thì về nguyên tắc đây là nhóm hành vi cần xem xét theo **xử lý vi phạm hành chính**.\n- **Nếu có hành vi tổ chức, môi giới, chứa mại dâm hoặc cưỡng ép người khác tham gia** thì có thể chuyển sang **xử lý nghiêm hơn**, thậm chí xem xét **trách nhiệm hình sự** tùy tính chất, mức độ.\n- **Nếu người liên quan là người chưa thành niên** hoặc có yếu tố **cưỡng ép, dụ dỗ, lôi kéo**, thì đây là tình tiết làm thay đổi đáng kể hướng xử lý và cần xem xét theo quy định nghiêm hơn.\n\n**Căn cứ trong context đã có:** hiện chỉ có thông tin chung về việc hỏi xử lý hành vi mua bán dâm; **chưa có điều/khoản cụ thể về chế tài** trong các đoạn luật được cung cấp, nên chưa thể viện dẫn mức phạt cụ thể từ context này.\n\n**Cần bổ sung thêm:** Hành vi cụ thể là **mua dâm, bán dâm, môi giới, chứa mại dâm hay tổ chức mại dâm**; có **cưỡng ép/dụ dỗ/lôi kéo** không; và **người liên quan bao nhiêu tuổi**?",
+      "timestamp": "2026-05-16T07:30:57.116842+00:00",
+      "sources": [
+        {
+          "id": "upload-255a0d5ceacf:article:57:clause:15",
+          "documentId": "upload-255a0d5ceacf_47-2024-qh15_01",
+          "documentTitle": "Upload 255A0D5Ceacf 47 2024 Qh15 01",
+          "articleNumber": "57",
+          "clauseNumber": "14",
+          "targetArticle": null,
+          "chunkText": "Điều 57. Sửa đổi, bổ sung, bãi bỏ một số điều, khoản của các luật có liên\n14. Sửa đổi, bổ sung số thứ tự 3.2 của mục II của Phụ lục số 01 về Danh mục\nphí, lệ phí của Luật Phí và lệ phí số 97/2015/QH14 đã được sửa đổi, bổ sung một\nsố điều theo Luật số 09/2017/QH14, Luật số 23/2018/QH14, Luật số\n72/2020/QH14, Luật số 16/2023/QH15, Luật số 20/2023/QH15, Luật số\n24/2023/QH15, Luật số 33/2024/QH15 và Luật số 35/2024/QH15 như sau:\n3.2 Phí thẩm định quy hoạch đô thị và nông thôn\nBộ Tài chính\nCÔNG BÁO/Số 1529 + 1530/Ngày 30-12-2024\n51",
+          "relevanceScore": 0.09320826533639938,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": null,
+          "issuedDate": null,
+          "documentType": "other"
+        },
+        {
+          "id": "upload-255a0d5ceacf:article:57:clause:2:part:3",
+          "documentId": "upload-255a0d5ceacf_47-2024-qh15_01",
+          "documentTitle": "Upload 255A0D5Ceacf 47 2024 Qh15 01",
+          "articleNumber": "57",
+          "clauseNumber": "1",
+          "targetArticle": null,
+          "chunkText": "dài thời hạn thì cơ quan đã cấp giấy phép xây dựng có trách nhiệm thông báo về\nviệc gia hạn thời gian tồn tại của công trình. Trường hợp chủ đầu tư tiếp tục có nhu\ncầu xây dựng mới hoặc sửa chữa, cải tạo thì thực hiện cấp giấy phép xây dựng có\nthời hạn theo yêu cầu quản lý, phát triển và phù hợp với thời hạn của quy hoạch\nđiều chỉnh.”;\nn) Sửa đổi, bổ sung điểm a khoản 1 Điều 164 như sau:\n“a) Thực hiện quản lý nhà nước về hoạt động đầu tư xây dựng theo phân cấp\ncủa Chính phủ; quản lý trật tự xây dựng trên địa bàn theo quy hoạch, thiết kế xây\ndựng và giấy phép xây dựng theo quy định của Chính phủ; ban hành văn bản theo\nthẩm quyền; chỉ đạo tổ chức thực hiện quy hoạch theo pháp luật về quy hoạch đô thị\nvà nông thôn, kế hoạch đầu tư xây dựng; tổ chức hướng dẫn, kiểm tra, giải quyết\nkhiếu nại, tố cáo, xử lý vi phạm pháp luật trong hoạt động đầu tư xây dựng;”;\no) Bãi bỏ các khoản 7, 8, 16, 22, 25, 30, 31, 32, 33, 44 Điều 3, Điều 150 và",
+          "relevanceScore": 0.07928168700017044,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": null,
+          "issuedDate": null,
+          "documentType": "other"
+        },
+        {
+          "id": "upload-255a0d5ceacf:article:57:clause:11",
+          "documentId": "upload-255a0d5ceacf_47-2024-qh15_01",
+          "documentTitle": "Upload 255A0D5Ceacf 47 2024 Qh15 01",
+          "articleNumber": "57",
+          "clauseNumber": "10",
+          "targetArticle": null,
+          "chunkText": "Điều 57. Sửa đổi, bổ sung, bãi bỏ một số điều, khoản của các luật có liên\n10. Thay thế cụm từ “cắm mốc giới theo quy hoạch xây dựng” bằng cụm từ\n“cắm mốc theo quy định của pháp luật về quy hoạch đô thị và nông thôn” tại\nkhoản 6 Điều 78 của Luật Đường sắt số 06/2017/QH14 đã được sửa đổi, bổ sung\nmột số điều theo Luật số 35/2018/QH14 và Luật số 16/2023/QH15.",
+          "relevanceScore": 0.090331498211933,
+          "retrievalOrigin": "hybrid",
+          "sourceUrl": null,
+          "issuedDate": null,
+          "documentType": "other"
+        },
+        {
+          "id": "upload-ae93b441a5f5:article:91",
+          "documentId": "upload-ae93b441a5f5_102-2016-qh13_01",
+          "documentTitle": "Upload Ae93B441A5F5 102 2016 Qh13 01",
+          "articleNumber": "96",
+          "clauseNumber": null,
+          "targetArticle": null,
+          "chunkText": "Điều 96. Bao dam cho trẻ em được sống với cha, mẹ\n1. Cha, mẹ, người chăm sóc trẻ em, các thành viên trong gia đình bảo\nđảm điều kiện để trẻ em được sống với cha, mẹ.\n2. Cha, mẹ, người chăm sóc trẻ em va cac thanh vién trong gia dinh\nphai chấp. hành quy định của pháp luật và quyết định của cơ quan, cá nhân có\nthẩm quyển về việc hạn chế quyền của cha, mẹ; tách trẻ em khỏi cha, mẹ để\nbảo đảm an toàn ",
+          "relevanceScore": 0.06530936012691697,
+          "retrievalOrigin": "bm25",
+          "sourceUrl": null,
+          "issuedDate": null,
+          "documentType": "other"
+        },
+        {
+          "id": "upload-255a0d5ceacf:article:57:clause:3",
+          "documentId": "upload-255a0d5ceacf_47-2024-qh15_01",
+          "documentTitle": "Upload 255A0D5Ceacf 47 2024 Qh15 01",
+          "articleNumber": "57",
+          "clauseNumber": "2",
+          "targetArticle": null,
+          "chunkText": "Điều 57. Sửa đổi, bổ sung, bãi bỏ một số điều, khoản của các luật có liên\n2. Sửa đổi, bổ sung một số điều của Luật Đất đai số 31/2024/QH15 đã được\nsửa đổi, bổ sung một số điều theo Luật số 43/2024/QH15 như sau:\na) Thay thế cụm từ “pháp luật về quy hoạch đô thị” bằng cụm từ “pháp luật về\nquy hoạch đô thị và nông thôn” tại khoản 5 Điều 65, khoản 4 Điều 66, khoản 5\nĐiều 116, khoản 2 Điều 216;\nb) Thay thế cụm từ “quy hoạch xây dựng, quy hoạch đô thị, quy hoạch nông\nthôn” bằng cụm từ “quy hoạch theo pháp luật về quy hoạch đô thị và nông thôn”\ntại điểm a khoản 2 và khoản 5 Điều 66;\nc) Thay thế cụm từ “quy hoạch xây dựng, quy hoạch đô thị” bằng cụm từ “quy\nhoạch theo pháp luật về quy hoạch đô thị và nông thôn” tại điểm c khoản 3 Điều 122;\nd) Thay thế cụm từ “quy hoạch chi tiết xây dựng” bằng cụm từ “quy hoạch chi\ntiết theo pháp luật về quy hoạch đô thị và nông thôn” tại điểm c khoản 5 Điều 158,\nđiểm i khoản 1 Điều 159;\nCÔNG BÁO/Số 1529 + 1530/Ngày 30-12-2024\n47\nđ) Thay thế cụm từ “quy hoạch xây dựng hoặc quy hoạch đô thị” bằng cụm từ\n“quy hoạch theo pháp luật về quy hoạch đô thị và nông thôn” tại điểm c khoản 2\nĐiều 190;\ne) Thay thế cụm từ “quy hoạch xây dựng, quy hoạch đô thị” bằng cụm từ\n“quy hoạch theo pháp luật về quy hoạch đô thị và nông thôn” tại điểm b khoản 4\nĐiều 216;\ng) Thay thế cụm từ “quy hoạch xây dựng; quy hoạch đô thị” bằng cụm từ “quy\nhoạch theo pháp luật về quy hoạch đô thị và nông thôn” tại điểm a khoản 3 và\nđiểm a khoản 7 Điều 219;\nh) Thay thế cụm từ “quy hoạch xây dựng” bằng cụm từ “quy hoạch khu chức\nnăng; quy hoạch nông thôn” tại điểm a khoản 1 Điều 67.",
+          "relevanceScore": 0.06242518865469685,
+          "retrievalOrigin": "vector",
+          "sourceUrl": null,
+          "issuedDate": null,
+          "documentType": "other"
+        }
+      ],
+      "metadata": {
+        "retrievalMode": "hybrid",
+        "runtimeMode": "openai",
+        "modelUsed": "gpt-5.4-mini",
+        "embeddingModel": "text-embedding-3-small",
+        "queryRewritten": "Pháp luật Việt Nam xử lý hành vi mua dâm, bán dâm như thế nào; mức xử phạt hành chính đối với mua dâm và bán dâm; các trường hợp bị truy cứu trách nhiệm hình sự liên quan đến tổ chức mại dâm, môi giới mại dâm, chứa mại dâm, cưỡng ép mại dâm; quy định tại Nghị định 144/2021/NĐ-CP và Bộ luật Hình sự 2015 sửa đổi 2017",
+        "processingTimeMs": 18371
+      }
+    }
+  ],
+  "facts": {
+    "topic": "Xử lý hành vi mua bán dâm theo pháp luật Việt Nam",
+    "jurisdiction": "Việt Nam",
+    "specific_case_details": {},
+    "known_context": "Người dùng hỏi chung, chưa nêu tình tiết cụ thể"
+  },
+  "case_summary": "Người dùng hỏi về cách xử lý đối với hành vi mua bán dâm theo pháp luật Việt Nam. Hiện chưa có tình tiết cụ thể về đối tượng, độ tuổi, số lần vi phạm, có tổ chức hay không, có yếu tố cưỡng ép/môi giới/lôi kéo hay không, nên chỉ có thể đánh giá theo khung xử phạt hành chính và các tội danh liên quan trong trường hợp có tình tiết tăng nặng hoặc hành vi tổ chức/môi giới.",
+  "pending_follow_up": null,
+  "last_retrieval_query": "Pháp luật Việt Nam xử lý hành vi mua dâm, bán dâm như thế nào; mức xử phạt hành chính đối với mua dâm và bán dâm; các trường hợp bị truy cứu trách nhiệm hình sự liên quan đến tổ chức mại dâm, môi giới mại dâm, chứa mại dâm, cưỡng ép mại dâm; quy định tại Nghị định 144/2021/NĐ-CP và Bộ luật Hình sự 2015 sửa đổi 2017",
+  "archived": false,
+  "pinned": false,
+  "updated_at": "2026-05-16T07:30:57.126431+00:00"
+}

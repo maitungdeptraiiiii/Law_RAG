@@ -36,12 +36,24 @@ import {
   triggerBM25Index, 
   triggerVectorIndex,
   getRuntimeStatus,
-  updateRuntimeConfig
+  updateRuntimeConfig,
+  getLocalModels
 } from '@/lib/api'
-import type { CorpusStatus, PipelineJob, RuntimeMode, RuntimeStatus } from '@/lib/types'
+import type { CorpusStatus, LocalModel, PipelineJob, RuntimeMode, RuntimeStatus } from '@/lib/types'
 import { formatDistanceToNow } from 'date-fns'
 import { vi } from 'date-fns/locale'
 import { toast } from 'sonner'
+
+const REWRITE_MODEL_DESCRIPTIONS: Record<string, string> = {
+  'qwen2.5:0.5b-instruct': 'Nhanh nhất, chất lượng rewrite yếu; chỉ nên dùng để thử tốc độ.',
+  'qwen2.5:1.5b-instruct': 'Khuyến nghị cho rewrite: nhẹ hơn 7B, đủ tốt sau prompt ràng buộc.',
+  'qwen2.5:3b-instruct': 'Cân bằng hơn nhưng tốn VRAM hơn; có thể chậm trên GPU 6GB.',
+  'qwen2.5:7b-instruct': 'Chất lượng tốt hơn nhưng chậm, không nên dùng riêng cho rewrite nếu ưu tiên tốc độ.',
+}
+
+function rewriteModelDescription(modelId: string): string {
+  return REWRITE_MODEL_DESCRIPTIONS[modelId] || 'Model local khả dụng từ Ollama/endpoint OpenAI-compatible.'
+}
 
 export default function AdminDashboardPage() {
   const [corpusStatus, setCorpusStatus] = useState<CorpusStatus | null>(null)
@@ -49,6 +61,9 @@ export default function AdminDashboardPage() {
   const [runtimeStatus, setRuntimeStatus] = useState<RuntimeStatus | null>(null)
   const [selectedMode, setSelectedMode] = useState<RuntimeMode>('local')
   const [openaiApiKey, setOpenaiApiKey] = useState('')
+  const [localLlmBaseUrl, setLocalLlmBaseUrl] = useState('http://127.0.0.1:11434/v1')
+  const [localQueryRewriteModel, setLocalQueryRewriteModel] = useState('qwen2.5:1.5b-instruct')
+  const [localModels, setLocalModels] = useState<LocalModel[]>([])
   const [loading, setLoading] = useState(true)
   const [actionLoading, setActionLoading] = useState<string | null>(null)
   const [runtimeSaving, setRuntimeSaving] = useState(false)
@@ -56,6 +71,20 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     loadData()
   }, [])
+
+  useEffect(() => {
+    if (selectedMode === 'local') {
+      setOpenaiApiKey('')
+    }
+  }, [selectedMode])
+
+  useEffect(() => {
+    if (selectedMode !== 'local' || localModels.length === 0) return
+    const selectedModelExists = localModels.some((model) => model.id === localQueryRewriteModel)
+    if (selectedModelExists) return
+    const preferredModel = localModels.find((model) => model.id === 'qwen2.5:1.5b-instruct') || localModels[0]
+    setLocalQueryRewriteModel(preferredModel.id)
+  }, [selectedMode, localModels, localQueryRewriteModel])
 
   async function loadData() {
     try {
@@ -70,7 +99,11 @@ export default function AdminDashboardPage() {
       if (runtimeRes.success) {
         setRuntimeStatus(runtimeRes.data)
         setSelectedMode(runtimeRes.data.mode)
+        if (runtimeRes.data.localLlmBaseUrl) setLocalLlmBaseUrl(runtimeRes.data.localLlmBaseUrl)
+        if (runtimeRes.data.queryRewriteModel) setLocalQueryRewriteModel(runtimeRes.data.queryRewriteModel)
       }
+      const modelsRes = await getLocalModels()
+      if (modelsRes.success) setLocalModels(modelsRes.data)
     } catch (error) {
       console.error('[v0] Error loading admin data:', error)
     } finally {
@@ -113,7 +146,9 @@ export default function AdminDashboardPage() {
     try {
       const response = await updateRuntimeConfig({
         mode: selectedMode,
-        openaiApiKey: openaiApiKey.trim() || undefined,
+        openaiApiKey: selectedMode === 'openai' ? openaiApiKey.trim() || undefined : undefined,
+        localLlmBaseUrl: selectedMode === 'local' ? localLlmBaseUrl.trim() || undefined : undefined,
+        localQueryRewriteModel: selectedMode === 'local' ? localQueryRewriteModel.trim() || undefined : undefined,
       })
       if (response.success) {
         setRuntimeStatus(response.data)
@@ -192,7 +227,7 @@ export default function AdminDashboardPage() {
                 />
               </div>
 
-              <div className="grid gap-4 border-t border-border pt-5 lg:grid-cols-[220px_1fr_auto]">
+              <div className="grid gap-4 border-t border-border pt-5 lg:grid-cols-[180px_minmax(220px,1fr)_minmax(220px,1fr)_minmax(220px,1fr)_auto]">
                 <div className="space-y-2">
                   <Label htmlFor="runtime-mode">Chế độ</Label>
                   <Select value={selectedMode} onValueChange={(value) => setSelectedMode(value as RuntimeMode)}>
@@ -205,20 +240,61 @@ export default function AdminDashboardPage() {
                     </SelectContent>
                   </Select>
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="openai-api-key">OpenAI API key</Label>
-                  <Input
-                    id="openai-api-key"
-                    type="password"
-                    value={openaiApiKey}
-                    onChange={(event) => setOpenaiApiKey(event.target.value)}
-                    placeholder={runtimeStatus.hasOpenaiApiKey ? 'Đã có key, nhập key mới nếu muốn đổi' : 'sk-...'}
-                    autoComplete="off"
-                  />
-                  <p className="text-xs text-muted-foreground">
-                    Chỉ cần nhập khi chuyển sang OpenAI API hoặc muốn thay key hiện tại.
-                  </p>
-                </div>
+                {selectedMode === 'local' && (
+                  <div className="space-y-2">
+                    <Label htmlFor="local-llm-base-url">Local LLM URL</Label>
+                    <Input
+                      id="local-llm-base-url"
+                      value={localLlmBaseUrl}
+                      onChange={(event) => setLocalLlmBaseUrl(event.target.value)}
+                      placeholder="http://127.0.0.1:11434/v1"
+                      autoComplete="off"
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Endpoint OpenAI-compatible, ví dụ Ollama, LM Studio hoặc vLLM.
+                    </p>
+                  </div>
+                )}
+                {selectedMode === 'local' && (
+                  <div className="space-y-2">
+                    <Label htmlFor="local-query-rewrite-model">Model rewrite</Label>
+                    <Select value={localQueryRewriteModel} onValueChange={setLocalQueryRewriteModel}>
+                      <SelectTrigger id="local-query-rewrite-model">
+                        <SelectValue placeholder="Chọn model rewrite" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {localModels.length === 0 ? (
+                          <SelectItem value={localQueryRewriteModel}>{localQueryRewriteModel}</SelectItem>
+                        ) : (
+                          localModels.map((model) => (
+                            <SelectItem key={model.id} value={model.id}>
+                              {model.name}
+                            </SelectItem>
+                          ))
+                        )}
+                      </SelectContent>
+                    </Select>
+                    <p className="text-xs text-muted-foreground">
+                      {rewriteModelDescription(localQueryRewriteModel)}
+                    </p>
+                  </div>
+                )}
+                {selectedMode === 'openai' && (
+                  <div className="space-y-2">
+                    <Label htmlFor="openai-api-key">OpenAI API key</Label>
+                    <Input
+                      id="openai-api-key"
+                      type="password"
+                      value={openaiApiKey}
+                      onChange={(event) => setOpenaiApiKey(event.target.value)}
+                      placeholder={runtimeStatus.hasOpenaiApiKey ? 'Đã có key, nhập key mới nếu muốn đổi' : 'sk-...'}
+                      autoComplete="off"
+                    />
+                    <p className="text-xs text-muted-foreground">
+                      Chỉ cần nhập khi chuyển sang OpenAI API hoặc muốn thay key hiện tại.
+                    </p>
+                  </div>
+                )}
                 <div className="flex items-end">
                   <Button onClick={handleRuntimeSave} disabled={runtimeSaving}>
                     {runtimeSaving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
@@ -459,7 +535,12 @@ function JobRow({ job }: { job: PipelineJob }) {
     index_vector: 'Xây dựng Vector',
   }
 
-  const statusConfig = {
+  const statusConfig: Record<PipelineJob['status'], {
+    icon: typeof Clock
+    color: string
+    label: string
+    animate?: boolean
+  }> = {
     pending: { icon: Clock, color: 'text-muted-foreground', label: 'Đang chờ' },
     running: { icon: Loader2, color: 'text-info', label: 'Đang chạy', animate: true },
     completed: { icon: CheckCircle2, color: 'text-success', label: 'Hoàn thành' },

@@ -115,6 +115,7 @@ export default function ProcessedUploadsPage() {
     if (failedCount > 0) {
       toast.error(`${failedCount} tài liệu chưa xóa được.`)
     }
+    await loadDocuments(false)
     setDeleting(false)
   }
 

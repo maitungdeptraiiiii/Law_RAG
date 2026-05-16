@@ -4,6 +4,7 @@ import argparse
 import json
 import re
 import statistics
+import sys
 import time
 import unicodedata
 from dataclasses import dataclass
@@ -11,13 +12,16 @@ from math import log2
 from pathlib import Path
 from typing import Any
 
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from law_rag.app.ask_law import DEFAULT_CHAT_MODEL, DEFAULT_MEMORY_MODEL, answer_question
 from law_rag.core.env_loader import load_project_env
 from law_rag.retrieval.build_vector_index import DEFAULT_EMBEDDING_MODEL
 from law_rag.retrieval.hybrid_retrieve import DEFAULT_QUERY_REWRITE_MODEL
 
 
-ROOT_DIR = Path(__file__).resolve().parent
 DEFAULT_DATASET_PATH = ROOT_DIR / "output" / "eval" / "law_rag_eval_dataset.json"
 DEFAULT_RESULTS_DIR = ROOT_DIR / "output" / "eval" / "runs"
 CHUNKS_PATH = ROOT_DIR / "output" / "chunks" / "all_chunks.jsonl"

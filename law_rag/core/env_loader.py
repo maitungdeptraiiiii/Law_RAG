@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 
-ENV_FILE_PATH = Path(__file__).resolve().parents[2] / "env.txt"
+ENV_FILE_PATH = Path(__file__).resolve().parents[2] / ".env"
 
 ENV_KEY_ALIASES = {
     "RAG_MODE": ["RAG_MODE", "rag_mode", "mode"],

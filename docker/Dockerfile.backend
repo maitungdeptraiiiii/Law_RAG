@@ -16,7 +16,6 @@ RUN python -m pip install --upgrade pip \
 
 COPY law_rag ./law_rag
 COPY output ./output
-COPY env.example ./env.example
 COPY README.md ./README.md
 COPY luat.docx ./luat.docx
 

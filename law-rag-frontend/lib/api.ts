@@ -19,12 +19,23 @@ import type {
   ApiResponse,
   RuntimeStatus,
   RuntimeConfigRequest,
+  LocalModel,
   EmbeddingTarget,
 } from './types'
 
 // ==================== Configuration ====================
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000'
+
+function getErrorMessage(payload: unknown, fallback: string): string {
+  if (payload && typeof payload === 'object') {
+    const data = payload as { error?: unknown; detail?: unknown; message?: unknown }
+    if (typeof data.error === 'string') return data.error
+    if (typeof data.detail === 'string') return data.detail
+    if (typeof data.message === 'string') return data.message
+  }
+  return fallback
+}
 
 function buildUrl(path: string, params?: Record<string, string | number | undefined>): string {
   const url = new URL(path, API_BASE_URL)
@@ -53,7 +64,7 @@ async function requestJson<T>(path: string, init?: RequestInit): Promise<ApiResp
     if (!response.ok) {
       return {
         success: false,
-        error: payload?.error || `Request failed with status ${response.status}`,
+        error: getErrorMessage(payload, `Request failed with status ${response.status}`),
       }
     }
     return payload as ApiResponse<T>
@@ -76,7 +87,7 @@ async function requestFormData<T>(path: string, body: FormData): Promise<ApiResp
     if (!response.ok) {
       return {
         success: false,
-        error: payload?.error || `Request failed with status ${response.status}`,
+        error: getErrorMessage(payload, `Request failed with status ${response.status}`),
       }
     }
     return payload as ApiResponse<T>
@@ -161,6 +172,10 @@ export async function updateRuntimeConfig(request: RuntimeConfigRequest): Promis
     method: 'POST',
     body: JSON.stringify(request),
   })
+}
+
+export async function getLocalModels(): Promise<ApiResponse<LocalModel[]>> {
+  return requestJson<LocalModel[]>('/api/runtime/local-models')
 }
 
 export async function askQuestion(request: AskQuestionRequest): Promise<ApiResponse<AskQuestionResponse>> {

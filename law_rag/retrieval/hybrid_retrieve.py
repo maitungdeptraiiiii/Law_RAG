@@ -128,14 +128,16 @@ COLLOQUIAL_QUERY_EXPANSIONS: list[tuple[tuple[str, ...], list[str]]] = [
 load_project_env()
 
 
-QUERY_REWRITE_SYSTEM_PROMPT = """Ban la bo chuyen doi query cho he thong retrieval luat Viet Nam.
-Nhiem vu: doi cau hoi doi thuong cua nguoi dung thanh mot nhom truy van retrieval mang ngon ngu phap ly.
-Yeu cau:
-1. Giu nguyen y nghia cau hoi.
-2. Rut ra hanh vi, hau qua, toi danh hoac che dinh phap ly gan nhat.
-3. Tao 3-5 truy van retrieval ngan, ro, uu tien thuat ngu phap ly.
-4. Neu co the, them mot truy van co dang Dieu/Khoan neu rat kha nang lien quan.
-5. Chi tra JSON hop le voi 2 khoa: legal_intent va retrieval_queries.
+QUERY_REWRITE_SYSTEM_PROMPT = """Ban viet lai cau hoi de tim van ban phap luat Viet Nam.
+Bat buoc:
+- Giu dung chu de cua cau hoi goc, khong suy dien sang chu de khac.
+- Chi viet bang tieng Viet.
+- Neu cau hoi la "toi danh nguoi bi toi gi", chu de la co y gay thuong tich/gay ton hai suc khoe, Dieu 134 Bo luat Hinh su.
+- Tra ve dung JSON, khong markdown, khong giai thich.
+- JSON phai co dung 2 khoa: "legal_intent" la chuoi, "retrieval_queries" la mang chuoi.
+- Moi retrieval query ngan hon 120 ky tu.
+Vi du:
+{"legal_intent":"xac dinh trach nhiem hinh su khi danh nguoi gay thuong tich","retrieval_queries":["co y gay thuong tich Dieu 134 Bo luat Hinh su","danh nguoi gay thuong tich bi xu ly the nao","ty le thuong tat truy cuu trach nhiem hinh su"]}
 """
 
 
@@ -362,9 +364,35 @@ def rewrite_query_with_llm(query: str, *, model: str, max_rewrites: int) -> dict
     retrieval_queries = payload.get("retrieval_queries", [])
     if not isinstance(retrieval_queries, list):
         retrieval_queries = []
+    original_terms = set(normalize_text(query).split())
+    filtered_queries: list[str] = []
+    legal_terms = {
+        "luat",
+        "phap",
+        "dieu",
+        "khoan",
+        "hinh",
+        "su",
+        "toi",
+        "thuong",
+        "tich",
+        "trach",
+        "nhiem",
+        "xu",
+        "ly",
+    }
+    for item in retrieval_queries:
+        value = str(item).strip()
+        if not value:
+            continue
+        normalized_value = normalize_text(value)
+        value_terms = set(normalized_value.split())
+        if original_terms and not (original_terms & value_terms) and not (legal_terms & value_terms):
+            continue
+        filtered_queries.append(value)
     return {
         "legal_intent": str(payload.get("legal_intent", "")).strip(),
-        "retrieval_queries": deduplicate_queries([str(item) for item in retrieval_queries][:max_rewrites]),
+        "retrieval_queries": deduplicate_queries(filtered_queries[:max_rewrites]),
     }
 
 

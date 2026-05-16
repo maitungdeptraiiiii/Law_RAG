@@ -7,6 +7,7 @@ import subprocess
 import sys
 import threading
 import time
+import urllib.request
 import uuid
 from datetime import UTC, datetime, timedelta
 from functools import lru_cache
@@ -26,6 +27,7 @@ from ..core.runtime_config import (
     default_vector_dir,
     embedding_model,
     embedding_provider,
+    local_llm_base_url,
     llm_provider,
     memory_model,
     query_rewrite_model,
@@ -105,7 +107,8 @@ class UpdateSessionPayload(BaseModel):
 class RuntimeConfigPayload(BaseModel):
     mode: Literal["openai", "local"]
     openaiApiKey: str | None = None
-
+    localLlmBaseUrl: str | None = None
+    localQueryRewriteModel: str | None = None
 
 class UpdateUploadPayload(BaseModel):
     extractedText: str = ""
@@ -553,41 +556,18 @@ def atlas_settings_from_env() -> dict[str, str | None]:
     }
 
 
-def update_project_env_file(updates: dict[str, str]) -> None:
-    env_path = ROOT_DIR / "env.txt"
-    lines = env_path.read_text(encoding="utf-8").splitlines() if env_path.exists() else []
-    seen: set[str] = set()
-    updated_lines: list[str] = []
-
-    for line in lines:
-        stripped = line.strip()
-        if not stripped or stripped.startswith("#") or "=" not in stripped:
-            updated_lines.append(line)
-            continue
-        key, _value = stripped.split("=", 1)
-        key = key.strip()
-        if key in updates:
-            updated_lines.append(f"{key}={updates[key]}")
-            seen.add(key)
-        else:
-            updated_lines.append(line)
-
-    for key, value in updates.items():
-        if key not in seen:
-            updated_lines.append(f"{key}={value}")
-
-    env_path.write_text("\n".join(updated_lines) + "\n", encoding="utf-8")
-
-
 def apply_runtime_config(payload: RuntimeConfigPayload) -> None:
     updates = {"RAG_MODE": payload.mode}
     if payload.openaiApiKey and payload.openaiApiKey.strip():
         updates["OPENAI_API_KEY"] = payload.openaiApiKey.strip()
+    if payload.localLlmBaseUrl and payload.localLlmBaseUrl.strip():
+        updates["LOCAL_LLM_BASE_URL"] = payload.localLlmBaseUrl.strip()
+    if payload.localQueryRewriteModel and payload.localQueryRewriteModel.strip():
+        updates["LOCAL_QUERY_REWRITE_MODEL"] = payload.localQueryRewriteModel.strip()
 
     for key, value in updates.items():
         os.environ[key] = value
     os.environ.pop("VECTOR_DIR", None)
-    update_project_env_file(updates)
     load_documents_cache.cache_clear()
 
 
@@ -667,7 +647,7 @@ def runtime_status_payload() -> dict[str, Any]:
         "queryRewriteModel": query_rewrite_model(),
         "embeddingProvider": embedding_provider(),
         "embeddingModel": embedding_model(),
-        "localLlmBaseUrl": os.getenv("LOCAL_LLM_BASE_URL"),
+        "localLlmBaseUrl": local_llm_base_url() if runtime_mode() == "local" else None,
         "hasOpenaiApiKey": bool(os.getenv("OPENAI_API_KEY")),
         "vectorDir": str(vector_dir.relative_to(ROOT_DIR)) if vector_dir.is_relative_to(ROOT_DIR) else str(vector_dir),
         "vectorIndex": {
@@ -694,6 +674,24 @@ def runtime_status() -> dict[str, Any]:
 def update_runtime_config(payload: RuntimeConfigPayload) -> dict[str, Any]:
     apply_runtime_config(payload)
     return {"success": True, "data": runtime_status_payload()}
+
+
+@app.get("/api/runtime/local-models")
+def local_models() -> dict[str, Any]:
+    base_url = local_llm_base_url().rstrip("/")
+    models_url = f"{base_url}/models"
+    try:
+        with urllib.request.urlopen(models_url, timeout=5) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except Exception as exc:
+        return {"success": False, "error": f"Cannot load local models from {models_url}: {exc}"}
+
+    models = []
+    for item in payload.get("data", []):
+        model_id = item.get("id")
+        if isinstance(model_id, str) and model_id.strip():
+            models.append({"id": model_id, "name": model_id})
+    return {"success": True, "data": models}
 
 
 @app.post("/api/chat/ask")
@@ -1193,7 +1191,9 @@ def delete_processed_upload_endpoint(upload_id: str) -> dict[str, Any]:
         )
     load_documents_cache.cache_clear()
     load_chunk_report_map.cache_clear()
-    return {"success": True, "data": {"deleted": deleted}}
+    if not deleted:
+        return {"success": False, "error": "Processed upload not found"}
+    return {"success": True, "data": {"deleted": True}}
 
 
 @app.patch("/api/uploads/{upload_id}")
@@ -1301,8 +1301,16 @@ def get_upload_status(upload_id: str) -> dict[str, Any]:
 @app.delete("/api/uploads/{upload_id}")
 def delete_upload(upload_id: str) -> dict[str, Any]:
     status_path = UPLOADS_DIR / f"{upload_id}.json"
+    deleted_processed = delete_processed_upload(
+        upload_id=upload_id,
+        output_dir=OUTPUT_DIR,
+        law_output_dir=LAW_OUTPUT_DIR,
+        chunks_dir=CHUNKS_DIR,
+    )
     if not status_path.exists():
-        return {"success": True, "data": None}
+        load_documents_cache.cache_clear()
+        load_chunk_report_map.cache_clear()
+        return {"success": True, "data": {"deletedProcessed": deleted_processed}}
 
     metadata = safe_json_load(status_path, {})
     storage_path = metadata.get("storagePath") if isinstance(metadata, dict) else None
@@ -1312,4 +1320,6 @@ def delete_upload(upload_id: str) -> dict[str, Any]:
             raw_path.unlink()
 
     status_path.unlink()
-    return {"success": True, "data": None}
+    load_documents_cache.cache_clear()
+    load_chunk_report_map.cache_clear()
+    return {"success": True, "data": {"deletedProcessed": deleted_processed}}

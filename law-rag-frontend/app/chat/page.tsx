@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Scale, Send, Loader2, ChevronRight, ExternalLink } from 'lucide-react'
+import { Scale, Send, Loader2, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { ScrollArea } from '@/components/ui/scroll-area'
@@ -11,7 +11,17 @@ import { AnswerCard } from '@/components/chat/answer-card'
 import { useRetrievalSettings } from '@/components/chat/retrieval-settings-context'
 import { SourceEvidencePanel } from '@/components/chat/source-evidence-panel'
 import { askQuestion } from '@/lib/api'
-import type { Message, RetrievedSource, RetrievalSettings } from '@/lib/types'
+import type { Message, RetrievedSource } from '@/lib/types'
+
+function createErrorMessage(error: unknown): Message {
+  const detail = error instanceof Error ? error.message : typeof error === 'string' ? error : 'Không thể kết nối backend.'
+  return {
+    id: `assistant-error-${Date.now()}`,
+    role: 'assistant',
+    content: `Không thể tạo câu trả lời.\n\nChi tiết: ${detail}`,
+    timestamp: new Date(),
+  }
+}
 
 export default function ChatPage() {
   const router = useRouter()
@@ -54,27 +64,31 @@ export default function ChatPage() {
         settings,
       })
 
-      if (response.success) {
-        window.dispatchEvent(new CustomEvent('law-rag:sessions-updated'))
-
-        if (!sessionId) {
-          router.replace(`/chat/${response.data.sessionId}`)
-          return
-        }
-
-        const assistantMessage: Message = {
-          id: response.data.messageId,
-          role: 'assistant',
-          content: response.data.answer,
-          timestamp: new Date(),
-          sources: response.data.sources,
-          metadata: response.data.metadata,
-        }
-        setMessages((prev) => [...prev, assistantMessage])
-        setSessionId(response.data.sessionId)
+      if (!response.success) {
+        setMessages((prev) => [...prev, createErrorMessage(response.error || 'Backend không trả về phản hồi hợp lệ.')])
+        return
       }
+
+      window.dispatchEvent(new CustomEvent('law-rag:sessions-updated'))
+
+      if (!sessionId) {
+        router.replace(`/chat/${response.data.sessionId}`)
+        return
+      }
+
+      const assistantMessage: Message = {
+        id: response.data.messageId,
+        role: 'assistant',
+        content: response.data.answer,
+        timestamp: new Date(),
+        sources: response.data.sources,
+        metadata: response.data.metadata,
+      }
+      setMessages((prev) => [...prev, assistantMessage])
+      setSessionId(response.data.sessionId)
     } catch (error) {
       console.error('[v0] Error asking question:', error)
+      setMessages((prev) => [...prev, createErrorMessage(error)])
     } finally {
       setIsLoading(false)
     }
