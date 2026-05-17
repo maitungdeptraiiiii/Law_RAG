@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import os
-import queue
 import re
 import subprocess
 import sys
@@ -17,13 +16,13 @@ from typing import Any, Literal
 
 from fastapi import BackgroundTasks, FastAPI, File, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
 from openai import APIError, AuthenticationError
 from pydantic import BaseModel, Field
+from starlette.responses import StreamingResponse
 
 from ..app.ask_law import answer_question
 from ..core.conversation_state import append_history, load_session, save_session, utc_now_iso
-from ..core.env_loader import load_project_env, write_project_env
+from ..core.env_loader import load_project_env
 from ..core.runtime_config import (
     chat_model,
     default_vector_dir,
@@ -58,7 +57,7 @@ JOBS_FILE = OUTPUT_DIR / "api_jobs.json"
 DEFAULT_RETRIEVAL_SETTINGS = {
     "mode": "hybrid",
     "vector_backend": "faiss",
-    "top_k": 3,
+    "top_k": 5,
     "query_rewrite": True,
 }
 
@@ -85,7 +84,7 @@ ISSUING_AUTHORITY_MAP = {
 class RetrievalSettingsPayload(BaseModel):
     mode: Literal["hybrid", "vector", "bm25"] = "hybrid"
     vectorBackend: Literal["faiss", "atlas"] = "faiss"
-    topK: int = Field(default=3, ge=1, le=20)
+    topK: int = Field(default=5, ge=1, le=20)
     queryRewrite: bool = True
     model: str | None = None
 
@@ -126,14 +125,29 @@ class EmbedUploadPayload(BaseModel):
 
 app = FastAPI(title="Law RAG API", version="0.1.0")
 
+DEFAULT_CORS_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3001",
+    "https://lawrag.online",
+    "https://www.lawrag.online",
+    "https://law-rag1.vercel.app",
+    "https://law-rag1-lsbd4zi9o-maiphananhtung-gmailcoms-projects.vercel.app",
+]
+
+VERCEL_PREVIEW_ORIGIN_REGEX = r"^https://law-rag1(?:-[a-z0-9-]+)?(?:-maiphananhtung-gmailcoms-projects)?\.vercel\.app$"
+
+
+def allowed_origins() -> list[str]:
+    configured_origins = os.getenv("CORS_ALLOW_ORIGINS", "")
+    configured = [origin.strip() for origin in configured_origins.split(",") if origin.strip()]
+    return list(dict.fromkeys([*DEFAULT_CORS_ORIGINS, *configured]))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "http://localhost:3001",
-        "http://127.0.0.1:3001",
-    ],
+    allow_origins=allowed_origins(),
+    allow_origin_regex=VERCEL_PREVIEW_ORIGIN_REGEX,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -560,6 +574,15 @@ def atlas_settings_from_env() -> dict[str, str | None]:
 
 def apply_runtime_config(payload: RuntimeConfigPayload) -> None:
     updates = {"RAG_MODE": payload.mode}
+    if payload.mode == "local":
+        updates["LLM_PROVIDER"] = "local"
+        updates["EMBEDDING_PROVIDER"] = os.getenv("LOCAL_EMBEDDING_PROVIDER") or "sentence-transformers"
+        updates["EMBEDDING_MODEL"] = os.getenv("LOCAL_EMBEDDING_MODEL") or "intfloat/multilingual-e5-base"
+    else:
+        updates["LLM_PROVIDER"] = "openai"
+        updates["EMBEDDING_PROVIDER"] = "openai"
+        updates["EMBEDDING_MODEL"] = os.getenv("OPENAI_EMBEDDING_MODEL") or "text-embedding-3-small"
+
     if payload.openaiApiKey and payload.openaiApiKey.strip():
         updates["OPENAI_API_KEY"] = payload.openaiApiKey.strip()
     if payload.localLlmBaseUrl and payload.localLlmBaseUrl.strip():
@@ -569,7 +592,6 @@ def apply_runtime_config(payload: RuntimeConfigPayload) -> None:
 
     for key, value in updates.items():
         os.environ[key] = value
-    write_project_env(updates)
     os.environ.pop("VECTOR_DIR", None)
     load_documents_cache.cache_clear()
 
@@ -663,79 +685,48 @@ def runtime_status_payload() -> dict[str, Any]:
     }
 
 
-@app.get("/health")
-def health_check() -> dict[str, str]:
-    return {"status": "ok"}
-
-
-@app.get("/api/runtime/status")
-def runtime_status() -> dict[str, Any]:
-    return {"success": True, "data": runtime_status_payload()}
-
-
-@app.post("/api/runtime/config")
-def update_runtime_config(payload: RuntimeConfigPayload) -> dict[str, Any]:
-    apply_runtime_config(payload)
-    return {"success": True, "data": runtime_status_payload()}
-
-
-@app.get("/api/runtime/local-models")
-def local_models() -> dict[str, Any]:
-    base_url = local_llm_base_url().rstrip("/")
-    models_url = f"{base_url}/models"
-    try:
-        with urllib.request.urlopen(models_url, timeout=5) as response:
-            payload = json.loads(response.read().decode("utf-8"))
-    except Exception as exc:
-        return {"success": False, "error": f"Cannot load local models from {models_url}: {exc}"}
-
-    models = []
-    for item in payload.get("data", []):
-        model_id = item.get("id")
-        if isinstance(model_id, str) and model_id.strip():
-            models.append({"id": model_id, "name": model_id})
-    return {"success": True, "data": models}
-
-
-def run_chat_rag_request(
-    payload: AskQuestionPayload,
-    *,
-    started: float,
-    answer_stream_callback: Any = None,
-) -> dict[str, Any]:
+def run_question_request(payload: AskQuestionPayload) -> dict[str, Any]:
+    started = time.perf_counter()
     settings = normalize_settings(payload.settings)
     session_id = payload.sessionId or f"session-{uuid.uuid4().hex[:12]}"
     atlas_settings = atlas_settings_from_env()
 
-    vector_dir = active_vector_dir()
-    active_chat_model = settings.get("model") or chat_model()
-    active_query_rewrite_model = query_rewrite_model()
-    active_embedding_model = embedding_model()
-    private_bm25_sources, private_vector_dirs = private_retrieval_sources()
-    result = answer_question(
-        payload.question,
-        chunks_path=CHUNKS_PATH,
-        bm25_index_path=BM25_INDEX_PATH,
-        vector_dir=vector_dir,
-        query_rewrite_mode="llm" if settings["query_rewrite"] else "none",
-        query_rewrite_model=active_query_rewrite_model,
-        query_rewrite_count=4,
-        retrieval_mode=settings["mode"],
-        vector_backend=settings["vector_backend"],
-        embedding_model=active_embedding_model,
-        atlas_uri=atlas_settings["atlas_uri"],
-        atlas_db=atlas_settings["atlas_db"],
-        atlas_collection=atlas_settings["atlas_collection"],
-        atlas_vector_index=atlas_settings["atlas_vector_index"],
-        model=active_chat_model,
-        memory_model=memory_model(),
-        top_k=settings["top_k"],
-        additional_bm25_sources=private_bm25_sources,
-        additional_vector_dirs=private_vector_dirs,
-        session_id=session_id,
-        session_dir=SESSIONS_DIR,
-        answer_stream_callback=answer_stream_callback,
-    )
+    try:
+        vector_dir = active_vector_dir()
+        active_chat_model = settings.get("model") or chat_model()
+        active_memory_model = memory_model()
+        active_query_rewrite_model = query_rewrite_model()
+        active_embedding_model = embedding_model()
+        private_bm25_sources, private_vector_dirs = private_retrieval_sources()
+        result = answer_question(
+            payload.question,
+            chunks_path=CHUNKS_PATH,
+            bm25_index_path=BM25_INDEX_PATH,
+            vector_dir=vector_dir,
+            query_rewrite_mode="llm" if settings["query_rewrite"] else "none",
+            query_rewrite_model=active_query_rewrite_model,
+            query_rewrite_count=4,
+            retrieval_mode=settings["mode"],
+            vector_backend=settings["vector_backend"],
+            embedding_model=active_embedding_model,
+            atlas_uri=atlas_settings["atlas_uri"],
+            atlas_db=atlas_settings["atlas_db"],
+            atlas_collection=atlas_settings["atlas_collection"],
+            atlas_vector_index=atlas_settings["atlas_vector_index"],
+            model=active_chat_model,
+            memory_model=active_memory_model,
+            top_k=settings["top_k"],
+            additional_bm25_sources=private_bm25_sources,
+            additional_vector_dirs=private_vector_dirs,
+            session_id=session_id,
+            session_dir=SESSIONS_DIR,
+        )
+    except AuthenticationError as exc:
+        raise HTTPException(status_code=401, detail="OpenAI API key is invalid or expired.") from exc
+    except RuntimeError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    except APIError as exc:
+        raise HTTPException(status_code=502, detail="OpenAI request failed. Check API availability and billing.") from exc
 
     sources = [map_retrieved_source(item) for item in result.get("retrieved", [])]
     processing_time_ms = int((time.perf_counter() - started) * 1000)
@@ -774,50 +765,59 @@ def run_chat_rag_request(
     }
 
 
+@app.get("/health")
+def health_check() -> dict[str, str]:
+    return {"status": "ok"}
+
+
+@app.get("/api/runtime/status")
+def runtime_status() -> dict[str, Any]:
+    return {"success": True, "data": runtime_status_payload()}
+
+
+@app.post("/api/runtime/config")
+def update_runtime_config(payload: RuntimeConfigPayload) -> dict[str, Any]:
+    apply_runtime_config(payload)
+    return {"success": True, "data": runtime_status_payload()}
+
+
+@app.get("/api/runtime/local-models")
+def local_models() -> dict[str, Any]:
+    base_url = local_llm_base_url().rstrip("/")
+    models_url = f"{base_url}/models"
+    try:
+        with urllib.request.urlopen(models_url, timeout=5) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except Exception as exc:
+        return {"success": False, "error": f"Cannot load local models from {models_url}: {exc}"}
+
+    models = []
+    for item in payload.get("data", []):
+        model_id = item.get("id")
+        if isinstance(model_id, str) and model_id.strip():
+            models.append({"id": model_id, "name": model_id})
+    return {"success": True, "data": models}
+
+
 @app.post("/api/chat/ask")
 def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
-    started = time.perf_counter()
-    try:
-        data = run_chat_rag_request(payload, started=started)
-    except AuthenticationError as exc:
-        raise HTTPException(status_code=401, detail="OpenAI API key is invalid or expired.") from exc
-    except RuntimeError as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
-    except APIError as exc:
-        detail = str(exc).strip() or "OpenAI request failed. Check model access, API availability, and billing."
-        raise HTTPException(status_code=502, detail=detail[:1000]) from exc
-    return {"success": True, "data": data}
+    return {"success": True, "data": run_question_request(payload)}
 
 
 @app.post("/api/chat/ask/stream")
 def ask_question_stream_endpoint(payload: AskQuestionPayload) -> StreamingResponse:
-    started = time.perf_counter()
-    events: queue.Queue[dict[str, Any] | None] = queue.Queue()
-
-    def publish(event: dict[str, Any]) -> None:
-        events.put(event)
-
-    def worker() -> None:
+    def event_stream() -> Any:
         try:
-            data = run_chat_rag_request(
-                payload,
-                started=started,
-                answer_stream_callback=lambda delta: publish({"type": "answer_delta", "delta": delta}),
-            )
-            publish({"type": "final", "data": data})
+            response_payload = run_question_request(payload)
+            answer = str(response_payload.get("answer") or "")
+            if answer:
+                yield json.dumps({"type": "answer_delta", "delta": answer}, ensure_ascii=False) + "\n"
+            yield json.dumps({"type": "final", "data": response_payload}, ensure_ascii=False) + "\n"
+        except HTTPException as exc:
+            message = exc.detail if isinstance(exc.detail, str) else "Streaming request failed"
+            yield json.dumps({"type": "error", "error": message}, ensure_ascii=False) + "\n"
         except Exception as exc:
-            publish({"type": "error", "error": str(exc)[:1000]})
-        finally:
-            events.put(None)
-
-    threading.Thread(target=worker, daemon=True).start()
-
-    def event_stream():
-        while True:
-            event = events.get()
-            if event is None:
-                break
-            yield json.dumps(event, ensure_ascii=False) + "\n"
+            yield json.dumps({"type": "error", "error": str(exc)}, ensure_ascii=False) + "\n"
 
     return StreamingResponse(event_stream(), media_type="application/x-ndjson")
 

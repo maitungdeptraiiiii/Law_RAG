@@ -1,7 +1,32 @@
-env.txt
+# Secrets / environment
 .env
+.env.*
+!.env.example
+env.txt
+law-rag-frontend/.env
+law-rag-frontend/.env.*
+!law-rag-frontend/.env.example
 
 # Python cache / local env
 __pycache__/
 *.py[cod]
 .venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend dependencies/build output
+node_modules/
+law-rag-frontend/node_modules/
+.next/
+law-rag-frontend/.next/
+law-rag-frontend/tsconfig.tsbuildinfo
+
+# Runtime/private output
+output/uploads/
+output/upload_documents/
+output/sessions/
+output/eval/
+output/api_jobs.json
+output/*.log
+output/*.err.log
