@@ -1,526 +1,293 @@
 # Law RAG
 
-Hệ thống RAG pháp luật Việt Nam gồm 2 phần chạy tách biệt:
+Law RAG là hệ thống hỏi đáp pháp luật Việt Nam dùng FastAPI, Next.js và retrieval kết hợp BM25 + vector search. Dự án hỗ trợ dữ liệu luật có sẵn, upload tài liệu riêng, OCR PDF scan, chunk văn bản và embedding vào FAISS local hoặc MongoDB Atlas.
 
-- Backend Python với FastAPI, pipeline crawl/chunk/index và logic hỏi đáp dùng OpenAI.
-- Frontend Next.js cho landing page, trang chat, dashboard quản trị dữ liệu và các thao tác debug.
-
-README này phản ánh trạng thái hiện tại của repo sau khi frontend đã được cập nhật.
-
-## 1. Tổng quan kiến trúc
+## Kiến trúc
 
 ```text
 Law-RAG/
-|- law_rag/                 # Backend Python
-|  |- api/server.py         # FastAPI server
-|  |- app/ask_law.py        # Logic hỏi đáp pháp luật
-|  |- crawl/                # Crawl + phân loại + chunk dữ liệu
-|  |- retrieval/            # BM25 / vector / hybrid retrieval
-|  `- core/                 # Env loader, conversation state
+|- law_rag/                 # Backend Python/FastAPI
+|  |- api/server.py         # API server
+|  |- app/ask_law.py        # Luồng hỏi đáp RAG
+|  |- core/                 # Env loader, LLM/embedding config
+|  |- crawl/                # Crawl, kiểm tra framework, chunk luật
+|  |- retrieval/            # BM25, FAISS, Atlas, hybrid retrieval
+|  `- upload_pipeline.py    # Lưu upload, chunk, build embedding riêng
 |- law-rag-frontend/        # Frontend Next.js
-|  |- app/                  # Landing, chat, admin
-|  |- components/           # UI components
-|  |- lib/api.ts            # API client gọi backend
-|  `- .env.example          # Biến môi trường frontend
-|- output/                  # Dữ liệu crawl, chunks, index, sessions, jobs
-|- env.example              # Mẫu biến môi trường backend
-|- env.txt                  # Biến môi trường backend thực tế
-|- requirements.txt         # Python dependencies
-`- README.md
+|- docker/                  # Dockerfile backend/frontend và compose
+|- output/                  # Dữ liệu luật, chunks, indexes, sessions, uploads
+|- requirements.txt
+|- requirements-local.txt
+`- .env                     # Cấu hình backend/Docker Compose local
 ```
 
-## 2. Tính năng hiện có
+## Tính năng chính
 
-- Chat hỏi đáp pháp luật bằng tiếng Việt tại `/chat`.
-- Lưu lịch sử hội thoại nhiều lượt trong `output/sessions`.
-- Hybrid retrieval: BM25 + vector search.
-- Dashboard quản trị tại `/admin` để:
-	- xem tình trạng corpus,
-	- chạy crawl,
-	- chạy chunk,
-	- build BM25 index,
-	- build vector index FAISS,
-	- debug truy vấn retrieve.
-- Upload tài liệu qua API để chuẩn bị cho luồng OCR/phân tích tài liệu.
+- Chat hỏi đáp pháp luật bằng tiếng Việt, có trích dẫn nguồn chunk.
+- Hybrid retrieval: BM25 + vector FAISS, có lựa chọn vector-only hoặc BM25-only khi debug.
+- Quản lý corpus và pipeline crawl/chunk/index trong trang admin.
+- Upload PDF/DOCX/image, OCR bằng Tesseract/PaddleOCR, review text, lưu tài liệu riêng.
+- Embed upload vào FAISS riêng theo workspace private/public.
+- Hỗ trợ OpenAI, local OpenAI-compatible LLM, SentenceTransformers local embedding và MongoDB Atlas Vector Search.
+- Docker image sẵn trên Docker Hub:
+  - `maitung123/law-rag-backend:latest`
+  - `maitung123/law-rag-frontend:latest`
 
-## 2.1. Demo giao diện
+## Yêu cầu
 
-### Landing page
+- Python 3.11 khuyến nghị.
+- Node.js 22 khuyến nghị cho frontend Next.js 16.
+- `pnpm`.
+- Tesseract OCR nếu xử lý PDF scan hoặc ảnh. Trên Windows nên có `C:\Program Files\Tesseract-OCR\tesseract.exe` và language data `vie.traineddata`.
+- OpenAI API key nếu chạy `RAG_MODE=openai` hoặc `EMBEDDING_PROVIDER=openai`.
+- Docker Desktop nếu chạy bằng Docker.
 
-![Landing page](docs/screenshots/landing-page.png)
+## Cấu hình Backend
 
-Trang giới thiệu sản phẩm, mô tả giá trị của hệ thống Law RAG và điều hướng nhanh tới khu vực chat hoặc quản trị.
-
-### Chat hỏi đáp pháp luật
-
-![Màn hình chat hỏi đáp](docs/screenshots/chat-answer.png)
-
-Màn hình hội thoại chính hỗ trợ hỏi đáp pháp luật tiếng Việt, lưu lịch sử chat và trả lời có trích dẫn căn cứ pháp lý.
-
-
-### Khối tính năng nổi bật
-
-![Phần tính năng nổi bật](docs/screenshots/features-section.png)
-
-Phần giới thiệu các điểm mạnh của hệ thống như Hybrid Retrieval giúp tăng độ chính xác tìm kiếm, cơ chế trích dẫn minh bạch nguồn luật, hỗ trợ hội thoại liên tục theo ngữ cảnh và khả năng mở rộng tích hợp OCR trong tương lai.
-
-### Dashboard quản trị
-
-![Dashboard quản trị](docs/screenshots/admin-dashboard.png)
-
-Trang quản trị theo dõi tình trạng dữ liệu, số lượng văn bản và điều khiển pipeline crawl, chunk, BM25, vector index.
-
-## 3. Chạy bằng Docker
-
-Repo hiện dùng [docker-compose.yml](c:/Users/Admin/Desktop/Law-RAG/docker-compose.yml) theo mode chạy từ image đã được push lên Docker Hub.
-
-Ý nghĩa của mô hình này:
-
-- Máy khác không cần source code để build lại.
-- Chỉ cần file compose, Docker và quyền pull image từ Docker Hub.
-- Compose sẽ kéo 2 image `maitung123/law-rag-backend:latest` và `maitung123/law-rag-frontend:latest` về để chạy.
-
-### Chuẩn bị
-
-1. Bảo đảm bạn có `OPENAI_API_KEY` dưới dạng biến môi trường shell hoặc file `.env` cho Docker Compose.
-2. Đăng nhập Docker Hub nếu repository là private bằng `docker login`.
-
-### Chạy
-
-Từ thư mục gốc repo:
-
-```powershell
-docker compose up -d
-```
-
-Nếu máy bạn đã có service khác chiếm `3000` hoặc `8000`, có thể đổi cổng host ngay lúc chạy:
-
-```powershell
-$env:FRONTEND_PORT=3001
-$env:BACKEND_PORT=8001
-docker compose up -d
-```
-
-Sau khi chạy:
-
-- Frontend: `http://localhost:3000`
-- Backend API: `http://localhost:8000`
-- Swagger docs: `http://localhost:8000/docs`
-
-Nếu đã đổi cổng host thì thay các URL trên theo giá trị `FRONTEND_PORT` và `BACKEND_PORT`.
-
-### Chạy nền
-
-```powershell
-docker compose up -d
-```
-
-### Dừng container
-
-```powershell
-docker compose down
-```
-
-### Ghi chú Docker
-
-- Backend dùng named volume `law_rag_output` để giữ dữ liệu crawl/index/session giữa các lần chạy.
-- `luat.docx` và dữ liệu ban đầu trong `output/` đã được copy sẵn vào image backend trước khi push Docker Hub.
-- Frontend được build theo chế độ `standalone` để image gọn hơn.
-- `FRONTEND_PORT` và `BACKEND_PORT` chỉ đổi cổng host bind ra ngoài, không đổi cổng chạy bên trong container.
-- `OPENAI_API_KEY` và các biến `MONGODB_ATLAS_*` được truyền trực tiếp vào container runtime, không còn phụ thuộc `env.txt` trên máy host.
-
-### Máy khác cần gì để chạy
-
-Máy khác chỉ cần:
-
-- [docker-compose.yml](c:/Users/Admin/Desktop/Law-RAG/docker-compose.yml)
-- Docker Desktop hoặc Docker Engine
-- internet để pull image từ Docker Hub
-- biến môi trường cần thiết như `OPENAI_API_KEY`
-
-Sau đó trên máy đích chỉ cần:
-
-```powershell
-$env:OPENAI_API_KEY="your_openai_key"
-docker compose up -d
-```
-
-Nếu repository trên Docker Hub là `private` thì thêm bước:
-
-```powershell
-docker login
-```
-
-Lưu ý: frontend image hiện tại đã được build với backend URL mặc định là `http://localhost:8000`. Nếu sau này backend cần chạy ở URL khác, bạn phải build lại và push lại frontend image.
-
-## 4. Yêu cầu môi trường
-
-### Backend
-
-- Python 3.11 khuyến nghị
-- OpenAI API key
-- Tùy chọn: MongoDB Atlas nếu muốn dùng vector backend là `atlas`
-
-### Frontend
-
-- Node.js 20 trở lên khuyến nghị
-- `pnpm` khuyến nghị vì repo đang có `pnpm-lock.yaml`
-
-## 5. Cài đặt backend
-
-Từ thư mục gốc của repo:
-
-### Cách 1: dùng `venv`
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
-
-### Cách 2: dùng Conda
-
-```powershell
-conda create -n law_rag python=3.11 -y
-conda activate law_rag
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
-```
-
-## 6. Cấu hình biến môi trường backend
-
-Tạo hoặc cập nhật file `env.txt` ở thư mục gốc dựa trên `env.example`:
+Backend tự nạp file `.env` ở thư mục gốc. Các biến quan trọng:
 
 ```env
-OPENAI_API_KEY=your_openai_api_key_here
-
 RAG_MODE=openai
+OPENAI_API_KEY=your_openai_api_key
 OPENAI_CHAT_MODEL=gpt-5.4-mini
 OPENAI_MEMORY_MODEL=gpt-5.4-mini
 OPENAI_QUERY_REWRITE_MODEL=gpt-5.4-mini
 OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+EMBEDDING_PROVIDER=openai
+EMBEDDING_MODEL=text-embedding-3-small
+VECTOR_DIR=output/chunks/retrieval/vector-openai
 
-# Optional: chỉ cần khi dùng MongoDB Atlas làm vector backend.
-MONGODB_ATLAS_URI=mongodb+srv://username:password@cluster.mongodb.net/?appName=Cluster0
-MONGODB_ATLAS_DB=law_rag
-MONGODB_ATLAS_COLLECTION=legal_chunks
-MONGODB_ATLAS_VECTOR_INDEX=legal_chunks_vector_index
-```
-
-Lưu ý:
-
-- `env.txt` được backend tự nạp khi chạy.
-- Nếu dùng OpenAI cho chat/embedding thì cần `OPENAI_API_KEY`; nếu chuyển cả chat và embedding sang local thì có thể không cần.
-- Không commit `env.txt` chứa secret lên Git.
-
-### Chế độ OpenAI API
-
-```env
-RAG_MODE=openai
-OPENAI_API_KEY=your_openai_api_key_here
-OPENAI_CHAT_MODEL=gpt-5.4-mini
-OPENAI_MEMORY_MODEL=gpt-5.4-mini
-OPENAI_QUERY_REWRITE_MODEL=gpt-5.4-mini
-OPENAI_EMBEDDING_MODEL=text-embedding-3-small
-```
-
-Build FAISS index cho OpenAI mode:
-
-```powershell
-python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector-openai --backend faiss
-```
-
-### Chế độ local
-
-```env
-RAG_MODE=local
-LOCAL_LLM_BASE_URL=http://127.0.0.1:8000/v1
+LOCAL_LLM_BASE_URL=http://127.0.0.1:11434/v1
 LOCAL_LLM_API_KEY=local
 LOCAL_CHAT_MODEL=qwen2.5:7b-instruct
 LOCAL_MEMORY_MODEL=qwen2.5:7b-instruct
 LOCAL_QUERY_REWRITE_MODEL=qwen2.5:7b-instruct
 LOCAL_EMBEDDING_PROVIDER=sentence-transformers
 LOCAL_EMBEDDING_MODEL=intfloat/multilingual-e5-base
+
+MONGODB_ATLAS_URI=
+MONGODB_ATLAS_DB=law_rag
+MONGODB_ATLAS_COLLECTION=legal_chunks
+MONGODB_ATLAS_VECTOR_INDEX=legal_chunks_vector_index
 ```
 
-Build FAISS index cho local mode:
-
-```powershell
-python -m pip install -r requirements-local.txt
-python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector-local --backend faiss
-```
-
-Biến `LLM_PROVIDER`, `CHAT_MODEL`, `MEMORY_MODEL`, `QUERY_REWRITE_MODEL`, `EMBEDDING_PROVIDER`, `EMBEDDING_MODEL` vẫn có thể dùng khi cần override thủ công, nhưng thường chỉ cần đổi `RAG_MODE`.
-
-### Dùng model local cho answer, memory và query rewrite
-
-Backend có 3 phần dùng chat LLM:
-
-- `CHAT_MODEL`: sinh câu trả lời cuối cùng từ retrieved context.
-- `MEMORY_MODEL`: cập nhật bộ nhớ hội thoại và tạo retrieval query theo ngữ cảnh nhiều lượt.
-- `QUERY_REWRITE_MODEL`: rewrite/mở rộng câu hỏi trước retrieval.
-
-Mặc định các phần này dùng OpenAI. Nếu muốn dùng model local như Qwen/HuggingFace qua server tương thích OpenAI API, cấu hình:
+Nếu chạy local hoàn toàn:
 
 ```env
+RAG_MODE=local
 LLM_PROVIDER=local
-LOCAL_LLM_BASE_URL=http://127.0.0.1:8000/v1
-LOCAL_LLM_API_KEY=local
-CHAT_MODEL=qwen2.5:7b-instruct
-MEMORY_MODEL=qwen2.5:7b-instruct
-QUERY_REWRITE_MODEL=qwen2.5:7b-instruct
-```
-
-Sau đó chạy backend như bình thường. Với vLLM hoặc LM Studio, chỉ cần thay `LOCAL_LLM_BASE_URL` và tên model theo server đang chạy.
-
-Nếu backend chạy trong Docker nhưng server local chạy trên máy host, thường dùng:
-
-```env
-LOCAL_LLM_BASE_URL=http://host.docker.internal:8000/v1
-```
-
-Lưu ý: cấu hình chat LLM ở trên chỉ áp dụng cho answer, memory và rewrite query. Vector embedding có cấu hình riêng bên dưới.
-
-### Dùng embedding local cho vector search
-
-Vector search có 2 giai đoạn đều phải dùng cùng embedding provider/model:
-
-- Build index: biến từng chunk luật thành vector và lưu vào FAISS hoặc Atlas.
-- Query runtime: biến câu hỏi/retrieval query thành vector để search.
-
-Các provider hỗ trợ:
-
-```env
-# OpenAI, mặc định
-EMBEDDING_PROVIDER=openai
-EMBEDDING_MODEL=text-embedding-3-small
-
-# OpenAI-compatible local endpoint, ví dụ vLLM/LM Studio nếu server có /v1/embeddings
-EMBEDDING_PROVIDER=local-openai
-LOCAL_EMBEDDING_BASE_URL=http://127.0.0.1:8001/v1
-LOCAL_EMBEDDING_API_KEY=local
-EMBEDDING_MODEL=your-local-embedding-model
-
-# HuggingFace SentenceTransformers chạy local trong process Python
 EMBEDDING_PROVIDER=sentence-transformers
 EMBEDDING_MODEL=intfloat/multilingual-e5-base
+VECTOR_DIR=output/chunks/retrieval/vector-local
 ```
 
-Ví dụ với SentenceTransformers:
+Khi đổi embedding provider/model, cần build lại vector index tương ứng.
 
-```powershell
-python -m pip install -r requirements-local.txt
-$env:EMBEDDING_PROVIDER="sentence-transformers"
-$env:EMBEDDING_MODEL="intfloat/multilingual-e5-base"
-python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector --backend faiss --model intfloat/multilingual-e5-base
-```
+Vì lý do bảo mật, frontend không cho nhập hoặc thay đổi `OPENAI_API_KEY`. Admin UI chỉ hiển thị backend đã có key hay chưa. Muốn cấu hình key, hãy đặt `OPENAI_API_KEY` trong `.env`, biến môi trường của server, hoặc Docker Compose trước khi khởi động backend.
 
-Quan trọng: khi đổi `EMBEDDING_PROVIDER` hoặc `EMBEDDING_MODEL`, phải build lại vector index. FAISS manifest sẽ lưu `embedding_provider` và `embedding_model`, sau đó query runtime tự dùng lại đúng cấu hình đó.
+## Cấu hình Frontend
 
-## 7. Cài đặt frontend
-
-Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
-
-```powershell
-cd law-rag-frontend
-pnpm install
-```
-
-Nếu máy chưa có `pnpm`:
-
-```powershell
-npm install -g pnpm
-```
-
-## 8. Cấu hình biến môi trường frontend
-
-Tạo file `.env.local` trong thư mục frontend dựa trên [law-rag-frontend/.env.example](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend/.env.example):
+Tạo `law-rag-frontend/.env.local`:
 
 ```env
 NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
 ```
 
-Nếu backend chạy ở host hoặc port khác thì cập nhật lại biến này.
+## Chạy Dev
 
-## 9. Chạy dự án ở môi trường dev
-
-Bạn cần chạy 2 tiến trình riêng.
-
-### Terminal 1: chạy backend FastAPI
-
-Từ thư mục gốc repo:
+Backend:
 
 ```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-local.txt
 uvicorn law_rag.api.server:app --reload --host 127.0.0.1 --port 8000
 ```
 
-Kiểm tra nhanh:
-
-- Health check: `http://127.0.0.1:8000/health`
-- API docs: `http://127.0.0.1:8000/docs`
-
-### Terminal 2: chạy frontend Next.js
-
-Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
+Frontend:
 
 ```powershell
+cd law-rag-frontend
+pnpm install
 pnpm dev
 ```
 
-Mặc định frontend chạy tại:
+URL:
 
-- `http://localhost:3000`
+- Frontend: `http://localhost:3000`
+- Backend health: `http://127.0.0.1:8000/health`
+- Swagger: `http://127.0.0.1:8000/docs`
 
-Các trang chính:
+## Docker
 
-- Landing page: `http://localhost:3000/`
-- Chat: `http://localhost:3000/chat`
-- Admin dashboard: `http://localhost:3000/admin`
-
-## 10. Chạy nhanh nếu đã có dữ liệu/index sẵn
-
-Repo hiện đã có dữ liệu trong `output/`. Nếu các file sau đã tồn tại thì bạn có thể mở chat ngay sau khi chạy backend + frontend:
-
-- `output/chunks/all_chunks.jsonl`
-- `output/chunks/retrieval/bm25_index.json`
-- `output/chunks/retrieval/vector/faiss.index` hoặc manifest Atlas
-
-Nếu chưa đủ dữ liệu/index, hãy vào trang `/admin` để chạy lần lượt:
-
-1. Thu thập văn bản
-2. Chia chunks
-3. Xây dựng BM25
-4. Xây dựng Vector
-
-## 11. Build frontend cho production
-
-Từ thư mục [law-rag-frontend](c:/Users/Admin/Desktop/Law-RAG/law-rag-frontend):
+Chạy bằng Docker Compose từ thư mục gốc:
 
 ```powershell
-pnpm build
-pnpm start
+docker compose -f docker/docker-compose.yml up -d
 ```
 
-## 12. Luồng xử lý dữ liệu backend
+Nếu cổng mặc định bị chiếm:
 
-Backend hỗ trợ cả chạy qua dashboard admin lẫn chạy CLI trực tiếp.
+```powershell
+$env:BACKEND_PORT=8001
+$env:FRONTEND_PORT=3001
+docker compose -f docker/docker-compose.yml up -d
+```
 
-### 12.1. Crawl văn bản luật
+Dừng:
+
+```powershell
+docker compose -f docker/docker-compose.yml down
+```
+
+Build lại image:
+
+```powershell
+docker compose -f docker/docker-compose.yml build
+```
+
+Push Docker Hub:
+
+```powershell
+docker push maitung123/law-rag-backend:latest
+docker push maitung123/law-rag-frontend:latest
+```
+
+Lưu ý Docker:
+
+- Backend mount `../output:/app/output`, nên dữ liệu crawl/index/session/upload giữ trên máy host.
+- Frontend image được build với `NEXT_PUBLIC_API_URL=http://localhost:${BACKEND_PORT:-8000}`.
+- Nếu backend trong container cần gọi LLM local trên máy host, dùng `LOCAL_LLM_BASE_URL=http://host.docker.internal:11434/v1`.
+
+## Upload, OCR Và Embedding
+
+Luồng upload:
+
+1. `POST /api/uploads` lưu file vào `output/uploads`.
+2. Backend OCR/trích text và lưu metadata upload.
+3. Review text rồi gọi `PATCH /api/uploads/{upload_id}` với `embeddingTarget`.
+4. Upload private được lưu tại:
+
+```text
+output/upload_documents/private/<upload_id>/
+|- chunks.json
+|- chunks.jsonl
+|- embeddings/api/       # OpenAI embedding nếu chọn api
+`- embeddings/local/     # local embedding nếu chọn local
+```
+
+Để kiểm tra embedding đã ghi:
+
+```powershell
+$uploadId="upload-..."
+Get-Content "output\upload_documents\private\$uploadId\embeddings\local\vector_manifest.json" | ConvertFrom-Json
+Test-Path "output\upload_documents\private\$uploadId\embeddings\local\faiss.index"
+Test-Path "output\upload_documents\private\$uploadId\embeddings\local\vector_metadata.json"
+```
+
+`vector_manifest.json` hợp lệ sẽ có:
+
+```json
+{
+  "built": true,
+  "embedding_provider": "sentence-transformers",
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "dimension": 768,
+  "chunk_count": 1
+}
+```
+
+## Pipeline Dữ Liệu
+
+Crawl:
 
 ```powershell
 python -m law_rag.crawl.crawl_laws --docx luat.docx --output output/laws --clean
 ```
 
-Ví dụ giới hạn số lượng văn bản:
-
-```powershell
-python -m law_rag.crawl.crawl_laws --docx luat.docx --output output/laws --limit 5 --clean
-```
-
-### 12.2. Kiểm tra framework chunking
+Kiểm tra framework chunk:
 
 ```powershell
 python -m law_rag.crawl.chunk_framework_check --input output/laws --json-out output/chunk_framework_report.json
 ```
 
-### 12.3. Chunk corpus
+Chunk:
 
 ```powershell
-python -m law_rag.crawl.chunk_laws --input output/laws --output-dir output/chunks --max-chars 1800
+python -m law_rag.crawl.chunk_laws --input output/laws --output-dir output/chunks
 ```
 
-Output chính:
-
-- `output/chunks/all_chunks.jsonl`
-- `output/chunks/chunk_report.json`
-- `output/chunks/*.chunks.json`
-
-### 12.4. Build BM25 index
+Build BM25:
 
 ```powershell
 python -m law_rag.retrieval.retrieve_chunks build --chunks output/chunks/all_chunks.jsonl --output output/chunks/retrieval/bm25_index.json
 ```
 
-### 12.5. Build vector index
-
-#### FAISS
+Build FAISS:
 
 ```powershell
-python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector --backend faiss
+python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector-openai --backend faiss
 ```
 
-#### MongoDB Atlas
+Build Atlas:
 
 ```powershell
 python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector --backend atlas
 ```
 
-## 13. Chạy hỏi đáp từ CLI
+## Test Và Kiểm Tra
 
-### One-shot
-
-```powershell
-python -m law_rag.app.ask_law "Tôi gây thương tích 18% cho người khác thì có thể bị xử lý thế nào?"
-```
-
-### Hybrid retrieval + query rewrite
+Backend smoke test:
 
 ```powershell
-python -m law_rag.app.ask_law "Tôi gây thương tích 18% cho người khác thì có thể bị xử lý thế nào?" --retrieval-mode hybrid --query-rewrite-mode llm --top-k 5
+python -m compileall law_rag
+python -c "import law_rag.api.server; print('import ok')"
 ```
 
-### Hội thoại nhiều lượt
+Frontend:
 
 ```powershell
-python -m law_rag.app.ask_law "Tôi làm gãy tay người khác thì có sao không?" --session-id vu_001
-python -m law_rag.app.ask_law "Tỷ lệ thương tật là 18%" --session-id vu_001
-python -m law_rag.app.ask_law "Không dùng hung khí" --session-id vu_001
+cd law-rag-frontend
+pnpm exec eslint .
+.\node_modules\.bin\tsc.CMD --noEmit
+pnpm run build
 ```
 
-### In JSON output đầy đủ
+Docker runtime:
 
 ```powershell
-python -m law_rag.app.ask_law "Tôi gây thương tích 18% cho người khác thì có thể bị xử lý thế nào?" --json
+$env:BACKEND_PORT=18000
+$env:FRONTEND_PORT=13000
+docker compose -f docker/docker-compose.yml up -d
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:18000/health
+Invoke-WebRequest -UseBasicParsing http://127.0.0.1:13000/
+docker compose -f docker/docker-compose.yml down
 ```
 
-## 14. Một số API đáng chú ý
+## API Chính
 
-- `GET /health`: kiểm tra backend sống.
-- `POST /api/chat/ask`: gửi câu hỏi pháp luật.
-- `GET /api/sessions`: danh sách phiên chat.
-- `GET /api/documents`: danh sách văn bản đã crawl/chunk/index.
-- `GET /api/admin/corpus-status`: trạng thái corpus và index.
-- `POST /api/admin/jobs/crawl`: chạy crawl.
-- `POST /api/admin/jobs/chunk`: chạy chunk.
-- `POST /api/admin/jobs/index-bm25`: build BM25.
-- `POST /api/admin/jobs/index-vector`: build vector FAISS.
-- `POST /api/admin/debug/query`: debug retrieval.
-- `POST /api/uploads`: upload tài liệu.
+- `GET /health`
+- `GET /api/runtime/status`
+- `POST /api/runtime/config`
+- `POST /api/chat/ask`
+- `GET /api/sessions`
+- `GET /api/documents`
+- `GET /api/admin/corpus-status`
+- `POST /api/admin/jobs/crawl`
+- `POST /api/admin/jobs/chunk`
+- `POST /api/admin/jobs/index-bm25`
+- `POST /api/admin/jobs/index-vector`
+- `POST /api/admin/debug/query`
+- `POST /api/uploads`
+- `PATCH /api/uploads/{upload_id}`
+- `POST /api/uploads/{upload_id}/embed`
+- `GET /api/uploads/processed`
 
-## 15. Các file/thư mục đầu ra quan trọng
+## Ghi Chú Vận Hành
 
-- `output/laws`: dữ liệu văn bản đã crawl.
-- `output/chunks`: dữ liệu chunk.
-- `output/chunks/retrieval`: BM25 index và vector assets.
-- `output/sessions`: lịch sử chat nhiều lượt.
-- `output/api_jobs.json`: trạng thái job chạy từ dashboard admin.
-
-## 16. Lệnh trợ giúp nhanh
-
-```powershell
-python -m law_rag.app.ask_law --help
-python -m law_rag.retrieval.retrieve_chunks --help
-python -m law_rag.retrieval.build_vector_index --help
-python -m law_rag.retrieval.hybrid_retrieve --help
-python -m law_rag.crawl.crawl_laws --help
-python -m law_rag.crawl.chunk_framework_check --help
-python -m law_rag.crawl.chunk_laws --help
-```
-
-## 17. Ghi chú triển khai
-
-- Frontend mặc định gọi backend qua `NEXT_PUBLIC_API_URL`.
-- Backend đã mở CORS cho `localhost:3000`, `127.0.0.1:3000`, `localhost:3001`, `127.0.0.1:3001`.
-- Muốn dùng MongoDB Atlas thì cần cấu hình đầy đủ biến `MONGODB_ATLAS_*` ở backend.
-- Dashboard admin hiện tại build vector theo backend `faiss`; nếu muốn build Atlas từ UI thì cần mở rộng thêm API/admin flow.
+- Không commit `.env` chứa secret thật.
+- Nếu dùng OpenAI mode mà thiếu `OPENAI_API_KEY`, chat/embedding OpenAI sẽ lỗi nhưng health check vẫn chạy.
+- Nếu dùng SentenceTransformers và gặp cảnh báo cache HuggingFace `Permission denied`, retrieval vẫn có thể chạy nếu model đã load được; để hết cảnh báo, đặt `HF_HOME` trỏ tới thư mục user có quyền ghi.
+- Docker image backend chỉ nên đóng gói corpus/index nền. `.dockerignore` đang loại `output/uploads`, `output/upload_documents`, `output/sessions`, `output/eval` và `output/api_jobs.json` để tránh đưa dữ liệu runtime/private lên Docker Hub.

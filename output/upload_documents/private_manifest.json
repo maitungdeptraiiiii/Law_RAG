@@ -1,20 +1,3 @@
 {
-  "items": [
-    {
-      "id": "upload-ae93b441a5f5",
-      "fileName": "102-2016-qh13_01.pdf",
-      "workspace": "private",
-      "documentType": "other",
-      "confidence": 0.954742540205736,
-      "qualityWarning": null,
-      "chunkCount": 137,
-      "embeddingStatus": {
-        "requested": "none",
-        "api": null,
-        "local": null
-      },
-      "documentPath": "upload_documents\\private\\upload-ae93b441a5f5\\upload-ae93b441a5f5_102-2016-qh13_01.json",
-      "chunksPath": "upload_documents\\private\\upload-ae93b441a5f5\\chunks.json"
-    }
-  ]
+  "items": []
 }

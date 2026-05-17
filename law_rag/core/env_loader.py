@@ -72,3 +72,29 @@ def load_project_env(env_file: Path | None = None) -> None:
 
 
 load_project_env()
+
+
+def write_project_env(updates: dict[str, str], env_file: Path | None = None) -> None:
+    path = env_file or ENV_FILE_PATH
+    existing_lines = path.read_text(encoding="utf-8").splitlines() if path.exists() else []
+    remaining = dict(updates)
+    next_lines: list[str] = []
+
+    for line in existing_lines:
+        parsed = _parse_env_line(line)
+        if parsed is None:
+            next_lines.append(line)
+            continue
+
+        key, _ = parsed
+        if key in remaining:
+            next_lines.append(f"{key}={remaining.pop(key)}")
+        else:
+            next_lines.append(line)
+
+    if remaining and next_lines and next_lines[-1].strip():
+        next_lines.append("")
+    for key, value in remaining.items():
+        next_lines.append(f"{key}={value}")
+
+    path.write_text("\n".join(next_lines) + "\n", encoding="utf-8")

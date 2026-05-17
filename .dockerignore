@@ -12,3 +12,10 @@ env.txt
 .env
 law-rag-frontend/
 node_modules/
+law-rag-frontend/.next/
+law-rag-frontend/tsconfig.tsbuildinfo
+output/uploads/
+output/upload_documents/
+output/sessions/
+output/eval/
+output/api_jobs.json

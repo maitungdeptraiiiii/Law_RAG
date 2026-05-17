@@ -3,12 +3,12 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile.backend
-    image: law-rag-backend:local
+    image: maitung123/law-rag-backend:latest
     container_name: law-rag-backend
     environment:
       RAG_MODE: ${RAG_MODE:-openai}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
-      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
       OPENAI_CHAT_MODEL: ${OPENAI_CHAT_MODEL:-gpt-5.4-mini}
       OPENAI_MEMORY_MODEL: ${OPENAI_MEMORY_MODEL:-gpt-5.4-mini}
       OPENAI_QUERY_REWRITE_MODEL: ${OPENAI_QUERY_REWRITE_MODEL:-gpt-5.4-mini}
@@ -49,7 +49,7 @@ services:
       dockerfile: ../docker/Dockerfile.frontend
       args:
         NEXT_PUBLIC_API_URL: http://localhost:${BACKEND_PORT:-8000}
-    image: law-rag-frontend:local
+    image: maitung123/law-rag-frontend:latest
     container_name: law-rag-frontend
     depends_on:
       backend:
@@ -71,4 +71,3 @@ services:
       timeout: 10s
       retries: 5
       start_period: 20s
-

@@ -10,7 +10,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { AnswerCard } from '@/components/chat/answer-card'
 import { useRetrievalSettings } from '@/components/chat/retrieval-settings-context'
 import { SourceEvidencePanel } from '@/components/chat/source-evidence-panel'
-import { askQuestion } from '@/lib/api'
+import { askQuestionStream } from '@/lib/api'
 import type { Message, RetrievedSource } from '@/lib/types'
 
 function createErrorMessage(error: unknown): Message {
@@ -52,20 +52,42 @@ export default function ChatPage() {
       content: input.trim(),
       timestamp: new Date(),
     }
+    const assistantId = `assistant-stream-${Date.now()}`
+    const emptyAssistantMessage: Message = {
+      id: assistantId,
+      role: 'assistant',
+      content: '',
+      timestamp: new Date(),
+    }
 
-    setMessages((prev) => [...prev, userMessage])
+    setMessages((prev) => [...prev, userMessage, emptyAssistantMessage])
     setInput('')
     setIsLoading(true)
 
     try {
-      const response = await askQuestion({
-        question: userMessage.content,
-        sessionId: sessionId || undefined,
-        settings,
-      })
+      const response = await askQuestionStream(
+        {
+          question: userMessage.content,
+          sessionId: sessionId || undefined,
+          settings,
+        },
+        (delta) => {
+          setMessages((prev) =>
+            prev.map((message) =>
+              message.id === assistantId ? { ...message, content: message.content + delta } : message
+            )
+          )
+        }
+      )
 
       if (!response.success) {
-        setMessages((prev) => [...prev, createErrorMessage(response.error || 'Backend không trả về phản hồi hợp lệ.')])
+        setMessages((prev) =>
+          prev.map((message) =>
+            message.id === assistantId
+              ? createErrorMessage(response.error || 'Backend khong tra ve phan hoi hop le.')
+              : message
+          )
+        )
         return
       }
 
@@ -73,27 +95,32 @@ export default function ChatPage() {
 
       if (!sessionId) {
         router.replace(`/chat/${response.data.sessionId}`)
-        return
       }
 
-      const assistantMessage: Message = {
-        id: response.data.messageId,
-        role: 'assistant',
-        content: response.data.answer,
-        timestamp: new Date(),
-        sources: response.data.sources,
-        metadata: response.data.metadata,
-      }
-      setMessages((prev) => [...prev, assistantMessage])
+      setMessages((prev) =>
+        prev.map((message) =>
+          message.id === assistantId
+            ? {
+                id: response.data.messageId,
+                role: 'assistant',
+                content: response.data.answer,
+                timestamp: new Date(),
+                sources: response.data.sources,
+                metadata: response.data.metadata,
+              }
+            : message
+        )
+      )
       setSessionId(response.data.sessionId)
     } catch (error) {
       console.error('[v0] Error asking question:', error)
-      setMessages((prev) => [...prev, createErrorMessage(error)])
+      setMessages((prev) =>
+        prev.map((message) => (message.id === assistantId ? createErrorMessage(error) : message))
+      )
     } finally {
       setIsLoading(false)
     }
   }
-
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()

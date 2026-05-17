@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import os
 import re
-from typing import Any
+from typing import Any, Callable
 
 from openai import OpenAI
 
@@ -51,7 +51,25 @@ def chat_completion_text(
     model: str,
     temperature: float,
     messages: list[dict[str, str]],
+    stream_callback: Callable[[str], None] | None = None,
 ) -> str:
+    if stream_callback:
+        chunks: list[str] = []
+        response = client.chat.completions.create(
+            model=model,
+            temperature=temperature,
+            messages=messages,
+            extra_body=_local_extra_body(),
+            stream=True,
+        )
+        for event in response:
+            delta = event.choices[0].delta.content if event.choices else None
+            if not delta:
+                continue
+            chunks.append(delta)
+            stream_callback(delta)
+        return "".join(chunks)
+
     response = client.chat.completions.create(
         model=model,
         temperature=temperature,

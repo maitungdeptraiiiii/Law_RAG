@@ -13,7 +13,7 @@ import type { RetrievalSettings, RuntimeStatus } from '@/lib/types'
 const defaultSettings: RetrievalSettings = {
   mode: 'hybrid',
   vectorBackend: 'faiss',
-  topK: 5,
+  topK: 3,
   queryRewrite: true,
 }
 

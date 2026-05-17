@@ -14,7 +14,8 @@ import {
   Loader2,
   Cpu,
   Cloud,
-  Server
+  Server,
+  KeyRound
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -71,12 +72,6 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     loadData()
   }, [])
-
-  useEffect(() => {
-    if (selectedMode === 'local') {
-      setOpenaiApiKey('')
-    }
-  }, [selectedMode])
 
   useEffect(() => {
     if (selectedMode !== 'local' || localModels.length === 0) return
@@ -282,16 +277,23 @@ export default function AdminDashboardPage() {
                 {selectedMode === 'openai' && (
                   <div className="space-y-2">
                     <Label htmlFor="openai-api-key">OpenAI API key</Label>
-                    <Input
-                      id="openai-api-key"
-                      type="password"
-                      value={openaiApiKey}
-                      onChange={(event) => setOpenaiApiKey(event.target.value)}
-                      placeholder={runtimeStatus.hasOpenaiApiKey ? 'Đã có key, nhập key mới nếu muốn đổi' : 'sk-...'}
-                      autoComplete="off"
-                    />
+                    <div className="relative">
+                      <KeyRound className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                      <Input
+                        id="openai-api-key"
+                        type="password"
+                        value={openaiApiKey}
+                        onChange={(event) => setOpenaiApiKey(event.target.value)}
+                        placeholder={runtimeStatus.hasOpenaiApiKey ? 'Da co key trong .env' : 'sk-...'}
+                        autoComplete="off"
+                        className="pl-9"
+                      />
+                    </div>
+                    <p className="text-xs font-medium">
+                      {runtimeStatus.hasOpenaiApiKey ? 'OPENAI_API_KEY da duoc cau hinh' : 'Chua co OPENAI_API_KEY'}
+                    </p>
                     <p className="text-xs text-muted-foreground">
-                      Chỉ cần nhập khi chuyển sang OpenAI API hoặc muốn thay key hiện tại.
+                      De trong neu chi muon chuyen sang OpenAI API ma khong doi key. Khi nhap key moi, backend se luu vao file .env.
                     </p>
                   </div>
                 )}
@@ -573,3 +575,4 @@ function JobRow({ job }: { job: PipelineJob }) {
     </div>
   )
 }
+

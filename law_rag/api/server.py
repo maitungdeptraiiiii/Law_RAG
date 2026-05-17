@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import queue
 import re
 import subprocess
 import sys
@@ -16,12 +17,13 @@ from typing import Any, Literal
 
 from fastapi import BackgroundTasks, FastAPI, File, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 from openai import APIError, AuthenticationError
 from pydantic import BaseModel, Field
 
 from ..app.ask_law import answer_question
 from ..core.conversation_state import append_history, load_session, save_session, utc_now_iso
-from ..core.env_loader import load_project_env
+from ..core.env_loader import load_project_env, write_project_env
 from ..core.runtime_config import (
     chat_model,
     default_vector_dir,
@@ -56,7 +58,7 @@ JOBS_FILE = OUTPUT_DIR / "api_jobs.json"
 DEFAULT_RETRIEVAL_SETTINGS = {
     "mode": "hybrid",
     "vector_backend": "faiss",
-    "top_k": 5,
+    "top_k": 3,
     "query_rewrite": True,
 }
 
@@ -83,7 +85,7 @@ ISSUING_AUTHORITY_MAP = {
 class RetrievalSettingsPayload(BaseModel):
     mode: Literal["hybrid", "vector", "bm25"] = "hybrid"
     vectorBackend: Literal["faiss", "atlas"] = "faiss"
-    topK: int = Field(default=5, ge=1, le=20)
+    topK: int = Field(default=3, ge=1, le=20)
     queryRewrite: bool = True
     model: str | None = None
 
@@ -567,6 +569,7 @@ def apply_runtime_config(payload: RuntimeConfigPayload) -> None:
 
     for key, value in updates.items():
         os.environ[key] = value
+    write_project_env(updates)
     os.environ.pop("VECTOR_DIR", None)
     load_documents_cache.cache_clear()
 
@@ -694,49 +697,45 @@ def local_models() -> dict[str, Any]:
     return {"success": True, "data": models}
 
 
-@app.post("/api/chat/ask")
-def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
-    started = time.perf_counter()
+def run_chat_rag_request(
+    payload: AskQuestionPayload,
+    *,
+    started: float,
+    answer_stream_callback: Any = None,
+) -> dict[str, Any]:
     settings = normalize_settings(payload.settings)
     session_id = payload.sessionId or f"session-{uuid.uuid4().hex[:12]}"
     atlas_settings = atlas_settings_from_env()
 
-    try:
-        vector_dir = active_vector_dir()
-        active_chat_model = settings.get("model") or chat_model()
-        active_memory_model = memory_model()
-        active_query_rewrite_model = query_rewrite_model()
-        active_embedding_model = embedding_model()
-        private_bm25_sources, private_vector_dirs = private_retrieval_sources()
-        result = answer_question(
-            payload.question,
-            chunks_path=CHUNKS_PATH,
-            bm25_index_path=BM25_INDEX_PATH,
-            vector_dir=vector_dir,
-            query_rewrite_mode="llm" if settings["query_rewrite"] else "none",
-            query_rewrite_model=active_query_rewrite_model,
-            query_rewrite_count=4,
-            retrieval_mode=settings["mode"],
-            vector_backend=settings["vector_backend"],
-            embedding_model=active_embedding_model,
-            atlas_uri=atlas_settings["atlas_uri"],
-            atlas_db=atlas_settings["atlas_db"],
-            atlas_collection=atlas_settings["atlas_collection"],
-            atlas_vector_index=atlas_settings["atlas_vector_index"],
-            model=active_chat_model,
-            memory_model=active_memory_model,
-            top_k=settings["top_k"],
-            additional_bm25_sources=private_bm25_sources,
-            additional_vector_dirs=private_vector_dirs,
-            session_id=session_id,
-            session_dir=SESSIONS_DIR,
-        )
-    except AuthenticationError as exc:
-        raise HTTPException(status_code=401, detail="OpenAI API key is invalid or expired.") from exc
-    except RuntimeError as exc:
-        raise HTTPException(status_code=500, detail=str(exc)) from exc
-    except APIError as exc:
-        raise HTTPException(status_code=502, detail="OpenAI request failed. Check API availability and billing.") from exc
+    vector_dir = active_vector_dir()
+    active_chat_model = settings.get("model") or chat_model()
+    active_query_rewrite_model = query_rewrite_model()
+    active_embedding_model = embedding_model()
+    private_bm25_sources, private_vector_dirs = private_retrieval_sources()
+    result = answer_question(
+        payload.question,
+        chunks_path=CHUNKS_PATH,
+        bm25_index_path=BM25_INDEX_PATH,
+        vector_dir=vector_dir,
+        query_rewrite_mode="llm" if settings["query_rewrite"] else "none",
+        query_rewrite_model=active_query_rewrite_model,
+        query_rewrite_count=4,
+        retrieval_mode=settings["mode"],
+        vector_backend=settings["vector_backend"],
+        embedding_model=active_embedding_model,
+        atlas_uri=atlas_settings["atlas_uri"],
+        atlas_db=atlas_settings["atlas_db"],
+        atlas_collection=atlas_settings["atlas_collection"],
+        atlas_vector_index=atlas_settings["atlas_vector_index"],
+        model=active_chat_model,
+        memory_model=memory_model(),
+        top_k=settings["top_k"],
+        additional_bm25_sources=private_bm25_sources,
+        additional_vector_dirs=private_vector_dirs,
+        session_id=session_id,
+        session_dir=SESSIONS_DIR,
+        answer_stream_callback=answer_stream_callback,
+    )
 
     sources = [map_retrieved_source(item) for item in result.get("retrieved", [])]
     processing_time_ms = int((time.perf_counter() - started) * 1000)
@@ -760,22 +759,67 @@ def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
             save_session(session, SESSIONS_DIR)
 
     return {
-        "success": True,
-        "data": {
-            "answer": result.get("answer", ""),
-            "sessionId": session_id,
-            "messageId": message_id,
-            "sources": sources,
-            "metadata": {
-                "retrievalMode": settings["mode"],
-                "runtimeMode": runtime_mode(),
-                "modelUsed": active_chat_model,
-                "embeddingModel": active_embedding_model,
-                "queryRewritten": result.get("retrieval_input") if result.get("retrieval_input") != payload.question else None,
-                "processingTimeMs": processing_time_ms,
-            },
+        "answer": result.get("answer", ""),
+        "sessionId": session_id,
+        "messageId": message_id,
+        "sources": sources,
+        "metadata": {
+            "retrievalMode": settings["mode"],
+            "runtimeMode": runtime_mode(),
+            "modelUsed": active_chat_model,
+            "embeddingModel": active_embedding_model,
+            "queryRewritten": result.get("retrieval_input") if result.get("retrieval_input") != payload.question else None,
+            "processingTimeMs": processing_time_ms,
         },
     }
+
+
+@app.post("/api/chat/ask")
+def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
+    started = time.perf_counter()
+    try:
+        data = run_chat_rag_request(payload, started=started)
+    except AuthenticationError as exc:
+        raise HTTPException(status_code=401, detail="OpenAI API key is invalid or expired.") from exc
+    except RuntimeError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    except APIError as exc:
+        detail = str(exc).strip() or "OpenAI request failed. Check model access, API availability, and billing."
+        raise HTTPException(status_code=502, detail=detail[:1000]) from exc
+    return {"success": True, "data": data}
+
+
+@app.post("/api/chat/ask/stream")
+def ask_question_stream_endpoint(payload: AskQuestionPayload) -> StreamingResponse:
+    started = time.perf_counter()
+    events: queue.Queue[dict[str, Any] | None] = queue.Queue()
+
+    def publish(event: dict[str, Any]) -> None:
+        events.put(event)
+
+    def worker() -> None:
+        try:
+            data = run_chat_rag_request(
+                payload,
+                started=started,
+                answer_stream_callback=lambda delta: publish({"type": "answer_delta", "delta": delta}),
+            )
+            publish({"type": "final", "data": data})
+        except Exception as exc:
+            publish({"type": "error", "error": str(exc)[:1000]})
+        finally:
+            events.put(None)
+
+    threading.Thread(target=worker, daemon=True).start()
+
+    def event_stream():
+        while True:
+            event = events.get()
+            if event is None:
+                break
+            yield json.dumps(event, ensure_ascii=False) + "\n"
+
+    return StreamingResponse(event_stream(), media_type="application/x-ndjson")
 
 
 @app.get("/api/sessions")

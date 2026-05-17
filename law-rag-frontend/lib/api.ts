@@ -185,6 +185,67 @@ export async function askQuestion(request: AskQuestionRequest): Promise<ApiRespo
   })
 }
 
+export async function askQuestionStream(
+  request: AskQuestionRequest,
+  onDelta: (delta: string) => void,
+): Promise<ApiResponse<AskQuestionResponse>> {
+  try {
+    const response = await fetch(buildUrl('/api/chat/ask/stream'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(request),
+      cache: 'no-store',
+    })
+
+    if (!response.ok || !response.body) {
+      return {
+        success: false,
+        error: `Request failed with status ${response.status}`,
+      }
+    }
+
+    const reader = response.body.getReader()
+    const decoder = new TextDecoder()
+    let buffer = ''
+    let finalData: AskQuestionResponse | null = null
+
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      buffer += decoder.decode(value, { stream: true })
+
+      const lines = buffer.split('\n')
+      buffer = lines.pop() || ''
+      for (const line of lines) {
+        if (!line.trim()) continue
+        const event = JSON.parse(line) as {
+          type?: string
+          delta?: string
+          data?: AskQuestionResponse
+          error?: string
+        }
+        if (event.type === 'answer_delta' && event.delta) {
+          onDelta(event.delta)
+        } else if (event.type === 'final' && event.data) {
+          finalData = event.data
+        } else if (event.type === 'error') {
+          return { success: false, error: event.error || 'Streaming request failed' }
+        }
+      }
+    }
+
+    if (!finalData) {
+      return { success: false, error: 'Backend did not return final answer.' }
+    }
+    return { success: true, data: finalData }
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Unknown network error',
+    }
+  }
+}
+
 export async function getSessions(): Promise<ApiResponse<Session[]>> {
   const response = await requestJson<Session[]>('/api/sessions')
   if (!response.success) return response

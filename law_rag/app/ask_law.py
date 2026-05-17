@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 from ..core.conversation_state import (
     append_history,
@@ -156,6 +156,7 @@ def answer_question(
     additional_vector_dirs: list[Path] | None = None,
     session_id: str | None = None,
     session_dir: Path | None = None,
+    answer_stream_callback: Callable[[str], None] | None = None,
 ) -> dict:
     client = get_openai_client()
     session: dict[str, Any] | None = None
@@ -213,6 +214,7 @@ def answer_question(
         client,
         model=model,
         temperature=0.1,
+        stream_callback=answer_stream_callback,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {
