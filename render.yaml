@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: law-rag-backend
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./docker/Dockerfile.backend
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    disk:
+      name: law-rag-output
+      mountPath: /app/output
+      sizeGB: 10
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
+      - key: RAG_MODE
+        value: openai
+      - key: EMBEDDING_PROVIDER
+        value: openai
+      - key: OPENAI_BASE_URL
+        value: https://api.openai.com/v1
+      - key: OPENAI_CHAT_MODEL
+        value: gpt-5.4-mini
+      - key: OPENAI_MEMORY_MODEL
+        value: gpt-5.4-mini
+      - key: OPENAI_QUERY_REWRITE_MODEL
+        value: gpt-5.4-mini
+      - key: OPENAI_EMBEDDING_MODEL
+        value: text-embedding-3-small
+      - key: EMBEDDING_MODEL
+        value: text-embedding-3-small
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CORS_ALLOW_ORIGINS
+        value: https://lawrag.online,https://www.lawrag.online

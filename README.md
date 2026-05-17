@@ -93,6 +93,247 @@ Tạo `law-rag-frontend/.env.local`:
 NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
 ```
 
+## Deploy Trên Vercel
+
+Với kiến trúc hiện tại, cách deploy phù hợp là:
+
+- Frontend Next.js deploy trên Vercel.
+- Backend FastAPI deploy trên một dịch vụ chạy container hoặc Python server dài hạn như Railway, Render, Fly.io, VPS, hoặc Azure.
+
+Không nên deploy toàn bộ backend hiện tại lên Vercel vì backend đang phụ thuộc vào các thành phần không hợp với môi trường serverless/ephemeral:
+
+- Ghi dữ liệu vào thư mục local `output/`.
+- OCR qua Tesseract.
+- Index FAISS local.
+- Job xử lý nền và upload tài liệu.
+
+### 1. Deploy backend trước
+
+Deploy backend ở nơi khác trước để có URL public, ví dụ `https://law-rag-api.onrender.com`.
+
+Biến môi trường tối thiểu cho backend production:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+RAG_MODE=openai
+EMBEDDING_PROVIDER=openai
+OPENAI_CHAT_MODEL=gpt-5.4-mini
+OPENAI_MEMORY_MODEL=gpt-5.4-mini
+OPENAI_QUERY_REWRITE_MODEL=gpt-5.4-mini
+OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+EMBEDDING_MODEL=text-embedding-3-small
+CORS_ALLOW_ORIGINS=https://your-vercel-app.vercel.app
+```
+
+Nếu dùng domain riêng cho frontend, thêm domain đó vào `CORS_ALLOW_ORIGINS`, ngăn cách bằng dấu phẩy:
+
+```env
+CORS_ALLOW_ORIGINS=https://your-vercel-app.vercel.app,https://chat.yourdomain.com
+```
+
+Lưu ý production:
+
+- Nếu backend chạy container, có thể dùng [docker/Dockerfile.backend](docker/Dockerfile.backend).
+- Nếu vẫn dùng FAISS local, thư mục chứa `output/` phải là persistent volume, không phải filesystem tạm.
+- Nếu muốn scale ổn định hơn, nên chuyển vector store sang MongoDB Atlas Vector Search thay vì FAISS local.
+
+### 2. Deploy frontend lên Vercel
+
+Trong Vercel:
+
+1. Import repository này.
+2. Chọn Root Directory là `law-rag-frontend`.
+3. Framework Preset chọn Next.js.
+4. Thêm biến môi trường:
+
+```env
+NEXT_PUBLIC_API_URL=https://your-backend-domain.com
+```
+
+5. Deploy.
+
+Vercel sẽ tự dùng các lệnh phù hợp từ `package.json`:
+
+- Install: `pnpm install`
+- Build: `pnpm build`
+
+### 3. Cấu hình lại backend sau khi có URL Vercel
+
+Sau khi frontend deploy xong, lấy URL thật của Vercel, ví dụ `https://law-rag-frontend.vercel.app`, rồi cập nhật lại backend:
+
+```env
+CORS_ALLOW_ORIGINS=https://law-rag-frontend.vercel.app
+```
+
+Nếu backend có health check, nên kiểm tra:
+
+- `https://your-backend-domain.com/health`
+
+### 4. Kiểm tra sau deploy
+
+Kiểm tra các điểm sau:
+
+- Frontend mở được trang chat/admin.
+- Gọi API không bị lỗi CORS.
+- API `/health` trả về 200.
+- Chức năng upload/OCR hoạt động trên môi trường backend bạn chọn.
+
+### 5. Cấu hình khuyến nghị cho production
+
+Nếu mục tiêu là production thật, cấu hình bền hơn sẽ là:
+
+- Vercel: frontend.
+- Render/Railway/Fly.io/VPS: FastAPI backend.
+- MongoDB Atlas: vector search + dữ liệu metadata.
+- Object storage như S3/Cloudinary/R2: file upload thay vì lưu local vào `output/uploads`.
+
+Nếu bạn muốn, có thể tiếp tục tách dự án này thành cấu hình deploy hoàn chỉnh cho Vercel + Render/Railway, bao gồm file `vercel.json`, env mẫu production và cấu hình backend persistent storage.
+
+## Deploy Với Domain `lawrag.online`
+
+Với domain bạn đã mua, cấu hình nên dùng là:
+
+- `lawrag.online` hoặc `www.lawrag.online`: frontend Next.js trên Vercel.
+- `api.lawrag.online`: backend FastAPI trên Render.
+
+Đây là cách tách phù hợp nhất cho repo hiện tại vì frontend là web tĩnh/SSR chuẩn Next.js, còn backend cần môi trường chạy lâu dài, có storage bền và không phải serverless.
+
+### Sơ đồ production nên dùng
+
+```text
+lawrag.online         -> Vercel project (frontend)
+www.lawrag.online     -> alias sang frontend
+api.lawrag.online     -> Render web service (backend)
+```
+
+### Bước 1. Deploy backend lên Render
+
+Repo đã có sẵn file [render.yaml](render.yaml) để bạn import trực tiếp vào Render.
+
+Trên Render:
+
+1. Chọn `New +`.
+2. Chọn `Blueprint`.
+3. Kết nối GitHub repo này.
+4. Render sẽ đọc [render.yaml](render.yaml) và tạo service `law-rag-backend`.
+5. Trong phần environment variables, nhập thêm secret `OPENAI_API_KEY`.
+6. Deploy và chờ Render cấp URL dạng `https://law-rag-backend.onrender.com`.
+
+File [render.yaml](render.yaml) đã cấu hình sẵn:
+
+- chạy bằng Dockerfile backend;
+- health check tại `/health`;
+- mount persistent disk vào `/app/output` để giữ dữ liệu `output/`;
+- CORS mặc định cho `https://lawrag.online` và `https://www.lawrag.online`.
+
+Sau khi service chạy, vào Render và add custom domain:
+
+- `api.lawrag.online`
+
+### Bước 2. Cấu hình DNS cho backend domain
+
+Trong nơi quản lý DNS của domain `lawrag.online`, tạo record theo hướng dẫn Render cung cấp cho custom domain `api.lawrag.online`.
+
+Thông thường sẽ là:
+
+- Type `CNAME`
+- Name `api`
+- Target: hostname do Render cấp
+
+Sau khi DNS cập nhật, kiểm tra:
+
+- `https://api.lawrag.online/health`
+
+Nếu trả về `200`, backend domain đã hoạt động.
+
+### Bước 3. Deploy frontend lên Vercel
+
+Frontend đã có file [law-rag-frontend/vercel.json](law-rag-frontend/vercel.json) để cố định build command.
+
+Trong Vercel:
+
+1. Import chính repo này.
+2. Chọn `Root Directory` là `law-rag-frontend`.
+3. Framework Preset: `Next.js`.
+4. Thêm environment variable:
+
+```env
+NEXT_PUBLIC_API_URL=https://api.lawrag.online
+```
+
+5. Deploy.
+
+### Bước 4. Gắn domain `lawrag.online` vào Vercel
+
+Trong project frontend trên Vercel:
+
+1. Vào `Settings`.
+2. Mở `Domains`.
+3. Add các domain:
+
+- `lawrag.online`
+- `www.lawrag.online`
+
+Vercel sẽ hiển thị DNS records cần tạo. Thường là một trong hai kiểu sau:
+
+- Apex/root domain `lawrag.online`: thêm `A record` trỏ đến IP Vercel.
+- `www`: thêm `CNAME` trỏ đến hostname Vercel cung cấp.
+
+Sau đó đặt:
+
+- Primary domain: `lawrag.online`
+- Redirect `www.lawrag.online` về `lawrag.online`
+
+### Bước 5. Cập nhật backend CORS nếu cần
+
+Backend hiện đọc CORS từ biến môi trường `CORS_ALLOW_ORIGINS` trong [law_rag/api/server.py](law_rag/api/server.py#L125).
+
+Nếu cần thêm domain preview hoặc domain mới, cập nhật trên Render:
+
+```env
+CORS_ALLOW_ORIGINS=https://lawrag.online,https://www.lawrag.online
+```
+
+Nếu bạn muốn cho cả preview deployments của Vercel gọi vào backend, có thể tạm nới thêm preview domain tương ứng, nhưng production nên chỉ giữ domain chính thức.
+
+### Bước 6. Checklist production
+
+Kiểm tra lần lượt:
+
+- `https://api.lawrag.online/health` hoạt động.
+- `https://lawrag.online` mở được frontend.
+- Chat gọi API không bị lỗi CORS.
+- Upload tài liệu lưu được vào backend production.
+- Nếu dùng FAISS local, dữ liệu vẫn còn sau khi Render redeploy.
+
+### Ghi chú quan trọng
+
+- Vercel chỉ nên host frontend của repo này.
+- Backend không nên đưa lên Vercel Functions vì có OCR, ghi file local, upload pipeline và FAISS.
+- Nếu sau này muốn production bền hơn nữa, nên chuyển file upload sang S3/R2 và vector store sang MongoDB Atlas.
+
+### Lệnh/env bạn sẽ dùng thực tế
+
+Backend trên Render:
+
+```env
+OPENAI_API_KEY=...
+RAG_MODE=openai
+EMBEDDING_PROVIDER=openai
+OPENAI_CHAT_MODEL=gpt-5.4-mini
+OPENAI_MEMORY_MODEL=gpt-5.4-mini
+OPENAI_QUERY_REWRITE_MODEL=gpt-5.4-mini
+OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+EMBEDDING_MODEL=text-embedding-3-small
+CORS_ALLOW_ORIGINS=https://lawrag.online,https://www.lawrag.online
+```
+
+Frontend trên Vercel:
+
+```env
+NEXT_PUBLIC_API_URL=https://api.lawrag.online
+```
+
 ## Chạy Dev
 
 Backend:
