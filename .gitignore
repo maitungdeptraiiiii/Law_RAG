@@ -34,3 +34,8 @@ output/*.err.log
 # Generated corpus/vector indexes
 output/vbpl_laws_active_partial/
 output/vbpl_laws_active_partial.zip
+
+# Old generated corpus outputs
+output/chunks/
+output/laws/
+output/chunk_framework_report.json

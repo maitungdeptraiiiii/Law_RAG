@@ -1,9 +1,0 @@
-{
-  "embedding_provider": "sentence-transformers",
-  "embedding_model": "intfloat/multilingual-e5-base",
-  "dimension": 768,
-  "chunk_count": 9840,
-  "index_path": "output\\chunks\\retrieval\\vector-local\\faiss.index",
-  "metadata_path": "output\\chunks\\retrieval\\vector-local\\vector_metadata.json",
-  "chunks_path": "output\\chunks\\all_chunks.jsonl"
-}
