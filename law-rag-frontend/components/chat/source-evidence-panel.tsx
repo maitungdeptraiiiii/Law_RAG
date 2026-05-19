@@ -5,7 +5,7 @@ import { X, ExternalLink, FileText, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { useState } from 'react'
-import { formatSourceCitation } from '@/lib/legal-citation'
+import { formatSourceCitation, sourceDocumentLabel } from '@/lib/legal-citation'
 import type { RetrievedSource } from '@/lib/types'
 
 interface SourceEvidencePanelProps {
@@ -58,6 +58,7 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
         <div className="p-4 space-y-3">
           {sources.map((source, index) => {
             const citation = formatSourceCitation(source)
+            const documentLabel = sourceDocumentLabel(source)
 
             return (
             <div
@@ -75,7 +76,7 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-medium text-sm leading-tight mb-1 line-clamp-2">
-                      {source.documentTitle}
+                      {documentLabel}
                     </h4>
                     <div className="flex flex-wrap items-center gap-2">
                       {source.documentType && (

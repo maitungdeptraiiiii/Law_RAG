@@ -47,11 +47,14 @@ def get_atlas_collection(
 
 
 def build_atlas_document(chunk: dict, searchable_text: str, embedding: list[float]) -> dict:
+    source_file = str(chunk.get("source_file") or chunk.get("text_file") or f"vbpl/{chunk.get('vbpl_id') or chunk.get('doc_number') or chunk['chunk_id']}")
     return {
         "_id": chunk["chunk_id"],
         "chunk_id": chunk["chunk_id"],
-        "source_file": chunk["source_file"],
-        "mode": chunk["mode"],
+        "source_file": source_file,
+        "vbpl_id": str(chunk.get("vbpl_id")) if chunk.get("vbpl_id") is not None else None,
+        "doc_number": chunk.get("doc_number"),
+        "mode": chunk.get("mode") or "article",
         "article_number": chunk.get("article_number"),
         "clause_number": chunk.get("clause_number"),
         "point_number": chunk.get("point_number"),

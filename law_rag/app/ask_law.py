@@ -272,8 +272,8 @@ def answer_question(
 def main() -> None:
     parser = argparse.ArgumentParser(description="One-shot legal QA: hybrid retrieval + OpenAI chat")
     parser.add_argument("question", help="Câu hỏi tình huống pháp lý")
-    parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")
-    parser.add_argument("--bm25-index", default="output/chunks/retrieval/bm25_index.json", help="Path to BM25 index JSON")
+    parser.add_argument("--chunks", default="output/vbpl_laws_active_partial/all_chunks.jsonl", help="Path to all_chunks.jsonl")
+    parser.add_argument("--bm25-index", default="output/vbpl_laws_active_partial/retrieval/bm25_index.json", help="Path to BM25 index JSON")
     parser.add_argument("--vector-dir", default=default_vector_dir(), help="Thư mục chứa FAISS index")
     parser.add_argument("--query-rewrite-mode", choices=["none", "llm"], default="none", help="Chế độ rewrite query trước retrieval")
     parser.add_argument("--query-rewrite-model", default="gpt-5.4-mini", help="LLM model dùng để rewrite query")

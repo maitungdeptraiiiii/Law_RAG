@@ -18,7 +18,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
-import { formatSourceCitation } from '@/lib/legal-citation'
+import { formatSourceCitation, sourceDocumentLabel } from '@/lib/legal-citation'
 import { toast } from 'sonner'
 import type { Message, RetrievedSource } from '@/lib/types'
 
@@ -223,6 +223,7 @@ function SourceBadge({ source, index }: { source: RetrievedSource; index: number
     other: 'Khác',
   }
   const citation = formatSourceCitation(source)
+  const documentLabel = sourceDocumentLabel(source)
 
   return (
     <div className="flex items-start gap-3 p-3 rounded-lg bg-muted/50">
@@ -231,7 +232,7 @@ function SourceBadge({ source, index }: { source: RetrievedSource; index: number
       </div>
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
-          <span className="text-sm font-medium truncate">{source.documentTitle}</span>
+          <span className="text-sm font-medium truncate">{documentLabel}</span>
           {source.documentType && (
             <span className="flex-shrink-0 px-1.5 py-0.5 rounded text-xs bg-secondary text-secondary-foreground">
               {typeLabels[source.documentType] || source.documentType}

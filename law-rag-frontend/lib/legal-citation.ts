@@ -36,9 +36,33 @@ export function formatLegalReference(
 }
 
 export function formatSourceCitation(
-  source: Pick<RetrievedSource, 'documentTitle' | 'articleNumber' | 'clauseNumber' | 'targetArticle'>,
+  source: Pick<
+    RetrievedSource,
+    'documentId' | 'documentTitle' | 'documentNumber' | 'articleNumber' | 'clauseNumber' | 'targetArticle'
+  >,
 ): string {
   const reference = formatLegalReference(source.articleNumber, source.clauseNumber, source.targetArticle)
-  if (!reference) return source.documentTitle
-  return `${reference}, ${source.documentTitle}`
+  const label = sourceDocumentLabel(source)
+  if (!reference) return label
+  return `${reference}, ${label}`
+}
+
+function isTechnicalId(value?: string): boolean {
+  if (!value) return true
+  return /^\d+$/.test(value.trim())
+}
+
+export function sourceDocumentLabel(
+  source: Pick<RetrievedSource, 'documentId' | 'documentTitle' | 'documentNumber'>,
+): string {
+  const title = normalizePart(source.documentTitle)
+  if (title && !isTechnicalId(title)) return title
+
+  const number = normalizePart(source.documentNumber)
+  if (number && !isTechnicalId(number)) return number
+
+  const id = normalizePart(source.documentId)
+  if (id) return id
+
+  return title || 'Không rõ văn bản'
 }

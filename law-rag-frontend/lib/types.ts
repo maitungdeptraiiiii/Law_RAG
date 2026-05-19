@@ -46,6 +46,7 @@ export interface RetrievedSource {
   id: string
   documentId: string
   documentTitle: string
+  documentNumber?: string
   articleNumber?: string
   clauseNumber?: string
   targetArticle?: string

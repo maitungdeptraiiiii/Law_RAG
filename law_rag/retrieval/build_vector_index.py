@@ -16,9 +16,20 @@ from .retrieve_chunks import build_searchable_text, load_chunks
 
 load_project_env()
 
+OPENAI_EMBEDDING_MAX_CHARS = 6_000
+
 
 def batched(items: list[dict], batch_size: int) -> list[list[dict]]:
     return [items[index : index + batch_size] for index in range(0, len(items), batch_size)]
+
+
+def trim_embedding_input(text: str, *, provider: str, max_chars: int) -> tuple[str, bool]:
+    if provider != "openai" or len(text) <= max_chars:
+        return text, False
+    trimmed = text[:max_chars].rsplit("\n", 1)[0].strip()
+    if len(trimmed) < max_chars // 2:
+        trimmed = text[:max_chars].strip()
+    return trimmed, True
 
 
 def print_build_progress(*, backend: str, batch_number: int, total_batches: int, processed_chunks: int, total_chunks: int) -> None:
@@ -65,18 +76,34 @@ def build_vector_index(
         )
 
     processed_chunks = 0
+    trimmed_embedding_inputs = 0
     for batch_number, batch in enumerate(batches, start=1):
-        texts = [build_searchable_text(chunk) for chunk in batch]
-        vectors = embed_texts(texts, model=model, provider=provider)
+        searchable_texts = [build_searchable_text(chunk) for chunk in batch]
+        embedding_texts: list[str] = []
+        trimmed_flags: list[bool] = []
+        for searchable_text in searchable_texts:
+            embedding_text, was_trimmed = trim_embedding_input(
+                searchable_text,
+                provider=provider,
+                max_chars=OPENAI_EMBEDDING_MAX_CHARS,
+            )
+            embedding_texts.append(embedding_text)
+            trimmed_flags.append(was_trimmed)
+        trimmed_embedding_inputs += sum(1 for flag in trimmed_flags if flag)
+
+        vectors = embed_texts(embedding_texts, model=model, provider=provider)
         if backend in {"faiss", "both"}:
             all_vectors.extend(vectors)
 
-            for chunk, searchable_text in zip(batch, texts):
+            for chunk, searchable_text, embedding_text, was_trimmed in zip(batch, searchable_texts, embedding_texts, trimmed_flags):
+                source_file = str(chunk.get("source_file") or chunk.get("text_file") or f"vbpl/{chunk.get('vbpl_id') or chunk.get('doc_number') or chunk['chunk_id']}")
                 metadata.append(
                     {
                         "chunk_id": chunk["chunk_id"],
-                        "source_file": chunk["source_file"],
-                        "mode": chunk["mode"],
+                        "source_file": source_file,
+                        "vbpl_id": str(chunk.get("vbpl_id")) if chunk.get("vbpl_id") is not None else None,
+                        "doc_number": chunk.get("doc_number"),
+                        "mode": chunk.get("mode") or "article",
                         "article_number": chunk.get("article_number"),
                         "clause_number": chunk.get("clause_number"),
                         "point_number": chunk.get("point_number"),
@@ -86,13 +113,15 @@ def build_vector_index(
                         "target_article": chunk.get("target_article"),
                         "text": chunk["text"],
                         "searchable_text": searchable_text,
+                        "embedding_text": embedding_text,
+                        "embedding_input_trimmed": was_trimmed,
                     }
                 )
 
         if backend in {"atlas", "both"}:
             documents = [
-                build_atlas_document(chunk, searchable_text, vector)
-                for chunk, searchable_text, vector in zip(batch, texts, vectors)
+                build_atlas_document(chunk, embedding_text, vector)
+                for chunk, embedding_text, vector in zip(batch, embedding_texts, vectors)
             ]
             upsert_atlas_documents(atlas_collection_handle, documents)
 
@@ -110,6 +139,8 @@ def build_vector_index(
         "embedding_model": model,
         "chunk_count": total_chunks,
         "backend": backend,
+        "embedding_input_max_chars": OPENAI_EMBEDDING_MAX_CHARS if provider == "openai" else None,
+        "trimmed_embedding_inputs": trimmed_embedding_inputs,
     }
 
     if backend in {"faiss", "both"} and not all_vectors:
@@ -137,6 +168,8 @@ def build_vector_index(
                     "index_path": str(index_path),
                     "metadata_path": str(metadata_path),
                     "chunks_path": str(chunks_path),
+                    "embedding_input_max_chars": OPENAI_EMBEDDING_MAX_CHARS if provider == "openai" else None,
+                    "trimmed_embedding_inputs": trimmed_embedding_inputs,
                 },
                 ensure_ascii=False,
                 indent=2,
@@ -183,7 +216,7 @@ def build_vector_index(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build embedding index cho legal chunks tren FAISS hoac MongoDB Atlas.")
-    parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")
+    parser.add_argument("--chunks", default="output/vbpl_laws_active_partial/all_chunks.jsonl", help="Path to all_chunks.jsonl")
     parser.add_argument("--output-dir", default=default_vector_dir(), help="Noi luu FAISS index va metadata")
     parser.add_argument("--model", default=DEFAULT_EMBEDDING_MODEL, help="Embedding model")
     parser.add_argument("--batch-size", type=int, default=100, help="So chunks moi batch embedding")

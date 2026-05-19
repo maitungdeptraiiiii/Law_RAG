@@ -30,3 +30,7 @@ output/eval/
 output/api_jobs.json
 output/*.log
 output/*.err.log
+
+# Generated corpus/vector indexes
+output/vbpl_laws_active_partial/
+output/vbpl_laws_active_partial.zip

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from functools import lru_cache
 
 from openai import OpenAI
 
@@ -63,6 +64,13 @@ def embed_texts_openai_compatible(texts: list[str], *, model: str) -> list[list[
 
 
 def embed_texts_sentence_transformers(texts: list[str], *, model: str) -> list[list[float]]:
+    encoder = get_sentence_transformer(model)
+    vectors = encoder.encode(texts, normalize_embeddings=False)
+    return [vector.astype("float32").tolist() for vector in vectors]
+
+
+@lru_cache(maxsize=4)
+def get_sentence_transformer(model: str):
     try:
         from sentence_transformers import SentenceTransformer
     except ImportError as exc:
@@ -71,6 +79,4 @@ def embed_texts_sentence_transformers(texts: list[str], *, model: str) -> list[l
             "Chay: pip install sentence-transformers"
         ) from exc
 
-    encoder = SentenceTransformer(model)
-    vectors = encoder.encode(texts, normalize_embeddings=False)
-    return [vector.astype("float32").tolist() for vector in vectors]
+    return SentenceTransformer(model)

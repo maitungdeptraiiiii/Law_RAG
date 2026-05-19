@@ -16,6 +16,8 @@ TOKEN_RE = re.compile(r"\w+", re.UNICODE)
 class IndexedChunk:
     chunk_id: str
     source_file: str
+    vbpl_id: str | None
+    doc_number: str | None
     mode: str
     article_number: str | None
     article_title: str | None
@@ -49,6 +51,8 @@ def build_searchable_text(chunk: dict) -> str:
 
     if chunk.get("document_title"):
         parts.extend([chunk["document_title"], chunk["document_title"]])
+    if chunk.get("doc_number"):
+        parts.append(chunk["doc_number"])
     if chunk.get("article_title"):
         parts.extend([chunk["article_title"], chunk["article_title"]])
     if chunk.get("target_article"):
@@ -78,6 +82,7 @@ def build_index_payload(chunks_path: Path) -> dict:
     total_doc_len = 0
 
     for chunk in raw_chunks:
+        source_file = str(chunk.get("source_file") or chunk.get("text_file") or f"vbpl/{chunk.get('vbpl_id') or chunk.get('doc_number') or chunk['chunk_id']}")
         searchable_text = build_searchable_text(chunk)
         tokens = tokenize(searchable_text)
         term_freqs = Counter(tokens)
@@ -88,8 +93,10 @@ def build_index_payload(chunks_path: Path) -> dict:
         docs.append(
             IndexedChunk(
                 chunk_id=chunk["chunk_id"],
-                source_file=chunk["source_file"],
-                mode=chunk["mode"],
+                source_file=source_file,
+                vbpl_id=str(chunk.get("vbpl_id")) if chunk.get("vbpl_id") is not None else None,
+                doc_number=chunk.get("doc_number"),
+                mode=chunk.get("mode") or "article",
                 article_number=chunk.get("article_number"),
                 article_title=chunk.get("article_title"),
                 clause_number=chunk.get("clause_number"),
@@ -181,6 +188,8 @@ def query_index(index_payload: dict, query: str, top_k: int) -> list[dict]:
                 "score": round(score, 4),
                 "chunk_id": document["chunk_id"],
                 "source_file": document["source_file"],
+                "vbpl_id": document.get("vbpl_id"),
+                "doc_number": document.get("doc_number"),
                 "article_number": document.get("article_number"),
                 "clause_number": document.get("clause_number"),
                 "point_number": document.get("point_number"),
@@ -200,16 +209,21 @@ def resolve_default_index_path(chunks_path: Path) -> Path:
 
 
 def main() -> None:
+    import sys
+
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
     parser = argparse.ArgumentParser(description="Build/query BM25 retrieval index for legal chunks.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     build_parser = subparsers.add_parser("build", help="Build BM25 index from all_chunks.jsonl")
-    build_parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")
+    build_parser.add_argument("--chunks", default="output/vbpl_laws_active_partial/all_chunks.jsonl", help="Path to all_chunks.jsonl")
     build_parser.add_argument("--output", help="Path to output BM25 index JSON")
 
     query_parser = subparsers.add_parser("query", help="Query BM25 index")
     query_parser.add_argument("query", help="Natural language legal query")
-    query_parser.add_argument("--index", default="output/chunks/retrieval/bm25_index.json", help="Path to BM25 index JSON")
+    query_parser.add_argument("--index", default="output/vbpl_laws_active_partial/retrieval/bm25_index.json", help="Path to BM25 index JSON")
     query_parser.add_argument("--top-k", type=int, default=5, help="Number of top results")
 
     args = parser.parse_args()

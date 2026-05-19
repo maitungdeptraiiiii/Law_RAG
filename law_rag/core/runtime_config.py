@@ -89,4 +89,4 @@ def default_vector_dir() -> str:
     if explicit_dir:
         return explicit_dir
     suffix = "local" if runtime_mode() == "local" else "openai"
-    return f"output/chunks/retrieval/vector-{suffix}"
+    return f"output/vbpl_laws_active_partial/retrieval/vector-{suffix}"

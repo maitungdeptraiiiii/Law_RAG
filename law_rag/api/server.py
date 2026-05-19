@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import queue
 import re
 import subprocess
 import sys
@@ -43,14 +44,14 @@ load_project_env()
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 OUTPUT_DIR = ROOT_DIR / "output"
-LAW_OUTPUT_DIR = OUTPUT_DIR / "laws"
-CHUNKS_DIR = OUTPUT_DIR / "chunks"
+CORPUS_DIR = OUTPUT_DIR / "vbpl_laws_active_partial"
+LAW_OUTPUT_DIR = CORPUS_DIR
+CHUNKS_DIR = CORPUS_DIR
 SESSIONS_DIR = OUTPUT_DIR / "sessions"
 UPLOADS_DIR = OUTPUT_DIR / "uploads"
 RETRIEVAL_DIR = CHUNKS_DIR / "retrieval"
 CHUNKS_PATH = CHUNKS_DIR / "all_chunks.jsonl"
 BM25_INDEX_PATH = RETRIEVAL_DIR / "bm25_index.json"
-FRAMEWORK_REPORT_PATH = OUTPUT_DIR / "chunk_framework_report.json"
 CHUNK_REPORT_PATH = CHUNKS_DIR / "chunk_report.json"
 JOBS_FILE = OUTPUT_DIR / "api_jobs.json"
 
@@ -278,6 +279,22 @@ def extract_issued_date(text: str) -> str | None:
 
 @lru_cache(maxsize=1)
 def load_law_manifest() -> dict[str, Any]:
+    documents_path = LAW_OUTPUT_DIR / "documents.json"
+    vbpl_documents = safe_json_load(documents_path, []) if documents_path.exists() else None
+    if isinstance(vbpl_documents, list):
+        by_text_file: dict[str, dict[str, Any]] = {}
+        by_vbpl_id: dict[str, dict[str, Any]] = {}
+        for item in vbpl_documents:
+            if not isinstance(item, dict):
+                continue
+            text_file = item.get("text_file")
+            vbpl_id = item.get("vbpl_id")
+            if text_file:
+                by_text_file[str(text_file)] = item
+            if vbpl_id:
+                by_vbpl_id[str(vbpl_id)] = item
+        return {"items": vbpl_documents, "by_text_file": by_text_file, "by_vbpl_id": by_vbpl_id}
+
     manifest_path = LAW_OUTPUT_DIR / "manifest.json"
     payload = safe_json_load(manifest_path, {"items": []})
     items = payload.get("items", []) if isinstance(payload, dict) else []
@@ -292,7 +309,7 @@ def load_law_manifest() -> dict[str, Any]:
             by_text_file[str(text_file)] = item
         if json_file:
             by_json_file[str(json_file)] = item
-    return {"items": items, "by_text_file": by_text_file, "by_json_file": by_json_file}
+    return {"items": items, "by_text_file": by_text_file, "by_json_file": by_json_file, "by_vbpl_id": {}}
 
 
 @lru_cache(maxsize=1)
@@ -326,6 +343,37 @@ def load_documents_cache() -> list[dict[str, Any]]:
     documents: list[dict[str, Any]] = []
 
     for item in manifest["items"]:
+        if item.get("vbpl_id"):
+            text_file = str(item.get("text_file") or "")
+            text_body = ""
+            if text_file:
+                text_path = LAW_OUTPUT_DIR / text_file
+                if text_path.exists():
+                    text_body = text_path.read_text(encoding="utf-8", errors="ignore")
+            chunk_count = int(item.get("chunk_count") or 0)
+            status = "crawled"
+            if chunk_count > 0:
+                status = "indexed" if (bm25_built or vector_built) else "chunked"
+            updated_at = serialize_datetime(item.get("updated_date")) or serialize_datetime(item.get("issue_date")) or utc_now_iso()
+            documents.append(
+                {
+                    "id": str(item["vbpl_id"]),
+                    "title": item.get("title") or item.get("doc_number") or str(item["vbpl_id"]),
+                    "documentNumber": item.get("doc_number") or "Chua ro",
+                    "documentType": item.get("doc_type") or "law",
+                    "issuedDate": item.get("issue_date"),
+                    "effectiveDate": item.get("effective_from"),
+                    "issuingAuthority": item.get("agency_name") or "Co quan nha nuoc",
+                    "sourceUrl": item.get("source_url") or "",
+                    "status": status,
+                    "chunkCount": chunk_count,
+                    "crawledAt": updated_at,
+                    "lastUpdated": updated_at,
+                    "previewText": text_body[:500],
+                }
+            )
+            continue
+
         json_file = item.get("json_file")
         text_file = item.get("text_file")
         if not isinstance(json_file, str) or not isinstance(text_file, str):
@@ -371,13 +419,28 @@ def load_documents_cache() -> list[dict[str, Any]]:
 def map_retrieved_source(item: dict[str, Any]) -> dict[str, Any]:
     manifest = load_law_manifest()
     text_file = item.get("source_file")
+    vbpl_id = item.get("vbpl_id")
+    if not vbpl_id and isinstance(text_file, str):
+        match = re.match(r"^vbpl/(\d+)$", text_file)
+        if match:
+            vbpl_id = match.group(1)
     manifest_item = manifest["by_text_file"].get(str(text_file), {}) if text_file else {}
+    if not manifest_item and vbpl_id:
+        manifest_item = manifest.get("by_vbpl_id", {}).get(str(vbpl_id), {})
+    document_title = (
+        manifest_item.get("title")
+        or item.get("document_title")
+        or manifest_item.get("doc_number")
+        or item.get("doc_number")
+        or slug_to_title(Path(str(text_file)).stem if text_file else "document")
+    )
     chunk_sources = item.get("sources") or []
     retrieval_origin = "hybrid" if len(chunk_sources) > 1 else (chunk_sources[0] if chunk_sources else "hybrid")
     return {
         "id": item.get("chunk_id") or str(uuid.uuid4()),
-        "documentId": Path(str(text_file)).stem if text_file else str(item.get("chunk_id") or "unknown"),
-        "documentTitle": item.get("document_title") or slug_to_title(Path(str(text_file)).stem if text_file else "document"),
+        "documentId": str(vbpl_id or (Path(str(text_file)).stem if text_file else item.get("chunk_id") or "unknown")),
+        "documentTitle": document_title,
+        "documentNumber": manifest_item.get("doc_number") or item.get("doc_number"),
         "articleNumber": item.get("article_number"),
         "clauseNumber": item.get("clause_number"),
         "targetArticle": item.get("target_article"),
@@ -385,8 +448,8 @@ def map_retrieved_source(item: dict[str, Any]) -> dict[str, Any]:
         "relevanceScore": float(item.get("rrf_score") or item.get("score") or 0.0),
         "retrievalOrigin": retrieval_origin,
         "sourceUrl": manifest_item.get("final_url") or manifest_item.get("source_url"),
-        "issuedDate": None,
-        "documentType": detect_document_type(Path(str(text_file)).stem if text_file else ""),
+        "issuedDate": manifest_item.get("issue_date"),
+        "documentType": manifest_item.get("doc_type") or detect_document_type(Path(str(text_file)).stem if text_file else ""),
     }
 
 
@@ -685,7 +748,7 @@ def runtime_status_payload() -> dict[str, Any]:
     }
 
 
-def run_question_request(payload: AskQuestionPayload) -> dict[str, Any]:
+def run_question_request(payload: AskQuestionPayload, answer_stream_callback: Any | None = None) -> dict[str, Any]:
     started = time.perf_counter()
     settings = normalize_settings(payload.settings)
     session_id = payload.sessionId or f"session-{uuid.uuid4().hex[:12]}"
@@ -720,6 +783,7 @@ def run_question_request(payload: AskQuestionPayload) -> dict[str, Any]:
             additional_vector_dirs=private_vector_dirs,
             session_id=session_id,
             session_dir=SESSIONS_DIR,
+            answer_stream_callback=answer_stream_callback,
         )
     except AuthenticationError as exc:
         raise HTTPException(status_code=401, detail="OpenAI API key is invalid or expired.") from exc
@@ -807,17 +871,29 @@ def ask_question_endpoint(payload: AskQuestionPayload) -> dict[str, Any]:
 @app.post("/api/chat/ask/stream")
 def ask_question_stream_endpoint(payload: AskQuestionPayload) -> StreamingResponse:
     def event_stream() -> Any:
-        try:
-            response_payload = run_question_request(payload)
-            answer = str(response_payload.get("answer") or "")
-            if answer:
-                yield json.dumps({"type": "answer_delta", "delta": answer}, ensure_ascii=False) + "\n"
-            yield json.dumps({"type": "final", "data": response_payload}, ensure_ascii=False) + "\n"
-        except HTTPException as exc:
-            message = exc.detail if isinstance(exc.detail, str) else "Streaming request failed"
-            yield json.dumps({"type": "error", "error": message}, ensure_ascii=False) + "\n"
-        except Exception as exc:
-            yield json.dumps({"type": "error", "error": str(exc)}, ensure_ascii=False) + "\n"
+        events: queue.Queue[dict[str, Any]] = queue.Queue()
+
+        def on_delta(delta: str) -> None:
+            events.put({"type": "answer_delta", "delta": delta})
+
+        def worker() -> None:
+            try:
+                response_payload = run_question_request(payload, answer_stream_callback=on_delta)
+                events.put({"type": "final", "data": response_payload})
+            except HTTPException as exc:
+                message = exc.detail if isinstance(exc.detail, str) else "Streaming request failed"
+                events.put({"type": "error", "error": message})
+            except Exception as exc:
+                events.put({"type": "error", "error": str(exc)})
+
+        thread = threading.Thread(target=worker, daemon=True)
+        thread.start()
+
+        while True:
+            event = events.get()
+            yield json.dumps(event, ensure_ascii=False) + "\n"
+            if event.get("type") in {"final", "error"}:
+                break
 
     return StreamingResponse(event_stream(), media_type="application/x-ndjson")
 
@@ -986,7 +1062,7 @@ def get_jobs() -> dict[str, Any]:
 @app.post("/api/admin/jobs/crawl")
 def trigger_crawl() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.crawl.crawl_laws", "--docx", "luat.docx", "--output", "output/laws", "--clean"],
+        [sys.executable, "-m", "law_rag.crawl.crawl_vbpl_laws", "--output", "output/vbpl_laws_active_partial", "--page-size", "100", "--zip"],
     ]
     job = start_job("crawl", commands)
     return {"success": True, "data": job}
@@ -995,8 +1071,7 @@ def trigger_crawl() -> dict[str, Any]:
 @app.post("/api/admin/jobs/chunk")
 def trigger_chunking() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.crawl.chunk_framework_check", "--input", "output/laws", "--json-out", "output/chunk_framework_report.json"],
-        [sys.executable, "-m", "law_rag.crawl.chunk_laws", "--input", "output/laws", "--output-dir", "output/chunks"],
+        [sys.executable, "-m", "law_rag.crawl.crawl_vbpl_laws", "--output", "output/vbpl_laws_active_partial", "--page-size", "100", "--zip"],
     ]
     job = start_job("chunk", commands)
     return {"success": True, "data": job}
@@ -1005,7 +1080,7 @@ def trigger_chunking() -> dict[str, Any]:
 @app.post("/api/admin/jobs/index-bm25")
 def trigger_bm25() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.retrieval.retrieve_chunks", "build", "--chunks", "output/chunks/all_chunks.jsonl", "--output", "output/chunks/retrieval/bm25_index.json"],
+        [sys.executable, "-m", "law_rag.retrieval.retrieve_chunks", "build", "--chunks", "output/vbpl_laws_active_partial/all_chunks.jsonl", "--output", "output/vbpl_laws_active_partial/retrieval/bm25_index.json"],
     ]
     job = start_job("index_bm25", commands)
     return {"success": True, "data": job}
@@ -1014,7 +1089,7 @@ def trigger_bm25() -> dict[str, Any]:
 @app.post("/api/admin/jobs/index-vector")
 def trigger_vector() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.retrieval.build_vector_index", "--chunks", "output/chunks/all_chunks.jsonl", "--output-dir", str(active_vector_dir()), "--backend", "faiss"],
+        [sys.executable, "-m", "law_rag.retrieval.build_vector_index", "--chunks", "output/vbpl_laws_active_partial/all_chunks.jsonl", "--output-dir", str(active_vector_dir()), "--backend", "faiss"],
     ]
     job = start_job("index_vector", commands)
     return {"success": True, "data": job}

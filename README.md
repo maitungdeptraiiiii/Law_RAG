@@ -1,37 +1,43 @@
 # Law RAG
 
-Law RAG là hệ thống hỏi đáp pháp luật Việt Nam dùng FastAPI, Next.js và retrieval kết hợp BM25 + vector search. Dự án dùng corpus luật đã crawl sẵn, hỗ trợ upload tài liệu riêng, OCR, chunk văn bản và embedding vào FAISS local hoặc MongoDB Atlas.
+Law RAG là hệ thống hỏi đáp pháp luật Việt Nam dùng FastAPI, Next.js và retrieval kết hợp BM25 + vector search. Dự án hiện dùng corpus văn bản pháp luật crawl trực tiếp từ VBPL, có hỗ trợ OpenAI API, local LLM OpenAI-compatible, OCR tài liệu upload, FAISS local và MongoDB Atlas Vector Search.
 
-Backend có thể chạy bằng OpenAI API hoặc model local OpenAI-compatible như Ollama/LM Studio. Frontend có trang chat, trang admin, cấu hình runtime, upload tài liệu và xem nguồn tham khảo.
+Backend có thể chạy theo hai chế độ:
+
+- `openai`: dùng OpenAI cho LLM và embedding.
+- `local`: dùng LLM local như Ollama/LM Studio/vLLM và embedding local bằng SentenceTransformers hoặc endpoint OpenAI-compatible.
+
+Frontend có trang chat, quản lý phiên hỏi đáp, xem nguồn tham khảo, trang admin corpus/runtime/debug và upload tài liệu riêng.
 
 ## Kiến Trúc
 
 ```text
 Law-RAG/
-|- law_rag/                 # Backend Python/FastAPI
-|  |- api/server.py         # API server
-|  |- app/ask_law.py        # Luồng hỏi đáp RAG
-|  |- core/                 # Env loader, runtime config, LLM/embedding client
-|  |- crawl/                # Crawl, kiểm tra framework, chunk luật
-|  |- retrieval/            # BM25, FAISS, Atlas, hybrid retrieval
-|  `- upload_pipeline.py    # Upload, OCR, chunk, embedding tài liệu riêng
-|- law-rag-frontend/        # Frontend Next.js
-|- docker/                  # Dockerfile backend/frontend và docker compose
-|- output/                  # Corpus, chunks, indexes, sessions, uploads
-|- requirements.txt
-|- requirements-local.txt
-`- .env                     # Cấu hình local, không commit lên Git
+|- law_rag/                         # Backend Python/FastAPI
+|  |- api/server.py                 # API server
+|  |- app/ask_law.py                # Luồng hỏi đáp RAG
+|  |- core/                         # Env loader, runtime config, LLM/embedding client
+|  |- crawl/crawl_vbpl_laws.py      # Crawl, tiền xử lý, chunk corpus VBPL
+|  |- retrieval/                    # BM25, FAISS, Atlas, hybrid retrieval
+|  `- upload_pipeline.py            # Upload, OCR, chunk, embedding tài liệu riêng
+|- law-rag-frontend/                # Frontend Next.js
+|- docker/                          # Dockerfile backend/frontend và docker compose
+|- output/vbpl_laws_active_partial/ # Corpus VBPL, chunks, BM25, vector index
+|- requirements.txt                 # Dependency backend cơ bản
+|- requirements-local.txt           # Dependency local embedding
+`- .env                             # Cấu hình local, không commit lên Git
 ```
 
 ## Tính Năng Chính
 
 - Chat hỏi đáp pháp luật bằng tiếng Việt, có trích dẫn nguồn.
 - Hybrid retrieval: BM25 + vector FAISS.
-- Có thể debug bằng BM25-only, vector-only hoặc hybrid.
-- Upload PDF/DOCX/image, OCR bằng Tesseract/PaddleOCR, review text rồi đưa vào retrieval.
-- Hỗ trợ tài liệu private/public cho upload.
-- Hỗ trợ OpenAI API, local LLM OpenAI-compatible, SentenceTransformers local embedding.
-- Có Dockerfile và Docker Compose để chạy cả backend/frontend.
+- Hỗ trợ debug bằng BM25-only, vector-only hoặc hybrid.
+- Corpus mới lấy từ `https://vbpl.vn/van-ban/trung-uong`, lọc Luật/Bộ luật theo trạng thái hiệu lực.
+- Chunk theo cấu trúc văn bản pháp luật, ưu tiên điều/khoản/điểm và có báo cáo chất lượng chunk.
+- Upload PDF/DOCX/image, OCR bằng Tesseract, review text rồi đưa vào retrieval riêng.
+- Hỗ trợ OpenAI API, local LLM OpenAI-compatible và SentenceTransformers local embedding.
+- Có Dockerfile và Docker Compose để chạy backend/frontend.
 
 ## Yêu Cầu
 
@@ -53,11 +59,14 @@ C:\Program Files\Tesseract-OCR\tesseract.exe
 
 Backend tự đọc file `.env` ở thư mục gốc. File này chứa secret thật nên không commit lên Git.
 
-Ví dụ chạy bằng OpenAI:
+Ví dụ chạy mặc định bằng OpenAI:
 
 ```env
 RAG_MODE=openai
 LLM_PROVIDER=openai
+CHAT_MODEL=gpt-5.4-mini
+MEMORY_MODEL=gpt-5.4-mini
+QUERY_REWRITE_MODEL=gpt-5.4-mini
 EMBEDDING_PROVIDER=openai
 EMBEDDING_MODEL=text-embedding-3-small
 OPENAI_API_KEY=your_openai_api_key
@@ -66,6 +75,7 @@ OPENAI_CHAT_MODEL=gpt-5.4-mini
 OPENAI_MEMORY_MODEL=gpt-5.4-mini
 OPENAI_QUERY_REWRITE_MODEL=gpt-5.4-mini
 OPENAI_EMBEDDING_MODEL=text-embedding-3-small
+VECTOR_DIR=output/vbpl_laws_active_partial/retrieval/vector-openai
 ```
 
 Ví dụ chạy local:
@@ -73,15 +83,19 @@ Ví dụ chạy local:
 ```env
 RAG_MODE=local
 LLM_PROVIDER=local
+CHAT_MODEL=qwen2.5:7b-instruct
+MEMORY_MODEL=qwen2.5:7b-instruct
+QUERY_REWRITE_MODEL=qwen2.5:7b-instruct
 LOCAL_LLM_BASE_URL=http://127.0.0.1:11434/v1
 LOCAL_LLM_API_KEY=local
 LOCAL_CHAT_MODEL=qwen2.5:7b-instruct
 LOCAL_MEMORY_MODEL=qwen2.5:7b-instruct
-LOCAL_QUERY_REWRITE_MODEL=qwen2.5:1.5b-instruct
+LOCAL_QUERY_REWRITE_MODEL=qwen2.5:7b-instruct
 EMBEDDING_PROVIDER=sentence-transformers
 EMBEDDING_MODEL=intfloat/multilingual-e5-base
 LOCAL_EMBEDDING_PROVIDER=sentence-transformers
 LOCAL_EMBEDDING_MODEL=intfloat/multilingual-e5-base
+VECTOR_DIR=output/vbpl_laws_active_partial/retrieval/vector-local
 ```
 
 Frontend local đọc `law-rag-frontend/.env.local`:
@@ -90,22 +104,9 @@ Frontend local đọc `law-rag-frontend/.env.local`:
 NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
 ```
 
-Khi dùng bản web trên domain, frontend Vercel dùng:
-
-```env
-NEXT_PUBLIC_API_URL=https://api.lawrag.online
-```
-
 ## Chạy Local
 
-Chạy backend:
-
-```powershell
-cd C:\Users\Admin\Desktop\Law-RAG
-.\.venv\Scripts\python.exe -m uvicorn law_rag.api.server:app --reload --host 127.0.0.1 --port 8000
-```
-
-Nếu chưa có virtual environment:
+Tạo và cài môi trường Python nếu chưa có:
 
 ```powershell
 cd C:\Users\Admin\Desktop\Law-RAG
@@ -114,7 +115,20 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
+```
+
+Nếu cần local embedding:
+
+```powershell
 python -m pip install -r requirements-local.txt
+```
+
+Chạy backend:
+
+```powershell
+cd C:\Users\Admin\Desktop\Law-RAG
+.\.venv\Scripts\Activate.ps1
+python -m uvicorn law_rag.api.server:app --reload --host 127.0.0.1 --port 8000
 ```
 
 Chạy frontend:
@@ -130,8 +144,6 @@ Mở frontend:
 ```text
 http://localhost:3000
 ```
-
-Nếu port `3000` bận, Next.js sẽ tự chuyển sang port khác, thường là `3001`.
 
 Kiểm tra backend:
 
@@ -152,7 +164,13 @@ Chạy từ thư mục gốc:
 
 ```powershell
 cd C:\Users\Admin\Desktop\Law-RAG
-docker compose -f docker/docker-compose.yml up -d
+docker compose --env-file .env -f docker/docker-compose.yml up --build
+```
+
+Chạy nền:
+
+```powershell
+docker compose --env-file .env -f docker/docker-compose.yml up --build -d
 ```
 
 Mở:
@@ -170,122 +188,134 @@ curl http://127.0.0.1:8000/health
 Dừng:
 
 ```powershell
-docker compose -f docker/docker-compose.yml down
+docker compose --env-file .env -f docker/docker-compose.yml down
 ```
 
-Nếu port mặc định bị chiếm:
+Xem log:
 
 ```powershell
-$env:BACKEND_PORT=8001
-$env:FRONTEND_PORT=3001
-docker compose -f docker/docker-compose.yml up -d
+docker compose --env-file .env -f docker/docker-compose.yml logs -f
 ```
 
-Khi đó mở:
-
-```text
-http://localhost:3001
-```
-
-Build lại image:
+Build lại sạch:
 
 ```powershell
-docker compose -f docker/docker-compose.yml build
+docker compose --env-file .env -f docker/docker-compose.yml build --no-cache
 ```
 
 Lưu ý Docker:
 
-- Backend mount `../output:/app/output`, nên dữ liệu runtime vẫn nằm trên máy host.
+- `docker-compose.yml` mount `../output:/app/output`, nên dữ liệu runtime vẫn nằm trên máy host.
+- Nếu muốn image chạy được chỉ bằng compose mà không cần copy `output`, phải bake `output` vào image backend. Cách này làm image nặng hơn.
 - Nếu backend trong container cần gọi Ollama/LM Studio trên máy host, dùng `LOCAL_LLM_BASE_URL=http://host.docker.internal:11434/v1`.
-- `.dockerignore` loại uploads, sessions, eval output và private runtime data để tránh đóng gói dữ liệu cá nhân vào image.
+- Không đưa `.env`, API key, uploads hoặc sessions vào image public.
 
-## Chạy Bản Web Với Domain `lawrag.online`
+## Push Docker Hub
 
-Bản web hiện tại không host backend trên Render. Frontend chạy trên Vercel, còn backend chạy trực tiếp trên máy cá nhân và public qua Cloudflare Tunnel.
+Đăng nhập:
 
-Sơ đồ đang dùng:
-
-```text
-https://www.lawrag.online/chat  -> frontend trên Vercel
-https://api.lawrag.online       -> Cloudflare Tunnel
-Cloudflare Tunnel               -> backend FastAPI trên máy cá nhân
+```powershell
+docker login
 ```
 
-Điều này có nghĩa là domain chỉ hoạt động đầy đủ khi máy cá nhân đang bật, backend đang chạy và Cloudflare Tunnel đang chạy. Nếu tắt máy hoặc dừng tunnel, frontend vẫn mở được nhưng chat sẽ không gọi được API.
-
-### Khởi Động Web Public
-
-Terminal 1: chạy backend.
+Build image:
 
 ```powershell
 cd C:\Users\Admin\Desktop\Law-RAG
-.\.venv\Scripts\python.exe -m uvicorn law_rag.api.server:app --host 127.0.0.1 --port 8000
+docker compose --env-file .env -f docker/docker-compose.yml build
 ```
 
-Terminal 2: chạy Cloudflare Tunnel.
+Push từng image:
 
 ```powershell
-cloudflared tunnel run lawrag-api
+docker push maitung123/law-rag-backend:latest
+docker push maitung123/law-rag-frontend:latest
 ```
 
-Kiểm tra:
+Hoặc push bằng compose:
 
 ```powershell
-curl http://127.0.0.1:8000/health
-curl https://api.lawrag.online/health
+docker compose --env-file .env -f docker/docker-compose.yml push
 ```
 
-Sau đó mở:
+Nếu muốn tách tag:
+
+```powershell
+docker tag maitung123/law-rag-backend:latest maitung123/law-rag-backend:openai
+docker tag maitung123/law-rag-backend:latest maitung123/law-rag-backend:full
+docker push maitung123/law-rag-backend:openai
+docker push maitung123/law-rag-backend:full
+```
+
+Khuyến nghị:
+
+- `openai`: image nhẹ, chỉ cần OpenAI API và vector OpenAI.
+- `full`: image nặng hơn, có dependency local embedding như `sentence-transformers`, `torch`, `transformers`.
+
+## Pipeline Dữ Liệu VBPL
+
+Crawl lại corpus VBPL:
+
+```powershell
+cd C:\Users\Admin\Desktop\Law-RAG
+.\.venv\Scripts\Activate.ps1
+python -m law_rag.crawl.crawl_vbpl_laws `
+  --output output/vbpl_laws_active_partial `
+  --page-size 100 `
+  --zip
+```
+
+Crawler sẽ tạo các file chính:
 
 ```text
-https://www.lawrag.online/chat
+output/vbpl_laws_active_partial/documents.json
+output/vbpl_laws_active_partial/all_chunks.jsonl
+output/vbpl_laws_active_partial/chunk_report.json
+output/vbpl_laws_active_partial/manifest.json
 ```
 
-### Dừng Web Public
-
-Dừng backend hoặc tunnel bằng `Ctrl + C` ở terminal đang chạy.
-
-Nếu `cloudflared` đang chạy nền:
+Build BM25:
 
 ```powershell
-Get-Process cloudflared
-Stop-Process -Name cloudflared -Force
+python -m law_rag.retrieval.retrieve_chunks build `
+  --chunks output/vbpl_laws_active_partial/all_chunks.jsonl `
+  --output output/vbpl_laws_active_partial/retrieval/bm25_index.json
 ```
 
-### DNS Route Cloudflare
-
-Lệnh này chỉ cần chạy khi cấu hình DNS route lần đầu hoặc đổi tunnel/domain:
+Build vector OpenAI:
 
 ```powershell
-cloudflared tunnel route dns lawrag-api api.lawrag.online
+$env:EMBEDDING_PROVIDER="openai"
+$env:EMBEDDING_MODEL="text-embedding-3-small"
+
+python -m law_rag.retrieval.build_vector_index `
+  --chunks output/vbpl_laws_active_partial/all_chunks.jsonl `
+  --output-dir output/vbpl_laws_active_partial/retrieval/vector-openai `
+  --backend faiss
 ```
 
-Không cần chạy lại lệnh này mỗi lần bật máy. Mỗi lần muốn host lại chỉ cần chạy backend và:
+Build vector local:
 
 ```powershell
-cloudflared tunnel run lawrag-api
+$env:EMBEDDING_PROVIDER="sentence-transformers"
+$env:EMBEDDING_MODEL="intfloat/multilingual-e5-base"
+
+python -m law_rag.retrieval.build_vector_index `
+  --chunks output/vbpl_laws_active_partial/all_chunks.jsonl `
+  --output-dir output/vbpl_laws_active_partial/retrieval/vector-local `
+  --backend faiss `
+  --batch-size 50
 ```
 
-## Runtime Và API Key
+Sau khi build xong, thư mục vector phải có:
 
-Trong trang Admin có thể chuyển runtime giữa `Local` và `OpenAI API`.
-
-Khi chọn `OpenAI API`, có thể nhập OpenAI API key ở frontend. Backend sẽ ghi key vào `.env` để các lần chạy sau dùng lại. Key không được trả ngược lại frontend.
-
-Khi chọn `Local`, backend tự chuyển embedding về:
-
-```env
-EMBEDDING_PROVIDER=sentence-transformers
-EMBEDDING_MODEL=intfloat/multilingual-e5-base
+```text
+faiss.index
+vector_metadata.json
+vector_manifest.json
 ```
 
-Trạng thái runtime có thể kiểm tra tại:
-
-```powershell
-curl http://127.0.0.1:8000/api/runtime/status
-```
-
-## Upload, OCR Và Embedding
+## Upload, OCR Và Embedding Tài Liệu Riêng
 
 Luồng upload:
 
@@ -298,112 +328,92 @@ Luồng upload:
 Upload private được lưu tại:
 
 ```text
-output/upload_documents/private/<upload_id>/
-|- chunks.json
-|- chunks.jsonl
-|- embeddings/api/
-`- embeddings/local/
+output/uploads/private/
 ```
 
 Các thư mục upload, session và private runtime data không nên commit lên Git.
 
-## Pipeline Dữ Liệu
+## Runtime Và API Key
 
-Crawl:
+Kiểm tra runtime:
 
 ```powershell
-python -m law_rag.crawl.crawl_laws --docx luat.docx --output output/laws --clean
+curl http://127.0.0.1:8000/api/runtime/status
 ```
 
-Kiểm tra framework chunk:
+Trong trang Admin có thể chuyển runtime giữa `Local` và `OpenAI API`.
 
-```powershell
-python -m law_rag.crawl.chunk_framework_check --input output/laws --json-out output/chunk_framework_report.json
+Khi chọn OpenAI API, backend cần `OPENAI_API_KEY` trong `.env`. Không commit key lên GitHub hoặc bake vào Docker image public.
+
+Khi chọn local, backend cần:
+
+```env
+LLM_PROVIDER=local
+LOCAL_LLM_BASE_URL=http://127.0.0.1:11434/v1
+EMBEDDING_PROVIDER=sentence-transformers
+VECTOR_DIR=output/vbpl_laws_active_partial/retrieval/vector-local
 ```
 
-Chunk:
+Nếu chạy local qua Docker và Ollama nằm trên máy host:
 
-```powershell
-python -m law_rag.crawl.chunk_laws --input output/laws --output-dir output/chunks
-```
-
-Build BM25:
-
-```powershell
-python -m law_rag.retrieval.retrieve_chunks build --chunks output/chunks/all_chunks.jsonl --output output/chunks/retrieval/bm25_index.json
-```
-
-Build FAISS OpenAI:
-
-```powershell
-python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector-openai --backend faiss
-```
-
-Build FAISS local:
-
-```powershell
-python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector-local --backend faiss
-```
-
-Build Atlas:
-
-```powershell
-python -m law_rag.retrieval.build_vector_index --chunks output/chunks/all_chunks.jsonl --output-dir output/chunks/retrieval/vector --backend atlas
-```
-
-## Kiểm Tra
-
-Backend:
-
-```powershell
-python -m compileall law_rag
-python -c "import law_rag.api.server; print('import ok')"
-```
-
-Frontend:
-
-```powershell
-cd law-rag-frontend
-pnpm.cmd lint
-pnpm.cmd build
-```
-
-Docker smoke test:
-
-```powershell
-$env:BACKEND_PORT=18000
-$env:FRONTEND_PORT=13000
-docker compose -f docker/docker-compose.yml up -d
-curl http://127.0.0.1:18000/health
-curl http://127.0.0.1:13000/
-docker compose -f docker/docker-compose.yml down
+```env
+LOCAL_LLM_BASE_URL=http://host.docker.internal:11434/v1
 ```
 
 ## API Chính
 
-- `GET /health`
-- `GET /api/runtime/status`
-- `POST /api/runtime/config`
-- `POST /api/chat/ask`
-- `POST /api/chat/ask/stream`
-- `GET /api/sessions`
-- `GET /api/documents`
-- `GET /api/admin/corpus-status`
-- `POST /api/admin/jobs/crawl`
-- `POST /api/admin/jobs/chunk`
-- `POST /api/admin/jobs/index-bm25`
-- `POST /api/admin/jobs/index-vector`
-- `POST /api/admin/debug/query`
-- `POST /api/uploads`
-- `PATCH /api/uploads/{upload_id}`
-- `POST /api/uploads/{upload_id}/embed`
-- `GET /api/uploads/processed`
+```text
+GET  /health
+GET  /api/runtime/status
+POST /api/chat/ask
+POST /api/chat/ask/stream
+GET  /api/sessions
+GET  /api/sessions/{session_id}/conversation
+POST /api/debug/search
+GET  /api/admin/documents
+GET  /api/uploads
+POST /api/uploads
+PATCH /api/uploads/{upload_id}
+POST /api/uploads/{upload_id}/embed
+```
+
+## Chạy Web Public Với Domain `lawrag.online`
+
+Sơ đồ hiện tại:
+
+```text
+https://www.lawrag.online/chat  -> frontend trên Vercel
+https://api.lawrag.online       -> Cloudflare Tunnel
+Cloudflare Tunnel               -> backend FastAPI trên máy cá nhân
+```
+
+Khởi động backend:
+
+```powershell
+cd C:\Users\Admin\Desktop\Law-RAG
+.\.venv\Scripts\python.exe -m uvicorn law_rag.api.server:app --host 127.0.0.1 --port 8000
+```
+
+Khởi động Cloudflare Tunnel:
+
+```powershell
+cloudflared tunnel run lawrag-api
+```
+
+Kiểm tra:
+
+```powershell
+curl http://127.0.0.1:8000/health
+curl https://api.lawrag.online/health
+```
+
+Nếu tắt máy hoặc dừng tunnel, frontend vẫn mở được nhưng chat sẽ không gọi được API.
 
 ## Ghi Chú Vận Hành
 
 - Không commit `.env`, uploads, sessions hoặc private upload data.
-- `.gitignore` đã ignore các file runtime nhạy cảm, nhưng nếu file đã từng được Git track thì cần `git rm --cached` để gỡ khỏi index.
+- Nếu API key đã từng lộ, hãy rotate key trên OpenAI dashboard và cập nhật lại `.env`.
 - Nếu dùng OpenAI mode mà thiếu `OPENAI_API_KEY`, chat/embedding OpenAI sẽ lỗi nhưng health check vẫn chạy.
-- Nếu dùng local mode, cần chạy Ollama/LM Studio hoặc endpoint OpenAI-compatible tương ứng.
+- Nếu dùng local mode, cần chạy Ollama/LM Studio/vLLM hoặc endpoint OpenAI-compatible tương ứng.
 - Nếu dùng SentenceTransformers lần đầu, model local embedding có thể mất thời gian tải từ Hugging Face.
-- `https://www.lawrag.online/chat` phụ thuộc vào backend đang chạy trên máy cá nhân qua Cloudflare Tunnel.
+- Backend đang dùng corpus mặc định tại `output/vbpl_laws_active_partial`.

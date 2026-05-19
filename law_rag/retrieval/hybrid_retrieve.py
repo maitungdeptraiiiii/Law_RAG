@@ -467,6 +467,8 @@ def faiss_vector_search(query: str, vector_dir: Path, top_k: int, embedding_mode
                 "score": float(score),
                 "chunk_id": item["chunk_id"],
                 "source_file": item["source_file"],
+                "vbpl_id": item.get("vbpl_id"),
+                "doc_number": item.get("doc_number"),
                 "article_number": item.get("article_number"),
                 "clause_number": item.get("clause_number"),
                 "point_number": item.get("point_number"),
@@ -516,6 +518,8 @@ def atlas_backend_search(
                 "score": float(item["score"]),
                 "chunk_id": item["chunk_id"],
                 "source_file": item["source_file"],
+                "vbpl_id": item.get("vbpl_id"),
+                "doc_number": item.get("doc_number"),
                 "article_number": item.get("article_number"),
                 "clause_number": item.get("clause_number"),
                 "point_number": item.get("point_number"),
@@ -688,8 +692,8 @@ def main() -> None:
 
     parser = argparse.ArgumentParser(description="Retrieval: BM25, vector-only, hoac hybrid")
     parser.add_argument("query", help="Natural language legal query")
-    parser.add_argument("--chunks", default="output/chunks/all_chunks.jsonl", help="Path to all_chunks.jsonl")
-    parser.add_argument("--bm25-index", default="output/chunks/retrieval/bm25_index.json", help="Path to BM25 index JSON")
+    parser.add_argument("--chunks", default="output/vbpl_laws_active_partial/all_chunks.jsonl", help="Path to all_chunks.jsonl")
+    parser.add_argument("--bm25-index", default="output/vbpl_laws_active_partial/retrieval/bm25_index.json", help="Path to BM25 index JSON")
     parser.add_argument("--vector-dir", default=default_vector_dir(), help="Thu muc chua FAISS index va metadata")
     parser.add_argument("--retrieval-mode", choices=["hybrid", "vector", "bm25"], default="hybrid", help="Che do retrieval")
     parser.add_argument("--query-rewrite-mode", choices=["none", "llm"], default="none", help="Che do rewrite query truoc retrieval")
