@@ -5,7 +5,7 @@ import { X, ExternalLink, FileText, ChevronDown, ChevronUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { useState } from 'react'
-import { formatSourceCitation, sourceDocumentLabel } from '@/lib/legal-citation'
+import { formatSourceCitation, sourceDocumentLabel, sourceShortReference } from '@/lib/legal-citation'
 import type { RetrievedSource } from '@/lib/types'
 
 interface SourceEvidencePanelProps {
@@ -59,6 +59,7 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
           {sources.map((source, index) => {
             const citation = formatSourceCitation(source)
             const documentLabel = sourceDocumentLabel(source)
+            const shortReference = sourceShortReference(source)
 
             return (
             <div
@@ -78,6 +79,9 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
                     <h4 className="font-medium text-sm leading-tight mb-1 line-clamp-2">
                       {documentLabel}
                     </h4>
+                    {shortReference && (
+                      <p className="text-xs text-muted-foreground mb-2 leading-relaxed">{shortReference}</p>
+                    )}
                     <div className="flex flex-wrap items-center gap-2">
                       {source.documentType && (
                         <span className="px-1.5 py-0.5 rounded text-xs bg-secondary text-secondary-foreground">
@@ -91,7 +95,9 @@ export function SourceEvidencePanel({ sources, onClose }: SourceEvidencePanelPro
                         {(source.relevanceScore * 100).toFixed(0)}%
                       </span>
                     </div>
-                    <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{citation}</p>
+                    {!shortReference && (
+                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{citation}</p>
+                    )}
                   </div>
                   <div className="flex-shrink-0">
                     {expandedId === source.id ? (

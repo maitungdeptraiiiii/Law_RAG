@@ -88,5 +88,6 @@ def default_vector_dir() -> str:
     explicit_dir = os.getenv("VECTOR_DIR")
     if explicit_dir:
         return explicit_dir
+    corpus_name = os.getenv("CORPUS_NAME", "vbpl_business_guidance_mvp")
     suffix = "local" if runtime_mode() == "local" else "openai"
-    return f"output/vbpl_laws_active_partial/retrieval/vector-{suffix}"
+    return f"output/{corpus_name}/retrieval/vector-{suffix}"

@@ -13,6 +13,7 @@ import faiss
 import numpy as np
 
 from .core.embedding_client import embed_texts
+from .legal_chunking import split_legal_chunk
 from .retrieval.retrieve_chunks import build_index_payload, build_searchable_text, save_index
 
 LOW_CONFIDENCE_THRESHOLD = 0.7
@@ -43,6 +44,14 @@ class UploadChunk:
     upload_id: str
     workspace: str
     ocr_confidence: float
+    parent_chunk_id: str | None = None
+    part_index: int | None = None
+    part_count: int | None = None
+    subchunk_number: int | None = None
+    subchunk_count: int | None = None
+    display_title: str | None = None
+    fallback_split: bool = False
+    overlap_chars: int = 0
 
 
 ARTICLE_RE = re.compile(r"^Điều\s+(\d+[A-Za-z]?)\.\s*(.*)$", re.IGNORECASE)
@@ -311,7 +320,13 @@ def build_upload_chunks(
                         **base,
                     )
                 )
-    return chunks
+    expanded_chunks: list[UploadChunk] = []
+    field_names = set(UploadChunk.__dataclass_fields__)
+    for chunk in chunks:
+        for split_chunk in split_legal_chunk(asdict(chunk), max_chars=max_chunk_chars):
+            payload = {field: split_chunk.get(field) for field in field_names}
+            expanded_chunks.append(UploadChunk(**payload))
+    return expanded_chunks
 
 
 def _persist_public_document(

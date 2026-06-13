@@ -10,6 +10,9 @@ from pathlib import Path
 
 
 TOKEN_RE = re.compile(r"\w+", re.UNICODE)
+MAX_SEARCHABLE_METADATA_CHARS = 500
+MAX_SEARCHABLE_FIELD_CHARS = 250
+MAX_SEARCHABLE_LIST_ITEMS = 20
 
 
 @dataclass
@@ -50,20 +53,50 @@ def build_searchable_text(chunk: dict) -> str:
     parts: list[str] = []
 
     if chunk.get("document_title"):
-        parts.extend([chunk["document_title"], chunk["document_title"]])
+        title = _limit_searchable_field(str(chunk["document_title"]))
+        parts.extend([title, title])
     if chunk.get("doc_number"):
         parts.append(chunk["doc_number"])
+    if chunk.get("doc_type"):
+        parts.append(chunk["doc_type"])
+    if chunk.get("effective_status"):
+        parts.append(chunk["effective_status"])
+    if chunk.get("agency_name"):
+        parts.append(chunk["agency_name"])
+    if chunk.get("majors"):
+        parts.extend(_limit_searchable_field(str(item)) for item in chunk["majors"][:MAX_SEARCHABLE_LIST_ITEMS])
+    if chunk.get("fields"):
+        parts.extend(_limit_searchable_field(str(item)) for item in chunk["fields"][:MAX_SEARCHABLE_LIST_ITEMS])
+    if chunk.get("metadata_text"):
+        parts.append(_limit_searchable_metadata(str(chunk["metadata_text"])))
+    if chunk.get("display_title"):
+        parts.append(_limit_searchable_field(str(chunk["display_title"])))
     if chunk.get("article_title"):
-        parts.extend([chunk["article_title"], chunk["article_title"]])
+        article_title = _limit_searchable_field(str(chunk["article_title"]))
+        parts.extend([article_title, article_title])
     if chunk.get("target_article"):
-        parts.append(chunk["target_article"])
+        parts.append(_limit_searchable_field(str(chunk["target_article"])))
     if chunk.get("chapter"):
-        parts.append(chunk["chapter"])
+        parts.append(_limit_searchable_field(str(chunk["chapter"])))
     if chunk.get("part"):
-        parts.append(chunk["part"])
+        parts.append(_limit_searchable_field(str(chunk["part"])))
 
     parts.append(chunk["text"])
     return "\n".join(part for part in parts if part)
+
+
+def _limit_searchable_metadata(text: str) -> str:
+    normalized = re.sub(r"\s+", " ", text).strip()
+    if len(normalized) <= MAX_SEARCHABLE_METADATA_CHARS:
+        return normalized
+    return normalized[:MAX_SEARCHABLE_METADATA_CHARS].rsplit(" ", 1)[0].strip()
+
+
+def _limit_searchable_field(text: str) -> str:
+    normalized = re.sub(r"\s+", " ", text).strip()
+    if len(normalized) <= MAX_SEARCHABLE_FIELD_CHARS:
+        return normalized
+    return normalized[:MAX_SEARCHABLE_FIELD_CHARS].rsplit(" ", 1)[0].strip()
 
 
 def load_chunks(chunks_path: Path) -> list[dict]:
@@ -129,7 +162,10 @@ def build_index_payload(chunks_path: Path) -> dict:
 
 def save_index(index_payload: dict, output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(index_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    temp_path = output_path.with_suffix(output_path.suffix + ".tmp")
+    with temp_path.open("w", encoding="utf-8") as handle:
+        json.dump(index_payload, handle, ensure_ascii=False, separators=(",", ":"))
+    temp_path.replace(output_path)
 
 
 def load_index(index_path: Path) -> dict:

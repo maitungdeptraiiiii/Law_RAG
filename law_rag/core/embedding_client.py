@@ -1,9 +1,10 @@
 from __future__ import annotations
 
 import os
+import time
 from functools import lru_cache
 
-from openai import OpenAI
+from openai import APIConnectionError, APITimeoutError, OpenAI, RateLimitError
 
 from .env_loader import load_project_env
 from .runtime_config import embedding_model, embedding_provider
@@ -46,8 +47,16 @@ def embed_texts_openai(texts: list[str], *, model: str) -> list[list[float]]:
 
     base_url = os.getenv("OPENAI_BASE_URL")
     client = OpenAI(api_key=api_key, base_url=base_url) if base_url else OpenAI(api_key=api_key)
-    response = client.embeddings.create(model=model, input=texts)
-    return [item.embedding for item in response.data]
+    for attempt in range(8):
+        try:
+            response = client.embeddings.create(model=model, input=texts)
+            return [item.embedding for item in response.data]
+        except (RateLimitError, APITimeoutError, APIConnectionError):
+            if attempt == 7:
+                raise
+            time.sleep(min(2**attempt, 30))
+
+    raise RuntimeError("Khong tao duoc embedding OpenAI.")
 
 
 def embed_texts_openai_compatible(texts: list[str], *, model: str) -> list[list[float]]:

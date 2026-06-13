@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import time
 from pathlib import Path
 from typing import Any, Callable
 
@@ -20,8 +21,6 @@ from ..retrieval.hybrid_retrieve import build_retrieval_queries, hybrid_search
 
 DEFAULT_CHAT_MODEL = chat_model()
 DEFAULT_MEMORY_MODEL = memory_model()
-
-
 SYSTEM_PROMPT = """Bạn là trợ lý pháp lý nội bộ cho dự án RAG luật Việt Nam.
 Chỉ được trả lời dựa trên các đoạn luật được cung cấp.
 Nếu context chưa đủ để kết luận chắc chắn, vẫn phải rút ra tối đa những khả năng có thể suy ra từ context hiện có.
@@ -77,7 +76,9 @@ def get_openai_client() -> Any:
 def build_context(results: list[dict]) -> str:
     blocks: list[str] = []
     for index, item in enumerate(results, start=1):
-        reference = [item["source_file"]]
+        reference = [str(item.get("document_title") or item.get("doc_number") or item["source_file"])]
+        if item.get("doc_number"):
+            reference.append(str(item["doc_number"]))
         if item.get("article_number"):
             reference.append(f"Điều {item['article_number']}")
         if item.get("clause_number"):
@@ -98,6 +99,7 @@ def build_context(results: list[dict]) -> str:
             f"Nội dung: {item.get('text', item['preview'])}"
         )
     return "\n\n".join(blocks)
+
 
 
 def update_case_memory(
@@ -158,29 +160,39 @@ def answer_question(
     session_dir: Path | None = None,
     answer_stream_callback: Callable[[str], None] | None = None,
 ) -> dict:
+    total_started = time.perf_counter()
+    timings: dict[str, Any] = {}
     client = get_openai_client()
     session: dict[str, Any] | None = None
     memory_update: dict[str, Any] | None = None
 
     if session_id:
+        memory_started = time.perf_counter()
         session = load_session(session_id, session_dir)
         append_history(session, "user", question)
         memory_update = update_case_memory(client, question=question, session=session, model=memory_model)
+        timings["memoryUpdate"] = int((time.perf_counter() - memory_started) * 1000)
         session["case_summary"] = memory_update["case_summary"]
         session["facts"] = memory_update["facts"]
         session["pending_follow_up"] = memory_update["follow_up_question"] if memory_update["need_clarification"] else None
         session["last_retrieval_query"] = memory_update["retrieval_query"]
+    else:
+        timings["memoryUpdate"] = 0
 
     retrieval_input = question
     if memory_update and memory_update["retrieval_query"]:
         retrieval_input = memory_update["retrieval_query"]
 
+    rewrite_started = time.perf_counter()
     retrieval_plan = build_retrieval_queries(
         retrieval_input,
         rewrite_mode=query_rewrite_mode,
         rewrite_model=query_rewrite_model,
         max_rewrites=query_rewrite_count,
     )
+    timings["queryRewrite"] = int((time.perf_counter() - rewrite_started) * 1000)
+    retrieval_debug_timings: dict[str, Any] = {}
+    retrieval_started = time.perf_counter()
     retrieved = hybrid_search(
         retrieval_input,
         retrieval_queries=retrieval_plan["retrieval_queries"],
@@ -199,8 +211,12 @@ def answer_question(
         final_top_k=top_k,
         additional_bm25_sources=additional_bm25_sources,
         additional_vector_dirs=additional_vector_dirs,
+        debug_timings=retrieval_debug_timings,
     )
+    timings["retrieval"] = int((time.perf_counter() - retrieval_started) * 1000)
+    timings.update(retrieval_debug_timings)
 
+    context_started = time.perf_counter()
     context = build_context(retrieved)
     case_state_text = format_case_state(session) if session else "Không có bộ nhớ hội thoại."
     history_text = format_recent_history(session) if session else "Không có hội thoại trước đó."
@@ -210,6 +226,8 @@ def answer_question(
     pending_follow_up_text = (
         memory_update["follow_up_question"] if memory_update and memory_update.get("follow_up_question") else "Không có."
     )
+    timings["contextBuild"] = int((time.perf_counter() - context_started) * 1000)
+    final_llm_started = time.perf_counter()
     answer = chat_completion_text(
         client,
         model=model,
@@ -231,17 +249,29 @@ def answer_question(
             },
         ],
     )
+    timings["finalLlm"] = int((time.perf_counter() - final_llm_started) * 1000)
+    timings["totalInner"] = int((time.perf_counter() - total_started) * 1000)
     payload = {
         "question": question,
         "legal_intent": retrieval_plan["legal_intent"],
         "retrieval_queries": retrieval_plan["retrieval_queries"],
         "retrieval_input": retrieval_input,
+        "retrieval_query_count": len(retrieval_plan["retrieval_queries"]),
+        "retrieval_input_chars": len(retrieval_input),
+        "context_chars": len(context),
+        "timings": timings,
         "answer": answer,
         "answer_type": "final",
         "retrieved": [
             {
                 "chunk_id": item["chunk_id"],
                 "source_file": item["source_file"],
+                "vbpl_id": item.get("vbpl_id"),
+                "doc_number": item.get("doc_number"),
+                "doc_type": item.get("doc_type"),
+                "document_title": item.get("document_title"),
+                "source_url": item.get("source_url"),
+                "issue_date": item.get("issue_date"),
                 "article_number": item.get("article_number"),
                 "clause_number": item.get("clause_number"),
                 "target_article": item.get("target_article"),

@@ -4,8 +4,11 @@ import argparse
 import json
 import re
 import sys
+import threading
+import time
 import unicodedata
 from pathlib import Path
+from typing import Any
 
 import faiss
 import numpy as np
@@ -21,12 +24,32 @@ from .retrieve_chunks import (
     query_index,
     save_index,
 )
+from .sqlite_retrieval_store import (
+    SQLiteRetrievalStore,
+    build_sqlite_retrieval_store,
+    default_store_path_for_bm25_index,
+    default_store_path_for_chunks,
+    open_store_if_exists,
+)
+from .model_reranker import rerank_candidates_with_model
 
 
 DEFAULT_QUERY_REWRITE_MODEL = query_rewrite_model()
 TOKEN_RE = re.compile(r"\w+", re.UNICODE)
 ARTICLE_RE = re.compile(r"\b(?:điều|dieu|article)\s+(\d+[a-z]?)\b", re.IGNORECASE)
 LEGAL_NUMBER_RE = re.compile(r"\b\d{1,4}\s*[/\-]\s*\d{4}\s*[/\-]\s*[A-Za-zĐđ]+[A-Za-z0-9Đđ]*\b")
+
+MAX_RETRIEVAL_QUERY_CHARS = 180
+MAX_ACTIVE_RETRIEVAL_QUERIES = 3
+
+_VECTOR_ASSET_CACHE_LOCK = threading.RLock()
+_VECTOR_ASSET_CACHE: dict[
+    Path,
+    tuple[
+        tuple[tuple[str, int, int], ...],
+        tuple[dict, list[dict] | SQLiteRetrievalStore, faiss.Index],
+    ],
+] = {}
 
 COLLOQUIAL_QUERY_EXPANSIONS: list[tuple[tuple[str, ...], list[str]]] = [
     (
@@ -145,7 +168,7 @@ def deduplicate_queries(queries: list[str]) -> list[str]:
     seen: set[str] = set()
     ordered: list[str] = []
     for query in queries:
-        normalized = " ".join(query.split())
+        normalized = compact_retrieval_query(query)
         if not normalized:
             continue
         lowered = normalized.casefold()
@@ -154,6 +177,19 @@ def deduplicate_queries(queries: list[str]) -> list[str]:
         seen.add(lowered)
         ordered.append(normalized)
     return ordered
+
+
+def compact_retrieval_query(query: str, *, max_chars: int = MAX_RETRIEVAL_QUERY_CHARS) -> str:
+    normalized = " ".join(str(query or "").split())
+    if len(normalized) <= max_chars:
+        return normalized
+
+    clipped = normalized[:max_chars].rsplit(" ", 1)[0].strip()
+    return clipped or normalized[:max_chars].strip()
+
+
+def limit_retrieval_queries(queries: list[str], *, max_queries: int = MAX_ACTIVE_RETRIEVAL_QUERIES) -> list[str]:
+    return deduplicate_queries(queries)[:max_queries]
 
 
 def build_rule_based_query_expansions(query: str) -> list[str]:
@@ -250,34 +286,46 @@ def pinned_document_chunks(chunks_paths: list[Path], queries: list[str], *, limi
     for chunks_path in chunks_paths:
         if not chunks_path.exists():
             continue
-        for line in chunks_path.read_text(encoding="utf-8").splitlines():
-            if not line.strip():
-                continue
-            chunk = json.loads(line)
-            source_file = str(chunk.get("source_file") or "")
-            normalized_source = normalize_identifier(source_file)
-            if not any(identifier in normalized_source for identifier in identifiers):
-                continue
-            if pinned_count_by_source.get(source_file, 0) >= limit_per_document:
-                continue
-            pinned_count_by_source[source_file] = pinned_count_by_source.get(source_file, 0) + 1
-            text = str(chunk.get("text") or "")
-            pinned.append(
-                {
-                    "score": 1.0,
-                    "chunk_id": chunk["chunk_id"],
-                    "source_file": source_file,
-                    "article_number": chunk.get("article_number"),
-                    "clause_number": chunk.get("clause_number"),
-                    "point_number": chunk.get("point_number"),
-                    "document_title": chunk.get("document_title"),
-                    "chapter": chunk.get("chapter"),
-                    "target_article": chunk.get("target_article"),
-                    "preview": text[:400],
-                    "text": text,
-                    "search_source": "document",
-                }
-            )
+        if chunks_path.stat().st_size > 250 * 1024 * 1024:
+            continue
+        with chunks_path.open(encoding="utf-8") as source:
+            for line in source:
+                if not line.strip():
+                    continue
+                chunk = json.loads(line)
+                source_file = str(chunk.get("source_file") or "")
+                searchable_identifier = " ".join(
+                    str(chunk.get(key) or "")
+                    for key in ("source_file", "doc_number", "document_title")
+                )
+                normalized_source = normalize_identifier(searchable_identifier)
+                if not any(identifier in normalized_source for identifier in identifiers):
+                    continue
+                if pinned_count_by_source.get(source_file, 0) >= limit_per_document:
+                    continue
+                pinned_count_by_source[source_file] = pinned_count_by_source.get(source_file, 0) + 1
+                text = str(chunk.get("text") or "")
+                pinned.append(
+                    {
+                        "score": 1.0,
+                        "chunk_id": chunk["chunk_id"],
+                        "source_file": source_file,
+                        "vbpl_id": chunk.get("vbpl_id"),
+                        "doc_number": chunk.get("doc_number"),
+                        "doc_type": chunk.get("doc_type"),
+                        "source_url": chunk.get("source_url"),
+                        "issue_date": chunk.get("issue_date"),
+                        "article_number": chunk.get("article_number"),
+                        "clause_number": chunk.get("clause_number"),
+                        "point_number": chunk.get("point_number"),
+                        "document_title": chunk.get("document_title"),
+                        "chapter": chunk.get("chapter"),
+                        "target_article": chunk.get("target_article"),
+                        "preview": text[:400],
+                        "text": text,
+                        "search_source": "document",
+                    }
+                )
     return pinned
 
 
@@ -316,6 +364,13 @@ def rerank_results(results: list[dict], *, queries: list[str], top_k: int) -> li
 
     reranked.sort(key=lambda item: item["rerank_score"], reverse=True)
     return reranked[:top_k]
+
+
+def rerank_candidates(results: list[dict], *, queries: list[str], top_k: int, debug_timings: dict[str, Any] | None = None) -> list[dict]:
+    model_reranked = rerank_candidates_with_model(results, queries=queries, top_k=top_k, debug_timings=debug_timings)
+    if model_reranked is not None:
+        return model_reranked
+    return rerank_results(results, queries=queries, top_k=top_k)
 
 
 def prioritize_pinned_results(results: list[dict], pinned_results: list[dict], *, top_k: int, max_pinned: int = 3) -> list[dict]:
@@ -408,11 +463,11 @@ def build_retrieval_queries(
         return {
             "original_query": query,
             "legal_intent": "",
-            "retrieval_queries": deduplicate_queries([query, *rule_based_queries]),
+            "retrieval_queries": limit_retrieval_queries([query, *rule_based_queries]),
         }
 
     rewritten = rewrite_query_with_llm(query, model=rewrite_model, max_rewrites=max_rewrites)
-    retrieval_queries = deduplicate_queries([query, *rule_based_queries, *rewritten["retrieval_queries"]])
+    retrieval_queries = limit_retrieval_queries([query, *rule_based_queries, *rewritten["retrieval_queries"]])
     return {
         "original_query": query,
         "legal_intent": rewritten["legal_intent"],
@@ -420,7 +475,16 @@ def build_retrieval_queries(
     }
 
 
-def ensure_bm25_index(chunks_path: Path, bm25_index_path: Path) -> dict:
+def ensure_bm25_index(chunks_path: Path, bm25_index_path: Path) -> dict | SQLiteRetrievalStore:
+    sqlite_store_path = default_store_path_for_bm25_index(bm25_index_path)
+    sqlite_store = open_store_if_exists(sqlite_store_path)
+    if sqlite_store is not None:
+        return sqlite_store
+
+    if chunks_path.exists():
+        build_sqlite_retrieval_store(chunks_path=chunks_path, output_path=sqlite_store_path)
+        return SQLiteRetrievalStore(sqlite_store_path)
+
     if bm25_index_path.exists():
         return load_index(bm25_index_path)
 
@@ -429,11 +493,75 @@ def ensure_bm25_index(chunks_path: Path, bm25_index_path: Path) -> dict:
     return payload
 
 
-def load_vector_assets(vector_dir: Path) -> tuple[dict, list[dict], faiss.Index]:
+def resolve_vector_store_path(vector_dir: Path, manifest: dict) -> Path:
+    configured_path = manifest.get("retrieval_store_path")
+    if configured_path:
+        return Path(configured_path)
+    chunks_path = manifest.get("chunks_path")
+    if chunks_path:
+        return default_store_path_for_chunks(Path(chunks_path))
+    return vector_dir / "retrieval_store.sqlite"
+
+
+def vector_asset_signature(vector_dir: Path, manifest: dict) -> tuple[tuple[str, int, int], ...]:
+    paths = [
+        vector_dir / "vector_manifest.json",
+        vector_dir / "faiss.index",
+    ]
+    sqlite_store_path = resolve_vector_store_path(vector_dir, manifest)
+    if sqlite_store_path.exists():
+        paths.append(sqlite_store_path)
+    else:
+        paths.append(vector_dir / "vector_metadata.json")
+
+    signature: list[tuple[str, int, int]] = []
+    for path in paths:
+        stat = path.stat()
+        signature.append((str(path.resolve()), stat.st_mtime_ns, stat.st_size))
+    return tuple(signature)
+
+
+def load_vector_assets_uncached(vector_dir: Path) -> tuple[dict, list[dict] | SQLiteRetrievalStore, faiss.Index]:
     manifest = json.loads((vector_dir / "vector_manifest.json").read_text(encoding="utf-8"))
-    metadata = json.loads((vector_dir / "vector_metadata.json").read_text(encoding="utf-8"))
+    sqlite_store_path = resolve_vector_store_path(vector_dir, manifest)
+    metadata_store = open_store_if_exists(sqlite_store_path)
+    if metadata_store is not None:
+        metadata: list[dict] | SQLiteRetrievalStore = metadata_store
+    else:
+        metadata = json.loads((vector_dir / "vector_metadata.json").read_text(encoding="utf-8"))
     index = faiss.read_index(str(vector_dir / "faiss.index"))
     return manifest, metadata, index
+
+
+def load_vector_assets(
+    vector_dir: Path,
+    debug_timings: dict[str, Any] | None = None,
+) -> tuple[dict, list[dict] | SQLiteRetrievalStore, faiss.Index]:
+    started = time.perf_counter()
+    vector_dir = vector_dir.resolve()
+    manifest = json.loads((vector_dir / "vector_manifest.json").read_text(encoding="utf-8"))
+    signature = vector_asset_signature(vector_dir, manifest)
+
+    with _VECTOR_ASSET_CACHE_LOCK:
+        cached = _VECTOR_ASSET_CACHE.get(vector_dir)
+        if cached and cached[0] == signature:
+            if debug_timings is not None:
+                debug_timings["vectorAssetCacheHit"] = int(debug_timings.get("vectorAssetCacheHit", 0)) + 1
+                debug_timings["vectorAssetCacheHitLastMs"] = int((time.perf_counter() - started) * 1000)
+            return cached[1]
+
+        assets = load_vector_assets_uncached(vector_dir)
+        stale = _VECTOR_ASSET_CACHE.get(vector_dir)
+        if stale:
+            stale_metadata = stale[1][1]
+            if isinstance(stale_metadata, SQLiteRetrievalStore):
+                stale_metadata.close()
+        _VECTOR_ASSET_CACHE[vector_dir] = (signature, assets)
+        if debug_timings is not None:
+            debug_timings["vectorAssetCacheMiss"] = int(debug_timings.get("vectorAssetCacheMiss", 0)) + 1
+            debug_timings["vectorAssetCacheMissLastMs"] = int((time.perf_counter() - started) * 1000)
+        return assets
+
 
 
 def load_atlas_manifest(vector_dir: Path) -> dict:
@@ -449,19 +577,39 @@ def normalize_query_for_faiss(vector: np.ndarray) -> np.ndarray:
     return normalized
 
 
-def faiss_vector_search(query: str, vector_dir: Path, top_k: int, embedding_model: str | None = None) -> list[dict]:
-    manifest, metadata, index = load_vector_assets(vector_dir)
+def faiss_vector_search(
+    query: str,
+    vector_dir: Path,
+    top_k: int,
+    embedding_model: str | None = None,
+    debug_timings: dict[str, Any] | None = None,
+) -> list[dict]:
+    load_started = time.perf_counter()
+    manifest, metadata, index = load_vector_assets(vector_dir, debug_timings=debug_timings)
+    load_ms = int((time.perf_counter() - load_started) * 1000)
     model = manifest.get("embedding_model") or embedding_model or DEFAULT_EMBEDDING_MODEL
     provider = manifest.get("embedding_provider") or embedding_provider()
+    embed_started = time.perf_counter()
     raw_query_vector = np.array(embed_query_text(query, model=model, provider=provider), dtype="float32")
+    embed_ms = int((time.perf_counter() - embed_started) * 1000)
     query_vector = normalize_query_for_faiss(raw_query_vector)
+    search_started = time.perf_counter()
     scores, indices = index.search(query_vector, top_k)
+    search_ms = int((time.perf_counter() - search_started) * 1000)
+    metadata_started = time.perf_counter()
 
     results: list[dict] = []
+    metadata_by_index = (
+        metadata.get_metadata_by_vector_indices(int(idx) for idx in indices[0] if idx >= 0)
+        if isinstance(metadata, SQLiteRetrievalStore)
+        else {}
+    )
     for score, idx in zip(scores[0], indices[0]):
         if idx < 0:
             continue
-        item = metadata[idx]
+        item = metadata_by_index.get(int(idx)) if isinstance(metadata, SQLiteRetrievalStore) else metadata[idx]
+        if not item:
+            continue
         results.append(
             {
                 "score": float(score),
@@ -469,6 +617,9 @@ def faiss_vector_search(query: str, vector_dir: Path, top_k: int, embedding_mode
                 "source_file": item["source_file"],
                 "vbpl_id": item.get("vbpl_id"),
                 "doc_number": item.get("doc_number"),
+                "doc_type": item.get("doc_type"),
+                "source_url": item.get("source_url"),
+                "issue_date": item.get("issue_date"),
                 "article_number": item.get("article_number"),
                 "clause_number": item.get("clause_number"),
                 "point_number": item.get("point_number"),
@@ -480,7 +631,28 @@ def faiss_vector_search(query: str, vector_dir: Path, top_k: int, embedding_mode
                 "search_source": "vector",
             }
         )
+    if debug_timings is not None:
+        vector_queries = debug_timings.setdefault("vectorQueries", [])
+        if isinstance(vector_queries, list):
+            vector_queries.append(
+                {
+                    "ms": load_ms + embed_ms + search_ms + int((time.perf_counter() - metadata_started) * 1000),
+                    "loadMs": load_ms,
+                    "embedMs": embed_ms,
+                    "searchMs": search_ms,
+                    "metadataMs": int((time.perf_counter() - metadata_started) * 1000),
+                    "chars": len(query),
+                    "results": len(results),
+                    "query": query[:120],
+                }
+            )
     return results
+
+
+def query_bm25_index(index_payload: dict | SQLiteRetrievalStore, query: str, top_k: int) -> list[dict]:
+    if isinstance(index_payload, SQLiteRetrievalStore):
+        return index_payload.query_bm25(query, top_k)
+    return query_index(index_payload, query, top_k)
 
 
 def atlas_backend_search(
@@ -520,6 +692,9 @@ def atlas_backend_search(
                 "source_file": item["source_file"],
                 "vbpl_id": item.get("vbpl_id"),
                 "doc_number": item.get("doc_number"),
+                "doc_type": item.get("doc_type"),
+                "source_url": item.get("source_url"),
+                "issue_date": item.get("issue_date"),
                 "article_number": item.get("article_number"),
                 "clause_number": item.get("clause_number"),
                 "point_number": item.get("point_number"),
@@ -545,6 +720,7 @@ def vector_search(
     atlas_db: str | None,
     atlas_collection: str | None,
     atlas_vector_index: str | None,
+    debug_timings: dict[str, Any] | None = None,
 ) -> list[dict]:
     if vector_backend == "atlas":
         return atlas_backend_search(
@@ -557,7 +733,7 @@ def vector_search(
             atlas_collection=atlas_collection,
             atlas_vector_index=atlas_vector_index,
         )
-    return faiss_vector_search(query, vector_dir, top_k, embedding_model=embedding_model)
+    return faiss_vector_search(query, vector_dir, top_k, embedding_model=embedding_model, debug_timings=debug_timings)
 
 
 def safe_faiss_vector_search(query: str, vector_dir: Path, top_k: int) -> list[dict]:
@@ -624,13 +800,22 @@ def hybrid_search(
     final_top_k: int,
     additional_bm25_sources: list[tuple[Path, Path]] | None = None,
     additional_vector_dirs: list[Path] | None = None,
+    debug_timings: dict[str, Any] | None = None,
 ) -> list[dict]:
-    active_queries = retrieval_queries or [query]
+    retrieval_started = time.perf_counter()
+    active_queries = limit_retrieval_queries(retrieval_queries or [query])
     candidate_k = max(final_top_k * 4, final_top_k, 20)
     bm25_sources = [(chunks_path, bm25_index_path), *(additional_bm25_sources or [])]
+    pinned_started = time.perf_counter()
     pinned_results = pinned_document_chunks([source_chunks_path for source_chunks_path, _ in bm25_sources], active_queries)
+    if debug_timings is not None:
+        debug_timings["retrievalPinned"] = int((time.perf_counter() - pinned_started) * 1000)
+        debug_timings["retrievalActiveQueries"] = len(active_queries)
+        debug_timings["retrievalBm25Sources"] = len(bm25_sources)
+        debug_timings["retrievalExtraVectorDirs"] = len(additional_vector_dirs or [])
 
     bm25_ranked_lists: list[list[dict]] = []
+    bm25_started = time.perf_counter()
     if retrieval_mode in {"bm25", "hybrid"}:
         if pinned_results:
             bm25_ranked_lists.append(pinned_results)
@@ -639,12 +824,27 @@ def hybrid_search(
                 continue
             bm25_index = ensure_bm25_index(source_chunks_path, source_index_path)
             for retrieval_query in active_queries:
-                bm25_results = query_index(bm25_index, retrieval_query, bm25_top_k)
+                bm25_query_started = time.perf_counter()
+                bm25_results = query_bm25_index(bm25_index, retrieval_query, bm25_top_k)
+                if debug_timings is not None:
+                    bm25_queries = debug_timings.setdefault("bm25Queries", [])
+                    if isinstance(bm25_queries, list):
+                        bm25_queries.append(
+                            {
+                                "ms": int((time.perf_counter() - bm25_query_started) * 1000),
+                                "chars": len(retrieval_query),
+                                "results": len(bm25_results),
+                                "query": retrieval_query[:120],
+                            }
+                        )
                 for item in bm25_results:
                     item["search_source"] = "bm25"
                 bm25_ranked_lists.append(bm25_results)
+    if debug_timings is not None:
+        debug_timings["retrievalBm25"] = int((time.perf_counter() - bm25_started) * 1000)
 
     vector_ranked_lists: list[list[dict]] = []
+    vector_started = time.perf_counter()
     if retrieval_mode in {"vector", "hybrid"}:
         if retrieval_mode == "vector" and pinned_results:
             vector_ranked_lists.append(pinned_results)
@@ -659,6 +859,7 @@ def hybrid_search(
                 atlas_db=atlas_db,
                 atlas_collection=atlas_collection,
                 atlas_vector_index=atlas_vector_index,
+                debug_timings=debug_timings,
             )
             vector_ranked_lists.append(vector_results)
             for extra_vector_dir in additional_vector_dirs or []:
@@ -666,24 +867,39 @@ def hybrid_search(
                     continue
                 extra_vector_results = safe_faiss_vector_search(retrieval_query, extra_vector_dir, vector_top_k)
                 vector_ranked_lists.append(extra_vector_results)
+    if debug_timings is not None:
+        debug_timings["retrievalVector"] = int((time.perf_counter() - vector_started) * 1000)
 
+    fusion_started = time.perf_counter()
     if retrieval_mode == "vector":
         if len(vector_ranked_lists) <= 1:
             candidates = finalize_single_source_results(vector_ranked_lists[0] if vector_ranked_lists else [], top_k=candidate_k)
         else:
             candidates = reciprocal_rank_fusion(*vector_ranked_lists, candidate_k=candidate_k)
-        reranked = rerank_results(candidates, queries=active_queries, top_k=final_top_k)
-        return prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
+        reranked = rerank_candidates(candidates, queries=active_queries, top_k=final_top_k, debug_timings=debug_timings)
+        results = prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
+        if debug_timings is not None:
+            debug_timings["retrievalFusionRerank"] = int((time.perf_counter() - fusion_started) * 1000)
+            debug_timings["retrievalTotal"] = int((time.perf_counter() - retrieval_started) * 1000)
+        return results
     if retrieval_mode == "bm25":
         if len(bm25_ranked_lists) <= 1:
             candidates = finalize_single_source_results(bm25_ranked_lists[0] if bm25_ranked_lists else [], top_k=candidate_k)
         else:
             candidates = reciprocal_rank_fusion(*bm25_ranked_lists, candidate_k=candidate_k)
-        reranked = rerank_results(candidates, queries=active_queries, top_k=final_top_k)
-        return prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
+        reranked = rerank_candidates(candidates, queries=active_queries, top_k=final_top_k, debug_timings=debug_timings)
+        results = prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
+        if debug_timings is not None:
+            debug_timings["retrievalFusionRerank"] = int((time.perf_counter() - fusion_started) * 1000)
+            debug_timings["retrievalTotal"] = int((time.perf_counter() - retrieval_started) * 1000)
+        return results
     candidates = reciprocal_rank_fusion(*bm25_ranked_lists, *vector_ranked_lists, candidate_k=candidate_k)
-    reranked = rerank_results(candidates, queries=active_queries, top_k=final_top_k)
-    return prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
+    reranked = rerank_candidates(candidates, queries=active_queries, top_k=final_top_k, debug_timings=debug_timings)
+    results = prioritize_pinned_results(reranked, pinned_results, top_k=final_top_k)
+    if debug_timings is not None:
+        debug_timings["retrievalFusionRerank"] = int((time.perf_counter() - fusion_started) * 1000)
+        debug_timings["retrievalTotal"] = int((time.perf_counter() - retrieval_started) * 1000)
+    return results
 
 
 def main() -> None:

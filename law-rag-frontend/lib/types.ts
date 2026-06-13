@@ -18,6 +18,53 @@ export interface MessageMetadata {
   embeddingModel?: string
   queryRewritten?: string
   processingTimeMs?: number
+  timings?: {
+    memoryUpdate?: number
+    queryRewrite?: number
+    retrieval?: number
+    retrievalPinned?: number
+    retrievalBm25?: number
+    retrievalVector?: number
+    retrievalFusionRerank?: number
+    modelRerankMs?: number
+    modelRerankProvider?: string
+    modelRerankModel?: string
+    modelRerankCandidates?: number
+    modelRerankDevice?: string
+    modelRerankError?: string
+    retrievalTotal?: number
+    retrievalActiveQueries?: number
+    retrievalBm25Sources?: number
+    retrievalExtraVectorDirs?: number
+    vectorAssetCacheHit?: number
+    vectorAssetCacheMiss?: number
+    vectorAssetCacheHitLastMs?: number
+    vectorAssetCacheMissLastMs?: number
+    bm25Queries?: Array<{
+      ms?: number
+      chars?: number
+      results?: number
+      query?: string
+    }>
+    vectorQueries?: Array<{
+      ms?: number
+      loadMs?: number
+      embedMs?: number
+      searchMs?: number
+      metadataMs?: number
+      chars?: number
+      results?: number
+      query?: string
+    }>
+    contextBuild?: number
+    finalLlm?: number
+    totalInner?: number
+    processingTotal?: number
+  }
+  retrievalQueryCount?: number
+  retrievalInputChars?: number
+  contextChars?: number
+  citationWarnings?: string[]
 }
 
 export interface Session {

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import statistics
 import sys
@@ -18,15 +19,21 @@ if str(ROOT_DIR) not in sys.path:
 
 from law_rag.app.ask_law import DEFAULT_CHAT_MODEL, DEFAULT_MEMORY_MODEL, answer_question
 from law_rag.core.env_loader import load_project_env
+from law_rag.core.runtime_config import default_vector_dir
 from law_rag.retrieval.build_vector_index import DEFAULT_EMBEDDING_MODEL
 from law_rag.retrieval.hybrid_retrieve import DEFAULT_QUERY_REWRITE_MODEL
 
 
-DEFAULT_DATASET_PATH = ROOT_DIR / "output" / "eval" / "law_rag_eval_dataset.json"
+load_project_env()
+
+DEFAULT_DATASET_PATH = ROOT_DIR / "evaluation" / "law_rag_eval_dataset.json"
 DEFAULT_RESULTS_DIR = ROOT_DIR / "output" / "eval" / "runs"
-CHUNKS_PATH = ROOT_DIR / "output" / "chunks" / "all_chunks.jsonl"
-BM25_INDEX_PATH = ROOT_DIR / "output" / "chunks" / "retrieval" / "bm25_index.json"
-VECTOR_DIR = ROOT_DIR / "output" / "chunks" / "retrieval" / "vector"
+CORPUS_NAME = os.getenv("CORPUS_NAME", "vbpl_business_guidance_mvp")
+CORPUS_DIR = ROOT_DIR / "output" / CORPUS_NAME
+CHUNKS_PATH = CORPUS_DIR / "all_chunks.jsonl"
+BM25_INDEX_PATH = CORPUS_DIR / "retrieval" / "bm25_index.json"
+_configured_vector_dir = Path(default_vector_dir())
+VECTOR_DIR = _configured_vector_dir if _configured_vector_dir.is_absolute() else ROOT_DIR / _configured_vector_dir
 SESSIONS_DIR = ROOT_DIR / "output" / "eval" / "sessions"
 
 
@@ -679,7 +686,11 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
         if values:
             summary["scores"][key] = round(statistics.mean(values), 2)
 
-    latencies = [item["metadata"]["latency_ms"] for item in results]
+    latencies = [
+        item.get("metadata", {}).get("latency_ms")
+        for item in results
+        if isinstance(item.get("metadata", {}).get("latency_ms"), int | float)
+    ]
     if latencies:
         summary["latency_ms_avg"] = round(statistics.mean(latencies), 2)
         summary["latency_ms_max"] = max(latencies)
@@ -718,7 +729,6 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> int:
-    load_project_env()
     args = parse_args()
     dataset_path = Path(args.dataset)
     dataset = load_dataset(dataset_path)
@@ -753,6 +763,7 @@ def main() -> int:
                         "vector_backend": config.vector_backend,
                         "top_k": config.top_k,
                         "query_rewrite": config.query_rewrite,
+                        "latency_ms": None,
                     },
                     "todo": "TODO: Kiem tra loi case nay, co the do thieu OPENAI_API_KEY, index hoac expected data.",
                 }
@@ -765,7 +776,8 @@ def main() -> int:
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     print(f"\nWrote results: {output_path}")
     print(f"Dataset used: {dataset_path}")
-    print("TODO: Thay sample dataset bang bo cau hoi chuan cua ban va bo sung expected_sources/answer_points.")
+    if any("TODO:" in str((case.get("reference_outputs") or {}).get("notes") or "") for case in dataset):
+        print("TODO: Thay sample dataset bang bo cau hoi chuan cua ban va bo sung expected_sources/answer_points.")
     return 0
 
 

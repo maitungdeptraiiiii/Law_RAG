@@ -17,7 +17,15 @@ from typing import Any, Literal
 
 from fastapi import BackgroundTasks, FastAPI, File, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from openai import APIError, AuthenticationError
+from openai import (
+    APIConnectionError,
+    APIError,
+    APITimeoutError,
+    AuthenticationError,
+    BadRequestError,
+    PermissionDeniedError,
+    RateLimitError,
+)
 from pydantic import BaseModel, Field
 from starlette.responses import StreamingResponse
 
@@ -36,7 +44,8 @@ from ..core.runtime_config import (
     runtime_mode,
 )
 from ..ocr import OCREngineUnavailable, extract_document_text
-from ..retrieval.hybrid_retrieve import build_retrieval_queries, hybrid_search
+from ..retrieval.hybrid_retrieve import build_retrieval_queries, hybrid_search, load_vector_assets
+from ..retrieval.model_reranker import reranker_enabled, reranker_model, reranker_provider, warmup_model_reranker
 from ..upload_pipeline import delete_processed_upload, list_processed_uploads, persist_reviewed_upload, quality_warning
 
 
@@ -44,7 +53,8 @@ load_project_env()
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 OUTPUT_DIR = ROOT_DIR / "output"
-CORPUS_DIR = OUTPUT_DIR / "vbpl_laws_active_partial"
+CORPUS_NAME = os.getenv("CORPUS_NAME", "vbpl_business_guidance_mvp")
+CORPUS_DIR = OUTPUT_DIR / CORPUS_NAME
 LAW_OUTPUT_DIR = CORPUS_DIR
 CHUNKS_DIR = CORPUS_DIR
 SESSIONS_DIR = OUTPUT_DIR / "sessions"
@@ -64,11 +74,35 @@ DEFAULT_RETRIEVAL_SETTINGS = {
 
 DOCUMENT_TYPE_MAP = {
     "bo_luat": "law",
+    "bo-luat": "law",
     "luat": "law",
     "nghi_dinh": "decree",
+    "nghi-dinh": "decree",
     "thong_tu": "circular",
+    "thong-tu": "circular",
     "nghi_quyet": "resolution",
+    "nghi-quyet": "resolution",
     "quyet_dinh": "decision",
+    "quyet-dinh": "decision",
+}
+
+DOCUMENT_TYPE_LABEL_MAP = {
+    "bộ luật": "law",
+    "luật": "law",
+    "nghị định": "decree",
+    "thông tư": "circular",
+    "nghị quyết": "resolution",
+    "quyết định": "decision",
+}
+
+DOCUMENT_TYPE_DISPLAY_LABELS = {
+    "law": "Luật",
+    "decree": "Nghị định",
+    "circular": "Thông tư",
+    "resolution": "Nghị quyết",
+    "decision": "Quyết định",
+    "guideline": "Hướng dẫn",
+    "other": "Văn bản",
 }
 
 ISSUING_AUTHORITY_MAP = {
@@ -173,6 +207,27 @@ def active_vector_dir() -> Path:
     return ROOT_DIR / default_vector_dir()
 
 
+@app.on_event("startup")
+def warmup_vector_cache() -> None:
+    if os.getenv("WARMUP_VECTOR_CACHE", "true").strip().casefold() not in {"0", "false", "no", "off"}:
+        vector_dir = active_vector_dir()
+        if (vector_dir / "faiss.index").exists():
+            started = time.perf_counter()
+            load_vector_assets(vector_dir)
+            elapsed_ms = int((time.perf_counter() - started) * 1000)
+            print(f"Warmup FAISS vector cache completed in {elapsed_ms}ms: {vector_dir}", flush=True)
+
+    if reranker_enabled() and os.getenv("WARMUP_RERANKER_CACHE", "true").strip().casefold() not in {"0", "false", "no", "off"}:
+        started = time.perf_counter()
+        try:
+            warmup_model_reranker()
+        except Exception as exc:
+            print(f"Warmup reranker skipped: {exc}", flush=True)
+            return
+        elapsed_ms = int((time.perf_counter() - started) * 1000)
+        print(f"Warmup reranker completed in {elapsed_ms}ms: {reranker_model()}", flush=True)
+
+
 def normalize_settings(settings: RetrievalSettingsPayload | None) -> dict[str, Any]:
     if settings is None:
         return dict(DEFAULT_RETRIEVAL_SETTINGS)
@@ -219,11 +274,84 @@ def slug_to_title(slug: str) -> str:
 
 
 def detect_document_type(identifier: str) -> str:
+    path_parts = re.split(r"[\\/]+", identifier.casefold())
+    for part in path_parts:
+        if part in DOCUMENT_TYPE_MAP:
+            return DOCUMENT_TYPE_MAP[part]
+
     normalized = re.sub(r"^[0-9]+[_-]*", "", identifier.casefold().replace("-", "_"))
     for prefix, document_type in DOCUMENT_TYPE_MAP.items():
-        if normalized.startswith(prefix):
+        if normalized.startswith(prefix.replace("-", "_")):
             return document_type
     return "other"
+
+
+def normalize_source_document_type(value: Any, identifier: str = "") -> str:
+    text = str(value or "").strip().casefold()
+    if text in DOCUMENT_TYPE_LABEL_MAP:
+        return DOCUMENT_TYPE_LABEL_MAP[text]
+    detected = detect_document_type(identifier)
+    return detected if detected != "other" else "other"
+
+
+def looks_like_file_slug(value: Any) -> bool:
+    text = str(value or "").strip()
+    if not text:
+        return True
+    return bool(
+        "_" in text
+        or "\\" in text
+        or "/" in text
+        or re.search(r"\b(?:N_|N-|-CP|_CP|Ngh_nh|Th_ng|Quy_nh|Ngh Nh|Th Ng|Quy Nh)\b", text, flags=re.IGNORECASE)
+    )
+
+
+def extract_document_number_from_identifier(identifier: Any) -> str:
+    text = str(identifier or "")
+    if not text:
+        return ""
+    slug = Path(text).stem.replace("\\", "_").replace("/", "_")
+
+    year_match = re.search(
+        r"(?:^|_)(\d{1,4})[_-](\d{4})[_-]([A-Za-zĐÐ]+)[_-]*([A-Za-zĐÐ]+)?(?:_|-|$)",
+        slug,
+        flags=re.IGNORECASE,
+    )
+    if year_match:
+        number, year, raw_code, raw_suffix = year_match.groups()
+        code = raw_code.upper()
+        suffix = (raw_suffix or "").upper()
+        if code == "N" and suffix == "CP":
+            return f"{number}/{year}/NĐ-CP"
+        if suffix:
+            return f"{number}/{year}/{code}-{suffix}"
+        return f"{number}/{year}/{code}"
+
+    old_style_match = re.search(
+        r"(?:^|_)(\d{1,4})[-_ ]([A-Za-z]{1,8})[-_/ ]([A-Za-z]{2,10})(?:_|-|$)",
+        slug,
+        flags=re.IGNORECASE,
+    )
+    if old_style_match:
+        number, code, suffix = old_style_match.groups()
+        return f"{number}-{code.upper()}/{suffix.upper()}"
+
+    return ""
+
+
+def source_document_title(*, raw_title: Any, document_number: str, document_type: str, document_id: Any = "") -> str:
+    title = str(raw_title or "").strip()
+    title_is_unknown = bool(re.search(r"kh.{1,3}ng\s+r.{1,3}\s+v.{1,3}n\s+b.{1,3}n", title, flags=re.IGNORECASE))
+    if title and not title_is_unknown and not looks_like_file_slug(title):
+        return title
+    if document_number:
+        prefix = DOCUMENT_TYPE_DISPLAY_LABELS.get(document_type, "Văn bản")
+        return f"{prefix} {document_number}"
+    document_id_text = str(document_id or "").strip()
+    prefix = DOCUMENT_TYPE_DISPLAY_LABELS.get(document_type, "Văn bản")
+    if document_id_text:
+        return f"{prefix} {document_id_text}"
+    return prefix
 
 
 def normalize_document_number(value: str) -> str:
@@ -333,6 +461,16 @@ def load_law_payload(json_file: str) -> dict[str, Any]:
     return safe_json_load(path, {})
 
 
+def read_text_preview(path: Path, limit: int = 500) -> str:
+    if not path.exists():
+        return ""
+    try:
+        with path.open(encoding="utf-8", errors="ignore") as handle:
+            return handle.read(limit)
+    except OSError:
+        return ""
+
+
 @lru_cache(maxsize=1)
 def load_documents_cache() -> list[dict[str, Any]]:
     manifest = load_law_manifest()
@@ -346,10 +484,6 @@ def load_documents_cache() -> list[dict[str, Any]]:
         if item.get("vbpl_id"):
             text_file = str(item.get("text_file") or "")
             text_body = ""
-            if text_file:
-                text_path = LAW_OUTPUT_DIR / text_file
-                if text_path.exists():
-                    text_body = text_path.read_text(encoding="utf-8", errors="ignore")
             chunk_count = int(item.get("chunk_count") or 0)
             status = "crawled"
             if chunk_count > 0:
@@ -427,12 +561,24 @@ def map_retrieved_source(item: dict[str, Any]) -> dict[str, Any]:
     manifest_item = manifest["by_text_file"].get(str(text_file), {}) if text_file else {}
     if not manifest_item and vbpl_id:
         manifest_item = manifest.get("by_vbpl_id", {}).get(str(vbpl_id), {})
-    document_title = (
-        manifest_item.get("title")
-        or item.get("document_title")
-        or manifest_item.get("doc_number")
-        or item.get("doc_number")
-        or slug_to_title(Path(str(text_file)).stem if text_file else "document")
+    document_type = normalize_source_document_type(
+        manifest_item.get("doc_type") or item.get("doc_type"),
+        str(text_file or ""),
+    )
+    document_number = (
+        str(manifest_item.get("doc_number") or item.get("doc_number") or "").strip()
+        or extract_document_number_from_identifier(text_file)
+        or extract_document_number_from_identifier(item.get("document_title"))
+    )
+    raw_document_title = (
+        item.get("document_title")
+        or manifest_item.get("title")
+    )
+    document_title = source_document_title(
+        raw_title=raw_document_title,
+        document_number=document_number,
+        document_type=document_type,
+        document_id=vbpl_id or item.get("chunk_id"),
     )
     chunk_sources = item.get("sources") or []
     retrieval_origin = "hybrid" if len(chunk_sources) > 1 else (chunk_sources[0] if chunk_sources else "hybrid")
@@ -440,17 +586,41 @@ def map_retrieved_source(item: dict[str, Any]) -> dict[str, Any]:
         "id": item.get("chunk_id") or str(uuid.uuid4()),
         "documentId": str(vbpl_id or (Path(str(text_file)).stem if text_file else item.get("chunk_id") or "unknown")),
         "documentTitle": document_title,
-        "documentNumber": manifest_item.get("doc_number") or item.get("doc_number"),
+        "documentNumber": document_number,
         "articleNumber": item.get("article_number"),
         "clauseNumber": item.get("clause_number"),
         "targetArticle": item.get("target_article"),
         "chunkText": item.get("text") or item.get("preview") or "",
-        "relevanceScore": float(item.get("rrf_score") or item.get("score") or 0.0),
+        "relevanceScore": float(item.get("rerank_score") or item.get("rrf_score") or item.get("score") or 0.0),
         "retrievalOrigin": retrieval_origin,
-        "sourceUrl": manifest_item.get("final_url") or manifest_item.get("source_url"),
-        "issuedDate": manifest_item.get("issue_date"),
-        "documentType": manifest_item.get("doc_type") or detect_document_type(Path(str(text_file)).stem if text_file else ""),
+        "sourceUrl": item.get("source_url") or manifest_item.get("final_url") or manifest_item.get("source_url"),
+        "issuedDate": item.get("issue_date") or manifest_item.get("issue_date"),
+        "documentType": document_type,
     }
+
+
+LEGAL_DOC_NUMBER_RE = re.compile(
+    r"\b\d{1,4}\s*/\s*\d{4}\s*/\s*[A-ZÀ-ỸĐ]+(?:[-/][A-ZÀ-ỸĐ0-9]+)*\b",
+    re.IGNORECASE,
+)
+
+
+def normalize_citation_text(value: Any) -> str:
+    return re.sub(r"\s+", "", str(value or "").casefold())
+
+
+def citation_warnings(answer: str, sources: list[dict[str, Any]]) -> list[str]:
+    cited_numbers = {normalize_citation_text(match.group(0)) for match in LEGAL_DOC_NUMBER_RE.finditer(answer or "")}
+    if not cited_numbers:
+        return []
+
+    source_numbers = {
+        normalize_citation_text(source.get("documentNumber"))
+        for source in sources
+        if source.get("documentNumber")
+    }
+    missing = sorted(number for number in cited_numbers if number and number not in source_numbers)
+    return [f"Answer cites a document not present in retrieved sources: {number}" for number in missing]
 
 
 def vector_dir_manifest(vector_dir: Path) -> dict[str, Any] | None:
@@ -735,6 +905,8 @@ def runtime_status_payload() -> dict[str, Any]:
         "queryRewriteModel": query_rewrite_model(),
         "embeddingProvider": embedding_provider(),
         "embeddingModel": embedding_model(),
+        "rerankerProvider": reranker_provider(),
+        "rerankerModel": reranker_model() if reranker_enabled() else None,
         "localLlmBaseUrl": local_llm_base_url() if runtime_mode() == "local" else None,
         "hasOpenaiApiKey": bool(os.getenv("OPENAI_API_KEY")),
         "vectorDir": str(vector_dir.relative_to(ROOT_DIR)) if vector_dir.is_relative_to(ROOT_DIR) else str(vector_dir),
@@ -746,6 +918,54 @@ def runtime_status_payload() -> dict[str, Any]:
             "chunkCount": manifest.get("chunk_count") if manifest else None,
         },
     }
+
+
+def openai_error_details(exc: APIError) -> dict[str, Any]:
+    body = getattr(exc, "body", None)
+    error_body = body.get("error", body) if isinstance(body, dict) else {}
+    if not isinstance(error_body, dict):
+        error_body = {}
+    return {
+        "status": getattr(exc, "status_code", None),
+        "code": error_body.get("code") or getattr(exc, "code", None),
+        "type": error_body.get("type") or getattr(exc, "type", None),
+        "request_id": getattr(exc, "request_id", None),
+    }
+
+
+def raise_openai_http_error(exc: APIError, *, session_id: str) -> None:
+    details = openai_error_details(exc)
+    code = str(details.get("code") or "").casefold()
+    error_type = str(details.get("type") or "").casefold()
+    print(
+        "openai_error "
+        f"session={session_id} exception={type(exc).__name__} "
+        f"status={details.get('status')} code={details.get('code')} "
+        f"type={details.get('type')} request_id={details.get('request_id')}",
+        flush=True,
+    )
+
+    if isinstance(exc, AuthenticationError):
+        raise HTTPException(status_code=401, detail="OpenAI API key is invalid or expired.") from exc
+    if isinstance(exc, PermissionDeniedError):
+        raise HTTPException(status_code=403, detail="OpenAI denied this request. Check project and model permissions.") from exc
+    if isinstance(exc, RateLimitError):
+        if code in {"insufficient_quota", "billing_hard_limit_reached"} or "insufficient_quota" in error_type:
+            message = "OpenAI quota is exhausted. Check API billing and project limits."
+        else:
+            message = "OpenAI rate limit was reached temporarily. Wait briefly and retry."
+        raise HTTPException(status_code=429, detail=message) from exc
+    if isinstance(exc, BadRequestError):
+        if code == "context_length_exceeded" or "context_length" in error_type:
+            message = "The conversation context is too long for the selected OpenAI model. Start a new chat or shorten the request."
+        else:
+            message = f"OpenAI rejected the request{f' ({code})' if code else ''}."
+        raise HTTPException(status_code=400, detail=message) from exc
+    if isinstance(exc, APITimeoutError):
+        raise HTTPException(status_code=504, detail="OpenAI request timed out. Retry the same message.") from exc
+    if isinstance(exc, APIConnectionError):
+        raise HTTPException(status_code=503, detail="Could not connect to OpenAI. Check the network and retry.") from exc
+    raise HTTPException(status_code=502, detail="OpenAI request failed. Check the backend log for the exact error code.") from exc
 
 
 def run_question_request(payload: AskQuestionPayload, answer_stream_callback: Any | None = None) -> dict[str, Any]:
@@ -768,7 +988,7 @@ def run_question_request(payload: AskQuestionPayload, answer_stream_callback: An
             vector_dir=vector_dir,
             query_rewrite_mode="llm" if settings["query_rewrite"] else "none",
             query_rewrite_model=active_query_rewrite_model,
-            query_rewrite_count=4,
+            query_rewrite_count=3,
             retrieval_mode=settings["mode"],
             vector_backend=settings["vector_backend"],
             embedding_model=active_embedding_model,
@@ -785,15 +1005,60 @@ def run_question_request(payload: AskQuestionPayload, answer_stream_callback: An
             session_dir=SESSIONS_DIR,
             answer_stream_callback=answer_stream_callback,
         )
-    except AuthenticationError as exc:
-        raise HTTPException(status_code=401, detail="OpenAI API key is invalid or expired.") from exc
     except RuntimeError as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
     except APIError as exc:
-        raise HTTPException(status_code=502, detail="OpenAI request failed. Check API availability and billing.") from exc
+        raise_openai_http_error(exc, session_id=session_id)
 
     sources = [map_retrieved_source(item) for item in result.get("retrieved", [])]
     processing_time_ms = int((time.perf_counter() - started) * 1000)
+    timings = dict(result.get("timings") or {})
+    timings["processingTotal"] = processing_time_ms
+    warnings = citation_warnings(result.get("answer", ""), sources)
+    debug_metadata = {
+        "retrievalMode": settings["mode"],
+        "runtimeMode": runtime_mode(),
+        "modelUsed": active_chat_model,
+        "embeddingModel": active_embedding_model,
+        "queryRewritten": result.get("retrieval_input") if result.get("retrieval_input") != payload.question else None,
+        "processingTimeMs": processing_time_ms,
+        "timings": timings,
+        "retrievalQueryCount": result.get("retrieval_query_count"),
+        "retrievalInputChars": result.get("retrieval_input_chars"),
+        "contextChars": result.get("context_chars"),
+        "citationWarnings": warnings,
+    }
+    bm25_queries = timings.get("bm25Queries") if isinstance(timings.get("bm25Queries"), list) else []
+    vector_queries = timings.get("vectorQueries") if isinstance(timings.get("vectorQueries"), list) else []
+    slowest_bm25 = max((int(item.get("ms") or 0) for item in bm25_queries), default=0)
+    slowest_vector = max((int(item.get("ms") or 0) for item in vector_queries), default=0)
+    print(
+        "chat_timing "
+        f"session={session_id} total_ms={processing_time_ms} "
+        f"memory_ms={timings.get('memoryUpdate', 0)} "
+        f"rewrite_ms={timings.get('queryRewrite', 0)} "
+        f"retrieval_ms={timings.get('retrieval', 0)} "
+        f"retrieval_pinned_ms={timings.get('retrievalPinned', 0)} "
+        f"retrieval_bm25_ms={timings.get('retrievalBm25', 0)} "
+        f"retrieval_vector_ms={timings.get('retrievalVector', 0)} "
+        f"retrieval_fusion_ms={timings.get('retrievalFusionRerank', 0)} "
+        f"model_rerank_ms={timings.get('modelRerankMs', 0)} "
+        f"model_rerank_provider={timings.get('modelRerankProvider', 'none')} "
+        f"context_ms={timings.get('contextBuild', 0)} "
+        f"final_llm_ms={timings.get('finalLlm', 0)} "
+        f"queries={result.get('retrieval_query_count')} "
+        f"bm25_query_count={len(bm25_queries)} "
+        f"slowest_bm25_ms={slowest_bm25} "
+        f"vector_query_count={len(vector_queries)} "
+        f"slowest_vector_ms={slowest_vector} "
+        f"vector_cache_hit={timings.get('vectorAssetCacheHit', 0)} "
+        f"vector_cache_miss={timings.get('vectorAssetCacheMiss', 0)} "
+        f"retrieval_input_chars={result.get('retrieval_input_chars')} "
+        f"context_chars={result.get('context_chars')}",
+        flush=True,
+    )
+    if warnings:
+        print(f"citation_warning session={session_id} warnings={json.dumps(warnings, ensure_ascii=False)}", flush=True)
     session = load_session(session_id, SESSIONS_DIR)
     message_id = f"msg-{uuid.uuid4().hex[:12]}"
     if session.get("history"):
@@ -803,14 +1068,7 @@ def run_question_request(payload: AskQuestionPayload, answer_stream_callback: An
             message_id = str(last_message["id"])
             if sources:
                 last_message["sources"] = sources
-            last_message["metadata"] = {
-                "retrievalMode": settings["mode"],
-                "runtimeMode": runtime_mode(),
-                "modelUsed": active_chat_model,
-                "embeddingModel": active_embedding_model,
-                "queryRewritten": result.get("retrieval_input") if result.get("retrieval_input") != payload.question else None,
-                "processingTimeMs": processing_time_ms,
-            }
+            last_message["metadata"] = debug_metadata
             save_session(session, SESSIONS_DIR)
 
     return {
@@ -818,14 +1076,7 @@ def run_question_request(payload: AskQuestionPayload, answer_stream_callback: An
         "sessionId": session_id,
         "messageId": message_id,
         "sources": sources,
-        "metadata": {
-            "retrievalMode": settings["mode"],
-            "runtimeMode": runtime_mode(),
-            "modelUsed": active_chat_model,
-            "embeddingModel": active_embedding_model,
-            "queryRewritten": result.get("retrieval_input") if result.get("retrieval_input") != payload.question else None,
-            "processingTimeMs": processing_time_ms,
-        },
+        "metadata": debug_metadata,
     }
 
 
@@ -1062,7 +1313,7 @@ def get_jobs() -> dict[str, Any]:
 @app.post("/api/admin/jobs/crawl")
 def trigger_crawl() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.crawl.crawl_vbpl_laws", "--output", "output/vbpl_laws_active_partial", "--page-size", "100", "--zip"],
+        [sys.executable, "-m", "law_rag.crawl.crawl_vbpl_laws", "--output", str(CORPUS_DIR.relative_to(ROOT_DIR)), "--page-size", "100", "--zip"],
     ]
     job = start_job("crawl", commands)
     return {"success": True, "data": job}
@@ -1071,7 +1322,7 @@ def trigger_crawl() -> dict[str, Any]:
 @app.post("/api/admin/jobs/chunk")
 def trigger_chunking() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.crawl.crawl_vbpl_laws", "--output", "output/vbpl_laws_active_partial", "--page-size", "100", "--zip"],
+        [sys.executable, "-m", "law_rag.crawl.crawl_vbpl_laws", "--output", str(CORPUS_DIR.relative_to(ROOT_DIR)), "--page-size", "100", "--zip"],
     ]
     job = start_job("chunk", commands)
     return {"success": True, "data": job}
@@ -1080,7 +1331,7 @@ def trigger_chunking() -> dict[str, Any]:
 @app.post("/api/admin/jobs/index-bm25")
 def trigger_bm25() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.retrieval.retrieve_chunks", "build", "--chunks", "output/vbpl_laws_active_partial/all_chunks.jsonl", "--output", "output/vbpl_laws_active_partial/retrieval/bm25_index.json"],
+        [sys.executable, "-m", "law_rag.retrieval.retrieve_chunks", "build", "--chunks", str(CHUNKS_PATH.relative_to(ROOT_DIR)), "--output", str(BM25_INDEX_PATH.relative_to(ROOT_DIR))],
     ]
     job = start_job("index_bm25", commands)
     return {"success": True, "data": job}
@@ -1089,7 +1340,7 @@ def trigger_bm25() -> dict[str, Any]:
 @app.post("/api/admin/jobs/index-vector")
 def trigger_vector() -> dict[str, Any]:
     commands = [
-        [sys.executable, "-m", "law_rag.retrieval.build_vector_index", "--chunks", "output/vbpl_laws_active_partial/all_chunks.jsonl", "--output-dir", str(active_vector_dir()), "--backend", "faiss"],
+        [sys.executable, "-m", "law_rag.retrieval.build_vector_index", "--chunks", str(CHUNKS_PATH.relative_to(ROOT_DIR)), "--output-dir", str(active_vector_dir()), "--backend", "faiss"],
     ]
     job = start_job("index_vector", commands)
     return {"success": True, "data": job}
@@ -1110,7 +1361,7 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
         payload.query,
         rewrite_mode=query_rewrite_mode,
         rewrite_model=active_query_rewrite_model,
-        max_rewrites=4,
+        max_rewrites=3,
     )
     rewrite_ms = int((time.perf_counter() - rewrite_started) * 1000) if settings["query_rewrite"] else None
 

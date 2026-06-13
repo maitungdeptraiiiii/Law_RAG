@@ -15,6 +15,9 @@ LOG_PATH = ROOT / "output" / "dev_backend_runtime.log"
 def main() -> None:
     os.chdir(ROOT)
     sys.path.insert(0, str(ROOT))
+    from law_rag.core.env_loader import load_project_env
+
+    load_project_env()
     os.environ.setdefault("RAG_MODE", "openai")
     os.environ.setdefault("EMBEDDING_PROVIDER", "openai")
     os.environ.setdefault("EMBEDDING_MODEL", "text-embedding-3-small")

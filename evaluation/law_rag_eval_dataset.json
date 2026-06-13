@@ -1,0 +1,1728 @@
+[
+  {
+    "id": "criminal_injury_general",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Đánh người gây thương tích 18% thì bị tội gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 134. Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác 1.",
+        "Người nào cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 11% đến 30% hoặc dưới 11% nhưng thuộc một trong các trường hợp sau đây, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ",
+        "Phạm tội gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 11% đến 30% nhưng thuộc một trong các trường hợp quy định tại các điểm a, b, d, đ, e, g, h, i, k, l, m, n và o khoản 1 Điều này, thì bị phạt"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "134"
+        }
+      ],
+      "required_terms": [
+        "Điều 134",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:134, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_injury_weapon",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Dùng dao đánh người gây thương tích thì bị xử lý thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 134. Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Tội cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác 1.",
+        "Người nào cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 11% đến 30% hoặc dưới 11% nhưng thuộc một trong các trường hợp sau đây, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ",
+        "Phạm tội gây thương tích hoặc gây tổn hại cho sức khỏe của người khác mà tỷ lệ tổn thương cơ thể từ 11% đến 30% nhưng thuộc một trong các trường hợp quy định tại các điểm a, b, d, đ, e, g, h, i, k, l, m, n và o khoản 1 Điều này, thì bị phạt"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "134"
+        }
+      ],
+      "required_terms": [
+        "Điều 134",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:134, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_theft_phone",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Lén lấy trộm điện thoại của người khác thì phạm tội gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 173. Tội trộm cắp tài sản trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Người nào trộm cắp tài sản của người khác trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng hoặc dưới 2.000.000 đồng nhưng thuộc một trong các trường hợp sau đây, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù từ 06 tháng đến 0",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02 năm đến 07 năm: a) Có tổ chức; b) Có tính chất chuyên nghiệp; c) Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng; d) Dùng thủ đoạn xảo quyệt, nguy",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 07 năm đến 15 năm: a) Chiếm đoạt tài sản trị giá từ 200.000.000 đồng đến dưới 500.000.000 đồng; b) Trộm cắp tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng nhưn"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "173"
+        }
+      ],
+      "required_terms": [
+        "Điều 173",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:173, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_fraud_transfer",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Lừa người khác chuyển tiền rồi chiếm đoạt thì bị xử lý theo tội gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 174. Tội lừa đảo chiếm đoạt tài sản trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Tội lừa đảo chiếm đoạt tài sản 1.",
+        "Người nào bằng thủ đoạn gian dối chiếm đoạt tài sản của người khác trị giá từ 2.000.000 đồng đến dưới 50.000.000 đồng hoặc dưới 2.000.000 đồng nhưng thuộc một trong các trường hợp sau đây, thì bị phạt cải tạo không giam giữ đến 03 năm hoặc",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02 năm đến 07 năm: a) Có tổ chức; b) Có tính chất chuyên nghiệp; c) Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng; d) Tái phạm nguy hiểm; đ) Lợi dụ"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "174"
+        }
+      ],
+      "required_terms": [
+        "Điều 174",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:174, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_trust_abuse_motorbike",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Mượn xe rồi mang đi bán không trả thì bị tội gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 175. Tội lạm dụng tín nhiệm chiếm đoạt tài sản trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Tội lạm dụng tín nhiệm chiếm đoạt tài sản 1.",
+        "Người nào thực hiện một trong những hành vi sau đây chiếm đoạt tài sản của người khác trị giá từ 4.000.000 đồng đến dưới 50.000.000 đồng hoặc dưới 4.000.000 đồng nhưng đã bị xử phạt vi phạm hành chính về hành vi chiếm đoạt hoặc đã bị kết án",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 02 năm đến 07 năm: a) Có tổ chức; b) Có tính chất chuyên nghiệp; c) Chiếm đoạt tài sản trị giá từ 50.000.000 đồng đến dưới 200.000.000 đồng; d) Lợi dụng chức vụ, quyền hạn h"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "175"
+        }
+      ],
+      "required_terms": [
+        "Điều 175",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:175, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_insult_online",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Chửi bới xúc phạm nghiêm trọng danh dự người khác trên mạng có bị truy cứu hình sự không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 155. Tội làm nhục người khác trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Tội làm nhục người khác 1.",
+        "Người nào xúc phạm nghiêm trọng nhân phẩm, danh dự của người khác, thì bị phạt cảnh cáo, phạt tiền từ 10.000.000 đồng đến 30.000.000 đồng hoặc phạt cải tạo không giam giữ đến 03 năm.",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 03 tháng đến 02 năm: a) Phạm tội 02 lần trở lên; b) Đối với 02 người trở lên; c) Lợi dụng chức vụ, quyền hạn; d) Đối với người đang thi hành công vụ; đ) Đối với người dạy dỗ"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "155"
+        }
+      ],
+      "required_terms": [
+        "Điều 155",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:155, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_slander_fake_post",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Bịa chuyện sai sự thật để vu khống người khác thì bị xử lý thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 156. Tội vu khống trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Người nào thực hiện một trong các hành vi sau đây, thì bị phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng, phạt cải tạo không giam giữ đến 02 năm hoặc phạt tù từ 03 tháng đến 01 năm: a) Bịa đặt hoặc loan truyền những điều biết rõ là sai sự",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 01 năm đến 03 năm: a) Có tổ chức; b) Lợi dụng chức vụ, quyền hạn; c) Đối với 02 người trở lên; d) Đối với ông, bà, cha, mẹ, người dạy dỗ, nuôi dưỡng, chăm sóc, giáo dục, chữ",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 03 năm đến 07 năm: a) Vì động cơ đê hèn; b) Gây rối loạn tâm thần và hành vi của nạn nhân 46% trở lên; c) Làm nạn nhân tự sát."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "156"
+        }
+      ],
+      "required_terms": [
+        "Điều 156",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:156, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_gambling_online",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Đánh bạc ăn tiền qua mạng có thể bị tội gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 321. Tội đánh bạc trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Người nào đánh bạc trái phép dưới bất kỳ hình thức nào được thua bằng tiền hay hiện vật trị giá từ 5.000.000 đồng đến dưới 50.000.000 đồng hoặc dưới 5.000.000 đồng, đã bị xử phạt vi phạm hành chính về hành vi này hoặc hành vi quy định tại Đ",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 03 năm đến 07 năm: a) Có tính chất chuyên nghiệp; b) Tiền hoặc hiện vật dùng đánh bạc trị giá 50.000.000 đồng trở lên; c) Sử dụng mạng internet, mạng máy tính, mạng viễn thô",
+        "Người phạm tội còn có thể bị phạt tiền từ 10.000.000 đồng đến 50.000.000 đồng."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "321"
+        }
+      ],
+      "required_terms": [
+        "Điều 321",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:321, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_traffic_death",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Gây tai nạn giao thông làm chết người thì có thể bị truy cứu tội gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 260. Tội vi phạm quy định về tham gia giao thông đường bộ trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Tội vi phạm quy định về tham gia giao thông đường bộ 1.",
+        "Người nào tham gia giao thông đường bộ mà vi phạm quy định về an toàn giao thông đường bộ thuộc một trong các trường hợp sau đây, thì bị phạt tiền từ 30.000.000 đồng đến 100.000.000 đồng, phạt cải tạo không giam giữ đến 03 năm hoặc phạt tù",
+        "Phạm tội thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 03 năm đến 10 năm: a) Không có giấy phép lái xe theo quy định; b) Trong tình trạng có sử dụng rượu, bia mà trong máu hoặc hơi thở có nồng độ cồn vượt quá mức quy định hoặc c"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "260"
+        }
+      ],
+      "required_terms": [
+        "Điều 260",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:260, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "criminal_murder",
+    "category": "hinh_su",
+    "inputs": {
+      "question": "Cố ý tước đoạt tính mạng người khác bị xử lý theo tội gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 123. Tội giết người trong Bộ luật Hình sự số 100/2015/QH13.",
+        "Người nào giết người thuộc một trong các trường hợp sau đây, thì bị phạt tù từ 12 năm đến 20 năm, tù chung thân hoặc tử hình: a) Giết 02 người trở lên; b) Giết người dưới 16 tuổi; c) Giết phụ nữ mà biết là có thai; d) Giết người đang thi hà",
+        "Phạm tội không thuộc các trường hợp quy định tại khoản 1 Điều này, thì bị phạt tù từ 07 năm đến 15 năm.",
+        "Người chuẩn bị phạm tội này, thì bị phạt tù từ 01 năm đến 05 năm."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Hình sự",
+          "article_number": "123"
+        }
+      ],
+      "required_terms": [
+        "Điều 123",
+        "Bộ luật Hình sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=96122:article:123, doc_number=100/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_transaction_valid",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Giao dịch dân sự có hiệu lực khi đáp ứng điều kiện nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 117. Điều kiện có hiệu lực của giao dịch dân sự trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Điều kiện có hiệu lực của giao dịch dân sự 1.",
+        "Giao dịch dân sự có hiệu lực khi có đủ các điều kiện sau đây: a) Chủ thể có năng lực pháp luật dân sự, năng lực hành vi dân sự phù hợp với giao dịch dân sự được xác lập; b) Chủ thể tham gia giao dịch dân sự hoàn toàn tự nguyện; c) Mục đích",
+        "Hình thức của giao dịch dân sự là điều kiện có hiệu lực của giao dịch dân sự trong trường hợp luật có quy định."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "117"
+        }
+      ],
+      "required_terms": [
+        "Điều 117",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:117, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_contract_form",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Hợp đồng dân sự có bắt buộc phải lập thành văn bản không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 119. Hình thức giao dịch dân sự trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Hình thức giao dịch dân sự 1.",
+        "Giao dịch dân sự được thể hiện bằng lời nói, bằng văn bản hoặc bằng hành vi cụ thể.",
+        "Giao dịch dân sự thông qua phương tiện điện tử dưới hình thức thông điệp dữ liệu theo quy định của pháp luật về giao dịch điện tử được coi là giao dịch bằng văn bản."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "119"
+        }
+      ],
+      "required_terms": [
+        "Điều 119",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:119, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_invalid_form",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Hợp đồng vi phạm quy định về hình thức thì có vô hiệu không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 129. Giao dịch dân sự vô hiệu do không tuân thủ quy định về hình thức trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Giao dịch dân sự vô hiệu do không tuân thủ quy định về hình thức Giao dịch dân sự vi phạm quy định điều kiện có hiệu lực về hình thức thì vô hiệu, trừ trường hợp sau đây: 1.",
+        "Giao dịch dân sự đã được xác lập theo quy định phải bằng văn bản nhưng văn bản không đúng quy định của luật mà một bên hoặc các bên đã thực hiện ít nhất hai phần ba nghĩa vụ trong giao dịch thì theo yêu cầu của một bên hoặc các bên, Tòa án",
+        "Giao dịch dân sự đã được xác lập bằng văn bản nhưng vi phạm quy định bắt buộc về công chứng, chứng thực mà một bên hoặc các bên đã thực hiện ít nhất hai phần ba nghĩa vụ trong giao dịch thì theo yêu cầu của một bên hoặc các bên, Tòa án ra q"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "129"
+        }
+      ],
+      "required_terms": [
+        "Điều 129",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:129, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_late_obligation",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Chậm thực hiện nghĩa vụ dân sự thì phải chịu trách nhiệm gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 357. Trách nhiệm do chậm thực hiện nghĩa vụ trả tiền trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Trách nhiệm do chậm thực hiện nghĩa vụ trả tiền 1.",
+        "Trường hợp bên có nghĩa vụ chậm trả tiền thì bên đó phải trả lãi đối với số tiền chậm trả tương ứng với thời gian chậm trả.",
+        "Lãi suất phát sinh do chậm trả tiền được xác định theo thỏa thuận của các bên nhưng không được vượt quá mức lãi suất được quy định tại khoản 1 Điều 468 của Bộ luật này; nếu không có thỏa thuận thì thực hiện theo quy định tại khoản 2 Điều 46"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "357"
+        }
+      ],
+      "required_terms": [
+        "Điều 357",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:357, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_loan_contract",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Cho vay tiền bằng miệng có được coi là hợp đồng vay tài sản không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 463. Hợp đồng vay tài sản trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Hợp đồng vay tài sản Hợp đồng vay tài sản là sự thỏa thuận giữa các bên, theo đó bên cho vay giao tài sản cho bên vay; khi đến hạn trả, bên vay phải hoàn trả cho bên cho vay tài sản cùng loại theo đúng số lượng, chất lượng và chỉ phải trả l"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "463"
+        }
+      ],
+      "required_terms": [
+        "Điều 463",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:463, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_repay_loan",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Vay tiền đến hạn không trả thì nghĩa vụ trả nợ được quy định thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 466. Nghĩa vụ trả nợ của bên vay trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Nghĩa vụ trả nợ của bên vay 1.",
+        "Bên vay tài sản là tiền thì phải trả đủ tiền khi đến hạn; nếu tài sản là vật thì phải trả vật cùng loại đúng số lượng, chất lượng, trừ trường hợp có thoả thuận khác.",
+        "Trường hợp bên vay không thể trả vật thì có thể trả bằng tiền theo trị giá của vật đã vay tại địa điểm và thời điểm trả nợ, nếu được bên cho vay đồng ý."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "466"
+        }
+      ],
+      "required_terms": [
+        "Điều 466",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:466, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_interest_rate",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Lãi suất cho vay dân sự tối đa là bao nhiêu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 468. Lãi suất trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Lãi suất vay do các bên thỏa thuận.",
+        "Trường hợp các bên có thỏa thuận về lãi suất thì lãi suất theo thỏa thuận không được vượt quá 20%/năm của khoản tiền vay, trừ trường hợp luật khác có liên quan quy định khác.",
+        "Căn cứ tình hình thực tế và theo đề xuất của Chính phủ, Ủy ban thường vụ Quốc hội quyết định điều chỉnh mức lãi suất nói trên và báo cáo Quốc hội tại kỳ họp gần nhất."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "468"
+        }
+      ],
+      "required_terms": [
+        "Điều 468",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:468, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_compensation_basis",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Làm hư tài sản của người khác thì phải bồi thường theo căn cứ nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 584. Căn cứ phát sinh trách nhiệm bồi thường thiệt hại trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Căn cứ phát sinh trách nhiệm bồi thường thiệt hại 1.",
+        "Người nào có hành vi xâm phạm tính mạng, sức khoẻ, danh dự, nhân phẩm, uy tín, tài sản, quyền, lợi ích hợp pháp khác của người khác mà gây thiệt hại thì phải bồi thường, trừ trường hợp Bộ luật này, luật khác có liên quan quy định khác.",
+        "Người gây thiệt hại không phải chịu trách nhiệm bồi thường thiệt hại trong trường hợp thiệt hại phát sinh là do sự kiện bất khả kháng hoặc hoàn toàn do lỗi của bên bị thiệt hại, trừ trường hợp có thỏa thuận khác hoặc luật có quy định khác."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "584"
+        }
+      ],
+      "required_terms": [
+        "Điều 584",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:584, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_health_damage",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Gây thương tích cho người khác thì bồi thường thiệt hại sức khỏe gồm những khoản nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 590. Thiệt hại do sức khoẻ bị xâm phạm trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Thiệt hại do sức khoẻ bị xâm phạm 1.",
+        "Thiệt hại do sức khoẻ bị xâm phạm bao gồm: a) Chi phí hợp lý cho việc cứu chữa, bồi dưỡng, phục hồi sức khoẻ và chức năng bị mất, bị giảm sút của người bị thiệt hại; b) Thu nhập thực tế bị mất hoặc bị giảm sút của người bị thiệt hại; nếu th",
+        "Người chịu trách nhiệm bồi thường trong trường hợp sức khoẻ của người khác bị xâm phạm phải bồi thường thiệt hại theo quy định tại khoản 1 Điều này và một khoản tiền khác để bù đắp tổn thất về tinh thần mà người đó gánh chịu."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "590"
+        }
+      ],
+      "required_terms": [
+        "Điều 590",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:590, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_adopted_child_inheritance",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Con nuôi có được hưởng thừa kế như con đẻ không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 651. Người thừa kế theo pháp luật trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Người thừa kế theo pháp luật 1.",
+        "Những người thừa kế theo pháp luật được quy định theo thứ tự sau đây: a) Hàng thừa kế thứ nhất gồm: vợ, chồng, cha đẻ, mẹ đẻ, cha nuôi, mẹ nuôi, con đẻ, con nuôi của người chết; b) Hàng thừa kế thứ hai gồm: ông nội, bà nội, ông ngoại, bà ng",
+        "Những người thừa kế cùng hàng được hưởng phần di sản bằng nhau."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "651"
+        }
+      ],
+      "required_terms": [
+        "Điều 651",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:651, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_valid_will",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Di chúc hợp pháp cần điều kiện gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 630. Di chúc hợp pháp trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Di chúc hợp pháp phải có đủ các điều kiện sau đây: a) Người lập di chúc minh mẫn, sáng suốt trong khi lập di chúc; không bị lừa dối, đe doạ, cưỡng ép; b) Nội dung của di chúc không vi phạm điều cấm của luật, không trái đạo đức xã hội; hình",
+        "Di chúc của người từ đủ mười lăm tuổi đến chưa đủ mười tám tuổi phải được lập thành văn bản và phải được cha, mẹ hoặc người giám hộ đồng ý về việc lập di chúc.",
+        "Di chúc của người bị hạn chế về thể chất hoặc của người không biết chữ phải được người làm chứng lập thành văn bản và có công chứng hoặc chứng thực."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "630"
+        }
+      ],
+      "required_terms": [
+        "Điều 630",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:630, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "civil_inheritance_time_limit",
+    "category": "dan_su",
+    "inputs": {
+      "question": "Thời hiệu yêu cầu chia di sản thừa kế là bao lâu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 623. Thời hiệu thừa kế trong Bộ luật Dân sự số 91/2015/QH13.",
+        "Thời hiệu để người thừa kế yêu cầu chia di sản là 30 năm đối với bất động sản, 10 năm đối với động sản, kể từ thời điểm mở thừa kế.",
+        "Hết thời hạn này thì di sản thuộc về người thừa kế đang quản lý di sản đó.",
+        "Trường hợp không có người thừa kế đang quản lý di sản thì di sản được giải quyết như sau: a) Di sản thuộc quyền sở hữu của người đang chiếm hữu theo quy định tại Điều 236 của Bộ luật này; b) Di sản thuộc về Nhà nước, nếu không có người chiế"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Dân sự",
+          "article_number": "623"
+        }
+      ],
+      "required_terms": [
+        "Điều 623",
+        "Bộ luật Dân sự"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=95942:article:623, doc_number=91/2015/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_quit_without_notice",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Tôi nghỉ việc không báo trước có sao không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 35. Trách nhiệm của Bộ Lao động - Thương binh và Xã hội trong Nghị định số 145/2020/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về điều kiện lao động và quan hệ lao động.",
+        "Trách nhiệm của Bộ Lao động - Thương binh và Xã hội 1.",
+        "Tuyên truyền, phổ biến, hướng dẫn, thanh tra, kiểm tra, giám sát tình hình thực hiện pháp luật lao động về cho thuê lại lao động.",
+        "Tổng hợp, công khai doanh nghiệp được cấp, gia hạn, cấp lại hoặc thu hồi giấy phép trên trang thông tin điện tử của Bộ Lao động - Thương binh và Xã hội."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "35"
+        }
+      ],
+      "required_terms": [
+        "Điều 35",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=152668:article:35, doc_number=145/2020/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_quit_illegal_damages",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Người lao động tự ý nghỉ ngang trái luật phải bồi thường gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 40. Nghĩa vụ của người lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật trong Bộ Luật lao động số 45/2019/QH14.",
+        "Nghĩa vụ của người lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật 1.",
+        "Không được trợ cấp thôi việc.",
+        "Phải bồi thường cho người sử dụng lao động nửa tháng tiền lương theo hợp đồng lao động và một khoản tiền tương ứng với tiền lương theo hợp đồng lao động trong những ngày không báo trước."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "40"
+        }
+      ],
+      "required_terms": [
+        "Điều 40",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=139264:article:40, doc_number=45/2019/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_employer_unilateral",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Công ty được đơn phương chấm dứt hợp đồng lao động khi nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 36. Trách nhiệm của Ngân hàng Nhà nước Việt Nam trong Nghị định số 145/2020/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về điều kiện lao động và quan hệ lao động.",
+        "Trách nhiệm của Ngân hàng Nhà nước Việt Nam Thực hiện việc thanh tra, kiểm tra, giám sát các ngân hàng nhận ký quỹ về việc nộp, quản lý tiền ký quỹ của các doanh nghiệp cho thuê lại theo quy định của pháp luật.",
+        "Chương V ĐỐI THOẠI TẠI NƠI LÀM VIỆC Mục 1 TỔ CHỨC ĐỐI THOẠI TẠI NƠI LÀM VIỆC"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "36"
+        }
+      ],
+      "required_terms": [
+        "Điều 36",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=152668:article:36, doc_number=145/2020/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_wrongful_termination",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Công ty cho nghỉ việc trái luật thì phải bồi thường thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 41. Nghĩa vụ của người sử dụng lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật trong Bộ Luật lao động số 45/2019/QH14.",
+        "Nghĩa vụ của người sử dụng lao động khi đơn phương chấm dứt hợp đồng lao động trái pháp luật 1.",
+        "Phải nhận người lao động trở lại làm việc theo hợp đồng lao động đã giao kết; phải trả tiền lương, đóng bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp trong những ngày người lao động không được làm việc và phải trả thêm cho người lao",
+        "Sau khi được nhận lại làm việc, người lao động hoàn trả cho người sử dụng lao động các khoản tiền trợ cấp thôi việc, trợ cấp mất việc làm nếu đã nhận của người sử dụng lao động."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "41"
+        }
+      ],
+      "required_terms": [
+        "Điều 41",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=139264:article:41, doc_number=45/2019/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_contract_types",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Hợp đồng lao động có những loại nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 20. Kiến nghị tuyên bố thỏa ước lao động tập thể vô hiệu trong Nghị định số 05/2015/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số nội dung của Bộ luật Lao động.",
+        "Kiến nghị tuyên bố thỏa ước lao động tập thể vô hiệu Khi thanh tra hoặc giải quyết khiếu hại, tố cáo về lao động, nếu phát hiện thỏa ước lao động tập thể có một trong các trường hợp quy định tại Điều 78 của Bộ luật Lao động, Trưởng đoàn, th",
+        "Tòa án nhân dân tuyên bố thỏa ước lao động tập thể vô hiệu."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "20"
+        }
+      ],
+      "required_terms": [
+        "Điều 20",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=48298:article:20, doc_number=05/2015/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_contract_content",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Hợp đồng lao động bắt buộc phải có nội dung gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 21. Điều kiện cấp giấy phép trong Nghị định số 145/2020/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về điều kiện lao động và quan hệ lao động.",
+        "Điều kiện cấp giấy phép 1.",
+        "Người đại diện theo pháp luật của doanh nghiệp thực hiện hoạt động cho thuê lại lao động phải bảo đảm điều kiện: a) Là người quản lý doanh nghiệp theo quy định của Luật Doanh nghiệp; b) Không có án tích; c) Đã có thời gian trực tiếp làm chu",
+        "Doanh nghiệp đã thực hiện ký quỹ 2.000.000.000 đồng (hai tỷ đồng)."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "21"
+        }
+      ],
+      "required_terms": [
+        "Điều 21",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=152668:article:21, doc_number=145/2020/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_termination_cases",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Hợp đồng lao động chấm dứt trong những trường hợp nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 34. Hội đồng trọng tài lao động trong Nghị định số 05/2015/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số nội dung của Bộ luật Lao động.",
+        "Hội đồng trọng tài lao động 1.",
+        "Hội đồng trọng tài lao động tại Điều 199 của Bộ luật Lao động gồm các thành phần như sau: a) Chủ tịch Hội đồng là người đứng đầu cơ quan quản lý nhà nước về lao động cấp tỉnh; b) Thư ký Hội đồng; c) Các thành viên Hội đồng là đại diện tổ ch",
+        "Chủ tịch và các thành viên của Hội đồng làm việc theo chế độ kiêm nhiệm, nhiệm kỳ là 05 năm."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "34"
+        }
+      ],
+      "required_terms": [
+        "Điều 34",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=48298:article:34, doc_number=05/2015/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_severance_allowance",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Nghỉ việc thì khi nào được trợ cấp thôi việc?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 46. Trợ cấp thôi việc trong Bộ Luật lao động số 45/2019/QH14.",
+        "Khi hợp đồng lao động chấm dứt theo quy định tại các khoản 1, 2, 3, 4, 6, 7, 9 và 10 Điều 34 của Bộ luật này thì người sử dụng lao động có trách nhiệm trả trợ cấp thôi việc cho người lao động đã làm việc thường xuyên cho mình từ đủ 12 tháng",
+        "Thời gian làm việc để tính trợ cấp thôi việc là tổng thời gian người lao động đã làm việc thực tế cho người sử dụng lao động trừ đi thời gian người lao động đã tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo hiểm thất nghiệ",
+        "Tiền lương để tính trợ cấp thôi việc là tiền lương bình quân của 06 tháng liền kề theo hợp đồng lao động trước khi người lao động thôi việc."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "46"
+        }
+      ],
+      "required_terms": [
+        "Điều 46",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=139264:article:46, doc_number=45/2019/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_job_loss_allowance",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Mất việc do thay đổi cơ cấu thì được trợ cấp mất việc không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 47. Trợ cấp mất việc làm trong Bộ Luật lao động số 45/2019/QH14.",
+        "Người sử dụng lao động trả trợ cấp mất việc làm cho người lao động đã làm việc thường xuyên cho mình từ đủ 12 tháng trở lên mà bị mất việc làm theo quy định tại khoản 11 Điều 34 của Bộ luật này, cứ mỗi năm làm việc trả 01 tháng tiền lương n",
+        "Thời gian làm việc để tính trợ cấp mất việc làm là tổng thời gian người lao động đã làm việc thực tế cho người sử dụng lao động trừ đi thời gian người lao động đã tham gia bảo hiểm thất nghiệp theo quy định của pháp luật về bảo hiểm thất ng",
+        "Tiền lương để tính trợ cấp mất việc làm là tiền lương bình quân của 06 tháng liền kề theo hợp đồng lao động trước khi người lao động mất việc làm."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "47"
+        }
+      ],
+      "required_terms": [
+        "Điều 47",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=139264:article:47, doc_number=45/2019/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_final_payment",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Sau khi nghỉ việc công ty phải thanh toán lương trong bao lâu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 48. Trách nhiệm khi chấm dứt hợp đồng lao động trong Bộ Luật lao động số 45/2019/QH14.",
+        "Trách nhiệm khi chấm dứt hợp đồng lao động 1.",
+        "Trong thời hạn 14 ngày làm việc kể từ ngày chấm dứt hợp đồng lao động, hai bên có trách nhiệm thanh toán đầy đủ các khoản tiền có liên quan đến quyền lợi của mỗi bên, trừ trường hợp sau đây có thể kéo dài nhưng không được quá 30 ngày: a) Ng",
+        "Tiền lương, bảo hiểm xã hội, bảo hiểm y tế, bảo hiểm thất nghiệp, trợ cấp thôi việc và các quyền lợi khác của người lao động theo thỏa ước lao động tập thể, hợp đồng lao động được ưu tiên thanh toán trong trường hợp doanh nghiệp, hợp tác xã"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "48"
+        }
+      ],
+      "required_terms": [
+        "Điều 48",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=139264:article:48, doc_number=45/2019/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_overtime_pay",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Làm thêm giờ được trả lương như thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 98. Tiêu chuẩn, điều kiện trọng tài viên lao động trong Nghị định số 145/2020/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về điều kiện lao động và quan hệ lao động.",
+        "Tiêu chuẩn, điều kiện trọng tài viên lao động 1.",
+        "Là công dân Việt Nam, có năng lực hành vi dân sự đầy đủ theo quy định của Bộ luật Dân sự, có sức khỏe và phẩm chất đạo đức tốt, có uy tín, công tâm.",
+        "Có trình độ đại học trở lên, hiểu biết pháp luật và có ít nhất 05 năm làm việc trong lĩnh vực có liên quan đến quan hệ lao động."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "98"
+        }
+      ],
+      "required_terms": [
+        "Điều 98",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=152668:article:98, doc_number=145/2020/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_working_hours",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Thời giờ làm việc bình thường tối đa là bao nhiêu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 105. Danh mục nơi sử dụng lao động không được đình công trong Nghị định số 145/2020/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về điều kiện lao động và quan hệ lao động.",
+        "Danh mục nơi sử dụng lao động không được đình công Ban hành Danh mục nơi sử dụng lao động không được đình công gồm những doanh nghiệp, bộ phận doanh nghiệp mà việc đình công có thể đe dọa đến quốc phòng, an ninh, trật tự công cộng, sức khỏe"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "105"
+        }
+      ],
+      "required_terms": [
+        "Điều 105",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=152668:article:105, doc_number=145/2020/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_overtime_limit",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Công ty được yêu cầu làm thêm giờ tối đa bao nhiêu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 107. Làm thêm giờ trong Bộ Luật lao động số 45/2019/QH14.",
+        "Thời gian làm thêm giờ là khoảng thời gian làm việc ngoài thời giờ làm việc bình thường theo quy định của pháp luật, thỏa ước lao động tập thể hoặc nội quy lao động.",
+        "Người sử dụng lao động được sử dụng người lao động làm thêm giờ khi đáp ứng đầy đủ các yêu cầu sau đây: a) Phải được sự đồng ý của người lao động; b) Bảo đảm số giờ làm thêm của người lao động không quá 50% số giờ làm việc bình thường trong",
+        "Người sử dụng lao động được sử dụng người lao động làm thêm không quá 300 giờ trong 01 năm trong một số ngành, nghề, công việc hoặc trường hợp sau đây: a) Sản xuất, gia công xuất khẩu sản phẩm hàng dệt, may, da, giày, điện, điện tử, chế biế"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "107"
+        }
+      ],
+      "required_terms": [
+        "Điều 107",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=139264:article:107, doc_number=45/2019/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_annual_leave",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Một năm người lao động được nghỉ phép bao nhiêu ngày?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 113. Quyền, trách nhiệm của người lao động khi ngừng đình công trong Nghị định số 145/2020/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số điều của Bộ luật Lao động về điều kiện lao động và quan hệ lao động.",
+        "Quyền, trách nhiệm của người lao động khi ngừng đình công 1.",
+        "Sau khi Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định về việc ngừng đình công, người lao động phải trở lại làm việc và được trả lương.",
+        "Sau khi Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định về việc ngừng đình công mà người lao động không trở lại làm việc thì không được trả lương, trừ trường hợp hai bên có thỏa thuận khác."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "113"
+        }
+      ],
+      "required_terms": [
+        "Điều 113",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=152668:article:113, doc_number=145/2020/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "labor_pregnant_worker",
+    "category": "lao_dong",
+    "inputs": {
+      "question": "Lao động nữ mang thai có được bảo vệ khi công ty muốn chấm dứt hợp đồng không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 137. Bảo vệ thai sản trong Bộ Luật lao động số 45/2019/QH14.",
+        "Người sử dụng lao động không được sử dụng người lao động làm việc ban đêm, làm thêm giờ và đi công tác xa trong trường hợp sau đây: a) Mang thai từ tháng thứ 07 hoặc từ tháng thứ 06 nếu làm việc ở vùng cao, vùng sâu, vùng xa, biên giới, hải",
+        "Lao động nữ làm nghề, công việc nặng nhọc, độc hại, nguy hiểm hoặc đặc biệt nặng nhọc, độc hại, nguy hiểm hoặc làm nghề, công việc có ảnh hưởng xấu tới chức năng sinh sản và nuôi con khi mang thai và có thông báo cho người sử dụng lao động",
+        "Người sử dụng lao động không được sa thải hoặc đơn phương chấm dứt hợp đồng lao động đối với người lao động vì lý do kết hôn, mang thai, nghỉ thai sản, nuôi con dưới 12 tháng tuổi, trừ trường hợp người sử dụng lao động là cá nhân chết, bị T"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Bộ luật Lao động",
+          "article_number": "137"
+        }
+      ],
+      "required_terms": [
+        "Điều 137",
+        "Bộ luật Lao động"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=139264:article:137, doc_number=45/2019/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "marriage_conditions",
+    "category": "hon_nhan",
+    "inputs": {
+      "question": "Muốn đăng ký kết hôn thì nam nữ phải đáp ứng điều kiện gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 8. Điều kiện kết hôn trong Luật Hôn nhân và gia đình số 52/2014/QH13.",
+        "Nam, nữ kết hôn với nhau phải tuân theo các điều kiện sau đây: a) Nam từ đủ 20 tuổi trở lên, nữ từ đủ 18 tuổi trở lên; b) Việc kết hôn do nam và nữ tự nguyện quyết định; c) Không bị mất năng lực hành vi dân sự; d) Việc kết hôn không thuộc m",
+        "Nhà nước không thừa nhận hôn nhân giữa những người cùng giới tính."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Hôn nhân và gia đình",
+          "article_number": "8"
+        }
+      ],
+      "required_terms": [
+        "Điều 8",
+        "Luật Hôn nhân và gia đình"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=36870:article:8, doc_number=52/2014/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "marriage_registration",
+    "category": "hon_nhan",
+    "inputs": {
+      "question": "Không đăng ký kết hôn thì hôn nhân có được pháp luật công nhận không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 9. Đăng ký kết hôn trong Luật Hôn nhân và gia đình số 52/2014/QH13.",
+        "Việc kết hôn phải được đăng ký và do cơ quan nhà nước có thẩm quyền thực hiện theo quy định của Luật này và pháp luật về hộ tịch.",
+        "Việc kết hôn không được đăng ký theo quy định tại khoản này thì không có giá trị pháp lý.",
+        "Vợ chồng đã ly hôn muốn xác lập lại quan hệ vợ chồng thì phải đăng ký kết hôn."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Hôn nhân và gia đình",
+          "article_number": "9"
+        }
+      ],
+      "required_terms": [
+        "Điều 9",
+        "Luật Hôn nhân và gia đình"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=36870:article:9, doc_number=52/2014/QH13, question_bm25_rank=13."
+    }
+  },
+  {
+    "id": "marriage_divorce_right",
+    "category": "hon_nhan",
+    "inputs": {
+      "question": "Ai có quyền yêu cầu ly hôn?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 51. Quyền yêu cầu giải quyết ly hôn trong Luật Hôn nhân và gia đình số 52/2014/QH13.",
+        "Quyền yêu cầu giải quyết ly hôn 1.",
+        "Vợ, chồng hoặc cả hai người có quyền yêu cầu Tòa án giải quyết ly hôn.",
+        "Cha, mẹ, người thân thích khác có quyền yêu cầu Tòa án giải quyết ly hôn khi một bên vợ, chồng do bị bệnh tâm thần hoặc mắc bệnh khác mà không thể nhận thức, làm chủ được hành vi của mình, đồng thời là nạn nhân của bạo lực gia đình do chồng"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Hôn nhân và gia đình",
+          "article_number": "51"
+        }
+      ],
+      "required_terms": [
+        "Điều 51",
+        "Luật Hôn nhân và gia đình"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=36870:article:51, doc_number=52/2014/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "marriage_unilateral_divorce",
+    "category": "hon_nhan",
+    "inputs": {
+      "question": "Một bên muốn ly hôn nhưng bên kia không đồng ý thì tòa án giải quyết thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 56. Ly hôn theo yêu cầu của một bên trong Luật Hôn nhân và gia đình số 52/2014/QH13.",
+        "Ly hôn theo yêu cầu của một bên 1.",
+        "Khi vợ hoặc chồng yêu cầu ly hôn mà hòa giải tại Tòa án không thành thì Tòa án giải quyết cho ly hôn nếu có căn cứ về việc vợ, chồng có hành vi bạo lực gia đình hoặc vi phạm nghiêm trọng quyền, nghĩa vụ của vợ, chồng làm cho hôn nhân lâm và",
+        "Trong trường hợp vợ hoặc chồng của người bị Tòa án tuyên bố mất tích yêu cầu ly hôn thì Tòa án giải quyết cho ly hôn."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Hôn nhân và gia đình",
+          "article_number": "56"
+        }
+      ],
+      "required_terms": [
+        "Điều 56",
+        "Luật Hôn nhân và gia đình"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=36870:article:56, doc_number=52/2014/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "marriage_child_custody",
+    "category": "hon_nhan",
+    "inputs": {
+      "question": "Ly hôn thì con dưới 36 tháng tuổi thường giao cho ai nuôi?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 81. Việc trông nom, chăm sóc, nuôi dưỡng, giáo dục con sau khi ly hôn trong Luật Hôn nhân và gia đình số 52/2014/QH13.",
+        "Việc trông nom, chăm sóc, nuôi dưỡng, giáo dục con sau khi ly hôn 1.",
+        "Sau khi ly hôn, cha mẹ vẫn có quyền, nghĩa vụ trông nom, chăm sóc, nuôi dưỡng, giáo dục con chưa thành niên, con đã thành niên mất năng lực hành vi dân sự hoặc không có khả năng lao động và không có tài sản để tự nuôi mình theo quy định của",
+        "Vợ, chồng thỏa thuận về người trực tiếp nuôi con, nghĩa vụ, quyền của mỗi bên sau khi ly hôn đối với con; trường hợp không thỏa thuận được thì Tòa án quyết định giao con cho một bên trực tiếp nuôi căn cứ vào quyền lợi về mọi mặt của con; nế"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Hôn nhân và gia đình",
+          "article_number": "81"
+        }
+      ],
+      "required_terms": [
+        "Điều 81",
+        "Luật Hôn nhân và gia đình"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=36870:article:81, doc_number=52/2014/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "marriage_child_support",
+    "category": "hon_nhan",
+    "inputs": {
+      "question": "Người không trực tiếp nuôi con sau ly hôn có nghĩa vụ gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 82. Nghĩa vụ, quyền của cha, mẹ không trực tiếp nuôi con sau khi ly hôn trong Luật Hôn nhân và gia đình số 52/2014/QH13.",
+        "Nghĩa vụ, quyền của cha, mẹ không trực tiếp nuôi con sau khi ly hôn 1.",
+        "Cha, mẹ không trực tiếp nuôi con có nghĩa vụ tôn trọng quyền của con được sống chung với người trực tiếp nuôi.",
+        "Cha, mẹ không trực tiếp nuôi con có nghĩa vụ cấp dưỡng cho con."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Hôn nhân và gia đình",
+          "article_number": "82"
+        }
+      ],
+      "required_terms": [
+        "Điều 82",
+        "Luật Hôn nhân và gia đình"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=36870:article:82, doc_number=52/2014/QH13, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "enterprise_single_member_llc",
+    "category": "doanh_nghiep",
+    "inputs": {
+      "question": "Công ty trách nhiệm hữu hạn một thành viên là gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 74. Công ty trách nhiệm hữu hạn một thành viên trong Luật Doanh nghiệp số 59/2020/QH14.",
+        "Công ty trách nhiệm hữu hạn một thành viên 1.",
+        "Công ty trách nhiệm hữu hạn một thành viên là doanh nghiệp do một tổ chức hoặc một cá nhân làm chủ sở hữu (sau đây gọi là chủ sở hữu công ty).",
+        "Chủ sở hữu công ty chịu trách nhiệm về các khoản nợ và nghĩa vụ tài sản khác của công ty trong phạm vi số vốn điều lệ của công ty."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Doanh nghiệp",
+          "article_number": "74"
+        }
+      ],
+      "required_terms": [
+        "Điều 74",
+        "Luật Doanh nghiệp"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=142847:article:74, doc_number=59/2020/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "enterprise_joint_stock",
+    "category": "doanh_nghiep",
+    "inputs": {
+      "question": "Công ty cổ phần có đặc điểm pháp lý cơ bản nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 111. Công ty cổ phần trong Luật Doanh nghiệp số 59/2020/QH14.",
+        "Công ty cổ phần là doanh nghiệp, trong đó: a) Vốn điều lệ được chia thành nhiều phần bằng nhau gọi là cổ phần; b) Cổ đông có thể là tổ chức, cá nhân; số lượng cổ đông tối thiểu là 03 và không hạn chế số lượng tối đa; c) Cổ đông chỉ chịu trá",
+        "Công ty cổ phần có tư cách pháp nhân kể từ ngày được cấp Giấy chứng nhận đăng ký doanh nghiệp.",
+        "Công ty cổ phần có quyền phát hành cổ phần, trái phiếu và các loại chứng khoán khác của công ty."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Doanh nghiệp",
+          "article_number": "111"
+        }
+      ],
+      "required_terms": [
+        "Điều 111",
+        "Luật Doanh nghiệp"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=142847:article:111, doc_number=59/2020/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "enterprise_private_liability",
+    "category": "doanh_nghiep",
+    "inputs": {
+      "question": "Doanh nghiệp tư nhân chịu trách nhiệm tài sản như thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 188. Doanh nghiệp tư nhân trong Luật Doanh nghiệp số 59/2020/QH14.",
+        "Doanh nghiệp tư nhân là doanh nghiệp do một cá nhân làm chủ và tự chịu trách nhiệm bằng toàn bộ tài sản của mình về mọi hoạt động của doanh nghiệp.",
+        "Doanh nghiệp tư nhân không được phát hành bất kỳ loại chứng khoán nào.",
+        "Mỗi cá nhân chỉ được quyền thành lập một doanh nghiệp tư nhân."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Doanh nghiệp",
+          "article_number": "188"
+        }
+      ],
+      "required_terms": [
+        "Điều 188",
+        "Luật Doanh nghiệp"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=142847:article:188, doc_number=59/2020/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "residence_permanent_registration",
+    "category": "cu_tru",
+    "inputs": {
+      "question": "Đăng ký thường trú cần điều kiện gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 20. Xóa đăng ký thường trú, xóa đăng ký tạm trú trong Thông tư số 55/2021/TT-BCA Quy định chi tiết một số điều và biện pháp thi hành Luật Cư trú.",
+        "Xóa đăng ký thường trú, xóa đăng ký tạm trú Cơ quan, đơn vị quản lý trực tiếp người học tập, công tác, làm việc ở tại đơn vị đóng quân trong Công an nhân dân có trách nhiệm định kỳ hàng quý gửi danh sách kèm văn bản đề nghị xóa đăng ký thườ",
+        "Chương VI TRÁCH NHIỆM QUẢN LÝ CƯ TRÚ"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Cư trú",
+          "article_number": "20"
+        }
+      ],
+      "required_terms": [
+        "Điều 20",
+        "Luật Cư trú"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=148326:article:20, doc_number=55/2021/TT-BCA, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "residence_temporary_registration",
+    "category": "cu_tru",
+    "inputs": {
+      "question": "Đăng ký tạm trú được quy định như thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 27. Điều kiện đăng ký tạm trú trong Luật Cư trú số 68/2020/QH14.",
+        "Điều kiện đăng ký tạm trú 1.",
+        "Công dân đến sinh sống tại chỗ ở hợp pháp ngoài phạm vi đơn vị hành chính cấp xã nơi đã đăng ký thường trú để lao động, học tập hoặc vì mục đích khác từ 30 ngày trở lên thì phải thực hiện đăng ký tạm trú.",
+        "Thời hạn tạm trú tối đa là 02 năm và có thể tiếp tục gia hạn nhiều lần."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Cư trú",
+          "article_number": "27"
+        }
+      ],
+      "required_terms": [
+        "Điều 27",
+        "Luật Cư trú"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=146648:article:27, doc_number=68/2020/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "social_insurance_maternity",
+    "category": "bao_hiem_xa_hoi",
+    "inputs": {
+      "question": "Điều kiện hưởng chế độ thai sản là gì?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 31. Nguồn kinh phí thực hiện trong Nghị định số 158/2025/NĐ-CP Quy định chi tiết và hướng dẫn thi hành một số điều của Luật Bảo hiểm xã hội về bảo hiểm xã hội bắt buộc.",
+        "Nguồn kinh phí thực hiện 1.",
+        "Kinh phí đảm bảo thời gian đóng bảo hiểm xã hội mà người lao động được xác nhận để làm cơ sở giải quyết chế độ hưu trí, tử tuất là số tiền chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc vào quỹ hưu trí và tử tuất mà người lao động, người sử",
+        "Nguồn kinh phí tại khoản 1 Điều này từ nguồn thu tiền lãi người sử dụng lao động phải nộp theo quy định tại khoản 3 Điều 122 của Luật Bảo hiểm xã hội số 58/2014/QH13 và số tiền 0,03%/ngày thu được theo quy định tại khoản 1 Điều 40 và khoản"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Bảo hiểm xã hội",
+          "article_number": "31"
+        }
+      ],
+      "required_terms": [
+        "Điều 31",
+        "Luật Bảo hiểm xã hội"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=178757:article:31, doc_number=158/2025/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "health_insurance_benefit",
+    "category": "bao_hiem_y_te",
+    "inputs": {
+      "question": "Mức hưởng bảo hiểm y tế khi đi khám chữa bệnh đúng tuyến là bao nhiêu?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 22. Điều kiện ký hợp đồng khám bệnh, chữa bệnh bảo hiểm y tế trong Nghị định số 188/2025/NĐ-CP hướng dẫn Luật Bảo hiểm y tế.",
+        "Điều kiện ký hợp đồng khám bệnh, chữa bệnh bảo hiểm y tế 1.",
+        "Bảo đảm các điều kiện hoạt động của cơ sở khám bệnh, chữa bệnh theo quy định tại Điều 49 Luật Khám bệnh, chữa bệnh phù hợp với phạm vi cung ứng dịch vụ khám bệnh, chữa bệnh bảo hiểm y tế.",
+        "Bảo đảm tiêu chuẩn kết nối, liên thông dữ liệu khám bệnh, chữa bệnh bảo hiểm y tế với hệ thống thông tin, giám định bảo hiểm y tế của cơ quan bảo hiểm xã hội theo quy định của Bộ trưởng Bộ Y tế và xác thực dữ liệu thanh toán chi phí khám bệ"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Bảo hiểm y tế",
+          "article_number": "22"
+        }
+      ],
+      "required_terms": [
+        "Điều 22",
+        "Luật Bảo hiểm y tế"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=179711:article:22, doc_number=188/2025/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "cyber_prohibited_acts",
+    "category": "an_ninh_mang",
+    "inputs": {
+      "question": "Các hành vi nào bị nghiêm cấm trên không gian mạng?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 8. Điều kiện về quy định, quy trình, phương án bảo đảm an ninh mạng đối với hệ thống thông tin quan trọng về an ninh quốc gia trong Nghị định số 53/2022/NĐ-CP Quy định chi tiết một số điều của Luật An ninh mạng.",
+        "Điều kiện về quy định, quy trình, phương án bảo đảm an ninh mạng đối với hệ thống thông tin quan trọng về an ninh quốc gia 1.",
+        "Căn cứ vào các quy định bảo vệ an ninh mạng, bảo vệ bí mật nhà nước, bí mật công tác, tiêu chuẩn, quy chuẩn kỹ thuật an toàn thông tin mạng và các tiêu chuẩn kỹ thuật chuyên ngành khác có liên quan, chủ quản hệ thống thông tin quan trọng về",
+        "Nội dung các quy định, quy trình, phương án về bảo vệ an ninh mạng phải quy định rõ hệ thống thông tin và thông tin quan trọng cần ưu tiên bảo vệ; quy trình quản lý, kỹ thuật, nghiệp vụ trong sử dụng, bảo vệ an ninh mạng đối với dữ liệu, hạ"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật An ninh mạng",
+          "article_number": "8"
+        }
+      ],
+      "required_terms": [
+        "Điều 8",
+        "Luật An ninh mạng"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=180306:article:8, doc_number=53/2022/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "cyber_user_info",
+    "category": "an_ninh_mang",
+    "inputs": {
+      "question": "Doanh nghiệp cung cấp dịch vụ trên mạng phải bảo đảm thông tin người dùng thế nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 26. Bảo đảm an ninh thông tin trên không gian mạng trong Luật An ninh mạng số 24/2018/QH14.",
+        "Bảo đảm an ninh thông tin trên không gian mạng 1.",
+        "Trang thông tin điện tử, cổng thông tin điện tử hoặc chuyên trang trên mạng xã hội của cơ quan, tổ chức, cá nhân không được cung cấp, đăng tải, truyền đưa thông tin có nội dung quy định tại các khoản 1, 2, 3, 4 và 5 Điều 16 của Luật này và",
+        "Doanh nghiệp trong nước và ngoài nước cung cấp dịch vụ trên mạng viễn thông, mạng Internet, các dịch vụ gia tăng trên không gian mạng tại Việt Nam có trách nhiệm sau đây: a) Xác thực thông tin khi người dùng đăng ký tài khoản số; bảo mật th"
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật An ninh mạng",
+          "article_number": "26"
+        }
+      ],
+      "required_terms": [
+        "Điều 26",
+        "Luật An ninh mạng"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=132957:article:26, doc_number=24/2018/QH14, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "ip_right_basis",
+    "category": "so_huu_tri_tue",
+    "inputs": {
+      "question": "Quyền tác giả và quyền sở hữu công nghiệp phát sinh dựa trên căn cứ nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 6. Trách nhiệm của Bộ Khoa học và Công nghệ về sở hữu công nghiệp trong Nghị định số 65/2023/NĐ-CP Quy định chi tiết một số điều và biện pháp thi hành Luật Sở hữu trí tuệ về sở hữu công nghiệp, bảo vệ quyền sở hữu công nghiệp, quyền đối với giống cây trồng và quản lý nhà nước về sở hữu trí tuệ.",
+        "Trách nhiệm của Bộ Khoa học và Công nghệ về sở hữu công nghiệp Bộ Khoa học và Công nghệ có trách nhiệm sau đây trong quản lý nhà nước về sở hữu công nghiệp: 1.",
+        "Xây dựng, tổ chức thực hiện chiến lược, chính sách bảo hộ quyền sở hữu công nghiệp.",
+        "Ban hành, trình cấp có thẩm quyền ban hành, tổ chức thực hiện các văn bản pháp luật về sở hữu công nghiệp."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Sở hữu trí tuệ",
+          "article_number": "6"
+        }
+      ],
+      "required_terms": [
+        "Điều 6",
+        "Luật Sở hữu trí tuệ"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=164372:article:6, doc_number=65/2023/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "ip_copyright_infringement",
+    "category": "so_huu_tri_tue",
+    "inputs": {
+      "question": "Sao chép tác phẩm của người khác khi chưa được phép có phải xâm phạm quyền tác giả không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 28. Yêu cầu đối với đơn đăng ký chỉ dẫn địa lý trong Thông tư số 23/2023/TT-BKHCN Quy định chi tiết một số điều của Luật Sở hữu trí tuệ và biện pháp thi hành Nghị định số 65/2023/NĐ-CP ngày 23 tháng 8 năm 2023 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Sở hữu trí tuệ về sở hữu công nghiệp, bảo vệ quyền sở hữu công nghiệp, quyền đối với giống cây trồng và quản lý nhà nước về sở hữu trí tuệ liên quan đến thủ tục xác lập quyền sở hữu công nghiệp và bảo đảm thông tin sở hữu công nghiệp.",
+        "Yêu cầu đối với đơn đăng ký chỉ dẫn địa lý Đơn đăng ký chỉ dẫn địa lý phải đáp ứng các yêu cầu quy định tại Điều 100, 101, 106 của Luật Sở hữu trí tuệ, Phụ lục I của Nghị định số 65/2023/NĐ-CP."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Sở hữu trí tuệ",
+          "article_number": "28"
+        }
+      ],
+      "required_terms": [
+        "Điều 28",
+        "Luật Sở hữu trí tuệ"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=164373:article:28, doc_number=23/2023/TT-BKHCN, question_bm25_rank=5."
+    }
+  },
+  {
+    "id": "commerce_contract_form",
+    "category": "thuong_mai",
+    "inputs": {
+      "question": "Hợp đồng mua bán hàng hóa có bắt buộc lập thành văn bản không?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 24. Hành vi vi phạm pháp luật trong hoạt động nhượng quyền thương mại trong Nghị định số 35/2006/NĐ-CP Quy định chi tiết Luật Thương mại về hoạt động nhượng quyền thương mại.",
+        "Hành vi vi phạm pháp luật trong hoạt động nhượng quyền thương mại 1.",
+        "Thương nhân tham gia hoạt động nhượng quyền thương mại có hành vi vi phạm sau đây thì tùy theo tính chất, mức độ vi phạm mà bị xử phạt vi phạm hành chính theo quy định của pháp luật về xử lý vi phạm hành chính: a) Kinh doanh nhượng quyền th",
+        "Trường hợp thương nhân kinh doanh theo phương thức nhượng quyền thương mại có hành vi vi phạm gây thiệt đến lợi ích vật chất của tổ chức, cá nhân liên quan thì phải bồi thường thiệt hại theo quy định của pháp luật."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Thương mại",
+          "article_number": "24"
+        }
+      ],
+      "required_terms": [
+        "Điều 24",
+        "Luật Thương mại"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=16348:article:24, doc_number=35/2006/NĐ-CP, question_bm25_rank=not_in_top_30."
+    }
+  },
+  {
+    "id": "commerce_contract_remedies",
+    "category": "thuong_mai",
+    "inputs": {
+      "question": "Khi vi phạm hợp đồng thương mại thì có những chế tài nào?"
+    },
+    "reference_outputs": {
+      "answer_points": [
+        "Cần đối chiếu Điều 292. Các loại chế tài trong thương mại trong Luật Thương mại số 36/2005/QH11.",
+        "Các loại chế tài trong thương mại 1.",
+        "Buộc thực hiện đúng hợp đồng.",
+        "Buộc bồi thường thiệt hại."
+      ],
+      "expected_sources": [
+        {
+          "document_title_contains": "Luật Thương mại",
+          "article_number": "292"
+        }
+      ],
+      "required_terms": [
+        "Điều 292",
+        "Luật Thương mại"
+      ],
+      "forbidden_claims": [
+        "chắc chắn không bị xử lý",
+        "không cần căn cứ pháp luật",
+        "luôn luôn"
+      ],
+      "notes": "Generated from corpus chunk_id=26117:article:292, doc_number=36/2005/QH11, question_bm25_rank=not_in_top_30."
+    }
+  }
+]
