@@ -1,0 +1,6 @@
+-r requirements.txt
+
+# Optional semantic judged evaluation with RAGAS.
+# Pin RAGAS to the 0.1 API used by evaluation/run_ragas_semantic_judge.py.
+ragas==0.1.21
+datasets>=2.19.0,<3.0.0

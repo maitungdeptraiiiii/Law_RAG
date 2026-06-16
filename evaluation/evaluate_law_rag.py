@@ -467,6 +467,38 @@ def extract_citation_keys(text: str) -> set[str]:
     return keys
 
 
+def source_supports_clause(source: dict[str, Any], clause_number: str) -> bool:
+    expected_clause = normalize_text(clause_number)
+    if not expected_clause:
+        return False
+
+    actual_clause = normalize_text(source.get("clause_number"))
+    if actual_clause and actual_clause == expected_clause:
+        return True
+
+    text = source_text(source)
+    if not text:
+        return False
+
+    escaped_clause = re.escape(expected_clause)
+    normalized_text = normalize_text(text)
+    if re.search(rf"\bkhoan\s+{escaped_clause}\b", normalized_text):
+        return True
+
+    # Current article-level chunks often contain clause text as numbered blocks:
+    # "1. ...", "2) ...", or "1 - ...", while clause_number metadata is empty.
+    return bool(re.search(rf"(?m)(?:^|\n)\s*{escaped_clause}\s*(?:[\.\)]|\s+-)\s+", text))
+
+
+def citation_key_supported(key: str, retrieved: list[dict[str, Any]], retrieved_keys: set[str]) -> bool:
+    if key in retrieved_keys:
+        return True
+    kind, _, value = key.partition(":")
+    if kind != "clause":
+        return False
+    return any(source_supports_clause(source, value) for source in retrieved)
+
+
 def canonical_number(value: str) -> str:
     normalized = value.replace(",", ".").rstrip(".")
     suffix = "%" if normalized.endswith("%") else ""
@@ -496,7 +528,9 @@ def score_groundedness(answer: str, retrieved: list[dict[str, Any]], required_te
         if key and not key.endswith(":")
     }
     answer_keys = extract_citation_keys(answer)
-    unsupported_citations = sorted(answer_keys - retrieved_keys)
+    unsupported_citations = sorted(
+        key for key in answer_keys if not citation_key_supported(key, retrieved, retrieved_keys)
+    )
 
     required_term_scores = score_required_terms(retrieved_text, required_terms)
     answer_numbers = extract_numbers(answer)
@@ -626,6 +660,7 @@ def run_case(case: dict[str, Any], config: EvalConfig) -> dict[str, Any]:
     reference_outputs = case.get("reference_outputs") or {}
     retrieved = result.get("retrieved", [])
     answer = result.get("answer", "")
+    timings = result.get("timings") if isinstance(result.get("timings"), dict) else {}
 
     scores = heuristic_scores(
         answer=answer,
@@ -641,6 +676,10 @@ def run_case(case: dict[str, Any], config: EvalConfig) -> dict[str, Any]:
         "retrieval_input": result.get("retrieval_input"),
         "legal_intent": result.get("legal_intent"),
         "retrieval_queries": result.get("retrieval_queries"),
+        "legal_issue_labels": result.get("legal_issue_labels", []),
+        "legal_issue_matches": result.get("legal_issue_matches", []),
+        "rewrite_source": result.get("rewrite_source"),
+        "legal_issue_confidence": result.get("legal_issue_confidence"),
         "sources": retrieved,
         "scores": scores,
         "metadata": {
@@ -652,6 +691,14 @@ def run_case(case: dict[str, Any], config: EvalConfig) -> dict[str, Any]:
             "memory_model": config.memory_model,
             "embedding_model": DEFAULT_EMBEDDING_MODEL,
             "latency_ms": latency_ms,
+            "graph_retrieval_enabled": bool(timings.get("graphRetrievalEnabled")),
+            "graph_retrieval_rows": timings.get("graphRetrievalRows", 0),
+            "graph_retrieval_pinned": timings.get("graphRetrievalPinned", 0),
+            "graph_retrieval_queries": timings.get("graphRetrievalQueries", 0),
+            "graph_retrieval_ms": timings.get("graphRetrievalMs", 0),
+            "graph_retrieval_error": timings.get("graphRetrievalError"),
+            "retrieval_active_queries": timings.get("retrievalActiveQueries"),
+            "timings": timings,
         },
         "todo": case.get("reference_outputs", {}).get("notes"),
     }
@@ -702,6 +749,34 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
     ]
     if top_3_values:
         summary["top_3_contains_expected_rate"] = round(sum(bool(value) for value in top_3_values) / len(top_3_values), 3)
+
+    metadata_items = [item.get("metadata", {}) for item in results if isinstance(item.get("metadata"), dict)]
+    if metadata_items:
+        graph_enabled_count = sum(bool(item.get("graph_retrieval_enabled")) for item in metadata_items)
+        graph_used_count = sum(
+            int(item.get("graph_retrieval_rows") or 0) > 0
+            or int(item.get("graph_retrieval_pinned") or 0) > 0
+            or int(item.get("graph_retrieval_queries") or 0) > 0
+            for item in metadata_items
+        )
+        graph_error_count = sum(bool(item.get("graph_retrieval_error")) for item in metadata_items)
+        summary["graph_debug"] = {
+            "enabled_case_count": graph_enabled_count,
+            "used_case_count": graph_used_count,
+            "error_case_count": graph_error_count,
+            "rows_avg": round(
+                statistics.mean(float(item.get("graph_retrieval_rows") or 0) for item in metadata_items),
+                2,
+            ),
+            "pinned_avg": round(
+                statistics.mean(float(item.get("graph_retrieval_pinned") or 0) for item in metadata_items),
+                2,
+            ),
+            "queries_avg": round(
+                statistics.mean(float(item.get("graph_retrieval_queries") or 0) for item in metadata_items),
+                2,
+            ),
+        }
 
     return summary
 

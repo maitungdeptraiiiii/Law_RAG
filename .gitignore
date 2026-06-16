@@ -3,54 +3,57 @@
 .env.*
 !.env.example
 env.txt
-*.pem
-*.key
-*.crt
-*.p12
-*.pfx
 law-rag-frontend/.env
 law-rag-frontend/.env.*
 !law-rag-frontend/.env.example
-law-rag-frontend/.env.local
 
 # Python cache / local env
 __pycache__/
 *.py[cod]
 .venv/
-.venv*/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
-.ipynb_checkpoints/
 
 # Frontend dependencies/build output
 node_modules/
 law-rag-frontend/node_modules/
 .next/
 law-rag-frontend/.next/
-law-rag-frontend/.turbo/
-law-rag-frontend/.vercel/
 law-rag-frontend/tsconfig.tsbuildinfo
 
-# Runtime/private/generated output
-output/
-*.log
-*.err.log
-*.out.log
+# Runtime/private output
+output/uploads/
+output/upload_documents/
+output/sessions/
+output/eval/
+output/api_jobs.json
+output/*.log
+output/*.err.log
 
-# Generated corpus/vector/index artifacts
-*.faiss
-faiss.index
-*.index
-*.sqlite
-*.sqlite3
-*.db
-*.jsonl
-vector_metadata.json
-vector_manifest.json
-bm25_index.json
-retrieval_store.sqlite
+# Generated corpus/vector indexes
+output/vbpl_laws_active_partial/
+output/vbpl_laws_active_partial.zip
+output/vbpl_business_guidance_mvp/
+output/vbpl_business_guidance_mvp.zip
 
-# Local analysis/tooling artifacts
+# Old generated corpus outputs
+output/chunks/
+output/laws/
+output/chunk_framework_report.json
+
+# Understand Anything generated files
 .understand-anything/
-*.executed.ipynb
+
+# Generated outputs
+output/
+
+# Jupyter notebooks generated during eval
+evaluation/*.ipynb
+
+# Local debug scripts
+scripts/debug_*.py
+
+# Python cache
+__pycache__/
+*.pyc

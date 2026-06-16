@@ -589,6 +589,8 @@ def map_retrieved_source(item: dict[str, Any]) -> dict[str, Any]:
         "documentNumber": document_number,
         "articleNumber": item.get("article_number"),
         "clauseNumber": item.get("clause_number"),
+        "pointNumber": item.get("point_number"),
+        "parentChunkId": item.get("parent_chunk_id"),
         "targetArticle": item.get("target_article"),
         "chunkText": item.get("text") or item.get("preview") or "",
         "relevanceScore": float(item.get("rerank_score") or item.get("rrf_score") or item.get("score") or 0.0),
@@ -1390,6 +1392,8 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             final_top_k=settings["top_k"],
             additional_bm25_sources=private_bm25_sources,
             additional_vector_dirs=private_vector_dirs,
+            legal_issue_labels=retrieval_plan.get("legal_issue_labels", []),
+            legal_issue_matches=retrieval_plan.get("legal_issue_matches", []),
         )
         bm25_ms = int((time.perf_counter() - started) * 1000)
 
@@ -1414,6 +1418,8 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             final_top_k=settings["top_k"],
             additional_bm25_sources=private_bm25_sources,
             additional_vector_dirs=private_vector_dirs,
+            legal_issue_labels=retrieval_plan.get("legal_issue_labels", []),
+            legal_issue_matches=retrieval_plan.get("legal_issue_matches", []),
         )
         vector_ms = int((time.perf_counter() - started) * 1000)
 
@@ -1437,6 +1443,8 @@ def debug_query(payload: DebugQueryPayload) -> dict[str, Any]:
             final_top_k=settings["top_k"],
             additional_bm25_sources=private_bm25_sources,
             additional_vector_dirs=private_vector_dirs,
+            legal_issue_labels=retrieval_plan.get("legal_issue_labels", []),
+            legal_issue_matches=retrieval_plan.get("legal_issue_matches", []),
         )
     else:
         fused_results = bm25_results if settings["mode"] == "bm25" else vector_results

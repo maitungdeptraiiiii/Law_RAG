@@ -6,6 +6,8 @@ from typing import Any, Callable
 
 DEFAULT_MAX_CHUNK_CHARS = 3_500
 DEFAULT_OVERLAP_CHARS = 350
+DEFAULT_SHORT_CHUNK_CHARS = 120
+DEFAULT_SHORT_MERGE_MAX_CHARS = 2_500
 
 CLAUSE_RE = re.compile(r"^\s*(\d+[a-z]?)\s*[.)]\s+", re.IGNORECASE)
 POINT_RE = re.compile(r"^\s*([a-z\u0111])\s*[.)]\s+", re.IGNORECASE)
@@ -116,6 +118,8 @@ def split_legal_chunk(
     *,
     max_chars: int = DEFAULT_MAX_CHUNK_CHARS,
     overlap_chars: int = DEFAULT_OVERLAP_CHARS,
+    short_chunk_chars: int = DEFAULT_SHORT_CHUNK_CHARS,
+    short_merge_max_chars: int = DEFAULT_SHORT_MERGE_MAX_CHARS,
     length_fn: Callable[[dict[str, Any]], int] | None = None,
 ) -> list[dict[str, Any]]:
     """Split a legal chunk by article structure, falling back to overlapped size chunks."""
@@ -126,6 +130,7 @@ def split_legal_chunk(
     normalized = dict(chunk)
     normalized["text"] = text
     normalized["text_length"] = len(text)
+    normalized["parent_context_text"] = _parent_context_text(normalized)
     if _fits(normalized, max_chars, length_fn):
         return [normalized]
 
@@ -140,14 +145,25 @@ def split_legal_chunk(
             length_fn=length_fn,
         )
         if chunks:
-            return chunks
+            return _merge_short_sibling_chunks(
+                chunks,
+                short_chunk_chars=short_chunk_chars,
+                max_merged_chars=min(max_chars, short_merge_max_chars),
+                length_fn=length_fn,
+            )
 
     fallback_texts = split_text_with_overlap(text, max_chars=max_chars, overlap_chars=overlap_chars)
-    return _fallback_chunks(
+    chunks = _fallback_chunks(
         chunk,
         fallback_texts,
         max_chars=max_chars,
         overlap_chars=overlap_chars,
+        length_fn=length_fn,
+    )
+    return _merge_short_sibling_chunks(
+        chunks,
+        short_chunk_chars=short_chunk_chars,
+        max_merged_chars=min(max_chars, short_merge_max_chars),
         length_fn=length_fn,
     )
 
@@ -388,7 +404,132 @@ def _make_child_chunk(
     child["subchunk_count"] = part_count
     child["text"] = normalize_text_block(text)
     child["text_length"] = len(child["text"])
+    child["parent_context_text"] = _parent_context_text(child)
     return child
+
+
+def _parent_context_text(chunk: dict[str, Any]) -> str:
+    parts: list[str] = []
+    for key in ("document_title", "doc_number", "doc_type", "part", "chapter", "section", "article_title"):
+        value = str(chunk.get(key) or "").strip()
+        if value and value not in parts:
+            parts.append(value)
+    article_number = str(chunk.get("article_number") or "").strip()
+    if article_number and not any(part.casefold().startswith(f"điều {article_number}".casefold()) for part in parts):
+        parts.append(f"Điều {article_number}")
+    return "\n".join(parts)
+
+
+def _merge_short_sibling_chunks(
+    chunks: list[dict[str, Any]],
+    *,
+    short_chunk_chars: int,
+    max_merged_chars: int,
+    length_fn: Callable[[dict[str, Any]], int] | None,
+) -> list[dict[str, Any]]:
+    if short_chunk_chars <= 0 or len(chunks) < 2:
+        return chunks
+
+    merged: list[dict[str, Any]] = []
+    index = 0
+    while index < len(chunks):
+        current = chunks[index]
+        current_len = int(current.get("text_length") or len(str(current.get("text") or "")))
+        if current_len >= short_chunk_chars:
+            merged.append(current)
+            index += 1
+            continue
+
+        if merged and _can_merge_short_chunks(merged[-1], current, max_merged_chars=max_merged_chars, length_fn=length_fn):
+            merged[-1] = _merge_chunk_pair(merged[-1], current)
+            index += 1
+            continue
+
+        if index + 1 < len(chunks) and _can_merge_short_chunks(current, chunks[index + 1], max_merged_chars=max_merged_chars, length_fn=length_fn):
+            merged.append(_merge_chunk_pair(current, chunks[index + 1]))
+            index += 2
+            continue
+
+        merged.append(current)
+        index += 1
+
+    return merged
+
+
+def _can_merge_short_chunks(
+    first: dict[str, Any],
+    second: dict[str, Any],
+    *,
+    max_merged_chars: int,
+    length_fn: Callable[[dict[str, Any]], int] | None,
+) -> bool:
+    if _sibling_key(first) != _sibling_key(second):
+        return False
+    merged = _merge_chunk_pair(first, second)
+    if len(str(merged.get("text") or "")) > max_merged_chars:
+        return False
+    if length_fn is not None and length_fn(merged) > max_merged_chars:
+        return False
+    return True
+
+
+def _sibling_key(chunk: dict[str, Any]) -> tuple[Any, ...]:
+    return (
+        chunk.get("parent_chunk_id") or chunk.get("chunk_id"),
+        chunk.get("vbpl_id"),
+        chunk.get("source_file"),
+        chunk.get("document_title"),
+        chunk.get("article_number"),
+    )
+
+
+def _merge_chunk_pair(first: dict[str, Any], second: dict[str, Any]) -> dict[str, Any]:
+    text = normalize_text_block(f"{first.get('text') or ''}\n{second.get('text') or ''}")
+    merged = dict(first)
+    merged["text"] = text
+    merged["text_length"] = len(text)
+    merged["merged_short_chunk"] = True
+    merged["merged_chunk_ids"] = [
+        *_as_list(first.get("merged_chunk_ids"), first.get("chunk_id")),
+        *_as_list(second.get("merged_chunk_ids"), second.get("chunk_id")),
+    ]
+    merged["merged_short_chunk_count"] = len(merged["merged_chunk_ids"])
+    merged["merged_clause_numbers"] = _ordered_values(
+        [
+            *_as_list(first.get("merged_clause_numbers"), first.get("clause_number")),
+            *_as_list(second.get("merged_clause_numbers"), second.get("clause_number")),
+        ]
+    )
+    merged["merged_point_numbers"] = _ordered_values(
+        [
+            *_as_list(first.get("merged_point_numbers"), first.get("point_number")),
+            *_as_list(second.get("merged_point_numbers"), second.get("point_number")),
+        ]
+    )
+    merged["parent_context_text"] = _parent_context_text(merged)
+    return merged
+
+
+def _as_list(value: Any, fallback: Any = None) -> list[Any]:
+    if isinstance(value, list):
+        return [item for item in value if item not in (None, "")]
+    if value not in (None, ""):
+        return [value]
+    if fallback not in (None, ""):
+        return [fallback]
+    return []
+
+
+def _ordered_values(values: list[Any]) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+    for value in values:
+        text = str(value).strip()
+        if not text or text in seen:
+            continue
+        seen.add(text)
+        ordered.append(text)
+    return ordered
 
 
 def _semantic_child_id(source: dict[str, Any], level: str, suffix: str) -> str:

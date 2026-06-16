@@ -26,6 +26,10 @@ class IndexedChunk:
     article_title: str | None
     clause_number: str | None
     point_number: str | None
+    parent_chunk_id: str | None
+    parent_context_text: str | None
+    merged_short_chunk: bool | None
+    merged_chunk_ids: list[str] | None
     text: str
     text_length: int
     document_title: str | None
@@ -54,33 +58,72 @@ def build_searchable_text(chunk: dict) -> str:
 
     if chunk.get("document_title"):
         title = _limit_searchable_field(str(chunk["document_title"]))
-        parts.extend([title, title])
+        parts.extend(
+            [
+                f"Tên văn bản: {title}",
+                f"Tên văn bản: {title}",
+            ]
+        )
     if chunk.get("doc_number"):
-        parts.append(chunk["doc_number"])
+        parts.append(f"Số văn bản: {chunk['doc_number']}")
     if chunk.get("doc_type"):
-        parts.append(chunk["doc_type"])
+        parts.append(f"Loại văn bản: {chunk['doc_type']}")
     if chunk.get("effective_status"):
-        parts.append(chunk["effective_status"])
+        parts.append(f"Tình trạng hiệu lực: {chunk['effective_status']}")
     if chunk.get("agency_name"):
-        parts.append(chunk["agency_name"])
+        parts.append(f"Cơ quan ban hành: {chunk['agency_name']}")
+    if chunk.get("issue_date"):
+        parts.append(f"Ngày ban hành: {chunk['issue_date']}")
+    if chunk.get("effective_from"):
+        parts.append(f"Ngày có hiệu lực: {chunk['effective_from']}")
+    if chunk.get("effective_to"):
+        parts.append(f"Ngày hết hiệu lực: {chunk['effective_to']}")
     if chunk.get("majors"):
-        parts.extend(_limit_searchable_field(str(item)) for item in chunk["majors"][:MAX_SEARCHABLE_LIST_ITEMS])
+        majors = _join_searchable_list(chunk["majors"])
+        if majors:
+            parts.append(f"Ngành/Lĩnh vực chính: {majors}")
     if chunk.get("fields"):
-        parts.extend(_limit_searchable_field(str(item)) for item in chunk["fields"][:MAX_SEARCHABLE_LIST_ITEMS])
-    if chunk.get("metadata_text"):
-        parts.append(_limit_searchable_metadata(str(chunk["metadata_text"])))
-    if chunk.get("display_title"):
-        parts.append(_limit_searchable_field(str(chunk["display_title"])))
+        fields = _join_searchable_list(chunk["fields"])
+        if fields:
+            parts.append(f"Lĩnh vực: {fields}")
+    if chunk.get("chapter"):
+        parts.append(f"Chương: {_limit_searchable_field(str(chunk['chapter']))}")
+    if chunk.get("part"):
+        parts.append(f"Phần: {_limit_searchable_field(str(chunk['part']))}")
+    if chunk.get("section"):
+        parts.append(f"Mục: {_limit_searchable_field(str(chunk['section']))}")
+    if chunk.get("subsection"):
+        parts.append(f"Tiểu mục: {_limit_searchable_field(str(chunk['subsection']))}")
+    if chunk.get("article_number"):
+        parts.append(f"Điều: {chunk['article_number']}")
     if chunk.get("article_title"):
         article_title = _limit_searchable_field(str(chunk["article_title"]))
-        parts.extend([article_title, article_title])
+        parts.extend(
+            [
+                f"Tên điều: {article_title}",
+                f"Tên điều: {article_title}",
+            ]
+        )
+    if chunk.get("clause_number"):
+        parts.append(f"Khoản: {chunk['clause_number']}")
+    if chunk.get("point_number"):
+        parts.append(f"Điểm: {chunk['point_number']}")
+    if chunk.get("target_law"):
+        parts.append(f"Văn bản liên quan: {_limit_searchable_field(str(chunk['target_law']))}")
     if chunk.get("target_article"):
-        parts.append(_limit_searchable_field(str(chunk["target_article"])))
-    if chunk.get("chapter"):
-        parts.append(_limit_searchable_field(str(chunk["chapter"])))
-    if chunk.get("part"):
-        parts.append(_limit_searchable_field(str(chunk["part"])))
+        parts.append(f"Điều liên quan: {_limit_searchable_field(str(chunk['target_article']))}")
+    if chunk.get("quoted_inner_articles"):
+        quoted_articles = _join_searchable_list(chunk["quoted_inner_articles"])
+        if quoted_articles:
+            parts.append(f"Điều được dẫn chiếu trong nội dung: {quoted_articles}")
+    if chunk.get("metadata_text"):
+        parts.append(f"Metadata: {_limit_searchable_metadata(str(chunk['metadata_text']))}")
+    if chunk.get("parent_context_text"):
+        parts.append(f"Ngữ cảnh cha: {_limit_searchable_metadata(str(chunk['parent_context_text']))}")
+    if chunk.get("display_title"):
+        parts.append(f"Tiêu đề hiển thị: {_limit_searchable_field(str(chunk['display_title']))}")
 
+    parts.append("Nội dung:")
     parts.append(chunk["text"])
     return "\n".join(part for part in parts if part)
 
@@ -97,6 +140,17 @@ def _limit_searchable_field(text: str) -> str:
     if len(normalized) <= MAX_SEARCHABLE_FIELD_CHARS:
         return normalized
     return normalized[:MAX_SEARCHABLE_FIELD_CHARS].rsplit(" ", 1)[0].strip()
+
+
+def _join_searchable_list(values: list[object]) -> str:
+    return ", ".join(
+        item
+        for item in (
+            _limit_searchable_field(str(value))
+            for value in values[:MAX_SEARCHABLE_LIST_ITEMS]
+        )
+        if item
+    )
 
 
 def load_chunks(chunks_path: Path) -> list[dict]:
@@ -134,6 +188,10 @@ def build_index_payload(chunks_path: Path) -> dict:
                 article_title=chunk.get("article_title"),
                 clause_number=chunk.get("clause_number"),
                 point_number=chunk.get("point_number"),
+                parent_chunk_id=chunk.get("parent_chunk_id"),
+                parent_context_text=chunk.get("parent_context_text"),
+                merged_short_chunk=chunk.get("merged_short_chunk"),
+                merged_chunk_ids=chunk.get("merged_chunk_ids"),
                 text=chunk["text"],
                 text_length=chunk["text_length"],
                 document_title=chunk.get("document_title"),
@@ -229,6 +287,10 @@ def query_index(index_payload: dict, query: str, top_k: int) -> list[dict]:
                 "article_number": document.get("article_number"),
                 "clause_number": document.get("clause_number"),
                 "point_number": document.get("point_number"),
+                "parent_chunk_id": document.get("parent_chunk_id"),
+                "parent_context_text": document.get("parent_context_text"),
+                "merged_short_chunk": document.get("merged_short_chunk"),
+                "merged_chunk_ids": document.get("merged_chunk_ids"),
                 "document_title": document.get("document_title"),
                 "chapter": document.get("chapter"),
                 "target_article": document.get("target_article"),

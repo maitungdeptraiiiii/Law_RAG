@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "pnpm build"
+  "buildCommand": "pnpm build",
+  "rewrites": [
+    {
+      "source": "/backend/:path*",
+      "destination": "https://api.lawrag.online/:path*"
+    }
+  ]
 }

@@ -8,3 +8,7 @@ sentence-transformers>=3.0.0
 # Optional local model reranker:
 # RERANKER_PROVIDER=bge
 FlagEmbedding>=1.2.11
+
+# Optional Neo4j graph retrieval:
+# GRAPH_RETRIEVAL_ENABLED=true
+neo4j>=6.0.0

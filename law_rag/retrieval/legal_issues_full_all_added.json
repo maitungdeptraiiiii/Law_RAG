@@ -1,0 +1,2241 @@
+[
+  {
+    "label": "lam_dung_tin_nhiem_chiem_doat_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Lạm dụng tín nhiệm chiếm đoạt tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Người ban đầu nhận tài sản hợp pháp thông qua vay, mượn, thuê, giữ hộ, được giao hoặc quan hệ hợp đồng, sau đó bán, cầm cố, bỏ trốn, không trả hoặc dùng thủ đoạn khác nhằm chiếm đoạt tài sản.",
+    "confidence": 0.93,
+    "semantic_queries": [
+      "mượn xe rồi bán",
+      "mượn tài sản không trả",
+      "được giao tài sản rồi chiếm đoạt",
+      "vay tiền rồi bỏ trốn",
+      "thuê xe rồi đem bán",
+      "giữ hộ tài sản rồi đem cầm cố",
+      "nhận tài sản hợp pháp rồi không trả lại",
+      "mượn tiền xong bỏ trốn",
+      "thuê xe tự lái rồi mang đi bán",
+      "vay mượn tài sản rồi sử dụng vào mục đích chiếm đoạt",
+      "được giao xe để sử dụng rồi đem đi thế chấp",
+      "nhận giữ hộ tiền rồi tiêu xài hết",
+      "mượn điện thoại rồi bán lấy tiền",
+      "vay tiền có khả năng trả nhưng cố tình không trả",
+      "đến hạn trả tài sản nhưng bỏ trốn"
+    ],
+    "retrieval_queries": [
+      "lạm dụng tín nhiệm chiếm đoạt tài sản Điều 175 Bộ luật Hình sự",
+      "vay mượn thuê tài sản rồi bỏ trốn để chiếm đoạt Điều 175 Bộ luật Hình sự",
+      "được giao tài sản hợp pháp rồi dùng thủ đoạn gian dối hoặc bỏ trốn để chiếm đoạt Điều 175 Bộ luật Hình sự",
+      "phân biệt lừa đảo chiếm đoạt tài sản và lạm dụng tín nhiệm chiếm đoạt tài sản Điều 174 Điều 175 Bộ luật Hình sự"
+    ],
+    "preferred_articles": [
+      "175"
+    ],
+    "distinguish_from_articles": [
+      "173",
+      "174"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "lua_dao_chiem_doat_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Lừa đảo chiếm đoạt tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Người phạm tội dùng thủ đoạn gian dối trước hoặc tại thời điểm người bị hại giao tài sản, làm người bị hại tin sai sự thật rồi chuyển tiền, giao tài sản, đặt cọc, đầu tư hoặc thực hiện giao dịch khác dẫn đến bị chiếm đoạt.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "bị lừa chuyển tiền",
+      "nói dối để tôi đưa tiền",
+      "giả danh để chiếm đoạt tài sản",
+      "đặt cọc mua hàng nhưng không giao hàng",
+      "hứa đầu tư sinh lời rồi chiếm đoạt tiền",
+      "dùng thông tin giả để vay tiền",
+      "lừa bán hàng online rồi chặn liên lạc",
+      "giả mạo giấy tờ để lấy tài sản",
+      "cam kết giả để người khác giao tiền",
+      "dùng thủ đoạn gian dối ngay từ đầu để lấy tài sản",
+      "lừa đảo qua mạng lấy tiền",
+      "nhận tiền mua bán rồi biến mất",
+      "gọi điện giả danh công an yêu cầu chuyển tiền",
+      "lập dự án giả để huy động vốn",
+      "bịa chuyện khó khăn để mượn tiền rồi chiếm đoạt"
+    ],
+    "retrieval_queries": [
+      "lừa đảo chiếm đoạt tài sản bằng thủ đoạn gian dối Điều 174 Bộ luật Hình sự",
+      "dùng thủ đoạn gian dối ngay từ đầu để chiếm đoạt tài sản Điều 174 Bộ luật Hình sự",
+      "phân biệt lừa đảo chiếm đoạt tài sản và lạm dụng tín nhiệm chiếm đoạt tài sản Điều 174 Điều 175 Bộ luật Hình sự"
+    ],
+    "preferred_articles": [
+      "174"
+    ],
+    "distinguish_from_articles": [
+      "173",
+      "175"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "trom_cap_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Trộm cắp tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Hành vi lén lút lấy tài sản của người khác khi chủ sở hữu hoặc người quản lý tài sản không biết hoặc không kịp ngăn chặn, nhằm chiếm đoạt tài sản đó.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "bị lấy trộm xe",
+      "mất điện thoại do bị móc túi",
+      "người khác lén lấy tài sản của tôi",
+      "lén vào nhà lấy tiền",
+      "lấy tài sản khi chủ sở hữu không biết",
+      "trộm xe máy trong bãi giữ xe",
+      "lén lấy vàng của người khác",
+      "đột nhập lấy tài sản",
+      "nhặt được tài sản rồi lén giữ luôn",
+      "lấy đồ của người khác khi họ không để ý",
+      "bị trộm tiền trong phòng trọ",
+      "lén lấy hàng hóa trong cửa hàng",
+      "móc túi trên xe buýt",
+      "trộm cắp tài sản có giá trị thấp",
+      "trộm cắp tài sản nhiều lần"
+    ],
+    "retrieval_queries": [
+      "trộm cắp tài sản giá trị tài sản Điều 173 Bộ luật Hình sự",
+      "hành vi lén lút chiếm đoạt tài sản của người khác Điều 173 Bộ luật Hình sự",
+      "phân biệt trộm cắp tài sản và lừa đảo chiếm đoạt tài sản Điều 173 Điều 174 Bộ luật Hình sự"
+    ],
+    "preferred_articles": [
+      "173"
+    ],
+    "distinguish_from_articles": [
+      "174",
+      "175"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "co_y_gay_thuong_tich",
+    "issue_type": "xam_pham_suc_khoe",
+    "display_name": "Cố ý gây thương tích hoặc gây tổn hại cho sức khỏe",
+    "issue_type_name": "Xâm phạm sức khỏe",
+    "description": "Hành vi cố ý đánh, chém, dùng hung khí hoặc cách thức khác làm người khác bị thương tích, thương tật hoặc tổn hại sức khỏe; cần xem tỷ lệ tổn thương cơ thể, hung khí, tính chất côn đồ và các tình tiết định khung.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "bị người khác đánh gây thương tích",
+      "đánh nhau bị thương phải đi giám định",
+      "dùng dao chém người khác bị thương",
+      "gây thương tích tỷ lệ 11 phần trăm",
+      "cố ý đánh người gây tổn hại sức khỏe",
+      "bị hành hung gây thương tích",
+      "dùng hung khí đánh người",
+      "đấm người khác gây thương tích",
+      "đánh người phải nhập viện",
+      "gây thương tật cho người khác",
+      "xô xát làm người khác bị thương",
+      "cố ý gây thương tích có tổ chức",
+      "đánh người dưới 11 phần trăm có bị xử lý không",
+      "dùng dao gây thương tích nhẹ",
+      "gây thương tích cho người thân"
+    ],
+    "retrieval_queries": [
+      "cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác Điều 134 Bộ luật Hình sự",
+      "tỷ lệ tổn thương cơ thể dùng hung khí côn đồ Điều 134 Bộ luật Hình sự",
+      "các trường hợp cố ý gây thương tích bị truy cứu trách nhiệm hình sự Điều 134 Bộ luật Hình sự"
+    ],
+    "preferred_articles": [
+      "134"
+    ],
+    "distinguish_from_articles": [
+      "123",
+      "138"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "hop_dong_vay_tai_san",
+    "issue_type": "nghia_vu_dan_su",
+    "display_name": "Hợp đồng vay tài sản và nghĩa vụ trả nợ",
+    "issue_type_name": "Nghĩa vụ dân sự",
+    "description": "Tranh chấp hoặc câu hỏi về việc vay, cho vay, mượn tiền, giấy vay, chứng cứ chuyển khoản, nghĩa vụ trả nợ, chậm trả và lãi suất theo quan hệ dân sự; chỉ xem xét hình sự khi có dấu hiệu gian dối hoặc chiếm đoạt rõ ràng.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "cho vay tiền nhưng không trả",
+      "mượn tiền không có giấy tờ có đòi được không",
+      "vay tiền bằng miệng rồi không trả",
+      "cho bạn vay tiền qua chuyển khoản",
+      "đến hạn trả nợ nhưng bên vay không trả",
+      "vay tiền có lãi suất bao nhiêu là hợp pháp",
+      "giấy vay tiền viết tay có giá trị không",
+      "tin nhắn vay tiền có làm chứng cứ được không",
+      "bên vay chậm trả nợ",
+      "đòi tiền vay dân sự như thế nào",
+      "cho vay không ghi lãi có được tính lãi không",
+      "hợp đồng vay tài sản có cần công chứng không",
+      "người vay bỏ đi nhưng không có dấu hiệu lừa đảo",
+      "cho vay tiền không trả nên kiện dân sự",
+      "nghĩa vụ trả nợ của người vay"
+    ],
+    "retrieval_queries": [
+      "hợp đồng vay tài sản Điều 463 Bộ luật Dân sự",
+      "nghĩa vụ trả nợ của bên vay Điều 466 Bộ luật Dân sự",
+      "lãi suất vay do các bên thỏa thuận Điều 468 Bộ luật Dân sự",
+      "đòi tiền vay dân sự hợp đồng vay tài sản Bộ luật Dân sự"
+    ],
+    "preferred_articles": [
+      "463",
+      "466",
+      "468"
+    ],
+    "distinguish_from_articles": [
+      "174",
+      "175"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "bao_hiem_y_te_muc_huong",
+    "issue_type": "bao_hiem_y_te",
+    "display_name": "Mức hưởng bảo hiểm y tế",
+    "issue_type_name": "Bảo hiểm y tế",
+    "description": "Câu hỏi về mức bảo hiểm y tế chi trả khi khám chữa bệnh đúng tuyến, trái tuyến, chuyển tuyến, cấp cứu, nhập viện hoặc thanh toán chi phí khám chữa bệnh theo thẻ bảo hiểm y tế.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "bảo hiểm y tế chi trả bao nhiêu phần trăm",
+      "khám chữa bệnh đúng tuyến được hưởng mức nào",
+      "đi trái tuyến bảo hiểm y tế có thanh toán không",
+      "mức hưởng bảo hiểm y tế khi nhập viện",
+      "thẻ bảo hiểm y tế được chi trả thế nào",
+      "bảo hiểm y tế thanh toán tiền viện phí",
+      "khám bệnh có bảo hiểm y tế được giảm bao nhiêu",
+      "chuyển tuyến bảo hiểm y tế được hưởng ra sao",
+      "cấp cứu trái tuyến có được bảo hiểm y tế thanh toán không",
+      "mức hưởng bảo hiểm y tế 80 phần trăm 95 phần trăm 100 phần trăm",
+      "bảo hiểm y tế hộ gia đình được hưởng bao nhiêu",
+      "đi khám không đúng nơi đăng ký có được hưởng bảo hiểm không",
+      "bảo hiểm y tế chi trả thuốc men như thế nào",
+      "điều kiện hưởng bảo hiểm y tế đúng tuyến",
+      "khám chữa bệnh bảo hiểm y tế khác tỉnh"
+    ],
+    "retrieval_queries": [
+      "mức hưởng bảo hiểm y tế khi khám chữa bệnh đúng tuyến Điều 22 Luật Bảo hiểm y tế",
+      "mức hưởng bảo hiểm y tế khi khám chữa bệnh trái tuyến Luật Bảo hiểm y tế",
+      "quỹ bảo hiểm y tế thanh toán chi phí khám bệnh chữa bệnh Điều 22 Luật Bảo hiểm y tế"
+    ],
+    "preferred_articles": [
+      "22"
+    ],
+    "distinguish_from_articles": [
+      "21",
+      "23"
+    ],
+    "document_title_hints": [
+      "Luật Bảo hiểm y tế"
+    ]
+  },
+  {
+    "label": "che_do_thai_san",
+    "issue_type": "bao_hiem_xa_hoi",
+    "display_name": "Chế độ thai sản",
+    "issue_type_name": "Bảo hiểm xã hội",
+    "description": "Câu hỏi về điều kiện, thời gian, mức hưởng và hồ sơ hưởng chế độ thai sản khi sinh con, mang thai, sảy thai, nhận con nuôi, khám thai hoặc quyền lợi của lao động nam khi vợ sinh con.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "điều kiện hưởng chế độ thai sản",
+      "đóng bảo hiểm xã hội bao lâu thì được hưởng thai sản",
+      "nghỉ sinh con được hưởng chế độ gì",
+      "mang thai có được hưởng bảo hiểm xã hội không",
+      "sảy thai được hưởng chế độ thai sản không",
+      "nhận con nuôi có được hưởng thai sản không",
+      "lao động nữ sinh con được nghỉ bao lâu",
+      "tiền thai sản được tính như thế nào",
+      "chồng có được nghỉ khi vợ sinh con không",
+      "đóng bảo hiểm chưa đủ 6 tháng có được hưởng thai sản không",
+      "điều kiện hưởng trợ cấp thai sản khi sinh con",
+      "nghỉ khám thai được hưởng chế độ không",
+      "lao động nam hưởng chế độ thai sản",
+      "hồ sơ hưởng thai sản gồm những gì",
+      "nghỉ thai sản trước sinh tối đa bao lâu"
+    ],
+    "retrieval_queries": [
+      "điều kiện hưởng chế độ thai sản Điều 31 Luật Bảo hiểm xã hội",
+      "người lao động hưởng chế độ thai sản Luật Bảo hiểm xã hội",
+      "thời gian hưởng chế độ thai sản khi sinh con Luật Bảo hiểm xã hội",
+      "mức hưởng chế độ thai sản Luật Bảo hiểm xã hội"
+    ],
+    "preferred_articles": [
+      "31"
+    ],
+    "distinguish_from_articles": [
+      "32",
+      "34"
+    ],
+    "document_title_hints": [
+      "Luật Bảo hiểm xã hội"
+    ]
+  },
+  {
+    "label": "cuop_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Cướp tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Hành vi dùng vũ lực, đe dọa dùng vũ lực ngay tức khắc hoặc thủ đoạn làm nạn nhân không thể chống cự để chiếm đoạt tài sản.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "bị cướp điện thoại",
+      "dùng dao uy hiếp lấy tiền",
+      "đe dọa đánh để lấy tài sản",
+      "giật tiền nhưng có dùng vũ lực",
+      "chặn đường cướp xe",
+      "ép đưa tài sản ngay lập tức",
+      "dùng hung khí đe dọa lấy tiền",
+      "bị khống chế rồi lấy tài sản"
+    ],
+    "retrieval_queries": [
+      "cướp tài sản dùng vũ lực Bộ luật Hình sự",
+      "đe dọa dùng vũ lực ngay tức khắc để chiếm đoạt tài sản",
+      "dùng hung khí uy hiếp lấy tài sản của người khác",
+      "phân biệt cướp tài sản và cưỡng đoạt tài sản"
+    ],
+    "preferred_articles": [
+      "168"
+    ],
+    "distinguish_from_articles": [
+      "170",
+      "171",
+      "173"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "cuong_doat_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Cưỡng đoạt tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Hành vi đe dọa sẽ dùng vũ lực hoặc dùng thủ đoạn uy hiếp tinh thần để buộc người khác giao tài sản, thường không phải đe dọa ngay tức khắc.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "đe dọa nếu không đưa tiền sẽ đánh",
+      "tống tiền bằng hình ảnh riêng tư",
+      "uy hiếp tinh thần để lấy tiền",
+      "bắt chuyển tiền nếu không sẽ đăng ảnh",
+      "đe dọa phá tài sản nếu không trả tiền",
+      "bị ép đưa tiền vì bị dọa",
+      "nhắn tin tống tiền",
+      "đe dọa người nhà để lấy tài sản"
+    ],
+    "retrieval_queries": [
+      "cưỡng đoạt tài sản uy hiếp tinh thần Bộ luật Hình sự",
+      "đe dọa dùng vũ lực để buộc giao tài sản",
+      "tống tiền bằng hình ảnh thông tin cá nhân",
+      "phân biệt cưỡng đoạt tài sản và cướp tài sản"
+    ],
+    "preferred_articles": [
+      "170"
+    ],
+    "distinguish_from_articles": [
+      "168",
+      "171",
+      "174"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "cong_nhien_chiem_doat_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Công nhiên chiếm đoạt tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Hành vi công khai lấy tài sản trước mặt chủ sở hữu hoặc người quản lý trong hoàn cảnh họ không thể ngăn cản kịp thời.",
+    "confidence": 0.82,
+    "semantic_queries": [
+      "lấy tài sản trước mặt tôi rồi bỏ đi",
+      "công khai lấy đồ không trả",
+      "giật đồ trước mặt nhưng không dùng vũ lực",
+      "lấy xe trước mặt chủ xe",
+      "ngang nhiên chiếm đoạt tài sản",
+      "biết chủ tài sản thấy nhưng vẫn lấy",
+      "công nhiên lấy hàng trong cửa hàng",
+      "lấy điện thoại trước mặt rồi chạy"
+    ],
+    "retrieval_queries": [
+      "công nhiên chiếm đoạt tài sản Bộ luật Hình sự",
+      "ngang nhiên lấy tài sản trước mặt chủ sở hữu",
+      "chiếm đoạt tài sản công khai người bị hại không ngăn được",
+      "phân biệt công nhiên chiếm đoạt và trộm cắp tài sản"
+    ],
+    "preferred_articles": [
+      "172"
+    ],
+    "distinguish_from_articles": [
+      "168",
+      "171",
+      "173"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "huy_hoai_co_y_lam_hu_hong_tai_san",
+    "issue_type": "xam_pham_so_huu",
+    "display_name": "Hủy hoại hoặc cố ý làm hư hỏng tài sản",
+    "issue_type_name": "Xâm phạm sở hữu",
+    "description": "Hành vi cố ý đập phá, đốt, làm hỏng, làm mất giá trị sử dụng của tài sản thuộc sở hữu hoặc quản lý của người khác.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "đập phá xe của người khác",
+      "đốt tài sản của người khác",
+      "làm hỏng điện thoại của bạn",
+      "cố ý phá cửa nhà",
+      "ném đá vỡ kính xe",
+      "phá hoại tài sản bị xử lý thế nào",
+      "làm hư hỏng tài sản phải bồi thường không",
+      "đập đồ trong quán"
+    ],
+    "retrieval_queries": [
+      "hủy hoại tài sản cố ý làm hư hỏng tài sản Bộ luật Hình sự",
+      "đập phá tài sản của người khác bị xử lý thế nào",
+      "bồi thường khi làm hư hỏng tài sản người khác",
+      "phá hoại tài sản trách nhiệm hình sự dân sự",
+      "hủy hoại cố ý làm hư hỏng tài sản Bộ luật Hình sự",
+      "đập phá xe đốt tài sản làm hỏng tài sản người khác"
+    ],
+    "preferred_articles": [
+      "178",
+      "584",
+      "589"
+    ],
+    "distinguish_from_articles": [
+      "172",
+      "173",
+      "176"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "chiem_giu_trai_phep_tai_san",
+    "issue_type": "xam_pham_so_huu",
+    "display_name": "Chiếm giữ trái phép tài sản",
+    "issue_type_name": "Xâm phạm sở hữu",
+    "description": "Người nhặt được, giao nhầm, nhận nhầm hoặc có tài sản không thuộc sở hữu của mình nhưng cố tình không trả lại cho chủ sở hữu hoặc cơ quan có thẩm quyền.",
+    "confidence": 0.8,
+    "semantic_queries": [
+      "nhặt được điện thoại không trả",
+      "chuyển khoản nhầm nhưng người nhận không trả",
+      "nhặt được ví rồi giữ luôn",
+      "người khác nhận nhầm tiền không hoàn lại",
+      "giữ tài sản bị giao nhầm",
+      "không trả lại tài sản nhặt được",
+      "nhặt được của rơi có bị phạt không",
+      "tài sản chuyển nhầm tài khoản"
+    ],
+    "retrieval_queries": [
+      "chiếm giữ trái phép tài sản nhặt được không trả Bộ luật Hình sự",
+      "nhận chuyển khoản nhầm nhưng không hoàn trả",
+      "nghĩa vụ hoàn trả tài sản do được lợi không có căn cứ pháp luật",
+      "nhặt được tài sản của người khác phải trả lại"
+    ],
+    "preferred_articles": [
+      "176",
+      "579",
+      "580"
+    ],
+    "distinguish_from_articles": [
+      "174",
+      "175"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "giet_nguoi",
+    "issue_type": "xam_pham_tinh_mang",
+    "display_name": "Giết người",
+    "issue_type_name": "Xâm phạm tính mạng",
+    "description": "Hành vi cố ý tước đoạt tính mạng người khác hoặc thực hiện hành vi có khả năng trực tiếp dẫn đến chết người.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "đâm người chết",
+      "cố ý giết người",
+      "dùng dao đâm nhiều nhát",
+      "đánh người dẫn đến chết",
+      "đầu độc người khác",
+      "tước đoạt mạng sống người khác",
+      "giết người có tổ chức",
+      "chuẩn bị giết người có bị xử lý không"
+    ],
+    "retrieval_queries": [
+      "giết người tước đoạt tính mạng Bộ luật Hình sự",
+      "cố ý thực hiện hành vi làm chết người",
+      "dùng hung khí nguy hiểm tấn công vùng trọng yếu",
+      "phân biệt giết người và cố ý gây thương tích dẫn đến chết người"
+    ],
+    "preferred_articles": [
+      "123"
+    ],
+    "distinguish_from_articles": [
+      "134"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "de_doa_giet_nguoi",
+    "issue_type": "xam_pham_tinh_mang",
+    "display_name": "Đe dọa giết người",
+    "issue_type_name": "Xâm phạm tính mạng",
+    "description": "Hành vi đe dọa sẽ tước đoạt tính mạng người khác làm người bị đe dọa có căn cứ lo sợ việc đe dọa có thể xảy ra.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "bị nhắn tin dọa giết",
+      "người khác cầm dao dọa giết tôi",
+      "đe dọa sẽ giết cả nhà",
+      "bị gọi điện dọa giết",
+      "đe dọa tính mạng qua mạng xã hội",
+      "nói sẽ giết tôi có phạm tội không",
+      "bị uy hiếp tính mạng",
+      "dọa giết nhiều lần"
+    ],
+    "retrieval_queries": [
+      "đe dọa giết người Bộ luật Hình sự",
+      "bị nhắn tin đe dọa tính mạng xử lý thế nào",
+      "đe dọa làm người khác lo sợ bị giết",
+      "căn cứ xác định hành vi đe dọa giết người"
+    ],
+    "preferred_articles": [
+      "133"
+    ],
+    "distinguish_from_articles": [
+      "155",
+      "156"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "vo_y_gay_thuong_tich",
+    "issue_type": "xam_pham_suc_khoe",
+    "display_name": "Vô ý gây thương tích hoặc tổn hại sức khỏe",
+    "issue_type_name": "Xâm phạm sức khỏe",
+    "description": "Hành vi do cẩu thả, bất cẩn, vi phạm quy tắc an toàn hoặc không thấy trước hậu quả làm người khác bị thương tích, không có ý định gây thương tích.",
+    "confidence": 0.78,
+    "semantic_queries": [
+      "vô ý làm người khác bị thương",
+      "lỡ tay gây thương tích",
+      "bất cẩn làm người khác bị thương",
+      "tai nạn làm bạn bị thương",
+      "đùa giỡn làm người khác chấn thương",
+      "không cố ý nhưng gây thương tích",
+      "làm rơi đồ trúng người khác bị thương",
+      "gây thương tích do cẩu thả"
+    ],
+    "retrieval_queries": [
+      "vô ý gây thương tích hoặc tổn hại sức khỏe Bộ luật Hình sự",
+      "không cố ý nhưng làm người khác bị thương",
+      "gây thương tích do cẩu thả bất cẩn",
+      "phân biệt vô ý gây thương tích và cố ý gây thương tích"
+    ],
+    "preferred_articles": [
+      "138"
+    ],
+    "distinguish_from_articles": [
+      "134"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "lam_nhuc_nguoi_khac",
+    "issue_type": "danh_du_nhan_pham",
+    "display_name": "Làm nhục người khác",
+    "issue_type_name": "Danh dự, nhân phẩm",
+    "description": "Hành vi xúc phạm nghiêm trọng nhân phẩm, danh dự của người khác bằng lời nói, hành động, đăng tải hình ảnh, clip hoặc thông tin làm nhục.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "bị chửi bới xúc phạm danh dự",
+      "đăng clip làm nhục người khác",
+      "bêu xấu trên mạng xã hội",
+      "sỉ nhục người khác nơi công cộng",
+      "xúc phạm nhân phẩm bị xử lý thế nào",
+      "đăng ảnh riêng tư để làm nhục",
+      "lăng mạ người khác trên facebook",
+      "bị chửi rủa nghiêm trọng"
+    ],
+    "retrieval_queries": [
+      "làm nhục người khác xúc phạm danh dự nhân phẩm Bộ luật Hình sự",
+      "bêu xấu xúc phạm người khác trên mạng xã hội",
+      "đăng hình ảnh clip làm nhục người khác",
+      "xúc phạm danh dự nhân phẩm trách nhiệm pháp lý"
+    ],
+    "preferred_articles": [
+      "155",
+      "592"
+    ],
+    "distinguish_from_articles": [
+      "156"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "vu_khong",
+    "issue_type": "danh_du_nhan_pham",
+    "display_name": "Vu khống",
+    "issue_type_name": "Danh dự, nhân phẩm",
+    "description": "Hành vi bịa đặt hoặc loan truyền điều biết rõ là sai sự thật nhằm xúc phạm danh dự, nhân phẩm hoặc gây thiệt hại đến quyền lợi của người khác.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "bị người khác bịa chuyện nói xấu",
+      "vu khống tôi ăn trộm",
+      "đăng tin sai sự thật về người khác",
+      "tố cáo sai sự thật để hại người khác",
+      "loan tin bịa đặt trên mạng",
+      "nói tôi phạm tội dù không có chứng cứ",
+      "bị đặt điều làm mất uy tín",
+      "bịa chuyện ngoại tình đăng lên mạng"
+    ],
+    "retrieval_queries": [
+      "vu khống bịa đặt loan truyền sai sự thật Bộ luật Hình sự",
+      "đăng tin sai sự thật xúc phạm danh dự người khác",
+      "tố cáo sai sự thật gây thiệt hại cho người khác",
+      "phân biệt vu khống và làm nhục người khác"
+    ],
+    "preferred_articles": [
+      "156",
+      "592"
+    ],
+    "distinguish_from_articles": [
+      "155"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "gay_roi_trat_tu_cong_cong",
+    "issue_type": "trat_tu_cong_cong",
+    "display_name": "Gây rối trật tự công cộng",
+    "issue_type_name": "Trật tự công cộng",
+    "description": "Hành vi la hét, đánh nhau, tụ tập, phá phách hoặc hành vi khác ở nơi công cộng làm mất an ninh, trật tự, ảnh hưởng hoạt động bình thường của xã hội.",
+    "confidence": 0.82,
+    "semantic_queries": [
+      "đánh nhau nơi công cộng",
+      "gây rối ở quán nhậu",
+      "tụ tập la hét làm mất trật tự",
+      "phá rối trật tự công cộng",
+      "đua xe gây mất trật tự",
+      "say rượu gây náo loạn",
+      "đánh nhau ngoài đường bị xử lý thế nào",
+      "gây rối tại bệnh viện"
+    ],
+    "retrieval_queries": [
+      "gây rối trật tự công cộng Bộ luật Hình sự",
+      "đánh nhau nơi công cộng làm mất trật tự",
+      "tụ tập la hét phá rối ở nơi công cộng",
+      "xử phạt hành chính gây mất trật tự công cộng"
+    ],
+    "preferred_articles": [
+      "318"
+    ],
+    "distinguish_from_articles": [
+      "134",
+      "155"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự",
+      "nghị định xử phạt vi phạm hành chính"
+    ]
+  },
+  {
+    "label": "che_giau_toi_pham",
+    "issue_type": "tu_phap_hinh_su",
+    "display_name": "Che giấu tội phạm",
+    "issue_type_name": "Tư pháp hình sự",
+    "description": "Hành vi biết tội phạm đã xảy ra nhưng che giấu người phạm tội, dấu vết, tang vật hoặc cản trở việc phát hiện, điều tra, xử lý.",
+    "confidence": 0.82,
+    "semantic_queries": [
+      "giấu người phạm tội trong nhà",
+      "giấu hung khí sau khi bạn gây án",
+      "biết người phạm tội nhưng giúp bỏ trốn",
+      "xóa dấu vết tội phạm",
+      "giấu xác có phải che giấu tội phạm không",
+      "giúp người gây án trốn tránh công an",
+      "giấu tang vật phạm tội",
+      "biết bạn phạm tội rồi che giấu"
+    ],
+    "retrieval_queries": [
+      "che giấu tội phạm Bộ luật Hình sự",
+      "giấu người phạm tội tang vật dấu vết tội phạm",
+      "giúp người phạm tội bỏ trốn sau khi phạm tội",
+      "phân biệt che giấu tội phạm và không tố giác tội phạm"
+    ],
+    "preferred_articles": [
+      "389"
+    ],
+    "distinguish_from_articles": [
+      "390"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "khong_to_giac_toi_pham",
+    "issue_type": "tu_phap_hinh_su",
+    "display_name": "Không tố giác tội phạm",
+    "issue_type_name": "Tư pháp hình sự",
+    "description": "Hành vi biết rõ tội phạm đang được chuẩn bị, đang thực hiện hoặc đã thực hiện nhưng không báo cho cơ quan có thẩm quyền trong trường hợp pháp luật yêu cầu.",
+    "confidence": 0.78,
+    "semantic_queries": [
+      "biết người khác phạm tội nhưng không báo công an",
+      "không tố giác tội phạm có bị xử lý không",
+      "thấy bạn trộm cắp nhưng im lặng",
+      "biết kế hoạch phạm tội nhưng không báo",
+      "không báo công an khi biết tội phạm",
+      "người thân phạm tội không tố giác",
+      "biết có người giết người nhưng không khai báo",
+      "im lặng khi biết hành vi phạm tội"
+    ],
+    "retrieval_queries": [
+      "không tố giác tội phạm Bộ luật Hình sự",
+      "biết tội phạm nhưng không báo cơ quan có thẩm quyền",
+      "trách nhiệm khi không tố giác tội phạm",
+      "phân biệt không tố giác tội phạm và che giấu tội phạm"
+    ],
+    "preferred_articles": [
+      "390"
+    ],
+    "distinguish_from_articles": [
+      "389"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "danh_bac_to_chuc_danh_bac",
+    "issue_type": "te_nan_xa_hoi",
+    "display_name": "Đánh bạc, tổ chức đánh bạc",
+    "issue_type_name": "Tệ nạn xã hội",
+    "description": "Câu hỏi về đánh bạc, lô đề, cá cược, đánh bạc online, rủ rê hoặc tổ chức cho người khác đánh bạc.",
+    "confidence": 0.82,
+    "semantic_queries": [
+      "đánh bạc bị phạt thế nào",
+      "chơi bài ăn tiền",
+      "cá độ bóng đá",
+      "đánh bạc online",
+      "ghi lô đề",
+      "tham gia sòng bạc nhỏ",
+      "đánh bạc bao nhiêu tiền thì bị hình sự",
+      "tổ chức đánh bạc khác gì đánh bạc",
+      "tổ chức đánh bạc online",
+      "rủ người khác đánh bạc",
+      "làm cái lô đề có bị xử lý không"
+    ],
+    "retrieval_queries": [
+      "đánh bạc được thua bằng tiền hiện vật Bộ luật Hình sự",
+      "chơi bài ăn tiền cá độ lô đề bị xử lý thế nào",
+      "đánh bạc online trách nhiệm pháp lý",
+      "phân biệt đánh bạc và tổ chức đánh bạc",
+      "tổ chức đánh bạc gá bạc Bộ luật Hình sự",
+      "đánh bạc online lô đề bị xử lý thế nào"
+    ],
+    "preferred_articles": [
+      "321",
+      "322"
+    ],
+    "distinguish_from_articles": [
+      "249",
+      "250"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự",
+      "nghị định xử phạt vi phạm hành chính"
+    ]
+  },
+  {
+    "label": "tai_nan_giao_thong_trach_nhiem",
+    "issue_type": "giao_thong_duong_bo",
+    "display_name": "Tai nạn giao thông và trách nhiệm pháp lý",
+    "issue_type_name": "Giao thông đường bộ",
+    "description": "Câu hỏi về trách nhiệm khi điều khiển phương tiện gây tai nạn làm người khác bị thương, chết, hư hỏng tài sản hoặc vi phạm quy tắc giao thông.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "gây tai nạn giao thông làm người khác bị thương",
+      "đâm xe làm người chết",
+      "tai nạn giao thông phải bồi thường bao nhiêu",
+      "vượt đèn đỏ gây tai nạn",
+      "lái xe tông người đi bộ",
+      "gây tai nạn rồi bỏ đi",
+      "tai nạn giao thông có bị đi tù không",
+      "đâm xe làm hư hỏng tài sản"
+    ],
+    "retrieval_queries": [
+      "tai nạn giao thông đường bộ gây thương tích chết người Bộ luật Hình sự",
+      "vi phạm quy định về tham gia giao thông đường bộ",
+      "bồi thường thiệt hại do tai nạn giao thông",
+      "gây tai nạn rồi rời khỏi hiện trường",
+      "gây tai nạn giao thông chết người trách nhiệm hình sự",
+      "tai nạn giao thông phải bồi thường thiệt hại thế nào"
+    ],
+    "preferred_articles": [
+      "260",
+      "584",
+      "585",
+      "590",
+      "591"
+    ],
+    "distinguish_from_articles": [
+      "601",
+      "8"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự",
+      "Bộ luật Dân sự",
+      "Luật Giao thông đường bộ"
+    ]
+  },
+  {
+    "label": "vi_pham_giao_thong_nong_do_con",
+    "issue_type": "giao_thong_duong_bo",
+    "display_name": "Vi phạm giao thông về nồng độ cồn",
+    "issue_type_name": "Giao thông đường bộ",
+    "description": "Câu hỏi về điều khiển xe sau khi sử dụng rượu bia, bị kiểm tra nồng độ cồn, mức phạt, tước giấy phép lái xe hoặc gây tai nạn khi có nồng độ cồn.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "uống rượu lái xe bị phạt bao nhiêu",
+      "vi phạm nồng độ cồn xe máy",
+      "lái ô tô có cồn bị tước bằng bao lâu",
+      "thổi nồng độ cồn vượt mức",
+      "say rượu gây tai nạn giao thông",
+      "không chấp hành kiểm tra nồng độ cồn",
+      "uống bia đi xe máy",
+      "bị giữ bằng lái do nồng độ cồn"
+    ],
+    "retrieval_queries": [
+      "vi phạm nồng độ cồn khi điều khiển phương tiện",
+      "uống rượu bia lái xe bị xử phạt hành chính",
+      "tước giấy phép lái xe do nồng độ cồn",
+      "nồng độ cồn gây tai nạn giao thông trách nhiệm pháp lý",
+      "điều khiển phương tiện có nồng độ cồn bị xử phạt",
+      "nồng độ cồn bị tước giấy phép lái xe giữ xe"
+    ],
+    "preferred_articles": [
+      "8",
+      "260"
+    ],
+    "distinguish_from_articles": [
+      "584",
+      "590"
+    ],
+    "document_title_hints": [
+      "Luật Giao thông đường bộ",
+      "Bộ luật Hình sự",
+      "Bộ luật Dân sự",
+      "nghị định xử phạt vi phạm hành chính"
+    ]
+  },
+  {
+    "label": "don_phuong_cham_dut_hop_dong_lao_dong",
+    "issue_type": "lao_dong",
+    "display_name": "Đơn phương chấm dứt hợp đồng lao động",
+    "issue_type_name": "Lao động",
+    "description": "Câu hỏi về người lao động hoặc người sử dụng lao động đơn phương nghỉ việc, cho nghỉ việc, báo trước, lý do chấm dứt, trợ cấp và hậu quả khi chấm dứt trái luật.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "nghỉ việc có cần báo trước không",
+      "công ty cho nghỉ việc đột ngột",
+      "đơn phương chấm dứt hợp đồng lao động",
+      "nghỉ ngang có bị phạt không",
+      "báo trước bao nhiêu ngày khi nghỉ việc",
+      "bị sa thải không lý do",
+      "công ty chấm dứt hợp đồng trái luật",
+      "người lao động nghỉ việc trước hạn"
+    ],
+    "retrieval_queries": [
+      "đơn phương chấm dứt hợp đồng lao động Bộ luật Lao động",
+      "người lao động nghỉ việc phải báo trước bao nhiêu ngày",
+      "người sử dụng lao động cho nghỉ việc trái pháp luật",
+      "hậu quả chấm dứt hợp đồng lao động trái luật"
+    ],
+    "preferred_articles": [
+      "35",
+      "36",
+      "39",
+      "40",
+      "41"
+    ],
+    "distinguish_from_articles": [
+      "34"
+    ],
+    "document_title_hints": [
+      "Bộ luật Lao động"
+    ]
+  },
+  {
+    "label": "cong_ty_no_luong_cham_luong",
+    "issue_type": "lao_dong",
+    "display_name": "Công ty nợ lương, chậm lương, giữ lương",
+    "issue_type_name": "Lao động",
+    "description": "Câu hỏi về công ty chậm trả lương, nợ lương, không trả lương, khấu trừ lương, trả lương làm thêm giờ hoặc quyền yêu cầu thanh toán tiền lương.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "công ty nợ lương",
+      "chậm trả lương có bị phạt không",
+      "không trả lương khi nghỉ việc",
+      "bị trừ lương trái luật",
+      "lương làm thêm giờ tính thế nào",
+      "công ty giữ lương nhân viên",
+      "đòi tiền lương bị nợ",
+      "nghỉ việc chưa được trả lương"
+    ],
+    "retrieval_queries": [
+      "tiền lương chậm trả lương Bộ luật Lao động",
+      "công ty nợ lương không trả lương cho người lao động",
+      "khấu trừ lương người lao động có hợp pháp không",
+      "trả lương làm thêm giờ ngày nghỉ ngày lễ",
+      "công ty nợ lương chậm lương Bộ luật Lao động",
+      "người lao động bị giữ lương không trả lương",
+      "khấu trừ lương phạt lương có hợp pháp không"
+    ],
+    "preferred_articles": [
+      "94",
+      "95",
+      "97"
+    ],
+    "distinguish_from_articles": [
+      "98"
+    ],
+    "document_title_hints": [
+      "Bộ luật Lao động"
+    ]
+  },
+  {
+    "label": "thu_viec_hop_dong_thu_viec",
+    "issue_type": "lao_dong",
+    "display_name": "Thử việc và hợp đồng thử việc",
+    "issue_type_name": "Lao động",
+    "description": "Câu hỏi về thời gian thử việc, lương thử việc, kết thúc thử việc, ký hợp đồng lao động, thử việc quá thời hạn hoặc thử việc không lương.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "thử việc tối đa bao lâu",
+      "lương thử việc bao nhiêu phần trăm",
+      "thử việc không lương có hợp pháp không",
+      "hết thử việc nhưng không ký hợp đồng",
+      "công ty kéo dài thời gian thử việc",
+      "nghỉ trong thời gian thử việc",
+      "thử việc 2 tháng có đúng không",
+      "không đạt thử việc có được trả lương không"
+    ],
+    "retrieval_queries": [
+      "thử việc thời gian thử việc Bộ luật Lao động",
+      "tiền lương thử việc của người lao động",
+      "kết thúc thời gian thử việc ký hợp đồng lao động",
+      "thử việc quá thời hạn có hợp pháp không"
+    ],
+    "preferred_articles": [
+      "24",
+      "25",
+      "26",
+      "27"
+    ],
+    "distinguish_from_articles": [
+      "13",
+      "20"
+    ],
+    "document_title_hints": [
+      "Bộ luật Lao động"
+    ]
+  },
+  {
+    "label": "lam_them_gio_nghi_phep",
+    "issue_type": "lao_dong",
+    "display_name": "Làm thêm giờ, nghỉ phép, ngày nghỉ",
+    "issue_type_name": "Lao động",
+    "description": "Câu hỏi về làm thêm giờ, tăng ca, giới hạn giờ làm thêm, tiền lương làm thêm, nghỉ hằng năm, nghỉ lễ, nghỉ việc riêng và quyền nghỉ phép.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "làm thêm giờ tối đa bao nhiêu",
+      "tăng ca có bắt buộc không",
+      "lương làm thêm giờ tính thế nào",
+      "nghỉ phép năm bao nhiêu ngày",
+      "không cho nghỉ phép có đúng không",
+      "đi làm ngày lễ được trả lương ra sao",
+      "công ty ép tăng ca",
+      "nghỉ việc riêng có hưởng lương không"
+    ],
+    "retrieval_queries": [
+      "làm thêm giờ tăng ca Bộ luật Lao động",
+      "tiền lương làm thêm giờ ngày nghỉ ngày lễ",
+      "nghỉ hằng năm nghỉ phép năm của người lao động",
+      "công ty ép làm thêm giờ có hợp pháp không"
+    ],
+    "preferred_articles": [
+      "98",
+      "107",
+      "111",
+      "113"
+    ],
+    "distinguish_from_articles": [
+      "94",
+      "95"
+    ],
+    "document_title_hints": [
+      "Bộ luật Lao động"
+    ]
+  },
+  {
+    "label": "ly_hon_don_phuong",
+    "issue_type": "hon_nhan_gia_dinh",
+    "display_name": "Ly hôn đơn phương",
+    "issue_type_name": "Hôn nhân và gia đình",
+    "description": "Câu hỏi về một bên muốn ly hôn khi bên kia không đồng ý, điều kiện tòa án giải quyết ly hôn, hồ sơ, thẩm quyền và căn cứ hôn nhân trầm trọng.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "muốn ly hôn nhưng chồng không đồng ý",
+      "ly hôn đơn phương cần giấy tờ gì",
+      "vợ bỏ nhà đi có ly hôn được không",
+      "chồng bạo lực muốn ly hôn",
+      "đơn phương ly hôn mất bao lâu",
+      "không có giấy đăng ký kết hôn có ly hôn được không",
+      "ly hôn khi một bên không ký đơn",
+      "tòa án giải quyết ly hôn đơn phương"
+    ],
+    "retrieval_queries": [
+      "ly hôn đơn phương Luật Hôn nhân và gia đình",
+      "một bên yêu cầu ly hôn khi bên kia không đồng ý",
+      "căn cứ cho ly hôn hôn nhân trầm trọng",
+      "hồ sơ thủ tục ly hôn đơn phương"
+    ],
+    "preferred_articles": [
+      "51",
+      "56"
+    ],
+    "distinguish_from_articles": [
+      "55"
+    ],
+    "document_title_hints": [
+      "Luật Hôn nhân và gia đình",
+      "Bộ luật Tố tụng dân sự"
+    ]
+  },
+  {
+    "label": "quyen_nuoi_con_sau_ly_hon",
+    "issue_type": "hon_nhan_gia_dinh",
+    "display_name": "Quyền nuôi con sau ly hôn",
+    "issue_type_name": "Hôn nhân và gia đình",
+    "description": "Câu hỏi về quyền trực tiếp nuôi con, nghĩa vụ cấp dưỡng, thay đổi người nuôi con, quyền thăm nom con sau ly hôn.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "ly hôn ai được quyền nuôi con",
+      "con dưới 36 tháng tuổi mẹ có được nuôi không",
+      "cha không cấp dưỡng nuôi con",
+      "muốn thay đổi người trực tiếp nuôi con",
+      "giành quyền nuôi con sau ly hôn",
+      "mức cấp dưỡng nuôi con tính thế nào",
+      "ngăn cản thăm con sau ly hôn",
+      "điều kiện nuôi con khi ly hôn"
+    ],
+    "retrieval_queries": [
+      "quyền nuôi con sau ly hôn Luật Hôn nhân và gia đình",
+      "nghĩa vụ cấp dưỡng cho con sau ly hôn",
+      "thay đổi người trực tiếp nuôi con sau ly hôn",
+      "quyền thăm nom con sau ly hôn"
+    ],
+    "preferred_articles": [
+      "81",
+      "82",
+      "83",
+      "84"
+    ],
+    "distinguish_from_articles": [
+      "110",
+      "116"
+    ],
+    "document_title_hints": [
+      "Luật Hôn nhân và gia đình"
+    ]
+  },
+  {
+    "label": "chia_tai_san_khi_ly_hon",
+    "issue_type": "hon_nhan_gia_dinh",
+    "display_name": "Chia tài sản khi ly hôn",
+    "issue_type_name": "Hôn nhân và gia đình",
+    "description": "Câu hỏi về tài sản chung, tài sản riêng, nợ chung, nhà đất, tiền tiết kiệm, tài sản hình thành trong thời kỳ hôn nhân và nguyên tắc chia khi ly hôn.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "ly hôn chia tài sản thế nào",
+      "nhà mua sau khi cưới là tài sản chung không",
+      "tài sản riêng trước hôn nhân có phải chia không",
+      "nợ chung khi ly hôn xử lý thế nào",
+      "chia đất khi ly hôn",
+      "tiền tiết kiệm đứng tên một người có chia không",
+      "tài sản bố mẹ cho riêng khi ly hôn",
+      "vợ chồng tranh chấp tài sản chung"
+    ],
+    "retrieval_queries": [
+      "chia tài sản chung của vợ chồng khi ly hôn",
+      "tài sản chung tài sản riêng trong thời kỳ hôn nhân",
+      "nguyên tắc chia tài sản khi ly hôn Luật Hôn nhân và gia đình",
+      "nghĩa vụ nợ chung của vợ chồng khi ly hôn"
+    ],
+    "preferred_articles": [
+      "33",
+      "43",
+      "59",
+      "60"
+    ],
+    "distinguish_from_articles": [
+      "44"
+    ],
+    "document_title_hints": [
+      "Luật Hôn nhân và gia đình",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "thua_ke_di_chuc_chia_di_san",
+    "issue_type": "thua_ke",
+    "display_name": "Thừa kế, di chúc, chia di sản",
+    "issue_type_name": "Thừa kế",
+    "description": "Câu hỏi về hiệu lực di chúc, điều kiện lập di chúc, người thừa kế theo di chúc, di chúc viết tay, di chúc miệng và phần di sản được định đoạt.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "di chúc viết tay có hợp pháp không",
+      "chia thừa kế theo di chúc",
+      "di chúc không công chứng có hiệu lực không",
+      "người lập di chúc mất năng lực",
+      "di chúc miệng có giá trị không",
+      "bố mẹ để lại di chúc chia nhà",
+      "người bị truất quyền thừa kế",
+      "di chúc bị sửa chữa có hợp lệ không"
+    ],
+    "retrieval_queries": [
+      "thừa kế theo di chúc Bộ luật Dân sự",
+      "điều kiện di chúc hợp pháp",
+      "di chúc viết tay di chúc miệng có hiệu lực",
+      "người thừa kế không phụ thuộc nội dung di chúc",
+      "chia di sản thừa kế có di chúc và không có di chúc",
+      "hàng thừa kế người thừa kế Bộ luật Dân sự"
+    ],
+    "preferred_articles": [
+      "624",
+      "626",
+      "630",
+      "644",
+      "650"
+    ],
+    "distinguish_from_articles": [
+      "651"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "thua_ke_theo_phap_luat",
+    "issue_type": "thua_ke",
+    "display_name": "Thừa kế theo pháp luật",
+    "issue_type_name": "Thừa kế",
+    "description": "Câu hỏi về chia di sản khi không có di chúc, hàng thừa kế, phần thừa kế của vợ chồng, cha mẹ, con, anh chị em và thủ tục khai nhận di sản.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "không có di chúc thì chia thừa kế thế nào",
+      "hàng thừa kế thứ nhất gồm những ai",
+      "cha mẹ mất không để lại di chúc",
+      "vợ con được hưởng thừa kế bao nhiêu",
+      "anh chị em tranh chấp di sản",
+      "chia đất thừa kế không có di chúc",
+      "khai nhận di sản thừa kế",
+      "người thừa kế cùng hàng được chia thế nào"
+    ],
+    "retrieval_queries": [
+      "thừa kế theo pháp luật Bộ luật Dân sự",
+      "hàng thừa kế khi không có di chúc",
+      "chia di sản thừa kế cho vợ chồng cha mẹ con",
+      "thủ tục khai nhận phân chia di sản thừa kế"
+    ],
+    "preferred_articles": [
+      "649",
+      "650",
+      "651",
+      "652"
+    ],
+    "distinguish_from_articles": [
+      "630",
+      "644"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "tranh_chap_dat_dai_so_do",
+    "issue_type": "dat_dai",
+    "display_name": "Tranh chấp đất đai, sổ đỏ",
+    "issue_type_name": "Đất đai",
+    "description": "Câu hỏi về tranh chấp quyền sử dụng đất, ranh giới, lấn chiếm, cấp giấy chứng nhận, sổ đỏ, hòa giải ở xã và khởi kiện tranh chấp đất.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "tranh chấp đất đai với hàng xóm",
+      "bị lấn chiếm đất",
+      "sổ đỏ đứng tên người khác",
+      "ranh giới đất bị thay đổi",
+      "đòi lại đất cho mượn",
+      "khởi kiện tranh chấp đất đai",
+      "hòa giải tranh chấp đất ở xã",
+      "cấp sổ đỏ sai diện tích"
+    ],
+    "retrieval_queries": [
+      "tranh chấp đất đai quyền sử dụng đất Luật Đất đai",
+      "hòa giải tranh chấp đất đai tại ủy ban nhân dân cấp xã",
+      "khởi kiện tranh chấp quyền sử dụng đất",
+      "lấn chiếm đất ranh giới đất sổ đỏ"
+    ],
+    "preferred_articles": [
+      "202",
+      "203"
+    ],
+    "distinguish_from_articles": [
+      "26",
+      "35",
+      "39"
+    ],
+    "document_title_hints": [
+      "Luật Đất đai",
+      "Bộ luật Tố tụng dân sự"
+    ]
+  },
+  {
+    "label": "hop_dong_dat_coc_phat_coc",
+    "issue_type": "hop_dong_dan_su",
+    "display_name": "Hợp đồng đặt cọc, mất cọc, phạt cọc",
+    "issue_type_name": "Hợp đồng dân sự",
+    "description": "Câu hỏi về đặt cọc mua bán nhà đất, xe, hàng hóa; bên bán hoặc bên mua không thực hiện hợp đồng; phạt cọc, trả cọc, mất cọc và tranh chấp cọc.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "đặt cọc mua đất nhưng bên bán không bán",
+      "bên mua bỏ cọc có mất tiền không",
+      "không trả tiền cọc",
+      "hợp đồng đặt cọc viết tay",
+      "phạt cọc gấp đôi có đúng không",
+      "đặt cọc mua xe rồi đổi ý",
+      "đòi lại tiền cọc mua nhà",
+      "bên bán nhận cọc rồi bán cho người khác"
+    ],
+    "retrieval_queries": [
+      "đặt cọc mua bán tài sản Bộ luật Dân sự",
+      "bên nhận cọc từ chối giao kết hợp đồng xử lý tiền cọc",
+      "bên đặt cọc không mua nữa có mất cọc không",
+      "tranh chấp hợp đồng đặt cọc mua bán nhà đất",
+      "đặt cọc phạt cọc Bộ luật Dân sự",
+      "bên nhận cọc không bán phải trả cọc phạt cọc"
+    ],
+    "preferred_articles": [
+      "328"
+    ],
+    "distinguish_from_articles": [
+      "117",
+      "418"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự",
+      "Luật Đất đai"
+    ]
+  },
+  {
+    "label": "boi_thuong_thiet_hai_ngoai_hop_dong",
+    "issue_type": "boi_thuong_dan_su",
+    "display_name": "Bồi thường thiệt hại ngoài hợp đồng",
+    "issue_type_name": "Bồi thường dân sự",
+    "description": "Câu hỏi về trách nhiệm bồi thường khi gây thiệt hại về sức khỏe, tính mạng, tài sản, danh dự, uy tín hoặc nguồn nguy hiểm cao độ ngoài quan hệ hợp đồng.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "làm hỏng tài sản người khác phải bồi thường bao nhiêu",
+      "đánh người phải bồi thường viện phí",
+      "tai nạn gây thiệt hại phải bồi thường",
+      "bồi thường tổn thất tinh thần",
+      "xâm phạm danh dự phải bồi thường",
+      "chó cắn người ai bồi thường",
+      "cây đổ làm hỏng xe",
+      "bồi thường thiệt hại ngoài hợp đồng"
+    ],
+    "retrieval_queries": [
+      "bồi thường thiệt hại ngoài hợp đồng Bộ luật Dân sự",
+      "thiệt hại do sức khỏe bị xâm phạm",
+      "thiệt hại do tài sản bị xâm phạm",
+      "bồi thường tổn thất tinh thần danh dự nhân phẩm uy tín"
+    ],
+    "preferred_articles": [
+      "584",
+      "585",
+      "586",
+      "589",
+      "590",
+      "592"
+    ],
+    "distinguish_from_articles": [
+      "351",
+      "357"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "sa_thai_cho_nghi_viec_trai_luat",
+    "issue_type": "lao_dong",
+    "display_name": "Sa thải, cho nghỉ việc trái luật",
+    "issue_type_name": "Lao động",
+    "description": "Câu hỏi về công ty sa thải, cho nghỉ việc, chấm dứt hợp đồng trái luật, kỷ luật lao động, bồi thường khi bị cho nghỉ không đúng quy định.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "bị công ty đuổi việc không lý do",
+      "công ty cho nghỉ việc trái luật",
+      "bị sa thải có đúng luật không",
+      "chấm dứt hợp đồng trái pháp luật",
+      "bị cho nghỉ ngang",
+      "công ty cắt hợp đồng không báo trước",
+      "bồi thường khi bị sa thải trái luật",
+      "sa thải nhân viên do nghỉ việc riêng"
+    ],
+    "retrieval_queries": [
+      "sa thải người lao động Bộ luật Lao động",
+      "công ty cho nghỉ việc trái luật phải bồi thường",
+      "xử lý kỷ luật sa thải người lao động",
+      "người sử dụng lao động đơn phương chấm dứt hợp đồng"
+    ],
+    "preferred_articles": [
+      "122",
+      "125",
+      "41"
+    ],
+    "distinguish_from_articles": [
+      "35",
+      "36",
+      "39",
+      "40"
+    ],
+    "document_title_hints": [
+      "Bộ luật Lao động"
+    ]
+  },
+  {
+    "label": "tro_cap_thoi_viec_tro_cap_mat_viec",
+    "issue_type": "lao_dong",
+    "display_name": "Trợ cấp thôi việc, trợ cấp mất việc",
+    "issue_type_name": "Lao động",
+    "description": "Câu hỏi về quyền hưởng trợ cấp thôi việc, trợ cấp mất việc, cách tính thời gian làm việc, tiền lương căn cứ tính trợ cấp khi chấm dứt hợp đồng lao động.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "nghỉ việc có được trợ cấp thôi việc không",
+      "công ty có phải trả trợ cấp mất việc không",
+      "làm bao lâu thì có trợ cấp thôi việc",
+      "cách tính trợ cấp thôi việc",
+      "nghỉ việc sau nhiều năm có được tiền trợ cấp",
+      "bị mất việc do công ty cắt giảm",
+      "trợ cấp khi chấm dứt hợp đồng lao động",
+      "thời gian làm việc tính trợ cấp thế nào"
+    ],
+    "retrieval_queries": [
+      "trợ cấp thôi việc trợ cấp mất việc Bộ luật Lao động",
+      "điều kiện hưởng trợ cấp thôi việc khi nghỉ việc",
+      "cách tính trợ cấp mất việc làm cho người lao động",
+      "thời gian làm việc để tính trợ cấp thôi việc"
+    ],
+    "preferred_articles": [
+      "46",
+      "47"
+    ],
+    "distinguish_from_articles": [
+      "34",
+      "40",
+      "41"
+    ],
+    "document_title_hints": [
+      "Bộ luật Lao động"
+    ]
+  },
+  {
+    "label": "bao_hiem_xa_hoi_bat_buoc",
+    "issue_type": "bao_hiem_xa_hoi",
+    "display_name": "Bảo hiểm xã hội bắt buộc",
+    "issue_type_name": "Bảo hiểm xã hội",
+    "description": "Câu hỏi về việc công ty không đóng, chậm đóng, trốn đóng bảo hiểm xã hội bắt buộc, quyền lợi và nghĩa vụ tham gia bảo hiểm của người lao động.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "công ty không đóng bảo hiểm xã hội",
+      "công ty nợ bảo hiểm cho nhân viên",
+      "không được đóng bhxh có kiện được không",
+      "làm hợp đồng nhưng không đóng bảo hiểm",
+      "trốn đóng bảo hiểm xã hội",
+      "chậm đóng bảo hiểm xã hội",
+      "người lao động có bắt buộc đóng bhxh không",
+      "đòi công ty đóng bảo hiểm"
+    ],
+    "retrieval_queries": [
+      "bảo hiểm xã hội bắt buộc người lao động người sử dụng lao động",
+      "công ty không đóng bảo hiểm xã hội cho nhân viên",
+      "chậm đóng trốn đóng bảo hiểm xã hội bắt buộc",
+      "quyền lợi khi công ty không đóng bảo hiểm xã hội"
+    ],
+    "preferred_articles": [
+      "2",
+      "85",
+      "86",
+      "168"
+    ],
+    "distinguish_from_articles": [
+      "60",
+      "49"
+    ],
+    "document_title_hints": [
+      "Luật Bảo hiểm xã hội",
+      "Bộ luật Lao động"
+    ]
+  },
+  {
+    "label": "bao_hiem_xa_hoi_mot_lan_that_nghiep",
+    "issue_type": "bao_hiem_xa_hoi",
+    "display_name": "BHXH một lần, bảo hiểm thất nghiệp",
+    "issue_type_name": "Bảo hiểm xã hội",
+    "description": "Câu hỏi về rút bảo hiểm xã hội một lần, điều kiện hưởng bảo hiểm thất nghiệp, trợ cấp thất nghiệp, thời gian đóng và hồ sơ hưởng quyền lợi bảo hiểm.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "rút bảo hiểm xã hội một lần được không",
+      "điều kiện hưởng bảo hiểm thất nghiệp",
+      "nghỉ việc bao lâu được nhận thất nghiệp",
+      "đóng bảo hiểm bao lâu thì rút một lần",
+      "hồ sơ hưởng trợ cấp thất nghiệp",
+      "cách tính tiền bảo hiểm xã hội một lần",
+      "không nhận được trợ cấp thất nghiệp",
+      "bảo hiểm thất nghiệp cần giấy tờ gì"
+    ],
+    "retrieval_queries": [
+      "bảo hiểm xã hội một lần điều kiện hưởng",
+      "trợ cấp thất nghiệp điều kiện hưởng bảo hiểm thất nghiệp",
+      "hồ sơ hưởng bảo hiểm xã hội một lần",
+      "thời gian đóng bảo hiểm để hưởng trợ cấp thất nghiệp"
+    ],
+    "preferred_articles": [
+      "49",
+      "50"
+    ],
+    "distinguish_from_articles": [
+      "2"
+    ],
+    "document_title_hints": [
+      "Luật Bảo hiểm xã hội",
+      "Luật Việc làm"
+    ]
+  },
+  {
+    "label": "tien_luong_lam_them_gio",
+    "issue_type": "lao_dong",
+    "display_name": "Tiền lương làm thêm giờ",
+    "issue_type_name": "Lao động",
+    "description": "Câu hỏi về tiền lương làm thêm giờ, tăng ca, làm ngày nghỉ, ngày lễ, làm ban đêm và cách tính tiền lương ngoài giờ.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "làm thêm giờ tính lương thế nào",
+      "tăng ca ngày nghỉ được trả bao nhiêu",
+      "làm ngày lễ tính lương ra sao",
+      "công ty không trả tiền tăng ca",
+      "lương làm thêm ban đêm",
+      "ép tăng ca nhưng không trả lương",
+      "làm chủ nhật được trả lương bao nhiêu",
+      "tính tiền lương ngoài giờ"
+    ],
+    "retrieval_queries": [
+      "tiền lương làm thêm giờ Bộ luật Lao động",
+      "làm thêm giờ ngày nghỉ ngày lễ tính lương thế nào",
+      "tiền lương làm việc vào ban đêm",
+      "công ty không trả tiền tăng ca cho người lao động"
+    ],
+    "preferred_articles": [
+      "98",
+      "107"
+    ],
+    "distinguish_from_articles": [
+      "94",
+      "95"
+    ],
+    "document_title_hints": [
+      "Bộ luật Lao động"
+    ]
+  },
+  {
+    "label": "cuop_giat_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Cướp giật tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Hành vi nhanh chóng giật, giằng tài sản của người khác rồi tẩu thoát, thường gặp trong các tình huống giật điện thoại, túi xách, dây chuyền.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "bị giật điện thoại",
+      "giật túi xách trên đường",
+      "giật dây chuyền rồi bỏ chạy",
+      "người khác giật tài sản của tôi",
+      "cướp giật xe máy",
+      "giật ví tiền",
+      "chạy xe máy giật điện thoại",
+      "bị giật đồ khi đang đi đường"
+    ],
+    "retrieval_queries": [
+      "cướp giật tài sản Bộ luật Hình sự",
+      "giật điện thoại túi xách rồi bỏ chạy bị xử lý thế nào",
+      "phân biệt cướp tài sản và cướp giật tài sản",
+      "hành vi nhanh chóng chiếm đoạt tài sản rồi tẩu thoát"
+    ],
+    "preferred_articles": [
+      "171"
+    ],
+    "distinguish_from_articles": [
+      "168",
+      "173"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "giao_cau_voi_nguoi_duoi_16",
+    "issue_type": "xam_pham_tinh_duc",
+    "display_name": "Giao cấu với người từ đủ 13 đến dưới 16 tuổi",
+    "issue_type_name": "Xâm phạm tình dục",
+    "description": "Câu hỏi pháp lý về quan hệ tình dục với người chưa đủ tuổi, tuổi chịu trách nhiệm, sự đồng thuận không loại trừ trách nhiệm trong một số trường hợp và xử lý hình sự liên quan.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "quan hệ với người dưới 16 tuổi có phạm tội không",
+      "bạn gái chưa đủ 16 tuổi có sao không",
+      "người yêu 15 tuổi quan hệ tự nguyện",
+      "quan hệ khi chưa đủ tuổi bị xử lý thế nào",
+      "người dưới 16 tuổi đồng ý có bị tội không",
+      "tuổi được quan hệ theo pháp luật",
+      "quan hệ với trẻ vị thành niên",
+      "chưa đủ tuổi quan hệ tự nguyện"
+    ],
+    "retrieval_queries": [
+      "giao cấu với người từ đủ 13 đến dưới 16 tuổi Bộ luật Hình sự",
+      "quan hệ với người chưa đủ 16 tuổi bị xử lý thế nào",
+      "tuổi của người bị hại trong tội xâm phạm tình dục",
+      "đồng thuận của người dưới 16 tuổi có loại trừ trách nhiệm không"
+    ],
+    "preferred_articles": [
+      "145"
+    ],
+    "distinguish_from_articles": [
+      "142",
+      "143",
+      "144"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "hop_dong_mua_ban_tai_san",
+    "issue_type": "hop_dong_dan_su",
+    "display_name": "Hợp đồng mua bán tài sản",
+    "issue_type_name": "Hợp đồng dân sự",
+    "description": "Câu hỏi về mua bán tài sản, mua hàng không giao, bên bán không sang tên, giấy tay mua bán, lỗi hàng hóa, chậm giao tài sản hoặc tranh chấp nghĩa vụ thanh toán.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "mua hàng rồi không giao",
+      "bán xe giấy tay có hợp pháp không",
+      "bên bán không sang tên xe",
+      "mua tài sản nhưng bên bán đổi ý",
+      "đã trả tiền nhưng không nhận được hàng",
+      "mua xe không làm giấy tờ",
+      "bên mua không trả đủ tiền",
+      "tranh chấp hợp đồng mua bán tài sản"
+    ],
+    "retrieval_queries": [
+      "hợp đồng mua bán tài sản Bộ luật Dân sự",
+      "bên bán không giao tài sản theo hợp đồng",
+      "bên bán không sang tên tài sản cho bên mua",
+      "quyền nghĩa vụ của bên mua bên bán tài sản"
+    ],
+    "preferred_articles": [
+      "430",
+      "431",
+      "432",
+      "434",
+      "440"
+    ],
+    "distinguish_from_articles": [
+      "328",
+      "472"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "hop_dong_thue_nha",
+    "issue_type": "hop_dong_dan_su",
+    "display_name": "Hợp đồng thuê nhà, tiền cọc thuê nhà",
+    "issue_type_name": "Hợp đồng dân sự",
+    "description": "Câu hỏi về thuê nhà, chủ nhà giữ cọc, đòi nhà trước hạn, chấm dứt hợp đồng thuê, sửa chữa nhà thuê, tăng tiền thuê và quyền nghĩa vụ của các bên.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "chủ nhà giữ cọc không trả",
+      "thuê nhà chưa hết hạn bị đuổi",
+      "chấm dứt hợp đồng thuê nhà trước hạn",
+      "chủ nhà tự ý tăng tiền thuê",
+      "người thuê phá hợp đồng có mất cọc không",
+      "hợp đồng thuê nhà viết tay",
+      "đòi lại tiền cọc thuê nhà",
+      "chủ nhà không sửa nhà thuê"
+    ],
+    "retrieval_queries": [
+      "hợp đồng thuê nhà Bộ luật Dân sự Luật Nhà ở",
+      "chủ nhà giữ tiền cọc thuê nhà có hợp pháp không",
+      "chấm dứt hợp đồng thuê nhà trước hạn",
+      "quyền nghĩa vụ bên thuê nhà bên cho thuê nhà"
+    ],
+    "preferred_articles": [
+      "472",
+      "473",
+      "482",
+      "121",
+      "122"
+    ],
+    "distinguish_from_articles": [
+      "328",
+      "430"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự",
+      "Luật Nhà ở"
+    ]
+  },
+  {
+    "label": "di_chuc_hop_phap",
+    "issue_type": "thua_ke",
+    "display_name": "Di chúc hợp pháp",
+    "issue_type_name": "Thừa kế",
+    "description": "Câu hỏi về điều kiện di chúc hợp pháp, di chúc viết tay, công chứng chứng thực di chúc, người lập di chúc, sửa đổi hủy bỏ di chúc và hiệu lực của di chúc.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "di chúc viết tay có hiệu lực không",
+      "di chúc có cần công chứng không",
+      "điều kiện di chúc hợp pháp",
+      "cha mẹ để lại di chúc viết tay",
+      "di chúc miệng có hợp pháp không",
+      "người già lập di chúc cần điều kiện gì",
+      "di chúc bị vô hiệu khi nào",
+      "sửa đổi di chúc đã lập"
+    ],
+    "retrieval_queries": [
+      "di chúc hợp pháp Bộ luật Dân sự",
+      "điều kiện có hiệu lực của di chúc",
+      "di chúc viết tay có cần công chứng chứng thực không",
+      "di chúc miệng sửa đổi hủy bỏ di chúc"
+    ],
+    "preferred_articles": [
+      "630",
+      "631",
+      "632",
+      "633",
+      "634"
+    ],
+    "distinguish_from_articles": [
+      "624",
+      "626"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "thoi_hieu_khoi_kien_dan_su",
+    "issue_type": "to_tung_dan_su",
+    "display_name": "Thời hiệu khởi kiện dân sự",
+    "issue_type_name": "Tố tụng dân sự",
+    "description": "Câu hỏi về việc sự việc xảy ra đã lâu còn kiện được không, thời hiệu khởi kiện hợp đồng, bồi thường thiệt hại, thừa kế, đất đai hoặc yêu cầu tòa án giải quyết tranh chấp dân sự.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "quá lâu rồi có kiện được không",
+      "hết thời hiệu khởi kiện là gì",
+      "nợ tiền nhiều năm còn kiện được không",
+      "tranh chấp hợp đồng quá hạn có kiện được không",
+      "thời hiệu khởi kiện dân sự bao lâu",
+      "tai nạn lâu rồi còn đòi bồi thường được không",
+      "chia thừa kế sau nhiều năm",
+      "sự việc xảy ra lâu còn kiện tòa không"
+    ],
+    "retrieval_queries": [
+      "thời hiệu khởi kiện dân sự Bộ luật Dân sự",
+      "hết thời hiệu khởi kiện có yêu cầu tòa án được không",
+      "thời hiệu khởi kiện tranh chấp hợp đồng dân sự",
+      "thời hiệu yêu cầu bồi thường thiệt hại ngoài hợp đồng"
+    ],
+    "preferred_articles": [
+      "429",
+      "588",
+      "623",
+      "184"
+    ],
+    "distinguish_from_articles": [
+      "149",
+      "150",
+      "151"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự",
+      "Bộ luật Tố tụng dân sự"
+    ]
+  },
+  {
+    "label": "ly_hon_thuan_tinh",
+    "issue_type": "hon_nhan_gia_dinh",
+    "display_name": "Ly hôn thuận tình",
+    "issue_type_name": "Hôn nhân và gia đình",
+    "description": "Câu hỏi về hai vợ chồng cùng đồng ý ly hôn, hồ sơ thuận tình ly hôn, thỏa thuận nuôi con, cấp dưỡng, chia tài sản và tòa án có thẩm quyền giải quyết.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "hai vợ chồng đồng ý ly hôn cần giấy gì",
+      "ly hôn thuận tình thủ tục thế nào",
+      "thuận tình ly hôn mất bao lâu",
+      "đơn yêu cầu công nhận thuận tình ly hôn",
+      "ly hôn khi đã thỏa thuận nuôi con tài sản",
+      "cả hai cùng ký đơn ly hôn",
+      "nộp đơn thuận tình ly hôn ở đâu",
+      "ly hôn thuận tình online được không"
+    ],
+    "retrieval_queries": [
+      "ly hôn thuận tình Luật Hôn nhân và gia đình",
+      "công nhận thuận tình ly hôn thỏa thuận nuôi con tài sản",
+      "hồ sơ thủ tục ly hôn thuận tình",
+      "thẩm quyền giải quyết yêu cầu thuận tình ly hôn"
+    ],
+    "preferred_articles": [
+      "55"
+    ],
+    "distinguish_from_articles": [
+      "56"
+    ],
+    "document_title_hints": [
+      "Luật Hôn nhân và gia đình",
+      "Bộ luật Tố tụng dân sự"
+    ]
+  },
+  {
+    "label": "cap_duong_cho_con",
+    "issue_type": "hon_nhan_gia_dinh",
+    "display_name": "Cấp dưỡng cho con",
+    "issue_type_name": "Hôn nhân và gia đình",
+    "description": "Câu hỏi về nghĩa vụ cấp dưỡng cho con sau ly hôn, mức cấp dưỡng, thay đổi mức cấp dưỡng, không cấp dưỡng và cưỡng chế thực hiện nghĩa vụ cấp dưỡng.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "không cấp dưỡng cho con có sao không",
+      "mức cấp dưỡng nuôi con tính thế nào",
+      "ly hôn cha phải cấp dưỡng bao nhiêu",
+      "mẹ không cho thăm con có phải cấp dưỡng không",
+      "muốn tăng mức cấp dưỡng cho con",
+      "không trả tiền cấp dưỡng sau ly hôn",
+      "cấp dưỡng đến khi con bao nhiêu tuổi",
+      "trốn tránh nghĩa vụ cấp dưỡng"
+    ],
+    "retrieval_queries": [
+      "nghĩa vụ cấp dưỡng cho con Luật Hôn nhân và gia đình",
+      "mức cấp dưỡng sau ly hôn được xác định thế nào",
+      "thay đổi mức cấp dưỡng nuôi con",
+      "không thực hiện nghĩa vụ cấp dưỡng cho con"
+    ],
+    "preferred_articles": [
+      "110",
+      "116",
+      "117",
+      "119"
+    ],
+    "distinguish_from_articles": [
+      "81",
+      "82"
+    ],
+    "document_title_hints": [
+      "Luật Hôn nhân và gia đình"
+    ]
+  },
+  {
+    "label": "tai_san_rieng_vo_chong",
+    "issue_type": "hon_nhan_gia_dinh",
+    "display_name": "Tài sản riêng của vợ chồng",
+    "issue_type_name": "Hôn nhân và gia đình",
+    "description": "Câu hỏi về xác định tài sản riêng, tài sản được tặng cho riêng, thừa kế riêng, tài sản có trước hôn nhân và việc nhập hoặc không nhập vào tài sản chung.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "đất được tặng riêng có chia khi ly hôn không",
+      "tài sản có trước hôn nhân có phải chia không",
+      "tiền thừa kế riêng có là tài sản chung không",
+      "nhà đứng tên một người có chia khi ly hôn không",
+      "chứng minh tài sản riêng thế nào",
+      "bố mẹ cho riêng đất sau hôn nhân",
+      "tài sản riêng vợ chồng gồm những gì",
+      "nhập tài sản riêng vào tài sản chung"
+    ],
+    "retrieval_queries": [
+      "tài sản riêng của vợ chồng Luật Hôn nhân và gia đình",
+      "tài sản được tặng cho riêng thừa kế riêng có chia khi ly hôn không",
+      "chứng minh tài sản riêng của vợ chồng",
+      "tài sản có trước hôn nhân là tài sản riêng"
+    ],
+    "preferred_articles": [
+      "43",
+      "44"
+    ],
+    "distinguish_from_articles": [
+      "33",
+      "59"
+    ],
+    "document_title_hints": [
+      "Luật Hôn nhân và gia đình",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "thu_hoi_dat_boi_thuong_dat_dai",
+    "issue_type": "dat_dai",
+    "display_name": "Thu hồi đất, bồi thường, tái định cư",
+    "issue_type_name": "Đất đai",
+    "description": "Câu hỏi về Nhà nước thu hồi đất, điều kiện bồi thường, hỗ trợ, tái định cư, giá đất, phương án bồi thường và khiếu nại về thu hồi đất.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "bị thu hồi đất được bồi thường thế nào",
+      "nhà nước thu hồi đất đền bù bao nhiêu",
+      "không đồng ý giá bồi thường đất",
+      "thu hồi đất có được tái định cư không",
+      "đất không sổ bị thu hồi có đền bù không",
+      "phương án bồi thường thu hồi đất",
+      "khiếu nại quyết định thu hồi đất",
+      "hỗ trợ khi bị thu hồi đất"
+    ],
+    "retrieval_queries": [
+      "thu hồi đất bồi thường hỗ trợ tái định cư Luật Đất đai",
+      "điều kiện được bồi thường khi Nhà nước thu hồi đất",
+      "giá đất bồi thường khi thu hồi đất",
+      "khiếu nại phương án bồi thường thu hồi đất"
+    ],
+    "preferred_articles": [
+      "74",
+      "75",
+      "79",
+      "83",
+      "114"
+    ],
+    "distinguish_from_articles": [
+      "100",
+      "101",
+      "188"
+    ],
+    "document_title_hints": [
+      "Luật Đất đai"
+    ]
+  },
+  {
+    "label": "cap_giay_chung_nhan_quyen_su_dung_dat",
+    "issue_type": "dat_dai",
+    "display_name": "Cấp giấy chứng nhận quyền sử dụng đất",
+    "issue_type_name": "Đất đai",
+    "description": "Câu hỏi về làm sổ đỏ, cấp giấy chứng nhận quyền sử dụng đất, đất không giấy tờ, điều kiện cấp sổ, hồ sơ, thủ tục và tranh chấp khi cấp giấy.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "đất không giấy tờ có làm sổ được không",
+      "điều kiện cấp sổ đỏ lần đầu",
+      "làm giấy chứng nhận quyền sử dụng đất",
+      "hồ sơ xin cấp sổ đỏ gồm gì",
+      "đất khai hoang có được cấp sổ không",
+      "đất sử dụng lâu năm chưa có sổ",
+      "bị từ chối cấp giấy chứng nhận đất",
+      "thủ tục cấp sổ đỏ cho đất ở"
+    ],
+    "retrieval_queries": [
+      "cấp giấy chứng nhận quyền sử dụng đất Luật Đất đai",
+      "đất không có giấy tờ được cấp sổ đỏ không",
+      "điều kiện cấp giấy chứng nhận quyền sử dụng đất lần đầu",
+      "hồ sơ thủ tục cấp sổ đỏ đất ở"
+    ],
+    "preferred_articles": [
+      "99",
+      "100",
+      "101",
+      "105"
+    ],
+    "distinguish_from_articles": [
+      "74",
+      "75",
+      "188"
+    ],
+    "document_title_hints": [
+      "Luật Đất đai"
+    ]
+  },
+  {
+    "label": "chuyen_nhuong_quyen_su_dung_dat",
+    "issue_type": "dat_dai",
+    "display_name": "Chuyển nhượng quyền sử dụng đất",
+    "issue_type_name": "Đất đai",
+    "description": "Câu hỏi về mua bán, chuyển nhượng đất, điều kiện chuyển nhượng, hợp đồng công chứng, sang tên, giấy viết tay, đặt cọc mua đất và giao dịch đất đai.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "mua bán đất bằng giấy viết tay có được không",
+      "chuyển nhượng đất chưa có sổ đỏ",
+      "hợp đồng mua bán đất có cần công chứng không",
+      "bên bán không sang tên sổ đỏ",
+      "đặt cọc mua đất rồi không công chứng",
+      "điều kiện chuyển nhượng quyền sử dụng đất",
+      "mua đất chung sổ có rủi ro không",
+      "sang tên đất cần giấy tờ gì"
+    ],
+    "retrieval_queries": [
+      "chuyển nhượng quyền sử dụng đất Luật Đất đai",
+      "điều kiện chuyển nhượng quyền sử dụng đất",
+      "hợp đồng chuyển nhượng đất có cần công chứng không",
+      "mua bán đất giấy viết tay sang tên sổ đỏ"
+    ],
+    "preferred_articles": [
+      "167",
+      "168",
+      "188"
+    ],
+    "distinguish_from_articles": [
+      "328"
+    ],
+    "document_title_hints": [
+      "Luật Đất đai",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "tranh_chap_ranh_gioi_dat",
+    "issue_type": "dat_dai",
+    "display_name": "Tranh chấp ranh giới đất, lấn chiếm đất",
+    "issue_type_name": "Đất đai",
+    "description": "Câu hỏi về hàng xóm lấn đất, tranh chấp mốc giới, xây tường lấn sang đất, đo đạc lại diện tích và hòa giải tranh chấp ranh giới quyền sử dụng đất.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "hàng xóm lấn đất phải làm sao",
+      "tranh chấp ranh giới đất với hàng xóm",
+      "xây tường lấn sang đất nhà tôi",
+      "mốc giới đất bị dịch chuyển",
+      "đo đạc lại đất bị thiếu diện tích",
+      "hàng xóm chiếm lối đi chung",
+      "khiếu nại lấn chiếm đất",
+      "hòa giải tranh chấp đất đai ở xã"
+    ],
+    "retrieval_queries": [
+      "tranh chấp ranh giới đất lấn chiếm đất Luật Đất đai",
+      "hàng xóm lấn đất xử lý thế nào",
+      "hòa giải tranh chấp đất đai tại ủy ban nhân dân xã",
+      "đo đạc xác định ranh giới quyền sử dụng đất"
+    ],
+    "preferred_articles": [
+      "175",
+      "176",
+      "202",
+      "203"
+    ],
+    "distinguish_from_articles": [
+      "12"
+    ],
+    "document_title_hints": [
+      "Luật Đất đai",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "dat_dai_khong_so_do",
+    "issue_type": "dat_dai",
+    "display_name": "Đất chưa có sổ đỏ, đất không giấy tờ",
+    "issue_type_name": "Đất đai",
+    "description": "Câu hỏi về quyền sử dụng đất chưa có giấy chứng nhận, mua bán đất không sổ, cấp sổ cho đất không giấy tờ, tranh chấp và rủi ro pháp lý khi giao dịch đất chưa có sổ.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "đất chưa có sổ đỏ có bán được không",
+      "mua đất không sổ có rủi ro gì",
+      "đất không giấy tờ có được cấp sổ không",
+      "chuyển nhượng đất chưa có giấy chứng nhận",
+      "đất khai hoang không có sổ",
+      "xây nhà trên đất chưa có sổ",
+      "tranh chấp đất không có giấy tờ",
+      "có nên mua đất bằng giấy tay không"
+    ],
+    "retrieval_queries": [
+      "đất chưa có sổ đỏ đất không giấy tờ Luật Đất đai",
+      "đất không giấy tờ có được cấp giấy chứng nhận không",
+      "mua bán đất chưa có sổ đỏ có hợp pháp không",
+      "rủi ro chuyển nhượng đất không có giấy chứng nhận"
+    ],
+    "preferred_articles": [
+      "100",
+      "101",
+      "188"
+    ],
+    "distinguish_from_articles": [
+      "167",
+      "168"
+    ],
+    "document_title_hints": [
+      "Luật Đất đai"
+    ]
+  },
+  {
+    "label": "thua_ke_quyen_su_dung_dat",
+    "issue_type": "dat_dai",
+    "display_name": "Thừa kế quyền sử dụng đất",
+    "issue_type_name": "Đất đai",
+    "description": "Câu hỏi về cha mẹ mất để lại đất, chia đất thừa kế, sang tên sổ đỏ theo thừa kế, di chúc về quyền sử dụng đất và hàng thừa kế liên quan đến đất đai.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "cha mẹ mất để lại đất chia thế nào",
+      "thừa kế quyền sử dụng đất",
+      "sang tên sổ đỏ khi nhận thừa kế",
+      "đất cha mẹ để lại không có di chúc",
+      "anh em tranh chấp đất thừa kế",
+      "di chúc để lại quyền sử dụng đất",
+      "chia đất theo hàng thừa kế",
+      "đất đứng tên bố mẹ đã mất"
+    ],
+    "retrieval_queries": [
+      "thừa kế quyền sử dụng đất Luật Đất đai Bộ luật Dân sự",
+      "sang tên sổ đỏ khi nhận thừa kế quyền sử dụng đất",
+      "chia di sản là quyền sử dụng đất không có di chúc",
+      "di chúc để lại quyền sử dụng đất"
+    ],
+    "preferred_articles": [
+      "167",
+      "168",
+      "188",
+      "609",
+      "610",
+      "650",
+      "651"
+    ],
+    "distinguish_from_articles": [
+      "630",
+      "100",
+      "101"
+    ],
+    "document_title_hints": [
+      "Luật Đất đai",
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "to_giac_toi_pham_trinh_bao_cong_an",
+    "issue_type": "to_tung_hinh_su",
+    "display_name": "Tố giác tội phạm, trình báo công an",
+    "issue_type_name": "Tố tụng hình sự",
+    "description": "Câu hỏi về bị lừa, bị đánh, bị chiếm đoạt tài sản thì trình báo ở đâu, tố giác tội phạm như thế nào, nộp đơn cho công an và xử lý tin báo tố giác.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "bị lừa tiền thì trình báo ở đâu",
+      "tố giác tội phạm ở công an nào",
+      "bị đánh có nên báo công an không",
+      "mất tài sản trình báo thế nào",
+      "đơn trình báo công an gồm những gì",
+      "công an không nhận đơn tố giác",
+      "bị chiếm đoạt tiền báo công an được không",
+      "nộp đơn tố giác tội phạm online"
+    ],
+    "retrieval_queries": [
+      "tố giác tin báo về tội phạm Bộ luật Tố tụng hình sự",
+      "trình báo công an khi bị lừa chiếm đoạt tài sản",
+      "thủ tục tiếp nhận giải quyết tố giác tin báo tội phạm",
+      "đơn tố giác tội phạm gửi cơ quan điều tra"
+    ],
+    "preferred_articles": [
+      "144",
+      "145",
+      "146",
+      "147"
+    ],
+    "distinguish_from_articles": [
+      "389",
+      "390"
+    ],
+    "document_title_hints": [
+      "Bộ luật Tố tụng hình sự"
+    ]
+  },
+  {
+    "label": "khoi_kien_dan_su_tham_quyen_toa_an",
+    "issue_type": "to_tung_dan_su",
+    "display_name": "Khởi kiện dân sự, thẩm quyền tòa án",
+    "issue_type_name": "Tố tụng dân sự",
+    "description": "Câu hỏi về kiện đòi tiền, kiện hợp đồng, kiện tranh chấp dân sự, nộp đơn ở tòa nào, thẩm quyền theo nơi cư trú, nơi có bất động sản hoặc nơi thực hiện hợp đồng.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "kiện đòi tiền ở tòa nào",
+      "nộp đơn khởi kiện dân sự ở đâu",
+      "tòa án nào có thẩm quyền giải quyết tranh chấp",
+      "kiện người vay tiền không trả",
+      "khởi kiện tranh chấp hợp đồng",
+      "bị đơn ở tỉnh khác thì kiện ở đâu",
+      "tranh chấp đất nộp đơn tòa nào",
+      "hồ sơ khởi kiện dân sự gồm gì"
+    ],
+    "retrieval_queries": [
+      "khởi kiện dân sự thẩm quyền tòa án Bộ luật Tố tụng dân sự",
+      "nộp đơn khởi kiện tại tòa án nơi bị đơn cư trú",
+      "thẩm quyền tòa án trong tranh chấp dân sự",
+      "hồ sơ đơn khởi kiện dân sự"
+    ],
+    "preferred_articles": [
+      "26",
+      "35",
+      "39",
+      "189"
+    ],
+    "distinguish_from_articles": [
+      "184",
+      "91",
+      "93"
+    ],
+    "document_title_hints": [
+      "Bộ luật Tố tụng dân sự"
+    ]
+  },
+  {
+    "label": "an_phi_le_phi_toa_an",
+    "issue_type": "to_tung_dan_su",
+    "display_name": "Án phí, lệ phí tòa án",
+    "issue_type_name": "Tố tụng dân sự",
+    "description": "Câu hỏi về án phí dân sự, lệ phí tòa án, tạm ứng án phí, ai phải chịu án phí, mức án phí khi kiện đòi tiền, ly hôn, tranh chấp tài sản hoặc đất đai.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "kiện dân sự mất bao nhiêu án phí",
+      "án phí ly hôn bao nhiêu",
+      "tạm ứng án phí là gì",
+      "ai phải chịu án phí tòa án",
+      "kiện đòi nợ án phí tính thế nào",
+      "án phí tranh chấp đất đai",
+      "không có tiền nộp án phí thì sao",
+      "lệ phí tòa án khi thuận tình ly hôn"
+    ],
+    "retrieval_queries": [
+      "án phí lệ phí tòa án trong vụ án dân sự",
+      "tạm ứng án phí khi khởi kiện dân sự",
+      "mức án phí khi tranh chấp tài sản đòi tiền",
+      "ai phải chịu án phí trong vụ án dân sự"
+    ],
+    "preferred_articles": [
+      "12",
+      "24",
+      "26",
+      "27"
+    ],
+    "distinguish_from_articles": [
+      "189",
+      "91"
+    ],
+    "document_title_hints": [
+      "Bộ luật Tố tụng dân sự",
+      "Nghị quyết về án phí lệ phí tòa án"
+    ]
+  },
+  {
+    "label": "chung_cu_dan_su",
+    "issue_type": "to_tung_dan_su",
+    "display_name": "Chứng cứ dân sự",
+    "issue_type_name": "Tố tụng dân sự",
+    "description": "Câu hỏi về tin nhắn, ghi âm, chuyển khoản, giấy viết tay, email, hình ảnh làm chứng cứ trong vụ án dân sự và nghĩa vụ chứng minh khi khởi kiện.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "tin nhắn có làm bằng chứng được không",
+      "chuyển khoản có đòi nợ được không",
+      "ghi âm có được dùng làm chứng cứ không",
+      "giấy vay tiền viết tay có giá trị không",
+      "ảnh chụp màn hình có làm chứng cứ không",
+      "không có hợp đồng có kiện được không",
+      "email có giá trị chứng cứ không",
+      "nghĩa vụ chứng minh trong vụ án dân sự"
+    ],
+    "retrieval_queries": [
+      "chứng cứ trong tố tụng dân sự Bộ luật Tố tụng dân sự",
+      "tin nhắn chuyển khoản ghi âm có làm chứng cứ dân sự không",
+      "nghĩa vụ chứng minh trong vụ án dân sự",
+      "giấy viết tay email hình ảnh làm chứng cứ"
+    ],
+    "preferred_articles": [
+      "91",
+      "93",
+      "94",
+      "95",
+      "96"
+    ],
+    "distinguish_from_articles": [
+      "189",
+      "184"
+    ],
+    "document_title_hints": [
+      "Bộ luật Tố tụng dân sự"
+    ]
+  },
+  {
+    "label": "don_to_cao_don_khoi_kien",
+    "issue_type": "to_tung_thu_tuc",
+    "display_name": "Đơn tố cáo, đơn khởi kiện, đơn trình báo",
+    "issue_type_name": "Tố tụng và thủ tục",
+    "description": "Câu hỏi về cách viết đơn tố cáo, đơn khởi kiện, đơn trình báo công an, nội dung cần có trong đơn, nơi nộp và tài liệu kèm theo.",
+    "confidence": 0.84,
+    "semantic_queries": [
+      "viết đơn tố cáo như thế nào",
+      "mẫu đơn khởi kiện dân sự",
+      "đơn trình báo công an gồm những gì",
+      "đơn tố cáo gửi ở đâu",
+      "đơn khởi kiện cần nội dung gì",
+      "cần giấy tờ gì khi nộp đơn kiện",
+      "đơn trình báo bị lừa tiền",
+      "hướng dẫn viết đơn khiếu nại tố cáo"
+    ],
+    "retrieval_queries": [
+      "đơn khởi kiện nội dung đơn khởi kiện Bộ luật Tố tụng dân sự",
+      "đơn tố giác tội phạm đơn trình báo công an",
+      "nội dung đơn tố cáo đơn khiếu nại",
+      "tài liệu chứng cứ kèm theo đơn khởi kiện"
+    ],
+    "preferred_articles": [
+      "189",
+      "144",
+      "23",
+      "8"
+    ],
+    "distinguish_from_articles": [
+      "145",
+      "91"
+    ],
+    "document_title_hints": [
+      "Bộ luật Tố tụng dân sự",
+      "Bộ luật Tố tụng hình sự",
+      "Luật Tố cáo",
+      "Luật Khiếu nại"
+    ]
+  }
+]

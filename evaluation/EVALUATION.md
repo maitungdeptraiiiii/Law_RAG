@@ -1,5 +1,52 @@
 # Law RAG Evaluation
 
+## RAGAS Semantic Judge
+
+RAGAS được dùng như lớp đánh giá semantic bổ sung, không thay thế các metric deterministic hiện có như Recall@k, MRR và citation accuracy.
+
+Mục tiêu:
+
+- `faithfulness`: câu trả lời có bám context retrieve không.
+- `answer_relevancy`: câu trả lời có đúng trọng tâm câu hỏi không.
+- `context_precision`: context retrieve có ít nhiễu không.
+- `context_recall`: context có đủ thông tin so với reference answer không.
+- `answer_correctness`: câu trả lời có gần với ground truth không.
+
+Cài dependency:
+
+```powershell
+pip install -r requirements-eval.txt
+```
+
+Chạy evaluator hiện có để tạo report:
+
+```powershell
+python evaluation\evaluate_law_rag.py `
+  --dataset evaluation\law_rag_eval_dataset.json `
+  --retrieval-mode bm25 `
+  --top-k 5 `
+  --query-rewrite `
+  --limit 10 `
+  --output output\eval\runs\sample-for-ragas.json
+```
+
+Chạy RAGAS semantic judge trên report đó:
+
+```powershell
+python evaluation\run_ragas_semantic_judge.py `
+  --report output\eval\runs\sample-for-ragas.json `
+  --dataset evaluation\law_rag_eval_dataset.json `
+  --output-json output\eval\runs\sample-for-ragas.ragas.json `
+  --output-csv output\eval\runs\sample-for-ragas.ragas.csv
+```
+
+Khuyến nghị đọc kết quả:
+
+- Nếu Recall@5 thấp nhưng `faithfulness` cao: answer bám context, nhưng retriever thiếu nguồn đúng.
+- Nếu Recall@5 cao nhưng `faithfulness` thấp: retrieve đúng nhưng generation/prompt đang bịa hoặc suy diễn.
+- Nếu `context_precision` thấp: top-k có nhiều chunk nhiễu, cần cải thiện rerank/fusion.
+- Nếu `context_recall` thấp: context thiếu thông tin, cần cải thiện query rewrite/candidate generation/top-k.
+
 ## Mục tiêu
 
 File này định nghĩa cách đánh giá chất lượng hệ thống Law RAG. Mục tiêu không chỉ là câu trả lời nghe hợp lý, mà phải:

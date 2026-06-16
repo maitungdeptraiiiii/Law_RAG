@@ -315,6 +315,118 @@ vector_metadata.json
 vector_manifest.json
 ```
 
+## Chạy Evaluation Theo 2 Pipeline
+
+Có thể dùng biến môi trường `LAW_RAG_GRAPH_PIPELINE` để chuyển giữa hai pipeline retrieval:
+
+- `LAW_RAG_GRAPH_PIPELINE=off`: pipeline 1, chạy RAG hiện tại với BM25 + vector + rerank.
+- `LAW_RAG_GRAPH_PIPELINE=on`: pipeline 2, chạy Graph RAG với Neo4j legal issue map + BM25 + vector + rerank.
+
+`GRAPH_RETRIEVAL_ENABLED` vẫn dùng được như biến override trực tiếp. Nếu biến này được set, backend sẽ ưu tiên nó hơn `LAW_RAG_GRAPH_PIPELINE`.
+
+Các lệnh dưới đây dùng corpus/vector hiện tại:
+
+```text
+chunks: output\vbpl_merged_reuse_openai\all_chunks.jsonl
+bm25:   output\vbpl_merged_reuse_openai\retrieval\bm25_index.json
+vector: output\vbpl_merged_reuse_openai\retrieval\vector-openai
+dataset: evaluation\law_rag_eval_dataset.json
+```
+
+### Pipeline 1: baseline, không dùng Neo4j
+
+```powershell
+cd C:\Users\Admin\Desktop\Law-RAG
+
+$env:LAW_RAG_GRAPH_PIPELINE="off"
+Remove-Item Env:\GRAPH_RETRIEVAL_ENABLED -ErrorAction SilentlyContinue
+$env:MAX_ACTIVE_RETRIEVAL_QUERIES="3"
+
+$report="output\eval\runs\pipeline1-baseline.json"
+
+.\.venv\Scripts\python.exe evaluation\evaluate_law_rag.py `
+  --dataset evaluation\law_rag_eval_dataset.json `
+  --retrieval-mode hybrid `
+  --top-k 5 `
+  --query-rewrite `
+  --output $report
+
+.\.venv\Scripts\python.exe evaluation\run_ragas_semantic_judge.py `
+  --report $report `
+  --dataset evaluation\law_rag_eval_dataset.json
+```
+
+### Pipeline 2: Graph RAG với Neo4j
+
+Khởi động Neo4j nếu chưa chạy:
+
+```powershell
+docker compose -f docker\neo4j-compose.yml up -d
+```
+
+Build graph từ chunk mới có Điều/Khoản/Điểm. Có thể dùng `--skip-references` để build nhanh phần cần cho legal issue map:
+
+```powershell
+$env:NEO4J_URI="bolt://127.0.0.1:7687"
+$env:NEO4J_USER="neo4j"
+$env:NEO4J_PASSWORD="lawrag-password"
+$env:NEO4J_DATABASE="neo4j"
+
+.\.venv\Scripts\python.exe scripts\build_neo4j_legal_graph.py `
+  --chunks output\vbpl_combined_chunking_v3\all_chunks.jsonl `
+  --issue-rules law_rag\retrieval\legal_issues_full_all_added.json `
+  --skip-references `
+  --wait-seconds 180
+```
+
+Chạy eval với Graph RAG:
+
+```powershell
+cd C:\Users\Admin\Desktop\Law-RAG
+
+$env:LAW_RAG_GRAPH_PIPELINE="on"
+Remove-Item Env:\GRAPH_RETRIEVAL_ENABLED -ErrorAction SilentlyContinue
+$env:GRAPH_MAX_PINNED="1"
+$env:GRAPH_PIN_DISTINGUISH="false"
+$env:GRAPH_PIN_MIN_RERANK_SCORE="0"
+$env:MAX_ACTIVE_RETRIEVAL_QUERIES="3"
+
+$env:NEO4J_URI="bolt://127.0.0.1:7687"
+$env:NEO4J_USER="neo4j"
+$env:NEO4J_PASSWORD="lawrag-password"
+$env:NEO4J_DATABASE="neo4j"
+
+$report="output\eval\runs\pipeline2-graph-rag.json"
+
+.\.venv\Scripts\python.exe evaluation\evaluate_law_rag.py `
+  --dataset evaluation\law_rag_eval_dataset.json `
+  --retrieval-mode hybrid `
+  --top-k 5 `
+  --query-rewrite `
+  --output $report
+
+.\.venv\Scripts\python.exe evaluation\run_ragas_semantic_judge.py `
+  --report $report `
+  --dataset evaluation\law_rag_eval_dataset.json
+```
+
+Nếu muốn thử pin có điều kiện sau BGE rerank, đặt:
+
+```powershell
+$env:GRAPH_PIN_MIN_RERANK_SCORE="0.45"
+```
+
+Kết quả gần đây cho thấy cấu hình retrieval tốt nhất đang là soft pin:
+
+```powershell
+$env:LAW_RAG_GRAPH_PIPELINE="on"
+Remove-Item Env:\GRAPH_RETRIEVAL_ENABLED -ErrorAction SilentlyContinue
+$env:GRAPH_MAX_PINNED="1"
+$env:GRAPH_PIN_DISTINGUISH="false"
+$env:GRAPH_PIN_MIN_RERANK_SCORE="0"
+$env:MAX_ACTIVE_RETRIEVAL_QUERIES="3"
+```
+
 ## Upload, OCR Và Embedding Tài Liệu Riêng
 
 Luồng upload:

@@ -1,0 +1,278 @@
+[
+  {
+    "label": "lam_dung_tin_nhiem_chiem_doat_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Lạm dụng tín nhiệm chiếm đoạt tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Người ban đầu nhận tài sản hợp pháp thông qua vay, mượn, thuê, giữ hộ, được giao hoặc quan hệ hợp đồng, sau đó bán, cầm cố, bỏ trốn, không trả hoặc dùng thủ đoạn khác nhằm chiếm đoạt tài sản.",
+    "confidence": 0.93,
+    "semantic_queries": [
+      "mượn xe rồi bán",
+      "mượn tài sản không trả",
+      "được giao tài sản rồi chiếm đoạt",
+      "vay tiền rồi bỏ trốn",
+      "thuê xe rồi đem bán",
+      "giữ hộ tài sản rồi đem cầm cố",
+      "nhận tài sản hợp pháp rồi không trả lại",
+      "mượn tiền xong bỏ trốn",
+      "thuê xe tự lái rồi mang đi bán",
+      "vay mượn tài sản rồi sử dụng vào mục đích chiếm đoạt",
+      "được giao xe để sử dụng rồi đem đi thế chấp",
+      "nhận giữ hộ tiền rồi tiêu xài hết",
+      "mượn điện thoại rồi bán lấy tiền",
+      "vay tiền có khả năng trả nhưng cố tình không trả",
+      "đến hạn trả tài sản nhưng bỏ trốn"
+    ],
+    "retrieval_queries": [
+      "lạm dụng tín nhiệm chiếm đoạt tài sản Điều 175 Bộ luật Hình sự",
+      "vay mượn thuê tài sản rồi bỏ trốn để chiếm đoạt Điều 175 Bộ luật Hình sự",
+      "được giao tài sản hợp pháp rồi dùng thủ đoạn gian dối hoặc bỏ trốn để chiếm đoạt Điều 175 Bộ luật Hình sự",
+      "phân biệt lừa đảo chiếm đoạt tài sản và lạm dụng tín nhiệm chiếm đoạt tài sản Điều 174 Điều 175 Bộ luật Hình sự"
+    ],
+    "preferred_articles": [
+      "175"
+    ],
+    "distinguish_from_articles": [
+      "173",
+      "174"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "lua_dao_chiem_doat_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Lừa đảo chiếm đoạt tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Người phạm tội dùng thủ đoạn gian dối trước hoặc tại thời điểm người bị hại giao tài sản, làm người bị hại tin sai sự thật rồi chuyển tiền, giao tài sản, đặt cọc, đầu tư hoặc thực hiện giao dịch khác dẫn đến bị chiếm đoạt.",
+    "confidence": 0.88,
+    "semantic_queries": [
+      "bị lừa chuyển tiền",
+      "nói dối để tôi đưa tiền",
+      "giả danh để chiếm đoạt tài sản",
+      "đặt cọc mua hàng nhưng không giao hàng",
+      "hứa đầu tư sinh lời rồi chiếm đoạt tiền",
+      "dùng thông tin giả để vay tiền",
+      "lừa bán hàng online rồi chặn liên lạc",
+      "giả mạo giấy tờ để lấy tài sản",
+      "cam kết giả để người khác giao tiền",
+      "dùng thủ đoạn gian dối ngay từ đầu để lấy tài sản",
+      "lừa đảo qua mạng lấy tiền",
+      "nhận tiền mua bán rồi biến mất",
+      "gọi điện giả danh công an yêu cầu chuyển tiền",
+      "lập dự án giả để huy động vốn",
+      "bịa chuyện khó khăn để mượn tiền rồi chiếm đoạt"
+    ],
+    "retrieval_queries": [
+      "lừa đảo chiếm đoạt tài sản bằng thủ đoạn gian dối Điều 174 Bộ luật Hình sự",
+      "dùng thủ đoạn gian dối ngay từ đầu để chiếm đoạt tài sản Điều 174 Bộ luật Hình sự",
+      "phân biệt lừa đảo chiếm đoạt tài sản và lạm dụng tín nhiệm chiếm đoạt tài sản Điều 174 Điều 175 Bộ luật Hình sự"
+    ],
+    "preferred_articles": [
+      "174"
+    ],
+    "distinguish_from_articles": [
+      "173",
+      "175"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "trom_cap_tai_san",
+    "issue_type": "chiem_doat_tai_san",
+    "display_name": "Trộm cắp tài sản",
+    "issue_type_name": "Chiếm đoạt tài sản",
+    "description": "Hành vi lén lút lấy tài sản của người khác khi chủ sở hữu hoặc người quản lý tài sản không biết hoặc không kịp ngăn chặn, nhằm chiếm đoạt tài sản đó.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "bị lấy trộm xe",
+      "mất điện thoại do bị móc túi",
+      "người khác lén lấy tài sản của tôi",
+      "lén vào nhà lấy tiền",
+      "lấy tài sản khi chủ sở hữu không biết",
+      "trộm xe máy trong bãi giữ xe",
+      "lén lấy vàng của người khác",
+      "đột nhập lấy tài sản",
+      "nhặt được tài sản rồi lén giữ luôn",
+      "lấy đồ của người khác khi họ không để ý",
+      "bị trộm tiền trong phòng trọ",
+      "lén lấy hàng hóa trong cửa hàng",
+      "móc túi trên xe buýt",
+      "trộm cắp tài sản có giá trị thấp",
+      "trộm cắp tài sản nhiều lần"
+    ],
+    "retrieval_queries": [
+      "trộm cắp tài sản giá trị tài sản Điều 173 Bộ luật Hình sự",
+      "hành vi lén lút chiếm đoạt tài sản của người khác Điều 173 Bộ luật Hình sự",
+      "phân biệt trộm cắp tài sản và lừa đảo chiếm đoạt tài sản Điều 173 Điều 174 Bộ luật Hình sự"
+    ],
+    "preferred_articles": [
+      "173"
+    ],
+    "distinguish_from_articles": [
+      "174",
+      "175"
+    ],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "co_y_gay_thuong_tich",
+    "issue_type": "xam_pham_suc_khoe",
+    "display_name": "Cố ý gây thương tích hoặc gây tổn hại cho sức khỏe",
+    "issue_type_name": "Xâm phạm sức khỏe",
+    "description": "Hành vi cố ý đánh, chém, dùng hung khí hoặc cách thức khác làm người khác bị thương tích, thương tật hoặc tổn hại sức khỏe; cần xem tỷ lệ tổn thương cơ thể, hung khí, tính chất côn đồ và các tình tiết định khung.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "bị người khác đánh gây thương tích",
+      "đánh nhau bị thương phải đi giám định",
+      "dùng dao chém người khác bị thương",
+      "gây thương tích tỷ lệ 11 phần trăm",
+      "cố ý đánh người gây tổn hại sức khỏe",
+      "bị hành hung gây thương tích",
+      "dùng hung khí đánh người",
+      "đấm người khác gây thương tích",
+      "đánh người phải nhập viện",
+      "gây thương tật cho người khác",
+      "xô xát làm người khác bị thương",
+      "cố ý gây thương tích có tổ chức",
+      "đánh người dưới 11 phần trăm có bị xử lý không",
+      "dùng dao gây thương tích nhẹ",
+      "gây thương tích cho người thân"
+    ],
+    "retrieval_queries": [
+      "cố ý gây thương tích hoặc gây tổn hại cho sức khỏe của người khác Điều 134 Bộ luật Hình sự",
+      "tỷ lệ tổn thương cơ thể dùng hung khí côn đồ Điều 134 Bộ luật Hình sự",
+      "các trường hợp cố ý gây thương tích bị truy cứu trách nhiệm hình sự Điều 134 Bộ luật Hình sự"
+    ],
+    "preferred_articles": [
+      "134"
+    ],
+    "distinguish_from_articles": [],
+    "document_title_hints": [
+      "Bộ luật Hình sự"
+    ]
+  },
+  {
+    "label": "hop_dong_vay_tai_san",
+    "issue_type": "nghia_vu_dan_su",
+    "display_name": "Hợp đồng vay tài sản và nghĩa vụ trả nợ",
+    "issue_type_name": "Nghĩa vụ dân sự",
+    "description": "Tranh chấp hoặc câu hỏi về việc vay, cho vay, mượn tiền, giấy vay, chứng cứ chuyển khoản, nghĩa vụ trả nợ, chậm trả và lãi suất theo quan hệ dân sự; chỉ xem xét hình sự khi có dấu hiệu gian dối hoặc chiếm đoạt rõ ràng.",
+    "confidence": 0.86,
+    "semantic_queries": [
+      "cho vay tiền nhưng không trả",
+      "mượn tiền không có giấy tờ có đòi được không",
+      "vay tiền bằng miệng rồi không trả",
+      "cho bạn vay tiền qua chuyển khoản",
+      "đến hạn trả nợ nhưng bên vay không trả",
+      "vay tiền có lãi suất bao nhiêu là hợp pháp",
+      "giấy vay tiền viết tay có giá trị không",
+      "tin nhắn vay tiền có làm chứng cứ được không",
+      "bên vay chậm trả nợ",
+      "đòi tiền vay dân sự như thế nào",
+      "cho vay không ghi lãi có được tính lãi không",
+      "hợp đồng vay tài sản có cần công chứng không",
+      "người vay bỏ đi nhưng không có dấu hiệu lừa đảo",
+      "cho vay tiền không trả nên kiện dân sự",
+      "nghĩa vụ trả nợ của người vay"
+    ],
+    "retrieval_queries": [
+      "hợp đồng vay tài sản Điều 463 Bộ luật Dân sự",
+      "nghĩa vụ trả nợ của bên vay Điều 466 Bộ luật Dân sự",
+      "lãi suất vay do các bên thỏa thuận Điều 468 Bộ luật Dân sự",
+      "đòi tiền vay dân sự hợp đồng vay tài sản Bộ luật Dân sự"
+    ],
+    "preferred_articles": [
+      "463",
+      "466",
+      "468"
+    ],
+    "distinguish_from_articles": [
+      "174",
+      "175"
+    ],
+    "document_title_hints": [
+      "Bộ luật Dân sự"
+    ]
+  },
+  {
+    "label": "bao_hiem_y_te_muc_huong",
+    "issue_type": "bao_hiem_y_te",
+    "display_name": "Mức hưởng bảo hiểm y tế",
+    "issue_type_name": "Bảo hiểm y tế",
+    "description": "Câu hỏi về mức bảo hiểm y tế chi trả khi khám chữa bệnh đúng tuyến, trái tuyến, chuyển tuyến, cấp cứu, nhập viện hoặc thanh toán chi phí khám chữa bệnh theo thẻ bảo hiểm y tế.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "bảo hiểm y tế chi trả bao nhiêu phần trăm",
+      "khám chữa bệnh đúng tuyến được hưởng mức nào",
+      "đi trái tuyến bảo hiểm y tế có thanh toán không",
+      "mức hưởng bảo hiểm y tế khi nhập viện",
+      "thẻ bảo hiểm y tế được chi trả thế nào",
+      "bảo hiểm y tế thanh toán tiền viện phí",
+      "khám bệnh có bảo hiểm y tế được giảm bao nhiêu",
+      "chuyển tuyến bảo hiểm y tế được hưởng ra sao",
+      "cấp cứu trái tuyến có được bảo hiểm y tế thanh toán không",
+      "mức hưởng bảo hiểm y tế 80 phần trăm 95 phần trăm 100 phần trăm",
+      "bảo hiểm y tế hộ gia đình được hưởng bao nhiêu",
+      "đi khám không đúng nơi đăng ký có được hưởng bảo hiểm không",
+      "bảo hiểm y tế chi trả thuốc men như thế nào",
+      "điều kiện hưởng bảo hiểm y tế đúng tuyến",
+      "khám chữa bệnh bảo hiểm y tế khác tỉnh"
+    ],
+    "retrieval_queries": [
+      "mức hưởng bảo hiểm y tế khi khám chữa bệnh đúng tuyến Điều 22 Luật Bảo hiểm y tế",
+      "mức hưởng bảo hiểm y tế khi khám chữa bệnh trái tuyến Luật Bảo hiểm y tế",
+      "quỹ bảo hiểm y tế thanh toán chi phí khám bệnh chữa bệnh Điều 22 Luật Bảo hiểm y tế"
+    ],
+    "preferred_articles": [
+      "22"
+    ],
+    "distinguish_from_articles": [],
+    "document_title_hints": [
+      "Luật Bảo hiểm y tế"
+    ]
+  },
+  {
+    "label": "che_do_thai_san",
+    "issue_type": "bao_hiem_xa_hoi",
+    "display_name": "Chế độ thai sản",
+    "issue_type_name": "Bảo hiểm xã hội",
+    "description": "Câu hỏi về điều kiện, thời gian, mức hưởng và hồ sơ hưởng chế độ thai sản khi sinh con, mang thai, sảy thai, nhận con nuôi, khám thai hoặc quyền lợi của lao động nam khi vợ sinh con.",
+    "confidence": 0.9,
+    "semantic_queries": [
+      "điều kiện hưởng chế độ thai sản",
+      "đóng bảo hiểm xã hội bao lâu thì được hưởng thai sản",
+      "nghỉ sinh con được hưởng chế độ gì",
+      "mang thai có được hưởng bảo hiểm xã hội không",
+      "sảy thai được hưởng chế độ thai sản không",
+      "nhận con nuôi có được hưởng thai sản không",
+      "lao động nữ sinh con được nghỉ bao lâu",
+      "tiền thai sản được tính như thế nào",
+      "chồng có được nghỉ khi vợ sinh con không",
+      "đóng bảo hiểm chưa đủ 6 tháng có được hưởng thai sản không",
+      "điều kiện hưởng trợ cấp thai sản khi sinh con",
+      "nghỉ khám thai được hưởng chế độ không",
+      "lao động nam hưởng chế độ thai sản",
+      "hồ sơ hưởng thai sản gồm những gì",
+      "nghỉ thai sản trước sinh tối đa bao lâu"
+    ],
+    "retrieval_queries": [
+      "điều kiện hưởng chế độ thai sản Điều 31 Luật Bảo hiểm xã hội",
+      "người lao động hưởng chế độ thai sản Luật Bảo hiểm xã hội",
+      "thời gian hưởng chế độ thai sản khi sinh con Luật Bảo hiểm xã hội",
+      "mức hưởng chế độ thai sản Luật Bảo hiểm xã hội"
+    ],
+    "preferred_articles": [
+      "31"
+    ],
+    "distinguish_from_articles": [],
+    "document_title_hints": [
+      "Luật Bảo hiểm xã hội"
+    ]
+  }
+]

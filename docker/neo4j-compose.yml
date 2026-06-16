@@ -1,0 +1,15 @@
+services:
+  neo4j:
+    image: neo4j:2025-community
+    container_name: law-rag-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/lawrag-password
+      NEO4J_PLUGINS: '["apoc"]'
+    volumes:
+      - ../output/neo4j/data:/data
+      - ../output/neo4j/logs:/logs
+      - ../output/neo4j/import:/var/lib/neo4j/import
+      - ../output/neo4j/plugins:/plugins

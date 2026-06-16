@@ -23,6 +23,10 @@ DEFAULT_CHAT_MODEL = chat_model()
 DEFAULT_MEMORY_MODEL = memory_model()
 SYSTEM_PROMPT = """Bạn là trợ lý pháp lý nội bộ cho dự án RAG luật Việt Nam.
 Chỉ được trả lời dựa trên các đoạn luật được cung cấp.
+Phải trả lời trực tiếp câu hỏi trong 1-2 câu đầu trước khi giải thích thêm.
+Chỉ được viện dẫn Điều/Khoản/Văn bản xuất hiện trong context đã retrieve; không được nêu căn cứ pháp lý ngoài context, kể cả khi bạn biết từ kiến thức chung.
+Nếu context có Điều nhưng không có Khoản cụ thể, chỉ nêu Khoản khi nội dung khoản đó xuất hiện rõ trong chính đoạn context.
+Nếu một căn cứ có vẻ liên quan nhưng không có trong context, hãy nói ngắn gọn rằng cần đối chiếu thêm thay vì trích dẫn như căn cứ chắc chắn.
 Nếu context chưa đủ để kết luận chắc chắn, vẫn phải rút ra tối đa những khả năng có thể suy ra từ context hiện có.
 Không được dừng lại quá sớm chỉ với kết luận 'chưa đủ dữ kiện' nếu context vẫn cho phép nêu các trường hợp, khả năng xử lý, ngưỡng điều kiện, hoặc hướng đánh giá sơ bộ.
 Khi trả lời theo nhánh điều kiện, tuyệt đối không dùng ký hiệu mơ hồ như "A", "B", "trường hợp 1", "trường hợp 2" nếu chưa giải thích ngay trong chính tiêu đề nhánh.
@@ -33,7 +37,7 @@ Mỗi nhánh phải gọi rõ điều kiện pháp lý hoặc tình tiết thự
 - Trong context hiện có, điều có thể khẳng định được là ...
 - Phần chưa rõ chỉ nêu ngắn gọn ở cuối câu trả lời.
 Mỗi câu trả lời phải:
-1. Tóm tắt nhận định chính.
+1. Tóm tắt nhận định chính, trả lời thẳng vào câu hỏi.
 2. Nêu căn cứ điều/khoản/văn bản liên quan.
 3. Nếu vụ việc còn thiếu dữ kiện, phải nêu các nhánh khả năng dựa trên context trước khi nói phần cần bổ sung.
 4. Không được khẳng định vượt quá context.
@@ -206,11 +210,13 @@ def answer_question(
         atlas_db=atlas_db,
         atlas_collection=atlas_collection,
         atlas_vector_index=atlas_vector_index,
-        bm25_top_k=max(top_k * 2, 8),
-        vector_top_k=max(top_k * 2, 8),
+        bm25_top_k=max(top_k * 6, 30),
+        vector_top_k=max(top_k * 6, 30),
         final_top_k=top_k,
         additional_bm25_sources=additional_bm25_sources,
         additional_vector_dirs=additional_vector_dirs,
+        legal_issue_labels=retrieval_plan.get("legal_issue_labels", []),
+        legal_issue_matches=retrieval_plan.get("legal_issue_matches", []),
         debug_timings=retrieval_debug_timings,
     )
     timings["retrieval"] = int((time.perf_counter() - retrieval_started) * 1000)
@@ -255,6 +261,10 @@ def answer_question(
         "question": question,
         "legal_intent": retrieval_plan["legal_intent"],
         "retrieval_queries": retrieval_plan["retrieval_queries"],
+        "rewrite_source": retrieval_plan.get("rewrite_source"),
+        "legal_issue_confidence": retrieval_plan.get("legal_issue_confidence"),
+        "legal_issue_labels": retrieval_plan.get("legal_issue_labels", []),
+        "legal_issue_matches": retrieval_plan.get("legal_issue_matches", []),
         "retrieval_input": retrieval_input,
         "retrieval_query_count": len(retrieval_plan["retrieval_queries"]),
         "retrieval_input_chars": len(retrieval_input),
@@ -274,8 +284,10 @@ def answer_question(
                 "issue_date": item.get("issue_date"),
                 "article_number": item.get("article_number"),
                 "clause_number": item.get("clause_number"),
+                "point_number": item.get("point_number"),
+                "parent_chunk_id": item.get("parent_chunk_id"),
                 "target_article": item.get("target_article"),
-                "rrf_score": item["rrf_score"],
+                "rrf_score": item.get("rrf_score", 0.0),
                 "rerank_score": item.get("rerank_score"),
                 "rerank_features": item.get("rerank_features"),
                 "sources": item.get("sources", []),
