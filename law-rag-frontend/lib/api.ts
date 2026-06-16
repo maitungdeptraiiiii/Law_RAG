@@ -38,7 +38,9 @@ function getErrorMessage(payload: unknown, fallback: string): string {
 }
 
 function buildUrl(path: string, params?: Record<string, string | number | undefined>): string {
-  const url = new URL(path, API_BASE_URL)
+  const baseUrl = API_BASE_URL.replace(/\/$/, '')
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`
+  const url = new URL(`${baseUrl}${normalizedPath}`)
   if (params) {
     Object.entries(params).forEach(([key, value]) => {
       if (value !== undefined && value !== '') {
